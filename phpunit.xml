@@ -11,6 +11,7 @@
 >
     <testsuites>
         <testsuite name="unit">
+            <directory>libs/hydrator-contracts/tests</directory>
             <directory>libs/rpc-message/tests</directory>
             <directory>libs/rpc-message-contracts/tests</directory>
             <directory>libs/rpc-message-factory/tests</directory>
@@ -27,6 +28,7 @@
 
     <source>
         <include>
+            <directory>libs/hydrator-contracts/src</directory>
             <directory>libs/rpc-message/src</directory>
             <directory>libs/rpc-message-contracts/src</directory>
             <directory>libs/rpc-message-factory/src</directory>
