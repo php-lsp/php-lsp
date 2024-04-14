@@ -1,0 +1,64 @@
+name: subsplit
+
+on:
+  push:
+    tags:
+      - '*'
+    branches:
+      - '*'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  subsplit:
+    name: Split Packages (${{ matrix.package.local_path }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - local_path: 'rpc-message'
+            split_repository: 'rpc-message'
+          - local_path: 'rpc-message-contracts'
+            split_repository: 'rpc-message-contracts'
+          - local_path: 'rpc-message-factory'
+            split_repository: 'rpc-message-factory'
+          - local_path: 'rpc-message-factory-contracts'
+            split_repository: 'rpc-message-factory-contracts'
+          - local_path: 'rpc-protocol-contracts'
+            split_repository: 'rpc-protocol-contracts'
+          - local_path: 'rpc-protocol-jsonrpc'
+            split_repository: 'rpc-protocol-jsonrpc'
+    steps:
+      - uses: actions/checkout@v4
+
+      # no tag
+      - if: "!startsWith(github.ref, 'refs/tags/')"
+        name: Monorepo Split of ${{ matrix.package.split_repository }}
+        uses: danharrin/monorepo-split-github-action@v2.3.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        with:
+          branch: "master"
+          package_directory: 'libs/${{ matrix.package.local_path }}'
+          repository_organization: 'php-lsp'
+          repository_name: '${{ matrix.package.split_repository }}'
+          user_name: "SerafimArts"
+          user_email: "nesk@xakep.ru"
+
+      # with tag
+      - if: "startsWith(github.ref, 'refs/tags/')"
+        name: Monorepo Tagged Split of ${{ matrix.package }}
+        uses: danharrin/monorepo-split-github-action@v2.3.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        with:
+          tag: ${GITHUB_REF#refs/tags/}
+          branch: "master"
+          package_directory: 'libs/${{ matrix.package.local_path }}'
+          repository_organization: 'php-lsp'
+          repository_name: '${{ matrix.package.split_repository }}'
+          user_name: "SerafimArts"
+          user_email: "nesk@xakep.ru"

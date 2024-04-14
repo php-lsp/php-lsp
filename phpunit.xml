@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         colors="true"
+         backupGlobals="true"
+         stopOnFailure="false"
+         processIsolation="false"
+         bootstrap="vendor/autoload.php"
+         cacheDirectory="vendor/.cache.phpunit"
+         backupStaticProperties="false"
+>
+    <testsuites>
+        <testsuite name="unit">
+            <directory>libs/rpc-message/tests</directory>
+            <directory>libs/rpc-message-contracts/tests</directory>
+            <directory>libs/rpc-message-factory/tests</directory>
+            <directory>libs/rpc-message-factory-contracts/tests</directory>
+            <directory>libs/rpc-protocol-contracts/tests</directory>
+            <directory>libs/rpc-protocol-jsonrpc/tests</directory>
+        </testsuite>
+        <testsuite name="functional">
+            <!-- ... -->
+        </testsuite>
+    </testsuites>
+
+    <coverage/>
+
+    <source>
+        <include>
+            <directory>libs/rpc-message/src</directory>
+            <directory>libs/rpc-message-contracts/src</directory>
+            <directory>libs/rpc-message-factory/src</directory>
+            <directory>libs/rpc-message-factory-contracts/src</directory>
+            <directory>libs/rpc-protocol-contracts/src</directory>
+            <directory>libs/rpc-protocol-jsonrpc/src</directory>
+        </include>
+    </source>
+
+    <php>
+        <ini name="error_reporting" value="-1"/>
+        <ini name="memory_limit" value="-1"/>
+    </php>
+</phpunit>
