@@ -15,7 +15,10 @@
         }
     ],
     "require": {
-        "php": "^8.1"
+        "php": "^8.1",
+        "doctrine/instantiator": "^1.5|^2.0",
+        "jms/serializer": "^3.0",
+        "psr/cache": "^1.0|^2.0|^3.0"
     },
     "autoload": {
         "psr-4": {
@@ -23,6 +26,7 @@
             "Lsp\\Contracts\\Rpc\\Message\\": "libs/rpc-message-contracts/src",
             "Lsp\\Contracts\\Rpc\\Message\\Factory\\": "libs/rpc-message-factory-contracts/src",
             "Lsp\\Contracts\\Rpc\\Protocol\\": "libs/rpc-protocol-contracts/src",
+            "Lsp\\Hydrator\\JMS\\": "libs/hydrator-jms/src",
             "Lsp\\Rpc\\Message\\": "libs/rpc-message/src",
             "Lsp\\Rpc\\Message\\Factory\\": "libs/rpc-message-factory/src",
             "Lsp\\Rpc\\Protocol\\": "libs/rpc-protocol-jsonrpc/src"
@@ -44,6 +48,7 @@
             "Lsp\\Contracts\\Rpc\\Message\\Factory\\Tests\\": "libs/rpc-message-factory-contracts/tests",
             "Lsp\\Contracts\\Rpc\\Message\\Tests\\": "libs/rpc-message-contracts/tests",
             "Lsp\\Contracts\\Rpc\\Protocol\\Tests\\": "libs/rpc-protocol-contracts/tests",
+            "Lsp\\Hydrator\\JMS\\Tests\\": "libs/hydrator-jms/tests",
             "Lsp\\Rpc\\Message\\Factory\\Tests\\": "libs/rpc-message-factory/tests",
             "Lsp\\Rpc\\Message\\Tests\\": "libs/rpc-message/tests",
             "Lsp\\Rpc\\Protocol\\Tests\\": "libs/rpc-protocol-jsonrpc/tests"
@@ -51,6 +56,7 @@
     },
     "replace": {
         "php-lsp/hydrator-contracts": "*",
+        "php-lsp/hydrator-jms": "*",
         "php-lsp/rpc-message": "*",
         "php-lsp/rpc-message-contracts": "*",
         "php-lsp/rpc-message-factory": "*",
@@ -59,6 +65,7 @@
         "php-lsp/rpc-protocol-jsonrpc": "*"
     },
     "provide": {
+        "php-lsp/hydrator-contracts-implementation": "^1.0",
         "php-lsp/rpc-message-contracts-implementation": "^1.0",
         "php-lsp/rpc-message-factory-contracts-implementation": "^1.0",
         "php-lsp/rpc-protocol-contracts-implementation": "^1.0"
