@@ -31,6 +31,10 @@
             "Lsp\\Contracts\\Rpc\\Message\\Tests\\": "tests"
         }
     },
+    "scripts": {
+        "test": "@test:unit",
+        "test:unit": "phpunit --testdox"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.x-dev",
