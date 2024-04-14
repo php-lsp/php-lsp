@@ -35,6 +35,10 @@
     "provide": {
         "php-lsp/rpc-message-contracts-implementation": "^1.0"
     },
+    "scripts": {
+        "test": "@test:unit",
+        "test:unit": "phpunit --testdox"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.x-dev",

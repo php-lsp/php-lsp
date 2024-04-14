@@ -40,6 +40,10 @@
     "suggest": {
         "php-lsp/rpc-message-factory": "(^1.0) Requires for basic RPC messages instantiation"
     },
+    "scripts": {
+        "test": "@test:unit",
+        "test:unit": "phpunit --testdox"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.x-dev",
