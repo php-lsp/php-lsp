@@ -1,5 +1,6 @@
 {
     "name": "php-lsp/rpc-message",
+    "description": "RPC Message Implementation",
     "type": "library",
     "license": "MIT",
     "keywords": ["RPC", "message", "dto", "types", "implementation"],

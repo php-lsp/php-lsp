@@ -1,5 +1,6 @@
 {
     "name": "php-lsp/rpc-protocol-jsonrpc",
+    "description": "An implementation of the JSON-RPC protocol",
     "type": "library",
     "license": "MIT",
     "keywords": ["rpc", "encoder", "decoder", "json-rpc", "json", "standards", "php"],

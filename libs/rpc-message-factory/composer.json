@@ -1,5 +1,6 @@
 {
     "name": "php-lsp/rpc-message-factory",
+    "description": "RPC Message Factory Implementation",
     "type": "library",
     "license": "MIT",
     "keywords": ["rpc", "contracts", "factory", "message", "interfaces", "interoperability", "php", "lsp"],

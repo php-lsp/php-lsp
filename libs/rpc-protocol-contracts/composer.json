@@ -1,5 +1,6 @@
 {
     "name": "php-lsp/rpc-protocol-contracts",
+    "description": "RPC Protocol Contracts",
     "type": "library",
     "license": "MIT",
     "keywords": ["rpc", "protocol", "codec", "encoder", "decoder", "interoperability", "php", "lsp"],
