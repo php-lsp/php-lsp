@@ -8,6 +8,7 @@ parameters:
     - php
   paths:
     - libs/hydrator-contracts/src
+    - libs/hydrator-jms/src
     - libs/rpc-message/src
     - libs/rpc-message-contracts/src
     - libs/rpc-message-factory/src

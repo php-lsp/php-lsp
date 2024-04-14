@@ -21,6 +21,8 @@ jobs:
         package:
           - local_path: 'hydrator-contracts'
             split_repository: 'hydrator-contracts'
+          - local_path: 'hydrator-jms'
+            split_repository: 'hydrator-jms'
           - local_path: 'rpc-message'
             split_repository: 'rpc-message'
           - local_path: 'rpc-message-contracts'
