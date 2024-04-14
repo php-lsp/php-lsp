@@ -1,5 +1,6 @@
 {
     "name": "php-lsp/php-lsp",
+    "description": "PHP Language Server Protocol",
     "type": "library",
     "license": "MIT",
     "support": {
