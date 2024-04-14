@@ -1,6 +1,8 @@
-<a href="https://github.com/php-lsp" target="_blank">
-    <img align="center" src="https://avatars.githubusercontent.com/u/153323085?s=120">
-</a>
+<p align="center">
+    <a href="https://github.com/php-lsp" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/153323085?s=120" width="120">
+    </a>
+</p>
 
 ---
 
