@@ -24,7 +24,7 @@ class FailureResponse extends Response implements FailureResponseInterface
         IdInterface $id,
         protected readonly int $code = 0,
         protected readonly string $message = '',
-        protected readonly mixed $data = null
+        protected readonly mixed $data = null,
     ) {
         parent::__construct($id);
     }

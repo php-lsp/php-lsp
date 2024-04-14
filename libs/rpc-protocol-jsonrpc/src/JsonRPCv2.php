@@ -151,7 +151,7 @@ final class JsonRPCv2 implements EncoderInterface, DecoderInterface
         try {
             return \json_encode($data, \JSON_THROW_ON_ERROR | $this->jsonEncodingFlags, $this->jsonMaxDepth);
         } catch (\Throwable $e) {
-            throw EncodingException::fromInternalEncodingError($e->getMessage(), (int)$e->getCode());
+            throw EncodingException::fromInternalEncodingError($e->getMessage(), (int) $e->getCode());
         }
     }
 
@@ -189,9 +189,9 @@ final class JsonRPCv2 implements EncoderInterface, DecoderInterface
         try {
             $flags = \JSON_THROW_ON_ERROR | $this->jsonDecodingFlags;
 
-            return (array)\json_decode($json, true, $this->jsonMaxDepth, $flags);
+            return (array) \json_decode($json, true, $this->jsonMaxDepth, $flags);
         } catch (\Throwable $e) {
-            throw DecodingException::fromInternalDecodingError($e->getMessage(), (int)$e->getCode());
+            throw DecodingException::fromInternalDecodingError($e->getMessage(), (int) $e->getCode());
         }
     }
 

@@ -43,7 +43,7 @@ final class IntIdentifierTest extends TestCase
         $id = new IntIdentifier(0xDEAD_BEEF);
 
         self::assertTrue($id->equals(new StringIdentifier(
-            (string)0xDEAD_BEEF,
+            (string) 0xDEAD_BEEF,
         )));
     }
 
@@ -52,7 +52,7 @@ final class IntIdentifierTest extends TestCase
         $id = new IntIdentifier(0xDEAD_BEEF);
 
         self::assertFalse($id->equals(new StringIdentifier(
-            (string)(0xDEAD_BEEF + 1)
+            (string) (0xDEAD_BEEF + 1),
         )));
     }
 
@@ -85,6 +85,6 @@ final class IntIdentifierTest extends TestCase
     {
         $id = new IntIdentifier(0xDEAD_BEEF);
 
-        self::assertSame((string)0xDEAD_BEEF, (string)$id);
+        self::assertSame((string) 0xDEAD_BEEF, (string) $id);
     }
 }

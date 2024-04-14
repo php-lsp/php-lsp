@@ -33,7 +33,7 @@ class InvalidFieldValueException extends DecodingException
             $value === true => 'true',
             $value === false => 'false',
             $value === null => 'null',
-            \is_int($value), \is_float($value) => (string)$value,
+            \is_int($value), \is_float($value) => (string) $value,
             \is_object($value) => 'object',
             default => \get_debug_type($value),
         };

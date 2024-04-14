@@ -39,12 +39,12 @@ final class InterfaceCompatibilityTest extends TestCase
             public function createRequest(
                 string $method,
                 array $parameters = [],
-                IdInterface $id = null
+                IdInterface $id = null,
             ): RequestInterface {}
 
             public function createNotification(
                 string $method,
-                array $parameters = []
+                array $parameters = [],
             ): NotificationInterface {}
         };
     }

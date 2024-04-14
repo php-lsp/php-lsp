@@ -19,7 +19,7 @@ abstract class Response implements ResponseInterface
      * @param IdInterface<TIdentifier> $id
      */
     public function __construct(
-        protected IdInterface $id
+        protected IdInterface $id,
     ) {}
 
     public function getId(): IdInterface

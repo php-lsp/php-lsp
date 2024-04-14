@@ -51,7 +51,7 @@ final class StringIdentifierTest extends TestCase
 
     public function testEqualIntInstance(): void
     {
-        $id = new StringIdentifier((string)0xDEAD_BEEF);
+        $id = new StringIdentifier((string) 0xDEAD_BEEF);
 
         self::assertTrue($id->equals(new IntIdentifier(
             0xDEAD_BEEF,
@@ -60,7 +60,7 @@ final class StringIdentifierTest extends TestCase
 
     public function testNotEqualAnotherIntInstance(): void
     {
-        $id = new StringIdentifier((string)0xDEAD_BEEF);
+        $id = new StringIdentifier((string) 0xDEAD_BEEF);
 
         self::assertFalse($id->equals(new IntIdentifier(
             0xDEAD_BEEF + 1,
@@ -97,6 +97,6 @@ final class StringIdentifierTest extends TestCase
     {
         $id = new StringIdentifier('example');
 
-        self::assertSame('example', (string)$id);
+        self::assertSame('example', (string) $id);
     }
 }

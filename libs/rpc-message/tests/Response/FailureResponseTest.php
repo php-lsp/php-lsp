@@ -90,7 +90,7 @@ final class FailureResponseTest extends TestCase
             EmptyIdentifier::getInstance(),
             0,
             '',
-            $data = (object)["\0test\0field" => 42],
+            $data = (object) ["\0test\0field" => 42],
         );
 
         self::assertSame($data, $response->getData());

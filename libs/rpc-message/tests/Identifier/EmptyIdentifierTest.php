@@ -41,6 +41,6 @@ final class EmptyIdentifierTest extends TestCase
     {
         $id = new EmptyIdentifier();
 
-        self::assertSame('', (string)$id);
+        self::assertSame('', (string) $id);
     }
 }

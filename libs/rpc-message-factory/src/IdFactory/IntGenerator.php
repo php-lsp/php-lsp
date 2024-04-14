@@ -56,7 +56,7 @@ abstract class IntGenerator implements GeneratorInterface
     protected function reset(): void
     {
         if ($this->onOverflow === OverflowBehaviour::EXCEPTION) {
-            throw IdOverflowException::fromMaxValueOfClass(static::class, (string)$this->current);
+            throw IdOverflowException::fromMaxValueOfClass(static::class, (string) $this->current);
         }
 
         $this->current = $this->initial;

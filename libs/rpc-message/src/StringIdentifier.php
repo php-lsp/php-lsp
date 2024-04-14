@@ -30,7 +30,7 @@ final class StringIdentifier implements IdInterface
     {
         return $id === $this
             || ($id instanceof self && $id->value === $this->value)
-            || $this->value === (string)$id;
+            || $this->value === (string) $id;
     }
 
     public function __toString(): string

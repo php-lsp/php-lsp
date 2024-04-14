@@ -27,11 +27,11 @@ final class IntIdentifier implements IdInterface
             // - Or same instance with same value
             || ($id instanceof self && $this->value === $id->value)
             // - Or different instances contains equal values
-            || (string)$this->value === (string)$id;
+            || (string) $this->value === (string) $id;
     }
 
     public function __toString(): string
     {
-        return (string)$this->value;
+        return (string) $this->value;
     }
 }
