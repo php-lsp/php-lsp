@@ -11,7 +11,7 @@ use Lsp\Protocol\Generator\Node\Type\TypeInterface;
 /**
  * Represents a LSP notification.
  */
-final class Notification extends Node
+class Notification extends Definition
 {
     /**
      * @param non-empty-string $method The request's method name.
@@ -38,12 +38,17 @@ final class Notification extends Node
         public ?string $registrationMethod,
         public ?TypeInterface $registrationOptions,
         public MessageDirection $messageDirection,
-        public ?string $documentation,
-        public ?string $since,
-        public ?bool $proposed,
-        public ?string $deprecated,
+        ?string $documentation,
+        ?string $since,
+        ?bool $proposed,
+        ?string $deprecated,
     ) {
-        parent::__construct();
+        parent::__construct(
+            documentation: $documentation,
+            since: $since,
+            proposed: $proposed,
+            deprecated: $deprecated,
+        );
     }
 
     public function getSubNodeNames(): array

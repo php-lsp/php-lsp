@@ -10,7 +10,7 @@ use Lsp\Protocol\Generator\Node\Type\TypeInterface;
 /**
  * Represents an object property.
  */
-final class Property extends Node
+final class Property extends Definition
 {
     /**
      * @param non-empty-string $name The property name.
@@ -30,12 +30,17 @@ final class Property extends Node
         public string $name,
         public TypeInterface $type,
         public ?bool $optional,
-        public ?string $documentation,
-        public ?string $since,
-        public ?bool $proposed,
-        public ?string $deprecated,
+        ?string $documentation,
+        ?string $since,
+        ?bool $proposed,
+        ?string $deprecated,
     ) {
-        parent::__construct();
+        parent::__construct(
+            documentation: $documentation,
+            since: $since,
+            proposed: $proposed,
+            deprecated: $deprecated,
+        );
     }
 
     public function getSubNodeNames(): array

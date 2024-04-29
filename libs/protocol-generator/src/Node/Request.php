@@ -11,7 +11,7 @@ use Lsp\Protocol\Generator\Node\Type\TypeInterface;
 /**
  * Represents a LSP request.
  */
-final class Request extends Node
+final class Request extends Notification
 {
     /**
      * @param non-empty-string $method The request's method name.
@@ -37,25 +37,35 @@ final class Request extends Node
      *        deprecation message.
      */
     public function __construct(
-        public string $method,
-        public TypeInterface|array|null $params,
+        string $method,
+        TypeInterface|array|null $params,
         public TypeInterface $result,
         public ?TypeInterface $partialResult,
         public ?TypeInterface $errorData,
-        public ?string $registrationMethod,
-        public ?TypeInterface $registrationOptions,
-        public MessageDirection $messageDirection,
-        public ?string $documentation,
-        public ?string $since,
-        public ?bool $proposed,
-        public ?string $deprecated,
+        ?string $registrationMethod,
+        ?TypeInterface $registrationOptions,
+        MessageDirection $messageDirection,
+        ?string $documentation,
+        ?string $since,
+        ?bool $proposed,
+        ?string $deprecated,
     ) {
-        parent::__construct();
+        parent::__construct(
+            method: $method,
+            params: $params,
+            registrationMethod: $registrationMethod,
+            registrationOptions: $registrationOptions,
+            messageDirection: $messageDirection,
+            documentation: $documentation,
+            since: $since,
+            proposed: $proposed,
+            deprecated: $deprecated,
+        );
     }
 
     public function getSubNodeNames(): array
     {
-        return ['params', 'result', 'partialResult', 'errorData', 'registrationOptions'];
+        return [...parent::getSubNodeNames(), 'result', 'partialResult', 'errorData'];
     }
 
     /**

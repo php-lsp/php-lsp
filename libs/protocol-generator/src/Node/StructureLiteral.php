@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Generator\Node;
 /**
  * Defines an unnamed structure of an object literal.
  */
-final class StructureLiteral extends Node
+final class StructureLiteral extends Definition
 {
     /**
      * @param list<Property> $properties The properties.
@@ -22,12 +22,17 @@ final class StructureLiteral extends Node
      */
     public function __construct(
         public array $properties,
-        public ?string $documentation,
-        public ?string $since,
-        public ?bool $proposed,
-        public ?string $deprecated,
+        ?string $documentation,
+        ?string $since,
+        ?bool $proposed,
+        ?string $deprecated,
     ) {
-        parent::__construct();
+        parent::__construct(
+            documentation: $documentation,
+            since: $since,
+            proposed: $proposed,
+            deprecated: $deprecated,
+        );
     }
 
     public function getSubNodeNames(): array

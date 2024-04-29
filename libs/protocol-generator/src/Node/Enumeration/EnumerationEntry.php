@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Lsp\Protocol\Generator\Node\Enumeration;
 
-use Lsp\Protocol\Generator\Node\Node;
+use Lsp\Protocol\Generator\Node\Definition;
 
 /**
  * Defines an enumeration entry.
  */
-final class EnumerationEntry extends Node
+final class EnumerationEntry extends Definition
 {
     /**
      * @param non-empty-string $name The name of the enum item.
@@ -26,12 +26,17 @@ final class EnumerationEntry extends Node
     public function __construct(
         public string $name,
         public string|int $value,
-        public ?string $documentation,
-        public ?string $since,
-        public ?bool $proposed,
-        public ?string $deprecated,
+        ?string $documentation,
+        ?string $since,
+        ?bool $proposed,
+        ?string $deprecated,
     ) {
-        parent::__construct();
+        parent::__construct(
+            documentation: $documentation,
+            since: $since,
+            proposed: $proposed,
+            deprecated: $deprecated,
+        );
     }
 
     /**

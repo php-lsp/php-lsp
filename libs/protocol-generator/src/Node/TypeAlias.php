@@ -10,7 +10,7 @@ use Lsp\Protocol\Generator\Node\Type\TypeInterface;
 /**
  * Defines a type alias. (e.g. `type Definition = Location | LocationLink`).
  */
-final class TypeAlias extends Node
+final class TypeAlias extends Definition
 {
     /**
      * @param non-empty-string $name The name of the type alias.
@@ -27,12 +27,17 @@ final class TypeAlias extends Node
     public function __construct(
         public string $name,
         public TypeInterface $type,
-        public ?string $documentation,
-        public ?string $since,
-        public ?bool $proposed,
-        public ?string $deprecated,
+        ?string $documentation,
+        ?string $since,
+        ?bool $proposed,
+        ?string $deprecated,
     ) {
-        parent::__construct();
+        parent::__construct(
+            documentation: $documentation,
+            since: $since,
+            proposed: $proposed,
+            deprecated: $deprecated,
+        );
     }
 
     public function getSubNodeNames(): array

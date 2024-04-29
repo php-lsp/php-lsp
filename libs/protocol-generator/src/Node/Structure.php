@@ -10,7 +10,7 @@ use Lsp\Protocol\Generator\Node\Type\TypeInterface;
 /**
  * Defines the structure of an object literal.
  */
-final class Structure extends Node
+final class Structure extends Definition
 {
     /**
      * @param non-empty-string $name The name of the structure.
@@ -34,12 +34,17 @@ final class Structure extends Node
         public ?array $extends,
         public ?array $mixins,
         public array $properties,
-        public ?string $documentation,
-        public ?string $since,
-        public ?bool $proposed,
-        public ?string $deprecated,
+        ?string $documentation,
+        ?string $since,
+        ?bool $proposed,
+        ?string $deprecated,
     ) {
-        parent::__construct();
+        parent::__construct(
+            documentation: $documentation,
+            since: $since,
+            proposed: $proposed,
+            deprecated: $deprecated,
+        );
     }
 
     public function getSubNodeNames(): array

@@ -10,7 +10,7 @@ use Lsp\Protocol\Generator\Node\Enumeration\EnumerationType;
 /**
  * Defines an enumeration.
  */
-final class Enumeration extends Node
+final class Enumeration extends Definition
 {
     /**
      * @param non-empty-string $name The name of the enumeration.
@@ -33,12 +33,17 @@ final class Enumeration extends Node
         public EnumerationType $type,
         public array $values,
         public ?bool $supportsCustomValues,
-        public ?string $documentation,
-        public ?string $since,
-        public ?bool $proposed,
-        public ?string $deprecated,
+        ?string $documentation,
+        ?string $since,
+        ?bool $proposed,
+        ?string $deprecated,
     ) {
-        parent::__construct();
+        parent::__construct(
+            documentation: $documentation,
+            since: $since,
+            proposed: $proposed,
+            deprecated: $deprecated,
+        );
     }
 
     /**
