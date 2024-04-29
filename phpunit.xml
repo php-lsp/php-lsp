@@ -8,11 +8,15 @@
          bootstrap="vendor/autoload.php"
          cacheDirectory="vendor/.cache.phpunit"
          backupStaticProperties="false"
+         failOnWarning="true"
+         failOnDeprecation="true"
+         failOnNotice="true"
 >
     <testsuites>
         <testsuite name="unit">
             <directory>libs/hydrator-contracts/tests</directory>
             <directory>libs/hydrator-jms/tests</directory>
+            <directory>libs/protocol-generator/tests</directory>
             <directory>libs/rpc-message/tests</directory>
             <directory>libs/rpc-message-contracts/tests</directory>
             <directory>libs/rpc-message-factory/tests</directory>
@@ -31,6 +35,7 @@
         <include>
             <directory>libs/hydrator-contracts/src</directory>
             <directory>libs/hydrator-jms/src</directory>
+            <directory>libs/protocol-generator/src</directory>
             <directory>libs/rpc-message/src</directory>
             <directory>libs/rpc-message-contracts/src</directory>
             <directory>libs/rpc-message-factory/src</directory>
