@@ -1,0 +1,74 @@
+{
+    "name": "@php-lsp/vscode-extension",
+    "displayName": "Language Server Protocol Example Extension",
+    "version": "0.0.1",
+    "license": "MIT",
+    "private": true,
+    "main": "./src/example",
+    "icon": "./images/icon.png",
+    "activationEvents": [
+        "*"
+    ],
+    "capabilities": {
+        "untrustedWorkspaces": {
+            "supported": false,
+            "description": ""
+        }
+    },
+    "categories": [
+        "Linters",
+        "Programming Languages"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "title": "Enable Language Server Extension",
+                "command": "php-lsp.enable",
+                "category": "php-lsp"
+            },
+            {
+                "title": "Disable Language Server Extension",
+                "command": "php-lsp.disable",
+                "category": "php-lsp"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "PHP Language Server",
+            "properties": {
+                "php-lsp.phpExecutablePath": {
+                    "type": "string",
+                    "default": "php",
+                    "description": "Optional, defaults to searching for \"php\". The path to a PHP 8.1+ executable to use to execute the Zend Debug LSP server"
+                },
+                "php-lsp.languageServerPort": {
+                    "type": "number",
+                    "default": 5007,
+                    "description": ""
+                },
+                "php-lsp.enabled": {
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        }
+    },
+    "engines": {
+        "vscode": "^1.73.0"
+    },
+    "extensionKind": [
+        "workspace"
+    ],
+    "galleryBanner": {
+        "color": "#582a24",
+        "theme": "dark"
+    },
+    "devDependencies": {
+        "@types/node": "^17.0.34",
+        "@types/vscode": "^1.67.0"
+    },
+    "dependencies": {
+        "vscode-languageclient": "^8.0.1",
+        "vscode-languageserver-textdocument": "^1.0.8"
+    }
+}
