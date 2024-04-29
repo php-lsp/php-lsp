@@ -27,7 +27,7 @@
             "Lsp\\Contracts\\Rpc\\Message\\Factory\\": "libs/rpc-message-factory-contracts/src",
             "Lsp\\Contracts\\Rpc\\Protocol\\": "libs/rpc-protocol-contracts/src",
             "Lsp\\Hydrator\\JMS\\": "libs/hydrator-jms/src",
-            "Lsp\\Protocol\\": "libs/protocol/src",
+            "Lsp\\Protocol\\Generator\\": "libs/protocol-generator/src",
             "Lsp\\Rpc\\Message\\": "libs/rpc-message/src",
             "Lsp\\Rpc\\Message\\Factory\\": "libs/rpc-message-factory/src",
             "Lsp\\Rpc\\Protocol\\": "libs/rpc-protocol-jsonrpc/src"
