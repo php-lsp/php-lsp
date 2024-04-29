@@ -7,9 +7,17 @@ namespace Lsp\Protocol\Generator\Node\Type;
 /**
  * Represents a string lite (e.g. `kind: 'rename'`).
  */
-final class StringLiteralType implements TypeInterface
+final class StringLiteralType extends Type
 {
     public function __construct(
-        public readonly string $value,
-    ) {}
+        public string $value,
+    ) {
+        parent::__construct();
+    }
+
+    public static function fromArray(array $data): self
+    {
+        // @phpstan-ignore-next-line
+        return new self($data['value']);
+    }
 }

@@ -7,9 +7,22 @@ namespace Lsp\Protocol\Generator\Node\Type;
 /**
  * Represents an array type (e.g. `TextDocument[]`).
  */
-final class ArrayType implements TypeInterface
+final class ArrayType extends Type
 {
     public function __construct(
-        public readonly TypeInterface $element,
-    ) {}
+        public TypeInterface $element,
+    ) {
+        parent::__construct();
+    }
+
+    public function getSubNodeNames(): array
+    {
+        return ['element'];
+    }
+
+    public static function fromArray(array $data): self
+    {
+        // @phpstan-ignore-next-line
+        return new self(Type::fromArray($data['element']));
+    }
 }

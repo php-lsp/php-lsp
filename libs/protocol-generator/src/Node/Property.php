@@ -4,19 +4,20 @@ declare(strict_types=1);
 
 namespace Lsp\Protocol\Generator\Node;
 
+use Lsp\Protocol\Generator\Node\Type\Type;
 use Lsp\Protocol\Generator\Node\Type\TypeInterface;
 
 /**
  * Represents an object property.
  */
-final class Property
+final class Property extends Node
 {
     /**
      * @param non-empty-string $name The property name.
      * @param TypeInterface $type The type of the property.
      * @param bool|null $optional Whether the property is optional. If omitted,
      *        the property is mandatory.
-     * @param string|null $documentation An optional documentation.
+     * @param non-empty-string|null $documentation An optional documentation.
      * @param non-empty-string|null $since Since when (release number) this
      *        property is available. Is undefined if not known.
      * @param bool|null $proposed Whether this is a proposed property. If
@@ -26,12 +27,43 @@ final class Property
      *        deprecation message.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly TypeInterface $type,
-        public readonly ?bool $optional,
-        public readonly ?string $documentation,
-        public readonly ?string $since,
-        public readonly ?bool $proposed,
-        public readonly ?string $deprecated,
-    ) {}
+        public string $name,
+        public TypeInterface $type,
+        public ?bool $optional,
+        public ?string $documentation,
+        public ?string $since,
+        public ?bool $proposed,
+        public ?string $deprecated,
+    ) {
+        parent::__construct();
+    }
+
+    public function getSubNodeNames(): array
+    {
+        return ['type'];
+    }
+
+    /**
+     * @param array{
+     *     name: non-empty-string,
+     *     type: array<array-key, mixed>,
+     *     optional?: bool,
+     *     documentation?: non-empty-string,
+     *     since?: non-empty-string,
+     *     proposed?: bool,
+     *     deprecated?: non-empty-string
+     * } $data
+     */
+    public static function fromArray(array $data): self
+    {
+        return new self(
+            name: $data['name'],
+            type: Type::fromArray($data['type']),
+            optional: $data['optional'] ?? null,
+            documentation: $data['documentation'] ?? null,
+            since: $data['since'] ?? null,
+            proposed: $data['proposed'] ?? null,
+            deprecated: $data['deprecated'] ?? null,
+        );
+    }
 }

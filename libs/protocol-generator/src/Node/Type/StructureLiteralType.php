@@ -9,9 +9,22 @@ use Lsp\Protocol\Generator\Node\StructureLiteral;
 /**
  * Represents a literal structure (e.g. `property: { start: uinteger; end: uinteger; }`).
  */
-final class StructureLiteralType implements TypeInterface
+final class StructureLiteralType extends Type
 {
     public function __construct(
-        public readonly StructureLiteral $value,
-    ) {}
+        public StructureLiteral $value,
+    ) {
+        parent::__construct();
+    }
+
+    public function getSubNodeNames(): array
+    {
+        return ['value'];
+    }
+
+    public static function fromArray(array $data): self
+    {
+        // @phpstan-ignore-next-line
+        return new self(StructureLiteral::fromArray($data['value']));
+    }
 }

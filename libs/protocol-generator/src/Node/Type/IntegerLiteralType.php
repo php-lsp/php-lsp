@@ -7,9 +7,17 @@ namespace Lsp\Protocol\Generator\Node\Type;
 /**
  * Represents an integer literal type (e.g. `kind: 1`).
  */
-final class IntegerLiteralType implements TypeInterface
+final class IntegerLiteralType extends Type
 {
     public function __construct(
-        public readonly int $value,
-    ) {}
+        public int $value,
+    ) {
+        parent::__construct();
+    }
+
+    public static function fromArray(array $data): self
+    {
+        // @phpstan-ignore-next-line
+        return new self($data['value']);
+    }
 }

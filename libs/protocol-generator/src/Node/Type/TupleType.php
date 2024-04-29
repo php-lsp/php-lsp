@@ -7,12 +7,28 @@ namespace Lsp\Protocol\Generator\Node\Type;
 /**
  * Represents a `tuple` type (e.g. `[integer, integer]`).
  */
-final class TupleType implements TypeInterface
+final class TupleType extends Type
 {
     /**
-     * @param list<TypeInterface> $items
+     * @param non-empty-list<TypeInterface> $items
      */
     public function __construct(
-        public readonly array $items,
-    ) {}
+        public array $items,
+    ) {
+        parent::__construct();
+    }
+
+    public function getSubNodeNames(): array
+    {
+        return ['items'];
+    }
+
+    public static function fromArray(array $data): self
+    {
+        /** @var non-empty-list<TypeInterface> $types */
+        // @phpstan-ignore-next-line
+        $types = \array_map(Type::fromArray(...), $data['items'] ?? []);
+
+        return new self($types);
+    }
 }

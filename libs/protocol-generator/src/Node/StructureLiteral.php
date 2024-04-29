@@ -7,11 +7,11 @@ namespace Lsp\Protocol\Generator\Node;
 /**
  * Defines an unnamed structure of an object literal.
  */
-final class StructureLiteral
+final class StructureLiteral extends Node
 {
     /**
      * @param list<Property> $properties The properties.
-     * @param string|null $documentation An optional documentation.
+     * @param non-empty-string|null $documentation An optional documentation.
      * @param non-empty-string|null $since Since when (release number) this
      *        structure is available. Is undefined if not known.
      * @param bool|null $proposed Whether this is a proposed structure. If
@@ -21,10 +21,38 @@ final class StructureLiteral
      *        deprecation message.
      */
     public function __construct(
-        public readonly array $properties,
-        public readonly ?string $documentation,
-        public readonly ?string $since,
-        public readonly ?bool $proposed,
-        public readonly ?string $deprecated,
-    ) {}
+        public array $properties,
+        public ?string $documentation,
+        public ?string $since,
+        public ?bool $proposed,
+        public ?string $deprecated,
+    ) {
+        parent::__construct();
+    }
+
+    public function getSubNodeNames(): array
+    {
+        return ['properties'];
+    }
+
+    /**
+     * @param array{
+     *     properties: list<array<array-key, mixed>>,
+     *     documentation?: non-empty-string,
+     *     since?: non-empty-string,
+     *     proposed?: bool,
+     *     deprecated?: non-empty-string,
+     * } $data
+     */
+    public static function fromArray(array $data): self
+    {
+        return new self(
+            // @phpstan-ignore-next-line
+            properties: \array_map(Property::fromArray(...), $data['properties'] ?? []),
+            documentation: $data['documentation'] ?? null,
+            since: $data['since'] ?? null,
+            proposed: $data['proposed'] ?? null,
+            deprecated: $data['deprecated'] ?? null,
+        );
+    }
 }
