@@ -24,7 +24,7 @@ class MappingException extends \RuntimeException implements MappingExceptionInte
         Context $context,
         string $message,
         int $code = 0,
-        ?\Throwable $previous = null
+        ?\Throwable $previous = null,
     ) {
         $this->context = $context;
 

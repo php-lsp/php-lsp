@@ -6,67 +6,65 @@ namespace Lsp\Protocol\Generator\Visitor;
 
 use Lsp\Protocol\Generator\Node\Enumeration;
 use Lsp\Protocol\Generator\Node\Enumeration\EnumerationEntry;
+use Lsp\Protocol\Generator\Node\Enumeration\EnumerationType;
 use Lsp\Protocol\Generator\Support\DocCommentBuilder;
 use Lsp\Protocol\Generator\Support\Name;
-use PhpParser\Node;
-use PhpParser\Node\Scalar\String_ as PhpStringScalar;
+use PhpParser\Comment\Doc;
+use PhpParser\Node as NodeInterface;
+use PhpParser\Node\Identifier;
 use PhpParser\Node\Scalar\Int_ as PhpIntScalar;
+use PhpParser\Node\Scalar\String_ as PhpStringScalar;
 use PhpParser\Node\Stmt\Enum_ as PhpEnumStatement;
 use PhpParser\Node\Stmt\EnumCase as PhpEnumCase;
 
 final class EnumNodeVisitor extends NodeVisitor
 {
-    public function enterNode(Node $node)
+    public function enterNode(NodeInterface $node): mixed
     {
         if (!$node instanceof Enumeration) {
             return null;
         }
 
-        $this->add($this->createPhpEnumStatement($node));
+        $this->add($this->createEnum($node));
 
         return null;
     }
 
-    private function createPhpEnumStatement(Enumeration $enum): PhpEnumStatement
+    private function createEnumDocBlock(Enumeration $enum): Doc
     {
-        $statement = new PhpEnumStatement($enum->name);
-
-        $statement->setDocComment(DocCommentBuilder::build(
+        return DocCommentBuilder::build(
             documentation: $enum->documentation,
             tags: [
                 'since' => $enum->since,
                 'deprecated' => $enum->deprecated,
                 'internal' => $enum->proposed === true ? 'This enum is not standardized' : null,
             ],
-        ));
+        );
+    }
 
-        $statement->scalarType = new Node\Identifier(match ($enum->type) {
-            Enumeration\EnumerationType::INTEGER,
-            Enumeration\EnumerationType::UINTEGER => 'int',
-            Enumeration\EnumerationType::STRING => 'string',
+    private function createEnum(Enumeration $enum): PhpEnumStatement
+    {
+        $withSuffixes = $this->hasReservedEnumCaseName($enum);
+
+        $statement = new PhpEnumStatement($enum->name);
+        $statement->setDocComment($this->createEnumDocBlock($enum));
+
+        $statement->scalarType = new Identifier(match ($enum->type) {
+            EnumerationType::INTEGER, EnumerationType::UINTEGER => 'int',
+            EnumerationType::STRING => 'string',
         });
 
         if ($enum->supportsCustomValues === true) {
             $this->addSupportOfCustomValues($enum, $statement);
         }
 
-        $hasReservedEnumCaseName = $this->hasReservedEnumCaseName($enum);
-
         $statement->stmts = [];
+
         foreach ($enum->values as $entry) {
-            $statement->stmts[] = $this->createPhpEnumCase($entry, $hasReservedEnumCaseName);
+            $statement->stmts[] = $this->createEnumCase($entry, $withSuffixes ? 'Type' : '');
         }
 
         return $statement;
-    }
-
-    private function hasReservedEnumCaseName(Enumeration $enum): bool
-    {
-        $names = \array_map(static function (EnumerationEntry $entry): string {
-            return $entry->name;
-        }, $enum->values);
-
-        return Name::containsReserved($names);
     }
 
     private function addSupportOfCustomValues(Enumeration $enum, PhpEnumStatement $stmt): void
@@ -74,25 +72,30 @@ final class EnumNodeVisitor extends NodeVisitor
         // TODO
     }
 
-    private function createPhpEnumCase(EnumerationEntry $entry, bool $hasReservedEnumCaseName): PhpEnumCase
+    private function hasReservedEnumCaseName(Enumeration $enum): bool
     {
-        $name = \ucfirst($entry->name);
+        $names = \array_map(static fn(EnumerationEntry $entry): string
+            => $entry->name, $enum->values);
 
-        if ($hasReservedEnumCaseName) {
-            $name .= 'Type';
-        }
+        return Name::containsReserved($names);
+    }
 
-        $statement = new PhpEnumCase($name);
-
-        $statement->setDocComment(DocCommentBuilder::build(
+    private function createEnumCaseDocBlock(EnumerationEntry $entry): Doc
+    {
+        return DocCommentBuilder::build(
             documentation: $entry->documentation,
             tags: [
                 'since' => $entry->since,
                 'deprecated' => $entry->deprecated,
                 'internal' => $entry->proposed === true ? 'This case is not standardized' : null,
             ],
-        ));
+        );
+    }
 
+    private function createEnumCase(EnumerationEntry $entry, string $suffix = ''): PhpEnumCase
+    {
+        $statement = new PhpEnumCase(\ucfirst($entry->name) . $suffix);
+        $statement->setDocComment($this->createEnumCaseDocBlock($entry));
         $statement->expr = match (true) {
             \is_string($entry->value) => new PhpStringScalar($entry->value),
             \is_int($entry->value) => new PhpIntScalar($entry->value),

@@ -57,10 +57,6 @@ final class Generator
 
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new EnumNodeVisitor($types));
-
-        $traverser->addVisitor(new NotificationNodeVisitor($types));
-        $traverser->addVisitor(new RequestNodeVisitor($types));
-
         $traverser->traverse([$model]);
 
         return $types;

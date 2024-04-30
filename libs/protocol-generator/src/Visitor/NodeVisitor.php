@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Generator\Visitor;
 
 use PhpParser\Node as PhpNodeInterface;
 use PhpParser\Node\Name;
+use PhpParser\Node\Stmt;
 use PhpParser\Node\Stmt\ClassLike;
 use PhpParser\Node\Stmt\Namespace_ as PhpNamespaceStatement;
 
@@ -18,16 +19,23 @@ abstract class NodeVisitor extends Visitor
         private readonly \ArrayObject $types,
     ) {}
 
-    protected function createNamespaceFor(ClassLike $stmt): Name
+    /**
+     * @param list<Stmt> $before
+     */
+    protected function createNamespace(ClassLike $stmt, array $before = []): PhpNamespaceStatement
     {
-        return new Name('Lsp\Protocol');
+        return new PhpNamespaceStatement(
+            name: new Name('Lsp\Protocol'),
+            stmts: [...$before, $stmt],
+        );
     }
 
-    protected function add(ClassLike $stmt): void
+    protected function add(PhpNodeInterface $stmt): void
     {
-        $this->types->append(new PhpNamespaceStatement(
-            name: $this->createNamespaceFor($stmt),
-            stmts: [$stmt],
-        ));
+        if ($stmt instanceof ClassLike) {
+            $stmt = $this->createNamespace($stmt);
+        }
+
+        $this->types->append($stmt);
     }
 }

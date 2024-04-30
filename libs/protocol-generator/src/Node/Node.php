@@ -13,7 +13,7 @@ abstract class Node extends NodeAbstract
      */
     public function getType(): string
     {
-        $offset = \strrpos(static::class, '\\');
+        $offset = (int) \strrpos(static::class, '\\');
 
         /** @var non-empty-string */
         return \substr(static::class, $offset);
