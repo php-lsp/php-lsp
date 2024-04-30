@@ -14,6 +14,7 @@ final class Name
             'enum',
             'interface',
             'function',
+            'exit',
         ], true);
     }
 

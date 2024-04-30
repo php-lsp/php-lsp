@@ -16,7 +16,7 @@ enum PositionEncodingKind: string
 
     /**
      * Character offsets count UTF-16 code units.
-     * 
+     *
      * This is the default and must always be supported
      * by servers
      */
@@ -24,7 +24,7 @@ enum PositionEncodingKind: string
 
     /**
      * Character offsets count UTF-32 code units.
-     * 
+     *
      * Implementation note: these are the same as Unicode codepoints,
      * so this `PositionEncodingKind` may also be used for an
      * encoding-agnostic representation of character offsets.

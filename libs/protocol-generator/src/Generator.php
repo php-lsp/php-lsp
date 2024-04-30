@@ -7,6 +7,8 @@ namespace Lsp\Protocol\Generator;
 use Lsp\Protocol\Generator\Node\MetaModel;
 use Lsp\Protocol\Generator\Printer\Per2Printer;
 use Lsp\Protocol\Generator\Visitor\EnumNodeVisitor;
+use Lsp\Protocol\Generator\Visitor\NotificationNodeVisitor;
+use Lsp\Protocol\Generator\Visitor\RequestNodeVisitor;
 use PhpParser\Node as PhpNodeInterface;
 use PhpParser\Node\Stmt\ClassLike as PhpClassLikeStatement;
 use PhpParser\NodeTraverser;
@@ -55,6 +57,10 @@ final class Generator
 
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new EnumNodeVisitor($types));
+
+        $traverser->addVisitor(new NotificationNodeVisitor($types));
+        $traverser->addVisitor(new RequestNodeVisitor($types));
+
         $traverser->traverse([$model]);
 
         return $types;

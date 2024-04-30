@@ -2,7 +2,6 @@
 
 namespace Lsp\Protocol;
 
-
 enum LSPErrorCodes: int
 {
     /**
@@ -30,7 +29,7 @@ enum LSPErrorCodes: int
      * NOT send this error code if it detects a content change
      * in it unprocessed messages. The result even computed
      * on an older state might still be useful for the client.
-     * 
+     *
      * If a client decides that a result is not of any use anymore
      * the client should cancel the request.
      */

@@ -16,7 +16,7 @@ enum CodeActionTriggerKind: int
 
     /**
      * Code actions were requested automatically.
-     * 
+     *
      * This typically happens when current selection in a file changes, but can
      * also be triggered when file content changes.
      */

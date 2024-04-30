@@ -11,7 +11,6 @@ namespace Lsp\Protocol;
  */
 enum SemanticTokenTypes: string
 {
-    
     case NamespaceType = 'namespace';
 
     /**
@@ -20,64 +19,64 @@ enum SemanticTokenTypes: string
      */
     case TypeType = 'type';
 
-    
+
     case ClassType = 'class';
 
-    
+
     case EnumType = 'enum';
 
-    
+
     case InterfaceType = 'interface';
 
-    
+
     case StructType = 'struct';
 
-    
+
     case TypeParameterType = 'typeParameter';
 
-    
+
     case ParameterType = 'parameter';
 
-    
+
     case VariableType = 'variable';
 
-    
+
     case PropertyType = 'property';
 
-    
+
     case EnumMemberType = 'enumMember';
 
-    
+
     case EventType = 'event';
 
-    
+
     case FunctionType = 'function';
 
-    
+
     case MethodType = 'method';
 
-    
+
     case MacroType = 'macro';
 
-    
+
     case KeywordType = 'keyword';
 
-    
+
     case ModifierType = 'modifier';
 
-    
+
     case CommentType = 'comment';
 
-    
+
     case StringType = 'string';
 
-    
+
     case NumberType = 'number';
 
-    
+
     case RegexpType = 'regexp';
 
-    
+
     case OperatorType = 'operator';
 
     /**

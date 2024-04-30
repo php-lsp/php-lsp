@@ -7,19 +7,18 @@ namespace Lsp\Protocol;
  */
 enum ErrorCodes: int
 {
-    
     case ParseError = -32700;
 
-    
+
     case InvalidRequest = -32600;
 
-    
+
     case MethodNotFound = -32601;
 
-    
+
     case InvalidParams = -32602;
 
-    
+
     case InternalError = -32603;
 
     /**
@@ -28,6 +27,6 @@ enum ErrorCodes: int
      */
     case ServerNotInitialized = -32002;
 
-    
+
     case UnknownErrorCode = -32001;
 }

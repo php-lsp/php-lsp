@@ -31,7 +31,7 @@ final class Per2Printer extends Standard
      *
      * @param array<array-key, Node> $nodes Array of nodes
      */
-    protected function pStmts(array $nodes, bool $indent = \true) : string
+    protected function pStmts(array $nodes, bool $indent = \true): string
     {
         if ($indent) {
             $this->indent();

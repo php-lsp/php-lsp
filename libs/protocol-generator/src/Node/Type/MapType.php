@@ -12,7 +12,7 @@ final class MapType extends Type
 {
     public function __construct(
         public KeyTypeInterface $key,
-        public TypeInterface $value
+        public TypeInterface $value,
     ) {
         parent::__construct();
     }

@@ -11,33 +11,32 @@ namespace Lsp\Protocol;
  */
 enum SemanticTokenModifiers: string
 {
-    
     case Declaration = 'declaration';
 
-    
+
     case Definition = 'definition';
 
-    
+
     case Readonly = 'readonly';
 
-    
+
     case Static = 'static';
 
-    
+
     case Deprecated = 'deprecated';
 
-    
+
     case Abstract = 'abstract';
 
-    
+
     case Async = 'async';
 
-    
+
     case Modification = 'modification';
 
-    
+
     case Documentation = 'documentation';
 
-    
+
     case DefaultLibrary = 'defaultLibrary';
 }

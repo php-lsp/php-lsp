@@ -2,7 +2,6 @@
 
 namespace Lsp\Protocol;
 
-
 enum TraceValues: string
 {
     /**

@@ -28,11 +28,14 @@ abstract class Type extends Node implements TypeInterface
             'integerLiteral' => IntegerLiteralType::fromArray($data),
             'booleanLiteral' => BooleanLiteralType::fromArray($data),
             default => throw new \InvalidArgumentException(
-                message: \vsprintf('Invalid type kind "%s": %s', [
-                    $data['kind'],
-                    \json_encode($data, \JSON_PRETTY_PRINT),
-                ],
-            )),
+                message: \vsprintf(
+                    'Invalid type kind "%s": %s',
+                    [
+                        $data['kind'],
+                        \json_encode($data, \JSON_PRETTY_PRINT),
+                    ],
+                ),
+            ),
         };
     }
 }
