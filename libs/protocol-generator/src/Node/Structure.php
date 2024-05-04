@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Protocol\Generator\Node;
 
+use Lsp\Protocol\Generator\Node\Type\ReferenceType;
 use Lsp\Protocol\Generator\Node\Type\Type;
 use Lsp\Protocol\Generator\Node\Type\TypeInterface;
 
@@ -12,6 +13,16 @@ use Lsp\Protocol\Generator\Node\Type\TypeInterface;
  */
 final class Structure extends Definition
 {
+    /**
+     * @var non-empty-string
+     */
+    private const ATTR_USED_AS_MIXIN = 'used_as_mixin';
+
+    /**
+     * @var non-empty-string
+     */
+    private const ATTR_USED_AS_PARENT = 'used_as_parent';
+
     /**
      * @param non-empty-string $name The name of the structure.
      * @param list<TypeInterface>|null $extends Structures extended from. This
@@ -45,6 +56,59 @@ final class Structure extends Definition
             proposed: $proposed,
             deprecated: $deprecated,
         );
+    }
+
+    /**
+     * @return iterable<array-key, Property>
+     */
+    public function getProperties(MetaModel $ctx): iterable
+    {
+        yield from $this->properties;
+
+        foreach ([...($this->extends ?? []), ...($this->mixins ?? [])] as $ref) {
+            if (!$ref instanceof ReferenceType) {
+                continue;
+            }
+
+            $struct = $ctx->findReference($ref);
+
+            if (!$struct instanceof Structure) {
+                continue;
+            }
+
+            foreach ($struct->getProperties($ctx) as $property) {
+                yield (clone $property)->markAsInherited();
+            }
+        }
+    }
+
+    public function isStandalone(): bool
+    {
+        return !$this->isMixin() && !$this->isParent();
+    }
+
+    public function markAsMixin(): self
+    {
+        $this->setAttribute(self::ATTR_USED_AS_MIXIN, true);
+
+        return $this;
+    }
+
+    public function isMixin(): bool
+    {
+        return (bool) $this->getAttribute(self::ATTR_USED_AS_MIXIN, false);
+    }
+
+    public function markAsParent(): self
+    {
+        $this->setAttribute(self::ATTR_USED_AS_PARENT, true);
+
+        return $this;
+    }
+
+    public function isParent(): bool
+    {
+        return (bool) $this->getAttribute(self::ATTR_USED_AS_PARENT, false);
     }
 
     public function getSubNodeNames(): array

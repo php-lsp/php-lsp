@@ -17,7 +17,9 @@
     ],
     "require": {
         "php": "^8.1",
-        "nikic/php-parser": "^4.19|^5.0"
+        "nikic/php-parser": "^4.19|^5.0",
+        "type-lang/parser": "^1.0",
+        "type-lang/printer": "^1.0"
     },
     "autoload": {
         "psr-4": {

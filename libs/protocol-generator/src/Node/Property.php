@@ -13,6 +13,11 @@ use Lsp\Protocol\Generator\Node\Type\TypeInterface;
 final class Property extends Definition
 {
     /**
+     * @var non-empty-string
+     */
+    private const ATTR_IS_INHERITED = 'is_inherited';
+
+    /**
      * @param non-empty-string $name The property name.
      * @param TypeInterface $type The type of the property.
      * @param bool|null $optional Whether the property is optional. If omitted,
@@ -41,6 +46,18 @@ final class Property extends Definition
             proposed: $proposed,
             deprecated: $deprecated,
         );
+    }
+
+    public function isInherited(): bool
+    {
+        return (bool) $this->getAttribute(self::ATTR_IS_INHERITED, false);
+    }
+
+    public function markAsInherited(): self
+    {
+        $this->setAttribute(self::ATTR_IS_INHERITED, true);
+
+        return $this;
     }
 
     public function getSubNodeNames(): array

@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Lsp\Protocol\Generator\Visitor;
 
+use Lsp\Protocol\Generator\DocBlock\DefinitionBuilder;
 use Lsp\Protocol\Generator\Node\Enumeration;
 use Lsp\Protocol\Generator\Node\Enumeration\EnumerationEntry;
 use Lsp\Protocol\Generator\Node\Enumeration\EnumerationType;
-use Lsp\Protocol\Generator\Support\DocCommentBuilder;
-use Lsp\Protocol\Generator\Support\Name;
-use PhpParser\Comment\Doc;
 use PhpParser\Node as NodeInterface;
 use PhpParser\Node\Identifier;
 use PhpParser\Node\Scalar\Int_ as PhpIntScalar;
@@ -30,24 +28,13 @@ final class EnumNodeVisitor extends NodeVisitor
         return null;
     }
 
-    private function createEnumDocBlock(Enumeration $enum): Doc
-    {
-        return DocCommentBuilder::build(
-            documentation: $enum->documentation,
-            tags: [
-                'since' => $enum->since,
-                'deprecated' => $enum->deprecated,
-                'internal' => $enum->proposed === true ? 'This enum is not standardized' : null,
-            ],
-        );
-    }
-
     private function createEnum(Enumeration $enum): PhpEnumStatement
     {
         $withSuffixes = $this->hasReservedEnumCaseName($enum);
 
         $statement = new PhpEnumStatement($enum->name);
-        $statement->setDocComment($this->createEnumDocBlock($enum));
+
+        DefinitionBuilder::makeIfNotEmpty($enum, $statement->setDocComment(...));
 
         $statement->scalarType = new Identifier(match ($enum->type) {
             EnumerationType::INTEGER, EnumerationType::UINTEGER => 'int',
@@ -77,30 +64,45 @@ final class EnumNodeVisitor extends NodeVisitor
         $names = \array_map(static fn(EnumerationEntry $entry): string
             => $entry->name, $enum->values);
 
-        return Name::containsReserved($names);
-    }
-
-    private function createEnumCaseDocBlock(EnumerationEntry $entry): Doc
-    {
-        return DocCommentBuilder::build(
-            documentation: $entry->documentation,
-            tags: [
-                'since' => $entry->since,
-                'deprecated' => $entry->deprecated,
-                'internal' => $entry->proposed === true ? 'This case is not standardized' : null,
-            ],
-        );
+        return self::containsReservedName($names);
     }
 
     private function createEnumCase(EnumerationEntry $entry, string $suffix = ''): PhpEnumCase
     {
         $statement = new PhpEnumCase(\ucfirst($entry->name) . $suffix);
-        $statement->setDocComment($this->createEnumCaseDocBlock($entry));
+        DefinitionBuilder::makeIfNotEmpty($entry, $statement->setDocComment(...));
+
         $statement->expr = match (true) {
             \is_string($entry->value) => new PhpStringScalar($entry->value),
             \is_int($entry->value) => new PhpIntScalar($entry->value),
         };
 
         return $statement;
+    }
+
+    private static function isReservedName(string $name): bool
+    {
+        return \in_array(\strtolower($name), [
+            'namespace',
+            'class',
+            'enum',
+            'interface',
+            'function',
+            'exit',
+        ], true);
+    }
+
+    /**
+     * @param array<array-key, string> $names
+     */
+    private static function containsReservedName(array $names): bool
+    {
+        foreach ($names as $name) {
+            if (self::isReservedName($name)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

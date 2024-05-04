@@ -7,8 +7,9 @@ namespace Lsp\Protocol\Generator;
 use Lsp\Protocol\Generator\Node\MetaModel;
 use Lsp\Protocol\Generator\Printer\Per2Printer;
 use Lsp\Protocol\Generator\Visitor\EnumNodeVisitor;
-use Lsp\Protocol\Generator\Visitor\NotificationNodeVisitor;
-use Lsp\Protocol\Generator\Visitor\RequestNodeVisitor;
+use Lsp\Protocol\Generator\Visitor\MixinNodeVisitor;
+use Lsp\Protocol\Generator\Visitor\StructInheritanceNodeVisitor;
+use Lsp\Protocol\Generator\Visitor\StandaloneStructNodeVisitor;
 use PhpParser\Node as PhpNodeInterface;
 use PhpParser\Node\Stmt\ClassLike as PhpClassLikeStatement;
 use PhpParser\NodeTraverser;
@@ -49,14 +50,18 @@ final class Generator
     }
 
     /**
+     * @param non-empty-string $namespace
      * @return \ArrayObject<array-key, PhpNodeInterface>
      */
-    public function transform(MetaModel $model): \ArrayObject
+    public function transform(MetaModel $model, string $namespace): \ArrayObject
     {
         $types = new \ArrayObject();
 
         $traverser = new NodeTraverser();
-        $traverser->addVisitor(new EnumNodeVisitor($types));
+        $traverser->addVisitor(new StructInheritanceNodeVisitor());
+        $traverser->addVisitor(new EnumNodeVisitor($types, $namespace));
+        $traverser->addVisitor(new StandaloneStructNodeVisitor($types, $namespace));
+        $traverser->addVisitor(new MixinNodeVisitor($types, $namespace));
         $traverser->traverse([$model]);
 
         return $types;
@@ -64,9 +69,10 @@ final class Generator
 
     private function getTypeVisitor(): FirstFindingVisitor
     {
-        return new FirstFindingVisitor(static function (PhpNodeInterface $node): bool {
-            return $node instanceof PhpClassLikeStatement;
-        });
+        $callback = static fn(PhpNodeInterface $node): bool
+            => $node instanceof PhpClassLikeStatement;
+
+        return new FirstFindingVisitor($callback);
     }
 
     /**
@@ -110,9 +116,9 @@ final class Generator
      * @param non-empty-string $directory
      * @throws \JsonException
      */
-    public function save(string $directory, string $namespace = 'Lsp\\Protocol'): void
+    public function save(string $directory, string $namespace = 'Lsp\\Protocol\\Type'): void
     {
-        $types = $this->transform($this->parse());
+        $types = $this->transform($this->parse(), $namespace);
 
         foreach ($types as $type) {
             $pathname = $directory . '/' . $this->getFilename($type, $namespace);

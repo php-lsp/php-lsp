@@ -14,9 +14,11 @@ abstract class NodeVisitor extends Visitor
 {
     /**
      * @param \ArrayObject<array-key, PhpNodeInterface> $types
+     * @param non-empty-string $namespace
      */
     public function __construct(
         private readonly \ArrayObject $types,
+        private readonly string $namespace,
     ) {}
 
     /**
@@ -25,7 +27,7 @@ abstract class NodeVisitor extends Visitor
     protected function createNamespace(ClassLike $stmt, array $before = []): PhpNamespaceStatement
     {
         return new PhpNamespaceStatement(
-            name: new Name('Lsp\Protocol'),
+            name: new Name($this->namespace),
             stmts: [...$before, $stmt],
         );
     }

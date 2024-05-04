@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Lsp\Protocol\Generator\Node;
 
+use Lsp\Protocol\Generator\Node\Type\ReferenceType;
+use Lsp\Protocol\Generator\Node\Type\TypeInterface;
+
 /**
  * The actual meta model.
  */
@@ -26,6 +29,34 @@ final class MetaModel extends Node
         public array $typeAliases,
     ) {
         parent::__construct();
+    }
+
+    public function findReferenceFromAliases(ReferenceType $ref): ?TypeInterface
+    {
+        foreach ($this->typeAliases as $alias) {
+            if ($alias->name === $ref->name) {
+                return $alias->type;
+            }
+        }
+
+        return null;
+    }
+
+    public function findReference(ReferenceType $ref): ?Definition
+    {
+        foreach ($this->structures as $structure) {
+            if ($structure->name === $ref->name) {
+                return $structure;
+            }
+        }
+
+        foreach ($this->enumerations as $enum) {
+            if ($enum->name === $ref->name) {
+                return $enum;
+            }
+        }
+
+        return null;
     }
 
     public function getSubNodeNames(): array
