@@ -11,10 +11,10 @@ class ResourceOperation
 {
     use ResourceOperationMixin;
 
-    function __construct(string $kind, string $annotationId)
+    public function __construct(string $kind, string $annotationId)
     {
-            $this->kind = $kind;
-    
-            $this->annotationId = $annotationId;
+        $this->kind = $kind;
+
+        $this->annotationId = $annotationId;
     }
 }

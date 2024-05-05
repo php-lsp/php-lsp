@@ -14,8 +14,8 @@ class TextDocumentRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    function __construct(array|null $documentSelector)
+    public function __construct(array|null $documentSelector)
     {
-            $this->documentSelector = $documentSelector;
+        $this->documentSelector = $documentSelector;
     }
 }

@@ -22,8 +22,8 @@ final class RenameFile
         public readonly RenameFileOptions $options,
         string $annotationId,
     ) {
-            $this->kind = $kind;
-    
-            $this->annotationId = $annotationId;
+        $this->kind = $kind;
+
+        $this->annotationId = $annotationId;
     }
 }

@@ -21,6 +21,6 @@ final class InlineValueParams
         public readonly InlineValueContext $context,
         int|string $workDoneToken,
     ) {
-            $this->workDoneToken = $workDoneToken;
+        $this->workDoneToken = $workDoneToken;
     }
 }

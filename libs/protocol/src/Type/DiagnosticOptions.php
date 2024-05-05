@@ -12,18 +12,18 @@ class DiagnosticOptions
 {
     use DiagnosticOptionsMixin;
 
-    function __construct(
+    public function __construct(
         string $identifier,
         bool $interFileDependencies,
         bool $workspaceDiagnostics,
         bool $workDoneProgress,
     ) {
-            $this->identifier = $identifier;
-    
-            $this->interFileDependencies = $interFileDependencies;
-    
-            $this->workspaceDiagnostics = $workspaceDiagnostics;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->identifier = $identifier;
+
+        $this->interFileDependencies = $interFileDependencies;
+
+        $this->workspaceDiagnostics = $workspaceDiagnostics;
+
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

@@ -20,8 +20,8 @@ final class DeleteFile
         public readonly DeleteFileOptions $options,
         string $annotationId,
     ) {
-            $this->kind = $kind;
-    
-            $this->annotationId = $annotationId;
+        $this->kind = $kind;
+
+        $this->annotationId = $annotationId;
     }
 }

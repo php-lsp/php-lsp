@@ -18,10 +18,10 @@ final class DocumentSymbolRegistrationOptions
      */
     final public function __construct(array|null $documentSelector, string $label, bool $workDoneProgress)
     {
-            $this->documentSelector = $documentSelector;
-    
-            $this->label = $label;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->documentSelector = $documentSelector;
+
+        $this->label = $label;
+
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

@@ -25,16 +25,16 @@ final class SemanticTokensRegistrationOptions
         bool $workDoneProgress,
         string $id,
     ) {
-            $this->documentSelector = $documentSelector;
-    
-            $this->legend = $legend;
-    
-            $this->range = $range;
-    
-            $this->full = $full;
-    
-            $this->workDoneProgress = $workDoneProgress;
-    
-            $this->id = $id;
+        $this->documentSelector = $documentSelector;
+
+        $this->legend = $legend;
+
+        $this->range = $range;
+
+        $this->full = $full;
+
+        $this->workDoneProgress = $workDoneProgress;
+
+        $this->id = $id;
     }
 }

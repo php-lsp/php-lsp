@@ -23,12 +23,12 @@ final class CodeActionRegistrationOptions
         bool $resolveProvider,
         bool $workDoneProgress,
     ) {
-            $this->documentSelector = $documentSelector;
-    
-            $this->codeActionKinds = $codeActionKinds;
-    
-            $this->resolveProvider = $resolveProvider;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->documentSelector = $documentSelector;
+
+        $this->codeActionKinds = $codeActionKinds;
+
+        $this->resolveProvider = $resolveProvider;
+
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

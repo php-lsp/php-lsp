@@ -20,6 +20,6 @@ final class DocumentRangeFormattingParams
         public readonly FormattingOptions $options,
         int|string $workDoneToken,
     ) {
-            $this->workDoneToken = $workDoneToken;
+        $this->workDoneToken = $workDoneToken;
     }
 }

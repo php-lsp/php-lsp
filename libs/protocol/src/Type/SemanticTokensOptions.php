@@ -10,18 +10,18 @@ class SemanticTokensOptions
 {
     use SemanticTokensOptionsMixin;
 
-    function __construct(
+    public function __construct(
         SemanticTokensLegend $legend,
         bool|SemanticTokensOptionsRange $range,
         bool|SemanticTokensOptionsFull $full,
         bool $workDoneProgress,
     ) {
-            $this->legend = $legend;
-    
-            $this->range = $range;
-    
-            $this->full = $full;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->legend = $legend;
+
+        $this->range = $range;
+
+        $this->full = $full;
+
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

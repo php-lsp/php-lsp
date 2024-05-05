@@ -14,8 +14,8 @@ class TextDocumentIdentifier
     /**
      * @param non-empty-string $uri
      */
-    function __construct(string $uri)
+    public function __construct(string $uri)
     {
-            $this->uri = $uri;
+        $this->uri = $uri;
     }
 }

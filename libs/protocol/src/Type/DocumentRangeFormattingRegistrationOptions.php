@@ -18,10 +18,10 @@ final class DocumentRangeFormattingRegistrationOptions
      */
     final public function __construct(array|null $documentSelector, bool $rangesSupport, bool $workDoneProgress)
     {
-            $this->documentSelector = $documentSelector;
-    
-            $this->rangesSupport = $rangesSupport;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->documentSelector = $documentSelector;
+
+        $this->rangesSupport = $rangesSupport;
+
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

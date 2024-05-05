@@ -20,6 +20,6 @@ final class RenameParams
         public readonly string $newName,
         int|string $workDoneToken,
     ) {
-            $this->workDoneToken = $workDoneToken;
+        $this->workDoneToken = $workDoneToken;
     }
 }

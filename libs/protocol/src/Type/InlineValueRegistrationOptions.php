@@ -21,10 +21,10 @@ final class InlineValueRegistrationOptions
      */
     final public function __construct(bool $workDoneProgress, array|null $documentSelector, string $id)
     {
-            $this->workDoneProgress = $workDoneProgress;
-    
-            $this->documentSelector = $documentSelector;
-    
-            $this->id = $id;
+        $this->workDoneProgress = $workDoneProgress;
+
+        $this->documentSelector = $documentSelector;
+
+        $this->id = $id;
     }
 }

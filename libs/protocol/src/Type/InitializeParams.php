@@ -29,24 +29,24 @@ final class InitializeParams
         int|string $workDoneToken,
         array|null $workspaceFolders,
     ) {
-            $this->processId = $processId;
-    
-            $this->clientInfo = $clientInfo;
-    
-            $this->locale = $locale;
-    
-            $this->rootPath = $rootPath;
-    
-            $this->rootUri = $rootUri;
-    
-            $this->capabilities = $capabilities;
-    
-            $this->initializationOptions = $initializationOptions;
-    
-            $this->trace = $trace;
-    
-            $this->workDoneToken = $workDoneToken;
-    
-            $this->workspaceFolders = $workspaceFolders;
+        $this->processId = $processId;
+
+        $this->clientInfo = $clientInfo;
+
+        $this->locale = $locale;
+
+        $this->rootPath = $rootPath;
+
+        $this->rootUri = $rootUri;
+
+        $this->capabilities = $capabilities;
+
+        $this->initializationOptions = $initializationOptions;
+
+        $this->trace = $trace;
+
+        $this->workDoneToken = $workDoneToken;
+
+        $this->workspaceFolders = $workspaceFolders;
     }
 }

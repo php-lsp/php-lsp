@@ -22,10 +22,10 @@ final class RelatedFullDocumentDiagnosticReport
         string $resultId,
         array $items,
     ) {
-            $this->kind = $kind;
-    
-            $this->resultId = $resultId;
-    
-            $this->items = $items;
+        $this->kind = $kind;
+
+        $this->resultId = $resultId;
+
+        $this->items = $items;
     }
 }

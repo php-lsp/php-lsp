@@ -12,8 +12,8 @@ abstract class PartialResultParams
     /**
      * @param int<-2147483648, 2147483647>|string $partialResultToken
      */
-    function __construct(int|string $partialResultToken)
+    public function __construct(int|string $partialResultToken)
     {
-            $this->partialResultToken = $partialResultToken;
+        $this->partialResultToken = $partialResultToken;
     }
 }

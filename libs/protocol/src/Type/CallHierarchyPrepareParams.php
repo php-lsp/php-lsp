@@ -19,10 +19,10 @@ final class CallHierarchyPrepareParams
      */
     final public function __construct(TextDocumentIdentifier $textDocument, Position $position, int|string $workDoneToken)
     {
-            $this->textDocument = $textDocument;
-    
-            $this->position = $position;
-    
-            $this->workDoneToken = $workDoneToken;
+        $this->textDocument = $textDocument;
+
+        $this->position = $position;
+
+        $this->workDoneToken = $workDoneToken;
     }
 }

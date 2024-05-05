@@ -18,8 +18,8 @@ final class TextDocumentSaveRegistrationOptions
      */
     final public function __construct(array|null $documentSelector, bool $includeText)
     {
-            $this->documentSelector = $documentSelector;
-    
-            $this->includeText = $includeText;
+        $this->documentSelector = $documentSelector;
+
+        $this->includeText = $includeText;
     }
 }

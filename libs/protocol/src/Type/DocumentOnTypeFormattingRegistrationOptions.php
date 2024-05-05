@@ -19,10 +19,10 @@ final class DocumentOnTypeFormattingRegistrationOptions
      */
     final public function __construct(array|null $documentSelector, string $firstTriggerCharacter, array $moreTriggerCharacter)
     {
-            $this->documentSelector = $documentSelector;
-    
-            $this->firstTriggerCharacter = $firstTriggerCharacter;
-    
-            $this->moreTriggerCharacter = $moreTriggerCharacter;
+        $this->documentSelector = $documentSelector;
+
+        $this->firstTriggerCharacter = $firstTriggerCharacter;
+
+        $this->moreTriggerCharacter = $moreTriggerCharacter;
     }
 }

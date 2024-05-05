@@ -25,12 +25,12 @@ final class InlayHintRegistrationOptions
         array|null $documentSelector,
         string $id,
     ) {
-            $this->resolveProvider = $resolveProvider;
-    
-            $this->workDoneProgress = $workDoneProgress;
-    
-            $this->documentSelector = $documentSelector;
-    
-            $this->id = $id;
+        $this->resolveProvider = $resolveProvider;
+
+        $this->workDoneProgress = $workDoneProgress;
+
+        $this->documentSelector = $documentSelector;
+
+        $this->id = $id;
     }
 }

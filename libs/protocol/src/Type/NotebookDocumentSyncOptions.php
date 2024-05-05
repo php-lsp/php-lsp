@@ -25,10 +25,10 @@ class NotebookDocumentSyncOptions
     /**
      * @param list<NotebookDocumentSyncOptionsNotebookSelector> $notebookSelector
      */
-    function __construct(array $notebookSelector, bool $save)
+    public function __construct(array $notebookSelector, bool $save)
     {
-            $this->notebookSelector = $notebookSelector;
-    
-            $this->save = $save;
+        $this->notebookSelector = $notebookSelector;
+
+        $this->save = $save;
     }
 }

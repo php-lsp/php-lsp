@@ -13,10 +13,10 @@ class UnchangedDocumentDiagnosticReport
 {
     use UnchangedDocumentDiagnosticReportMixin;
 
-    function __construct(string $kind, string $resultId)
+    public function __construct(string $kind, string $resultId)
     {
-            $this->kind = $kind;
-    
-            $this->resultId = $resultId;
+        $this->kind = $kind;
+
+        $this->resultId = $resultId;
     }
 }

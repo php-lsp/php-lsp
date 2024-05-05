@@ -13,8 +13,8 @@ final class WorkspaceSymbolRegistrationOptions
 
     final public function __construct(bool $resolveProvider, bool $workDoneProgress)
     {
-            $this->resolveProvider = $resolveProvider;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->resolveProvider = $resolveProvider;
+
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

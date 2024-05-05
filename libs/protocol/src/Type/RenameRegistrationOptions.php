@@ -18,10 +18,10 @@ final class RenameRegistrationOptions
      */
     final public function __construct(array|null $documentSelector, bool $prepareProvider, bool $workDoneProgress)
     {
-            $this->documentSelector = $documentSelector;
-    
-            $this->prepareProvider = $prepareProvider;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->documentSelector = $documentSelector;
+
+        $this->prepareProvider = $prepareProvider;
+
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

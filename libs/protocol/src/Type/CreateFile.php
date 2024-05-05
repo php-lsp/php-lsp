@@ -20,8 +20,8 @@ final class CreateFile
         public readonly CreateFileOptions $options,
         string $annotationId,
     ) {
-            $this->kind = $kind;
-    
-            $this->annotationId = $annotationId;
+        $this->kind = $kind;
+
+        $this->annotationId = $annotationId;
     }
 }

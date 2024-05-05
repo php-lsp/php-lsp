@@ -14,12 +14,12 @@ class CodeActionOptions
     /**
      * @param list<CodeActionKind> $codeActionKinds
      */
-    function __construct(array $codeActionKinds, bool $resolveProvider, bool $workDoneProgress)
+    public function __construct(array $codeActionKinds, bool $resolveProvider, bool $workDoneProgress)
     {
-            $this->codeActionKinds = $codeActionKinds;
-    
-            $this->resolveProvider = $resolveProvider;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->codeActionKinds = $codeActionKinds;
+
+        $this->resolveProvider = $resolveProvider;
+
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

@@ -18,10 +18,10 @@ final class FoldingRangeRegistrationOptions
      */
     final public function __construct(array|null $documentSelector, bool $workDoneProgress, string $id)
     {
-            $this->documentSelector = $documentSelector;
-    
-            $this->workDoneProgress = $workDoneProgress;
-    
-            $this->id = $id;
+        $this->documentSelector = $documentSelector;
+
+        $this->workDoneProgress = $workDoneProgress;
+
+        $this->id = $id;
     }
 }

@@ -14,10 +14,10 @@ class DocumentOnTypeFormattingOptions
     /**
      * @param list<string> $moreTriggerCharacter
      */
-    function __construct(string $firstTriggerCharacter, array $moreTriggerCharacter)
+    public function __construct(string $firstTriggerCharacter, array $moreTriggerCharacter)
     {
-            $this->firstTriggerCharacter = $firstTriggerCharacter;
-    
-            $this->moreTriggerCharacter = $moreTriggerCharacter;
+        $this->firstTriggerCharacter = $firstTriggerCharacter;
+
+        $this->moreTriggerCharacter = $moreTriggerCharacter;
     }
 }

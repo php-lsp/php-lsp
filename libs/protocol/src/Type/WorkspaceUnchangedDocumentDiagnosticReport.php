@@ -22,8 +22,8 @@ final class WorkspaceUnchangedDocumentDiagnosticReport
         string $kind,
         string $resultId,
     ) {
-            $this->kind = $kind;
-    
-            $this->resultId = $resultId;
+        $this->kind = $kind;
+
+        $this->resultId = $resultId;
     }
 }

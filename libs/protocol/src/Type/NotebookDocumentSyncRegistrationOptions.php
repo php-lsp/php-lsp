@@ -19,10 +19,10 @@ final class NotebookDocumentSyncRegistrationOptions
      */
     final public function __construct(array $notebookSelector, bool $save, string $id)
     {
-            $this->notebookSelector = $notebookSelector;
-    
-            $this->save = $save;
-    
-            $this->id = $id;
+        $this->notebookSelector = $notebookSelector;
+
+        $this->save = $save;
+
+        $this->id = $id;
     }
 }

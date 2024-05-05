@@ -16,7 +16,7 @@ class _InitializeParams
      * @param non-empty-string|null $rootUri
      * @param int<-2147483648, 2147483647>|string $workDoneToken
      */
-    function __construct(
+    public function __construct(
         int|null $processId,
         _InitializeParamsClientInfo $clientInfo,
         string $locale,
@@ -27,22 +27,22 @@ class _InitializeParams
         TraceValues $trace,
         int|string $workDoneToken,
     ) {
-            $this->processId = $processId;
-    
-            $this->clientInfo = $clientInfo;
-    
-            $this->locale = $locale;
-    
-            $this->rootPath = $rootPath;
-    
-            $this->rootUri = $rootUri;
-    
-            $this->capabilities = $capabilities;
-    
-            $this->initializationOptions = $initializationOptions;
-    
-            $this->trace = $trace;
-    
-            $this->workDoneToken = $workDoneToken;
+        $this->processId = $processId;
+
+        $this->clientInfo = $clientInfo;
+
+        $this->locale = $locale;
+
+        $this->rootPath = $rootPath;
+
+        $this->rootUri = $rootUri;
+
+        $this->capabilities = $capabilities;
+
+        $this->initializationOptions = $initializationOptions;
+
+        $this->trace = $trace;
+
+        $this->workDoneToken = $workDoneToken;
     }
 }

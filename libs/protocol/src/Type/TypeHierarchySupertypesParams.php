@@ -23,8 +23,8 @@ final class TypeHierarchySupertypesParams
         int|string $workDoneToken,
         int|string $partialResultToken,
     ) {
-            $this->workDoneToken = $workDoneToken;
-    
-            $this->partialResultToken = $partialResultToken;
+        $this->workDoneToken = $workDoneToken;
+
+        $this->partialResultToken = $partialResultToken;
     }
 }

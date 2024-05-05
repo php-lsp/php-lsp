@@ -20,6 +20,6 @@ final class ExecuteCommandParams
         public readonly array $arguments,
         int|string $workDoneToken,
     ) {
-            $this->workDoneToken = $workDoneToken;
+        $this->workDoneToken = $workDoneToken;
     }
 }

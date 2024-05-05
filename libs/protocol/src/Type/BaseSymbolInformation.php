@@ -14,18 +14,18 @@ class BaseSymbolInformation
     /**
      * @param list<SymbolTag> $tags
      */
-    function __construct(
+    public function __construct(
         string $name,
         SymbolKind $kind,
         array $tags,
         string $containerName,
     ) {
-            $this->name = $name;
-    
-            $this->kind = $kind;
-    
-            $this->tags = $tags;
-    
-            $this->containerName = $containerName;
+        $this->name = $name;
+
+        $this->kind = $kind;
+
+        $this->tags = $tags;
+
+        $this->containerName = $containerName;
     }
 }

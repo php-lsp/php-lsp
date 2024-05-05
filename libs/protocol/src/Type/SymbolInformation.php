@@ -23,12 +23,12 @@ final class SymbolInformation
         array $tags,
         string $containerName,
     ) {
-            $this->name = $name;
-    
-            $this->kind = $kind;
-    
-            $this->tags = $tags;
-    
-            $this->containerName = $containerName;
+        $this->name = $name;
+
+        $this->kind = $kind;
+
+        $this->tags = $tags;
+
+        $this->containerName = $containerName;
     }
 }

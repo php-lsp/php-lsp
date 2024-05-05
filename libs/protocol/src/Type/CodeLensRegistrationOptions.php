@@ -18,10 +18,10 @@ final class CodeLensRegistrationOptions
      */
     final public function __construct(array|null $documentSelector, bool $resolveProvider, bool $workDoneProgress)
     {
-            $this->documentSelector = $documentSelector;
-    
-            $this->resolveProvider = $resolveProvider;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->documentSelector = $documentSelector;
+
+        $this->resolveProvider = $resolveProvider;
+
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

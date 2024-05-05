@@ -9,8 +9,8 @@ class FoldingRangeOptions
 {
     use FoldingRangeOptionsMixin;
 
-    function __construct(bool $workDoneProgress)
+    public function __construct(bool $workDoneProgress)
     {
-            $this->workDoneProgress = $workDoneProgress;
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

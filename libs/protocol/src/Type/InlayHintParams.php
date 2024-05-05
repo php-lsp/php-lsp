@@ -20,6 +20,6 @@ final class InlayHintParams
         public readonly Range $range,
         int|string $workDoneToken,
     ) {
-            $this->workDoneToken = $workDoneToken;
+        $this->workDoneToken = $workDoneToken;
     }
 }

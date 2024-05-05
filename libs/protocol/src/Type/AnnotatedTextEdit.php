@@ -17,8 +17,8 @@ final class AnnotatedTextEdit
         Range $range,
         string $newText,
     ) {
-            $this->range = $range;
-    
-            $this->newText = $newText;
+        $this->range = $range;
+
+        $this->newText = $newText;
     }
 }

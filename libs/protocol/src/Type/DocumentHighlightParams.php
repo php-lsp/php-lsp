@@ -25,12 +25,12 @@ final class DocumentHighlightParams
         int|string $workDoneToken,
         int|string $partialResultToken,
     ) {
-            $this->textDocument = $textDocument;
-    
-            $this->position = $position;
-    
-            $this->workDoneToken = $workDoneToken;
-    
-            $this->partialResultToken = $partialResultToken;
+        $this->textDocument = $textDocument;
+
+        $this->position = $position;
+
+        $this->workDoneToken = $workDoneToken;
+
+        $this->partialResultToken = $partialResultToken;
     }
 }

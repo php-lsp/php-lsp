@@ -15,12 +15,12 @@ class SignatureHelpOptions
      * @param list<string> $triggerCharacters
      * @param list<string> $retriggerCharacters
      */
-    function __construct(array $triggerCharacters, array $retriggerCharacters, bool $workDoneProgress)
+    public function __construct(array $triggerCharacters, array $retriggerCharacters, bool $workDoneProgress)
     {
-            $this->triggerCharacters = $triggerCharacters;
-    
-            $this->retriggerCharacters = $retriggerCharacters;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->triggerCharacters = $triggerCharacters;
+
+        $this->retriggerCharacters = $retriggerCharacters;
+
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

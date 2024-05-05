@@ -27,16 +27,16 @@ final class DiagnosticRegistrationOptions
         bool $workDoneProgress,
         string $id,
     ) {
-            $this->documentSelector = $documentSelector;
-    
-            $this->identifier = $identifier;
-    
-            $this->interFileDependencies = $interFileDependencies;
-    
-            $this->workspaceDiagnostics = $workspaceDiagnostics;
-    
-            $this->workDoneProgress = $workDoneProgress;
-    
-            $this->id = $id;
+        $this->documentSelector = $documentSelector;
+
+        $this->identifier = $identifier;
+
+        $this->interFileDependencies = $interFileDependencies;
+
+        $this->workspaceDiagnostics = $workspaceDiagnostics;
+
+        $this->workDoneProgress = $workDoneProgress;
+
+        $this->id = $id;
     }
 }

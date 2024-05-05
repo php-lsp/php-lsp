@@ -24,10 +24,10 @@ final class WorkspaceFullDocumentDiagnosticReport
         string $resultId,
         array $items,
     ) {
-            $this->kind = $kind;
-    
-            $this->resultId = $resultId;
-    
-            $this->items = $items;
+        $this->kind = $kind;
+
+        $this->resultId = $resultId;
+
+        $this->items = $items;
     }
 }

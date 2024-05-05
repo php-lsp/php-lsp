@@ -24,12 +24,12 @@ final class SignatureHelpRegistrationOptions
         array $retriggerCharacters,
         bool $workDoneProgress,
     ) {
-            $this->documentSelector = $documentSelector;
-    
-            $this->triggerCharacters = $triggerCharacters;
-    
-            $this->retriggerCharacters = $retriggerCharacters;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->documentSelector = $documentSelector;
+
+        $this->triggerCharacters = $triggerCharacters;
+
+        $this->retriggerCharacters = $retriggerCharacters;
+
+        $this->workDoneProgress = $workDoneProgress;
     }
 }
