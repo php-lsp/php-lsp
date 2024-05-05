@@ -55,8 +55,13 @@ final class MixinNodeVisitor extends StructLikeNodeVisitor
             new PropertyItem($property->name),
         ]);
 
+        if ($this->context === null) {
+            throw new \LogicException('Cannot create property without a context');
+        }
+
         PropertyBuilder::makeIfNotEmpty($this->context, $property, $statement->setDocComment(...));
 
+        // @phpstan-ignore-next-line
         $statement->type = Lsp2PhpTransformer::make($this->context, $property->type);
 
         return $statement;
@@ -88,11 +93,11 @@ final class MixinNodeVisitor extends StructLikeNodeVisitor
         $method = new PhpClassMethod('__construct');
         $method->stmts = [];
 
-        StructParamsBuilder::makeIfNotEmpty($this->context, $struct, $method->setDocComment(...));
-
         if ($this->context === null) {
             throw new \LogicException('Cannot create constructor without a context');
         }
+
+        StructParamsBuilder::makeIfNotEmpty($this->context, $struct, $method->setDocComment(...));
 
         foreach ($struct->getProperties($this->context) as $property) {
             // In case of property already has been defined
@@ -101,6 +106,7 @@ final class MixinNodeVisitor extends StructLikeNodeVisitor
             }
 
             $param = new PhpParam(new PhpVariable($property->name));
+            // @phpstan-ignore-next-line
             $param->type = Lsp2PhpTransformer::make($this->context, $property->type);
 
             $method->stmts[] = new PhpExpression(

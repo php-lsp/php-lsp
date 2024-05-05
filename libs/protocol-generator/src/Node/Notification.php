@@ -66,7 +66,8 @@ class Notification extends Definition
      *     documentation?: non-empty-string,
      *     since?: non-empty-string,
      *     proposed?: bool,
-     *     deprecated?: non-empty-string
+     *     deprecated?: non-empty-string,
+     *     ...
      * } $data
      */
     public static function fromArray(array $data): self

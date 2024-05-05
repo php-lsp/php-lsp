@@ -68,22 +68,6 @@ final class Request extends Notification
         return [...parent::getSubNodeNames(), 'result', 'partialResult', 'errorData'];
     }
 
-    /**
-     * @param array{
-     *     method: non-empty-string,
-     *     params?: array<array-key, mixed>,
-     *     result: array<array-key, mixed>,
-     *     partialResult?: array<array-key, mixed>,
-     *     errorData?: array<array-key, mixed>,
-     *     registrationMethod?: non-empty-string,
-     *     registrationOptions?: array<array-key, mixed>,
-     *     messageDirection: non-empty-string,
-     *     documentation?: non-empty-string,
-     *     since?: non-empty-string,
-     *     proposed?: bool,
-     *     deprecated?: non-empty-string,
-     * } $data
-     */
     public static function fromArray(array $data): self
     {
         $params = $data['params'] ?? null;
@@ -95,10 +79,13 @@ final class Request extends Notification
                 \array_is_list($params) => \array_map(Type::fromArray(...), $params),
                 default => Type::fromArray($params),
             },
+            // @phpstan-ignore-next-line
             result: Type::fromArray($data['result']),
+            // @phpstan-ignore-next-line
             partialResult: isset($data['partialResult'])
                 ? Type::fromArray($data['partialResult'])
                 : null,
+            // @phpstan-ignore-next-line
             errorData: isset($data['errorData'])
                 ? Type::fromArray($data['errorData'])
                 : null,

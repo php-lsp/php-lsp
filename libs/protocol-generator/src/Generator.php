@@ -114,6 +114,7 @@ final class Generator
     /**
      * @psalm-taint-sink file $directory
      * @param non-empty-string $directory
+     * @param non-empty-string $namespace
      * @throws \JsonException
      */
     public function save(string $directory, string $namespace = 'Lsp\\Protocol\\Type'): void

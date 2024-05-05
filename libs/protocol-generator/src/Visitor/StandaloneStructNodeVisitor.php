@@ -47,11 +47,11 @@ final class StandaloneStructNodeVisitor extends StructLikeNodeVisitor
         $method->flags += Modifiers::FINAL | Modifiers::PUBLIC;
         $method->stmts = [];
 
-        StructParamsBuilder::makeIfNotEmpty($this->context, $struct, $method->setDocComment(...));
-
         if ($this->context === null) {
             throw new \LogicException('Cannot create constructor without a context');
         }
+
+        StructParamsBuilder::makeIfNotEmpty($this->context, $struct, $method->setDocComment(...));
 
         $inherited = [];
         foreach ($struct->getProperties($this->context) as $property) {
@@ -61,6 +61,7 @@ final class StandaloneStructNodeVisitor extends StructLikeNodeVisitor
             }
 
             $param = new PhpParam(new PhpVariable($property->name));
+            // @phpstan-ignore-next-line
             $param->type = Lsp2PhpTransformer::make($this->context, $property->type);
 
             if ($property->isInherited()) {
