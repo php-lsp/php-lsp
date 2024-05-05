@@ -10,7 +10,7 @@ trait DiagnosticOptionsMixin
      * An optional identifier under which the diagnostics are
      * managed by the client.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly string $identifier;
 
@@ -20,14 +20,14 @@ trait DiagnosticOptionsMixin
      * set in another file. Inter file dependencies are common for
      * most programming languages and typically uncommon for linters.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly bool $interFileDependencies;
 
     /**
      * The server provides support for workspace diagnostics as well.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly bool $workspaceDiagnostics;
 }

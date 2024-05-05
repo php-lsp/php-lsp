@@ -6,7 +6,7 @@ namespace Lsp\Protocol\Type;
  * How whitespace and indentation is handled during completion
  * item insertion.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.16.0
  */
 enum InsertTextMode: int
@@ -18,7 +18,7 @@ enum InsertTextMode: int
      * The client will not apply any kind of adjustments to the
      * string.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case AsIs = 1;
 
@@ -31,7 +31,7 @@ enum InsertTextMode: int
      * multi line completion item is indented using 2 tabs and all
      * following lines inserted will be indented using 2 tabs as well.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case AdjustIndentation = 2;
 }

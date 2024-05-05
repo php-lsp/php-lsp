@@ -9,12 +9,12 @@ namespace Lsp\Protocol\Type;
  * A code lens is _unresolved_ when no command is associated to it. For performance
  * reasons the creation of a code lens and resolving should be done in two stages.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class CodeLens
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         public readonly Range $range,

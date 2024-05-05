@@ -5,13 +5,13 @@ namespace Lsp\Protocol\Type;
 /**
  * Inlay hint information.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.17.0
  */
 final class InlayHint
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      * @param string|list<InlayHintLabelPart> $label
      * @param list<TextEdit> $textEdits

@@ -7,12 +7,12 @@ namespace Lsp\Protocol\Type;
  * special attention. Usually a document highlight is visualized by changing
  * the background color of its range.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class DocumentHighlight
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         public readonly Range $range,

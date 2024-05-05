@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * Reference options.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 class ReferenceOptions
 {
     use ReferenceOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public function __construct(bool $workDoneProgress)
     {

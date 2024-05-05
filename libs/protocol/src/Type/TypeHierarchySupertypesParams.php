@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The parameter of a `typeHierarchy/supertypes` request.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.17.0
  */
 final class TypeHierarchySupertypesParams
@@ -15,7 +15,7 @@ final class TypeHierarchySupertypesParams
     use PartialResultParamsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      */
     final public function __construct(

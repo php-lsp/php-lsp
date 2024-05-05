@@ -5,32 +5,32 @@ namespace Lsp\Protocol\Type;
 /**
  * Predefined error codes.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 enum ErrorCodes: int
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case ParseError = -32700;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case InvalidRequest = -32600;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case MethodNotFound = -32601;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case InvalidParams = -32602;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case InternalError = -32603;
 
@@ -38,12 +38,12 @@ enum ErrorCodes: int
      * Error code indicating that a server received a notification or
      * request before the server has received the `initialize` request.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case ServerNotInitialized = -32002;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case UnknownErrorCode = -32001;
 }

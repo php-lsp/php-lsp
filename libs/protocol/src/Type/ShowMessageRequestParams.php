@@ -3,12 +3,12 @@
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class ShowMessageRequestParams
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<MessageActionItem> $actions
      */
     final public function __construct(

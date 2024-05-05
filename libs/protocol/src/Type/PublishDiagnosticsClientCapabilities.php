@@ -5,12 +5,12 @@ namespace Lsp\Protocol\Type;
 /**
  * The publish diagnostic client capabilities.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class PublishDiagnosticsClientCapabilities
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         public readonly bool $relatedInformation,

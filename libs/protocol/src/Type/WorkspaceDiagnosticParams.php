@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Parameters of the workspace diagnostic request.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.17.0
  */
 final class WorkspaceDiagnosticParams
@@ -15,7 +15,7 @@ final class WorkspaceDiagnosticParams
     use PartialResultParamsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      * @param list<PreviousResultId> $previousResultIds
      */

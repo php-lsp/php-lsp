@@ -8,13 +8,13 @@ namespace Lsp\Protocol\Type;
  * These events do not come from the file system, they come from user operations
  * like renaming a file in the UI.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.16.0
  */
 final class FileOperationClientCapabilities
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.16.0
      */
     final public function __construct(

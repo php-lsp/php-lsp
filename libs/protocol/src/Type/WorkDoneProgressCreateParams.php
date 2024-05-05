@@ -3,12 +3,12 @@
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class WorkDoneProgressCreateParams
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param int<-2147483648, 2147483647>|string $token
      */
     final public function __construct(

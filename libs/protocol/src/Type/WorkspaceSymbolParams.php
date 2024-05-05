@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The parameters of a {@link WorkspaceSymbolRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class WorkspaceSymbolParams
 {
@@ -14,7 +14,7 @@ final class WorkspaceSymbolParams
     use PartialResultParamsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         public readonly string $query,

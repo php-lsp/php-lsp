@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Registration options for a {@link RenameRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class RenameRegistrationOptions
 {
@@ -14,7 +14,7 @@ final class RenameRegistrationOptions
     use RenameOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(array|null $documentSelector, bool $prepareProvider, bool $workDoneProgress)
     {

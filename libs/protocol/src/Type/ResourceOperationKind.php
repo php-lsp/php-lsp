@@ -3,28 +3,28 @@
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 enum ResourceOperationKind: string
 {
     /**
      * Supports creating new files and folders.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Create = 'create';
 
     /**
      * Supports renaming existing files and folders.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Rename = 'rename';
 
     /**
      * Supports deleting existing files and folders.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Delete = 'delete';
 }

@@ -5,12 +5,12 @@ namespace Lsp\Protocol\Type;
 /**
  * An event describing a file change.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class FileEvent
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param non-empty-string $uri
      */
     final public function __construct(

@@ -9,7 +9,7 @@ trait ExecuteCommandOptionsMixin
     /**
      * The commands to be executed on the server
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @var list<string>
      */
     public readonly array $commands;

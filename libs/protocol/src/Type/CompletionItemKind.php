@@ -5,132 +5,132 @@ namespace Lsp\Protocol\Type;
 /**
  * The kind of a completion entry.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 enum CompletionItemKind: int
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case TextType = 1;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case MethodType = 2;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case FunctionType = 3;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case ConstructorType = 4;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case FieldType = 5;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case VariableType = 6;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case ClassType = 7;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case InterfaceType = 8;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case ModuleType = 9;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case PropertyType = 10;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case UnitType = 11;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case ValueType = 12;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case EnumType = 13;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case KeywordType = 14;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case SnippetType = 15;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case ColorType = 16;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case FileType = 17;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case ReferenceType = 18;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case FolderType = 19;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case EnumMemberType = 20;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case ConstantType = 21;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case StructType = 22;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case EventType = 23;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case OperatorType = 24;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case TypeParameterType = 25;
 }

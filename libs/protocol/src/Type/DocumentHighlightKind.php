@@ -5,28 +5,28 @@ namespace Lsp\Protocol\Type;
 /**
  * A document highlight kind.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 enum DocumentHighlightKind: int
 {
     /**
      * A textual occurrence.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Text = 1;
 
     /**
      * Read-access of a symbol, like reading a variable.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Read = 2;
 
     /**
      * Write-access of a symbol, like writing to a variable.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Write = 3;
 }

@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Parameters for a {@link DocumentColorRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class DocumentColorParams
 {
@@ -14,7 +14,7 @@ final class DocumentColorParams
     use PartialResultParamsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         public readonly TextDocumentIdentifier $textDocument,

@@ -16,12 +16,12 @@ namespace Lsp\Protocol\Type;
  * cause failure of the operation. How the client recovers from the failure is described by
  * the client capability: `workspace.workspaceEdit.failureHandling`
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class WorkspaceEdit
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param array<non-empty-string, list<TextEdit>> $changes
      * @param list<TextDocumentEdit|CreateFile|RenameFile|DeleteFile> $documentChanges
      * @param array<string, ChangeAnnotation> $changeAnnotations

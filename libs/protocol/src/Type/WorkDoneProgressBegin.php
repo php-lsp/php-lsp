@@ -3,12 +3,12 @@
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class WorkDoneProgressBegin
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param int<0, 2147483647> $percentage
      */
     final public function __construct(

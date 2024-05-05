@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * A text edit applicable to a text document.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 class TextEdit
 {
     use TextEditMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public function __construct(Range $range, string $newText)
     {

@@ -3,7 +3,7 @@
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class MonikerRegistrationOptions
 {
@@ -12,7 +12,7 @@ final class MonikerRegistrationOptions
     use MonikerOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(array|null $documentSelector, bool $workDoneProgress)
     {

@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * The parameters of a {@link ExecuteCommandRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class ExecuteCommandParams
 {
     use WorkDoneProgressParamsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<mixed> $arguments
      */
     final public function __construct(

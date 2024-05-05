@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * A diagnostic report with a full set of problems.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.17.0
  */
 class FullDocumentDiagnosticReport
@@ -13,7 +13,7 @@ class FullDocumentDiagnosticReport
     use FullDocumentDiagnosticReportMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      * @param list<Diagnostic> $items
      */

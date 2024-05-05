@@ -8,12 +8,12 @@ namespace Lsp\Protocol\Type;
  * have two ranges: one that encloses its definition and one that points to
  * its most interesting range, e.g. the range of an identifier.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class DocumentSymbol
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<SymbolTag> $tags
      * @param list<DocumentSymbol> $children
      */

@@ -5,12 +5,12 @@ namespace Lsp\Protocol\Type;
 /**
  * The parameters of a configuration request.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class ConfigurationParams
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<ConfigurationItem> $items
      */
     final public function __construct(

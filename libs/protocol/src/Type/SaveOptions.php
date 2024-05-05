@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * Save options.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 class SaveOptions
 {
     use SaveOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public function __construct(bool $includeText)
     {

@@ -8,12 +8,12 @@ namespace Lsp\Protocol\Type;
  * So the creator of a TextDocumentEdit doesn't need to sort the array of edits or do any
  * kind of ordering. However the edits must be non overlapping.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class TextDocumentEdit
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<TextEdit|AnnotatedTextEdit> $edits
      */
     final public function __construct(

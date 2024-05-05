@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * Completion options.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 class CompletionOptions
 {
     use CompletionOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<string> $triggerCharacters
      * @param list<string> $allCommitCharacters
      */

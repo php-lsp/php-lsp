@@ -6,14 +6,14 @@ namespace Lsp\Protocol\Type;
  * Defines whether the insert text in a completion item should be interpreted as
  * plain text or a snippet.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 enum InsertTextFormat: int
 {
     /**
      * The primary text to be inserted is treated as a plain string.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case PlainText = 1;
 
@@ -27,7 +27,7 @@ enum InsertTextFormat: int
      *
      * See also: https://microsoft.github.io/language-server-protocol/specifications/specification-current/#snippet_syntax
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Snippet = 2;
 }

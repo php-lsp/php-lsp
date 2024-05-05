@@ -3,28 +3,28 @@
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 enum WatchKind: int
 {
     /**
      * Interested in create events.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Create = 1;
 
     /**
      * Interested in change events
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Change = 2;
 
     /**
      * Interested in delete events
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Delete = 4;
 }

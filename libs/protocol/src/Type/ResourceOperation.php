@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * A generic resource operation.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 class ResourceOperation
 {
     use ResourceOperationMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public function __construct(string $kind, string $annotationId)
     {

@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * A parameter literal used in selection range requests.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class SelectionRangeParams
 {
@@ -14,7 +14,7 @@ final class SelectionRangeParams
     use PartialResultParamsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<Position> $positions
      */
     final public function __construct(

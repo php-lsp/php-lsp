@@ -3,7 +3,7 @@
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class SelectionRangeRegistrationOptions
 {
@@ -14,7 +14,7 @@ final class SelectionRangeRegistrationOptions
     use TextDocumentRegistrationOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(bool $workDoneProgress, array|null $documentSelector, string $id)
     {

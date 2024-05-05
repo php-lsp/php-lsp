@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * Registration options for a {@link ExecuteCommandRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class ExecuteCommandRegistrationOptions
 {
     use ExecuteCommandOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(array $commands, bool $workDoneProgress)
     {

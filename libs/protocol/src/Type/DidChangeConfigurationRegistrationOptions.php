@@ -3,12 +3,12 @@
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class DidChangeConfigurationRegistrationOptions
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param string|list<string> $section
      */
     final public function __construct(

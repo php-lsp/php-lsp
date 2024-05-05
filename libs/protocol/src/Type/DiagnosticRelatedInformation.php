@@ -7,12 +7,12 @@ namespace Lsp\Protocol\Type;
  * used to point to code locations that cause or related to a diagnostics, e.g when duplicating
  * a symbol in a scope.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class DiagnosticRelatedInformation
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         public readonly Location $location,

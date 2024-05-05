@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * Server Capabilities for a {@link SignatureHelpRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 class SignatureHelpOptions
 {
     use SignatureHelpOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<string> $triggerCharacters
      * @param list<string> $retriggerCharacters
      */

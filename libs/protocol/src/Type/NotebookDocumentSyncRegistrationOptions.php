@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Registration options specific to a notebook.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.17.0
  */
 final class NotebookDocumentSyncRegistrationOptions
@@ -15,7 +15,7 @@ final class NotebookDocumentSyncRegistrationOptions
     use NotebookDocumentSyncOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      */
     final public function __construct(array $notebookSelector, bool $save, string $id)

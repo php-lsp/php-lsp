@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * The parameters of a {@link DocumentRangeFormattingRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class DocumentRangeFormattingParams
 {
     use WorkDoneProgressParamsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         public readonly TextDocumentIdentifier $textDocument,

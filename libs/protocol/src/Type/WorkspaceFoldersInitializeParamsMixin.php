@@ -11,7 +11,7 @@ trait WorkspaceFoldersInitializeParamsMixin
      * It can be `null` if the client supports workspace folders but none are
      * configured.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.6.0
      * @var list<WorkspaceFolder>|null
      */

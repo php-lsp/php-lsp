@@ -6,12 +6,12 @@ namespace Lsp\Protocol\Type;
  * Contains additional diagnostic information about the context in which
  * a {@link CodeActionProvider.provideCodeActions code action} is run.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class CodeActionContext
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<Diagnostic> $diagnostics
      * @param list<CodeActionKind> $only
      */

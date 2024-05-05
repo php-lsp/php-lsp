@@ -7,21 +7,21 @@ trait BaseSymbolInformationMixin
     /**
      * The name of this symbol.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly string $name;
 
     /**
      * The kind of this symbol.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly SymbolKind $kind;
 
     /**
      * Tags for this symbol.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.16.0
      * @var list<SymbolTag>
      */
@@ -33,7 +33,7 @@ trait BaseSymbolInformationMixin
      * if necessary). It can't be used to re-infer a hierarchy for the document
      * symbols.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly string $containerName;
 }

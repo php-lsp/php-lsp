@@ -9,7 +9,7 @@ trait DocumentLinkOptionsMixin
     /**
      * Document links have a resolve provider as well.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly bool $resolveProvider;
 }

@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Registration options for a {@link CompletionRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class CompletionRegistrationOptions
 {
@@ -14,7 +14,7 @@ final class CompletionRegistrationOptions
     use CompletionOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         array|null $documentSelector,

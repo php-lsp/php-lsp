@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Parameters for a {@link ColorPresentationRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class ColorPresentationParams
 {
@@ -14,7 +14,7 @@ final class ColorPresentationParams
     use PartialResultParamsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         public readonly TextDocumentIdentifier $textDocument,

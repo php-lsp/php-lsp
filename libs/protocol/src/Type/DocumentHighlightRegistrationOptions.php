@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Registration options for a {@link DocumentHighlightRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class DocumentHighlightRegistrationOptions
 {
@@ -14,7 +14,7 @@ final class DocumentHighlightRegistrationOptions
     use DocumentHighlightOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(array|null $documentSelector, bool $workDoneProgress)
     {

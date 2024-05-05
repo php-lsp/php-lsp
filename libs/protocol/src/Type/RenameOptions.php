@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * Provider options for a {@link RenameRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 class RenameOptions
 {
     use RenameOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public function __construct(bool $prepareProvider, bool $workDoneProgress)
     {

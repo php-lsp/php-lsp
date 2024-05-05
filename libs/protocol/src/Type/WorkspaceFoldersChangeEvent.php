@@ -5,12 +5,12 @@ namespace Lsp\Protocol\Type;
 /**
  * The workspace folder change event.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class WorkspaceFoldersChangeEvent
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<WorkspaceFolder> $added
      * @param list<WorkspaceFolder> $removed
      */

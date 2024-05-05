@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * The initialize parameters
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 class _InitializeParams
 {
     use _InitializeParamsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param int<-2147483648, 2147483647>|null $processId
      * @param non-empty-string|null $rootUri
      */

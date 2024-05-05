@@ -5,12 +5,12 @@ namespace Lsp\Protocol\Type;
 /**
  * Client capabilities of a {@link DocumentFormattingRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class DocumentFormattingClientCapabilities
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         public readonly bool $dynamicRegistration,

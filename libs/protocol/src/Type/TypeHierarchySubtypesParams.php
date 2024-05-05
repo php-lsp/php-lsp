@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The parameter of a `typeHierarchy/subtypes` request.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.17.0
  */
 final class TypeHierarchySubtypesParams
@@ -15,7 +15,7 @@ final class TypeHierarchySubtypesParams
     use PartialResultParamsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      */
     final public function __construct(

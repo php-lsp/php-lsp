@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The reason why code actions were requested.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.17.0
  */
 enum CodeActionTriggerKind: int
@@ -13,7 +13,7 @@ enum CodeActionTriggerKind: int
     /**
      * Code actions were explicitly requested by the user or by an extension.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Invoked = 1;
 
@@ -23,7 +23,7 @@ enum CodeActionTriggerKind: int
      * This typically happens when current selection in a file changes, but can
      * also be triggered when file content changes.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Automatic = 2;
 }

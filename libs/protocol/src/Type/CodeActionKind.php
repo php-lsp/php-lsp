@@ -5,28 +5,28 @@ namespace Lsp\Protocol\Type;
 /**
  * A set of predefined code action kinds
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 enum CodeActionKind: string
 {
     /**
      * Empty kind.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Empty = '';
 
     /**
      * Base kind for quickfix actions: 'quickfix'
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case QuickFix = 'quickfix';
 
     /**
      * Base kind for refactoring actions: 'refactor'
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Refactor = 'refactor';
 
@@ -41,7 +41,7 @@ enum CodeActionKind: string
      * - Extract interface from class
      * - ...
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case RefactorExtract = 'refactor.extract';
 
@@ -55,7 +55,7 @@ enum CodeActionKind: string
      * - Inline constant
      * - ...
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case RefactorInline = 'refactor.inline';
 
@@ -71,7 +71,7 @@ enum CodeActionKind: string
      * - Move method to base class
      * - ...
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case RefactorRewrite = 'refactor.rewrite';
 
@@ -80,14 +80,14 @@ enum CodeActionKind: string
      *
      * Source code actions apply to the entire file.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Source = 'source';
 
     /**
      * Base kind for an organize imports source action: `source.organizeImports`
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case SourceOrganizeImports = 'source.organizeImports';
 
@@ -97,7 +97,7 @@ enum CodeActionKind: string
      * Fix all actions automatically fix errors that have a clear fix that do not require user input.
      * They should not suppress errors or perform unsafe fixes such as generating new types or classes.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.15.0
      */
     case SourceFixAll = 'source.fixAll';

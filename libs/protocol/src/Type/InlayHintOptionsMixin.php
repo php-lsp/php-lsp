@@ -10,7 +10,7 @@ trait InlayHintOptionsMixin
      * The server provides support to resolve additional
      * information for an inlay hint item.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly bool $resolveProvider;
 }

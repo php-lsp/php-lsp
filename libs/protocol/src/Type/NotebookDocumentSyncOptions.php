@@ -15,7 +15,7 @@ namespace Lsp\Protocol\Type;
  * document that contain at least one matching
  * cell will be synced.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.17.0
  */
 class NotebookDocumentSyncOptions
@@ -23,7 +23,7 @@ class NotebookDocumentSyncOptions
     use NotebookDocumentSyncOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      * @param list<object> $notebookSelector
      */

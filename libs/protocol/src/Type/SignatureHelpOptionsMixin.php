@@ -9,7 +9,7 @@ trait SignatureHelpOptionsMixin
     /**
      * List of characters that trigger signature help automatically.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @var list<string>
      */
     public readonly array $triggerCharacters;
@@ -20,7 +20,7 @@ trait SignatureHelpOptionsMixin
      * These trigger characters are only active when signature help is already showing. All trigger characters
      * are also counted as re-trigger characters.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.15.0
      * @var list<string>
      */

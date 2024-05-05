@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * Provider options for a {@link DocumentOnTypeFormattingRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 class DocumentOnTypeFormattingOptions
 {
     use DocumentOnTypeFormattingOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<string> $moreTriggerCharacter
      */
     public function __construct(string $firstTriggerCharacter, array $moreTriggerCharacter)

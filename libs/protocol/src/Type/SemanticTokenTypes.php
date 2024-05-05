@@ -7,13 +7,13 @@ namespace Lsp\Protocol\Type;
  * an clients can specify additional token types via the
  * corresponding client capabilities.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.16.0
  */
 enum SemanticTokenTypes: string
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case NamespaceType = 'namespace';
 
@@ -21,112 +21,112 @@ enum SemanticTokenTypes: string
      * Represents a generic type. Acts as a fallback for types which can't be mapped to
      * a specific type like class or enum.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case TypeType = 'type';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case ClassType = 'class';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case EnumType = 'enum';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case InterfaceType = 'interface';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case StructType = 'struct';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case TypeParameterType = 'typeParameter';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case ParameterType = 'parameter';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case VariableType = 'variable';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case PropertyType = 'property';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case EnumMemberType = 'enumMember';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case EventType = 'event';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case FunctionType = 'function';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case MethodType = 'method';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case MacroType = 'macro';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case KeywordType = 'keyword';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case ModifierType = 'modifier';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case CommentType = 'comment';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case StringType = 'string';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case NumberType = 'number';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case RegexpType = 'regexp';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case OperatorType = 'operator';
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      */
     case DecoratorType = 'decorator';

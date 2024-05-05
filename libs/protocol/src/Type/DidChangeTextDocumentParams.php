@@ -5,12 +5,12 @@ namespace Lsp\Protocol\Type;
 /**
  * The change text document notification's parameters.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class DidChangeTextDocumentParams
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<object> $contentChanges
      */
     final public function __construct(

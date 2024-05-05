@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Symbol tags are extra annotations that tweak the rendering of a symbol.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.16
  */
 enum SymbolTag: int
@@ -13,7 +13,7 @@ enum SymbolTag: int
     /**
      * Render a symbol as obsolete, usually using a strike-out.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Deprecated = 1;
 }

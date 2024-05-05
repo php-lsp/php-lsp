@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * Rename file operation
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class RenameFile
 {
     use ResourceOperationMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param non-empty-string $oldUri
      * @param non-empty-string $newUri
      */

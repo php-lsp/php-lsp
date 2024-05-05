@@ -7,12 +7,12 @@ namespace Lsp\Protocol\Type;
  * can have a label, like a function-name, a doc-comment, and
  * a set of parameters.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class SignatureInformation
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<ParameterInformation> $parameters
      * @param int<0, 2147483647> $activeParameter
      */

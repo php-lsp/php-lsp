@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Diagnostic options.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.17.0
  */
 class DiagnosticOptions
@@ -13,7 +13,7 @@ class DiagnosticOptions
     use DiagnosticOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      */
     public function __construct(

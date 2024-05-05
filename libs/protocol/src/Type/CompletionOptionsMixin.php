@@ -16,7 +16,7 @@ trait CompletionOptionsMixin
      * If code complete should automatically be trigger on characters not being valid inside
      * an identifier (for example `.` in JavaScript) list them in `triggerCharacters`.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @var list<string>
      */
     public readonly array $triggerCharacters;
@@ -29,7 +29,7 @@ trait CompletionOptionsMixin
      * If a server provides both `allCommitCharacters` and commit characters on an individual
      * completion item the ones on the completion item win.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.2.0
      * @var list<string>
      */
@@ -39,7 +39,7 @@ trait CompletionOptionsMixin
      * The server provides support to resolve additional
      * information for a completion item.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly bool $resolveProvider;
 
@@ -47,7 +47,7 @@ trait CompletionOptionsMixin
      * The server supports the following `CompletionItem` specific
      * capabilities.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      */
     public readonly object $completionItem;

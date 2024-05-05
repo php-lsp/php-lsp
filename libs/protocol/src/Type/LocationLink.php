@@ -6,12 +6,12 @@ namespace Lsp\Protocol\Type;
  * Represents the connection of two locations. Provides additional metadata over normal {@link Location locations},
  * including an origin range.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class LocationLink
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param non-empty-string $targetUri
      */
     final public function __construct(

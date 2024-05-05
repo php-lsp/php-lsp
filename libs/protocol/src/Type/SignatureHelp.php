@@ -7,12 +7,12 @@ namespace Lsp\Protocol\Type;
  * callable. There can be multiple signature but only one
  * active and only one active parameter.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class SignatureHelp
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<SignatureInformation> $signatures
      * @param int<0, 2147483647> $activeSignature
      * @param int<0, 2147483647> $activeParameter

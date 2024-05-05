@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * A parameter literal used in inline value requests.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.17.0
  */
 final class InlineValueParams
@@ -13,7 +13,7 @@ final class InlineValueParams
     use WorkDoneProgressParamsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      */
     final public function __construct(

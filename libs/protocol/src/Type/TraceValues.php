@@ -3,28 +3,28 @@
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 enum TraceValues: string
 {
     /**
      * Turn tracing off.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Off = 'off';
 
     /**
      * Trace messages only.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Messages = 'messages';
 
     /**
      * Verbose message tracing.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Verbose = 'verbose';
 }

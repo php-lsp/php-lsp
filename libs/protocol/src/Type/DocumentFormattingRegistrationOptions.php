@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Registration options for a {@link DocumentFormattingRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class DocumentFormattingRegistrationOptions
 {
@@ -14,7 +14,7 @@ final class DocumentFormattingRegistrationOptions
     use DocumentFormattingOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(array|null $documentSelector, bool $workDoneProgress)
     {

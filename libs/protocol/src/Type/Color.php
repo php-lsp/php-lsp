@@ -5,12 +5,12 @@ namespace Lsp\Protocol\Type;
 /**
  * Represents a color in RGBA space.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class Color
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         public readonly float $red,

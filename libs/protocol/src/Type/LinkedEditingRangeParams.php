@@ -3,7 +3,7 @@
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class LinkedEditingRangeParams
 {
@@ -12,7 +12,7 @@ final class LinkedEditingRangeParams
     use TextDocumentPositionParamsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(TextDocumentIdentifier $textDocument, Position $position, int|string $workDoneToken)
     {

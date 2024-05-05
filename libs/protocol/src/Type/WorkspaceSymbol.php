@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
  *
  * See also SymbolInformation.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.17.0
  */
 final class WorkspaceSymbol
@@ -15,7 +15,7 @@ final class WorkspaceSymbol
     use BaseSymbolInformationMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      */
     final public function __construct(

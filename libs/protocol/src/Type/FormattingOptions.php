@@ -5,12 +5,12 @@ namespace Lsp\Protocol\Type;
 /**
  * Value-object describing what options formatting should use.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class FormattingOptions
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param int<0, 2147483647> $tabSize
      */
     final public function __construct(

@@ -5,12 +5,12 @@ namespace Lsp\Protocol\Type;
 /**
  * Defines the capabilities provided by the client.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class ClientCapabilities
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         public readonly WorkspaceClientCapabilities $workspace,

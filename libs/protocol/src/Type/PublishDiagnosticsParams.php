@@ -5,12 +5,12 @@ namespace Lsp\Protocol\Type;
 /**
  * The publish diagnostic notification's parameters.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class PublishDiagnosticsParams
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param non-empty-string $uri
      * @param int<-2147483648, 2147483647> $version
      * @param list<Diagnostic> $diagnostics

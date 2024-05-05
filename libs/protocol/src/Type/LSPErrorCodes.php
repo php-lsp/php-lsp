@@ -3,7 +3,7 @@
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 enum LSPErrorCodes: int
 {
@@ -13,7 +13,7 @@ enum LSPErrorCodes: int
      * message should contain human readable information about why
      * the request failed.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      */
     case RequestFailed = -32803;
@@ -23,7 +23,7 @@ enum LSPErrorCodes: int
      * only be used for requests that explicitly support being
      * server cancellable.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0
      */
     case ServerCancelled = -32802;
@@ -38,7 +38,7 @@ enum LSPErrorCodes: int
      * If a client decides that a result is not of any use anymore
      * the client should cancel the request.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case ContentModified = -32801;
 
@@ -46,7 +46,7 @@ enum LSPErrorCodes: int
      * The client has canceled a request and a server has detected
      * the cancel.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case RequestCancelled = -32800;
 }

@@ -6,14 +6,14 @@ namespace Lsp\Protocol\Type;
  * A parameter literal used in requests to pass a text document and a position inside that
  * document.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 class TextDocumentPositionParams
 {
     use TextDocumentPositionParamsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public function __construct(TextDocumentIdentifier $textDocument, Position $position)
     {

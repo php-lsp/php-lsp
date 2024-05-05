@@ -35,7 +35,7 @@ final class DefinitionBuilder
     public static function getDefinitionTags(Definition $definition): array
     {
         return [
-            'generated' => (new \DateTime())->format(\DateTimeInterface::ATOM),
+            'generated' => true,
             'since' => $definition->since,
             'deprecated' => $definition->deprecated,
             'internal' => $definition->proposed === true

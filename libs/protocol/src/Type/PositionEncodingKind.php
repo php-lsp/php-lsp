@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * A set of predefined position encoding kinds.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.17.0
  */
 enum PositionEncodingKind: string
@@ -13,7 +13,7 @@ enum PositionEncodingKind: string
     /**
      * Character offsets count UTF-8 code units (e.g. bytes).
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case UTF8 = 'utf-8';
 
@@ -23,7 +23,7 @@ enum PositionEncodingKind: string
      * This is the default and must always be supported
      * by servers
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case UTF16 = 'utf-16';
 
@@ -34,7 +34,7 @@ enum PositionEncodingKind: string
      * so this `PositionEncodingKind` may also be used for an
      * encoding-agnostic representation of character offsets.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case UTF32 = 'utf-32';
 }

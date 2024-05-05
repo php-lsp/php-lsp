@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * A base for all symbol information.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 class BaseSymbolInformation
 {
     use BaseSymbolInformationMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<SymbolTag> $tags
      */
     public function __construct(

@@ -13,7 +13,7 @@ trait _InitializeParamsMixin
      * Is `null` if the process has not been started by another process.
      * If the parent process is not alive then the server should exit.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @var int<-2147483648, 2147483647>|null
      */
     public readonly int|null $processId;
@@ -21,7 +21,7 @@ trait _InitializeParamsMixin
     /**
      * Information about the client
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.15.0
      */
     public readonly object $clientInfo;
@@ -34,7 +34,7 @@ trait _InitializeParamsMixin
      * Uses IETF language tags as the value's syntax
      * (See https://en.wikipedia.org/wiki/IETF_language_tag)
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.16.0
      */
     public readonly string $locale;
@@ -43,7 +43,7 @@ trait _InitializeParamsMixin
      * The rootPath of the workspace. Is null
      * if no folder is open.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @deprecated in favour of rootUri.
      */
     public readonly string|null $rootPath;
@@ -53,7 +53,7 @@ trait _InitializeParamsMixin
      * folder is open. If both `rootPath` and `rootUri` are set
      * `rootUri` wins.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @deprecated in favour of workspaceFolders.
      * @var non-empty-string|null
      */
@@ -62,21 +62,21 @@ trait _InitializeParamsMixin
     /**
      * The capabilities provided by the client (editor or tool)
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly ClientCapabilities $capabilities;
 
     /**
      * User provided initialization options.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly mixed $initializationOptions;
 
     /**
      * The initial trace setting. If omitted trace is disabled ('off').
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly TraceValues $trace;
 }

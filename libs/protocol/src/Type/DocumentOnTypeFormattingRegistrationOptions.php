@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Registration options for a {@link DocumentOnTypeFormattingRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class DocumentOnTypeFormattingRegistrationOptions
 {
@@ -14,7 +14,7 @@ final class DocumentOnTypeFormattingRegistrationOptions
     use DocumentOnTypeFormattingOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(array|null $documentSelector, string $firstTriggerCharacter, array $moreTriggerCharacter)
     {

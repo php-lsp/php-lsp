@@ -6,12 +6,12 @@ namespace Lsp\Protocol\Type;
  * A completion item represents a text snippet that is
  * proposed to complete text that is being typed.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class CompletionItem
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<CompletionItemTag> $tags
      * @param list<TextEdit> $additionalTextEdits
      * @param list<string> $commitCharacters

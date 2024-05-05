@@ -9,21 +9,21 @@ namespace Lsp\Protocol\Type;
  * Please note that `MarkupKinds` must not start with a `$`. This kinds
  * are reserved for internal usage.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 enum MarkupKind: string
 {
     /**
      * Plain text is supported as a content format
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case PlainText = 'plaintext';
 
     /**
      * Markdown is supported as a content format
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Markdown = 'markdown';
 }

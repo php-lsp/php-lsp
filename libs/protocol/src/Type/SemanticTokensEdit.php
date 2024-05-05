@@ -3,13 +3,13 @@
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.16.0
  */
 final class SemanticTokensEdit
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.16.0
      * @param int<0, 2147483647> $start
      * @param int<0, 2147483647> $deleteCount

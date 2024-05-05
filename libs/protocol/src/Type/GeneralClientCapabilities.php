@@ -5,13 +5,13 @@ namespace Lsp\Protocol\Type;
 /**
  * General client capabilities.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.16.0
  */
 final class GeneralClientCapabilities
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.16.0
      * @param list<PositionEncodingKind> $positionEncodings
      */

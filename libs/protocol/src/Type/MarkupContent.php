@@ -26,12 +26,12 @@ namespace Lsp\Protocol\Type;
  * *Please Note* that clients might sanitize the return markdown. A client could decide to
  * remove HTML from the markdown to avoid script execution.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class MarkupContent
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         public readonly MarkupKind $kind,

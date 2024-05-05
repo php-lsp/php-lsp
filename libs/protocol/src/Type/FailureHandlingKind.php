@@ -3,7 +3,7 @@
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 enum FailureHandlingKind: string
 {
@@ -11,7 +11,7 @@ enum FailureHandlingKind: string
      * Applying the workspace change is simply aborted if one of the changes provided
      * fails. All operations executed before the failing operation stay executed.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Abort = 'abort';
 
@@ -19,7 +19,7 @@ enum FailureHandlingKind: string
      * All operations are executed transactional. That means they either all
      * succeed or no changes at all are applied to the workspace.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Transactional = 'transactional';
 
@@ -28,7 +28,7 @@ enum FailureHandlingKind: string
      * If resource changes (create, rename or delete file) are part of the change the failure
      * handling strategy is abort.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case TextOnlyTransactional = 'textOnlyTransactional';
 
@@ -36,7 +36,7 @@ enum FailureHandlingKind: string
      * The client tries to undo the operations already executed. But there is no
      * guarantee that this is succeeding.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Undo = 'undo';
 }

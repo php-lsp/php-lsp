@@ -7,7 +7,7 @@ trait FullDocumentDiagnosticReportMixin
     /**
      * A full document diagnostic report.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly string $kind;
 
@@ -16,14 +16,14 @@ trait FullDocumentDiagnosticReportMixin
      * be sent on the next diagnostic request for the
      * same document.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly string $resultId;
 
     /**
      * The actual items.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @var list<Diagnostic>
      */
     public readonly array $items;

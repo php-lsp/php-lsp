@@ -5,14 +5,14 @@ namespace Lsp\Protocol\Type;
 /**
  * The server capabilities of a {@link ExecuteCommandRequest}.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 class ExecuteCommandOptions
 {
     use ExecuteCommandOptionsMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @param list<string> $commands
      */
     public function __construct(array $commands, bool $workDoneProgress)

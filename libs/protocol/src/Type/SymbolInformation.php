@@ -6,14 +6,14 @@ namespace Lsp\Protocol\Type;
  * Represents information about programming constructs like variables, classes,
  * interfaces etc.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 final class SymbolInformation
 {
     use BaseSymbolInformationMixin;
 
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     final public function __construct(
         public readonly bool $deprecated,

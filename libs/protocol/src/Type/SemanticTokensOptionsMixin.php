@@ -9,7 +9,7 @@ trait SemanticTokensOptionsMixin
     /**
      * The legend used by the server
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly SemanticTokensLegend $legend;
 
@@ -17,14 +17,14 @@ trait SemanticTokensOptionsMixin
      * Server supports providing semantic tokens for a specific range
      * of a document.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly bool|object $range;
 
     /**
      * Server supports providing semantic tokens for a full document.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     public readonly bool|object $full;
 }

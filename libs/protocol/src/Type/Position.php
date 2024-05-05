@@ -29,13 +29,13 @@ namespace Lsp\Protocol\Type;
  * Positions are line end character agnostic. So you can not specify a position
  * that denotes `\r|\n` or `\n|` where `|` represents the character offset.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  * @since 3.17.0 - support for negotiated position encoding.
  */
 final class Position
 {
     /**
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      * @since 3.17.0 - support for negotiated position encoding.
      * @param int<0, 2147483647> $line
      * @param int<0, 2147483647> $character

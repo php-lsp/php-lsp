@@ -5,7 +5,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Represents reasons why a text document is saved.
  *
- * @generated 2024-05-04T17:58:12+00:00
+ * @generated
  */
 enum TextDocumentSaveReason: int
 {
@@ -13,21 +13,21 @@ enum TextDocumentSaveReason: int
      * Manually triggered, e.g. by the user pressing save, by starting debugging,
      * or by an API call.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case Manual = 1;
 
     /**
      * Automatic after a delay.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case AfterDelay = 2;
 
     /**
      * When the editor lost focus.
      *
-     * @generated 2024-05-04T17:58:12+00:00
+     * @generated
      */
     case FocusOut = 3;
 }
