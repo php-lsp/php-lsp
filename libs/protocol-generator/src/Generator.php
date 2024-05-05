@@ -129,7 +129,7 @@ final class Generator
      * @param non-empty-string $namespace
      * @throws \JsonException
      */
-    public function save(string $directory, string $namespace = 'Lsp\\Protocol\\Type'): void
+    public function save(string $directory, string $namespace): void
     {
         $types = $this->transform($this->parse(), $namespace);
 

@@ -1,0 +1,16 @@
+#!/usr/bin/php
+<?php
+
+declare(strict_types=1);
+
+namespace Lsp\Protocol\Type;
+
+use Lsp\Protocol\Generator\Generator;
+
+require __DIR__ . '/../../../vendor/autoload.php';
+
+const LSP_DIRECTORY = __DIR__ . '/../../protocol/src/Type';
+const LSP_NAMESPACE = __NAMESPACE__;
+
+$generator = new Generator();
+$generator->save(LSP_DIRECTORY, LSP_NAMESPACE);
