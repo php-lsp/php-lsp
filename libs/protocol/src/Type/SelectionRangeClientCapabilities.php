@@ -7,9 +7,6 @@ namespace Lsp\Protocol\Type;
  */
 final class SelectionRangeClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $dynamicRegistration,
     ) {}

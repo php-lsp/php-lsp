@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
 final class SemanticTokensDeltaPartialResult
 {
     /**
-     * @generated
-     * @since 3.16.0
      * @param list<SemanticTokensEdit> $edits
      */
     final public function __construct(

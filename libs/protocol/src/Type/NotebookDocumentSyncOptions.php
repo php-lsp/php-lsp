@@ -23,14 +23,12 @@ class NotebookDocumentSyncOptions
     use NotebookDocumentSyncOptionsMixin;
 
     /**
-     * @generated
-     * @since 3.17.0
-     * @param list<object> $notebookSelector
+     * @param list<NotebookDocumentSyncOptionsNotebookSelector> $notebookSelector
      */
-    public function __construct(array $notebookSelector, bool $save)
+    function __construct(array $notebookSelector, bool $save)
     {
-        $this->notebookSelector = $notebookSelector;
-
-        $this->save = $save;
+            $this->notebookSelector = $notebookSelector;
+    
+            $this->save = $save;
     }
 }

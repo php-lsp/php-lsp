@@ -10,7 +10,6 @@ namespace Lsp\Protocol\Type;
 final class DidChangeWatchedFilesRegistrationOptions
 {
     /**
-     * @generated
      * @param list<FileSystemWatcher> $watchers
      */
     final public function __construct(

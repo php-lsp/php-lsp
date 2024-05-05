@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
 final class DidCloseNotebookDocumentParams
 {
     /**
-     * @generated
-     * @since 3.17.0
      * @param list<TextDocumentIdentifier> $cellTextDocuments
      */
     final public function __construct(

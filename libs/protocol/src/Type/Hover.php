@@ -10,7 +10,6 @@ namespace Lsp\Protocol\Type;
 final class Hover
 {
     /**
-     * @generated
      * @param MarkupContent|string|object|list<string|object> $contents
      */
     final public function __construct(

@@ -11,8 +11,7 @@ namespace Lsp\Protocol\Type;
 final class ParameterInformation
 {
     /**
-     * @generated
-    * @param string|array{
+     * @param string|array{
        int<0, 2147483647>,
        int<0, 2147483647>
     } $label

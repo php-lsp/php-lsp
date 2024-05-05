@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class DocumentOnTypeFormattingParams
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly TextDocumentIdentifier $textDocument,
         public readonly Position $position,

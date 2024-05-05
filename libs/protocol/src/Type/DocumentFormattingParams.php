@@ -12,7 +12,6 @@ final class DocumentFormattingParams
     use WorkDoneProgressParamsMixin;
 
     /**
-     * @generated
      * @param int<-2147483648, 2147483647>|string $workDoneToken
      */
     final public function __construct(
@@ -20,6 +19,6 @@ final class DocumentFormattingParams
         public readonly FormattingOptions $options,
         int|string $workDoneToken,
     ) {
-        $this->workDoneToken = $workDoneToken;
+            $this->workDoneToken = $workDoneToken;
     }
 }

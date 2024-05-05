@@ -10,7 +10,6 @@ namespace Lsp\Protocol\Type;
 final class FormattingOptions
 {
     /**
-     * @generated
      * @param int<0, 2147483647> $tabSize
      */
     final public function __construct(

@@ -14,7 +14,6 @@ final class SelectionRangeParams
     use PartialResultParamsMixin;
 
     /**
-     * @generated
      * @param list<Position> $positions
      * @param int<-2147483648, 2147483647>|string $workDoneToken
      * @param int<-2147483648, 2147483647>|string $partialResultToken
@@ -25,8 +24,8 @@ final class SelectionRangeParams
         int|string $workDoneToken,
         int|string $partialResultToken,
     ) {
-        $this->workDoneToken = $workDoneToken;
-
-        $this->partialResultToken = $partialResultToken;
+            $this->workDoneToken = $workDoneToken;
+    
+            $this->partialResultToken = $partialResultToken;
     }
 }

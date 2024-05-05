@@ -17,8 +17,6 @@ final class InlayHintRegistrationOptions
     use TextDocumentRegistrationOptionsMixin;
 
     /**
-     * @generated
-     * @since 3.17.0
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(
@@ -27,12 +25,12 @@ final class InlayHintRegistrationOptions
         array|null $documentSelector,
         string $id,
     ) {
-        $this->resolveProvider = $resolveProvider;
-
-        $this->workDoneProgress = $workDoneProgress;
-
-        $this->documentSelector = $documentSelector;
-
-        $this->id = $id;
+            $this->resolveProvider = $resolveProvider;
+    
+            $this->workDoneProgress = $workDoneProgress;
+    
+            $this->documentSelector = $documentSelector;
+    
+            $this->id = $id;
     }
 }

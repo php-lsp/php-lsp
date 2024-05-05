@@ -7,9 +7,6 @@ namespace Lsp\Protocol\Type;
  */
 final class DidChangeConfigurationClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $dynamicRegistration,
     ) {}

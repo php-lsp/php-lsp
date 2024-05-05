@@ -10,9 +10,6 @@ namespace Lsp\Protocol\Type;
  */
 final class SelectionRange
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly Range $range,
         public readonly SelectionRange $parent,

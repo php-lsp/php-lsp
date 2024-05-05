@@ -12,14 +12,10 @@ class InlayHintOptions
 {
     use InlayHintOptionsMixin;
 
-    /**
-     * @generated
-     * @since 3.17.0
-     */
-    public function __construct(bool $resolveProvider, bool $workDoneProgress)
+    function __construct(bool $resolveProvider, bool $workDoneProgress)
     {
-        $this->resolveProvider = $resolveProvider;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->resolveProvider = $resolveProvider;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

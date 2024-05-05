@@ -13,7 +13,6 @@ namespace Lsp\Protocol\Type;
 final class CodeAction
 {
     /**
-     * @generated
      * @param list<Diagnostic> $diagnostics
      */
     final public function __construct(
@@ -21,7 +20,7 @@ final class CodeAction
         public readonly CodeActionKind $kind,
         public readonly array $diagnostics,
         public readonly bool $isPreferred,
-        public readonly object $disabled,
+        public readonly CodeActionDisabled $disabled,
         public readonly WorkspaceEdit $edit,
         public readonly Command $command,
         public readonly mixed $data,

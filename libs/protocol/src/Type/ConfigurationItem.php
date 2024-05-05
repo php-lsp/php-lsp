@@ -8,7 +8,6 @@ namespace Lsp\Protocol\Type;
 final class ConfigurationItem
 {
     /**
-     * @generated
      * @param non-empty-string $scopeUri
      */
     final public function __construct(

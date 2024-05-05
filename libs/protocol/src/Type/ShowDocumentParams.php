@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
 final class ShowDocumentParams
 {
     /**
-     * @generated
-     * @since 3.16.0
      * @param non-empty-string $uri
      */
     final public function __construct(

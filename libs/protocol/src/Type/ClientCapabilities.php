@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class ClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly WorkspaceClientCapabilities $workspace,
         public readonly TextDocumentClientCapabilities $textDocument,

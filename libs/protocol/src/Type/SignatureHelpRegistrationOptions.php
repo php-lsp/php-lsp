@@ -14,7 +14,6 @@ final class SignatureHelpRegistrationOptions
     use SignatureHelpOptionsMixin;
 
     /**
-     * @generated
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      * @param list<string> $triggerCharacters
      * @param list<string> $retriggerCharacters
@@ -25,12 +24,12 @@ final class SignatureHelpRegistrationOptions
         array $retriggerCharacters,
         bool $workDoneProgress,
     ) {
-        $this->documentSelector = $documentSelector;
-
-        $this->triggerCharacters = $triggerCharacters;
-
-        $this->retriggerCharacters = $retriggerCharacters;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->documentSelector = $documentSelector;
+    
+            $this->triggerCharacters = $triggerCharacters;
+    
+            $this->retriggerCharacters = $retriggerCharacters;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

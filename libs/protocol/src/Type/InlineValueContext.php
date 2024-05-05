@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
 final class InlineValueContext
 {
     /**
-     * @generated
-     * @since 3.17.0
      * @param int<-2147483648, 2147483647> $frameId
      */
     final public function __construct(

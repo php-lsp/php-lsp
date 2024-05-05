@@ -19,9 +19,6 @@ namespace Lsp\Protocol\Type;
  */
 final class Range
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly Position $start,
         public readonly Position $end,

@@ -11,7 +11,6 @@ namespace Lsp\Protocol\Type;
 final class Diagnostic
 {
     /**
-     * @generated
      * @param int<-2147483648, 2147483647>|string $code
      * @param list<DiagnosticTag> $tags
      * @param list<DiagnosticRelatedInformation> $relatedInformation

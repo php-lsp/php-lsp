@@ -9,12 +9,9 @@ namespace Lsp\Protocol\Type;
  */
 final class SignatureHelpClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $dynamicRegistration,
-        public readonly object $signatureInformation,
+        public readonly SignatureHelpClientCapabilitiesSignatureInformation $signatureInformation,
         public readonly bool $contextSupport,
     ) {}
 }

@@ -11,13 +11,10 @@ class DocumentSymbolOptions
 {
     use DocumentSymbolOptionsMixin;
 
-    /**
-     * @generated
-     */
-    public function __construct(string $label, bool $workDoneProgress)
+    function __construct(string $label, bool $workDoneProgress)
     {
-        $this->label = $label;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->label = $label;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

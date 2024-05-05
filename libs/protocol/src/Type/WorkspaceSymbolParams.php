@@ -14,7 +14,6 @@ final class WorkspaceSymbolParams
     use PartialResultParamsMixin;
 
     /**
-     * @generated
      * @param int<-2147483648, 2147483647>|string $workDoneToken
      * @param int<-2147483648, 2147483647>|string $partialResultToken
      */
@@ -23,8 +22,8 @@ final class WorkspaceSymbolParams
         int|string $workDoneToken,
         int|string $partialResultToken,
     ) {
-        $this->workDoneToken = $workDoneToken;
-
-        $this->partialResultToken = $partialResultToken;
+            $this->workDoneToken = $workDoneToken;
+    
+            $this->partialResultToken = $partialResultToken;
     }
 }

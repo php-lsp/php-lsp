@@ -10,12 +10,8 @@ namespace Lsp\Protocol\Type;
  */
 final class InlayHintClientCapabilities
 {
-    /**
-     * @generated
-     * @since 3.17.0
-     */
     final public function __construct(
         public readonly bool $dynamicRegistration,
-        public readonly object $resolveSupport,
+        public readonly InlayHintClientCapabilitiesResolveSupport $resolveSupport,
     ) {}
 }

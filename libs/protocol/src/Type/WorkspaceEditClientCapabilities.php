@@ -8,7 +8,6 @@ namespace Lsp\Protocol\Type;
 final class WorkspaceEditClientCapabilities
 {
     /**
-     * @generated
      * @param list<ResourceOperationKind> $resourceOperations
      */
     final public function __construct(
@@ -16,6 +15,6 @@ final class WorkspaceEditClientCapabilities
         public readonly array $resourceOperations,
         public readonly FailureHandlingKind $failureHandling,
         public readonly bool $normalizesLineEndings,
-        public readonly object $changeAnnotationSupport,
+        public readonly WorkspaceEditClientCapabilitiesChangeAnnotationSupport $changeAnnotationSupport,
     ) {}
 }

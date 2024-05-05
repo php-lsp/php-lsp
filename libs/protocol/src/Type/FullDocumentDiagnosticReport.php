@@ -13,16 +13,14 @@ class FullDocumentDiagnosticReport
     use FullDocumentDiagnosticReportMixin;
 
     /**
-     * @generated
-     * @since 3.17.0
      * @param list<Diagnostic> $items
      */
-    public function __construct(string $kind, string $resultId, array $items)
+    function __construct(string $kind, string $resultId, array $items)
     {
-        $this->kind = $kind;
-
-        $this->resultId = $resultId;
-
-        $this->items = $items;
+            $this->kind = $kind;
+    
+            $this->resultId = $resultId;
+    
+            $this->items = $items;
     }
 }

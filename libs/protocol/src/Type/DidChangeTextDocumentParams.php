@@ -10,7 +10,6 @@ namespace Lsp\Protocol\Type;
 final class DidChangeTextDocumentParams
 {
     /**
-     * @generated
      * @param list<object> $contentChanges
      */
     final public function __construct(

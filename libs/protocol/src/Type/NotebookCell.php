@@ -15,8 +15,6 @@ namespace Lsp\Protocol\Type;
 final class NotebookCell
 {
     /**
-     * @generated
-     * @since 3.17.0
      * @param non-empty-string $document
      * @param array<string, mixed> $metadata
      */

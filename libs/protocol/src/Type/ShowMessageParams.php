@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class ShowMessageParams
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly MessageType $type,
         public readonly string $message,

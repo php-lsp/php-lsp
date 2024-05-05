@@ -12,7 +12,6 @@ final class RenameFile
     use ResourceOperationMixin;
 
     /**
-     * @generated
      * @param non-empty-string $oldUri
      * @param non-empty-string $newUri
      */
@@ -23,8 +22,8 @@ final class RenameFile
         public readonly RenameFileOptions $options,
         string $annotationId,
     ) {
-        $this->kind = $kind;
-
-        $this->annotationId = $annotationId;
+            $this->kind = $kind;
+    
+            $this->annotationId = $annotationId;
     }
 }

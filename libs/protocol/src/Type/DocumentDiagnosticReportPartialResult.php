@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
 final class DocumentDiagnosticReportPartialResult
 {
     /**
-     * @generated
-     * @since 3.17.0
      * @param array<non-empty-string, FullDocumentDiagnosticReport|UnchangedDocumentDiagnosticReport> $relatedDocuments
      */
     final public function __construct(

@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
 final class ApplyWorkspaceEditResult
 {
     /**
-     * @generated
-     * @since 3.17 renamed from ApplyWorkspaceEditResponse
      * @param int<0, 2147483647> $failedChange
      */
     final public function __construct(

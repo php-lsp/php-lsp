@@ -15,28 +15,26 @@ final class SemanticTokensRegistrationOptions
     use SemanticTokensOptionsMixin;
 
     /**
-     * @generated
-     * @since 3.16.0
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(
         array|null $documentSelector,
         SemanticTokensLegend $legend,
-        bool|object $range,
-        bool|object $full,
+        bool|SemanticTokensOptionsRange $range,
+        bool|SemanticTokensOptionsFull $full,
         bool $workDoneProgress,
         string $id,
     ) {
-        $this->documentSelector = $documentSelector;
-
-        $this->legend = $legend;
-
-        $this->range = $range;
-
-        $this->full = $full;
-
-        $this->workDoneProgress = $workDoneProgress;
-
-        $this->id = $id;
+            $this->documentSelector = $documentSelector;
+    
+            $this->legend = $legend;
+    
+            $this->range = $range;
+    
+            $this->full = $full;
+    
+            $this->workDoneProgress = $workDoneProgress;
+    
+            $this->id = $id;
     }
 }

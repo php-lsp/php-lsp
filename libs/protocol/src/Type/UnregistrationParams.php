@@ -8,7 +8,6 @@ namespace Lsp\Protocol\Type;
 final class UnregistrationParams
 {
     /**
-     * @generated
      * @param list<Unregistration> $unregisterations
      */
     final public function __construct(

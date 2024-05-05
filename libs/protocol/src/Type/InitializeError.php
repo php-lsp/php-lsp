@@ -10,9 +10,6 @@ namespace Lsp\Protocol\Type;
  */
 final class InitializeError
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $retry,
     ) {}

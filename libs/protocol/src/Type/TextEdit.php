@@ -11,13 +11,10 @@ class TextEdit
 {
     use TextEditMixin;
 
-    /**
-     * @generated
-     */
-    public function __construct(Range $range, string $newText)
+    function __construct(Range $range, string $newText)
     {
-        $this->range = $range;
-
-        $this->newText = $newText;
+            $this->range = $range;
+    
+            $this->newText = $newText;
     }
 }

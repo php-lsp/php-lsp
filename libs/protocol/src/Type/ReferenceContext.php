@@ -10,9 +10,6 @@ namespace Lsp\Protocol\Type;
  */
 final class ReferenceContext
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $includeDeclaration,
     ) {}

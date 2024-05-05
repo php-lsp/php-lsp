@@ -10,10 +10,6 @@ namespace Lsp\Protocol\Type;
  */
 final class NotebookDocumentClientCapabilities
 {
-    /**
-     * @generated
-     * @since 3.17.0
-     */
     final public function __construct(
         public readonly NotebookDocumentSyncClientCapabilities $synchronization,
     ) {}

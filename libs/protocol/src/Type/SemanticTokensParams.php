@@ -13,8 +13,6 @@ final class SemanticTokensParams
     use PartialResultParamsMixin;
 
     /**
-     * @generated
-     * @since 3.16.0
      * @param int<-2147483648, 2147483647>|string $workDoneToken
      * @param int<-2147483648, 2147483647>|string $partialResultToken
      */
@@ -23,8 +21,8 @@ final class SemanticTokensParams
         int|string $workDoneToken,
         int|string $partialResultToken,
     ) {
-        $this->workDoneToken = $workDoneToken;
-
-        $this->partialResultToken = $partialResultToken;
+            $this->workDoneToken = $workDoneToken;
+    
+            $this->partialResultToken = $partialResultToken;
     }
 }

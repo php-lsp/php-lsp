@@ -11,7 +11,6 @@ namespace Lsp\Protocol\Type;
 final class CodeActionContext
 {
     /**
-     * @generated
      * @param list<Diagnostic> $diagnostics
      * @param list<CodeActionKind> $only
      */

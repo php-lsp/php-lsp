@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class TextDocumentClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly TextDocumentSyncClientCapabilities $synchronization,
         public readonly CompletionClientCapabilities $completion,

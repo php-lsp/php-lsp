@@ -11,9 +11,6 @@ namespace Lsp\Protocol\Type;
  */
 final class DiagnosticRelatedInformation
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly Location $location,
         public readonly string $message,

@@ -7,8 +7,5 @@ namespace Lsp\Protocol\Type;
  */
 final class InitializedParams
 {
-    /**
-     * @generated
-     */
     final public function __construct() {}
 }

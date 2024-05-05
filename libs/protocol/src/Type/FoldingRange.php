@@ -11,7 +11,6 @@ namespace Lsp\Protocol\Type;
 final class FoldingRange
 {
     /**
-     * @generated
      * @param int<0, 2147483647> $startLine
      * @param int<0, 2147483647> $startCharacter
      * @param int<0, 2147483647> $endLine

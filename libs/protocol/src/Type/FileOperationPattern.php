@@ -11,10 +11,6 @@ namespace Lsp\Protocol\Type;
  */
 final class FileOperationPattern
 {
-    /**
-     * @generated
-     * @since 3.16.0
-     */
     final public function __construct(
         public readonly string $glob,
         public readonly FileOperationPatternKind $matches,

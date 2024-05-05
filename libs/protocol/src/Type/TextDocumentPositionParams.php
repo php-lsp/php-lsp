@@ -12,13 +12,10 @@ class TextDocumentPositionParams
 {
     use TextDocumentPositionParamsMixin;
 
-    /**
-     * @generated
-     */
-    public function __construct(TextDocumentIdentifier $textDocument, Position $position)
+    function __construct(TextDocumentIdentifier $textDocument, Position $position)
     {
-        $this->textDocument = $textDocument;
-
-        $this->position = $position;
+            $this->textDocument = $textDocument;
+    
+            $this->position = $position;
     }
 }

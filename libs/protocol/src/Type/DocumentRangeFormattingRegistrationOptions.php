@@ -14,15 +14,14 @@ final class DocumentRangeFormattingRegistrationOptions
     use DocumentRangeFormattingOptionsMixin;
 
     /**
-     * @generated
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(array|null $documentSelector, bool $rangesSupport, bool $workDoneProgress)
     {
-        $this->documentSelector = $documentSelector;
-
-        $this->rangesSupport = $rangesSupport;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->documentSelector = $documentSelector;
+    
+            $this->rangesSupport = $rangesSupport;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

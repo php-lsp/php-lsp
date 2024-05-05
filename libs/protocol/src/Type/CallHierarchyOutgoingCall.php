@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
 final class CallHierarchyOutgoingCall
 {
     /**
-     * @generated
-     * @since 3.16.0
      * @param list<Range> $fromRanges
      */
     final public function __construct(

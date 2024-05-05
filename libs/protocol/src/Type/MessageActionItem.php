@@ -7,9 +7,6 @@ namespace Lsp\Protocol\Type;
  */
 final class MessageActionItem
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly string $title,
     ) {}

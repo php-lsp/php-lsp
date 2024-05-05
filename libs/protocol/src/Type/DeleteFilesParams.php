@@ -12,8 +12,6 @@ namespace Lsp\Protocol\Type;
 final class DeleteFilesParams
 {
     /**
-     * @generated
-     * @since 3.16.0
      * @param list<FileDelete> $files
      */
     final public function __construct(

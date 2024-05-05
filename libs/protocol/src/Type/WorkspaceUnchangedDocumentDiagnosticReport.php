@@ -13,8 +13,6 @@ final class WorkspaceUnchangedDocumentDiagnosticReport
     use UnchangedDocumentDiagnosticReportMixin;
 
     /**
-     * @generated
-     * @since 3.17.0
      * @param non-empty-string $uri
      * @param int<-2147483648, 2147483647>|null $version
      */
@@ -24,8 +22,8 @@ final class WorkspaceUnchangedDocumentDiagnosticReport
         string $kind,
         string $resultId,
     ) {
-        $this->kind = $kind;
-
-        $this->resultId = $resultId;
+            $this->kind = $kind;
+    
+            $this->resultId = $resultId;
     }
 }

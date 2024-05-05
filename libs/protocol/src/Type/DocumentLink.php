@@ -11,7 +11,6 @@ namespace Lsp\Protocol\Type;
 final class DocumentLink
 {
     /**
-     * @generated
      * @param non-empty-string $target
      */
     final public function __construct(

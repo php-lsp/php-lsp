@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class DeleteFileOptions
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $recursive,
         public readonly bool $ignoreIfNotExists,

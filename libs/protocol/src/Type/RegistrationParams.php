@@ -8,7 +8,6 @@ namespace Lsp\Protocol\Type;
 final class RegistrationParams
 {
     /**
-     * @generated
      * @param list<Registration> $registrations
      */
     final public function __construct(

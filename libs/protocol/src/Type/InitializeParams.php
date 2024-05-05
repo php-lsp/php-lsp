@@ -12,7 +12,6 @@ final class InitializeParams
     use WorkspaceFoldersInitializeParamsMixin;
 
     /**
-     * @generated
      * @param int<-2147483648, 2147483647>|null $processId
      * @param non-empty-string|null $rootUri
      * @param int<-2147483648, 2147483647>|string $workDoneToken
@@ -20,7 +19,7 @@ final class InitializeParams
      */
     final public function __construct(
         int|null $processId,
-        object $clientInfo,
+        _InitializeParamsClientInfo $clientInfo,
         string $locale,
         string|null $rootPath,
         string|null $rootUri,
@@ -30,24 +29,24 @@ final class InitializeParams
         int|string $workDoneToken,
         array|null $workspaceFolders,
     ) {
-        $this->processId = $processId;
-
-        $this->clientInfo = $clientInfo;
-
-        $this->locale = $locale;
-
-        $this->rootPath = $rootPath;
-
-        $this->rootUri = $rootUri;
-
-        $this->capabilities = $capabilities;
-
-        $this->initializationOptions = $initializationOptions;
-
-        $this->trace = $trace;
-
-        $this->workDoneToken = $workDoneToken;
-
-        $this->workspaceFolders = $workspaceFolders;
+            $this->processId = $processId;
+    
+            $this->clientInfo = $clientInfo;
+    
+            $this->locale = $locale;
+    
+            $this->rootPath = $rootPath;
+    
+            $this->rootUri = $rootUri;
+    
+            $this->capabilities = $capabilities;
+    
+            $this->initializationOptions = $initializationOptions;
+    
+            $this->trace = $trace;
+    
+            $this->workDoneToken = $workDoneToken;
+    
+            $this->workspaceFolders = $workspaceFolders;
     }
 }

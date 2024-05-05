@@ -13,7 +13,6 @@ namespace Lsp\Protocol\Type;
 final class DocumentSymbol
 {
     /**
-     * @generated
      * @param list<SymbolTag> $tags
      * @param list<DocumentSymbol> $children
      */

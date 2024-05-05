@@ -8,7 +8,6 @@ namespace Lsp\Protocol\Type;
 final class DidChangeConfigurationRegistrationOptions
 {
     /**
-     * @generated
      * @param string|list<string> $section
      */
     final public function __construct(

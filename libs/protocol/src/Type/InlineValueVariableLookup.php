@@ -12,10 +12,6 @@ namespace Lsp\Protocol\Type;
  */
 final class InlineValueVariableLookup
 {
-    /**
-     * @generated
-     * @since 3.17.0
-     */
     final public function __construct(
         public readonly Range $range,
         public readonly string $variableName,

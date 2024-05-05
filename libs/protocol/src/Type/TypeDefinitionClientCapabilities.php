@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class TypeDefinitionClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $dynamicRegistration,
         public readonly bool $linkSupport,

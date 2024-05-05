@@ -35,8 +35,6 @@ namespace Lsp\Protocol\Type;
 final class Position
 {
     /**
-     * @generated
-     * @since 3.17.0 - support for negotiated position encoding.
      * @param int<0, 2147483647> $line
      * @param int<0, 2147483647> $character
      */

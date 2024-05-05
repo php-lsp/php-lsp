@@ -10,7 +10,6 @@ namespace Lsp\Protocol\Type;
 final class FileEvent
 {
     /**
-     * @generated
      * @param non-empty-string $uri
      */
     final public function __construct(

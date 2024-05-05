@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class Registration
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly string $id,
         public readonly string $method,

@@ -11,7 +11,6 @@ namespace Lsp\Protocol\Type;
 final class TextDocumentItem
 {
     /**
-     * @generated
      * @param non-empty-string $uri
      * @param int<-2147483648, 2147483647> $version
      */

@@ -24,7 +24,7 @@ trait _InitializeParamsMixin
      * @generated
      * @since 3.15.0
      */
-    public readonly object $clientInfo;
+    public readonly _InitializeParamsClientInfo $clientInfo;
 
     /**
      * The locale the client is currently showing the user interface

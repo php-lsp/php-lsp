@@ -30,9 +30,6 @@ namespace Lsp\Protocol\Type;
  */
 final class MarkupContent
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly MarkupKind $kind,
         public readonly string $value,

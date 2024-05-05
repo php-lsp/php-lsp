@@ -17,16 +17,14 @@ final class TypeHierarchyRegistrationOptions
     use TypeHierarchyOptionsMixin;
 
     /**
-     * @generated
-     * @since 3.17.0
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(array|null $documentSelector, bool $workDoneProgress, string $id)
     {
-        $this->documentSelector = $documentSelector;
-
-        $this->workDoneProgress = $workDoneProgress;
-
-        $this->id = $id;
+            $this->documentSelector = $documentSelector;
+    
+            $this->workDoneProgress = $workDoneProgress;
+    
+            $this->id = $id;
     }
 }

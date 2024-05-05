@@ -12,8 +12,6 @@ namespace Lsp\Protocol\Type;
 final class NotebookCellArrayChange
 {
     /**
-     * @generated
-     * @since 3.17.0
      * @param int<0, 2147483647> $start
      * @param int<0, 2147483647> $deleteCount
      * @param list<NotebookCell> $cells

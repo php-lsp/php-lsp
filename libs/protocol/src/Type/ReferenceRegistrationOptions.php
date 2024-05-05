@@ -14,13 +14,12 @@ final class ReferenceRegistrationOptions
     use ReferenceOptionsMixin;
 
     /**
-     * @generated
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(array|null $documentSelector, bool $workDoneProgress)
     {
-        $this->documentSelector = $documentSelector;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->documentSelector = $documentSelector;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

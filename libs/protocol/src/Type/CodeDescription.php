@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
 final class CodeDescription
 {
     /**
-     * @generated
-     * @since 3.16.0
      * @param non-empty-string $href
      */
     final public function __construct(

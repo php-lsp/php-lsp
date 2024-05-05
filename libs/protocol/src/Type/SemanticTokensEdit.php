@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
 final class SemanticTokensEdit
 {
     /**
-     * @generated
-     * @since 3.16.0
      * @param int<0, 2147483647> $start
      * @param int<0, 2147483647> $deleteCount
      * @param list<int<0, 2147483647>> $data

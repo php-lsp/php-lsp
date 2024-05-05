@@ -12,12 +12,8 @@ class CallHierarchyOptions
 {
     use CallHierarchyOptionsMixin;
 
-    /**
-     * @generated
-     * @since 3.16.0
-     */
-    public function __construct(bool $workDoneProgress)
+    function __construct(bool $workDoneProgress)
     {
-        $this->workDoneProgress = $workDoneProgress;
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

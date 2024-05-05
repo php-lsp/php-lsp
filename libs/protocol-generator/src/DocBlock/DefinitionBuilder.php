@@ -34,7 +34,7 @@ final class DefinitionBuilder
      */
     public static function getDefinitionTags(Definition $definition): array
     {
-        return [
+        $tags = [
             'generated' => true,
             'since' => $definition->since,
             'deprecated' => $definition->deprecated,
@@ -42,6 +42,14 @@ final class DefinitionBuilder
                 ? self::MESSAGE_FOR_UPCOMING_SPEC
                 : null,
         ];
+
+        if (($internal = $definition->getAttribute('internal')) !== null) {
+            $message = 'This class is an internal dependency of {@see %s}';
+            // @phpstan-ignore-next-line
+            $tags['internal'] = \sprintf($message, (string) $internal);
+        }
+
+        return $tags;
     }
 
     public function buildIfNotEmpty(Definition $definition): ?PhpDocBlock

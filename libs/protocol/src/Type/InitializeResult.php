@@ -9,11 +9,8 @@ namespace Lsp\Protocol\Type;
  */
 final class InitializeResult
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly ServerCapabilities $capabilities,
-        public readonly object $serverInfo,
+        public readonly InitializeResultServerInfo $serverInfo,
     ) {}
 }

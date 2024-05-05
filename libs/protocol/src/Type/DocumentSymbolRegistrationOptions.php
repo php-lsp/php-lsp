@@ -14,15 +14,14 @@ final class DocumentSymbolRegistrationOptions
     use DocumentSymbolOptionsMixin;
 
     /**
-     * @generated
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(array|null $documentSelector, string $label, bool $workDoneProgress)
     {
-        $this->documentSelector = $documentSelector;
-
-        $this->label = $label;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->documentSelector = $documentSelector;
+    
+            $this->label = $label;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

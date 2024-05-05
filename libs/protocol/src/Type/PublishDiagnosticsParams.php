@@ -10,7 +10,6 @@ namespace Lsp\Protocol\Type;
 final class PublishDiagnosticsParams
 {
     /**
-     * @generated
      * @param non-empty-string $uri
      * @param int<-2147483648, 2147483647> $version
      * @param list<Diagnostic> $diagnostics

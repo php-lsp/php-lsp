@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
 final class LinkedEditingRanges
 {
     /**
-     * @generated
-     * @since 3.16.0
      * @param list<Range> $ranges
      */
     final public function __construct(

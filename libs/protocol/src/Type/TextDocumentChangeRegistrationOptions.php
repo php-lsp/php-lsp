@@ -12,13 +12,12 @@ final class TextDocumentChangeRegistrationOptions
     use TextDocumentRegistrationOptionsMixin;
 
     /**
-     * @generated
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(
         public readonly TextDocumentSyncKind $syncKind,
         array|null $documentSelector,
     ) {
-        $this->documentSelector = $documentSelector;
+            $this->documentSelector = $documentSelector;
     }
 }

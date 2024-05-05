@@ -50,5 +50,5 @@ trait CompletionOptionsMixin
      * @generated
      * @since 3.17.0
      */
-    public readonly object $completionItem;
+    public readonly CompletionOptionsCompletionItem $completionItem;
 }

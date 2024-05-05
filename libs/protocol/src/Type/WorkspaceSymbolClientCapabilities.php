@@ -9,13 +9,10 @@ namespace Lsp\Protocol\Type;
  */
 final class WorkspaceSymbolClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $dynamicRegistration,
-        public readonly object $symbolKind,
-        public readonly object $tagSupport,
-        public readonly object $resolveSupport,
+        public readonly WorkspaceSymbolClientCapabilitiesSymbolKind $symbolKind,
+        public readonly WorkspaceSymbolClientCapabilitiesTagSupport $tagSupport,
+        public readonly WorkspaceSymbolClientCapabilitiesResolveSupport $resolveSupport,
     ) {}
 }

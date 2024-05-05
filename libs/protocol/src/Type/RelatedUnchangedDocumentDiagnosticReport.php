@@ -13,8 +13,6 @@ final class RelatedUnchangedDocumentDiagnosticReport
     use UnchangedDocumentDiagnosticReportMixin;
 
     /**
-     * @generated
-     * @since 3.17.0
      * @param array<non-empty-string, FullDocumentDiagnosticReport|UnchangedDocumentDiagnosticReport> $relatedDocuments
      */
     final public function __construct(
@@ -22,8 +20,8 @@ final class RelatedUnchangedDocumentDiagnosticReport
         string $kind,
         string $resultId,
     ) {
-        $this->kind = $kind;
-
-        $this->resultId = $resultId;
+            $this->kind = $kind;
+    
+            $this->resultId = $resultId;
     }
 }

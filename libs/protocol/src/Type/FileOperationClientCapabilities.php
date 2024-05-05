@@ -13,10 +13,6 @@ namespace Lsp\Protocol\Type;
  */
 final class FileOperationClientCapabilities
 {
-    /**
-     * @generated
-     * @since 3.16.0
-     */
     final public function __construct(
         public readonly bool $dynamicRegistration,
         public readonly bool $didCreate,

@@ -10,10 +10,6 @@ namespace Lsp\Protocol\Type;
  */
 final class SignatureHelpContext
 {
-    /**
-     * @generated
-     * @since 3.15.0
-     */
     final public function __construct(
         public readonly SignatureHelpTriggerKind $triggerKind,
         public readonly string $triggerCharacter,

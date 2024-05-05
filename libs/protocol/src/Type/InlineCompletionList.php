@@ -12,9 +12,6 @@ namespace Lsp\Protocol\Type;
 final class InlineCompletionList
 {
     /**
-     * @generated
-     * @since 3.18.0
-     * @internal Describes the upcoming version of the Language Server Protocol and is under development
      * @param list<InlineCompletionItem> $items
      */
     final public function __construct(

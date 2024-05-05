@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
 final class InlayHint
 {
     /**
-     * @generated
-     * @since 3.17.0
      * @param string|list<InlayHintLabelPart> $label
      * @param list<TextEdit> $textEdits
      */

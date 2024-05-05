@@ -10,10 +10,6 @@ namespace Lsp\Protocol\Type;
  */
 final class DiagnosticServerCancellationData
 {
-    /**
-     * @generated
-     * @since 3.17.0
-     */
     final public function __construct(
         public readonly bool $retriggerRequest,
     ) {}

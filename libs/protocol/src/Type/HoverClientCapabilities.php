@@ -8,7 +8,6 @@ namespace Lsp\Protocol\Type;
 final class HoverClientCapabilities
 {
     /**
-     * @generated
      * @param list<MarkupKind> $contentFormat
      */
     final public function __construct(

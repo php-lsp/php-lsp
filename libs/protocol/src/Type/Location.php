@@ -11,7 +11,6 @@ namespace Lsp\Protocol\Type;
 final class Location
 {
     /**
-     * @generated
      * @param non-empty-string $uri
      */
     final public function __construct(

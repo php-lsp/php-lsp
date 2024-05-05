@@ -56,8 +56,6 @@ final class StructParamsBuilder
     public function buildIfNotEmpty(Structure $struct): ?PhpDocBlock
     {
         $provider = (function () use ($struct) {
-            yield from DefinitionBuilder::getDefinitionTags($struct);
-
             $defined = [];
 
             foreach ($struct->getProperties($this->ctx) as $property) {

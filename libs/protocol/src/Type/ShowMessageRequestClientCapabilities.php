@@ -9,10 +9,7 @@ namespace Lsp\Protocol\Type;
  */
 final class ShowMessageRequestClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
-        public readonly object $messageActionItem,
+        public readonly ShowMessageRequestClientCapabilitiesMessageActionItem $messageActionItem,
     ) {}
 }

@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
 final class NotebookDocument
 {
     /**
-     * @generated
-     * @since 3.17.0
      * @param non-empty-string $uri
      * @param int<-2147483648, 2147483647> $version
      * @param array<string, mixed> $metadata

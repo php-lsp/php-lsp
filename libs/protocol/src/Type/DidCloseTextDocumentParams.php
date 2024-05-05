@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class DidCloseTextDocumentParams
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly TextDocumentIdentifier $textDocument,
     ) {}

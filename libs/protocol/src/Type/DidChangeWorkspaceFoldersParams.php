@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class DidChangeWorkspaceFoldersParams
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly WorkspaceFoldersChangeEvent $event,
     ) {}

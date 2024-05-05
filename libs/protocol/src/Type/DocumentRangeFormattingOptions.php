@@ -11,13 +11,10 @@ class DocumentRangeFormattingOptions
 {
     use DocumentRangeFormattingOptionsMixin;
 
-    /**
-     * @generated
-     */
-    public function __construct(bool $rangesSupport, bool $workDoneProgress)
+    function __construct(bool $rangesSupport, bool $workDoneProgress)
     {
-        $this->rangesSupport = $rangesSupport;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->rangesSupport = $rangesSupport;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

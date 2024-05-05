@@ -12,7 +12,6 @@ final class RenameParams
     use WorkDoneProgressParamsMixin;
 
     /**
-     * @generated
      * @param int<-2147483648, 2147483647>|string $workDoneToken
      */
     final public function __construct(
@@ -21,6 +20,6 @@ final class RenameParams
         public readonly string $newName,
         int|string $workDoneToken,
     ) {
-        $this->workDoneToken = $workDoneToken;
+            $this->workDoneToken = $workDoneToken;
     }
 }

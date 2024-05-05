@@ -13,8 +13,6 @@ final class RelatedFullDocumentDiagnosticReport
     use FullDocumentDiagnosticReportMixin;
 
     /**
-     * @generated
-     * @since 3.17.0
      * @param array<non-empty-string, FullDocumentDiagnosticReport|UnchangedDocumentDiagnosticReport> $relatedDocuments
      * @param list<Diagnostic> $items
      */
@@ -24,10 +22,10 @@ final class RelatedFullDocumentDiagnosticReport
         string $resultId,
         array $items,
     ) {
-        $this->kind = $kind;
-
-        $this->resultId = $resultId;
-
-        $this->items = $items;
+            $this->kind = $kind;
+    
+            $this->resultId = $resultId;
+    
+            $this->items = $items;
     }
 }

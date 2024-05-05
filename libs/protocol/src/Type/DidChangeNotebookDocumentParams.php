@@ -10,10 +10,6 @@ namespace Lsp\Protocol\Type;
  */
 final class DidChangeNotebookDocumentParams
 {
-    /**
-     * @generated
-     * @since 3.17.0
-     */
     final public function __construct(
         public readonly VersionedNotebookDocumentIdentifier $notebookDocument,
         public readonly NotebookDocumentChangeEvent $change,

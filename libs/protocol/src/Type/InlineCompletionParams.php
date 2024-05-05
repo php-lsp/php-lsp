@@ -16,9 +16,6 @@ final class InlineCompletionParams
     use TextDocumentPositionParamsMixin;
 
     /**
-     * @generated
-     * @since 3.18.0
-     * @internal Describes the upcoming version of the Language Server Protocol and is under development
      * @param int<-2147483648, 2147483647>|string $workDoneToken
      */
     final public function __construct(
@@ -27,10 +24,10 @@ final class InlineCompletionParams
         Position $position,
         int|string $workDoneToken,
     ) {
-        $this->textDocument = $textDocument;
-
-        $this->position = $position;
-
-        $this->workDoneToken = $workDoneToken;
+            $this->textDocument = $textDocument;
+    
+            $this->position = $position;
+    
+            $this->workDoneToken = $workDoneToken;
     }
 }

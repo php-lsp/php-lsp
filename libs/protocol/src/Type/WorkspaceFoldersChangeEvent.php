@@ -10,7 +10,6 @@ namespace Lsp\Protocol\Type;
 final class WorkspaceFoldersChangeEvent
 {
     /**
-     * @generated
      * @param list<WorkspaceFolder> $added
      * @param list<WorkspaceFolder> $removed
      */

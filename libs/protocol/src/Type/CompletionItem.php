@@ -11,7 +11,6 @@ namespace Lsp\Protocol\Type;
 final class CompletionItem
 {
     /**
-     * @generated
      * @param list<CompletionItemTag> $tags
      * @param list<TextEdit> $additionalTextEdits
      * @param list<string> $commitCharacters

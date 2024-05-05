@@ -12,11 +12,10 @@ class TextDocumentRegistrationOptions
     use TextDocumentRegistrationOptionsMixin;
 
     /**
-     * @generated
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    public function __construct(array|null $documentSelector)
+    function __construct(array|null $documentSelector)
     {
-        $this->documentSelector = $documentSelector;
+            $this->documentSelector = $documentSelector;
     }
 }

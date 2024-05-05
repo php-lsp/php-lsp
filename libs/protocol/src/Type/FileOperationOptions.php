@@ -10,10 +10,6 @@ namespace Lsp\Protocol\Type;
  */
 final class FileOperationOptions
 {
-    /**
-     * @generated
-     * @since 3.16.0
-     */
     final public function __construct(
         public readonly FileOperationRegistrationOptions $didCreate,
         public readonly FileOperationRegistrationOptions $willCreate,

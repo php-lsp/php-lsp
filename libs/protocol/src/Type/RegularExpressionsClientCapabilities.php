@@ -10,10 +10,6 @@ namespace Lsp\Protocol\Type;
  */
 final class RegularExpressionsClientCapabilities
 {
-    /**
-     * @generated
-     * @since 3.16.0
-     */
     final public function __construct(
         public readonly string $engine,
         public readonly string $version,

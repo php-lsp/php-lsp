@@ -8,7 +8,6 @@ namespace Lsp\Protocol\Type;
 final class ColorPresentation
 {
     /**
-     * @generated
      * @param list<TextEdit> $additionalTextEdits
      */
     final public function __construct(

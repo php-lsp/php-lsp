@@ -12,7 +12,6 @@ final class DeleteFile
     use ResourceOperationMixin;
 
     /**
-     * @generated
      * @param non-empty-string $uri
      */
     final public function __construct(
@@ -21,8 +20,8 @@ final class DeleteFile
         public readonly DeleteFileOptions $options,
         string $annotationId,
     ) {
-        $this->kind = $kind;
-
-        $this->annotationId = $annotationId;
+            $this->kind = $kind;
+    
+            $this->annotationId = $annotationId;
     }
 }

@@ -9,11 +9,8 @@ class ImplementationOptions
 {
     use ImplementationOptionsMixin;
 
-    /**
-     * @generated
-     */
-    public function __construct(bool $workDoneProgress)
+    function __construct(bool $workDoneProgress)
     {
-        $this->workDoneProgress = $workDoneProgress;
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

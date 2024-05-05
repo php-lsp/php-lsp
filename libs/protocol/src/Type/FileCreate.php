@@ -10,10 +10,6 @@ namespace Lsp\Protocol\Type;
  */
 final class FileCreate
 {
-    /**
-     * @generated
-     * @since 3.16.0
-     */
     final public function __construct(
         public readonly string $uri,
     ) {}

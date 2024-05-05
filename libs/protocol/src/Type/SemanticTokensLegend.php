@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
 final class SemanticTokensLegend
 {
     /**
-     * @generated
-     * @since 3.16.0
      * @param list<string> $tokenTypes
      * @param list<string> $tokenModifiers
      */

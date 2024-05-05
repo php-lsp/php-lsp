@@ -11,12 +11,10 @@ namespace Lsp\Protocol\Type;
 final class NotebookDocumentChangeEvent
 {
     /**
-     * @generated
-     * @since 3.17.0
      * @param array<string, mixed> $metadata
      */
     final public function __construct(
         public readonly array $metadata,
-        public readonly object $cells,
+        public readonly NotebookDocumentChangeEventCells $cells,
     ) {}
 }

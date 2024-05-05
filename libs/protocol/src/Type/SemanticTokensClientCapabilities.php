@@ -9,15 +9,13 @@ namespace Lsp\Protocol\Type;
 final class SemanticTokensClientCapabilities
 {
     /**
-     * @generated
-     * @since 3.16.0
      * @param list<string> $tokenTypes
      * @param list<string> $tokenModifiers
      * @param list<TokenFormat> $formats
      */
     final public function __construct(
         public readonly bool $dynamicRegistration,
-        public readonly object $requests,
+        public readonly SemanticTokensClientCapabilitiesRequests $requests,
         public readonly array $tokenTypes,
         public readonly array $tokenModifiers,
         public readonly array $formats,

@@ -7,6 +7,7 @@ namespace Lsp\Protocol\Generator;
 use Lsp\Protocol\Generator\Node\MetaModel;
 use Lsp\Protocol\Generator\Printer\Per2Printer;
 use Lsp\Protocol\Generator\Visitor\EnumNodeVisitor;
+use Lsp\Protocol\Generator\Visitor\ExtractStructLiteralNodeVisitor;
 use Lsp\Protocol\Generator\Visitor\MixinNodeVisitor;
 use Lsp\Protocol\Generator\Visitor\StructInheritanceNodeVisitor;
 use Lsp\Protocol\Generator\Visitor\StandaloneStructNodeVisitor;
@@ -57,8 +58,19 @@ final class Generator
     {
         $types = new \ArrayObject();
 
+        // Normalize
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new StructInheritanceNodeVisitor());
+        $traverser->addVisitor($extractor = new ExtractStructLiteralNodeVisitor());
+        $traverser->traverse([$model]);
+
+        // Load additional structures
+        foreach ($extractor->getGeneratedStructures() as $structure) {
+            $model->structures[] = $structure;
+        }
+
+        // Generate
+        $traverser = new NodeTraverser();
         $traverser->addVisitor(new EnumNodeVisitor($types, $namespace));
         $traverser->addVisitor(new StandaloneStructNodeVisitor($types, $namespace));
         $traverser->addVisitor(new MixinNodeVisitor($types, $namespace));

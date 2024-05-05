@@ -8,7 +8,6 @@ namespace Lsp\Protocol\Type;
 final class WorkDoneProgressBegin
 {
     /**
-     * @generated
      * @param int<0, 2147483647> $percentage
      */
     final public function __construct(

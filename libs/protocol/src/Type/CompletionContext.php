@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class CompletionContext
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly CompletionTriggerKind $triggerKind,
         public readonly string $triggerCharacter,

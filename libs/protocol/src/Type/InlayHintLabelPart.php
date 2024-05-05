@@ -11,10 +11,6 @@ namespace Lsp\Protocol\Type;
  */
 final class InlayHintLabelPart
 {
-    /**
-     * @generated
-     * @since 3.17.0
-     */
     final public function __construct(
         public readonly string $value,
         public readonly string|MarkupContent $tooltip,

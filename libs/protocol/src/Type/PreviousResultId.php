@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
 final class PreviousResultId
 {
     /**
-     * @generated
-     * @since 3.17.0
      * @param non-empty-string $uri
      */
     final public function __construct(

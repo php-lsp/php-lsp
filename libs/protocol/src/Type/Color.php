@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class Color
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly float $red,
         public readonly float $green,

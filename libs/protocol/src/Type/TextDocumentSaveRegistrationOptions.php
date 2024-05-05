@@ -14,13 +14,12 @@ final class TextDocumentSaveRegistrationOptions
     use SaveOptionsMixin;
 
     /**
-     * @generated
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(array|null $documentSelector, bool $includeText)
     {
-        $this->documentSelector = $documentSelector;
-
-        $this->includeText = $includeText;
+            $this->documentSelector = $documentSelector;
+    
+            $this->includeText = $includeText;
     }
 }

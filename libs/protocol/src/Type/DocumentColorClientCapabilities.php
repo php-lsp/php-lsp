@@ -7,9 +7,6 @@ namespace Lsp\Protocol\Type;
  */
 final class DocumentColorClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $dynamicRegistration,
     ) {}

@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
 final class TypeHierarchyItem
 {
     /**
-     * @generated
-     * @since 3.17.0
      * @param list<SymbolTag> $tags
      * @param non-empty-string $uri
      */

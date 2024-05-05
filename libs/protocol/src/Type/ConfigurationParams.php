@@ -10,7 +10,6 @@ namespace Lsp\Protocol\Type;
 final class ConfigurationParams
 {
     /**
-     * @generated
      * @param list<ConfigurationItem> $items
      */
     final public function __construct(

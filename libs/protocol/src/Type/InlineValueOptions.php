@@ -12,12 +12,8 @@ class InlineValueOptions
 {
     use InlineValueOptionsMixin;
 
-    /**
-     * @generated
-     * @since 3.17.0
-     */
-    public function __construct(bool $workDoneProgress)
+    function __construct(bool $workDoneProgress)
     {
-        $this->workDoneProgress = $workDoneProgress;
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

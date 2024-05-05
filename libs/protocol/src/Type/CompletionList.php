@@ -11,12 +11,11 @@ namespace Lsp\Protocol\Type;
 final class CompletionList
 {
     /**
-     * @generated
      * @param list<CompletionItem> $items
      */
     final public function __construct(
         public readonly bool $isIncomplete,
-        public readonly object $itemDefaults,
+        public readonly CompletionListItemDefaults $itemDefaults,
         public readonly array $items,
     ) {}
 }

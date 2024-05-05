@@ -8,7 +8,6 @@ namespace Lsp\Protocol\Type;
 final class WorkDoneProgressCancelParams
 {
     /**
-     * @generated
      * @param int<-2147483648, 2147483647>|string $token
      */
     final public function __construct(

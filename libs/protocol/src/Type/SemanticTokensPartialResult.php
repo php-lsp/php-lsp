@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
 final class SemanticTokensPartialResult
 {
     /**
-     * @generated
-     * @since 3.16.0
      * @param list<int<0, 2147483647>> $data
      */
     final public function __construct(

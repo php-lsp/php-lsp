@@ -10,10 +10,6 @@ namespace Lsp\Protocol\Type;
  */
 final class Moniker
 {
-    /**
-     * @generated
-     * @since 3.16.0
-     */
     final public function __construct(
         public readonly string $scheme,
         public readonly string $identifier,

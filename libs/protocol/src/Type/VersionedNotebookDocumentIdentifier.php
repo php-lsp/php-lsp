@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
 final class VersionedNotebookDocumentIdentifier
 {
     /**
-     * @generated
-     * @since 3.17.0
      * @param int<-2147483648, 2147483647> $version
      * @param non-empty-string $uri
      */

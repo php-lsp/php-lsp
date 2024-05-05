@@ -21,7 +21,6 @@ namespace Lsp\Protocol\Type;
 final class WorkspaceEdit
 {
     /**
-     * @generated
      * @param array<non-empty-string, list<TextEdit>> $changes
      * @param list<TextDocumentEdit|CreateFile|RenameFile|DeleteFile> $documentChanges
      * @param array<string, ChangeAnnotation> $changeAnnotations

@@ -9,12 +9,9 @@ namespace Lsp\Protocol\Type;
  */
 final class PublishDiagnosticsClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $relatedInformation,
-        public readonly object $tagSupport,
+        public readonly PublishDiagnosticsClientCapabilitiesTagSupport $tagSupport,
         public readonly bool $versionSupport,
         public readonly bool $codeDescriptionSupport,
         public readonly bool $dataSupport,

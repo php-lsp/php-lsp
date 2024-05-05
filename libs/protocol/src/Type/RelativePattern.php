@@ -13,8 +13,6 @@ namespace Lsp\Protocol\Type;
 final class RelativePattern
 {
     /**
-     * @generated
-     * @since 3.17.0
      * @param WorkspaceFolder|non-empty-string $baseUri
      */
     final public function __construct(

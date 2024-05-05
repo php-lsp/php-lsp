@@ -9,16 +9,13 @@ namespace Lsp\Protocol\Type;
  */
 final class CodeActionClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $dynamicRegistration,
-        public readonly object $codeActionLiteralSupport,
+        public readonly CodeActionClientCapabilitiesCodeActionLiteralSupport $codeActionLiteralSupport,
         public readonly bool $isPreferredSupport,
         public readonly bool $disabledSupport,
         public readonly bool $dataSupport,
-        public readonly object $resolveSupport,
+        public readonly CodeActionClientCapabilitiesResolveSupport $resolveSupport,
         public readonly bool $honorsChangeAnnotations,
     ) {}
 }

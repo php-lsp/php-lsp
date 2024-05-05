@@ -10,7 +10,6 @@ namespace Lsp\Protocol\Type;
 final class DidChangeWatchedFilesParams
 {
     /**
-     * @generated
      * @param list<FileEvent> $changes
      */
     final public function __construct(

@@ -7,9 +7,6 @@ namespace Lsp\Protocol\Type;
  */
 final class TextDocumentSyncClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $dynamicRegistration,
         public readonly bool $willSave,

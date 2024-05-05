@@ -14,7 +14,6 @@ final class CodeActionRegistrationOptions
     use CodeActionOptionsMixin;
 
     /**
-     * @generated
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      * @param list<CodeActionKind> $codeActionKinds
      */
@@ -24,12 +23,12 @@ final class CodeActionRegistrationOptions
         bool $resolveProvider,
         bool $workDoneProgress,
     ) {
-        $this->documentSelector = $documentSelector;
-
-        $this->codeActionKinds = $codeActionKinds;
-
-        $this->resolveProvider = $resolveProvider;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->documentSelector = $documentSelector;
+    
+            $this->codeActionKinds = $codeActionKinds;
+    
+            $this->resolveProvider = $resolveProvider;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

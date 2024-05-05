@@ -11,10 +11,6 @@ namespace Lsp\Protocol\Type;
  */
 final class NotebookCellTextDocumentFilter
 {
-    /**
-     * @generated
-     * @since 3.17.0
-     */
     final public function __construct(
         public readonly string|object|object|object $notebook,
         public readonly string $language,

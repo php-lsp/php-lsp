@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class DidOpenTextDocumentParams
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly TextDocumentItem $textDocument,
     ) {}

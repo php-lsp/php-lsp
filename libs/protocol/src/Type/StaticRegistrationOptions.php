@@ -12,11 +12,8 @@ abstract class StaticRegistrationOptions
 {
     use StaticRegistrationOptionsMixin;
 
-    /**
-     * @generated
-     */
-    public function __construct(string $id)
+    function __construct(string $id)
     {
-        $this->id = $id;
+            $this->id = $id;
     }
 }

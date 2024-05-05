@@ -13,7 +13,6 @@ namespace Lsp\Protocol\Type;
 final class Command
 {
     /**
-     * @generated
      * @param list<mixed> $arguments
      */
     final public function __construct(

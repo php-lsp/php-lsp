@@ -13,7 +13,6 @@ namespace Lsp\Protocol\Type;
 final class TextDocumentEdit
 {
     /**
-     * @generated
      * @param list<TextEdit|AnnotatedTextEdit> $edits
      */
     final public function __construct(

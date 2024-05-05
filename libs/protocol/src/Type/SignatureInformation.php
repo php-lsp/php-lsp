@@ -12,7 +12,6 @@ namespace Lsp\Protocol\Type;
 final class SignatureInformation
 {
     /**
-     * @generated
      * @param list<ParameterInformation> $parameters
      * @param int<0, 2147483647> $activeParameter
      */

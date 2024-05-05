@@ -8,7 +8,6 @@ namespace Lsp\Protocol\Type;
 final class ShowMessageRequestParams
 {
     /**
-     * @generated
      * @param list<MessageActionItem> $actions
      */
     final public function __construct(

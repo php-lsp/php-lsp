@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class WorkspaceClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $applyEdit,
         public readonly WorkspaceEditClientCapabilities $workspaceEdit,

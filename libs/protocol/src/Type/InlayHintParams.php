@@ -13,8 +13,6 @@ final class InlayHintParams
     use WorkDoneProgressParamsMixin;
 
     /**
-     * @generated
-     * @since 3.17.0
      * @param int<-2147483648, 2147483647>|string $workDoneToken
      */
     final public function __construct(
@@ -22,6 +20,6 @@ final class InlayHintParams
         public readonly Range $range,
         int|string $workDoneToken,
     ) {
-        $this->workDoneToken = $workDoneToken;
+            $this->workDoneToken = $workDoneToken;
     }
 }

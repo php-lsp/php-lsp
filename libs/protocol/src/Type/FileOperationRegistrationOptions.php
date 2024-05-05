@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
 final class FileOperationRegistrationOptions
 {
     /**
-     * @generated
-     * @since 3.16.0
      * @param list<FileOperationFilter> $filters
      */
     final public function __construct(

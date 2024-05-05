@@ -10,10 +10,6 @@ namespace Lsp\Protocol\Type;
  */
 final class DiagnosticClientCapabilities
 {
-    /**
-     * @generated
-     * @since 3.17.0
-     */
     final public function __construct(
         public readonly bool $dynamicRegistration,
         public readonly bool $relatedDocumentSupport,

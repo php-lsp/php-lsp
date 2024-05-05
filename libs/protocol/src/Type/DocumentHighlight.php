@@ -11,9 +11,6 @@ namespace Lsp\Protocol\Type;
  */
 final class DocumentHighlight
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly Range $range,
         public readonly DocumentHighlightKind $kind,

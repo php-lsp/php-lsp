@@ -11,10 +11,6 @@ namespace Lsp\Protocol\Type;
  */
 final class FileOperationFilter
 {
-    /**
-     * @generated
-     * @since 3.16.0
-     */
     final public function __construct(
         public readonly string $scheme,
         public readonly FileOperationPattern $pattern,

@@ -10,9 +10,6 @@ namespace Lsp\Protocol\Type;
  */
 final class ServerCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly PositionEncodingKind $positionEncoding,
         public readonly TextDocumentSyncOptions|TextDocumentSyncKind $textDocumentSync,
@@ -48,7 +45,7 @@ final class ServerCapabilities
         public readonly bool|InlayHintOptions|InlayHintRegistrationOptions $inlayHintProvider,
         public readonly DiagnosticOptions|DiagnosticRegistrationOptions $diagnosticProvider,
         public readonly bool|InlineCompletionOptions $inlineCompletionProvider,
-        public readonly object $workspace,
+        public readonly ServerCapabilitiesWorkspace $workspace,
         public readonly mixed $experimental,
     ) {}
 }

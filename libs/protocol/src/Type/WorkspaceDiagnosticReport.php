@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
 final class WorkspaceDiagnosticReport
 {
     /**
-     * @generated
-     * @since 3.17.0
      * @param list<WorkspaceFullDocumentDiagnosticReport|WorkspaceUnchangedDocumentDiagnosticReport> $items
      */
     final public function __construct(

@@ -7,9 +7,6 @@ namespace Lsp\Protocol\Type;
  */
 final class TextDocumentSyncOptions
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $openClose,
         public readonly TextDocumentSyncKind $change,

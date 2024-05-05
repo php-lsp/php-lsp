@@ -12,8 +12,6 @@ namespace Lsp\Protocol\Type;
 final class CallHierarchyItem
 {
     /**
-     * @generated
-     * @since 3.16.0
      * @param list<SymbolTag> $tags
      * @param non-empty-string $uri
      */

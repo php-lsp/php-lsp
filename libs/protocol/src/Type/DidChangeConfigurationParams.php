@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class DidChangeConfigurationParams
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly mixed $settings,
     ) {}

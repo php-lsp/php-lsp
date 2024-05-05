@@ -12,21 +12,20 @@ class BaseSymbolInformation
     use BaseSymbolInformationMixin;
 
     /**
-     * @generated
      * @param list<SymbolTag> $tags
      */
-    public function __construct(
+    function __construct(
         string $name,
         SymbolKind $kind,
         array $tags,
         string $containerName,
     ) {
-        $this->name = $name;
-
-        $this->kind = $kind;
-
-        $this->tags = $tags;
-
-        $this->containerName = $containerName;
+            $this->name = $name;
+    
+            $this->kind = $kind;
+    
+            $this->tags = $tags;
+    
+            $this->containerName = $containerName;
     }
 }

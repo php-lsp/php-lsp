@@ -7,9 +7,6 @@ namespace Lsp\Protocol\Type;
  */
 final class LogTraceParams
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly string $message,
         public readonly string $verbose,

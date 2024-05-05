@@ -9,9 +9,6 @@ namespace Lsp\Protocol\Type;
  */
 final class ReferenceClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $dynamicRegistration,
     ) {}

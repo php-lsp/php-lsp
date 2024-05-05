@@ -9,15 +9,12 @@ namespace Lsp\Protocol\Type;
  */
 final class CompletionClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $dynamicRegistration,
-        public readonly object $completionItem,
-        public readonly object $completionItemKind,
+        public readonly CompletionClientCapabilitiesCompletionItem $completionItem,
+        public readonly CompletionClientCapabilitiesCompletionItemKind $completionItemKind,
         public readonly InsertTextMode $insertTextMode,
         public readonly bool $contextSupport,
-        public readonly object $completionList,
+        public readonly CompletionClientCapabilitiesCompletionList $completionList,
     ) {}
 }

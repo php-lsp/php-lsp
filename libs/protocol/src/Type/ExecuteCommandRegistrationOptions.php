@@ -12,13 +12,12 @@ final class ExecuteCommandRegistrationOptions
     use ExecuteCommandOptionsMixin;
 
     /**
-     * @generated
      * @param list<string> $commands
      */
     final public function __construct(array $commands, bool $workDoneProgress)
     {
-        $this->commands = $commands;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->commands = $commands;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

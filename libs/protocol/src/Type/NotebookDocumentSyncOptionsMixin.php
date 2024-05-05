@@ -8,7 +8,7 @@ trait NotebookDocumentSyncOptionsMixin
      * The notebooks to be synced
      *
      * @generated
-     * @var list<object>
+     * @var list<NotebookDocumentSyncOptionsNotebookSelector>
      */
     public readonly array $notebookSelector;
 

@@ -12,7 +12,6 @@ final class VersionedTextDocumentIdentifier
     use TextDocumentIdentifierMixin;
 
     /**
-     * @generated
      * @param int<-2147483648, 2147483647> $version
      * @param non-empty-string $uri
      */
@@ -20,6 +19,6 @@ final class VersionedTextDocumentIdentifier
         public readonly int $version,
         string $uri,
     ) {
-        $this->uri = $uri;
+            $this->uri = $uri;
     }
 }

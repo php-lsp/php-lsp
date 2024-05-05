@@ -11,7 +11,6 @@ namespace Lsp\Protocol\Type;
 final class LocationLink
 {
     /**
-     * @generated
      * @param non-empty-string $targetUri
      */
     final public function __construct(

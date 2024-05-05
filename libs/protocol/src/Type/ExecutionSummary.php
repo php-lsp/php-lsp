@@ -8,7 +8,6 @@ namespace Lsp\Protocol\Type;
 final class ExecutionSummary
 {
     /**
-     * @generated
      * @param int<0, 2147483647> $executionOrder
      */
     final public function __construct(

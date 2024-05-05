@@ -7,9 +7,6 @@ namespace Lsp\Protocol\Type;
  */
 final class WindowClientCapabilities
 {
-    /**
-     * @generated
-     */
     final public function __construct(
         public readonly bool $workDoneProgress,
         public readonly ShowMessageRequestClientCapabilities $showMessage,
