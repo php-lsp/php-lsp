@@ -23,8 +23,9 @@ final class StructParamsBuilder
 
     private readonly Lsp2TlTransformer $lsp2tl;
 
-    public function __construct(MetaModel $ctx)
-    {
+    public function __construct(
+        private readonly MetaModel $ctx,
+    ) {
         $this->builder = new Builder();
         $this->native = new NativeTypePrinter();
         $this->pretty = new PrettyPrinter();
@@ -57,12 +58,16 @@ final class StructParamsBuilder
         $provider = (function () use ($struct) {
             yield from DefinitionBuilder::getDefinitionTags($struct);
 
-            foreach ($struct->properties as $property) {
+            $defined = [];
+
+            foreach ($struct->getProperties($this->ctx) as $property) {
                 $type = $this->getVarTag($this->lsp2tl->transform($property->type));
 
-                if ($type === null) {
+                if ($type === null || \in_array($property->name, $defined, true)) {
                     continue;
                 }
+
+                $defined[] = $property->name;
 
                 yield 'param' => \trim(\vsprintf('%s $%s', [
                     $type,

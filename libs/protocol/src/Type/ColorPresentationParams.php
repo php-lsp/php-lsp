@@ -15,6 +15,8 @@ final class ColorPresentationParams
 
     /**
      * @generated
+     * @param int<-2147483648, 2147483647>|string $workDoneToken
+     * @param int<-2147483648, 2147483647>|string $partialResultToken
      */
     final public function __construct(
         public readonly TextDocumentIdentifier $textDocument,

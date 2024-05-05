@@ -15,6 +15,8 @@ final class CodeActionRegistrationOptions
 
     /**
      * @generated
+     * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
+     * @param list<CodeActionKind> $codeActionKinds
      */
     final public function __construct(
         array|null $documentSelector,

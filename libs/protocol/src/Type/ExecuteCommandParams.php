@@ -14,6 +14,7 @@ final class ExecuteCommandParams
     /**
      * @generated
      * @param list<mixed> $arguments
+     * @param int<-2147483648, 2147483647>|string $workDoneToken
      */
     final public function __construct(
         public readonly string $command,

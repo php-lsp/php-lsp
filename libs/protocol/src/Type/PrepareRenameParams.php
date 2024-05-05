@@ -13,6 +13,7 @@ final class PrepareRenameParams
 
     /**
      * @generated
+     * @param int<-2147483648, 2147483647>|string $workDoneToken
      */
     final public function __construct(TextDocumentIdentifier $textDocument, Position $position, int|string $workDoneToken)
     {

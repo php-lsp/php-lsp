@@ -19,6 +19,7 @@ final class DiagnosticRegistrationOptions
     /**
      * @generated
      * @since 3.17.0
+     * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(
         array|null $documentSelector,

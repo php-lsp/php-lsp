@@ -15,6 +15,7 @@ final class DeclarationRegistrationOptions
 
     /**
      * @generated
+     * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(bool $workDoneProgress, array|null $documentSelector, string $id)
     {

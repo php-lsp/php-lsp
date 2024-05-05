@@ -13,6 +13,10 @@ final class InitializeParams
 
     /**
      * @generated
+     * @param int<-2147483648, 2147483647>|null $processId
+     * @param non-empty-string|null $rootUri
+     * @param int<-2147483648, 2147483647>|string $workDoneToken
+     * @param list<WorkspaceFolder>|null $workspaceFolders
      */
     final public function __construct(
         int|null $processId,

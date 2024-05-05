@@ -19,6 +19,7 @@ final class InlineCompletionParams
      * @generated
      * @since 3.18.0
      * @internal Describes the upcoming version of the Language Server Protocol and is under development
+     * @param int<-2147483648, 2147483647>|string $workDoneToken
      */
     final public function __construct(
         public readonly InlineCompletionContext $context,

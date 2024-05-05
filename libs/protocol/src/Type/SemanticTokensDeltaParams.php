@@ -15,6 +15,8 @@ final class SemanticTokensDeltaParams
     /**
      * @generated
      * @since 3.16.0
+     * @param int<-2147483648, 2147483647>|string $workDoneToken
+     * @param int<-2147483648, 2147483647>|string $partialResultToken
      */
     final public function __construct(
         public readonly TextDocumentIdentifier $textDocument,

@@ -15,6 +15,7 @@ class _InitializeParams
      * @generated
      * @param int<-2147483648, 2147483647>|null $processId
      * @param non-empty-string|null $rootUri
+     * @param int<-2147483648, 2147483647>|string $workDoneToken
      */
     public function __construct(
         int|null $processId,

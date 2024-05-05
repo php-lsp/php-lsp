@@ -15,6 +15,9 @@ final class SignatureHelpRegistrationOptions
 
     /**
      * @generated
+     * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
+     * @param list<string> $triggerCharacters
+     * @param list<string> $retriggerCharacters
      */
     final public function __construct(
         array|null $documentSelector,

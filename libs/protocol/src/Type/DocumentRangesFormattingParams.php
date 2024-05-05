@@ -18,6 +18,7 @@ final class DocumentRangesFormattingParams
      * @since 3.18.0
      * @internal Describes the upcoming version of the Language Server Protocol and is under development
      * @param list<Range> $ranges
+     * @param int<-2147483648, 2147483647>|string $workDoneToken
      */
     final public function __construct(
         public readonly TextDocumentIdentifier $textDocument,

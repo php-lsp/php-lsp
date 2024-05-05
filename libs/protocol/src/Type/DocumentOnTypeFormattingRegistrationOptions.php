@@ -15,6 +15,8 @@ final class DocumentOnTypeFormattingRegistrationOptions
 
     /**
      * @generated
+     * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
+     * @param list<string> $moreTriggerCharacter
      */
     final public function __construct(array|null $documentSelector, string $firstTriggerCharacter, array $moreTriggerCharacter)
     {

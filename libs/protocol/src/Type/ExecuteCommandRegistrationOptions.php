@@ -13,6 +13,7 @@ final class ExecuteCommandRegistrationOptions
 
     /**
      * @generated
+     * @param list<string> $commands
      */
     final public function __construct(array $commands, bool $workDoneProgress)
     {

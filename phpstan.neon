@@ -9,7 +9,7 @@ parameters:
   paths:
     - libs/hydrator-contracts/src
     - libs/hydrator-jms/src
-    #- libs/protocol/src
+    - libs/protocol/src
     - libs/protocol-generator/src
     - libs/rpc-message/src
     - libs/rpc-message-contracts/src

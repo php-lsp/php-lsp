@@ -14,6 +14,7 @@ final class SymbolInformation
 
     /**
      * @generated
+     * @param list<SymbolTag> $tags
      */
     final public function __construct(
         public readonly bool $deprecated,

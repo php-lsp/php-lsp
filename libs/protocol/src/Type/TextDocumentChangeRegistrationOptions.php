@@ -13,6 +13,7 @@ final class TextDocumentChangeRegistrationOptions
 
     /**
      * @generated
+     * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(
         public readonly TextDocumentSyncKind $syncKind,

@@ -15,6 +15,9 @@ final class CompletionRegistrationOptions
 
     /**
      * @generated
+     * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
+     * @param list<string> $triggerCharacters
+     * @param list<string> $allCommitCharacters
      */
     final public function __construct(
         array|null $documentSelector,

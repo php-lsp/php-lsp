@@ -17,6 +17,7 @@ final class SemanticTokensRegistrationOptions
     /**
      * @generated
      * @since 3.16.0
+     * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(
         array|null $documentSelector,

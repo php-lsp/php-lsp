@@ -14,6 +14,7 @@ final class OptionalVersionedTextDocumentIdentifier
     /**
      * @generated
      * @param int<-2147483648, 2147483647>|null $version
+     * @param non-empty-string $uri
      */
     final public function __construct(
         public readonly int|null $version,

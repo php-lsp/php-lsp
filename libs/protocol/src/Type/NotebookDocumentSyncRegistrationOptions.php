@@ -17,6 +17,7 @@ final class NotebookDocumentSyncRegistrationOptions
     /**
      * @generated
      * @since 3.17.0
+     * @param list<object> $notebookSelector
      */
     final public function __construct(array $notebookSelector, bool $save, string $id)
     {
