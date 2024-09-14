@@ -14,14 +14,16 @@ trait _InitializeParamsMixin
      * If the parent process is not alive then the server should exit.
      *
      * @generated
+     *
      * @var int<-2147483648, 2147483647>|null
      */
-    public readonly int|null $processId;
+    public readonly ?int $processId;
 
     /**
      * Information about the client
      *
      * @generated
+     *
      * @since 3.15.0
      */
     public readonly _InitializeParamsClientInfo $clientInfo;
@@ -35,6 +37,7 @@ trait _InitializeParamsMixin
      * (See https://en.wikipedia.org/wiki/IETF_language_tag)
      *
      * @generated
+     *
      * @since 3.16.0
      */
     public readonly string $locale;
@@ -44,9 +47,10 @@ trait _InitializeParamsMixin
      * if no folder is open.
      *
      * @generated
-     * @deprecated in favour of rootUri.
+     *
+     * @deprecated in favour of rootUri
      */
-    public readonly string|null $rootPath;
+    public readonly ?string $rootPath;
 
     /**
      * The rootUri of the workspace. Is null if no
@@ -54,10 +58,12 @@ trait _InitializeParamsMixin
      * `rootUri` wins.
      *
      * @generated
-     * @deprecated in favour of workspaceFolders.
+     *
+     * @deprecated in favour of workspaceFolders
+     *
      * @var non-empty-string|null
      */
-    public readonly string|null $rootUri;
+    public readonly ?string $rootUri;
 
     /**
      * The capabilities provided by the client (editor or tool)

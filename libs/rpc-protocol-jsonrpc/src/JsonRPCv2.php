@@ -4,29 +4,29 @@ declare(strict_types=1);
 
 namespace Lsp\Rpc\Protocol;
 
+use Lsp\Contracts\Rpc\Message\Factory\IdFactoryInterface;
+use Lsp\Contracts\Rpc\Message\Factory\RequestFactoryInterface;
+use Lsp\Contracts\Rpc\Message\Factory\ResponseFactoryInterface;
+use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
+use Lsp\Contracts\Rpc\Message\IdInterface;
+use Lsp\Contracts\Rpc\Message\MessageInterface;
+use Lsp\Contracts\Rpc\Message\NotificationInterface;
+use Lsp\Contracts\Rpc\Message\RequestInterface;
+use Lsp\Contracts\Rpc\Message\ResponseInterface;
+use Lsp\Contracts\Rpc\Message\SuccessfulResponseInterface;
 use Lsp\Contracts\Rpc\Protocol\DecoderInterface;
 use Lsp\Contracts\Rpc\Protocol\EncoderInterface;
-use Lsp\Rpc\Protocol\Exception\DecodingException;
 use Lsp\Contracts\Rpc\Protocol\Exception\DecodingExceptionInterface;
+use Lsp\Rpc\Message\Factory\IdFactory;
+use Lsp\Rpc\Message\Factory\RequestFactory;
+use Lsp\Rpc\Message\Factory\ResponseFactory;
+use Lsp\Rpc\Protocol\Exception\DecodingException;
 use Lsp\Rpc\Protocol\Exception\DependencyRequiredException;
 use Lsp\Rpc\Protocol\Exception\EncodingException;
 use Lsp\Rpc\Protocol\Exception\InvalidFieldTypeException;
 use Lsp\Rpc\Protocol\Exception\InvalidFieldValueException;
 use Lsp\Rpc\Protocol\Exception\RequiredFieldNotDefinedException;
 use Lsp\Rpc\Protocol\JsonRPC\Signature;
-use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
-use Lsp\Rpc\Message\Factory\IdFactory;
-use Lsp\Contracts\Rpc\Message\Factory\IdFactoryInterface;
-use Lsp\Contracts\Rpc\Message\IdInterface;
-use Lsp\Contracts\Rpc\Message\MessageInterface;
-use Lsp\Contracts\Rpc\Message\NotificationInterface;
-use Lsp\Rpc\Message\Factory\RequestFactory;
-use Lsp\Contracts\Rpc\Message\Factory\RequestFactoryInterface;
-use Lsp\Contracts\Rpc\Message\RequestInterface;
-use Lsp\Rpc\Message\Factory\ResponseFactory;
-use Lsp\Contracts\Rpc\Message\Factory\ResponseFactoryInterface;
-use Lsp\Contracts\Rpc\Message\ResponseInterface;
-use Lsp\Contracts\Rpc\Message\SuccessfulResponseInterface;
 
 final class JsonRPCv2 implements EncoderInterface, DecoderInterface
 {
@@ -60,9 +60,9 @@ final class JsonRPCv2 implements EncoderInterface, DecoderInterface
      * @param int<1, 2147483647> $jsonMaxDepth
      */
     public function __construct(
-        RequestFactoryInterface $requests = null,
-        ResponseFactoryInterface $responses = null,
-        IdFactoryInterface $ids = null,
+        ?RequestFactoryInterface $requests = null,
+        ?ResponseFactoryInterface $responses = null,
+        ?IdFactoryInterface $ids = null,
         private readonly Signature $signature = Signature::ALL,
         private readonly int $jsonEncodingFlags = self::DEFAULT_JSON_FLAGS_ENCODE,
         private readonly int $jsonDecodingFlags = self::DEFAULT_JSON_FLAGS_DECODE,
@@ -239,7 +239,9 @@ final class JsonRPCv2 implements EncoderInterface, DecoderInterface
 
     /**
      * @template T of mixed
+     *
      * @param T $id
+     *
      * @return IdInterface<T>
      * @throws DecodingException
      */

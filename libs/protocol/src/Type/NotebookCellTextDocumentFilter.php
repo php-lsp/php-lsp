@@ -7,6 +7,7 @@ namespace Lsp\Protocol\Type;
  * document by different properties.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class NotebookCellTextDocumentFilter

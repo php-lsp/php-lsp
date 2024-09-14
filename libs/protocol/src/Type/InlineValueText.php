@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Provide inline value as text.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class InlineValueText

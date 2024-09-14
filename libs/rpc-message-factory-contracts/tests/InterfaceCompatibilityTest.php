@@ -26,7 +26,7 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements IdFactoryInterface {
+        new class implements IdFactoryInterface {
             public function create(mixed $id = null): IdInterface {}
         };
     }
@@ -35,11 +35,11 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements RequestFactoryInterface {
+        new class implements RequestFactoryInterface {
             public function createRequest(
                 string $method,
                 array $parameters = [],
-                IdInterface $id = null,
+                ?IdInterface $id = null,
             ): RequestInterface {}
 
             public function createNotification(
@@ -53,11 +53,12 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements ResponseFactoryInterface {
+        new class implements ResponseFactoryInterface {
             public function createSuccess(
                 IdInterface|IdentifiableInterface $id,
                 mixed $result = null,
             ): SuccessfulResponseInterface {}
+
             public function createFailure(
                 IdInterface|IdentifiableInterface $id,
                 int $code = 0,

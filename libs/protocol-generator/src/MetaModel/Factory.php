@@ -44,6 +44,7 @@ final class Factory
 
     /**
      * @param non-empty-string $pathname
+     *
      * @throws MetaModelNotReadableException
      */
     public function createFromJsonFile(string $pathname): MetaModel
@@ -59,6 +60,7 @@ final class Factory
 
     /**
      * @param non-empty-string $json
+     *
      * @throws MetaModelNonDecodableException
      */
     public function createFromJsonString(string $json): MetaModel

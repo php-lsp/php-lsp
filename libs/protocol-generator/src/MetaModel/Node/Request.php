@@ -14,20 +14,20 @@ use Lsp\Protocol\Generator\MetaModel\Node\Type\TypeInterface;
 final class Request extends Notification
 {
     /**
-     * @param non-empty-string $method The request's method name.
-     * @param TypeInterface|list<TypeInterface>|null $params The parameter
-     *        type(s) if any.
-     * @param TypeInterface $result The result type.
-     * @param TypeInterface|null $partialResult Optional partial result type if
-     *        the request supports partial result reporting.
-     * @param TypeInterface|null $errorData An optional error data type.
-     * @param non-empty-string|null $registrationMethod Optional a dynamic
-     *        registration method if it different from the request's method.
-     * @param TypeInterface|null $registrationOptions Optional registration
-     *        options if the request supports dynamic registration.
-     * @param MessageDirection $messageDirection The direction in which this
-     *        request is sent in the protocol.
-     * @param non-empty-string|null $documentation An optional documentation.
+     * @param non-empty-string $method the request's method name
+     * @param TypeInterface|list<TypeInterface>|null $params the parameter
+     *        type(s) if any
+     * @param TypeInterface $result the result type
+     * @param TypeInterface|null $partialResult optional partial result type if
+     *        the request supports partial result reporting
+     * @param TypeInterface|null $errorData an optional error data type
+     * @param non-empty-string|null $registrationMethod optional a dynamic
+     *        registration method if it different from the request's method
+     * @param TypeInterface|null $registrationOptions optional registration
+     *        options if the request supports dynamic registration
+     * @param MessageDirection $messageDirection the direction in which this
+     *        request is sent in the protocol
+     * @param non-empty-string|null $documentation an optional documentation
      * @param non-empty-string|null $since Since when (release number) this
      *        request is available. Is undefined if not known.
      * @param bool|null $proposed Whether this is a proposed feature. If omitted
@@ -93,7 +93,7 @@ final class Request extends Notification
             registrationOptions: isset($data['registrationOptions'])
                 ? Type::fromArray($data['registrationOptions'])
                 : null,
-            messageDirection: \Lsp\Protocol\Generator\MetaModel\Node\Request\MessageDirection::from($data['messageDirection']),
+            messageDirection: MessageDirection::from($data['messageDirection']),
             documentation: $data['documentation'] ?? null,
             since: $data['since'] ?? null,
             proposed: $data['proposed'] ?? null,

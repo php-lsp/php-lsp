@@ -34,10 +34,12 @@ abstract class StructLikeNodeVisitor extends NodeVisitor
         switch (true) {
             case $node instanceof MetaModel:
                 $this->context = $node;
+
                 return null;
 
             case $node instanceof Structure:
                 $this->enterStruct($node);
+
                 return null;
 
             default:

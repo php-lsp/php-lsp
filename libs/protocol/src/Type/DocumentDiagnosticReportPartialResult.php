@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * A partial result for a document diagnostic report.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class DocumentDiagnosticReportPartialResult

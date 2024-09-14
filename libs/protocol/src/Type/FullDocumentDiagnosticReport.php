@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * A diagnostic report with a full set of problems.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 class FullDocumentDiagnosticReport

@@ -16,7 +16,7 @@ final class TextDocumentChangeRegistrationOptions
      */
     final public function __construct(
         public readonly TextDocumentSyncKind $syncKind,
-        array|null $documentSelector,
+        ?array $documentSelector,
     ) {
         $this->documentSelector = $documentSelector;
     }

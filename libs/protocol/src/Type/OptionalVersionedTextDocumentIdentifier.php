@@ -16,7 +16,7 @@ final class OptionalVersionedTextDocumentIdentifier
      * @param non-empty-string $uri
      */
     final public function __construct(
-        public readonly int|null $version,
+        public readonly ?int $version,
         string $uri,
     ) {
         $this->uri = $uri;

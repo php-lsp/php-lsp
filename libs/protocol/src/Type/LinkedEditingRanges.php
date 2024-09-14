@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * The result of a linked editing range request.
  *
  * @generated
+ *
  * @since 3.16.0
  */
 final class LinkedEditingRanges

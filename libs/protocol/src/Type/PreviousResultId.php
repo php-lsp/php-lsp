@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * A previous result id in a workspace pull request.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class PreviousResultId

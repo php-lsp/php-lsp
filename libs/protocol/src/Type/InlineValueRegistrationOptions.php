@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Inline value options used during static or dynamic registration.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class InlineValueRegistrationOptions
@@ -19,7 +20,7 @@ final class InlineValueRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    final public function __construct(bool $workDoneProgress, array|null $documentSelector, string $id)
+    final public function __construct(bool $workDoneProgress, ?array $documentSelector, string $id)
     {
         $this->workDoneProgress = $workDoneProgress;
 

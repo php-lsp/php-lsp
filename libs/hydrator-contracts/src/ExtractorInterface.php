@@ -31,10 +31,10 @@ interface ExtractorInterface
      * // ]
      * ```
      *
-     * @throws HydratorExceptionInterface The general exception that occurs
-     *         in case of hydrator errors.
-     * @throws MarshallingExceptionInterface An exception that occurs in case
-     *         of errors during extraction process.
+     * @throws HydratorExceptionInterface the general exception that occurs
+     *         in case of hydrator errors
+     * @throws MarshallingExceptionInterface an exception that occurs in case
+     *         of errors during extraction process
      */
     public function extract(mixed $data): mixed;
 }

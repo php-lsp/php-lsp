@@ -27,13 +27,13 @@ interface RequestFactoryInterface
      *
      * @template TIdentifier of mixed
      *
-     * @param non-empty-string $method Non-empty RPC request method name.
-     * @param array<array-key, mixed> $parameters List of RPC request parameters.
-     * @param IdInterface<TIdentifier>|null $id Identifier value.
+     * @param non-empty-string $method non-empty RPC request method name
+     * @param array<array-key, mixed> $parameters list of RPC request parameters
+     * @param IdInterface<TIdentifier>|null $id identifier value
      *
      * @return RequestInterface<TIdentifier>
      */
-    public function createRequest(string $method, array $parameters = [], IdInterface $id = null): RequestInterface;
+    public function createRequest(string $method, array $parameters = [], ?IdInterface $id = null): RequestInterface;
 
     /**
      * Creates a new {@see NotificationInterface} instance by method and
@@ -47,8 +47,8 @@ interface RequestFactoryInterface
      *  $factory->createNotification('example-notification', ['name' => 'value', 'other' => 42]);
      * ```
      *
-     * @param non-empty-string $method Non-empty RPC request method name.
-     * @param array<array-key, mixed> $parameters List of RPC request parameters.
+     * @param non-empty-string $method non-empty RPC request method name
+     * @param array<array-key, mixed> $parameters list of RPC request parameters
      */
     public function createNotification(string $method, array $parameters = []): NotificationInterface;
 }

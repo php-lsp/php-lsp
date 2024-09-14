@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * The parameter of a `textDocument/prepareCallHierarchy` request.
  *
  * @generated
+ *
  * @since 3.16.0
  */
 final class CallHierarchyPrepareParams

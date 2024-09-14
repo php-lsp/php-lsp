@@ -35,11 +35,10 @@ interface HydratorInterface
      * @param class-string<TObject>|non-empty-string $type
      *
      * @return ($type is class-string ? TObject : mixed)
-     *
-     * @throws HydratorExceptionInterface The general exception that occurs
-     *         in case of hydrator errors.
-     * @throws MappingExceptionInterface An exception that occurs in case
-     *         of errors during mapping process.
+     * @throws HydratorExceptionInterface the general exception that occurs
+     *         in case of hydrator errors
+     * @throws MappingExceptionInterface an exception that occurs in case
+     *         of errors during mapping process
      */
     public function hydrate(string $type, mixed $data): mixed;
 }

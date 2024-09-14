@@ -16,7 +16,7 @@ final class DocumentRangeFormattingRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    final public function __construct(array|null $documentSelector, bool $rangesSupport, bool $workDoneProgress)
+    final public function __construct(?array $documentSelector, bool $rangesSupport, bool $workDoneProgress)
     {
         $this->documentSelector = $documentSelector;
 

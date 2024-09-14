@@ -16,7 +16,7 @@ final class TextDocumentSaveRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    final public function __construct(array|null $documentSelector, bool $includeText)
+    final public function __construct(?array $documentSelector, bool $includeText)
     {
         $this->documentSelector = $documentSelector;
 

@@ -46,7 +46,8 @@ final class StructParamsBuilder
 
     public static function makeIfNotEmpty(MetaModel $ctx, Structure $struct, callable $then): void
     {
-        $docblock = (new self($ctx))->buildIfNotEmpty($struct);
+        $docblock = (new self($ctx))
+            ->buildIfNotEmpty($struct);
 
         if ($docblock !== null) {
             $then($docblock);

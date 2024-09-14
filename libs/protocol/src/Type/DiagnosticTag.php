@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * The diagnostic tags.
  *
  * @generated
+ *
  * @since 3.15.0
  */
 enum DiagnosticTag: int

@@ -24,14 +24,14 @@ final class Structure extends Definition
     private const ATTR_USED_AS_PARENT = 'used_as_parent';
 
     /**
-     * @param non-empty-string $name The name of the structure.
+     * @param non-empty-string $name the name of the structure
      * @param list<TypeInterface>|null $extends Structures extended from. This
      *        structures form a polymorphic type hierarchy.
      * @param list<TypeInterface>|null $mixins Structures to mix in. The
      *        properties of these structures are `copied` into this structure.
      *        Mixins don't form a polymorphic type hierarchy in LSP.
-     * @param list<Property> $properties The properties.
-     * @param non-empty-string|null $documentation An optional documentation.
+     * @param list<Property> $properties the properties
+     * @param non-empty-string|null $documentation an optional documentation
      * @param non-empty-string|null $since Since when (release number) this
      *        structure is available. Is undefined if not known.
      * @param bool|null $proposed Whether this is a proposed structure. If

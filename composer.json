@@ -81,18 +81,25 @@
         "php-lsp/rpc-message-factory-contracts-implementation": "^1.0",
         "php-lsp/rpc-protocol-contracts-implementation": "^1.0"
     },
+    "scripts-aliases": {
+        "linter:check": ["linter", "stan", "analyze", "phpstan"],
+        "phpcs:fix": ["phpcs", "per2", "per", "percs", "codestyle", "cs"],
+        "test:unit": ["phpunit", "unit"],
+        "rector:check": ["rector", "upgrade"]
+    },
     "scripts": {
         "test": "@test:unit",
         "test:unit": "phpunit --testdox",
-        "linter": "@linter:check",
+
         "linter:check": "phpstan analyse --configuration phpstan.neon",
         "linter:baseline": "phpstan analyse --configuration phpstan.neon --generate-baseline",
-        "phpcs": "@phpcs:check",
+
         "phpcs:check": "php-cs-fixer fix --config=.php-cs-fixer.php --allow-risky=yes --dry-run --verbose --diff",
         "phpcs:fix": "php-cs-fixer fix --config=.php-cs-fixer.php --allow-risky=yes --verbose --diff",
-        "rector": "@rector:check",
+
         "rector:check": "rector --dry-run --config=rector.php",
         "rector:fix": "rector --config=rector.php",
+
         "dev:merge": "monorepo-builder merge"
     },
     "extra": {

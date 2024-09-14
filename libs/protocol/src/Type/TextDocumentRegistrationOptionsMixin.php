@@ -9,7 +9,8 @@ trait TextDocumentRegistrationOptionsMixin
      * the document selector provided on the client side will be used.
      *
      * @generated
+     *
      * @var list<object|NotebookCellTextDocumentFilter>|null
      */
-    public readonly array|null $documentSelector;
+    public readonly ?array $documentSelector;
 }

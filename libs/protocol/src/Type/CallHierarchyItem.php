@@ -7,6 +7,7 @@ namespace Lsp\Protocol\Type;
  * of call hierarchy.
  *
  * @generated
+ *
  * @since 3.16.0
  */
 final class CallHierarchyItem

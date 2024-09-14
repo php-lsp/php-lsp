@@ -8,6 +8,7 @@ namespace Lsp\Protocol\Type;
  * An optional expression can be used to override the extracted expression.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class InlineValueEvaluatableExpression

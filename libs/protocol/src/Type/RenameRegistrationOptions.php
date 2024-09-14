@@ -16,7 +16,7 @@ final class RenameRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    final public function __construct(array|null $documentSelector, bool $prepareProvider, bool $workDoneProgress)
+    final public function __construct(?array $documentSelector, bool $prepareProvider, bool $workDoneProgress)
     {
         $this->documentSelector = $documentSelector;
 

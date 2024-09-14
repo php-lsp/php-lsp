@@ -24,6 +24,7 @@ final class OutputTransformer
 
     /**
      * @param non-empty-string $namespace
+     *
      * @return \ArrayObject<array-key, PhpNodeInterface>
      */
     private function transformMetaModel(string $namespace): \ArrayObject
@@ -53,6 +54,7 @@ final class OutputTransformer
 
     /**
      * @api
+     *
      * @param non-empty-string $namespace
      */
     public function forNamespace(string $namespace): OutputPrinter

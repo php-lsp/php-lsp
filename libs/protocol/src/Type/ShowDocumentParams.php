@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Params to show a resource in the UI.
  *
  * @generated
+ *
  * @since 3.16.0
  */
 final class ShowDocumentParams

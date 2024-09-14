@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Registration options specific to a notebook.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class NotebookDocumentSyncRegistrationOptions

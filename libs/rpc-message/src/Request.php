@@ -9,7 +9,6 @@ use Lsp\Contracts\Rpc\Message\RequestInterface;
 
 /**
  * @template TIdentifier of mixed
- *
  * @template-implements RequestInterface<TIdentifier>
  */
 class Request extends Notification implements RequestInterface

@@ -11,9 +11,9 @@ use JMS\Serializer\Handler\SubscribingHandlerInterface;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
-use Metadata\Cache\PsrCacheAdapter as MetadataPsrCacheAdapter;
 use Lsp\Contracts\Hydrator\ExtractorInterface;
 use Lsp\Contracts\Hydrator\HydratorInterface;
+use Metadata\Cache\PsrCacheAdapter as MetadataPsrCacheAdapter;
 use Psr\Cache\CacheItemPoolInterface;
 
 final class Builder
@@ -29,12 +29,12 @@ final class Builder
     }
 
     /**
-     * @param array<class-string, non-empty-string> $configs Sets a map of
-     *        namespace prefixes to directories.
-     * @param iterable<array-key, SubscribingHandlerInterface> $handlers List
-     *        of subscribing handlers.
-     * @param iterable<array-key, EventSubscriberInterface> $subscribers List
-     *        of event subscribers.
+     * @param array<class-string, non-empty-string> $configs sets a map of
+     *        namespace prefixes to directories
+     * @param iterable<array-key, SubscribingHandlerInterface> $handlers list
+     *        of subscribing handlers
+     * @param iterable<array-key, EventSubscriberInterface> $subscribers list
+     *        of event subscribers
      *
      * @psalm-suppress InternalClass
      * @psalm-suppress TooManyArguments
@@ -44,7 +44,7 @@ final class Builder
         bool $debug = false,
         iterable $handlers = [],
         iterable $subscribers = [],
-        CacheItemPoolInterface $cache = null,
+        ?CacheItemPoolInterface $cache = null,
     ): self {
         $builder = SerializerBuilder::create()
             ->setDebug($debug)

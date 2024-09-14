@@ -41,6 +41,7 @@ enum MessageType: int
      * A debug message.
      *
      * @generated
+     *
      * @since 3.18.0
      */
     case Debug = 5;

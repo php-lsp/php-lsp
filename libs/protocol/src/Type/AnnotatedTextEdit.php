@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * A special text edit with an additional change annotation.
  *
  * @generated
+ *
  * @since 3.16.0.
  */
 final class AnnotatedTextEdit

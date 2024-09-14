@@ -4,6 +4,7 @@ namespace Lsp\Protocol\Type;
 
 /**
  * @generated
+ *
  * @since 3.17.0
  */
 final class TypeHierarchyClientCapabilities

@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * A notebook cell kind.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 enum NotebookCellKind: int

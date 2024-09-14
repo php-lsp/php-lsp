@@ -9,6 +9,7 @@ namespace Lsp\Protocol\Type;
  * like renaming a file in the UI.
  *
  * @generated
+ *
  * @since 3.16.0
  */
 final class FileOperationClientCapabilities

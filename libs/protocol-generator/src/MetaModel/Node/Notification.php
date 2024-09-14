@@ -14,16 +14,16 @@ use Lsp\Protocol\Generator\MetaModel\Node\Type\TypeInterface;
 class Notification extends Definition
 {
     /**
-     * @param non-empty-string $method The request's method name.
-     * @param TypeInterface|list<TypeInterface>|null $params The parameter
-     *        type(s) if any.
-     * @param non-empty-string|null $registrationMethod Optional a dynamic
-     *        registration method if it different from the request's method.
-     * @param TypeInterface|null $registrationOptions Optional registration
-     *        options if the notification supports dynamic registration.
-     * @param MessageDirection $messageDirection The direction in which this
-     *        notification is sent in the protocol.
-     * @param non-empty-string|null $documentation An optional documentation.
+     * @param non-empty-string $method the request's method name
+     * @param TypeInterface|list<TypeInterface>|null $params the parameter
+     *        type(s) if any
+     * @param non-empty-string|null $registrationMethod optional a dynamic
+     *        registration method if it different from the request's method
+     * @param TypeInterface|null $registrationOptions optional registration
+     *        options if the notification supports dynamic registration
+     * @param MessageDirection $messageDirection the direction in which this
+     *        notification is sent in the protocol
+     * @param non-empty-string|null $documentation an optional documentation
      * @param non-empty-string|null $since Since when (release number) this
      *        notification is available. Is undefined if not known.
      * @param bool|null $proposed Whether this is a proposed notification.
@@ -85,7 +85,7 @@ class Notification extends Definition
             registrationOptions: isset($data['registrationOptions'])
                 ? Type::fromArray($data['registrationOptions'])
                 : null,
-            messageDirection: \Lsp\Protocol\Generator\MetaModel\Node\Request\MessageDirection::from($data['messageDirection']),
+            messageDirection: MessageDirection::from($data['messageDirection']),
             documentation: $data['documentation'] ?? null,
             since: $data['since'] ?? null,
             proposed: $data['proposed'] ?? null,

@@ -13,12 +13,12 @@ use Lsp\Protocol\Generator\MetaModel\Node\Type\TypeInterface;
 final class MetaModel extends Node
 {
     /**
-     * @param MetaData $metaData Additional meta data.
-     * @param list<Request> $requests The requests.
-     * @param list<Notification> $notifications The notifications.
-     * @param list<Structure> $structures The structures.
-     * @param list<Enumeration> $enumerations The enumerations.
-     * @param list<TypeAlias> $typeAliases The type aliases.
+     * @param MetaData $metaData additional meta data
+     * @param list<Request> $requests the requests
+     * @param list<Notification> $notifications the notifications
+     * @param list<Structure> $structures the structures
+     * @param list<Enumeration> $enumerations the enumerations
+     * @param list<TypeAlias> $typeAliases the type aliases
      */
     public function __construct(
         public MetaData $metaData,

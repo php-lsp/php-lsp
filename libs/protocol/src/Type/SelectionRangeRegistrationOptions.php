@@ -16,7 +16,7 @@ final class SelectionRangeRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    final public function __construct(bool $workDoneProgress, array|null $documentSelector, string $id)
+    final public function __construct(bool $workDoneProgress, ?array $documentSelector, string $id)
     {
         $this->workDoneProgress = $workDoneProgress;
 

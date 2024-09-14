@@ -10,7 +10,6 @@ use Lsp\Contracts\Rpc\Message\SuccessfulResponseInterface;
 /**
  * @template TIdentifier of mixed
  * @template TResult of mixed
- *
  * @template-extends Response<TIdentifier>
  * @template-implements SuccessfulResponseInterface<TIdentifier, TResult>
  */

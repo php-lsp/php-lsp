@@ -12,9 +12,9 @@ use Lsp\Protocol\Generator\MetaModel\Node\Definition;
 final class EnumerationEntry extends Definition
 {
     /**
-     * @param non-empty-string $name The name of the enum item.
-     * @param non-empty-string|int $value The value.
-     * @param non-empty-string|null $documentation An optional documentation.
+     * @param non-empty-string $name the name of the enum item
+     * @param non-empty-string|int $value the value
+     * @param non-empty-string|null $documentation an optional documentation
      * @param non-empty-string|null $since Since when (release number) this
      *        enumeration entry is available. Is undefined if not known.
      * @param bool|null $proposed Whether this is a proposed enumeration entry.

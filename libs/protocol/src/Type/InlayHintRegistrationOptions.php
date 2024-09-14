@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Inlay hint options used during static or dynamic registration.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class InlayHintRegistrationOptions
@@ -22,7 +23,7 @@ final class InlayHintRegistrationOptions
     final public function __construct(
         bool $resolveProvider,
         bool $workDoneProgress,
-        array|null $documentSelector,
+        ?array $documentSelector,
         string $id,
     ) {
         $this->resolveProvider = $resolveProvider;

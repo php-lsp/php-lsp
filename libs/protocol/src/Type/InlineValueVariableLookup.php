@@ -8,6 +8,7 @@ namespace Lsp\Protocol\Type;
  * An optional variable name can be used to override the extracted name.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class InlineValueVariableLookup

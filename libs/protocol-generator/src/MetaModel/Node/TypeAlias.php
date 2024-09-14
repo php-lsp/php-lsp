@@ -13,9 +13,9 @@ use Lsp\Protocol\Generator\MetaModel\Node\Type\TypeInterface;
 final class TypeAlias extends Definition
 {
     /**
-     * @param non-empty-string $name The name of the type alias.
-     * @param TypeInterface $type The aliased type.
-     * @param non-empty-string|null $documentation An optional documentation.
+     * @param non-empty-string $name the name of the type alias
+     * @param TypeInterface $type the aliased type
+     * @param non-empty-string|null $documentation an optional documentation
      * @param non-empty-string|null $since Since when (release number) this
      *        structure is available. Is undefined if not known.
      * @param bool|null $proposed Whether this is a proposed type alias.

@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Additional information that describes document changes.
  *
  * @generated
+ *
  * @since 3.16.0
  */
 final class ChangeAnnotation

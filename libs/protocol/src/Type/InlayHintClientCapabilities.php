@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Inlay hint client capabilities.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class InlayHintClientCapabilities

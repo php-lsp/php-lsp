@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Lsp\Rpc\Message\Factory\IdFactory;
 
+use Lsp\Contracts\Rpc\Message\Factory\IdFactoryInterface;
 use Lsp\Rpc\Message\Factory\Exception\IdNotSupportedException;
 use Lsp\Rpc\Message\Factory\IdFactory;
 use Lsp\Rpc\Message\Factory\IdFactory\IntGenerator\OverflowBehaviour;
-use Lsp\Contracts\Rpc\Message\Factory\IdFactoryInterface;
 
 /**
  * @template-extends IntGenerator<int<0, 9223372036854775807>>
@@ -29,7 +29,7 @@ final class Int64Generator extends IntGenerator
     public const MIN_VALUE = -0x7FFF_FFFF_FFFF_FFFF - 1;
 
     /**
-     * @throws IdNotSupportedException If the current platform is not supported.
+     * @throws IdNotSupportedException if the current platform is not supported
      */
     public function __construct(
         IdFactoryInterface $ids = new IdFactory(),

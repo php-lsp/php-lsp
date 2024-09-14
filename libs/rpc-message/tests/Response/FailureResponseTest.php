@@ -52,7 +52,6 @@ final class FailureResponseTest extends TestCase
         self::assertSame(0, $response->getCode());
     }
 
-
     public function testErrorMessage(): void
     {
         $response = new FailureResponse(

@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Moniker uniqueness level to define scope of the moniker.
  *
  * @generated
+ *
  * @since 3.16.0
  */
 enum UniquenessLevel: string

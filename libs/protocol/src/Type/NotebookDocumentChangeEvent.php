@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * A change event for a notebook document.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class NotebookDocumentChangeEvent

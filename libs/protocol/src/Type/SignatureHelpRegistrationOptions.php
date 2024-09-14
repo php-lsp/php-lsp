@@ -19,7 +19,7 @@ final class SignatureHelpRegistrationOptions
      * @param list<string> $retriggerCharacters
      */
     final public function __construct(
-        array|null $documentSelector,
+        ?array $documentSelector,
         array $triggerCharacters,
         array $retriggerCharacters,
         bool $workDoneProgress,

@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace Lsp\Rpc\Message\Factory;
 
 use Lsp\Contracts\Rpc\Message\Factory\RequestFactoryInterface;
+use Lsp\Contracts\Rpc\Message\IdInterface;
+use Lsp\Contracts\Rpc\Message\NotificationInterface;
+use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Rpc\Message\Factory\Exception\IdExceptionInterface;
 use Lsp\Rpc\Message\Factory\IdFactory\GeneratorInterface;
 use Lsp\Rpc\Message\Factory\IdFactory\Int32Generator;
 use Lsp\Rpc\Message\Factory\IdFactory\Int64Generator;
-use Lsp\Contracts\Rpc\Message\IdInterface;
 use Lsp\Rpc\Message\Notification;
-use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Rpc\Message\Request;
-use Lsp\Contracts\Rpc\Message\RequestInterface;
 
 final class RequestFactory implements RequestFactoryInterface
 {
@@ -25,13 +25,14 @@ final class RequestFactory implements RequestFactoryInterface
     /**
      * @param GeneratorInterface<mixed>|null $id
      */
-    public function __construct(GeneratorInterface $id = null)
+    public function __construct(?GeneratorInterface $id = null)
     {
         $this->id = $this->createIdGenerator($id);
     }
 
     /**
      * @param GeneratorInterface<mixed>|null $id
+     *
      * @return GeneratorInterface<mixed>
      */
     private function createIdGenerator(?GeneratorInterface $id): GeneratorInterface
@@ -50,11 +51,9 @@ final class RequestFactory implements RequestFactoryInterface
     }
 
     /**
-     * {@inheritDoc}
-     *
      * @throws IdExceptionInterface
      */
-    public function createRequest(string $method, array $parameters = [], IdInterface $id = null): RequestInterface
+    public function createRequest(string $method, array $parameters = [], ?IdInterface $id = null): RequestInterface
     {
         return new Request($id ?? $this->id->nextId(), $method, $parameters);
     }

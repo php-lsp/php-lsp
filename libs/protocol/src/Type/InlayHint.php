@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Inlay hint information.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class InlayHint

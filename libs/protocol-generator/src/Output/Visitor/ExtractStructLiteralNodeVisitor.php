@@ -41,11 +41,13 @@ final class ExtractStructLiteralNodeVisitor extends Visitor
     {
         if ($node instanceof Property) {
             $this->property = $node;
+
             return null;
         }
 
         if ($node instanceof Structure) {
             $this->struct = $node;
+
             return null;
         }
 

@@ -16,6 +16,7 @@ namespace Lsp\Protocol\Type;
  * cell will be synced.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 class NotebookDocumentSyncOptions

@@ -16,7 +16,7 @@ final class DocumentLinkRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    final public function __construct(array|null $documentSelector, bool $resolveProvider, bool $workDoneProgress)
+    final public function __construct(?array $documentSelector, bool $resolveProvider, bool $workDoneProgress)
     {
         $this->documentSelector = $documentSelector;
 

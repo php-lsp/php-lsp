@@ -18,16 +18,16 @@ final class InitializeParams
      * @param list<WorkspaceFolder>|null $workspaceFolders
      */
     final public function __construct(
-        int|null $processId,
+        ?int $processId,
         _InitializeParamsClientInfo $clientInfo,
         string $locale,
-        string|null $rootPath,
-        string|null $rootUri,
+        ?string $rootPath,
+        ?string $rootUri,
         ClientCapabilities $capabilities,
         mixed $initializationOptions,
         TraceValues $trace,
         int|string $workDoneToken,
-        array|null $workspaceFolders,
+        ?array $workspaceFolders,
     ) {
         $this->processId = $processId;
 

@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * A partial result for a workspace diagnostic report.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class WorkspaceDiagnosticReportPartialResult

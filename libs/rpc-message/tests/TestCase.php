@@ -14,6 +14,7 @@ abstract class TestCase extends BaseTestCase
     {
         try {
             assert(false);
+
             return false;
         } catch (\Throwable $e) {
             return true;

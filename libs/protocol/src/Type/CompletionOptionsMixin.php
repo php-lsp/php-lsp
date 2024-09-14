@@ -17,6 +17,7 @@ trait CompletionOptionsMixin
      * an identifier (for example `.` in JavaScript) list them in `triggerCharacters`.
      *
      * @generated
+     *
      * @var list<string>
      */
     public readonly array $triggerCharacters;
@@ -30,7 +31,9 @@ trait CompletionOptionsMixin
      * completion item the ones on the completion item win.
      *
      * @generated
+     *
      * @since 3.2.0
+     *
      * @var list<string>
      */
     public readonly array $allCommitCharacters;
@@ -48,6 +51,7 @@ trait CompletionOptionsMixin
      * capabilities.
      *
      * @generated
+     *
      * @since 3.17.0
      */
     public readonly CompletionOptionsCompletionItem $completionItem;

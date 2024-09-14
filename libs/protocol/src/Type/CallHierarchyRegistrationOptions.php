@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Call hierarchy options used during static or dynamic registration.
  *
  * @generated
+ *
  * @since 3.16.0
  */
 final class CallHierarchyRegistrationOptions
@@ -19,7 +20,7 @@ final class CallHierarchyRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    final public function __construct(array|null $documentSelector, bool $workDoneProgress, string $id)
+    final public function __construct(?array $documentSelector, bool $workDoneProgress, string $id)
     {
         $this->documentSelector = $documentSelector;
 

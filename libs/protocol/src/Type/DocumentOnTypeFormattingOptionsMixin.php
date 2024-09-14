@@ -15,6 +15,7 @@ trait DocumentOnTypeFormattingOptionsMixin
      * More trigger characters.
      *
      * @generated
+     *
      * @var list<string>
      */
     public readonly array $moreTriggerCharacter;

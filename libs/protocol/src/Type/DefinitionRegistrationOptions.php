@@ -16,7 +16,7 @@ final class DefinitionRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    final public function __construct(array|null $documentSelector, bool $workDoneProgress)
+    final public function __construct(?array $documentSelector, bool $workDoneProgress)
     {
         $this->documentSelector = $documentSelector;
 

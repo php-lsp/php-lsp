@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * An unchanged diagnostic report with a set of related documents.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class RelatedUnchangedDocumentDiagnosticReport

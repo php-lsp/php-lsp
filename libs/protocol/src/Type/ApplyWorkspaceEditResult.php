@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * The result returned from the apply workspace edit request.
  *
  * @generated
+ *
  * @since 3.17 renamed from ApplyWorkspaceEditResponse
  */
 final class ApplyWorkspaceEditResult

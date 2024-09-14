@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Inlay hint kinds.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 enum InlayHintKind: int

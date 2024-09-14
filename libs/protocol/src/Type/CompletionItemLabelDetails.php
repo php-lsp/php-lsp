@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Additional details for a completion item label.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class CompletionItemLabelDetails

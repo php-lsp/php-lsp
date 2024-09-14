@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * A parameter literal used in inline value requests.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class InlineValueParams

@@ -18,11 +18,11 @@ final class Property extends Definition
     private const ATTR_IS_INHERITED = 'is_inherited';
 
     /**
-     * @param non-empty-string $name The property name.
-     * @param TypeInterface $type The type of the property.
+     * @param non-empty-string $name the property name
+     * @param TypeInterface $type the type of the property
      * @param bool|null $optional Whether the property is optional. If omitted,
      *        the property is mandatory.
-     * @param non-empty-string|null $documentation An optional documentation.
+     * @param non-empty-string|null $documentation an optional documentation
      * @param non-empty-string|null $since Since when (release number) this
      *        property is available. Is undefined if not known.
      * @param bool|null $proposed Whether this is a proposed property. If

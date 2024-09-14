@@ -13,13 +13,13 @@ use Lsp\Protocol\Generator\MetaModel\Node\Enumeration\EnumerationType;
 final class Enumeration extends Definition
 {
     /**
-     * @param non-empty-string $name The name of the enumeration.
-     * @param EnumerationType $type The type of the elements.
-     * @param list<EnumerationEntry> $values The enum values.
+     * @param non-empty-string $name the name of the enumeration
+     * @param EnumerationType $type the type of the elements
+     * @param list<EnumerationEntry> $values the enum values
      * @param bool|null $supportsCustomValues Whether the enumeration supports
      *        custom values (e.g. values which are not part of the set defined
      *        in `values`). If omitted no custom values are supported.
-     * @param non-empty-string|null $documentation An optional documentation.
+     * @param non-empty-string|null $documentation an optional documentation
      * @param non-empty-string|null $since Since when (release number) this
      *        enumeration is available. Is undefined if not known.
      * @param bool|null $proposed Whether this is a proposed enumeration. If

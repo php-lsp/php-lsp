@@ -4,6 +4,7 @@ namespace Lsp\Protocol\Type;
 
 /**
  * @generated
+ *
  * @internal This class is an internal dependency of {@see DocumentSymbolClientCapabilities}
  */
 final class DocumentSymbolClientCapabilitiesTagSupport

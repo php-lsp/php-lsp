@@ -22,7 +22,9 @@ trait BaseSymbolInformationMixin
      * Tags for this symbol.
      *
      * @generated
+     *
      * @since 3.16.0
+     *
      * @var list<SymbolTag>
      */
     public readonly array $tags;

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Lsp\Rpc\Message\Factory\IdFactory;
 
-use Lsp\Rpc\Message\Factory\Exception\IdExceptionInterface;
 use Lsp\Contracts\Rpc\Message\IdInterface;
+use Lsp\Rpc\Message\Factory\Exception\IdExceptionInterface;
 
 /**
  * @template TValue of mixed
@@ -13,9 +13,8 @@ use Lsp\Contracts\Rpc\Message\IdInterface;
 interface GeneratorInterface
 {
     /**
-     * @throws IdExceptionInterface Occurs in case of ID creation errors.
-     *
      * @return IdInterface<TValue>
+     * @throws IdExceptionInterface occurs in case of ID creation errors
      */
     public function nextId(): IdInterface;
 }

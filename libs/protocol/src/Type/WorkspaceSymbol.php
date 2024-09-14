@@ -8,6 +8,7 @@ namespace Lsp\Protocol\Type;
  * See also SymbolInformation.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class WorkspaceSymbol

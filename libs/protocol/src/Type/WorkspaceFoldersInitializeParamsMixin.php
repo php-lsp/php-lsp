@@ -12,8 +12,10 @@ trait WorkspaceFoldersInitializeParamsMixin
      * configured.
      *
      * @generated
+     *
      * @since 3.6.0
+     *
      * @var list<WorkspaceFolder>|null
      */
-    public readonly array|null $workspaceFolders;
+    public readonly ?array $workspaceFolders;
 }

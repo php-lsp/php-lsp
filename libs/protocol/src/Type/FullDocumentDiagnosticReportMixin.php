@@ -24,6 +24,7 @@ trait FullDocumentDiagnosticReportMixin
      * The actual items.
      *
      * @generated
+     *
      * @var list<Diagnostic>
      */
     public readonly array $items;

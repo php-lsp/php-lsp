@@ -25,10 +25,13 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements FailureResponseInterface {
+        new class implements FailureResponseInterface {
             public function getCode(): int {}
+
             public function getMessage(): string {}
+
             public function getData(): mixed {}
+
             public function getId(): IdInterface {}
         };
     }
@@ -37,7 +40,7 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements IdentifiableInterface {
+        new class implements IdentifiableInterface {
             public function getId(): IdInterface {}
         };
     }
@@ -46,9 +49,11 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements IdInterface {
+        new class implements IdInterface {
             public function equals(IdInterface $id): bool {}
+
             public function toPrimitive(): mixed {}
+
             public function __toString(): string {}
         };
     }
@@ -57,15 +62,16 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements MessageInterface {};
+        new class implements MessageInterface {};
     }
 
     public function testNotificationCompatibility(): void
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements NotificationInterface {
+        new class implements NotificationInterface {
             public function getMethod(): string {}
+
             public function getParameters(): array {}
         };
     }
@@ -74,9 +80,11 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements RequestInterface {
+        new class implements RequestInterface {
             public function getId(): IdInterface {}
+
             public function getMethod(): string {}
+
             public function getParameters(): array {}
         };
     }
@@ -85,7 +93,7 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements ResponseInterface {
+        new class implements ResponseInterface {
             public function getId(): IdInterface {}
         };
     }
@@ -94,8 +102,9 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements SuccessfulResponseInterface {
+        new class implements SuccessfulResponseInterface {
             public function getId(): IdInterface {}
+
             public function getResult(): mixed {}
         };
     }

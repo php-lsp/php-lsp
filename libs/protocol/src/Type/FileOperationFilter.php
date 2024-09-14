@@ -7,6 +7,7 @@ namespace Lsp\Protocol\Type;
  * the server is interested in receiving.
  *
  * @generated
+ *
  * @since 3.16.0
  */
 final class FileOperationFilter

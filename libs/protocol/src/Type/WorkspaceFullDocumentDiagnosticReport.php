@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * A full document diagnostic report for a workspace diagnostic result.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class WorkspaceFullDocumentDiagnosticReport
@@ -19,7 +20,7 @@ final class WorkspaceFullDocumentDiagnosticReport
      */
     final public function __construct(
         public readonly string $uri,
-        public readonly int|null $version,
+        public readonly ?int $version,
         string $kind,
         string $resultId,
         array $items,

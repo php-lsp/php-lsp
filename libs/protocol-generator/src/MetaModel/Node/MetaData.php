@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Generator\MetaModel\Node;
 final class MetaData extends Node
 {
     /**
-     * @param string $version The protocol version.
+     * @param string $version the protocol version
      */
     public function __construct(
         public string $version,

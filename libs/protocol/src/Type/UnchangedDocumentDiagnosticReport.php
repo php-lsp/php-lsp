@@ -7,6 +7,7 @@ namespace Lsp\Protocol\Type;
  * report is still accurate.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 class UnchangedDocumentDiagnosticReport

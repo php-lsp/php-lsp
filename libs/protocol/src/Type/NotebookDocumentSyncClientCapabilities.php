@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Notebook specific client capabilities.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class NotebookDocumentSyncClientCapabilities

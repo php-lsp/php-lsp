@@ -10,8 +10,8 @@ namespace Lsp\Protocol\Generator\MetaModel\Node;
 final class StructureLiteral extends Definition
 {
     /**
-     * @param list<Property> $properties The properties.
-     * @param non-empty-string|null $documentation An optional documentation.
+     * @param list<Property> $properties the properties
+     * @param non-empty-string|null $documentation an optional documentation
      * @param non-empty-string|null $since Since when (release number) this
      *        structure is available. Is undefined if not known.
      * @param bool|null $proposed Whether this is a proposed structure. If

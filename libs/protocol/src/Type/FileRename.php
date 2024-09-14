@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Represents information on a file/folder rename.
  *
  * @generated
+ *
  * @since 3.16.0
  */
 final class FileRename

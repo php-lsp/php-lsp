@@ -6,7 +6,9 @@ namespace Lsp\Protocol\Type;
  * A parameter literal used in inline completion requests.
  *
  * @generated
+ *
  * @since 3.18.0
+ *
  * @internal Describes the upcoming version of the Language Server Protocol and is under development
  */
 final class InlineCompletionParams

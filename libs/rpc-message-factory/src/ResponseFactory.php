@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Lsp\Rpc\Message\Factory;
 
 use Lsp\Contracts\Rpc\Message\Factory\ResponseFactoryInterface;
+use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
 use Lsp\Contracts\Rpc\Message\IdentifiableInterface;
 use Lsp\Contracts\Rpc\Message\IdInterface;
-use Lsp\Rpc\Message\FailureResponse;
-use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
-use Lsp\Rpc\Message\SuccessfulResponse;
 use Lsp\Contracts\Rpc\Message\SuccessfulResponseInterface;
+use Lsp\Rpc\Message\FailureResponse;
+use Lsp\Rpc\Message\SuccessfulResponse;
 
 final class ResponseFactory implements ResponseFactoryInterface
 {

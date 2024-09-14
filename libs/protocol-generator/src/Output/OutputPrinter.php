@@ -84,6 +84,7 @@ final class OutputPrinter implements \IteratorAggregate, \Countable
 
     /**
      * @api
+     *
      * @return iterable<array-key, PhpNodeInterface>
      */
     public function getAllTypes(): iterable
@@ -93,6 +94,7 @@ final class OutputPrinter implements \IteratorAggregate, \Countable
 
     /**
      * @api
+     *
      * @return iterable<array-key, non-empty-string>
      */
     public function getAllSources(): iterable

@@ -10,6 +10,7 @@ trait SignatureHelpOptionsMixin
      * List of characters that trigger signature help automatically.
      *
      * @generated
+     *
      * @var list<string>
      */
     public readonly array $triggerCharacters;
@@ -21,7 +22,9 @@ trait SignatureHelpOptionsMixin
      * are also counted as re-trigger characters.
      *
      * @generated
+     *
      * @since 3.15.0
+     *
      * @var list<string>
      */
     public readonly array $retriggerCharacters;

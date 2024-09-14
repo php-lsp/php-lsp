@@ -14,7 +14,6 @@ namespace Lsp\Contracts\Rpc\Message;
  *
  * @template TIdentifier of mixed
  * @template TData of mixed
- *
  * @template-extends ResponseInterface<TIdentifier>
  */
 interface FailureResponseInterface extends ResponseInterface
@@ -33,7 +32,7 @@ interface FailureResponseInterface extends ResponseInterface
      * A primitive or structured value that contains additional
      * information about the error.
      *
-     * @return TData returns variadic error data payload.
+     * @return TData returns variadic error data payload
      */
     public function getData(): mixed;
 }

@@ -10,6 +10,7 @@ namespace Lsp\Protocol\Type;
  * notebook cell or the cell's text document.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class NotebookCell

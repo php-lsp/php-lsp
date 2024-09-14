@@ -9,6 +9,7 @@ trait PartialResultParamsMixin
      * the client.
      *
      * @generated
+     *
      * @var int<-2147483648, 2147483647>|string
      */
     public readonly int|string $partialResultToken;

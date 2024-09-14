@@ -10,7 +10,6 @@ use Lsp\Contracts\Rpc\Message\IdInterface;
 /**
  * @template TIdentifier of mixed
  * @template TData of mixed
- *
  * @template-extends Response<TIdentifier>
  * @template-implements FailureResponseInterface<TIdentifier, TData>
  */

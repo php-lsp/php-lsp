@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace Lsp\Rpc\Message\Factory\IdFactory;
 
+use Lsp\Contracts\Rpc\Message\Factory\IdFactoryInterface;
+use Lsp\Contracts\Rpc\Message\IdInterface;
 use Lsp\Rpc\Message\Factory\Exception\IdOverflowException;
 use Lsp\Rpc\Message\Factory\IdFactory;
 use Lsp\Rpc\Message\Factory\IdFactory\IntGenerator\OverflowBehaviour;
-use Lsp\Contracts\Rpc\Message\Factory\IdFactoryInterface;
-use Lsp\Contracts\Rpc\Message\IdInterface;
 
 /**
  * @template TInteger of int
- *
  * @template-implements GeneratorInterface<TInteger>
  */
 abstract class IntGenerator implements GeneratorInterface

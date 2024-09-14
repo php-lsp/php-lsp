@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * The moniker kind.
  *
  * @generated
+ *
  * @since 3.16.0
  */
 enum MonikerKind: string

@@ -17,7 +17,7 @@ final class DocumentOnTypeFormattingRegistrationOptions
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      * @param list<string> $moreTriggerCharacter
      */
-    final public function __construct(array|null $documentSelector, string $firstTriggerCharacter, array $moreTriggerCharacter)
+    final public function __construct(?array $documentSelector, string $firstTriggerCharacter, array $moreTriggerCharacter)
     {
         $this->documentSelector = $documentSelector;
 

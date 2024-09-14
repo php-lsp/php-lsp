@@ -27,8 +27,7 @@ interface IdFactoryInterface
      * @param T $id
      *
      * @return IdInterface<T>
-     *
-     * @throws \Throwable In case of an ID creation error occurrence.
+     * @throws \Throwable in case of an ID creation error occurrence
      */
     public function create(mixed $id = null): IdInterface;
 }

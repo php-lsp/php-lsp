@@ -18,7 +18,7 @@ final class CodeActionRegistrationOptions
      * @param list<CodeActionKind> $codeActionKinds
      */
     final public function __construct(
-        array|null $documentSelector,
+        ?array $documentSelector,
         array $codeActionKinds,
         bool $resolveProvider,
         bool $workDoneProgress,

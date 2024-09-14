@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * An unchanged document diagnostic report for a workspace diagnostic result.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class WorkspaceUnchangedDocumentDiagnosticReport
@@ -18,7 +19,7 @@ final class WorkspaceUnchangedDocumentDiagnosticReport
      */
     final public function __construct(
         public readonly string $uri,
-        public readonly int|null $version,
+        public readonly ?int $version,
         string $kind,
         string $resultId,
     ) {

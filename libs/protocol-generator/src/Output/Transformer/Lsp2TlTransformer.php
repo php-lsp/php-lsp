@@ -114,6 +114,7 @@ final class Lsp2TlTransformer
 
     /**
      * @param iterable<array-key, TypeInterface> $types
+     *
      * @return list<TypeStatement>
      */
     private function transformAll(iterable $types): array
@@ -129,6 +130,7 @@ final class Lsp2TlTransformer
 
     /**
      * @param iterable<array-key, TypeInterface> $types
+     *
      * @return list<FieldNode>
      */
     private function transformAllAsImplicitFields(iterable $types): array

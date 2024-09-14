@@ -7,6 +7,7 @@ namespace Lsp\Protocol\Type;
  * array from state S to S'.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class NotebookCellArrayChange

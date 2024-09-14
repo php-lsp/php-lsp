@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Lsp\Rpc\Message\Factory;
 
 use Lsp\Contracts\Rpc\Message\Factory\IdFactoryInterface;
-use Lsp\Rpc\Message\EmptyIdentifier;
 use Lsp\Contracts\Rpc\Message\IdInterface;
+use Lsp\Rpc\Message\EmptyIdentifier;
 use Lsp\Rpc\Message\Factory\Exception\IdNotSupportedException;
 use Lsp\Rpc\Message\IntIdentifier;
 use Lsp\Rpc\Message\StringIdentifier;

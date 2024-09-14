@@ -13,6 +13,7 @@ trait CodeActionOptionsMixin
      * may list out every specific kind they provide.
      *
      * @generated
+     *
      * @var list<CodeActionKind>
      */
     public readonly array $codeActionKinds;
@@ -22,6 +23,7 @@ trait CodeActionOptionsMixin
      * information for a code action.
      *
      * @generated
+     *
      * @since 3.16.0
      */
     public readonly bool $resolveProvider;

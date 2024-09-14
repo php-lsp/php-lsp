@@ -17,11 +17,11 @@ class _InitializeParams
      * @param int<-2147483648, 2147483647>|string $workDoneToken
      */
     public function __construct(
-        int|null $processId,
+        ?int $processId,
         _InitializeParamsClientInfo $clientInfo,
         string $locale,
-        string|null $rootPath,
-        string|null $rootUri,
+        ?string $rootPath,
+        ?string $rootUri,
         ClientCapabilities $capabilities,
         mixed $initializationOptions,
         TraceValues $trace,

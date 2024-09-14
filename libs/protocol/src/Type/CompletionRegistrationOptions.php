@@ -19,7 +19,7 @@ final class CompletionRegistrationOptions
      * @param list<string> $allCommitCharacters
      */
     final public function __construct(
-        array|null $documentSelector,
+        ?array $documentSelector,
         array $triggerCharacters,
         array $allCommitCharacters,
         bool $resolveProvider,

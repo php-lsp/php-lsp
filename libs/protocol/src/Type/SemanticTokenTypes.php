@@ -8,6 +8,7 @@ namespace Lsp\Protocol\Type;
  * corresponding client capabilities.
  *
  * @generated
+ *
  * @since 3.16.0
  */
 enum SemanticTokenTypes: string
@@ -127,6 +128,7 @@ enum SemanticTokenTypes: string
 
     /**
      * @generated
+     *
      * @since 3.17.0
      */
     case DecoratorType = 'decorator';

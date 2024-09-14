@@ -24,7 +24,7 @@ final class Extractor implements ExtractorInterface
 
     public function extract(mixed $data): mixed
     {
-        $context = (SerializationContext::create())
+        $context = SerializationContext::create()
             ->setSerializeNull(true);
 
         if (\is_scalar($data) || $data === null) {

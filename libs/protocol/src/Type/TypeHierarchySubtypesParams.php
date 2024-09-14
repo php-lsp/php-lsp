@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * The parameter of a `typeHierarchy/subtypes` request.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class TypeHierarchySubtypesParams

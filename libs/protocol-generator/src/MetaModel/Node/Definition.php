@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Generator\MetaModel\Node;
 abstract class Definition extends Node
 {
     /**
-     * @param non-empty-string|null $documentation An optional documentation.
+     * @param non-empty-string|null $documentation an optional documentation
      * @param non-empty-string|null $since Since when (release number) this
      *        notification is available. Is undefined if not known.
      * @param bool|null $proposed Whether this is a proposed notification.

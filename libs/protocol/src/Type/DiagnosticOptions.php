@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Diagnostic options.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 class DiagnosticOptions

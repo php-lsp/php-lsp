@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * Parameters of the workspace diagnostic request.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class WorkspaceDiagnosticParams

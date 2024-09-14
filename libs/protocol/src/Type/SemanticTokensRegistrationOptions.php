@@ -4,6 +4,7 @@ namespace Lsp\Protocol\Type;
 
 /**
  * @generated
+ *
  * @since 3.16.0
  */
 final class SemanticTokensRegistrationOptions
@@ -18,7 +19,7 @@ final class SemanticTokensRegistrationOptions
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(
-        array|null $documentSelector,
+        ?array $documentSelector,
         SemanticTokensLegend $legend,
         bool|SemanticTokensOptionsRange $range,
         bool|SemanticTokensOptionsFull $full,

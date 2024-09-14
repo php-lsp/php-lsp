@@ -22,7 +22,7 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements DecoderInterface {
+        new class implements DecoderInterface {
             public function decode(string $data): MessageInterface {}
         };
     }
@@ -31,7 +31,7 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements EncoderInterface {
+        new class implements EncoderInterface {
             public function encode(MessageInterface $message): string {}
         };
     }
@@ -40,20 +40,20 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () extends \Exception implements ProtocolExceptionInterface {};
+        new class extends \Exception implements ProtocolExceptionInterface {};
     }
 
     public function testDecodingExceptionCompatibility(): void
     {
         self::expectNotToPerformAssertions();
 
-        new class () extends \Exception implements DecodingExceptionInterface {};
+        new class extends \Exception implements DecodingExceptionInterface {};
     }
 
     public function testEncodingExceptionCompatibility(): void
     {
         self::expectNotToPerformAssertions();
 
-        new class () extends \Exception implements DecodingExceptionInterface {};
+        new class extends \Exception implements DecodingExceptionInterface {};
     }
 }

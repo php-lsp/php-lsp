@@ -10,6 +10,7 @@ trait ExecuteCommandOptionsMixin
      * The commands to be executed on the server
      *
      * @generated
+     *
      * @var list<string>
      */
     public readonly array $commands;

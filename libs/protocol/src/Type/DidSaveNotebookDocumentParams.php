@@ -6,6 +6,7 @@ namespace Lsp\Protocol\Type;
  * The params sent in a save notebook document notification.
  *
  * @generated
+ *
  * @since 3.17.0
  */
 final class DidSaveNotebookDocumentParams

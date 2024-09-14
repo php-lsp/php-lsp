@@ -32,7 +32,7 @@ interface IdInterface extends \Stringable
      *
      * @return string returns string representation of the object that
      *         implements this interface (and/or {@see __toString()} magic
-     *         method).
+     *         method)
      */
     public function __toString(): string;
 }
