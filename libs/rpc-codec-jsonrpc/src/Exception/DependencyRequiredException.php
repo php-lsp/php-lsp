@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Rpc\Protocol\Exception;
+namespace Lsp\Rpc\Codec\Exception;
 
 use Lsp\Contracts\Rpc\Message\Factory\IdFactoryInterface;
 use Lsp\Contracts\Rpc\Message\Factory\RequestFactoryInterface;
 use Lsp\Contracts\Rpc\Message\Factory\ResponseFactoryInterface;
 
-class DependencyRequiredException extends ProtocolException
+class DependencyRequiredException extends CodecException
 {
     final public const CODE_NO_REQUEST_FACTORY = 0x01;
 

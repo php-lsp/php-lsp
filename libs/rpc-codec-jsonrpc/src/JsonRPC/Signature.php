@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Rpc\Protocol\JsonRPC;
+namespace Lsp\Rpc\Codec\JsonRPC;
 
 enum Signature
 {

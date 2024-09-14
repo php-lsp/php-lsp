@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Rpc\Protocol;
+namespace Lsp\Rpc\Codec;
 
 use Lsp\Contracts\Rpc\Message\Factory\IdFactoryInterface;
 use Lsp\Contracts\Rpc\Message\Factory\RequestFactoryInterface;
@@ -14,19 +14,19 @@ use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
 use Lsp\Contracts\Rpc\Message\SuccessfulResponseInterface;
-use Lsp\Contracts\Rpc\Protocol\DecoderInterface;
-use Lsp\Contracts\Rpc\Protocol\EncoderInterface;
-use Lsp\Contracts\Rpc\Protocol\Exception\DecodingExceptionInterface;
+use Lsp\Contracts\Rpc\Codec\DecoderInterface;
+use Lsp\Contracts\Rpc\Codec\EncoderInterface;
+use Lsp\Contracts\Rpc\Codec\Exception\DecodingExceptionInterface;
 use Lsp\Rpc\Message\Factory\IdFactory;
 use Lsp\Rpc\Message\Factory\RequestFactory;
 use Lsp\Rpc\Message\Factory\ResponseFactory;
-use Lsp\Rpc\Protocol\Exception\DecodingException;
-use Lsp\Rpc\Protocol\Exception\DependencyRequiredException;
-use Lsp\Rpc\Protocol\Exception\EncodingException;
-use Lsp\Rpc\Protocol\Exception\InvalidFieldTypeException;
-use Lsp\Rpc\Protocol\Exception\InvalidFieldValueException;
-use Lsp\Rpc\Protocol\Exception\RequiredFieldNotDefinedException;
-use Lsp\Rpc\Protocol\JsonRPC\Signature;
+use Lsp\Rpc\Codec\Exception\DecodingException;
+use Lsp\Rpc\Codec\Exception\DependencyRequiredException;
+use Lsp\Rpc\Codec\Exception\EncodingException;
+use Lsp\Rpc\Codec\Exception\InvalidFieldTypeException;
+use Lsp\Rpc\Codec\Exception\InvalidFieldValueException;
+use Lsp\Rpc\Codec\Exception\RequiredFieldNotDefinedException;
+use Lsp\Rpc\Codec\JsonRPC\Signature;
 
 final class JsonRPCv2 implements EncoderInterface, DecoderInterface
 {

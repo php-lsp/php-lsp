@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Rpc\Protocol\Exception;
+namespace Lsp\Rpc\Codec\Exception;
 
-use Lsp\Contracts\Rpc\Protocol\Exception\DecodingExceptionInterface;
+use Lsp\Contracts\Rpc\Codec\Exception\DecodingExceptionInterface;
 
-class DecodingException extends ProtocolException implements DecodingExceptionInterface
+class DecodingException extends CodecException implements DecodingExceptionInterface
 {
     final public const CODE_NO_FACTORY_IMPLEMENTATION = 0x01;
 

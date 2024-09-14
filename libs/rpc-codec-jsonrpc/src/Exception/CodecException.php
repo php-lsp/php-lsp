@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Rpc\Protocol\Exception;
+namespace Lsp\Rpc\Codec\Exception;
 
-use Lsp\Contracts\Rpc\Protocol\Exception\ProtocolExceptionInterface;
+use Lsp\Contracts\Rpc\Codec\Exception\CodecExceptionInterface;
 
-class ProtocolException extends \DomainException implements ProtocolExceptionInterface
+class CodecException extends \DomainException implements CodecExceptionInterface
 {
     final public function __construct(string $message, int $code = 0, ?\Throwable $previous = null)
     {

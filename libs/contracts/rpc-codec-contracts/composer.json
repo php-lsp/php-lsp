@@ -1,12 +1,12 @@
 {
-    "name": "php-lsp/rpc-protocol-contracts",
-    "description": "RPC Protocol Contracts",
+    "name": "php-lsp/rpc-codec-contracts",
+    "description": "RPC Codec (Encoder/Decoder) Contracts",
     "type": "library",
     "license": "MIT",
     "keywords": ["rpc", "protocol", "codec", "encoder", "decoder", "interoperability", "php", "lsp"],
     "support": {
-        "source": "https://github.com/php-lsp/rpc-protocol-contracts",
-        "issues": "https://github.com/php-lsp/rpc-protocol-contracts/issues"
+        "source": "https://github.com/php-lsp/rpc-codec-contracts",
+        "issues": "https://github.com/php-lsp/rpc-codec-contracts/issues"
     },
     "authors": [
         {
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lsp\\Contracts\\Rpc\\Protocol\\": "src"
+            "Lsp\\Contracts\\Rpc\\Codec\\": "src"
         }
     },
     "require-dev": {
@@ -29,7 +29,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lsp\\Contracts\\Rpc\\Protocol\\Tests\\": "tests"
+            "Lsp\\Contracts\\Rpc\\Codec\\Tests\\": "tests"
         }
     },
     "scripts": {

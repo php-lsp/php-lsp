@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Contracts\Rpc\Protocol;
+namespace Lsp\Contracts\Rpc\Codec;
 
 use Lsp\Contracts\Rpc\Message\MessageInterface;
-use Lsp\Contracts\Rpc\Protocol\Exception\DecodingExceptionInterface;
+use Lsp\Contracts\Rpc\Codec\Exception\DecodingExceptionInterface;
 
 interface DecoderInterface
 {

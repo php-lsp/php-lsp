@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Rpc\Protocol\Exception;
+namespace Lsp\Rpc\Codec\Exception;
 
-use Lsp\Contracts\Rpc\Protocol\Exception\EncodingExceptionInterface;
+use Lsp\Contracts\Rpc\Codec\Exception\EncodingExceptionInterface;
 
-class EncodingException extends ProtocolException implements EncodingExceptionInterface
+class EncodingException extends CodecException implements EncodingExceptionInterface
 {
     final public const CODE_ENCODING = 0x01;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Rpc\Protocol\Exception;
+namespace Lsp\Rpc\Codec\Exception;
 
 class InvalidFieldTypeException extends DecodingException
 {
