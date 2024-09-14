@@ -24,6 +24,7 @@
         }
     },
     "require-dev": {
+        "php-lsp/protocol-generator": "^1.0",
         "phpunit/phpunit": "^10.5|^11.0",
         "symfony/cache": "^6.4|^7.0",
         "symfony/finder": "^6.4|^7.0"

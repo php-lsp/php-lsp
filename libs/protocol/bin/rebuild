@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Lsp\Protocol\Generator\Generator;
+
+if (!in_array(PHP_SAPI, ['cli', 'phpdbg', 'embed'], true)) {
+    trigger_error('The console should be invoked via the CLI '
+        . 'version of PHP, not the ' . PHP_SAPI . ' SAPI.', E_USER_WARNING);
+}
+
+$directory = __DIR__;
+while (dirname($directory) !== $directory) {
+    foreach ([$directory . '/autoload.php', $directory . '/vendor/autoload.php'] as $pathname) {
+        if (is_file($pathname)) {
+            require $pathname;
+            break;
+        }
+    }
+
+    $directory = dirname($directory);
+}
+
+if (!class_exists(Generator::class)) {
+    file_put_contents(
+        filename: 'php://stderr',
+        data: 'Composer "php-lsp/protocol-generator" dependency required to execute this script.' . PHP_EOL,
+    );
+
+    exit(-1);
+}
+
+(new Generator())
+    ->forStableVersion()
+    ->forNamespace('Lsp\Protocol\Type')
+    ->save(__DIR__ . '/../src/Type');

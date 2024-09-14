@@ -10,9 +10,4 @@ interface VersionInterface
      * @return non-empty-string
      */
     public function getVersion(): string;
-
-    /**
-     * @return non-empty-string
-     */
-    public function getPathname(): string;
 }
