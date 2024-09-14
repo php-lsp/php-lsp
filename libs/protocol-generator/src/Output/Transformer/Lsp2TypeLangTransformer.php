@@ -31,7 +31,7 @@ use TypeLang\Parser\Node\Stmt\Template\ArgumentsListNode;
 use TypeLang\Parser\Node\Stmt\TypeStatement;
 use TypeLang\Parser\Node\Stmt\UnionTypeNode;
 
-final class Lsp2TlTransformer
+final class Lsp2TypeLangTransformer
 {
     public function __construct(
         private readonly MetaModel $ctx,
@@ -72,7 +72,6 @@ final class Lsp2TlTransformer
                 BaseType::STRING => new NamedTypeNode('string'),
                 BaseType::BOOLEAN => new NamedTypeNode('bool'),
                 BaseType::NULL => new NullLiteralNode(),
-                default => throw new \InvalidArgumentException('Invalid base type [' . $type->name . ']'),
             },
             $type instanceof OrType => new UnionTypeNode(
                 ...$this->transformAll($type->items),

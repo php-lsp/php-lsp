@@ -19,7 +19,7 @@ use TypeLang\Parser\Node\Stmt\NamedTypeNode;
 use TypeLang\Parser\Node\Stmt\TypeStatement;
 use TypeLang\Parser\Node\Stmt\UnionTypeNode;
 
-final class Tl2PhpTransformer
+final class TypeLang2PhpTransformer
 {
     public static function make(TypeStatement $stmt): NodeInterface
     {

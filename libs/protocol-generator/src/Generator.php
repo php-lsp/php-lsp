@@ -7,18 +7,13 @@ namespace Lsp\Protocol\Generator;
 use Lsp\Protocol\Generator\MetaModel\Factory;
 use Lsp\Protocol\Generator\MetaModel\Node\MetaModel;
 use Lsp\Protocol\Generator\Output\OutputTransformer;
-use Lsp\Protocol\Generator\Output\Printer\Per2Printer;
-use PhpParser\PrettyPrinter as PrettyPrinterInterface;
 
 final class Generator
 {
-    private readonly PrettyPrinterInterface $printer;
-
     public readonly Factory $meta;
 
     public function __construct()
     {
-        $this->printer = new Per2Printer();
         $this->meta = new Factory();
     }
 

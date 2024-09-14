@@ -82,6 +82,7 @@ final class Factory
      */
     public function createFromArray(array $data): MetaModel
     {
+        // @phpstan-ignore-next-line
         return MetaModel::fromArray($data);
     }
 }

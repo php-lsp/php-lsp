@@ -100,7 +100,10 @@ final class OutputPrinter implements \IteratorAggregate, \Countable
     public function getAllSources(): iterable
     {
         foreach ($this->types as $type) {
-            yield $this->printer->prettyPrintFile([$type]);
+            /** @var non-empty-string $result */
+            $result = $this->printer->prettyPrintFile([$type]);
+
+            yield $result;
         }
     }
 

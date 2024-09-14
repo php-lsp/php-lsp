@@ -10,14 +10,14 @@ use PhpParser\Node as NodeInterface;
 
 final class Lsp2PhpTransformer
 {
-    private readonly Lsp2TlTransformer $lsp2tl;
+    private readonly Lsp2TypeLangTransformer $lsp2tl;
 
-    private readonly Tl2PhpTransformer $tl2php;
+    private readonly TypeLang2PhpTransformer $tl2php;
 
     public function __construct(MetaModel $ctx)
     {
-        $this->lsp2tl = new Lsp2TlTransformer($ctx);
-        $this->tl2php = new Tl2PhpTransformer();
+        $this->lsp2tl = new Lsp2TypeLangTransformer($ctx);
+        $this->tl2php = new TypeLang2PhpTransformer();
     }
 
     public static function make(MetaModel $ctx, TypeInterface $type): NodeInterface

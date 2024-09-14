@@ -6,7 +6,7 @@ namespace Lsp\Protocol\Generator\Output\DocBlock;
 
 use Lsp\Protocol\Generator\MetaModel\Node\MetaModel;
 use Lsp\Protocol\Generator\MetaModel\Node\Property;
-use Lsp\Protocol\Generator\Output\Transformer\Lsp2TlTransformer;
+use Lsp\Protocol\Generator\Output\Transformer\Lsp2TypeLangTransformer;
 use PhpParser\Comment\Doc as PhpDocBlock;
 use TypeLang\Parser\Node\Stmt\TypeStatement;
 use TypeLang\Printer\NativeTypePrinter;
@@ -21,14 +21,14 @@ final class PropertyBuilder
 
     private readonly PrinterInterface $pretty;
 
-    private readonly Lsp2TlTransformer $lsp2tl;
+    private readonly Lsp2TypeLangTransformer $lsp2tl;
 
     public function __construct(MetaModel $ctx)
     {
         $this->builder = new Builder();
         $this->native = new NativeTypePrinter();
         $this->pretty = new PrettyPrinter();
-        $this->lsp2tl = new Lsp2TlTransformer($ctx);
+        $this->lsp2tl = new Lsp2TypeLangTransformer($ctx);
     }
 
     private function getVarTag(TypeStatement $type): ?string
