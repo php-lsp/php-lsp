@@ -27,10 +27,7 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.5|^11.0",
-        "php-lsp/hydrator-jms": "^1.0",
-        "symfony/cache": "^6.4|^7.0",
-        "symfony/finder": "^6.4|^7.0"
+        "phpunit/phpunit": "^10.5|^11.0"
     },
     "autoload-dev": {
         "psr-4": {

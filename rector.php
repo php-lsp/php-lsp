@@ -6,7 +6,9 @@ use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\LevelSetList;
 
 return static function (RectorConfig $config): void {
-    $config->paths([__DIR__ . '/libs/*/src']);
+    $config->paths([
+        __DIR__ . '/libs/*/src',
+    ]);
 
     $config->cacheDirectory(__DIR__ . '/vendor/.cache.rector');
 

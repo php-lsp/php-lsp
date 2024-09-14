@@ -19,22 +19,18 @@ jobs:
       fail-fast: false
       matrix:
         package:
-          - local_path: 'hydrator-contracts'
-            split_repository: 'hydrator-contracts'
-          - local_path: 'hydrator-jms'
-            split_repository: 'hydrator-jms'
+          - local_path: 'contracts/rpc-message-contracts'
+            split_repository: 'rpc-message-contracts'
+          - local_path: 'contracts/rpc-message-factory-contracts'
+            split_repository: 'rpc-message-factory-contracts'
+          - local_path: 'contracts/rpc-protocol-contracts'
+            split_repository: 'rpc-protocol-contracts'
           - local_path: 'protocol'
             split_repository: 'protocol'
           - local_path: 'rpc-message'
             split_repository: 'rpc-message'
-          - local_path: 'rpc-message-contracts'
-            split_repository: 'rpc-message-contracts'
           - local_path: 'rpc-message-factory'
             split_repository: 'rpc-message-factory'
-          - local_path: 'rpc-message-factory-contracts'
-            split_repository: 'rpc-message-factory-contracts'
-          - local_path: 'rpc-protocol-contracts'
-            split_repository: 'rpc-protocol-contracts'
           - local_path: 'rpc-protocol-jsonrpc'
             split_repository: 'rpc-protocol-jsonrpc'
     steps:

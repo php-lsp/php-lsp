@@ -14,15 +14,13 @@
 >
     <testsuites>
         <testsuite name="unit">
-            <directory>libs/hydrator-contracts/tests</directory>
-            <directory>libs/hydrator-jms/tests</directory>
+            <directory>libs/contracts/rpc-message-contracts/tests</directory>
+            <directory>libs/contracts/rpc-message-factory-contracts/tests</directory>
+            <directory>libs/contracts/rpc-protocol-contracts/tests</directory>
             <directory>libs/protocol/tests</directory>
             <directory>libs/protocol-generator/tests</directory>
             <directory>libs/rpc-message/tests</directory>
-            <directory>libs/rpc-message-contracts/tests</directory>
             <directory>libs/rpc-message-factory/tests</directory>
-            <directory>libs/rpc-message-factory-contracts/tests</directory>
-            <directory>libs/rpc-protocol-contracts/tests</directory>
             <directory>libs/rpc-protocol-jsonrpc/tests</directory>
         </testsuite>
         <testsuite name="functional">
@@ -34,15 +32,13 @@
 
     <source>
         <include>
-            <directory>libs/hydrator-contracts/src</directory>
-            <directory>libs/hydrator-jms/src</directory>
+            <directory>libs/contracts/rpc-message-contracts/src</directory>
+            <directory>libs/contracts/rpc-message-factory-contracts/src</directory>
+            <directory>libs/contracts/rpc-protocol-contracts/src</directory>
             <directory>libs/protocol/src</directory>
             <directory>libs/protocol-generator/src</directory>
             <directory>libs/rpc-message/src</directory>
-            <directory>libs/rpc-message-contracts/src</directory>
             <directory>libs/rpc-message-factory/src</directory>
-            <directory>libs/rpc-message-factory-contracts/src</directory>
-            <directory>libs/rpc-protocol-contracts/src</directory>
             <directory>libs/rpc-protocol-jsonrpc/src</directory>
         </include>
     </source>
