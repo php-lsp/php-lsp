@@ -18,7 +18,6 @@ use Lsp\Rpc\Message\Factory\IdFactory;
 
 /**
  * @template T of MessageInterface
- *
  * @template-implements DecoderInterface<T>
  */
 abstract class Decoder extends Codec implements DecoderInterface
@@ -85,6 +84,7 @@ abstract class Decoder extends Codec implements DecoderInterface
 
     /**
      * @param array<array-key, mixed> $data
+     *
      * @return T
      * @throws DecodingException
      */

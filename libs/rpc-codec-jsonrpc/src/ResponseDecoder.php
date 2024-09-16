@@ -79,11 +79,8 @@ final class ResponseDecoder extends Decoder
     }
 
     /**
-     * @template TArgIdentifier of mixed
-     *
-     * @param array{id: TArgIdentifier, error: mixed, ...} $data
-     *
-     * @return FailureResponseInterface<TArgIdentifier, mixed>
+     * @param array<array-key, mixed> $data
+     * @return FailureResponseInterface<mixed, mixed>
      * @throws DecodingException
      */
     private function tryDecodeErrorResponse(array $data): FailureResponseInterface

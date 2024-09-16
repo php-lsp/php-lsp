@@ -21,6 +21,8 @@ jobs:
         package:
           #
           # TODO
+          # - local_path: 'contracts/router-contracts'
+          #   split_repository: 'router-contracts'
           # - local_path: 'contracts/rpc-codec-contracts'
           #   split_repository: 'rpc-codec-contracts'
           # - local_path: 'contracts/rpc-message-contracts'
@@ -30,6 +32,10 @@ jobs:
           #
           # - local_path: 'protocol'
           #   split_repository: 'protocol'
+          # - local_path: 'protocol-generator'
+          #   split_repository: 'protocol-generator'
+          # - local_path: 'router'
+          #   split_repository: 'router'
           # - local_path: 'rpc-codec-jsonrpc'
           #   split_repository: 'rpc-codec-jsonrpc'
           # - local_path: 'rpc-message'

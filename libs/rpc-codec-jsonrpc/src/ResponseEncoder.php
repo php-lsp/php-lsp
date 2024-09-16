@@ -37,7 +37,9 @@ final class ResponseEncoder extends Encoder
 
     /**
      * @template TArgData of mixed
+     *
      * @param FailureResponseInterface<mixed, TArgData> $response
+     *
      * @return array{
      *     error: array{
      *         code: int,
@@ -59,7 +61,9 @@ final class ResponseEncoder extends Encoder
 
     /**
      * @template TArgResult of mixed
+     *
      * @param SuccessfulResponseInterface<mixed, TArgResult> $response
+     *
      * @return array{
      *     result: TArgResult
      * }

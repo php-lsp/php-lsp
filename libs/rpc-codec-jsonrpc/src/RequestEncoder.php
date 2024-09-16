@@ -41,7 +41,9 @@ final class RequestEncoder extends Encoder
 
     /**
      * @template TArgIdentifier of mixed
+     *
      * @param RequestInterface<TArgIdentifier> $request
+     *
      * @return array{
      *     id: TArgIdentifier,
      *     method: non-empty-string,

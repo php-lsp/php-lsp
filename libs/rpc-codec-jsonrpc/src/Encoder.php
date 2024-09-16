@@ -11,7 +11,6 @@ use Lsp\Rpc\Codec\JsonRPC\Signature;
 
 /**
  * @template T of MessageInterface
- *
  * @template-implements EncoderInterface<T>
  */
 abstract class Encoder extends Codec implements EncoderInterface
@@ -47,6 +46,7 @@ abstract class Encoder extends Codec implements EncoderInterface
 
     /**
      * @param T $message
+     *
      * @return array<non-empty-string, mixed>
      */
     abstract protected function toArray(MessageInterface $message): array;
@@ -66,6 +66,7 @@ abstract class Encoder extends Codec implements EncoderInterface
      * Converts variant payload into json string.
      *
      * @param array<non-empty-string, mixed> $data
+     *
      * @throws EncodingException
      */
     private function toJson(array $data): string

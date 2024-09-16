@@ -143,6 +143,10 @@ return (new PhpCsFixer\Config())
                 'api',
                 'internal',
                 'psalm-internal',
+                'phpstan-import-type',
+                'phpstan-type',
+                'psalm-import-type',
+                'psalm-type',
                 'template',
                 'template-extends',
                 'extends',
@@ -170,12 +174,12 @@ return (new PhpCsFixer\Config())
         'phpdoc_separation' => [
             'groups' => [
                 ['api'],
+                ['internal', 'psalm-internal', 'phpstan-internal'],
                 [
                     'property',
                     'property-read',
                     'property-write',
                 ],
-                ['internal', 'psalm-internal', 'phpstan-internal'],
                 [
                     'template',
                     'template-extends',
@@ -187,6 +191,7 @@ return (new PhpCsFixer\Config())
                     'psalm-require-extends',
                     'phpstan-require-extends',
                 ],
+                ['psalm-import-type', 'phpstan-import-type'],
                 ['psalm-taint-sink', 'param'],
                 ['return', 'throws'],
                 ['psalm-suppress'],

@@ -58,6 +58,7 @@ final class RequestDecoder extends Decoder
 
     /**
      * @param array<array-key, mixed> $data
+     *
      * @return non-empty-string
      */
     private function fetchMethod(array $data): string
@@ -86,6 +87,7 @@ final class RequestDecoder extends Decoder
 
     /**
      * @param array<array-key, mixed> $data
+     *
      * @return array<array-key, mixed>
      */
     private function fetchParams(array $data): array

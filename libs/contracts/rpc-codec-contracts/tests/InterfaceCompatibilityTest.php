@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Lsp\Contracts\Rpc\Codec\Tests;
 
-use Lsp\Contracts\Rpc\Message\MessageInterface;
 use Lsp\Contracts\Rpc\Codec\DecoderInterface;
 use Lsp\Contracts\Rpc\Codec\EncoderInterface;
-use Lsp\Contracts\Rpc\Codec\Exception\DecodingExceptionInterface;
 use Lsp\Contracts\Rpc\Codec\Exception\CodecExceptionInterface;
+use Lsp\Contracts\Rpc\Codec\Exception\DecodingExceptionInterface;
+use Lsp\Contracts\Rpc\Message\MessageInterface;
 use PHPUnit\Framework\Attributes\Group;
 
 /**
