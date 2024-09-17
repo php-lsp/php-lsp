@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Contracts\Router;
+namespace Lsp\Router;
 
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
+use Lsp\Router\Route\MatchedRouteInterface;
 
 interface RouterInterface
 {
