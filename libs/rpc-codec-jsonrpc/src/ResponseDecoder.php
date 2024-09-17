@@ -80,6 +80,7 @@ final class ResponseDecoder extends Decoder
 
     /**
      * @param array<array-key, mixed> $data
+     *
      * @return FailureResponseInterface<mixed, mixed>
      * @throws DecodingException
      */
