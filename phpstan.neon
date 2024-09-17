@@ -7,14 +7,14 @@ parameters:
   fileExtensions:
     - php
   paths:
-    - libs/contracts/rpc-codec-contracts/src
-    - libs/contracts/rpc-message-contracts/src
-    - libs/contracts/rpc-message-factory-contracts/src
     - libs/protocol/src
     - libs/protocol-generator/src
     - libs/router/src
-    - libs/rpc-codec-jsonrpc/src
-    - libs/rpc-message/src
-    - libs/rpc-message-factory/src
+    - libs/rpc/contracts/rpc-codec-contracts/src
+    - libs/rpc/contracts/rpc-message-contracts/src
+    - libs/rpc/contracts/rpc-message-factory-contracts/src
+    - libs/rpc/rpc-codec-jsonrpc/src
+    - libs/rpc/rpc-message/src
+    - libs/rpc/rpc-message-factory/src
   tmpDir: vendor/.cache.phpstan
   reportUnmatchedIgnoredErrors: true

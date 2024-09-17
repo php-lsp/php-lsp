@@ -21,19 +21,18 @@
         },
         {
             "type": "path",
-            "url": "libs/contracts/*"
+            "url": "libs/rpc/*"
+        },
+        {
+            "type": "path",
+            "url": "libs/rpc/contracts/*"
         }
     ],
     "require": {
         "php": "^8.1",
         "php-lsp/protocol": "^1.0",
         "php-lsp/router": "^1.0",
-        "php-lsp/rpc-message": "^1.0",
-        "php-lsp/rpc-message-contracts": "^1.0",
-        "php-lsp/rpc-message-factory": "^1.0",
-        "php-lsp/rpc-message-factory-contracts": "^1.0",
-        "php-lsp/rpc-codec-contracts": "^1.0",
-        "php-lsp/rpc-codec-jsonrpc": "^1.0"
+        "php-lsp/rpc": "^1.0"
     },
     "require-dev": {
         "php-lsp/protocol-generator": "^1.0",
@@ -47,14 +46,15 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lsp\\Contracts\\Rpc\\Message\\Factory\\Tests\\": "libs/contracts/rpc-message-factory-contracts/tests",
-            "Lsp\\Contracts\\Rpc\\Message\\Tests\\": "libs/contracts/rpc-message-contracts/tests",
-            "Lsp\\Contracts\\Rpc\\Codec\\Tests\\": "libs/contracts/rpc-codec-contracts/tests",
             "Lsp\\Protocol\\Generator\\Tests\\": "libs/protocol-generator/tests",
             "Lsp\\Protocol\\Tests\\": "libs/protocol/tests",
-            "Lsp\\Rpc\\Message\\Factory\\Tests\\": "libs/rpc-message-factory/tests",
-            "Lsp\\Rpc\\Message\\Tests\\": "libs/rpc-message/tests",
-            "Lsp\\Rpc\\Codec\\Tests\\": "libs/rpc-codec-jsonrpc/tests"
+            "Lsp\\Router\\Tests\\": "libs/router/tests",
+            "Lsp\\Contracts\\Rpc\\Message\\Factory\\Tests\\": "libs/rpc/contracts/rpc-message-factory-contracts/tests",
+            "Lsp\\Contracts\\Rpc\\Message\\Tests\\": "libs/rpc/contracts/rpc-message-contracts/tests",
+            "Lsp\\Contracts\\Rpc\\Codec\\Tests\\": "libs/rpc/contracts/rpc-codec-contracts/tests",
+            "Lsp\\Rpc\\Message\\Factory\\Tests\\": "libs/rpc/rpc-message-factory/tests",
+            "Lsp\\Rpc\\Message\\Tests\\": "libs/rpc/rpc-message/tests",
+            "Lsp\\Rpc\\Codec\\Tests\\": "libs/rpc/rpc-codec-jsonrpc/tests"
         }
     },
     "scripts-aliases": {
