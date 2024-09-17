@@ -19,6 +19,7 @@
             <directory>libs/contracts/rpc-message-factory-contracts/tests</directory>
             <directory>libs/protocol/tests</directory>
             <directory>libs/protocol-generator/tests</directory>
+            <directory>libs/router/tests</directory>
             <directory>libs/rpc-codec-jsonrpc/tests</directory>
             <directory>libs/rpc-message/tests</directory>
             <directory>libs/rpc-message-factory/tests</directory>
@@ -37,6 +38,7 @@
             <directory>libs/contracts/rpc-message-factory-contracts/src</directory>
             <directory>libs/protocol/src</directory>
             <directory>libs/protocol-generator/src</directory>
+            <directory>libs/router/src</directory>
             <directory>libs/rpc-codec-jsonrpc/src</directory>
             <directory>libs/rpc-message/src</directory>
             <directory>libs/rpc-message-factory/src</directory>

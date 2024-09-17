@@ -27,6 +27,7 @@
     "require": {
         "php": "^8.1",
         "php-lsp/protocol": "^1.0",
+        "php-lsp/router": "^1.0",
         "php-lsp/rpc-message": "^1.0",
         "php-lsp/rpc-message-contracts": "^1.0",
         "php-lsp/rpc-message-factory": "^1.0",
