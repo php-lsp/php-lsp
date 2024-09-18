@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Router\Builder\AttributeCollector;
 
-use Lsp\Router\Attribute\Route as RouteAttribute;
+use Lsp\Router\Attribute\Route;
 
 /**
  * @internal this is an internal library class, please do not use it in your code
@@ -31,11 +31,10 @@ final class AttributeReader
     public function getAllControllerMethods(\ReflectionClass $class): iterable
     {
         foreach ($class->getMethods() as $method) {
-            $attributes = $class->getAttributes(RouteAttribute::class);
             $action = null;
 
-            foreach ($attributes as $attribute) {
-                /** @var RouteAttribute $instance */
+            foreach ($method->getAttributes(Route::class) as $attribute) {
+                /** @var Route $instance */
                 $instance = $attribute->newInstance();
 
                 yield $instance->method => ($action ??= $this->getValidReflectionMethod(
@@ -53,11 +52,10 @@ final class AttributeReader
      */
     public function getAllFunctorMethods(\ReflectionClass $class): iterable
     {
-        $attributes = $class->getAttributes(RouteAttribute::class);
         $action = null;
 
-        foreach ($attributes as $attribute) {
-            /** @var RouteAttribute $instance */
+        foreach ($class->getAttributes(Route::class) as $attribute) {
+            /** @var Route $instance */
             $instance = $attribute->newInstance();
 
             yield $instance->method => ($action ??= $this->getValidReflectionFunctorMethod($class));
@@ -104,6 +102,15 @@ final class AttributeReader
         if (!$method->isPublic()) {
             throw new \InvalidArgumentException(\sprintf(
                 'The %s::%s() method must be public',
+                $class->getName(),
+                $method->getName(),
+            ));
+        }
+
+        if (\str_starts_with($method->getName(), '__')) {
+            throw new \InvalidArgumentException(\sprintf(
+                'The %s::%s() looks like a builtin "magic" method, '
+                    . 'please use a different name for route action',
                 $class->getName(),
                 $method->getName(),
             ));

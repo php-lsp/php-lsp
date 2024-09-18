@@ -40,7 +40,7 @@ final class AttributeCollector implements BuilderInterface
     private function addControllerInstance(object $controller): self
     {
         $object = new \ReflectionObject($controller);
-
+;
         foreach ($this->reader->getAllMethods($object) as $action => $method) {
             $this->collector->add($action, match ($method->isStatic()) {
                 true => new StaticMethodHandler(
