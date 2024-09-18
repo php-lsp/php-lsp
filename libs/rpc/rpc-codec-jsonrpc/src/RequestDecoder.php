@@ -8,47 +8,32 @@ use Lsp\Contracts\Rpc\Message\Factory\IdFactoryInterface;
 use Lsp\Contracts\Rpc\Message\Factory\RequestFactoryInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Rpc\Codec\Exception\DecodingException;
-use Lsp\Rpc\Codec\Exception\DependencyRequiredException;
 use Lsp\Rpc\Codec\Exception\InvalidFieldTypeException;
 use Lsp\Rpc\Codec\Exception\RequiredFieldNotDefinedException;
 use Lsp\Rpc\Codec\JsonRPC\Signature;
-use Lsp\Rpc\Message\Factory\RequestFactory;
 
 /**
  * @template-extends Decoder<NotificationInterface>
  */
 final class RequestDecoder extends Decoder
 {
-    private readonly RequestFactoryInterface $requests;
-
     /**
      * @param int<0, max> $jsonDecodingFlags
      * @param int<1, 2147483647> $jsonMaxDepth
      */
     public function __construct(
-        ?RequestFactoryInterface $requests = null,
-        ?IdFactoryInterface $ids = null,
+        private readonly RequestFactoryInterface $requests,
+        IdFactoryInterface $ids,
         int $jsonDecodingFlags = self::DEFAULT_JSON_FLAGS_DECODE,
         int $jsonMaxDepth = self::DEFAULT_JSON_DEPTH,
         Signature $signature = Signature::ALL,
     ) {
-        $this->requests = $requests ?? $this->createRequestFactory();
-
         parent::__construct(
             ids: $ids,
             jsonDecodingFlags: $jsonDecodingFlags,
             jsonMaxDepth: $jsonMaxDepth,
             signature: $signature,
         );
-    }
-
-    private function createRequestFactory(): RequestFactoryInterface
-    {
-        if (\class_exists(RequestFactory::class)) {
-            return new RequestFactory();
-        }
-
-        throw DependencyRequiredException::fromMissingRequestFactoryImplementation();
     }
 
     protected function toMessage(array $data): NotificationInterface

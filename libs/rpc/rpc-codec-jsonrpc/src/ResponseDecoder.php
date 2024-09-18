@@ -10,47 +10,32 @@ use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
 use Lsp\Contracts\Rpc\Message\SuccessfulResponseInterface;
 use Lsp\Rpc\Codec\Exception\DecodingException;
-use Lsp\Rpc\Codec\Exception\DependencyRequiredException;
 use Lsp\Rpc\Codec\Exception\InvalidFieldTypeException;
 use Lsp\Rpc\Codec\Exception\RequiredFieldNotDefinedException;
 use Lsp\Rpc\Codec\JsonRPC\Signature;
-use Lsp\Rpc\Message\Factory\ResponseFactory;
 
 /**
  * @template-extends Decoder<ResponseInterface<mixed>>
  */
 final class ResponseDecoder extends Decoder
 {
-    private readonly ResponseFactoryInterface $responses;
-
     /**
      * @param int<0, max> $jsonDecodingFlags
      * @param int<1, 2147483647> $jsonMaxDepth
      */
     public function __construct(
-        ?ResponseFactoryInterface $responses = null,
-        ?IdFactoryInterface $ids = null,
+        private readonly ResponseFactoryInterface $responses,
+        IdFactoryInterface $ids,
         int $jsonDecodingFlags = self::DEFAULT_JSON_FLAGS_DECODE,
         int $jsonMaxDepth = self::DEFAULT_JSON_DEPTH,
         Signature $signature = Signature::ALL,
     ) {
-        $this->responses = $responses ?? $this->createResponseFactory();
-
         parent::__construct(
             ids: $ids,
             jsonDecodingFlags: $jsonDecodingFlags,
             jsonMaxDepth: $jsonMaxDepth,
             signature: $signature,
         );
-    }
-
-    private function createResponseFactory(): ResponseFactoryInterface
-    {
-        if (\class_exists(ResponseFactory::class)) {
-            return new ResponseFactory();
-        }
-
-        throw DependencyRequiredException::fromMissingResponseFactoryImplementation();
     }
 
     protected function toMessage(array $data): ResponseInterface

@@ -10,31 +10,13 @@ use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
 use Lsp\Router\Route\MatchedRouteInterface;
 use Lsp\Router\RouterInterface;
-use Lsp\Rpc\Message\Factory\ResponseFactory;
 
 final class Dispatcher implements DispatcherInterface
 {
-    private readonly ResponseFactoryInterface $responses;
-
     public function __construct(
         private readonly RouterInterface $router,
-        ?ResponseFactoryInterface $responses = null,
-    ) {
-        $this->responses = $responses ?? $this->createResponseFactory();
-    }
-
-    private function createResponseFactory(): ResponseFactoryInterface
-    {
-        if (\class_exists(ResponseFactory::class)) {
-            return new ResponseFactory();
-        }
-
-        $message = 'Unable to find available factory implementation: '
-            . 'Please specify the %s explicitly or install the "%s" package';
-        $message = \sprintf($message, ResponseFactoryInterface::class, 'php-lsp/rpc-message-factory');
-
-        throw new \LogicException($message);
-    }
+        private readonly ResponseFactoryInterface $responses,
+    ) {}
 
     protected function getHandler(MatchedRouteInterface $route): callable
     {

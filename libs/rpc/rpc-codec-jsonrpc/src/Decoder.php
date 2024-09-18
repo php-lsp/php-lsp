@@ -9,12 +9,10 @@ use Lsp\Contracts\Rpc\Message\Factory\IdFactoryInterface;
 use Lsp\Contracts\Rpc\Message\IdInterface;
 use Lsp\Contracts\Rpc\Message\MessageInterface;
 use Lsp\Rpc\Codec\Exception\DecodingException;
-use Lsp\Rpc\Codec\Exception\DependencyRequiredException;
 use Lsp\Rpc\Codec\Exception\InvalidFieldTypeException;
 use Lsp\Rpc\Codec\Exception\InvalidFieldValueException;
 use Lsp\Rpc\Codec\Exception\RequiredFieldNotDefinedException;
 use Lsp\Rpc\Codec\JsonRPC\Signature;
-use Lsp\Rpc\Message\Factory\IdFactory;
 
 /**
  * @template T of MessageInterface
@@ -37,32 +35,20 @@ abstract class Decoder extends Codec implements DecoderInterface
      */
     private readonly int $jsonDecodingFlags;
 
-    private readonly IdFactoryInterface $ids;
-
     /**
      * @param int<0, max> $jsonDecodingFlags
      * @param int<1, 2147483647> $jsonMaxDepth
      */
     public function __construct(
-        ?IdFactoryInterface $ids = null,
+        private readonly IdFactoryInterface $ids,
         int $jsonDecodingFlags = self::DEFAULT_JSON_FLAGS_DECODE,
         int $jsonMaxDepth = self::DEFAULT_JSON_DEPTH,
         Signature $signature = Signature::ALL,
     ) {
         // @phpstan-ignore-next-line
         $this->jsonDecodingFlags = $jsonDecodingFlags | \JSON_THROW_ON_ERROR;
-        $this->ids = $ids ?? $this->createIdFactory();
 
         parent::__construct($jsonMaxDepth, $signature);
-    }
-
-    private function createIdFactory(): IdFactoryInterface
-    {
-        if (\class_exists(IdFactory::class)) {
-            return new IdFactory();
-        }
-
-        throw DependencyRequiredException::fromMissingIdFactoryImplementation();
     }
 
     /**
