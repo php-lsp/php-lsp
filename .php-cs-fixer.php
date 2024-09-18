@@ -1,9 +1,17 @@
 <?php
 
-$files = PhpCsFixer\Finder::create()
-    ->in([__DIR__ . '/libs']);
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 
-return (new PhpCsFixer\Config())
+return (new Config())
+    ->setParallelConfig(ParallelConfigFactory::detect())
+    ->setFinder(
+        finder: Finder::create()
+            ->in([
+                __DIR__ . '/libs',
+            ]),
+    )
     ->setRules([
         '@PER-CS2.0' => true,
         '@PER-CS2.0:risky' => true,
@@ -242,5 +250,4 @@ return (new PhpCsFixer\Config())
         'yoda_style' => false,
     ])
     ->setCacheFile(__DIR__ . '/vendor/.cache.php-cs-fixer')
-    ->setFinder($files)
-;
+    ;
