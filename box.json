@@ -4,6 +4,7 @@
     "main": false,
     "output": "bin/lsp.phar",
     "directories": [
+        "./libs/dispatcher/src",
         "./libs/protocol/src",
         "./libs/protocol-generator/src",
         "./libs/router/src",

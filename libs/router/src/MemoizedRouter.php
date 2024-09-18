@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Lsp\Router;
 
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
+use Lsp\Router\Exception\RouteNotFoundException;
 use Lsp\Router\Route\MatchedRouteInterface;
 
 final class MemoizedRouter implements RouterInterface
@@ -24,5 +25,11 @@ final class MemoizedRouter implements RouterInterface
     {
         // @phpstan-ignore-next-line
         return $this->requests[$request] ??= $this->delegate->match($request);
+    }
+
+    public function matchOrFail(NotificationInterface $request): MatchedRouteInterface
+    {
+        return $this->match($request)
+            ?? throw new RouteNotFoundException($request);
     }
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Lsp\Router;
 
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
+use Lsp\Router\Exception\RouteNotFoundException;
 use Lsp\Router\Route\MatchedRoute;
 use Lsp\Router\Route\MatchedRouteInterface;
 use Lsp\Router\Route\RouteInterface;
@@ -47,5 +48,11 @@ final class Router implements RouterInterface
         }
 
         return new MatchedRoute($route, $request);
+    }
+
+    public function matchOrFail(NotificationInterface $request): MatchedRouteInterface
+    {
+        return $this->match($request)
+            ?? throw new RouteNotFoundException($request);
     }
 }

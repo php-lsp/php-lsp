@@ -30,6 +30,7 @@
     ],
     "require": {
         "php": "^8.1",
+        "php-lsp/dispatcher": "^1.0",
         "php-lsp/protocol": "^1.0",
         "php-lsp/router": "^1.0",
         "php-lsp/rpc": "^1.0"
@@ -45,8 +46,9 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lsp\\Protocol\\Generator\\Tests\\": "libs/protocol-generator/tests",
+            "Lsp\\Dispatcher\\Tests\\": "libs/dispatcher/tests",
             "Lsp\\Protocol\\Tests\\": "libs/protocol/tests",
+            "Lsp\\Protocol\\Generator\\Tests\\": "libs/protocol-generator/tests",
             "Lsp\\Router\\Tests\\": "libs/router/tests",
             "Lsp\\Contracts\\Rpc\\Message\\Factory\\Tests\\": "libs/rpc/contracts/rpc-message-factory-contracts/tests",
             "Lsp\\Contracts\\Rpc\\Message\\Tests\\": "libs/rpc/contracts/rpc-message-contracts/tests",
