@@ -74,7 +74,7 @@ abstract class Decoder extends Codec implements DecoderInterface
      * @return T
      * @throws DecodingException
      */
-    abstract protected function toMessage(array $data): MessageInterface;
+    abstract public function toMessage(array $data): MessageInterface;
 
     public function decode(string $data): MessageInterface
     {

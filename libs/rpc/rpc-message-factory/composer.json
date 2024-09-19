@@ -6,7 +6,7 @@
     "keywords": ["rpc", "contracts", "factory", "message", "interfaces", "interoperability", "php", "lsp"],
     "support": {
         "source": "https://github.com/php-lsp/rpc-message-factory",
-        "issues": "https://github.com/php-lsp/rpc-message-factory/issues"
+        "issues": "https://github.com/php-lsp/php-lsp/issues"
     },
     "authors": [
         {

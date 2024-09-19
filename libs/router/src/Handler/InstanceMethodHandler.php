@@ -13,4 +13,13 @@ class InstanceMethodHandler implements HandlerInterface
         public readonly object $object,
         public readonly string $method,
     ) {}
+
+    public function __toString(): string
+    {
+        return \vsprintf('object(%s#%d)->%s()', [
+            $this->object::class,
+            \spl_object_id($this->object),
+            $this->method,
+        ]);
+    }
 }

@@ -6,7 +6,7 @@
     "keywords": ["rpc", "protocol", "codec", "encoder", "decoder", "interoperability", "php", "lsp"],
     "support": {
         "source": "https://github.com/php-lsp/rpc-codec-contracts",
-        "issues": "https://github.com/php-lsp/rpc-codec-contracts/issues"
+        "issues": "https://github.com/php-lsp/php-lsp/issues"
     },
     "authors": [
         {

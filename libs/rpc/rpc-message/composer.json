@@ -6,7 +6,7 @@
     "keywords": ["RPC", "message", "dto", "types", "implementation"],
     "support": {
         "source": "https://github.com/php-lsp/rpc-message",
-        "issues": "https://github.com/php-lsp/rpc-message/issues"
+        "issues": "https://github.com/php-lsp/php-lsp/issues"
     },
     "authors": [
         {

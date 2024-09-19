@@ -1,0 +1,10 @@
+# IDE
+/.idea/
+
+# Composer
+/composer.lock
+/vendor/
+
+# Testing
+test.php
+/var/

@@ -49,7 +49,7 @@ abstract class Encoder extends Codec implements EncoderInterface
      *
      * @return array<non-empty-string, mixed>
      */
-    abstract protected function toArray(MessageInterface $message): array;
+    abstract public function toArray(MessageInterface $message): array;
 
     public function encode(MessageInterface $message): string
     {

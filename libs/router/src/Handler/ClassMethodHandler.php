@@ -14,4 +14,9 @@ class ClassMethodHandler implements HandlerInterface
         public readonly string $class,
         public readonly string $method,
     ) {}
+
+    public function __toString(): string
+    {
+        return \sprintf('service(%s)->%s()', $this->class, $this->method);
+    }
 }

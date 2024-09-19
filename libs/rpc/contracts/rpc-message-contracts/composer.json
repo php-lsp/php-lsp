@@ -6,7 +6,7 @@
     "keywords": ["RPC", "contracts", "message", "api", "low-level", "interfaces"],
     "support": {
         "source": "https://github.com/php-lsp/rpc-message-contracts",
-        "issues": "https://github.com/php-lsp/rpc-message-contracts/issues"
+        "issues": "https://github.com/php-lsp/php-lsp/issues"
     },
     "authors": [
         {

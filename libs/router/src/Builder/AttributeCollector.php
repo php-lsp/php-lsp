@@ -8,9 +8,13 @@ use Lsp\Router\Builder\AttributeCollector\AttributeReader;
 use Lsp\Router\Handler\ClassMethodHandler;
 use Lsp\Router\Handler\InstanceMethodHandler;
 use Lsp\Router\Handler\StaticMethodHandler;
+use Lsp\Router\Route\RouteInterface;
 use Lsp\Router\RouterInterface;
 
-final class AttributeCollector implements BuilderInterface
+/**
+ * @template-implements \IteratorAggregate<array-key, RouteInterface>
+ */
+final class AttributeCollector implements BuilderInterface, \IteratorAggregate
 {
     private readonly RouteCollector $collector;
     private readonly AttributeReader $reader;
@@ -37,10 +41,26 @@ final class AttributeCollector implements BuilderInterface
         return $this->addControllerClass($controller);
     }
 
+    /**
+     * @api
+     *
+     * @param iterable<mixed, class-string|object> $controllers
+     *
+     * @throws \ReflectionException
+     */
+    public function addControllers(iterable $controllers): self
+    {
+        foreach ($controllers as $controller) {
+            $this->addController($controller);
+        }
+
+        return $this;
+    }
+
     private function addControllerInstance(object $controller): self
     {
         $object = new \ReflectionObject($controller);
-;
+
         foreach ($this->reader->getAllMethods($object) as $action => $method) {
             $this->collector->add($action, match ($method->isStatic()) {
                 true => new StaticMethodHandler(
@@ -48,7 +68,7 @@ final class AttributeCollector implements BuilderInterface
                     method: $method->getName(),
                 ),
                 default => new InstanceMethodHandler(
-                    object: $object,
+                    object: $controller,
                     method: $method->getName(),
                 ),
             });
@@ -85,5 +105,15 @@ final class AttributeCollector implements BuilderInterface
     public function build(): RouterInterface
     {
         return $this->collector->build();
+    }
+
+    public function getIterator(): \Traversable
+    {
+        yield from $this->collector;
+    }
+
+    public function count(): int
+    {
+        return $this->collector->count();
     }
 }

@@ -19,7 +19,9 @@ interface DispatcherInterface
      * Execute the method by a request message.
      *
      * @template TArgIdentifier of mixed
+     *
      * @param RequestInterface<TArgIdentifier> $request
+     *
      * @return ResponseInterface<TArgIdentifier>
      */
     public function call(RequestInterface $request): ResponseInterface;

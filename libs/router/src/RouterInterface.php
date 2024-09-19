@@ -21,7 +21,7 @@ interface RouterInterface
      * is no route for the given request (notification) payload.
      *
      * @throws RoutingExceptionInterface if no route was found for the given
-     *         request (notification) payload.
+     *         request (notification) payload
      */
     public function matchOrFail(NotificationInterface $request): MatchedRouteInterface;
 }

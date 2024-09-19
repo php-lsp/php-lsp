@@ -10,7 +10,10 @@ use Lsp\Router\Route\RouteInterface;
 use Lsp\Router\Router;
 use Lsp\Router\RouterInterface;
 
-final class RouteCollector implements BuilderInterface
+/**
+ * @template-implements \IteratorAggregate<array-key, RouteInterface>
+ */
+final class RouteCollector implements BuilderInterface, \IteratorAggregate
 {
     /**
      * @var list<RouteInterface>
@@ -35,8 +38,30 @@ final class RouteCollector implements BuilderInterface
         return $this->createRouteAndAdd($method, $handler);
     }
 
+    /**
+     * @param iterable<non-empty-string, HandlerInterface> $routes
+     */
+    public function addMany(iterable $routes): self
+    {
+        foreach ($routes as $method => $handler) {
+            $this->add($method, $handler);
+        }
+
+        return $this;
+    }
+
     public function build(): RouterInterface
     {
         return new Router($this->routes);
+    }
+
+    public function getIterator(): \Traversable
+    {
+        yield from $this->routes;
+    }
+
+    public function count(): int
+    {
+        return \count($this->routes);
     }
 }

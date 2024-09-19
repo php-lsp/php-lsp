@@ -14,7 +14,7 @@ use Lsp\Contracts\Rpc\Message\SuccessfulResponseInterface;
  */
 final class ResponseEncoder extends Encoder
 {
-    protected function toArray(MessageInterface $message): array
+    public function toArray(MessageInterface $message): array
     {
         // @phpstan-ignore-next-line
         assert($message instanceof ResponseInterface);

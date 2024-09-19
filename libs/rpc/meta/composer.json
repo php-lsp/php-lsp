@@ -5,7 +5,7 @@
     "license": "MIT",
     "support": {
         "issues": "https://github.com/php-lsp/php-lsp/issues",
-        "source": "https://github.com/php-lsp/php-lsp"
+        "source": "https://github.com/php-lsp/rpc"
     },
     "authors": [
         {

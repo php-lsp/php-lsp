@@ -36,7 +36,7 @@ final class RequestDecoder extends Decoder
         );
     }
 
-    protected function toMessage(array $data): NotificationInterface
+    public function toMessage(array $data): NotificationInterface
     {
         return $this->tryDecodeRequest($data);
     }

@@ -6,7 +6,7 @@
     "keywords": ["dispatcher", "executor", "php", "lsp"],
     "support": {
         "source": "https://github.com/php-lsp/dispatcher",
-        "issues": "https://github.com/php-lsp/dispatcher/issues"
+        "issues": "https://github.com/php-lsp/php-lsp/issues"
     },
     "authors": [
         {

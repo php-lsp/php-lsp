@@ -6,7 +6,7 @@
     "keywords": ["router", "php", "lsp"],
     "support": {
         "source": "https://github.com/php-lsp/router",
-        "issues": "https://github.com/php-lsp/router/issues"
+        "issues": "https://github.com/php-lsp/php-lsp/issues"
     },
     "authors": [
         {

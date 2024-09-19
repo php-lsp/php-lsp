@@ -38,7 +38,7 @@ final class ResponseDecoder extends Decoder
         );
     }
 
-    protected function toMessage(array $data): ResponseInterface
+    public function toMessage(array $data): ResponseInterface
     {
         return $this->tryDecodeResponse($data);
     }

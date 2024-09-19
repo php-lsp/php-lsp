@@ -6,7 +6,7 @@
     "keywords": ["rpc", "standard", "protocol", "dto", "types", "json", "php", "lsp", "generator"],
     "support": {
         "source": "https://github.com/php-lsp/protocol-generator",
-        "issues": "https://github.com/php-lsp/protocol-generator/issues"
+        "issues": "https://github.com/php-lsp/php-lsp/issues"
     },
     "authors": [
         {
