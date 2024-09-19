@@ -8,8 +8,6 @@ use Lsp\Kernel\Attribute\AsController;
 use Lsp\Protocol\Type\InitializedParams;
 use Lsp\Protocol\Type\InitializeResult;
 use Lsp\Protocol\Type\InitializeResultServerInfo;
-use Lsp\Protocol\Type\NotebookDocumentSyncOptions;
-use Lsp\Protocol\Type\NotebookDocumentSyncRegistrationOptions;
 use Lsp\Protocol\Type\PositionEncodingKind;
 use Lsp\Protocol\Type\ServerCapabilities;
 use Lsp\Protocol\Type\TextDocumentSyncKind;
