@@ -5,12 +5,30 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Lsp\Kernel\Attribute\AsController;
+use Lsp\Protocol\Type\InitializedParams;
+use Lsp\Protocol\Type\InitializeResult;
+use Lsp\Protocol\Type\InitializeResultServerInfo;
+use Lsp\Protocol\Type\NotebookDocumentSyncOptions;
+use Lsp\Protocol\Type\NotebookDocumentSyncRegistrationOptions;
+use Lsp\Protocol\Type\PositionEncodingKind;
+use Lsp\Protocol\Type\ServerCapabilities;
+use Lsp\Protocol\Type\TextDocumentSyncKind;
 use Lsp\Router\Attribute\Route;
 
-#[AsController, Route('test')]
+#[AsController, Route('initialize')]
 final class HomeController
 {
-    public function __invoke()
+    public function __invoke(InitializedParams $params): InitializeResult
     {
+        return new InitializeResult(
+            capabilities: new ServerCapabilities(
+                positionEncoding: PositionEncodingKind::UTF8,
+                textDocumentSync: TextDocumentSyncKind::None,
+            ),
+            serverInfo: new InitializeResultServerInfo(
+                name: 'example-lsp-server',
+                version: '1.0',
+            ),
+        );
     }
 }
