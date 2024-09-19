@@ -10,7 +10,7 @@ namespace Lsp\Protocol\Type;
 final class RenameFileOptions
 {
     final public function __construct(
-        public readonly bool $overwrite,
-        public readonly bool $ignoreIfExists,
+        public readonly bool|null $overwrite = null,
+        public readonly bool|null $ignoreIfExists = null,
     ) {}
 }

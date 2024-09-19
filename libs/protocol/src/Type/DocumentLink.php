@@ -11,12 +11,12 @@ namespace Lsp\Protocol\Type;
 final class DocumentLink
 {
     /**
-     * @param non-empty-string $target
+     * @param non-empty-string|null $target
      */
     final public function __construct(
         public readonly Range $range,
-        public readonly string $target,
-        public readonly string $tooltip,
-        public readonly mixed $data,
+        public readonly string|null $target = null,
+        public readonly string|null $tooltip = null,
+        public readonly mixed $data = null,
     ) {}
 }

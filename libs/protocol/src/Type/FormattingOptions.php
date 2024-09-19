@@ -15,8 +15,8 @@ final class FormattingOptions
     final public function __construct(
         public readonly int $tabSize,
         public readonly bool $insertSpaces,
-        public readonly bool $trimTrailingWhitespace,
-        public readonly bool $insertFinalNewline,
-        public readonly bool $trimFinalNewlines,
+        public readonly bool|null $trimTrailingWhitespace = null,
+        public readonly bool|null $insertFinalNewline = null,
+        public readonly bool|null $trimFinalNewlines = null,
     ) {}
 }

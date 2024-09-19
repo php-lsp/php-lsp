@@ -8,9 +8,9 @@ namespace Lsp\Protocol\Type;
 final class TextDocumentSyncClientCapabilities
 {
     final public function __construct(
-        public readonly bool $dynamicRegistration,
-        public readonly bool $willSave,
-        public readonly bool $willSaveWaitUntil,
-        public readonly bool $didSave,
+        public readonly bool|null $dynamicRegistration = null,
+        public readonly bool|null $willSave = null,
+        public readonly bool|null $willSaveWaitUntil = null,
+        public readonly bool|null $didSave = null,
     ) {}
 }

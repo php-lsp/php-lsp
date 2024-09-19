@@ -10,7 +10,7 @@ namespace Lsp\Protocol\Type;
 final class DefinitionClientCapabilities
 {
     final public function __construct(
-        public readonly bool $dynamicRegistration,
-        public readonly bool $linkSupport,
+        public readonly bool|null $dynamicRegistration = null,
+        public readonly bool|null $linkSupport = null,
     ) {}
 }

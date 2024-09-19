@@ -13,17 +13,17 @@ namespace Lsp\Protocol\Type;
 final class DocumentSymbol
 {
     /**
-     * @param list<SymbolTag> $tags
-     * @param list<DocumentSymbol> $children
+     * @param list<SymbolTag>|null $tags
+     * @param list<DocumentSymbol>|null $children
      */
     final public function __construct(
         public readonly string $name,
-        public readonly string $detail,
         public readonly SymbolKind $kind,
-        public readonly array $tags,
-        public readonly bool $deprecated,
         public readonly Range $range,
         public readonly Range $selectionRange,
-        public readonly array $children,
+        public readonly string|null $detail = null,
+        public readonly array|null $tags = null,
+        public readonly bool|null $deprecated = null,
+        public readonly array|null $children = null,
     ) {}
 }

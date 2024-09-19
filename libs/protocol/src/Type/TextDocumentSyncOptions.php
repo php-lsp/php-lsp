@@ -8,10 +8,10 @@ namespace Lsp\Protocol\Type;
 final class TextDocumentSyncOptions
 {
     final public function __construct(
-        public readonly bool $openClose,
-        public readonly TextDocumentSyncKind $change,
-        public readonly bool $willSave,
-        public readonly bool $willSaveWaitUntil,
-        public readonly bool|SaveOptions $save,
+        public readonly bool|null $openClose = null,
+        public readonly TextDocumentSyncKind|null $change = null,
+        public readonly bool|null $willSave = null,
+        public readonly bool|null $willSaveWaitUntil = null,
+        public readonly bool|SaveOptions|null $save = null,
     ) {}
 }

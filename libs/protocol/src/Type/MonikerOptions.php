@@ -9,8 +9,8 @@ class MonikerOptions
 {
     use MonikerOptionsMixin;
 
-    public function __construct(bool $workDoneProgress)
+    public function __construct(bool|null $workDoneProgress)
     {
-        $this->workDoneProgress = $workDoneProgress;
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

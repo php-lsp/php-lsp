@@ -10,7 +10,7 @@ namespace Lsp\Protocol\Type;
 final class ApplyWorkspaceEditParams
 {
     final public function __construct(
-        public readonly string $label,
         public readonly WorkspaceEdit $edit,
+        public readonly string|null $label = null,
     ) {}
 }

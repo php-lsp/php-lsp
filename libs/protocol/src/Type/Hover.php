@@ -14,6 +14,6 @@ final class Hover
      */
     final public function __construct(
         public readonly MarkupContent|string|object|array $contents,
-        public readonly Range $range,
+        public readonly Range|null $range = null,
     ) {}
 }

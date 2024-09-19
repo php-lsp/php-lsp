@@ -13,16 +13,16 @@ namespace Lsp\Protocol\Type;
 final class CodeAction
 {
     /**
-     * @param list<Diagnostic> $diagnostics
+     * @param list<Diagnostic>|null $diagnostics
      */
     final public function __construct(
         public readonly string $title,
-        public readonly CodeActionKind $kind,
-        public readonly array $diagnostics,
-        public readonly bool $isPreferred,
-        public readonly CodeActionDisabled $disabled,
-        public readonly WorkspaceEdit $edit,
-        public readonly Command $command,
-        public readonly mixed $data,
+        public readonly CodeActionKind|null $kind = null,
+        public readonly array|null $diagnostics = null,
+        public readonly bool|null $isPreferred = null,
+        public readonly CodeActionDisabled|null $disabled = null,
+        public readonly WorkspaceEdit|null $edit = null,
+        public readonly Command|null $command = null,
+        public readonly mixed $data = null,
     ) {}
 }

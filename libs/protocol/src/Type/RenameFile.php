@@ -19,11 +19,11 @@ final class RenameFile
         string $kind,
         public readonly string $oldUri,
         public readonly string $newUri,
-        public readonly RenameFileOptions $options,
-        string $annotationId,
+        public readonly RenameFileOptions|null $options = null,
+        string|null $annotationId = null,
     ) {
-        $this->kind = $kind;
-
-        $this->annotationId = $annotationId;
+            $this->kind = $kind;
+    
+            $this->annotationId = $annotationId;
     }
 }

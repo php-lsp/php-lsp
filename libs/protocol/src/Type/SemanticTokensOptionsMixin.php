@@ -19,12 +19,12 @@ trait SemanticTokensOptionsMixin
      *
      * @generated
      */
-    public readonly bool|SemanticTokensOptionsRange $range;
+    public bool|SemanticTokensOptionsRange|null $range = null;
 
     /**
      * Server supports providing semantic tokens for a full document.
      *
      * @generated
      */
-    public readonly bool|SemanticTokensOptionsFull $full;
+    public bool|SemanticTokensOptionsFull|null $full = null;
 }

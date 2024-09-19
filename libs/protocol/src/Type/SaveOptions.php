@@ -11,8 +11,8 @@ class SaveOptions
 {
     use SaveOptionsMixin;
 
-    public function __construct(bool $includeText)
+    public function __construct(bool|null $includeText)
     {
-        $this->includeText = $includeText;
+            $this->includeText = $includeText;
     }
 }

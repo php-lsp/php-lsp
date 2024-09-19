@@ -8,9 +8,9 @@ namespace Lsp\Protocol\Type;
 final class RenameClientCapabilities
 {
     final public function __construct(
-        public readonly bool $dynamicRegistration,
-        public readonly bool $prepareSupport,
-        public readonly PrepareSupportDefaultBehavior $prepareSupportDefaultBehavior,
-        public readonly bool $honorsChangeAnnotations,
+        public readonly bool|null $dynamicRegistration = null,
+        public readonly bool|null $prepareSupport = null,
+        public readonly PrepareSupportDefaultBehavior|null $prepareSupportDefaultBehavior = null,
+        public readonly bool|null $honorsChangeAnnotations = null,
     ) {}
 }

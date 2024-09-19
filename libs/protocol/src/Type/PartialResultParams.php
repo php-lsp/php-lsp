@@ -10,10 +10,10 @@ abstract class PartialResultParams
     use PartialResultParamsMixin;
 
     /**
-     * @param int<-2147483648, 2147483647>|string $partialResultToken
+     * @param int<-2147483648, 2147483647>|string|null $partialResultToken
      */
-    public function __construct(int|string $partialResultToken)
+    public function __construct(int|string|null $partialResultToken)
     {
-        $this->partialResultToken = $partialResultToken;
+            $this->partialResultToken = $partialResultToken;
     }
 }

@@ -11,6 +11,6 @@ final class CompletionContext
 {
     final public function __construct(
         public readonly CompletionTriggerKind $triggerKind,
-        public readonly string $triggerCharacter,
+        public readonly string|null $triggerCharacter = null,
     ) {}
 }

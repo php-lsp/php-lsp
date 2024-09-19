@@ -7,13 +7,12 @@ namespace Lsp\Protocol\Type;
  * document by different properties.
  *
  * @generated
- *
  * @since 3.17.0
  */
 final class NotebookCellTextDocumentFilter
 {
     final public function __construct(
         public readonly string|object|object|object $notebook,
-        public readonly string $language,
+        public readonly string|null $language = null,
     ) {}
 }

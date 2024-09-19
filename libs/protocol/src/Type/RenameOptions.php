@@ -11,10 +11,10 @@ class RenameOptions
 {
     use RenameOptionsMixin;
 
-    public function __construct(bool $prepareProvider, bool $workDoneProgress)
+    public function __construct(bool|null $prepareProvider, bool|null $workDoneProgress)
     {
-        $this->prepareProvider = $prepareProvider;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->prepareProvider = $prepareProvider;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

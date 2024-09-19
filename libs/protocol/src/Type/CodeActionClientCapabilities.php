@@ -10,12 +10,12 @@ namespace Lsp\Protocol\Type;
 final class CodeActionClientCapabilities
 {
     final public function __construct(
-        public readonly bool $dynamicRegistration,
-        public readonly CodeActionClientCapabilitiesCodeActionLiteralSupport $codeActionLiteralSupport,
-        public readonly bool $isPreferredSupport,
-        public readonly bool $disabledSupport,
-        public readonly bool $dataSupport,
-        public readonly CodeActionClientCapabilitiesResolveSupport $resolveSupport,
-        public readonly bool $honorsChangeAnnotations,
+        public readonly bool|null $dynamicRegistration = null,
+        public readonly CodeActionClientCapabilitiesCodeActionLiteralSupport|null $codeActionLiteralSupport = null,
+        public readonly bool|null $isPreferredSupport = null,
+        public readonly bool|null $disabledSupport = null,
+        public readonly bool|null $dataSupport = null,
+        public readonly CodeActionClientCapabilitiesResolveSupport|null $resolveSupport = null,
+        public readonly bool|null $honorsChangeAnnotations = null,
     ) {}
 }

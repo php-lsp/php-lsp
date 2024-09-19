@@ -12,12 +12,12 @@ final class ParameterInformation
 {
     /**
      * @param string|array{
-     * int<0, 2147483647>,
-     * int<0, 2147483647>
-     * } $label
-     */
+       int<0, 2147483647>,
+       int<0, 2147483647>
+    } $label
+    */
     final public function __construct(
         public readonly string|array $label,
-        public readonly string|MarkupContent $documentation,
+        public readonly string|MarkupContent|null $documentation = null,
     ) {}
 }

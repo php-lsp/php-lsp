@@ -12,6 +12,6 @@ final class ExecutionSummary
      */
     final public function __construct(
         public readonly int $executionOrder,
-        public readonly bool $success,
+        public readonly bool|null $success = null,
     ) {}
 }

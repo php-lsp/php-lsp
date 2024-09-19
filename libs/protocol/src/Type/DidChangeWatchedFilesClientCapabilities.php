@@ -8,7 +8,7 @@ namespace Lsp\Protocol\Type;
 final class DidChangeWatchedFilesClientCapabilities
 {
     final public function __construct(
-        public readonly bool $dynamicRegistration,
-        public readonly bool $relativePatternSupport,
+        public readonly bool|null $dynamicRegistration = null,
+        public readonly bool|null $relativePatternSupport = null,
     ) {}
 }

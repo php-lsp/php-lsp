@@ -12,6 +12,6 @@ final class SelectionRange
 {
     final public function __construct(
         public readonly Range $range,
-        public readonly SelectionRange $parent,
+        public readonly SelectionRange|null $parent = null,
     ) {}
 }

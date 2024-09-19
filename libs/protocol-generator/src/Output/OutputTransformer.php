@@ -8,6 +8,7 @@ use Lsp\Protocol\Generator\MetaModel\Node\MetaModel;
 use Lsp\Protocol\Generator\Output\Visitor\EnumNodeVisitor;
 use Lsp\Protocol\Generator\Output\Visitor\ExtractStructLiteralNodeVisitor;
 use Lsp\Protocol\Generator\Output\Visitor\MixinNodeVisitor;
+use Lsp\Protocol\Generator\Output\Visitor\OptionalPropertyNodeVisitor;
 use Lsp\Protocol\Generator\Output\Visitor\StandaloneStructNodeVisitor;
 use Lsp\Protocol\Generator\Output\Visitor\StructInheritanceNodeVisitor;
 use PhpParser\Node as PhpNodeInterface;
@@ -34,6 +35,7 @@ final class OutputTransformer
         // Normalize
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new StructInheritanceNodeVisitor());
+        $traverser->addVisitor(new OptionalPropertyNodeVisitor());
         $traverser->addVisitor($extractor = new ExtractStructLiteralNodeVisitor());
         $traverser->traverse([$this->model]);
 

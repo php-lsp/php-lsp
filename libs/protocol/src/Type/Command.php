@@ -13,11 +13,11 @@ namespace Lsp\Protocol\Type;
 final class Command
 {
     /**
-     * @param list<mixed> $arguments
+     * @param list<mixed>|null $arguments
      */
     final public function __construct(
         public readonly string $title,
         public readonly string $command,
-        public readonly array $arguments,
+        public readonly array|null $arguments = null,
     ) {}
 }

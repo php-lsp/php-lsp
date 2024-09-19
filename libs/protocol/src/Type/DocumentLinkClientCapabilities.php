@@ -10,7 +10,7 @@ namespace Lsp\Protocol\Type;
 final class DocumentLinkClientCapabilities
 {
     final public function __construct(
-        public readonly bool $dynamicRegistration,
-        public readonly bool $tooltipSupport,
+        public readonly bool|null $dynamicRegistration = null,
+        public readonly bool|null $tooltipSupport = null,
     ) {}
 }

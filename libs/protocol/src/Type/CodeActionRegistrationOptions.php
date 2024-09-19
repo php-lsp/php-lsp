@@ -15,20 +15,20 @@ final class CodeActionRegistrationOptions
 
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
-     * @param list<CodeActionKind> $codeActionKinds
+     * @param list<CodeActionKind>|null $codeActionKinds
      */
     final public function __construct(
-        ?array $documentSelector,
-        array $codeActionKinds,
-        bool $resolveProvider,
-        bool $workDoneProgress,
+        array|null $documentSelector,
+        array|null $codeActionKinds = null,
+        bool|null $resolveProvider = null,
+        bool|null $workDoneProgress = null,
     ) {
-        $this->documentSelector = $documentSelector;
-
-        $this->codeActionKinds = $codeActionKinds;
-
-        $this->resolveProvider = $resolveProvider;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->documentSelector = $documentSelector;
+    
+            $this->codeActionKinds = $codeActionKinds;
+    
+            $this->resolveProvider = $resolveProvider;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

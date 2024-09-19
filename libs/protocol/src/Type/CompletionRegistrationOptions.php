@@ -15,27 +15,27 @@ final class CompletionRegistrationOptions
 
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
-     * @param list<string> $triggerCharacters
-     * @param list<string> $allCommitCharacters
+     * @param list<string>|null $triggerCharacters
+     * @param list<string>|null $allCommitCharacters
      */
     final public function __construct(
-        ?array $documentSelector,
-        array $triggerCharacters,
-        array $allCommitCharacters,
-        bool $resolveProvider,
-        CompletionOptionsCompletionItem $completionItem,
-        bool $workDoneProgress,
+        array|null $documentSelector,
+        array|null $triggerCharacters = null,
+        array|null $allCommitCharacters = null,
+        bool|null $resolveProvider = null,
+        CompletionOptionsCompletionItem|null $completionItem = null,
+        bool|null $workDoneProgress = null,
     ) {
-        $this->documentSelector = $documentSelector;
-
-        $this->triggerCharacters = $triggerCharacters;
-
-        $this->allCommitCharacters = $allCommitCharacters;
-
-        $this->resolveProvider = $resolveProvider;
-
-        $this->completionItem = $completionItem;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->documentSelector = $documentSelector;
+    
+            $this->triggerCharacters = $triggerCharacters;
+    
+            $this->allCommitCharacters = $allCommitCharacters;
+    
+            $this->resolveProvider = $resolveProvider;
+    
+            $this->completionItem = $completionItem;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

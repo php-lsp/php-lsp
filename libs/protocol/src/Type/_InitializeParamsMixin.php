@@ -14,19 +14,17 @@ trait _InitializeParamsMixin
      * If the parent process is not alive then the server should exit.
      *
      * @generated
-     *
      * @var int<-2147483648, 2147483647>|null
      */
-    public readonly ?int $processId;
+    public readonly int|null $processId;
 
     /**
      * Information about the client
      *
      * @generated
-     *
      * @since 3.15.0
      */
-    public readonly _InitializeParamsClientInfo $clientInfo;
+    public _InitializeParamsClientInfo|null $clientInfo = null;
 
     /**
      * The locale the client is currently showing the user interface
@@ -37,20 +35,18 @@ trait _InitializeParamsMixin
      * (See https://en.wikipedia.org/wiki/IETF_language_tag)
      *
      * @generated
-     *
      * @since 3.16.0
      */
-    public readonly string $locale;
+    public string|null $locale = null;
 
     /**
      * The rootPath of the workspace. Is null
      * if no folder is open.
      *
      * @generated
-     *
-     * @deprecated in favour of rootUri
+     * @deprecated in favour of rootUri.
      */
-    public readonly ?string $rootPath;
+    public string|null $rootPath = null;
 
     /**
      * The rootUri of the workspace. Is null if no
@@ -58,12 +54,10 @@ trait _InitializeParamsMixin
      * `rootUri` wins.
      *
      * @generated
-     *
-     * @deprecated in favour of workspaceFolders
-     *
+     * @deprecated in favour of workspaceFolders.
      * @var non-empty-string|null
      */
-    public readonly ?string $rootUri;
+    public readonly string|null $rootUri;
 
     /**
      * The capabilities provided by the client (editor or tool)
@@ -77,12 +71,12 @@ trait _InitializeParamsMixin
      *
      * @generated
      */
-    public readonly mixed $initializationOptions;
+    public mixed $initializationOptions = null;
 
     /**
      * The initial trace setting. If omitted trace is disabled ('off').
      *
      * @generated
      */
-    public readonly TraceValues $trace;
+    public TraceValues|null $trace = null;
 }

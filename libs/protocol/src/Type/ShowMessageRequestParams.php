@@ -8,11 +8,11 @@ namespace Lsp\Protocol\Type;
 final class ShowMessageRequestParams
 {
     /**
-     * @param list<MessageActionItem> $actions
+     * @param list<MessageActionItem>|null $actions
      */
     final public function __construct(
         public readonly MessageType $type,
         public readonly string $message,
-        public readonly array $actions,
+        public readonly array|null $actions = null,
     ) {}
 }

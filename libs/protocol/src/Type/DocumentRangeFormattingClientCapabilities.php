@@ -10,7 +10,7 @@ namespace Lsp\Protocol\Type;
 final class DocumentRangeFormattingClientCapabilities
 {
     final public function __construct(
-        public readonly bool $dynamicRegistration,
-        public readonly bool $rangesSupport,
+        public readonly bool|null $dynamicRegistration = null,
+        public readonly bool|null $rangesSupport = null,
     ) {}
 }

@@ -10,10 +10,10 @@ namespace Lsp\Protocol\Type;
 final class DocumentSymbolClientCapabilities
 {
     final public function __construct(
-        public readonly bool $dynamicRegistration,
-        public readonly DocumentSymbolClientCapabilitiesSymbolKind $symbolKind,
-        public readonly bool $hierarchicalDocumentSymbolSupport,
-        public readonly DocumentSymbolClientCapabilitiesTagSupport $tagSupport,
-        public readonly bool $labelSupport,
+        public readonly bool|null $dynamicRegistration = null,
+        public readonly DocumentSymbolClientCapabilitiesSymbolKind|null $symbolKind = null,
+        public readonly bool|null $hierarchicalDocumentSymbolSupport = null,
+        public readonly DocumentSymbolClientCapabilitiesTagSupport|null $tagSupport = null,
+        public readonly bool|null $labelSupport = null,
     ) {}
 }

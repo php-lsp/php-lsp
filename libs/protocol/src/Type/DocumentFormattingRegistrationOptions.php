@@ -16,10 +16,10 @@ final class DocumentFormattingRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    final public function __construct(?array $documentSelector, bool $workDoneProgress)
+    final public function __construct(array|null $documentSelector, bool|null $workDoneProgress = null)
     {
-        $this->documentSelector = $documentSelector;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->documentSelector = $documentSelector;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

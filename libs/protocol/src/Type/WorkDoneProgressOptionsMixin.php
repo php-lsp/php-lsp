@@ -7,5 +7,5 @@ trait WorkDoneProgressOptionsMixin
     /**
      * @generated
      */
-    public readonly bool $workDoneProgress;
+    public bool|null $workDoneProgress = null;
 }

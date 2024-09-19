@@ -12,12 +12,12 @@ class DocumentOnTypeFormattingOptions
     use DocumentOnTypeFormattingOptionsMixin;
 
     /**
-     * @param list<string> $moreTriggerCharacter
+     * @param list<string>|null $moreTriggerCharacter
      */
-    public function __construct(string $firstTriggerCharacter, array $moreTriggerCharacter)
+    public function __construct(string $firstTriggerCharacter, array|null $moreTriggerCharacter)
     {
-        $this->firstTriggerCharacter = $firstTriggerCharacter;
-
-        $this->moreTriggerCharacter = $moreTriggerCharacter;
+            $this->firstTriggerCharacter = $firstTriggerCharacter;
+    
+            $this->moreTriggerCharacter = $moreTriggerCharacter;
     }
 }

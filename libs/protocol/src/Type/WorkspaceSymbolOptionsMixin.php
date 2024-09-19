@@ -11,8 +11,7 @@ trait WorkspaceSymbolOptionsMixin
      * information for a workspace symbol.
      *
      * @generated
-     *
      * @since 3.17.0
      */
-    public readonly bool $resolveProvider;
+    public bool|null $resolveProvider = null;
 }

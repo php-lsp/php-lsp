@@ -11,29 +11,29 @@ namespace Lsp\Protocol\Type;
 final class CompletionItem
 {
     /**
-     * @param list<CompletionItemTag> $tags
-     * @param list<TextEdit> $additionalTextEdits
-     * @param list<string> $commitCharacters
+     * @param list<CompletionItemTag>|null $tags
+     * @param list<TextEdit>|null $additionalTextEdits
+     * @param list<string>|null $commitCharacters
      */
     final public function __construct(
         public readonly string $label,
-        public readonly CompletionItemLabelDetails $labelDetails,
-        public readonly CompletionItemKind $kind,
-        public readonly array $tags,
-        public readonly string $detail,
-        public readonly string|MarkupContent $documentation,
-        public readonly bool $deprecated,
-        public readonly bool $preselect,
-        public readonly string $sortText,
-        public readonly string $filterText,
-        public readonly string $insertText,
-        public readonly InsertTextFormat $insertTextFormat,
-        public readonly InsertTextMode $insertTextMode,
-        public readonly TextEdit|InsertReplaceEdit $textEdit,
-        public readonly string $textEditText,
-        public readonly array $additionalTextEdits,
-        public readonly array $commitCharacters,
-        public readonly Command $command,
-        public readonly mixed $data,
+        public readonly CompletionItemLabelDetails|null $labelDetails = null,
+        public readonly CompletionItemKind|null $kind = null,
+        public readonly array|null $tags = null,
+        public readonly string|null $detail = null,
+        public readonly string|MarkupContent|null $documentation = null,
+        public readonly bool|null $deprecated = null,
+        public readonly bool|null $preselect = null,
+        public readonly string|null $sortText = null,
+        public readonly string|null $filterText = null,
+        public readonly string|null $insertText = null,
+        public readonly InsertTextFormat|null $insertTextFormat = null,
+        public readonly InsertTextMode|null $insertTextMode = null,
+        public readonly TextEdit|InsertReplaceEdit|null $textEdit = null,
+        public readonly string|null $textEditText = null,
+        public readonly array|null $additionalTextEdits = null,
+        public readonly array|null $commitCharacters = null,
+        public readonly Command|null $command = null,
+        public readonly mixed $data = null,
     ) {}
 }

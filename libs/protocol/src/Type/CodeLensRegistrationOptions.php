@@ -16,12 +16,12 @@ final class CodeLensRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    final public function __construct(?array $documentSelector, bool $resolveProvider, bool $workDoneProgress)
+    final public function __construct(array|null $documentSelector, bool|null $resolveProvider = null, bool|null $workDoneProgress = null)
     {
-        $this->documentSelector = $documentSelector;
-
-        $this->resolveProvider = $resolveProvider;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->documentSelector = $documentSelector;
+    
+            $this->resolveProvider = $resolveProvider;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

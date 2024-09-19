@@ -10,11 +10,11 @@ namespace Lsp\Protocol\Type;
 final class ClientCapabilities
 {
     final public function __construct(
-        public readonly WorkspaceClientCapabilities $workspace,
-        public readonly TextDocumentClientCapabilities $textDocument,
-        public readonly NotebookDocumentClientCapabilities $notebookDocument,
-        public readonly WindowClientCapabilities $window,
-        public readonly GeneralClientCapabilities $general,
-        public readonly mixed $experimental,
+        public readonly WorkspaceClientCapabilities|null $workspace = null,
+        public readonly TextDocumentClientCapabilities|null $textDocument = null,
+        public readonly NotebookDocumentClientCapabilities|null $notebookDocument = null,
+        public readonly WindowClientCapabilities|null $window = null,
+        public readonly GeneralClientCapabilities|null $general = null,
+        public readonly mixed $experimental = null,
     ) {}
 }

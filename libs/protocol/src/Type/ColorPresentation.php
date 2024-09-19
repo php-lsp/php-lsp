@@ -8,11 +8,11 @@ namespace Lsp\Protocol\Type;
 final class ColorPresentation
 {
     /**
-     * @param list<TextEdit> $additionalTextEdits
+     * @param list<TextEdit>|null $additionalTextEdits
      */
     final public function __construct(
         public readonly string $label,
-        public readonly TextEdit $textEdit,
-        public readonly array $additionalTextEdits,
+        public readonly TextEdit|null $textEdit = null,
+        public readonly array|null $additionalTextEdits = null,
     ) {}
 }

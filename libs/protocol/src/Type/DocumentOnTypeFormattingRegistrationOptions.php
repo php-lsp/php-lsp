@@ -15,14 +15,14 @@ final class DocumentOnTypeFormattingRegistrationOptions
 
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
-     * @param list<string> $moreTriggerCharacter
+     * @param list<string>|null $moreTriggerCharacter
      */
-    final public function __construct(?array $documentSelector, string $firstTriggerCharacter, array $moreTriggerCharacter)
+    final public function __construct(array|null $documentSelector, string $firstTriggerCharacter, array|null $moreTriggerCharacter = null)
     {
-        $this->documentSelector = $documentSelector;
-
-        $this->firstTriggerCharacter = $firstTriggerCharacter;
-
-        $this->moreTriggerCharacter = $moreTriggerCharacter;
+            $this->documentSelector = $documentSelector;
+    
+            $this->firstTriggerCharacter = $firstTriggerCharacter;
+    
+            $this->moreTriggerCharacter = $moreTriggerCharacter;
     }
 }

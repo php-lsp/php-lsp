@@ -10,5 +10,5 @@ trait StaticRegistrationOptionsMixin
      *
      * @generated
      */
-    public readonly string $id;
+    public string|null $id = null;
 }

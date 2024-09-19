@@ -9,6 +9,6 @@ final class LogTraceParams
 {
     final public function __construct(
         public readonly string $message,
-        public readonly string $verbose,
+        public readonly string|null $verbose = null,
     ) {}
 }

@@ -17,11 +17,11 @@ final class DeleteFile
     final public function __construct(
         string $kind,
         public readonly string $uri,
-        public readonly DeleteFileOptions $options,
-        string $annotationId,
+        public readonly DeleteFileOptions|null $options = null,
+        string|null $annotationId = null,
     ) {
-        $this->kind = $kind;
-
-        $this->annotationId = $annotationId;
+            $this->kind = $kind;
+    
+            $this->annotationId = $annotationId;
     }
 }

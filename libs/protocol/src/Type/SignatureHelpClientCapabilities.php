@@ -10,8 +10,8 @@ namespace Lsp\Protocol\Type;
 final class SignatureHelpClientCapabilities
 {
     final public function __construct(
-        public readonly bool $dynamicRegistration,
-        public readonly SignatureHelpClientCapabilitiesSignatureInformation $signatureInformation,
-        public readonly bool $contextSupport,
+        public readonly bool|null $dynamicRegistration = null,
+        public readonly SignatureHelpClientCapabilitiesSignatureInformation|null $signatureInformation = null,
+        public readonly bool|null $contextSupport = null,
     ) {}
 }

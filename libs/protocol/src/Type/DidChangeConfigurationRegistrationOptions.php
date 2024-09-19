@@ -8,9 +8,9 @@ namespace Lsp\Protocol\Type;
 final class DidChangeConfigurationRegistrationOptions
 {
     /**
-     * @param string|list<string> $section
+     * @param string|list<string>|null $section
      */
     final public function __construct(
-        public readonly string|array $section,
+        public readonly string|array|null $section = null,
     ) {}
 }

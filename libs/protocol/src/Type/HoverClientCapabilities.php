@@ -8,10 +8,10 @@ namespace Lsp\Protocol\Type;
 final class HoverClientCapabilities
 {
     /**
-     * @param list<MarkupKind> $contentFormat
+     * @param list<MarkupKind>|null $contentFormat
      */
     final public function __construct(
-        public readonly bool $dynamicRegistration,
-        public readonly array $contentFormat,
+        public readonly bool|null $dynamicRegistration = null,
+        public readonly array|null $contentFormat = null,
     ) {}
 }

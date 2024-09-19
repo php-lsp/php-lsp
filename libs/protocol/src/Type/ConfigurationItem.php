@@ -8,10 +8,10 @@ namespace Lsp\Protocol\Type;
 final class ConfigurationItem
 {
     /**
-     * @param non-empty-string $scopeUri
+     * @param non-empty-string|null $scopeUri
      */
     final public function __construct(
-        public readonly string $scopeUri,
-        public readonly string $section,
+        public readonly string|null $scopeUri = null,
+        public readonly string|null $section = null,
     ) {}
 }

@@ -8,7 +8,6 @@ namespace Lsp\Protocol\Type;
  * See also SymbolInformation.
  *
  * @generated
- *
  * @since 3.17.0
  */
 final class WorkspaceSymbol
@@ -16,22 +15,22 @@ final class WorkspaceSymbol
     use BaseSymbolInformationMixin;
 
     /**
-     * @param list<SymbolTag> $tags
+     * @param list<SymbolTag>|null $tags
      */
     final public function __construct(
         public readonly Location|WorkspaceSymbolLocation $location,
-        public readonly mixed $data,
         string $name,
         SymbolKind $kind,
-        array $tags,
-        string $containerName,
+        public readonly mixed $data = null,
+        array|null $tags = null,
+        string|null $containerName = null,
     ) {
-        $this->name = $name;
-
-        $this->kind = $kind;
-
-        $this->tags = $tags;
-
-        $this->containerName = $containerName;
+            $this->name = $name;
+    
+            $this->kind = $kind;
+    
+            $this->tags = $tags;
+    
+            $this->containerName = $containerName;
     }
 }

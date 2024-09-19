@@ -12,7 +12,7 @@ trait DiagnosticOptionsMixin
      *
      * @generated
      */
-    public readonly string $identifier;
+    public string|null $identifier = null;
 
     /**
      * Whether the language has inter file dependencies meaning that

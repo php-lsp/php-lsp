@@ -4,7 +4,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * @generated
- *
  * @since 3.16.0
  */
 final class SemanticTokensRegistrationOptions
@@ -19,23 +18,23 @@ final class SemanticTokensRegistrationOptions
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(
-        ?array $documentSelector,
+        array|null $documentSelector,
         SemanticTokensLegend $legend,
-        bool|SemanticTokensOptionsRange $range,
-        bool|SemanticTokensOptionsFull $full,
-        bool $workDoneProgress,
-        string $id,
+        bool|SemanticTokensOptionsRange|null $range = null,
+        bool|SemanticTokensOptionsFull|null $full = null,
+        bool|null $workDoneProgress = null,
+        string|null $id = null,
     ) {
-        $this->documentSelector = $documentSelector;
-
-        $this->legend = $legend;
-
-        $this->range = $range;
-
-        $this->full = $full;
-
-        $this->workDoneProgress = $workDoneProgress;
-
-        $this->id = $id;
+            $this->documentSelector = $documentSelector;
+    
+            $this->legend = $legend;
+    
+            $this->range = $range;
+    
+            $this->full = $full;
+    
+            $this->workDoneProgress = $workDoneProgress;
+    
+            $this->id = $id;
     }
 }

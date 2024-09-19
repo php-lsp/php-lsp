@@ -15,8 +15,7 @@ trait DocumentOnTypeFormattingOptionsMixin
      * More trigger characters.
      *
      * @generated
-     *
-     * @var list<string>
+     * @var list<string>|null
      */
-    public readonly array $moreTriggerCharacter;
+    public array|null $moreTriggerCharacter = null;
 }

@@ -15,8 +15,7 @@ trait ResourceOperationMixin
      * An optional annotation identifier describing the operation.
      *
      * @generated
-     *
      * @since 3.16.0
      */
-    public readonly string $annotationId;
+    public string|null $annotationId = null;
 }

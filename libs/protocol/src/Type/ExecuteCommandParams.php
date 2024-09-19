@@ -12,14 +12,14 @@ final class ExecuteCommandParams
     use WorkDoneProgressParamsMixin;
 
     /**
-     * @param list<mixed> $arguments
-     * @param int<-2147483648, 2147483647>|string $workDoneToken
+     * @param list<mixed>|null $arguments
+     * @param int<-2147483648, 2147483647>|string|null $workDoneToken
      */
     final public function __construct(
         public readonly string $command,
-        public readonly array $arguments,
-        int|string $workDoneToken,
+        public readonly array|null $arguments = null,
+        int|string|null $workDoneToken = null,
     ) {
-        $this->workDoneToken = $workDoneToken;
+            $this->workDoneToken = $workDoneToken;
     }
 }

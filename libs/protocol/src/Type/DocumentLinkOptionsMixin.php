@@ -11,5 +11,5 @@ trait DocumentLinkOptionsMixin
      *
      * @generated
      */
-    public readonly bool $resolveProvider;
+    public bool|null $resolveProvider = null;
 }

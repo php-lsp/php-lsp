@@ -6,7 +6,6 @@ namespace Lsp\Protocol\Type;
  * Diagnostic registration options.
  *
  * @generated
- *
  * @since 3.17.0
  */
 final class DiagnosticRegistrationOptions
@@ -21,23 +20,23 @@ final class DiagnosticRegistrationOptions
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
     final public function __construct(
-        ?array $documentSelector,
-        string $identifier,
+        array|null $documentSelector,
         bool $interFileDependencies,
         bool $workspaceDiagnostics,
-        bool $workDoneProgress,
-        string $id,
+        string|null $identifier = null,
+        bool|null $workDoneProgress = null,
+        string|null $id = null,
     ) {
-        $this->documentSelector = $documentSelector;
-
-        $this->identifier = $identifier;
-
-        $this->interFileDependencies = $interFileDependencies;
-
-        $this->workspaceDiagnostics = $workspaceDiagnostics;
-
-        $this->workDoneProgress = $workDoneProgress;
-
-        $this->id = $id;
+            $this->documentSelector = $documentSelector;
+    
+            $this->identifier = $identifier;
+    
+            $this->interFileDependencies = $interFileDependencies;
+    
+            $this->workspaceDiagnostics = $workspaceDiagnostics;
+    
+            $this->workDoneProgress = $workDoneProgress;
+    
+            $this->id = $id;
     }
 }

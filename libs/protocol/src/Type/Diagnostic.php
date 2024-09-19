@@ -11,19 +11,19 @@ namespace Lsp\Protocol\Type;
 final class Diagnostic
 {
     /**
-     * @param int<-2147483648, 2147483647>|string $code
-     * @param list<DiagnosticTag> $tags
-     * @param list<DiagnosticRelatedInformation> $relatedInformation
+     * @param int<-2147483648, 2147483647>|string|null $code
+     * @param list<DiagnosticTag>|null $tags
+     * @param list<DiagnosticRelatedInformation>|null $relatedInformation
      */
     final public function __construct(
         public readonly Range $range,
-        public readonly DiagnosticSeverity $severity,
-        public readonly int|string $code,
-        public readonly CodeDescription $codeDescription,
-        public readonly string $source,
         public readonly string $message,
-        public readonly array $tags,
-        public readonly array $relatedInformation,
-        public readonly mixed $data,
+        public readonly DiagnosticSeverity|null $severity = null,
+        public readonly int|string|null $code = null,
+        public readonly CodeDescription|null $codeDescription = null,
+        public readonly string|null $source = null,
+        public readonly array|null $tags = null,
+        public readonly array|null $relatedInformation = null,
+        public readonly mixed $data = null,
     ) {}
 }

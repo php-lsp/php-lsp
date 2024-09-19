@@ -8,13 +8,13 @@ namespace Lsp\Protocol\Type;
 final class WorkDoneProgressBegin
 {
     /**
-     * @param int<0, 2147483647> $percentage
+     * @param int<0, 2147483647>|null $percentage
      */
     final public function __construct(
         public readonly string $kind,
         public readonly string $title,
-        public readonly bool $cancellable,
-        public readonly string $message,
-        public readonly int $percentage,
+        public readonly bool|null $cancellable = null,
+        public readonly string|null $message = null,
+        public readonly int|null $percentage = null,
     ) {}
 }

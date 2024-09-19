@@ -14,18 +14,18 @@ final class CodeActionParams
     use PartialResultParamsMixin;
 
     /**
-     * @param int<-2147483648, 2147483647>|string $workDoneToken
-     * @param int<-2147483648, 2147483647>|string $partialResultToken
+     * @param int<-2147483648, 2147483647>|string|null $workDoneToken
+     * @param int<-2147483648, 2147483647>|string|null $partialResultToken
      */
     final public function __construct(
         public readonly TextDocumentIdentifier $textDocument,
         public readonly Range $range,
         public readonly CodeActionContext $context,
-        int|string $workDoneToken,
-        int|string $partialResultToken,
+        int|string|null $workDoneToken = null,
+        int|string|null $partialResultToken = null,
     ) {
-        $this->workDoneToken = $workDoneToken;
-
-        $this->partialResultToken = $partialResultToken;
+            $this->workDoneToken = $workDoneToken;
+    
+            $this->partialResultToken = $partialResultToken;
     }
 }

@@ -14,10 +14,10 @@ final class ExecuteCommandRegistrationOptions
     /**
      * @param list<string> $commands
      */
-    final public function __construct(array $commands, bool $workDoneProgress)
+    final public function __construct(array $commands, bool|null $workDoneProgress = null)
     {
-        $this->commands = $commands;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->commands = $commands;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

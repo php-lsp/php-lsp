@@ -16,12 +16,12 @@ final class RenameRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    final public function __construct(?array $documentSelector, bool $prepareProvider, bool $workDoneProgress)
+    final public function __construct(array|null $documentSelector, bool|null $prepareProvider = null, bool|null $workDoneProgress = null)
     {
-        $this->documentSelector = $documentSelector;
-
-        $this->prepareProvider = $prepareProvider;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->documentSelector = $documentSelector;
+    
+            $this->prepareProvider = $prepareProvider;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

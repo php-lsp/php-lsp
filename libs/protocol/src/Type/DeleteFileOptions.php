@@ -10,7 +10,7 @@ namespace Lsp\Protocol\Type;
 final class DeleteFileOptions
 {
     final public function __construct(
-        public readonly bool $recursive,
-        public readonly bool $ignoreIfNotExists,
+        public readonly bool|null $recursive = null,
+        public readonly bool|null $ignoreIfNotExists = null,
     ) {}
 }

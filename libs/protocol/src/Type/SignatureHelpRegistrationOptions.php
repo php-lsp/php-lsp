@@ -15,21 +15,21 @@ final class SignatureHelpRegistrationOptions
 
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
-     * @param list<string> $triggerCharacters
-     * @param list<string> $retriggerCharacters
+     * @param list<string>|null $triggerCharacters
+     * @param list<string>|null $retriggerCharacters
      */
     final public function __construct(
-        ?array $documentSelector,
-        array $triggerCharacters,
-        array $retriggerCharacters,
-        bool $workDoneProgress,
+        array|null $documentSelector,
+        array|null $triggerCharacters = null,
+        array|null $retriggerCharacters = null,
+        bool|null $workDoneProgress = null,
     ) {
-        $this->documentSelector = $documentSelector;
-
-        $this->triggerCharacters = $triggerCharacters;
-
-        $this->retriggerCharacters = $retriggerCharacters;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->documentSelector = $documentSelector;
+    
+            $this->triggerCharacters = $triggerCharacters;
+    
+            $this->retriggerCharacters = $retriggerCharacters;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

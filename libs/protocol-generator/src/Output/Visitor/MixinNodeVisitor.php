@@ -12,6 +12,7 @@ use Lsp\Protocol\Generator\Output\DocBlock\StructParamsBuilder;
 use Lsp\Protocol\Generator\Output\Transformer\Lsp2PhpTransformer;
 use PhpParser\Modifiers;
 use PhpParser\Node\Expr\Assign as PhpAssign;
+use PhpParser\Node\Expr\ConstFetch;
 use PhpParser\Node\Expr\PropertyFetch as PhpPropertyFetch;
 use PhpParser\Node\Expr\Variable as PhpVariable;
 use PhpParser\Node\Identifier as PhpIdentifier;
@@ -51,8 +52,8 @@ final class MixinNodeVisitor extends StructLikeNodeVisitor
 
     private function createProperty(Property $property): PhpPropertyStatement
     {
-        $statement = new PhpPropertyStatement(Modifiers::PUBLIC | Modifiers::READONLY, [
-            new PropertyItem($property->name),
+        $statement = new PhpPropertyStatement(Modifiers::PUBLIC, [
+            $item = new PropertyItem($property->name),
         ]);
 
         if ($this->context === null) {
@@ -63,6 +64,12 @@ final class MixinNodeVisitor extends StructLikeNodeVisitor
 
         // @phpstan-ignore-next-line
         $statement->type = Lsp2PhpTransformer::make($this->context, $property->type);
+
+        if ($property->optional === true) {
+            $item->default = new ConstFetch(new Name('null'));
+        } else {
+            $statement->flags |= Modifiers::READONLY;
+        }
 
         return $statement;
     }

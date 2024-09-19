@@ -10,9 +10,11 @@ use Lsp\Protocol\Generator\Output\DocBlock\StructParamsBuilder;
 use Lsp\Protocol\Generator\Output\Transformer\Lsp2PhpTransformer;
 use PhpParser\Modifiers;
 use PhpParser\Node\Expr\Assign as PhpAssign;
+use PhpParser\Node\Expr\ConstFetch;
 use PhpParser\Node\Expr\PropertyFetch as PhpPropertyFetch;
 use PhpParser\Node\Expr\Variable as PhpVariable;
 use PhpParser\Node\Identifier as PhpIdentifier;
+use PhpParser\Node\Name;
 use PhpParser\Node\Param as PhpParam;
 use PhpParser\Node\Stmt\Class_ as PhpClassStatement;
 use PhpParser\Node\Stmt\ClassMethod as PhpClassMethod;
@@ -54,6 +56,8 @@ final class StandaloneStructNodeVisitor extends StructLikeNodeVisitor
         StructParamsBuilder::makeIfNotEmpty($this->context, $struct, $method->setDocComment(...));
 
         $inherited = [];
+        $required = $optional = [];
+
         foreach ($struct->getProperties($this->context) as $property) {
             // In case of a property already has been set
             if (\in_array($property->name, $inherited, true)) {
@@ -80,7 +84,20 @@ final class StandaloneStructNodeVisitor extends StructLikeNodeVisitor
                 $param->flags += Modifiers::PUBLIC | Modifiers::READONLY;
             }
 
-            $method->params[$property->name] = $param;
+            if ($property->optional === true) {
+                $param->default = new ConstFetch(new Name('null'));
+                $optional[$property->name] = $param;
+            } else {
+                $required[$property->name] = $param;
+            }
+        }
+
+        foreach ($required as $name => $param) {
+            $method->params[$name] = $param;
+        }
+
+        foreach ($optional as $name => $param) {
+            $method->params[$name] = $param;
         }
 
         return $method;

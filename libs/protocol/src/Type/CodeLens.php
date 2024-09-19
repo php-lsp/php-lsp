@@ -15,7 +15,7 @@ final class CodeLens
 {
     final public function __construct(
         public readonly Range $range,
-        public readonly Command $command,
-        public readonly mixed $data,
+        public readonly Command|null $command = null,
+        public readonly mixed $data = null,
     ) {}
 }

@@ -11,6 +11,6 @@ final class DidSaveTextDocumentParams
 {
     final public function __construct(
         public readonly TextDocumentIdentifier $textDocument,
-        public readonly string $text,
+        public readonly string|null $text = null,
     ) {}
 }

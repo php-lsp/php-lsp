@@ -21,13 +21,13 @@ namespace Lsp\Protocol\Type;
 final class WorkspaceEdit
 {
     /**
-     * @param array<non-empty-string, list<TextEdit>> $changes
-     * @param list<TextDocumentEdit|CreateFile|RenameFile|DeleteFile> $documentChanges
-     * @param array<string, ChangeAnnotation> $changeAnnotations
+     * @param array<non-empty-string, list<TextEdit>>|null $changes
+     * @param list<TextDocumentEdit|CreateFile|RenameFile|DeleteFile>|null $documentChanges
+     * @param array<string, ChangeAnnotation>|null $changeAnnotations
      */
     final public function __construct(
-        public readonly array $changes,
-        public readonly array $documentChanges,
-        public readonly array $changeAnnotations,
+        public readonly array|null $changes = null,
+        public readonly array|null $documentChanges = null,
+        public readonly array|null $changeAnnotations = null,
     ) {}
 }

@@ -12,14 +12,14 @@ class CodeActionOptions
     use CodeActionOptionsMixin;
 
     /**
-     * @param list<CodeActionKind> $codeActionKinds
+     * @param list<CodeActionKind>|null $codeActionKinds
      */
-    public function __construct(array $codeActionKinds, bool $resolveProvider, bool $workDoneProgress)
+    public function __construct(array|null $codeActionKinds, bool|null $resolveProvider, bool|null $workDoneProgress)
     {
-        $this->codeActionKinds = $codeActionKinds;
-
-        $this->resolveProvider = $resolveProvider;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->codeActionKinds = $codeActionKinds;
+    
+            $this->resolveProvider = $resolveProvider;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

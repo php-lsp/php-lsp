@@ -22,12 +22,10 @@ trait BaseSymbolInformationMixin
      * Tags for this symbol.
      *
      * @generated
-     *
      * @since 3.16.0
-     *
-     * @var list<SymbolTag>
+     * @var list<SymbolTag>|null
      */
-    public readonly array $tags;
+    public array|null $tags = null;
 
     /**
      * The name of the symbol containing this symbol. This information is for
@@ -37,5 +35,5 @@ trait BaseSymbolInformationMixin
      *
      * @generated
      */
-    public readonly string $containerName;
+    public string|null $containerName = null;
 }

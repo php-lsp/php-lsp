@@ -15,7 +15,7 @@ final class CompletionList
      */
     final public function __construct(
         public readonly bool $isIncomplete,
-        public readonly CompletionListItemDefaults $itemDefaults,
         public readonly array $items,
+        public readonly CompletionListItemDefaults|null $itemDefaults = null,
     ) {}
 }

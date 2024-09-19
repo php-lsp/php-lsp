@@ -8,7 +8,7 @@ namespace Lsp\Protocol\Type;
 final class WorkspaceFoldersServerCapabilities
 {
     final public function __construct(
-        public readonly bool $supported,
-        public readonly string|bool $changeNotifications,
+        public readonly bool|null $supported = null,
+        public readonly string|bool|null $changeNotifications = null,
     ) {}
 }

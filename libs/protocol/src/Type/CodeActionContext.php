@@ -12,11 +12,11 @@ final class CodeActionContext
 {
     /**
      * @param list<Diagnostic> $diagnostics
-     * @param list<CodeActionKind> $only
+     * @param list<CodeActionKind>|null $only
      */
     final public function __construct(
         public readonly array $diagnostics,
-        public readonly array $only,
-        public readonly CodeActionTriggerKind $triggerKind,
+        public readonly array|null $only = null,
+        public readonly CodeActionTriggerKind|null $triggerKind = null,
     ) {}
 }

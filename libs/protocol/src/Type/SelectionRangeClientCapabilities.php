@@ -8,6 +8,6 @@ namespace Lsp\Protocol\Type;
 final class SelectionRangeClientCapabilities
 {
     final public function __construct(
-        public readonly bool $dynamicRegistration,
+        public readonly bool|null $dynamicRegistration = null,
     ) {}
 }

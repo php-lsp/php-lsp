@@ -9,5 +9,5 @@ trait SaveOptionsMixin
      *
      * @generated
      */
-    public readonly bool $includeText;
+    public bool|null $includeText = null;
 }

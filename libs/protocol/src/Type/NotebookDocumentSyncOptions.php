@@ -16,7 +16,6 @@ namespace Lsp\Protocol\Type;
  * cell will be synced.
  *
  * @generated
- *
  * @since 3.17.0
  */
 class NotebookDocumentSyncOptions
@@ -26,10 +25,10 @@ class NotebookDocumentSyncOptions
     /**
      * @param list<NotebookDocumentSyncOptionsNotebookSelector> $notebookSelector
      */
-    public function __construct(array $notebookSelector, bool $save)
+    public function __construct(array $notebookSelector, bool|null $save)
     {
-        $this->notebookSelector = $notebookSelector;
-
-        $this->save = $save;
+            $this->notebookSelector = $notebookSelector;
+    
+            $this->save = $save;
     }
 }

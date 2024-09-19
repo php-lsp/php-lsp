@@ -16,12 +16,12 @@ final class DocumentColorRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    final public function __construct(?array $documentSelector, bool $workDoneProgress, string $id)
+    final public function __construct(array|null $documentSelector, bool|null $workDoneProgress = null, string|null $id = null)
     {
-        $this->documentSelector = $documentSelector;
-
-        $this->workDoneProgress = $workDoneProgress;
-
-        $this->id = $id;
+            $this->documentSelector = $documentSelector;
+    
+            $this->workDoneProgress = $workDoneProgress;
+    
+            $this->id = $id;
     }
 }

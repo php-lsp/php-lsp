@@ -14,10 +14,10 @@ class ExecuteCommandOptions
     /**
      * @param list<string> $commands
      */
-    public function __construct(array $commands, bool $workDoneProgress)
+    public function __construct(array $commands, bool|null $workDoneProgress)
     {
-        $this->commands = $commands;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->commands = $commands;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

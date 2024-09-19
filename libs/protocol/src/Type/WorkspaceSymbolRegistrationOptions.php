@@ -11,10 +11,10 @@ final class WorkspaceSymbolRegistrationOptions
 {
     use WorkspaceSymbolOptionsMixin;
 
-    final public function __construct(bool $resolveProvider, bool $workDoneProgress)
+    final public function __construct(bool|null $resolveProvider = null, bool|null $workDoneProgress = null)
     {
-        $this->resolveProvider = $resolveProvider;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->resolveProvider = $resolveProvider;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

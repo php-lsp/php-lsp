@@ -17,11 +17,11 @@ final class CreateFile
     final public function __construct(
         string $kind,
         public readonly string $uri,
-        public readonly CreateFileOptions $options,
-        string $annotationId,
+        public readonly CreateFileOptions|null $options = null,
+        string|null $annotationId = null,
     ) {
-        $this->kind = $kind;
-
-        $this->annotationId = $annotationId;
+            $this->kind = $kind;
+    
+            $this->annotationId = $annotationId;
     }
 }

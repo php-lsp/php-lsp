@@ -13,6 +13,6 @@ final class DocumentHighlight
 {
     final public function __construct(
         public readonly Range $range,
-        public readonly DocumentHighlightKind $kind,
+        public readonly DocumentHighlightKind|null $kind = null,
     ) {}
 }

@@ -17,10 +17,9 @@ trait CompletionOptionsMixin
      * an identifier (for example `.` in JavaScript) list them in `triggerCharacters`.
      *
      * @generated
-     *
-     * @var list<string>
+     * @var list<string>|null
      */
-    public readonly array $triggerCharacters;
+    public array|null $triggerCharacters = null;
 
     /**
      * The list of all possible characters that commit a completion. This field can be used
@@ -31,12 +30,10 @@ trait CompletionOptionsMixin
      * completion item the ones on the completion item win.
      *
      * @generated
-     *
      * @since 3.2.0
-     *
-     * @var list<string>
+     * @var list<string>|null
      */
-    public readonly array $allCommitCharacters;
+    public array|null $allCommitCharacters = null;
 
     /**
      * The server provides support to resolve additional
@@ -44,15 +41,14 @@ trait CompletionOptionsMixin
      *
      * @generated
      */
-    public readonly bool $resolveProvider;
+    public bool|null $resolveProvider = null;
 
     /**
      * The server supports the following `CompletionItem` specific
      * capabilities.
      *
      * @generated
-     *
      * @since 3.17.0
      */
-    public readonly CompletionOptionsCompletionItem $completionItem;
+    public CompletionOptionsCompletionItem|null $completionItem = null;
 }

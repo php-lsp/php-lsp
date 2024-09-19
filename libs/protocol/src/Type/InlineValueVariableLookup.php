@@ -8,14 +8,13 @@ namespace Lsp\Protocol\Type;
  * An optional variable name can be used to override the extracted name.
  *
  * @generated
- *
  * @since 3.17.0
  */
 final class InlineValueVariableLookup
 {
     final public function __construct(
         public readonly Range $range,
-        public readonly string $variableName,
         public readonly bool $caseSensitiveLookup,
+        public readonly string|null $variableName = null,
     ) {}
 }

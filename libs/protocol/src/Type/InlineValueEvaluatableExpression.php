@@ -8,13 +8,12 @@ namespace Lsp\Protocol\Type;
  * An optional expression can be used to override the extracted expression.
  *
  * @generated
- *
  * @since 3.17.0
  */
 final class InlineValueEvaluatableExpression
 {
     final public function __construct(
         public readonly Range $range,
-        public readonly string $expression,
+        public readonly string|null $expression = null,
     ) {}
 }

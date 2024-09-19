@@ -13,18 +13,16 @@ trait CodeActionOptionsMixin
      * may list out every specific kind they provide.
      *
      * @generated
-     *
-     * @var list<CodeActionKind>
+     * @var list<CodeActionKind>|null
      */
-    public readonly array $codeActionKinds;
+    public array|null $codeActionKinds = null;
 
     /**
      * The server provides support to resolve additional
      * information for a code action.
      *
      * @generated
-     *
      * @since 3.16.0
      */
-    public readonly bool $resolveProvider;
+    public bool|null $resolveProvider = null;
 }

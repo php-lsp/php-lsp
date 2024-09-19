@@ -8,7 +8,6 @@ trait NotebookDocumentSyncOptionsMixin
      * The notebooks to be synced
      *
      * @generated
-     *
      * @var list<NotebookDocumentSyncOptionsNotebookSelector>
      */
     public readonly array $notebookSelector;
@@ -19,5 +18,5 @@ trait NotebookDocumentSyncOptionsMixin
      *
      * @generated
      */
-    public readonly bool $save;
+    public bool|null $save = null;
 }

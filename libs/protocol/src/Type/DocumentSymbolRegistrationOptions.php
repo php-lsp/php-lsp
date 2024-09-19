@@ -16,12 +16,12 @@ final class DocumentSymbolRegistrationOptions
     /**
      * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
      */
-    final public function __construct(?array $documentSelector, string $label, bool $workDoneProgress)
+    final public function __construct(array|null $documentSelector, string|null $label = null, bool|null $workDoneProgress = null)
     {
-        $this->documentSelector = $documentSelector;
-
-        $this->label = $label;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->documentSelector = $documentSelector;
+    
+            $this->label = $label;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

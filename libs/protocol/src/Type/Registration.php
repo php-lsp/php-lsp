@@ -12,6 +12,6 @@ final class Registration
     final public function __construct(
         public readonly string $id,
         public readonly string $method,
-        public readonly mixed $registerOptions,
+        public readonly mixed $registerOptions = null,
     ) {}
 }

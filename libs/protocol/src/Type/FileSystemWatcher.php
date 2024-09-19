@@ -9,6 +9,6 @@ final class FileSystemWatcher
 {
     final public function __construct(
         public readonly string|RelativePattern $globPattern,
-        public readonly WatchKind $kind,
+        public readonly WatchKind|null $kind = null,
     ) {}
 }

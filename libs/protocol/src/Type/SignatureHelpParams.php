@@ -14,18 +14,18 @@ final class SignatureHelpParams
     use TextDocumentPositionParamsMixin;
 
     /**
-     * @param int<-2147483648, 2147483647>|string $workDoneToken
+     * @param int<-2147483648, 2147483647>|string|null $workDoneToken
      */
     final public function __construct(
-        public readonly SignatureHelpContext $context,
         TextDocumentIdentifier $textDocument,
         Position $position,
-        int|string $workDoneToken,
+        public readonly SignatureHelpContext|null $context = null,
+        int|string|null $workDoneToken = null,
     ) {
-        $this->textDocument = $textDocument;
-
-        $this->position = $position;
-
-        $this->workDoneToken = $workDoneToken;
+            $this->textDocument = $textDocument;
+    
+            $this->position = $position;
+    
+            $this->workDoneToken = $workDoneToken;
     }
 }

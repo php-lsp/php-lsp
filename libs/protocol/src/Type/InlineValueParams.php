@@ -6,7 +6,6 @@ namespace Lsp\Protocol\Type;
  * A parameter literal used in inline value requests.
  *
  * @generated
- *
  * @since 3.17.0
  */
 final class InlineValueParams
@@ -14,14 +13,14 @@ final class InlineValueParams
     use WorkDoneProgressParamsMixin;
 
     /**
-     * @param int<-2147483648, 2147483647>|string $workDoneToken
+     * @param int<-2147483648, 2147483647>|string|null $workDoneToken
      */
     final public function __construct(
         public readonly TextDocumentIdentifier $textDocument,
         public readonly Range $range,
         public readonly InlineValueContext $context,
-        int|string $workDoneToken,
+        int|string|null $workDoneToken = null,
     ) {
-        $this->workDoneToken = $workDoneToken;
+            $this->workDoneToken = $workDoneToken;
     }
 }

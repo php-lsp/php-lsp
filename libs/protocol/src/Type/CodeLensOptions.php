@@ -11,10 +11,10 @@ class CodeLensOptions
 {
     use CodeLensOptionsMixin;
 
-    public function __construct(bool $resolveProvider, bool $workDoneProgress)
+    public function __construct(bool|null $resolveProvider, bool|null $workDoneProgress)
     {
-        $this->resolveProvider = $resolveProvider;
-
-        $this->workDoneProgress = $workDoneProgress;
+            $this->resolveProvider = $resolveProvider;
+    
+            $this->workDoneProgress = $workDoneProgress;
     }
 }

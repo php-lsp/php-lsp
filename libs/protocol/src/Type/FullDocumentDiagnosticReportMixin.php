@@ -18,13 +18,12 @@ trait FullDocumentDiagnosticReportMixin
      *
      * @generated
      */
-    public readonly string $resultId;
+    public string|null $resultId = null;
 
     /**
      * The actual items.
      *
      * @generated
-     *
      * @var list<Diagnostic>
      */
     public readonly array $items;

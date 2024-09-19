@@ -10,19 +10,18 @@ namespace Lsp\Protocol\Type;
  * notebook cell or the cell's text document.
  *
  * @generated
- *
  * @since 3.17.0
  */
 final class NotebookCell
 {
     /**
      * @param non-empty-string $document
-     * @param array<string, mixed> $metadata
+     * @param array<string, mixed>|null $metadata
      */
     final public function __construct(
         public readonly NotebookCellKind $kind,
         public readonly string $document,
-        public readonly array $metadata,
-        public readonly ExecutionSummary $executionSummary,
+        public readonly array|null $metadata = null,
+        public readonly ExecutionSummary|null $executionSummary = null,
     ) {}
 }

@@ -11,8 +11,7 @@ trait DocumentSymbolOptionsMixin
      * are shown for the same document.
      *
      * @generated
-     *
      * @since 3.16.0
      */
-    public readonly string $label;
+    public string|null $label = null;
 }

@@ -14,9 +14,9 @@ final class LocationLink
      * @param non-empty-string $targetUri
      */
     final public function __construct(
-        public readonly Range $originSelectionRange,
         public readonly string $targetUri,
         public readonly Range $targetRange,
         public readonly Range $targetSelectionRange,
+        public readonly Range|null $originSelectionRange = null,
     ) {}
 }
