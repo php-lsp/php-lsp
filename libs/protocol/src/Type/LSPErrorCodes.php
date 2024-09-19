@@ -14,7 +14,6 @@ enum LSPErrorCodes: int
      * the request failed.
      *
      * @generated
-     *
      * @since 3.17.0
      */
     case RequestFailed = -32803;
@@ -25,7 +24,6 @@ enum LSPErrorCodes: int
      * server cancellable.
      *
      * @generated
-     *
      * @since 3.17.0
      */
     case ServerCancelled = -32802;

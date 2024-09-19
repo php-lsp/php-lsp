@@ -6,7 +6,6 @@ namespace Lsp\Protocol\Type;
  * A set of predefined position encoding kinds.
  *
  * @generated
- *
  * @since 3.17.0
  */
 enum PositionEncodingKind: string

@@ -7,7 +7,6 @@ namespace Lsp\Protocol\Type;
  * both.
  *
  * @generated
- *
  * @since 3.16.0
  */
 enum FileOperationPatternKind: string

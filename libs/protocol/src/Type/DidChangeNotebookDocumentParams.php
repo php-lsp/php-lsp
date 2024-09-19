@@ -6,7 +6,6 @@ namespace Lsp\Protocol\Type;
  * The params sent in a change notebook document notification.
  *
  * @generated
- *
  * @since 3.17.0
  */
 final class DidChangeNotebookDocumentParams

@@ -8,7 +8,6 @@ namespace Lsp\Protocol\Type;
  * corresponding client capabilities.
  *
  * @generated
- *
  * @since 3.16.0
  */
 enum SemanticTokenModifiers: string

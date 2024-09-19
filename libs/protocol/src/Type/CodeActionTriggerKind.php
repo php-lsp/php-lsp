@@ -6,7 +6,6 @@ namespace Lsp\Protocol\Type;
  * The reason why code actions were requested.
  *
  * @generated
- *
  * @since 3.17.0
  */
 enum CodeActionTriggerKind: int

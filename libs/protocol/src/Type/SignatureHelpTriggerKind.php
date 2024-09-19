@@ -6,7 +6,6 @@ namespace Lsp\Protocol\Type;
  * How a signature help was triggered.
  *
  * @generated
- *
  * @since 3.15.0
  */
 enum SignatureHelpTriggerKind: int

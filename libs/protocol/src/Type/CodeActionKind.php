@@ -98,7 +98,6 @@ enum CodeActionKind: string
      * They should not suppress errors or perform unsafe fixes such as generating new types or classes.
      *
      * @generated
-     *
      * @since 3.15.0
      */
     case SourceFixAll = 'source.fixAll';

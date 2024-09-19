@@ -6,7 +6,6 @@ namespace Lsp\Protocol\Type;
  * A versioned notebook document identifier.
  *
  * @generated
- *
  * @since 3.17.0
  */
 final class VersionedNotebookDocumentIdentifier

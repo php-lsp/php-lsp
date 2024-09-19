@@ -7,7 +7,6 @@ namespace Lsp\Protocol\Type;
  * report is still accurate.
  *
  * @generated
- *
  * @since 3.17.0
  */
 class UnchangedDocumentDiagnosticReport
@@ -16,8 +15,8 @@ class UnchangedDocumentDiagnosticReport
 
     public function __construct(string $kind, string $resultId)
     {
-        $this->kind = $kind;
-
-        $this->resultId = $resultId;
+            $this->kind = $kind;
+    
+            $this->resultId = $resultId;
     }
 }

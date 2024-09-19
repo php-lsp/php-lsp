@@ -19,6 +19,6 @@ final class VersionedTextDocumentIdentifier
         public readonly int $version,
         string $uri,
     ) {
-        $this->uri = $uri;
+            $this->uri = $uri;
     }
 }

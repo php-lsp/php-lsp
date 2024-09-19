@@ -6,7 +6,6 @@ namespace Lsp\Protocol\Type;
  * The document diagnostic report kinds.
  *
  * @generated
- *
  * @since 3.17.0
  */
 enum DocumentDiagnosticReportKind: string
