@@ -4,21 +4,21 @@ declare(strict_types=1);
 
 namespace Lsp\Protocol\Generator\MetaModel\Node;
 
-use Lsp\Protocol\Generator\MetaModel\Node\Type\ReferenceType;
-use Lsp\Protocol\Generator\MetaModel\Node\Type\TypeInterface;
+use Lsp\Protocol\Generator\MetaModel\Node\Type\MetaReferenceType;
+use Lsp\Protocol\Generator\MetaModel\Node\Type\MetaTypeInterface;
 
 /**
  * The actual meta model.
  */
-final class MetaModel extends Node
+final class MetaModel extends MetaNode
 {
     /**
      * @param MetaData $metaData additional meta data
-     * @param list<Request> $requests the requests
-     * @param list<Notification> $notifications the notifications
-     * @param list<Structure> $structures the structures
+     * @param list<MetaRequest> $requests the requests
+     * @param list<MetaNotification> $notifications the notifications
+     * @param list<MetaStructure> $structures the structures
      * @param list<Enumeration> $enumerations the enumerations
-     * @param list<TypeAlias> $typeAliases the type aliases
+     * @param list<MetaTypeAlias> $typeAliases the type aliases
      */
     public function __construct(
         public MetaData $metaData,
@@ -31,7 +31,7 @@ final class MetaModel extends Node
         parent::__construct();
     }
 
-    public function findReferenceFromAliases(ReferenceType $ref): ?TypeInterface
+    public function findReferenceFromAliases(MetaReferenceType $ref): ?MetaTypeInterface
     {
         foreach ($this->typeAliases as $alias) {
             if ($alias->name === $ref->name) {
@@ -42,7 +42,7 @@ final class MetaModel extends Node
         return null;
     }
 
-    public function findReference(ReferenceType $ref): ?Definition
+    public function findReference(MetaReferenceType $ref): ?Definition
     {
         foreach ($this->structures as $structure) {
             if ($structure->name === $ref->name) {
@@ -80,15 +80,15 @@ final class MetaModel extends Node
             // @phpstan-ignore-next-line
             metaData: MetaData::fromArray($data['metaData']),
             // @phpstan-ignore-next-line
-            requests: \array_map(Request::fromArray(...), $data['requests'] ?? []),
+            requests: \array_map(MetaRequest::fromArray(...), $data['requests'] ?? []),
             // @phpstan-ignore-next-line
-            notifications: \array_map(Notification::fromArray(...), $data['notifications'] ?? []),
+            notifications: \array_map(MetaNotification::fromArray(...), $data['notifications'] ?? []),
             // @phpstan-ignore-next-line
-            structures: \array_map(Structure::fromArray(...), $data['structures'] ?? []),
+            structures: \array_map(MetaStructure::fromArray(...), $data['structures'] ?? []),
             // @phpstan-ignore-next-line
             enumerations: \array_map(Enumeration::fromArray(...), $data['enumerations'] ?? []),
             // @phpstan-ignore-next-line
-            typeAliases: \array_map(TypeAlias::fromArray(...), $data['typeAliases'] ?? []),
+            typeAliases: \array_map(MetaTypeAlias::fromArray(...), $data['typeAliases'] ?? []),
         );
     }
 }

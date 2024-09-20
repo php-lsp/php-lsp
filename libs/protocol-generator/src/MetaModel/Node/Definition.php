@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Protocol\Generator\MetaModel\Node;
 
-abstract class Definition extends Node
+abstract class Definition extends MetaNode
 {
     /**
      * @param non-empty-string|null $documentation an optional documentation

@@ -6,6 +6,7 @@ declare(strict_types=1);
 namespace Lsp\Protocol\Type;
 
 use Lsp\Protocol\Generator\Generator;
+use Lsp\Protocol\Generator\Version;
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
@@ -13,4 +14,22 @@ const LSP_DIRECTORY = __DIR__ . '/../../protocol/src/Type';
 const LSP_NAMESPACE = __NAMESPACE__;
 
 $generator = new Generator();
-$generator->save(LSP_DIRECTORY, LSP_NAMESPACE);
+$directory = \realpath(LSP_DIRECTORY) ?: LSP_DIRECTORY;
+
+
+\fwrite(\STDOUT, "Cleanup previous files:\n");
+foreach (\glob($directory . '/*.php') as $pathname) {
+    \fwrite(\STDOUT, "  - Removing $pathname...");
+    \unlink($pathname);
+    \fwrite(\STDOUT, " OK\n");
+}
+
+
+\fwrite(\STDOUT, "Generate new files in [" . LSP_DIRECTORY . "]:\n");
+foreach ($generator->getOutputForVersion(Version::LATEST, LSP_NAMESPACE) as $name => $result) {
+    $pathname = $directory . '/' . $name . '.php';
+
+    \fwrite(\STDOUT, "  - Saving $pathname...");
+    \file_put_contents($pathname, $result);
+    \fwrite(\STDOUT, " OK\n");
+}

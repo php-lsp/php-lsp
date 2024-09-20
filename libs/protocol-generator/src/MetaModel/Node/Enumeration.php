@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Lsp\Protocol\Generator\MetaModel\Node;
 
-use Lsp\Protocol\Generator\MetaModel\Node\Enumeration\EnumerationEntry;
-use Lsp\Protocol\Generator\MetaModel\Node\Enumeration\EnumerationType;
+use Lsp\Protocol\Generator\MetaModel\Node\Enumeration\MetaEnumerationEntry;
+use Lsp\Protocol\Generator\MetaModel\Node\Enumeration\MetaEnumerationType;
 
 /**
  * Defines an enumeration.
@@ -14,8 +14,8 @@ final class Enumeration extends Definition
 {
     /**
      * @param non-empty-string $name the name of the enumeration
-     * @param EnumerationType $type the type of the elements
-     * @param list<EnumerationEntry> $values the enum values
+     * @param MetaEnumerationType $type the type of the elements
+     * @param list<MetaEnumerationEntry> $values the enum values
      * @param bool|null $supportsCustomValues Whether the enumeration supports
      *        custom values (e.g. values which are not part of the set defined
      *        in `values`). If omitted no custom values are supported.
@@ -30,7 +30,7 @@ final class Enumeration extends Definition
      */
     public function __construct(
         public string $name,
-        public EnumerationType $type,
+        public MetaEnumerationType $type,
         public array $values,
         public ?bool $supportsCustomValues,
         ?string $documentation,
@@ -63,9 +63,9 @@ final class Enumeration extends Definition
         return new self(
             name: $data['name'],
             // @phpstan-ignore-next-line
-            type: EnumerationType::fromArray($data['type']),
+            type: MetaEnumerationType::fromArray($data['type']),
             // @phpstan-ignore-next-line
-            values: \array_map(EnumerationEntry::fromArray(...), $data['values'] ?? []),
+            values: \array_map(MetaEnumerationEntry::fromArray(...), $data['values'] ?? []),
             supportsCustomValues: $data['supportsCustomValues'] ?? null,
             documentation: $data['documentation'] ?? null,
             since: $data['since'] ?? null,
