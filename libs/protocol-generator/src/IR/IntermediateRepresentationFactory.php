@@ -25,7 +25,7 @@ final class IntermediateRepresentationFactory
      */
     private function getGeneratorVisitors(): iterable
     {
-        // yield EnumGeneratorVisitor::class;
+        yield EnumGeneratorVisitor::class;
         yield MixinGeneratorVisitor::class;
         yield StructGeneratorVisitor::class;
     }
