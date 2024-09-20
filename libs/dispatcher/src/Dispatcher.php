@@ -80,9 +80,14 @@ final class Dispatcher implements DispatcherInterface
      */
     public function notify(NotificationInterface $notification): void
     {
-        $route = $this->router->matchOrFail($notification);
+        try {
+            $route = $this->router->matchOrFail($notification);
 
-        $this->dispatch($route);
+            $this->dispatch($route);
+        } catch (\Throwable $e) {
+            // NO OP
+            return;
+        }
     }
 
     /**
@@ -90,9 +95,9 @@ final class Dispatcher implements DispatcherInterface
      */
     public function call(RequestInterface $request): ResponseInterface
     {
-        $route = $this->router->matchOrFail($request);
-
         try {
+            $route = $this->router->matchOrFail($request);
+
             $result = $this->dispatch($route);
         } catch (\Throwable $e) {
             return $this->createFailureResponseForRequest($request, $e);
@@ -120,7 +125,7 @@ final class Dispatcher implements DispatcherInterface
         );
     }
 
-    private function dispatch(MatchedRouteInterface $route): mixed
+    protected function dispatch(MatchedRouteInterface $route): mixed
     {
         $handler = $this->getHandler($route);
 
