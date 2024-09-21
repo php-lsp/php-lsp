@@ -1,16 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The result returned from an initialize request.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class InitializeResult
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * The capabilities the language server provides.
+         */
         public readonly ServerCapabilities $capabilities,
-        public readonly InitializeResultServerInfo|null $serverInfo = null,
+        /**
+         * Information about the server.
+         *
+         * @since 3.15.0
+         */
+        public readonly ?InitializeResultServerInfo $serverInfo = null,
     ) {}
 }

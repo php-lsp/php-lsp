@@ -1,14 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
- * @internal This class is an internal dependency of {@see CodeActionClientCapabilities}
+ * @generated 2024-09-21
  */
 final class CodeActionClientCapabilitiesCodeActionLiteralSupport
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * The code action kind is support with the following value set.
+         *
+         * @var object{valueSet: list<CodeActionKind>}
+         */
         public readonly object $codeActionKind,
     ) {}
 }

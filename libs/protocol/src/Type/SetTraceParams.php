@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 final class SetTraceParams
 {
-    final public function __construct(
+    public function __construct(
         public readonly TraceValues $value,
     ) {}
 }

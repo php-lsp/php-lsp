@@ -1,30 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 enum TraceValues: string
 {
     /**
      * Turn tracing off.
      *
-     * @generated
+     * @var string
      */
     case Off = 'off';
-
     /**
      * Trace messages only.
      *
-     * @generated
+     * @var string
      */
     case Messages = 'messages';
-
     /**
      * Verbose message tracing.
      *
-     * @generated
+     * @var string
      */
     case Verbose = 'verbose';
 }

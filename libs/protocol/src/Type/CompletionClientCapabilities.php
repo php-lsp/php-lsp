@@ -1,20 +1,46 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * Completion client capabilities
+ * Completion client capabilities.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class CompletionClientCapabilities
 {
-    final public function __construct(
-        public readonly bool|null $dynamicRegistration = null,
-        public readonly CompletionClientCapabilitiesCompletionItem|null $completionItem = null,
-        public readonly CompletionClientCapabilitiesCompletionItemKind|null $completionItemKind = null,
-        public readonly InsertTextMode|null $insertTextMode = null,
-        public readonly bool|null $contextSupport = null,
-        public readonly CompletionClientCapabilitiesCompletionList|null $completionList = null,
+    public function __construct(
+        /**
+         * Whether completion supports dynamic registration.
+         */
+        public readonly ?bool $dynamicRegistration = null,
+        /**
+         * The client supports the following `CompletionItem` specific
+         * capabilities.
+         */
+        public readonly ?CompletionClientCapabilitiesCompletionItem $completionItem = null,
+        public readonly ?CompletionClientCapabilitiesCompletionItemKind $completionItemKind = null,
+        /**
+         * Defines how the client handles whitespace and indentation when
+         * accepting a completion item that uses multi line text in either
+         * `insertText` or `textEdit`.
+         *
+         * @since 3.17.0
+         */
+        public readonly ?InsertTextMode $insertTextMode = null,
+        /**
+         * The client supports to send additional context information for a
+         * `textDocument/completion` request.
+         */
+        public readonly ?bool $contextSupport = null,
+        /**
+         * The client supports the following `CompletionList` specific
+         * capabilities.
+         *
+         * @since 3.17.0
+         */
+        public readonly ?CompletionClientCapabilitiesCompletionList $completionList = null,
     ) {}
 }

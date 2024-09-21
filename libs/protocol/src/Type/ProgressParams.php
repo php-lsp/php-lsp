@@ -1,17 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 final class ProgressParams
 {
-    /**
-     * @param int<-2147483648, 2147483647>|string $token
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The progress token provided by the client or server.
+         *
+         * @var int<-2147483648, 2147483647>|string
+         */
         public readonly int|string $token,
-        public readonly mixed $value,
+        /**
+         * The progress data.
+         */
+        public readonly mixed $value = null,
     ) {}
 }

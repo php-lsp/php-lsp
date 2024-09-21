@@ -1,23 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Registration options for a {@link ExecuteCommandRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class ExecuteCommandRegistrationOptions
 {
     use ExecuteCommandOptionsMixin;
 
     /**
-     * @param list<string> $commands
+     * @param list<string> $commands The commands to be executed on the server
      */
-    final public function __construct(array $commands, bool|null $workDoneProgress = null)
+    public function __construct(array $commands = [], ?bool $workDoneProgress = null)
     {
-            $this->commands = $commands;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->commands = $commands;
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

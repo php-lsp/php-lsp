@@ -1,28 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Registration options specific to a notebook.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
 final class NotebookDocumentSyncRegistrationOptions
 {
+    use NotebookDocumentSyncOptionsMixin;
     use StaticRegistrationOptionsMixin;
 
-    use NotebookDocumentSyncOptionsMixin;
-
     /**
-     * @param list<NotebookDocumentSyncOptionsNotebookSelector> $notebookSelector
+     * @param list<NotebookDocumentSyncOptionsNotebookSelector>
+     *        $notebookSelector The notebooks to be synced
+     * @param bool|null $save Whether save notification should be forwarded to
+     *        the server. Will only be honored if mode === `notebook`.
+     * @param string|null $id The id used to register the request. The id can be
+     *        used to deregister the request again. See also Registration#id.
      */
-    final public function __construct(array $notebookSelector, bool|null $save = null, string|null $id = null)
+    public function __construct(array $notebookSelector = [], ?bool $save = null, ?string $id = null)
     {
-            $this->notebookSelector = $notebookSelector;
-    
-            $this->save = $save;
-    
-            $this->id = $id;
+        $this->notebookSelector = $notebookSelector;
+        $this->save = $save;
+        $this->id = $id;
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
@@ -7,16 +9,23 @@ namespace Lsp\Protocol\Type;
  * relatively to a base URI. The common value for a `baseUri` is a workspace
  * folder root, but it can be another absolute URI as well.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
 final class RelativePattern
 {
-    /**
-     * @param WorkspaceFolder|non-empty-string $baseUri
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * A workspace folder or a base URI to which this pattern will be
+         * matched against relatively.
+         *
+         * @var WorkspaceFolder|non-empty-string
+         */
         public readonly WorkspaceFolder|string $baseUri,
+        /**
+         * The actual glob pattern;.
+         */
         public readonly string $pattern,
     ) {}
 }

@@ -1,19 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * An event describing a file change.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class FileEvent
 {
-    /**
-     * @param non-empty-string $uri
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The file's uri.
+         *
+         * @var non-empty-string
+         */
         public readonly string $uri,
+        /**
+         * The change type.
+         */
         public readonly FileChangeType $type,
     ) {}
 }

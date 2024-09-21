@@ -1,16 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The params sent in a save notebook document notification.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
 final class DidSaveNotebookDocumentParams
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * The notebook document that got saved.
+         */
         public readonly NotebookDocumentIdentifier $notebookDocument,
     ) {}
 }

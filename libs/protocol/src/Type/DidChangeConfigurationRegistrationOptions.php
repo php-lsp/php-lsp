@@ -1,16 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 final class DidChangeConfigurationRegistrationOptions
 {
-    /**
-     * @param string|list<string>|null $section
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * @var string|list<string>|null
+         */
         public readonly string|array|null $section = null,
     ) {}
 }

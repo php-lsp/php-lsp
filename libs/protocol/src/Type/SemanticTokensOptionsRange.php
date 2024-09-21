@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
- * @internal This class is an internal dependency of {@see SemanticTokensOptions}
+ * @generated 2024-09-21
  */
 final class SemanticTokensOptionsRange
 {
-    final public function __construct() {}
+    public function __construct() {}
 }

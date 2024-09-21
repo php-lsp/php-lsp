@@ -1,18 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Reference options.
  *
- * @generated
+ * @generated 2024-09-21
  */
-class ReferenceOptions
+final class ReferenceOptions
 {
     use ReferenceOptionsMixin;
 
-    public function __construct(bool|null $workDoneProgress)
+    public function __construct(?bool $workDoneProgress = null)
     {
-            $this->workDoneProgress = $workDoneProgress;
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

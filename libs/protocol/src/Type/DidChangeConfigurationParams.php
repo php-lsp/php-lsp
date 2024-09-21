@@ -1,15 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The parameters of a change configuration notification.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class DidChangeConfigurationParams
 {
-    final public function __construct(
-        public readonly mixed $settings,
+    public function __construct(
+        /**
+         * The actual changed settings.
+         */
+        public readonly mixed $settings = null,
     ) {}
 }

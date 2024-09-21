@@ -1,17 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
- * @internal This class is an internal dependency of {@see WorkspaceSymbolClientCapabilities}
+ * @generated 2024-09-21
  */
 final class WorkspaceSymbolClientCapabilitiesTagSupport
 {
-    /**
-     * @param list<SymbolTag> $valueSet
-     */
-    final public function __construct(
-        public readonly array $valueSet,
+    public function __construct(
+        /**
+         * The tags supported by the client.
+         *
+         * @var list<SymbolTag>
+         */
+        public readonly array $valueSet = [],
     ) {}
 }

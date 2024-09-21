@@ -1,18 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * A document highlight is a range inside a text document which deserves
- * special attention. Usually a document highlight is visualized by changing
- * the background color of its range.
+ * A document highlight is a range inside a text document which deserves special
+ * attention. Usually a document highlight is visualized by changing the
+ * background color of its range.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class DocumentHighlight
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * The range this highlight applies to.
+         */
         public readonly Range $range,
-        public readonly DocumentHighlightKind|null $kind = null,
+        /**
+         * The highlight kind, default is {@link DocumentHighlightKind.Text
+         * text}.
+         */
+        public readonly ?DocumentHighlightKind $kind = null,
     ) {}
 }

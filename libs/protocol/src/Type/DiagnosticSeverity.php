@@ -1,39 +1,38 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The diagnostic's severity.
  *
- * @generated
+ * @generated 2024-09-21
  */
 enum DiagnosticSeverity: int
 {
     /**
      * Reports an error.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Error = 1;
-
     /**
      * Reports a warning.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Warning = 2;
-
     /**
      * Reports an information.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Information = 3;
-
     /**
      * Reports a hint.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Hint = 4;
 }

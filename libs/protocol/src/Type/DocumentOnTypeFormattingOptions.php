@@ -1,23 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Provider options for a {@link DocumentOnTypeFormattingRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
-class DocumentOnTypeFormattingOptions
+final class DocumentOnTypeFormattingOptions
 {
     use DocumentOnTypeFormattingOptionsMixin;
 
     /**
-     * @param list<string>|null $moreTriggerCharacter
+     * @param string $firstTriggerCharacter a character on which formatting
+     *        should be triggered, like `{`
+     * @param list<string>|null $moreTriggerCharacter more trigger characters
      */
-    public function __construct(string $firstTriggerCharacter, array|null $moreTriggerCharacter)
+    public function __construct(string $firstTriggerCharacter, ?array $moreTriggerCharacter = null)
     {
-            $this->firstTriggerCharacter = $firstTriggerCharacter;
-    
-            $this->moreTriggerCharacter = $moreTriggerCharacter;
+        $this->firstTriggerCharacter = $firstTriggerCharacter;
+        $this->moreTriggerCharacter = $moreTriggerCharacter;
     }
 }

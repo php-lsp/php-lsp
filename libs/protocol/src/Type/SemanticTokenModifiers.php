@@ -1,64 +1,57 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * A set of predefined token modifiers. This set is not fixed
- * an clients can specify additional token types via the
- * corresponding client capabilities.
+ * A set of predefined token modifiers. This set is not fixed an clients can
+ * specify additional token types via the corresponding client capabilities.
  *
- * @generated
  * @since 3.16.0
+ *
+ * @generated 2024-09-21
  */
 enum SemanticTokenModifiers: string
 {
     /**
-     * @generated
+     * @var string
      */
     case Declaration = 'declaration';
-
     /**
-     * @generated
+     * @var string
      */
     case Definition = 'definition';
-
     /**
-     * @generated
+     * @var string
      */
     case Readonly = 'readonly';
-
     /**
-     * @generated
+     * @var string
      */
     case Static = 'static';
-
     /**
-     * @generated
+     * @var string
      */
     case Deprecated = 'deprecated';
-
     /**
-     * @generated
+     * @var string
      */
     case Abstract = 'abstract';
-
     /**
-     * @generated
+     * @var string
      */
     case Async = 'async';
-
     /**
-     * @generated
+     * @var string
      */
     case Modification = 'modification';
-
     /**
-     * @generated
+     * @var string
      */
     case Documentation = 'documentation';
-
     /**
-     * @generated
+     * @var string
      */
     case DefaultLibrary = 'defaultLibrary';
 }

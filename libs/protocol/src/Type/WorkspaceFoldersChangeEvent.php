@@ -1,20 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The workspace folder change event.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class WorkspaceFoldersChangeEvent
 {
-    /**
-     * @param list<WorkspaceFolder> $added
-     * @param list<WorkspaceFolder> $removed
-     */
-    final public function __construct(
-        public readonly array $added,
-        public readonly array $removed,
+    public function __construct(
+        /**
+         * The array of added workspace folders.
+         *
+         * @var list<WorkspaceFolder>
+         */
+        public readonly array $added = [],
+        /**
+         * The array of the removed workspace folders.
+         *
+         * @var list<WorkspaceFolder>
+         */
+        public readonly array $removed = [],
     ) {}
 }

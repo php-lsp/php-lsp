@@ -1,17 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 final class ConfigurationItem
 {
-    /**
-     * @param non-empty-string|null $scopeUri
-     */
-    final public function __construct(
-        public readonly string|null $scopeUri = null,
-        public readonly string|null $section = null,
+    public function __construct(
+        /**
+         * The scope to get the configuration section for.
+         *
+         * @var non-empty-string|null
+         */
+        public readonly ?string $scopeUri = null,
+        /**
+         * The configuration section asked for.
+         */
+        public readonly ?string $section = null,
     ) {}
 }

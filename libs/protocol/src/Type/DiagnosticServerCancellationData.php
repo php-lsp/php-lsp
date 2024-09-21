@@ -1,16 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Cancellation data returned from a diagnostic request.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
 final class DiagnosticServerCancellationData
 {
-    final public function __construct(
+    public function __construct(
         public readonly bool $retriggerRequest,
     ) {}
 }

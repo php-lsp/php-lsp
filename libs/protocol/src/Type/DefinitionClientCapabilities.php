@@ -1,16 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Client Capabilities for a {@link DefinitionRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class DefinitionClientCapabilities
 {
-    final public function __construct(
-        public readonly bool|null $dynamicRegistration = null,
-        public readonly bool|null $linkSupport = null,
+    public function __construct(
+        /**
+         * Whether definition supports dynamic registration.
+         */
+        public readonly ?bool $dynamicRegistration = null,
+        /**
+         * The client supports additional metadata in the form of definition
+         * links.
+         *
+         * @since 3.14.0
+         */
+        public readonly ?bool $linkSupport = null,
     ) {}
 }

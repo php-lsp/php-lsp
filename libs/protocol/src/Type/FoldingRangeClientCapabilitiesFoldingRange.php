@@ -1,14 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
- * @internal This class is an internal dependency of {@see FoldingRangeClientCapabilities}
+ * @generated 2024-09-21
  */
 final class FoldingRangeClientCapabilitiesFoldingRange
 {
-    final public function __construct(
-        public readonly bool $collapsedText = null,
+    public function __construct(
+        /**
+         * If set, the client signals that it supports setting collapsedText on
+         * folding ranges to display custom labels instead of the default text.
+         *
+         * @since 3.17.0
+         */
+        public readonly ?bool $collapsedText = null,
     ) {}
 }

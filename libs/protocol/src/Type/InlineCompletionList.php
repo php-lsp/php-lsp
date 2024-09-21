@@ -1,20 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * Represents a collection of {@link InlineCompletionItem inline completion items} to be presented in the editor.
+ * Represents a collection of {@link InlineCompletionItem inline completion
+ * items} to be presented in the editor.
  *
- * @generated
  * @since 3.18.0
- * @internal Describes the upcoming version of the Language Server Protocol and is under development
+ *
+ * @internal This is a proposed type, which means that the implementation of
+ *           this type is not final. Please use this type at your own risk.
+ *
+ * @generated 2024-09-21
  */
 final class InlineCompletionList
 {
-    /**
-     * @param list<InlineCompletionItem> $items
-     */
-    final public function __construct(
-        public readonly array $items,
+    public function __construct(
+        /**
+         * The inline completion items.
+         *
+         * @var list<InlineCompletionItem>
+         */
+        public readonly array $items = [],
     ) {}
 }

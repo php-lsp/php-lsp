@@ -1,31 +1,41 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * A parameter literal used in selection range requests.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class SelectionRangeParams
 {
     use WorkDoneProgressParamsMixin;
-
     use PartialResultParamsMixin;
 
     /**
-     * @param list<Position> $positions
-     * @param int<-2147483648, 2147483647>|string|null $workDoneToken
-     * @param int<-2147483648, 2147483647>|string|null $partialResultToken
+     * @param int<-2147483648, 2147483647>|string|null $workDoneToken an
+     *        optional token that a server can use to report work done progress
+     * @param int<-2147483648, 2147483647>|string|null $partialResultToken An
+     *        optional token that a server can use to report partial results (e.g.
+     *        streaming) to the client.
      */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The text document.
+         */
         public readonly TextDocumentIdentifier $textDocument,
-        public readonly array $positions,
+        /**
+         * The positions inside the text document.
+         *
+         * @var list<Position>
+         */
+        public readonly array $positions = [],
         int|string|null $workDoneToken = null,
         int|string|null $partialResultToken = null,
     ) {
-            $this->workDoneToken = $workDoneToken;
-    
-            $this->partialResultToken = $partialResultToken;
+        $this->workDoneToken = $workDoneToken;
+        $this->partialResultToken = $partialResultToken;
     }
 }

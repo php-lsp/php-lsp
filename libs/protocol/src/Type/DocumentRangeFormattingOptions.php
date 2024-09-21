@@ -1,20 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Provider options for a {@link DocumentRangeFormattingRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
-class DocumentRangeFormattingOptions
+final class DocumentRangeFormattingOptions
 {
     use DocumentRangeFormattingOptionsMixin;
 
-    public function __construct(bool|null $rangesSupport, bool|null $workDoneProgress)
+    /**
+     * @param bool|null $rangesSupport whether the server supports formatting
+     *        multiple ranges at once
+     */
+    public function __construct(?bool $rangesSupport = null, ?bool $workDoneProgress = null)
     {
-            $this->rangesSupport = $rangesSupport;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->rangesSupport = $rangesSupport;
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

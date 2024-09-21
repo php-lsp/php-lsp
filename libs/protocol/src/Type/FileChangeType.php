@@ -1,32 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * The file event type
+ * The file event type.
  *
- * @generated
+ * @generated 2024-09-21
  */
 enum FileChangeType: int
 {
     /**
      * The file got created.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Created = 1;
-
     /**
      * The file got changed.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Changed = 2;
-
     /**
      * The file got deleted.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Deleted = 3;
 }

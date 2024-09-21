@@ -1,136 +1,114 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The kind of a completion entry.
  *
- * @generated
+ * @generated 2024-09-21
  */
 enum CompletionItemKind: int
 {
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case TextType = 1;
-
+    case TextKind = 1;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case MethodType = 2;
-
+    case MethodKind = 2;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case FunctionType = 3;
-
+    case FunctionKind = 3;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case ConstructorType = 4;
-
+    case ConstructorKind = 4;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case FieldType = 5;
-
+    case FieldKind = 5;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case VariableType = 6;
-
+    case VariableKind = 6;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case ClassType = 7;
-
+    case ClassKind = 7;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case InterfaceType = 8;
-
+    case InterfaceKind = 8;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case ModuleType = 9;
-
+    case ModuleKind = 9;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case PropertyType = 10;
-
+    case PropertyKind = 10;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case UnitType = 11;
-
+    case UnitKind = 11;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case ValueType = 12;
-
+    case ValueKind = 12;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case EnumType = 13;
-
+    case EnumKind = 13;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case KeywordType = 14;
-
+    case KeywordKind = 14;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case SnippetType = 15;
-
+    case SnippetKind = 15;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case ColorType = 16;
-
+    case ColorKind = 16;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case FileType = 17;
-
+    case FileKind = 17;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case ReferenceType = 18;
-
+    case ReferenceKind = 18;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case FolderType = 19;
-
+    case FolderKind = 19;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case EnumMemberType = 20;
-
+    case EnumMemberKind = 20;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case ConstantType = 21;
-
+    case ConstantKind = 21;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case StructType = 22;
-
+    case StructKind = 22;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case EventType = 23;
-
+    case EventKind = 23;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case OperatorType = 24;
-
+    case OperatorKind = 24;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case TypeParameterType = 25;
+    case TypeParameterKind = 25;
 }

@@ -1,18 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Save options.
  *
- * @generated
+ * @generated 2024-09-21
  */
-class SaveOptions
+final class SaveOptions
 {
     use SaveOptionsMixin;
 
-    public function __construct(bool|null $includeText)
+    /**
+     * @param bool|null $includeText the client is supposed to include the
+     *        content on save
+     */
+    public function __construct(?bool $includeText = null)
     {
-            $this->includeText = $includeText;
+        $this->includeText = $includeText;
     }
 }

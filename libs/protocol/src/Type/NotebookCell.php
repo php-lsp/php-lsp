@@ -1,27 +1,44 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * A notebook cell.
  *
- * A cell's document URI must be unique across ALL notebook
- * cells and can therefore be used to uniquely identify a
- * notebook cell or the cell's text document.
+ * A cell's document URI must be unique across ALL notebook cells and can
+ * therefore be used to uniquely identify a notebook cell or the cell's text
+ * document.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
 final class NotebookCell
 {
-    /**
-     * @param non-empty-string $document
-     * @param array<string, mixed>|null $metadata
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The cell's kind.
+         */
         public readonly NotebookCellKind $kind,
+        /**
+         * The URI of the cell's text document content.
+         *
+         * @var non-empty-string
+         */
         public readonly string $document,
-        public readonly array|null $metadata = null,
-        public readonly ExecutionSummary|null $executionSummary = null,
+        /**
+         * Additional metadata stored with the cell.
+         *
+         * Note: should always be an object literal (e.g. LSPObject).
+         *
+         * @var list<string, mixed>|null
+         */
+        public readonly ?array $metadata = null,
+        /**
+         * Additional execution summary information if supported by the client.
+         */
+        public readonly ?ExecutionSummary $executionSummary = null,
     ) {}
 }

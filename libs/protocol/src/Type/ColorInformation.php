@@ -1,16 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Represents a color range from a document.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class ColorInformation
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * The range in the document where this color appears.
+         */
         public readonly Range $range,
+        /**
+         * The actual color value for this color range.
+         */
         public readonly Color $color,
     ) {}
 }

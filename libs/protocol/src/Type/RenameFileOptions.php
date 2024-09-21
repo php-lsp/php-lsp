@@ -1,16 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * Rename file options
+ * Rename file options.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class RenameFileOptions
 {
-    final public function __construct(
-        public readonly bool|null $overwrite = null,
-        public readonly bool|null $ignoreIfExists = null,
+    public function __construct(
+        /**
+         * Overwrite target if existing. Overwrite wins over `ignoreIfExists`.
+         */
+        public readonly ?bool $overwrite = null,
+        /**
+         * Ignores if target exists.
+         */
+        public readonly ?bool $ignoreIfExists = null,
     ) {}
 }

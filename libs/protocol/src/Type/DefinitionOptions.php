@@ -1,18 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Server Capabilities for a {@link DefinitionRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
-class DefinitionOptions
+final class DefinitionOptions
 {
     use DefinitionOptionsMixin;
 
-    public function __construct(bool|null $workDoneProgress)
+    public function __construct(?bool $workDoneProgress = null)
     {
-            $this->workDoneProgress = $workDoneProgress;
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

@@ -1,141 +1,118 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * A symbol kind.
  *
- * @generated
+ * @generated 2024-09-21
  */
 enum SymbolKind: int
 {
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case FileType = 1;
-
+    case FileKind = 1;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case ModuleType = 2;
-
+    case ModuleKind = 2;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case NamespaceType = 3;
-
+    case NamespaceKind = 3;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case PackageType = 4;
-
+    case PackageKind = 4;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case ClassType = 5;
-
+    case ClassKind = 5;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case MethodType = 6;
-
+    case MethodKind = 6;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case PropertyType = 7;
-
+    case PropertyKind = 7;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case FieldType = 8;
-
+    case FieldKind = 8;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case ConstructorType = 9;
-
+    case ConstructorKind = 9;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case EnumType = 10;
-
+    case EnumKind = 10;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case InterfaceType = 11;
-
+    case InterfaceKind = 11;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case FunctionType = 12;
-
+    case FunctionKind = 12;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case VariableType = 13;
-
+    case VariableKind = 13;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case ConstantType = 14;
-
+    case ConstantKind = 14;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case StringType = 15;
-
+    case StringKind = 15;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case NumberType = 16;
-
+    case NumberKind = 16;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case BooleanType = 17;
-
+    case BooleanKind = 17;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case ArrayType = 18;
-
+    case ArrayKind = 18;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case ObjectType = 19;
-
+    case ObjectKind = 19;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case KeyType = 20;
-
+    case KeyKind = 20;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case NullType = 21;
-
+    case NullKind = 21;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case EnumMemberType = 22;
-
+    case EnumMemberKind = 22;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case StructType = 23;
-
+    case StructKind = 23;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case EventType = 24;
-
+    case EventKind = 24;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case OperatorType = 25;
-
+    case OperatorKind = 25;
     /**
-     * @generated
+     * @var int<0, 2147483647>
      */
-    case TypeParameterType = 26;
+    case TypeParameterKind = 26;
 }

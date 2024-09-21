@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 final class LogTraceParams
 {
-    final public function __construct(
+    public function __construct(
         public readonly string $message,
-        public readonly string|null $verbose = null,
+        public readonly ?string $verbose = null,
     ) {}
 }

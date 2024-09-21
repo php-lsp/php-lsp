@@ -1,21 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
+/**
+ * A generic resource operation.
+ *
+ * @generated 2024-09-21
+ */
 trait ResourceOperationMixin
 {
     /**
      * The resource operation kind.
-     *
-     * @generated
      */
     public readonly string $kind;
-
     /**
      * An optional annotation identifier describing the operation.
      *
-     * @generated
      * @since 3.16.0
+     *
+     * @readonly
      */
-    public string|null $annotationId = null;
+    public ?string $annotationId = null;
 }

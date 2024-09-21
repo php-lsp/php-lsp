@@ -1,17 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 final class ExecutionSummary
 {
-    /**
-     * @param int<0, 2147483647> $executionOrder
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * A strict monotonically increasing value indicating the execution
+         * order of a cell inside a notebook.
+         *
+         * @var int<0, 2147483647>
+         */
         public readonly int $executionOrder,
-        public readonly bool|null $success = null,
+        /**
+         * Whether the execution was successful or not if known by the client.
+         */
+        public readonly ?bool $success = null,
     ) {}
 }

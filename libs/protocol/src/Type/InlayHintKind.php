@@ -1,26 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Inlay hint kinds.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
 enum InlayHintKind: int
 {
     /**
      * An inlay hint that for a type annotation.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Type = 1;
-
     /**
      * An inlay hint that is for a parameter.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Parameter = 2;
 }

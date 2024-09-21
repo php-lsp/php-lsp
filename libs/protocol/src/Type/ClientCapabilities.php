@@ -1,20 +1,44 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Defines the capabilities provided by the client.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class ClientCapabilities
 {
-    final public function __construct(
-        public readonly WorkspaceClientCapabilities|null $workspace = null,
-        public readonly TextDocumentClientCapabilities|null $textDocument = null,
-        public readonly NotebookDocumentClientCapabilities|null $notebookDocument = null,
-        public readonly WindowClientCapabilities|null $window = null,
-        public readonly GeneralClientCapabilities|null $general = null,
+    public function __construct(
+        /**
+         * Workspace specific client capabilities.
+         */
+        public readonly ?WorkspaceClientCapabilities $workspace = null,
+        /**
+         * Text document specific client capabilities.
+         */
+        public readonly ?TextDocumentClientCapabilities $textDocument = null,
+        /**
+         * Capabilities specific to the notebook document support.
+         *
+         * @since 3.17.0
+         */
+        public readonly ?NotebookDocumentClientCapabilities $notebookDocument = null,
+        /**
+         * Window specific client capabilities.
+         */
+        public readonly ?WindowClientCapabilities $window = null,
+        /**
+         * General client capabilities.
+         *
+         * @since 3.16.0
+         */
+        public readonly ?GeneralClientCapabilities $general = null,
+        /**
+         * Experimental client capabilities.
+         */
         public readonly mixed $experimental = null,
     ) {}
 }

@@ -1,17 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
- * @internal This class is an internal dependency of {@see DocumentSymbolClientCapabilities}
+ * @generated 2024-09-21
  */
 final class DocumentSymbolClientCapabilitiesSymbolKind
 {
-    /**
-     * @param list<SymbolKind> $valueSet
-     */
-    final public function __construct(
-        public readonly array $valueSet = null,
+    public function __construct(
+        /**
+         * The symbol kind values the client supports. When this property exists
+         * the client also guarantees that it will handle values outside its set
+         * gracefully and falls back to a default value when unknown.
+         *
+         * If this property is not present the client only supports the symbol
+         * kinds from `File` to `Array` as defined in the initial version of the
+         * protocol.
+         *
+         * @var list<SymbolKind>|null
+         */
+        public readonly ?array $valueSet = null,
     ) {}
 }

@@ -1,14 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 final class DidChangeWatchedFilesClientCapabilities
 {
-    final public function __construct(
-        public readonly bool|null $dynamicRegistration = null,
-        public readonly bool|null $relativePatternSupport = null,
+    public function __construct(
+        /**
+         * Did change watched files notification supports dynamic registration.
+         * Please note that the current protocol doesn't support static
+         * configuration for file changes from the server side.
+         */
+        public readonly ?bool $dynamicRegistration = null,
+        /**
+         * Whether the client has support for {@link RelativePattern relative
+         * pattern}
+         * or not.
+         *
+         * @since 3.17.0
+         */
+        public readonly ?bool $relativePatternSupport = null,
     ) {}
 }

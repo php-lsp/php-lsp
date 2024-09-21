@@ -1,18 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * A filter to describe in which file operation requests or notifications
- * the server is interested in receiving.
+ * A filter to describe in which file operation requests or notifications the
+ * server is interested in receiving.
  *
- * @generated
  * @since 3.16.0
+ *
+ * @generated 2024-09-21
  */
 final class FileOperationFilter
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * The actual file operation pattern.
+         */
         public readonly FileOperationPattern $pattern,
-        public readonly string|null $scheme = null,
+        /**
+         * A Uri scheme like `file` or `untitled`.
+         */
+        public readonly ?string $scheme = null,
     ) {}
 }

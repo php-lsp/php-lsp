@@ -1,17 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Client capabilities specific to inline completions.
  *
- * @generated
  * @since 3.18.0
- * @internal Describes the upcoming version of the Language Server Protocol and is under development
+ *
+ * @internal This is a proposed type, which means that the implementation of
+ *           this type is not final. Please use this type at your own risk.
+ *
+ * @generated 2024-09-21
  */
 final class InlineCompletionClientCapabilities
 {
-    final public function __construct(
-        public readonly bool|null $dynamicRegistration = null,
+    public function __construct(
+        /**
+         * Whether implementation supports dynamic registration for inline
+         * completion providers.
+         */
+        public readonly ?bool $dynamicRegistration = null,
     ) {}
 }

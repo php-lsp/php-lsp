@@ -1,18 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The watched files change notification's parameters.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class DidChangeWatchedFilesParams
 {
-    /**
-     * @param list<FileEvent> $changes
-     */
-    final public function __construct(
-        public readonly array $changes,
+    public function __construct(
+        /**
+         * The actual file events.
+         *
+         * @var list<FileEvent>
+         */
+        public readonly array $changes = [],
     ) {}
 }

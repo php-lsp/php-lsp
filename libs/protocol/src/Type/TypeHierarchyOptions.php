@@ -1,19 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Type hierarchy options used during static registration.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
-class TypeHierarchyOptions
+final class TypeHierarchyOptions
 {
     use TypeHierarchyOptionsMixin;
 
-    public function __construct(bool|null $workDoneProgress)
+    public function __construct(?bool $workDoneProgress = null)
     {
-            $this->workDoneProgress = $workDoneProgress;
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

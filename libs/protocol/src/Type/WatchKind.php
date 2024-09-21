@@ -1,30 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 enum WatchKind: int
 {
     /**
      * Interested in create events.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Create = 1;
-
     /**
-     * Interested in change events
+     * Interested in change events.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Change = 2;
-
     /**
-     * Interested in delete events
+     * Interested in delete events.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Delete = 4;
 }

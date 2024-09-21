@@ -1,24 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * A text document identifier to denote a specific version of a text document.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class VersionedTextDocumentIdentifier
 {
     use TextDocumentIdentifierMixin;
 
     /**
-     * @param int<-2147483648, 2147483647> $version
-     * @param non-empty-string $uri
+     * @param non-empty-string $uri the text document's uri
      */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The version number of this document.
+         *
+         * @var int<-2147483648, 2147483647>
+         */
         public readonly int $version,
         string $uri,
     ) {
-            $this->uri = $uri;
+        $this->uri = $uri;
     }
 }

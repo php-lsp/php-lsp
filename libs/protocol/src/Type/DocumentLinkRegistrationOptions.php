@@ -1,27 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Registration options for a {@link DocumentLinkRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class DocumentLinkRegistrationOptions
 {
     use TextDocumentRegistrationOptionsMixin;
-
     use DocumentLinkOptionsMixin;
 
     /**
-     * @param list<object|NotebookCellTextDocumentFilter>|null $documentSelector
+     * @param list<object{
+     *            language: string,
+     *            scheme: string,
+     *            pattern: string
+     *        }|NotebookCellTextDocumentFilter>|null $documentSelector A document
+     *        selector to identify the scope of the registration. If set to null the
+     *        document selector provided on the client side will be used.
+     * @param bool|null $resolveProvider document links have a resolve provider
+     *        as well
      */
-    final public function __construct(array|null $documentSelector, bool|null $resolveProvider = null, bool|null $workDoneProgress = null)
+    public function __construct(?array $documentSelector = null, ?bool $resolveProvider = null, ?bool $workDoneProgress = null)
     {
-            $this->documentSelector = $documentSelector;
-    
-            $this->resolveProvider = $resolveProvider;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->documentSelector = $documentSelector;
+        $this->resolveProvider = $resolveProvider;
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

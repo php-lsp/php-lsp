@@ -1,16 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * Contains additional information about the context in which a completion request is triggered.
+ * Contains additional information about the context in which a completion
+ * request is triggered.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class CompletionContext
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * How the completion was triggered.
+         */
         public readonly CompletionTriggerKind $triggerKind,
-        public readonly string|null $triggerCharacter = null,
+        /**
+         * The trigger character (a single character) that has trigger code
+         * complete.
+         * Is undefined if `triggerKind !==
+         * CompletionTriggerKind.TriggerCharacter`.
+         */
+        public readonly ?string $triggerCharacter = null,
     ) {}
 }

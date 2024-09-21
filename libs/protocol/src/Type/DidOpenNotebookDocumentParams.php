@@ -1,20 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The params sent in an open notebook document notification.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
 final class DidOpenNotebookDocumentParams
 {
-    /**
-     * @param list<TextDocumentItem> $cellTextDocuments
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The notebook document that got opened.
+         */
         public readonly NotebookDocument $notebookDocument,
-        public readonly array $cellTextDocuments,
+        /**
+         * The text documents that represent the content of a notebook cell.
+         *
+         * @var list<TextDocumentItem>
+         */
+        public readonly array $cellTextDocuments = [],
     ) {}
 }

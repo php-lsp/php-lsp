@@ -1,16 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The parameters of a notification message.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class ShowMessageParams
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * The message type. See {@link MessageType}.
+         */
         public readonly MessageType $type,
+        /**
+         * The actual message.
+         */
         public readonly string $message,
     ) {}
 }

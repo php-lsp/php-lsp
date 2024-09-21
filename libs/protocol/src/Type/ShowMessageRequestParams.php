@@ -1,18 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 final class ShowMessageRequestParams
 {
-    /**
-     * @param list<MessageActionItem>|null $actions
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The message type. See {@link MessageType}.
+         */
         public readonly MessageType $type,
+        /**
+         * The actual message.
+         */
         public readonly string $message,
-        public readonly array|null $actions = null,
+        /**
+         * The message action items to present.
+         *
+         * @var list<MessageActionItem>|null
+         */
+        public readonly ?array $actions = null,
     ) {}
 }

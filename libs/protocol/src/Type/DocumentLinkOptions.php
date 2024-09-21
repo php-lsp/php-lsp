@@ -1,20 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Provider options for a {@link DocumentLinkRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
-class DocumentLinkOptions
+final class DocumentLinkOptions
 {
     use DocumentLinkOptionsMixin;
 
-    public function __construct(bool|null $resolveProvider, bool|null $workDoneProgress)
+    /**
+     * @param bool|null $resolveProvider document links have a resolve provider
+     *        as well
+     */
+    public function __construct(?bool $resolveProvider = null, ?bool $workDoneProgress = null)
     {
-            $this->resolveProvider = $resolveProvider;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->resolveProvider = $resolveProvider;
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

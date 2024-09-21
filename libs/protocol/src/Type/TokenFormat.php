@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 enum TokenFormat: string
 {
     /**
-     * @generated
+     * @var string
      */
     case Relative = 'relative';
 }

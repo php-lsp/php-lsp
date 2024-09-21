@@ -1,17 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Client capabilities specific to regular expressions.
  *
- * @generated
  * @since 3.16.0
+ *
+ * @generated 2024-09-21
  */
 final class RegularExpressionsClientCapabilities
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * The engine's name.
+         */
         public readonly string $engine,
-        public readonly string|null $version = null,
+        /**
+         * The engine's version.
+         */
+        public readonly ?string $version = null,
     ) {}
 }

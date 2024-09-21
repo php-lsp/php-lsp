@@ -1,15 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Client Capabilities for a {@link ReferencesRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class ReferenceClientCapabilities
 {
-    final public function __construct(
-        public readonly bool|null $dynamicRegistration = null,
+    public function __construct(
+        /**
+         * Whether references supports dynamic registration.
+         */
+        public readonly ?bool $dynamicRegistration = null,
     ) {}
 }

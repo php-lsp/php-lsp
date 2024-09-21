@@ -1,30 +1,35 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
+/**
+ * A diagnostic report with a full set of problems.
+ *
+ * @since 3.17.0
+ *
+ * @generated 2024-09-21
+ */
 trait FullDocumentDiagnosticReportMixin
 {
     /**
      * A full document diagnostic report.
-     *
-     * @generated
      */
     public readonly string $kind;
-
     /**
-     * An optional result id. If provided it will
-     * be sent on the next diagnostic request for the
-     * same document.
+     * An optional result id. If provided it will be sent on the next diagnostic
+     * request for the same document.
      *
-     * @generated
+     * @readonly
      */
-    public string|null $resultId = null;
-
+    public ?string $resultId = null;
     /**
      * The actual items.
      *
-     * @generated
      * @var list<Diagnostic>
+     *
+     * @readonly
      */
-    public readonly array $items;
+    public array $items = [];
 }

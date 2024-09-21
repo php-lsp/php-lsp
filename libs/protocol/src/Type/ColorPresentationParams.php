@@ -1,31 +1,43 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Parameters for a {@link ColorPresentationRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class ColorPresentationParams
 {
     use WorkDoneProgressParamsMixin;
-
     use PartialResultParamsMixin;
 
     /**
-     * @param int<-2147483648, 2147483647>|string|null $workDoneToken
-     * @param int<-2147483648, 2147483647>|string|null $partialResultToken
+     * @param int<-2147483648, 2147483647>|string|null $workDoneToken an
+     *        optional token that a server can use to report work done progress
+     * @param int<-2147483648, 2147483647>|string|null $partialResultToken An
+     *        optional token that a server can use to report partial results (e.g.
+     *        streaming) to the client.
      */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The text document.
+         */
         public readonly TextDocumentIdentifier $textDocument,
+        /**
+         * The color to request presentations for.
+         */
         public readonly Color $color,
+        /**
+         * The range where the color would be inserted. Serves as a context.
+         */
         public readonly Range $range,
         int|string|null $workDoneToken = null,
         int|string|null $partialResultToken = null,
     ) {
-            $this->workDoneToken = $workDoneToken;
-    
-            $this->partialResultToken = $partialResultToken;
+        $this->workDoneToken = $workDoneToken;
+        $this->partialResultToken = $partialResultToken;
     }
 }

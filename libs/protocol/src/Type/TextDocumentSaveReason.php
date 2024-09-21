@@ -1,33 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Represents reasons why a text document is saved.
  *
- * @generated
+ * @generated 2024-09-21
  */
 enum TextDocumentSaveReason: int
 {
     /**
-     * Manually triggered, e.g. by the user pressing save, by starting debugging,
+     * Manually triggered, e.g. by the user pressing save, by starting
+     * debugging,
      * or by an API call.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Manual = 1;
-
     /**
      * Automatic after a delay.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case AfterDelay = 2;
-
     /**
      * When the editor lost focus.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case FocusOut = 3;
 }

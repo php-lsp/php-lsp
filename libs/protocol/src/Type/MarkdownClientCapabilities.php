@@ -1,21 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Client capabilities specific to the used markdown parser.
  *
- * @generated
  * @since 3.16.0
+ *
+ * @generated 2024-09-21
  */
 final class MarkdownClientCapabilities
 {
-    /**
-     * @param list<string>|null $allowedTags
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The name of the parser.
+         */
         public readonly string $parser,
-        public readonly string|null $version = null,
-        public readonly array|null $allowedTags = null,
+        /**
+         * The version of the parser.
+         */
+        public readonly ?string $version = null,
+        /**
+         * A list of HTML tags that the client allows / supports in Markdown.
+         *
+         * @since 3.17.0
+         *
+         * @var list<string>|null
+         */
+        public readonly ?array $allowedTags = null,
     ) {}
 }

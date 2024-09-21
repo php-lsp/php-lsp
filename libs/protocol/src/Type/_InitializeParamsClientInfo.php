@@ -1,15 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
- * @internal This class is an internal dependency of {@see _InitializeParams}
+ * @generated 2024-09-21
  */
 final class _InitializeParamsClientInfo
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * The name of the client as defined by the client.
+         */
         public readonly string $name,
-        public readonly string $version = null,
+        /**
+         * The client's version as defined by the client.
+         */
+        public readonly ?string $version = null,
     ) {}
 }

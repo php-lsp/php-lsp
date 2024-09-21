@@ -1,19 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * A literal to identify a notebook document in the client.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
 final class NotebookDocumentIdentifier
 {
-    /**
-     * @param non-empty-string $uri
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The notebook document's uri.
+         *
+         * @var non-empty-string
+         */
         public readonly string $uri,
     ) {}
 }

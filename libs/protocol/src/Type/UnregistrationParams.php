@@ -1,16 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 final class UnregistrationParams
 {
-    /**
-     * @param list<Unregistration> $unregisterations
-     */
-    final public function __construct(
-        public readonly array $unregisterations,
+    public function __construct(
+        /**
+         * @var list<Unregistration>
+         */
+        public readonly array $unregisterations = [],
     ) {}
 }

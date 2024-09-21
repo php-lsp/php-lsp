@@ -1,16 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The parameters passed via an apply workspace edit request.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class ApplyWorkspaceEditParams
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * The edits to apply.
+         */
         public readonly WorkspaceEdit $edit,
-        public readonly string|null $label = null,
+        /**
+         * An optional label of the workspace edit. This label is presented in
+         * the user interface for example on an undo stack to undo the workspace
+         * edit.
+         */
+        public readonly ?string $label = null,
     ) {}
 }

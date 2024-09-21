@@ -1,18 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
  * @since 3.16.0
+ *
+ * @generated 2024-09-21
  */
 final class SemanticTokensDelta
 {
-    /**
-     * @param list<SemanticTokensEdit> $edits
-     */
-    final public function __construct(
-        public readonly array $edits,
-        public readonly string|null $resultId = null,
+    public function __construct(
+        public readonly ?string $resultId = null,
+        /**
+         * The semantic token edits to transform a previous result into a new
+         * result.
+         *
+         * @var list<SemanticTokensEdit>
+         */
+        public readonly array $edits = [],
     ) {}
 }

@@ -1,17 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Inlay hint client capabilities.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
 final class InlayHintClientCapabilities
 {
-    final public function __construct(
-        public readonly bool|null $dynamicRegistration = null,
-        public readonly InlayHintClientCapabilitiesResolveSupport|null $resolveSupport = null,
+    public function __construct(
+        /**
+         * Whether inlay hints support dynamic registration.
+         */
+        public readonly ?bool $dynamicRegistration = null,
+        /**
+         * Indicates which properties a client can resolve lazily on an inlay
+         * hint.
+         */
+        public readonly ?InlayHintClientCapabilitiesResolveSupport $resolveSupport = null,
     ) {}
 }

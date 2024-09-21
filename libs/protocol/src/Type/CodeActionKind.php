@@ -1,35 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * A set of predefined code action kinds
+ * A set of predefined code action kinds.
  *
- * @generated
+ * @generated 2024-09-21
  */
 enum CodeActionKind: string
 {
     /**
      * Empty kind.
      *
-     * @generated
+     * @var string
      */
     case Empty = '';
-
     /**
-     * Base kind for quickfix actions: 'quickfix'
+     * Base kind for quickfix actions: 'quickfix'.
      *
-     * @generated
+     * @var string
      */
     case QuickFix = 'quickfix';
-
     /**
-     * Base kind for refactoring actions: 'refactor'
+     * Base kind for refactoring actions: 'refactor'.
      *
-     * @generated
+     * @var string
      */
     case Refactor = 'refactor';
-
     /**
      * Base kind for refactoring extraction actions: 'refactor.extract'
      *
@@ -41,10 +40,9 @@ enum CodeActionKind: string
      * - Extract interface from class
      * - ...
      *
-     * @generated
+     * @var string
      */
     case RefactorExtract = 'refactor.extract';
-
     /**
      * Base kind for refactoring inline actions: 'refactor.inline'
      *
@@ -55,10 +53,9 @@ enum CodeActionKind: string
      * - Inline constant
      * - ...
      *
-     * @generated
+     * @var string
      */
     case RefactorInline = 'refactor.inline';
-
     /**
      * Base kind for refactoring rewrite actions: 'refactor.rewrite'
      *
@@ -71,34 +68,35 @@ enum CodeActionKind: string
      * - Move method to base class
      * - ...
      *
-     * @generated
+     * @var string
      */
     case RefactorRewrite = 'refactor.rewrite';
-
     /**
      * Base kind for source actions: `source`
      *
      * Source code actions apply to the entire file.
      *
-     * @generated
+     * @var string
      */
     case Source = 'source';
-
     /**
-     * Base kind for an organize imports source action: `source.organizeImports`
+     * Base kind for an organize imports source action:
+     * `source.organizeImports`.
      *
-     * @generated
+     * @var string
      */
     case SourceOrganizeImports = 'source.organizeImports';
-
     /**
      * Base kind for auto-fix source actions: `source.fixAll`.
      *
-     * Fix all actions automatically fix errors that have a clear fix that do not require user input.
-     * They should not suppress errors or perform unsafe fixes such as generating new types or classes.
+     * Fix all actions automatically fix errors that have a clear fix that do
+     * not require user input.
+     * They should not suppress errors or perform unsafe fixes such as
+     * generating new types or classes.
      *
-     * @generated
      * @since 3.15.0
+     *
+     * @var string
      */
     case SourceFixAll = 'source.fixAll';
 }

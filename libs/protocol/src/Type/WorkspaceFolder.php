@@ -1,19 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * A workspace folder inside a client.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class WorkspaceFolder
 {
-    /**
-     * @param non-empty-string $uri
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The associated URI for this workspace folder.
+         *
+         * @var non-empty-string
+         */
         public readonly string $uri,
+        /**
+         * The name of the workspace folder. Used to refer to this workspace
+         * folder in the user interface.
+         */
         public readonly string $name,
     ) {}
 }

@@ -1,16 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * Delete file options
+ * Delete file options.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class DeleteFileOptions
 {
-    final public function __construct(
-        public readonly bool|null $recursive = null,
-        public readonly bool|null $ignoreIfNotExists = null,
+    public function __construct(
+        /**
+         * Delete the content recursively if a folder is denoted.
+         */
+        public readonly ?bool $recursive = null,
+        /**
+         * Ignore the operation if the file doesn't exist.
+         */
+        public readonly ?bool $ignoreIfNotExists = null,
     ) {}
 }

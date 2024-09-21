@@ -1,27 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * Describes how an {@link InlineCompletionItemProvider inline completion provider} was triggered.
+ * Describes how an {@link InlineCompletionItemProvider inline completion
+ * provider} was triggered.
  *
- * @generated
  * @since 3.18.0
- * @internal Describes the upcoming version of the Language Server Protocol and is under development
+ *
+ * @internal This is a proposed type, which means that the implementation of
+ *           this type is not final. Please use this type at your own risk.
+ *
+ * @generated 2024-09-21
  */
 enum InlineCompletionTriggerKind: int
 {
     /**
      * Completion was triggered explicitly by a user gesture.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Invoked = 0;
-
     /**
      * Completion was triggered automatically while editing.
      *
-     * @generated
+     * @var int<0, 2147483647>
      */
     case Automatic = 1;
 }

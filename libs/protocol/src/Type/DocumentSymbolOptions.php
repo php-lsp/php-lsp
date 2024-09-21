@@ -1,20 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Provider options for a {@link DocumentSymbolRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
-class DocumentSymbolOptions
+final class DocumentSymbolOptions
 {
     use DocumentSymbolOptionsMixin;
 
-    public function __construct(string|null $label, bool|null $workDoneProgress)
+    /**
+     * @param string|null $label a human-readable string that is shown when
+     *        multiple outlines trees are shown for the same document
+     */
+    public function __construct(?string $label = null, ?bool $workDoneProgress = null)
     {
-            $this->label = $label;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->label = $label;
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

@@ -1,18 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Describe options to be used when registered for text document change events.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class DidChangeWatchedFilesRegistrationOptions
 {
-    /**
-     * @param list<FileSystemWatcher> $watchers
-     */
-    final public function __construct(
-        public readonly array $watchers,
+    public function __construct(
+        /**
+         * The watchers to register.
+         *
+         * @var list<FileSystemWatcher>
+         */
+        public readonly array $watchers = [],
     ) {}
 }

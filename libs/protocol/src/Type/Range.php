@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
@@ -13,14 +15,20 @@ namespace Lsp\Protocol\Type;
  *     start: { line: 5, character: 23 }
  *     end : { line 6, character : 0 }
  * }
- * ```
+ * ```.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class Range
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * The range's start position.
+         */
         public readonly Position $start,
+        /**
+         * The range's end position.
+         */
         public readonly Position $end,
     ) {}
 }

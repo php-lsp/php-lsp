@@ -1,19 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The options to register for file operations.
  *
- * @generated
  * @since 3.16.0
+ *
+ * @generated 2024-09-21
  */
 final class FileOperationRegistrationOptions
 {
-    /**
-     * @param list<FileOperationFilter> $filters
-     */
-    final public function __construct(
-        public readonly array $filters,
+    public function __construct(
+        /**
+         * The actual filters.
+         *
+         * @var list<FileOperationFilter>
+         */
+        public readonly array $filters = [],
     ) {}
 }

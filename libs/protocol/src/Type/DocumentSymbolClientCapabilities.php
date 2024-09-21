@@ -1,19 +1,45 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Client Capabilities for a {@link DocumentSymbolRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class DocumentSymbolClientCapabilities
 {
-    final public function __construct(
-        public readonly bool|null $dynamicRegistration = null,
-        public readonly DocumentSymbolClientCapabilitiesSymbolKind|null $symbolKind = null,
-        public readonly bool|null $hierarchicalDocumentSymbolSupport = null,
-        public readonly DocumentSymbolClientCapabilitiesTagSupport|null $tagSupport = null,
-        public readonly bool|null $labelSupport = null,
+    public function __construct(
+        /**
+         * Whether document symbol supports dynamic registration.
+         */
+        public readonly ?bool $dynamicRegistration = null,
+        /**
+         * Specific capabilities for the `SymbolKind` in the
+         * `textDocument/documentSymbol` request.
+         */
+        public readonly ?DocumentSymbolClientCapabilitiesSymbolKind $symbolKind = null,
+        /**
+         * The client supports hierarchical document symbols.
+         */
+        public readonly ?bool $hierarchicalDocumentSymbolSupport = null,
+        /**
+         * The client supports tags on `SymbolInformation`. Tags are supported
+         * on `DocumentSymbol` if `hierarchicalDocumentSymbolSupport` is set to
+         * true.
+         * Clients supporting tags have to handle unknown tags gracefully.
+         *
+         * @since 3.16.0
+         */
+        public readonly ?DocumentSymbolClientCapabilitiesTagSupport $tagSupport = null,
+        /**
+         * The client supports an additional label presented in the UI when
+         * registering a document symbol provider.
+         *
+         * @since 3.16.0
+         */
+        public readonly ?bool $labelSupport = null,
     ) {}
 }

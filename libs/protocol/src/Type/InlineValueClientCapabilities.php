@@ -1,16 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Client capabilities specific to inline values.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
 final class InlineValueClientCapabilities
 {
-    final public function __construct(
-        public readonly bool|null $dynamicRegistration = null,
+    public function __construct(
+        /**
+         * Whether implementation supports dynamic registration for inline value
+         * providers.
+         */
+        public readonly ?bool $dynamicRegistration = null,
     ) {}
 }

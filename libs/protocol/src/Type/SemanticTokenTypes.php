@@ -1,133 +1,114 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * A set of predefined token types. This set is not fixed
- * an clients can specify additional token types via the
- * corresponding client capabilities.
+ * A set of predefined token types. This set is not fixed an clients can specify
+ * additional token types via the corresponding client capabilities.
  *
- * @generated
  * @since 3.16.0
+ *
+ * @generated 2024-09-21
  */
 enum SemanticTokenTypes: string
 {
     /**
-     * @generated
+     * @var string
      */
     case NamespaceType = 'namespace';
-
     /**
-     * Represents a generic type. Acts as a fallback for types which can't be mapped to
-     * a specific type like class or enum.
+     * Represents a generic type. Acts as a fallback for types which can't be
+     * mapped to a specific type like class or enum.
      *
-     * @generated
+     * @var string
      */
     case TypeType = 'type';
-
     /**
-     * @generated
+     * @var string
      */
     case ClassType = 'class';
-
     /**
-     * @generated
+     * @var string
      */
     case EnumType = 'enum';
-
     /**
-     * @generated
+     * @var string
      */
     case InterfaceType = 'interface';
-
     /**
-     * @generated
+     * @var string
      */
     case StructType = 'struct';
-
     /**
-     * @generated
+     * @var string
      */
     case TypeParameterType = 'typeParameter';
-
     /**
-     * @generated
+     * @var string
      */
     case ParameterType = 'parameter';
-
     /**
-     * @generated
+     * @var string
      */
     case VariableType = 'variable';
-
     /**
-     * @generated
+     * @var string
      */
     case PropertyType = 'property';
-
     /**
-     * @generated
+     * @var string
      */
     case EnumMemberType = 'enumMember';
-
     /**
-     * @generated
+     * @var string
      */
     case EventType = 'event';
-
     /**
-     * @generated
+     * @var string
      */
     case FunctionType = 'function';
-
     /**
-     * @generated
+     * @var string
      */
     case MethodType = 'method';
-
     /**
-     * @generated
+     * @var string
      */
     case MacroType = 'macro';
-
     /**
-     * @generated
+     * @var string
      */
     case KeywordType = 'keyword';
-
     /**
-     * @generated
+     * @var string
      */
     case ModifierType = 'modifier';
-
     /**
-     * @generated
+     * @var string
      */
     case CommentType = 'comment';
-
     /**
-     * @generated
+     * @var string
      */
     case StringType = 'string';
-
     /**
-     * @generated
+     * @var string
      */
     case NumberType = 'number';
-
     /**
-     * @generated
+     * @var string
      */
     case RegexpType = 'regexp';
-
     /**
-     * @generated
+     * @var string
      */
     case OperatorType = 'operator';
-
     /**
-     * @generated
      * @since 3.17.0
+     *
+     * @var string
      */
     case DecoratorType = 'decorator';
 }

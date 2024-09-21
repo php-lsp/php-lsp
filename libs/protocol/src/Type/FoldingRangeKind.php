@@ -1,32 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * A set of predefined range kinds.
  *
- * @generated
+ * @generated 2024-09-21
  */
 enum FoldingRangeKind: string
 {
     /**
-     * Folding range for a comment
+     * Folding range for a comment.
      *
-     * @generated
+     * @var string
      */
     case Comment = 'comment';
-
     /**
-     * Folding range for an import or include
+     * Folding range for an import or include.
      *
-     * @generated
+     * @var string
      */
     case Imports = 'imports';
-
     /**
-     * Folding range for a region (e.g. `#region`)
+     * Folding range for a region (e.g. `#region`).
      *
-     * @generated
+     * @var string
      */
     case Region = 'region';
 }

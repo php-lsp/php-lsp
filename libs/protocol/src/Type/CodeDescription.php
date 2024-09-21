@@ -1,19 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Structure to capture a description for an error code.
  *
- * @generated
  * @since 3.16.0
+ *
+ * @generated 2024-09-21
  */
 final class CodeDescription
 {
-    /**
-     * @param non-empty-string $href
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * An URI to open with more information about the diagnostic error.
+         *
+         * @var non-empty-string
+         */
         public readonly string $href,
     ) {}
 }

@@ -1,20 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Server capabilities for a {@link WorkspaceSymbolRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
-class WorkspaceSymbolOptions
+final class WorkspaceSymbolOptions
 {
     use WorkspaceSymbolOptionsMixin;
 
-    public function __construct(bool|null $resolveProvider, bool|null $workDoneProgress)
+    /**
+     * @param bool|null $resolveProvider the server provides support to resolve
+     *        additional information for a workspace symbol
+     */
+    public function __construct(?bool $resolveProvider = null, ?bool $workDoneProgress = null)
     {
-            $this->resolveProvider = $resolveProvider;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->resolveProvider = $resolveProvider;
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

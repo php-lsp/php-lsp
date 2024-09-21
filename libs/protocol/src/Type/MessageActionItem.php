@@ -1,13 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 final class MessageActionItem
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * A short title like 'Retry', 'Open Log' etc.
+         */
         public readonly string $title,
     ) {}
 }

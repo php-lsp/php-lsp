@@ -1,26 +1,49 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * A notebook document.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
 final class NotebookDocument
 {
-    /**
-     * @param non-empty-string $uri
-     * @param int<-2147483648, 2147483647> $version
-     * @param array<string, mixed>|null $metadata
-     * @param list<NotebookCell> $cells
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The notebook document's uri.
+         *
+         * @var non-empty-string
+         */
         public readonly string $uri,
+        /**
+         * The type of the notebook.
+         */
         public readonly string $notebookType,
+        /**
+         * The version number of this document (it will increase after each
+         * change, including undo/redo).
+         *
+         * @var int<-2147483648, 2147483647>
+         */
         public readonly int $version,
-        public readonly array $cells,
-        public readonly array|null $metadata = null,
+        /**
+         * Additional metadata stored with the notebook document.
+         *
+         * Note: should always be an object literal (e.g. LSPObject).
+         *
+         * @var list<string, mixed>|null
+         */
+        public readonly ?array $metadata = null,
+        /**
+         * The cells of a notebook.
+         *
+         * @var list<NotebookCell>
+         */
+        public readonly array $cells = [],
     ) {}
 }

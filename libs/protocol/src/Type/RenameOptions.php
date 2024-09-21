@@ -1,20 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Provider options for a {@link RenameRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
-class RenameOptions
+final class RenameOptions
 {
     use RenameOptionsMixin;
 
-    public function __construct(bool|null $prepareProvider, bool|null $workDoneProgress)
+    /**
+     * @param bool|null $prepareProvider renames should be checked and tested
+     *        before being executed
+     */
+    public function __construct(?bool $prepareProvider = null, ?bool $workDoneProgress = null)
     {
-            $this->prepareProvider = $prepareProvider;
-    
-            $this->workDoneProgress = $workDoneProgress;
+        $this->prepareProvider = $prepareProvider;
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

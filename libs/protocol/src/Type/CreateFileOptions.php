@@ -1,16 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * Options to create a file.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class CreateFileOptions
 {
-    final public function __construct(
-        public readonly bool|null $overwrite = null,
-        public readonly bool|null $ignoreIfExists = null,
+    public function __construct(
+        /**
+         * Overwrite existing file. Overwrite wins over `ignoreIfExists`.
+         */
+        public readonly ?bool $overwrite = null,
+        /**
+         * Ignore if exists.
+         */
+        public readonly ?bool $ignoreIfExists = null,
     ) {}
 }

@@ -1,28 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The document diagnostic report kinds.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
 enum DocumentDiagnosticReportKind: string
 {
     /**
-     * A diagnostic report with a full
-     * set of problems.
+     * A diagnostic report with a full set of problems.
      *
-     * @generated
+     * @var string
      */
     case Full = 'full';
-
     /**
-     * A report indicating that the last
-     * returned report is still accurate.
+     * A report indicating that the last returned report is still accurate.
      *
-     * @generated
+     * @var string
      */
     case Unchanged = 'unchanged';
 }

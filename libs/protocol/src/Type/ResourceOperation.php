@@ -1,20 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * A generic resource operation.
  *
- * @generated
+ * @generated 2024-09-21
  */
-class ResourceOperation
+final class ResourceOperation
 {
     use ResourceOperationMixin;
 
-    public function __construct(string $kind, string|null $annotationId)
+    /**
+     * @param string $kind the resource operation kind
+     * @param string|null $annotationId an optional annotation identifier
+     *        describing the operation
+     */
+    public function __construct(string $kind, ?string $annotationId = null)
     {
-            $this->kind = $kind;
-    
-            $this->annotationId = $annotationId;
+        $this->kind = $kind;
+        $this->annotationId = $annotationId;
     }
 }

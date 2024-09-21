@@ -1,11 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
+/**
+ * @generated 2024-09-21
+ */
 trait WorkDoneProgressOptionsMixin
 {
     /**
-     * @generated
+     * @readonly
      */
-    public bool|null $workDoneProgress = null;
+    public ?bool $workDoneProgress = null;
 }

@@ -1,29 +1,44 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * Rename file operation
+ * Rename file operation.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class RenameFile
 {
     use ResourceOperationMixin;
 
     /**
-     * @param non-empty-string $oldUri
-     * @param non-empty-string $newUri
+     * @param string $kind the resource operation kind
+     * @param string|null $annotationId an optional annotation identifier
+     *        describing the operation
      */
-    final public function __construct(
+    public function __construct(
         string $kind,
+        /**
+         * The old (existing) location.
+         *
+         * @var non-empty-string
+         */
         public readonly string $oldUri,
+        /**
+         * The new location.
+         *
+         * @var non-empty-string
+         */
         public readonly string $newUri,
-        public readonly RenameFileOptions|null $options = null,
-        string|null $annotationId = null,
+        /**
+         * Rename options.
+         */
+        public readonly ?RenameFileOptions $options = null,
+        ?string $annotationId = null,
     ) {
-            $this->kind = $kind;
-    
-            $this->annotationId = $annotationId;
+        $this->kind = $kind;
+        $this->annotationId = $annotationId;
     }
 }

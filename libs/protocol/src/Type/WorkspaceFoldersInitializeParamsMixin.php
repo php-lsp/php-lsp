@@ -1,7 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
+/**
+ * @generated 2024-09-21
+ */
 trait WorkspaceFoldersInitializeParamsMixin
 {
     /**
@@ -11,9 +16,11 @@ trait WorkspaceFoldersInitializeParamsMixin
      * It can be `null` if the client supports workspace folders but none are
      * configured.
      *
-     * @generated
      * @since 3.6.0
+     *
      * @var list<WorkspaceFolder>|null
+     *
+     * @readonly
      */
-    public array|null $workspaceFolders = null;
+    public ?array $workspaceFolders = null;
 }

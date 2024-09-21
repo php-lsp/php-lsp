@@ -1,15 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The client capabilities  of a {@link CodeLensRequest}.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class CodeLensClientCapabilities
 {
-    final public function __construct(
-        public readonly bool|null $dynamicRegistration = null,
+    public function __construct(
+        /**
+         * Whether code lens supports dynamic registration.
+         */
+        public readonly ?bool $dynamicRegistration = null,
     ) {}
 }

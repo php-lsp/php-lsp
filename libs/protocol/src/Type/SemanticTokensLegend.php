@@ -1,19 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
  * @since 3.16.0
+ *
+ * @generated 2024-09-21
  */
 final class SemanticTokensLegend
 {
-    /**
-     * @param list<string> $tokenTypes
-     * @param list<string> $tokenModifiers
-     */
-    final public function __construct(
-        public readonly array $tokenTypes,
-        public readonly array $tokenModifiers,
+    public function __construct(
+        /**
+         * The token types a server uses.
+         *
+         * @var list<string>
+         */
+        public readonly array $tokenTypes = [],
+        /**
+         * The token modifiers a server uses.
+         *
+         * @var list<string>
+         */
+        public readonly array $tokenModifiers = [],
     ) {}
 }

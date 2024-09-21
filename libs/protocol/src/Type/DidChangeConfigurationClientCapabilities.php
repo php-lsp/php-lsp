@@ -1,13 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 final class DidChangeConfigurationClientCapabilities
 {
-    final public function __construct(
-        public readonly bool|null $dynamicRegistration = null,
+    public function __construct(
+        /**
+         * Did change configuration notification supports dynamic registration.
+         */
+        public readonly ?bool $dynamicRegistration = null,
     ) {}
 }

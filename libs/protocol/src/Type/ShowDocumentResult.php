@@ -1,16 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * The result of a showDocument request.
  *
- * @generated
  * @since 3.16.0
+ *
+ * @generated 2024-09-21
  */
 final class ShowDocumentResult
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * A boolean indicating if the show was successful.
+         */
         public readonly bool $success,
     ) {}
 }

@@ -1,17 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
- * @internal This class is an internal dependency of {@see PublishDiagnosticsClientCapabilities}
+ * @generated 2024-09-21
  */
 final class PublishDiagnosticsClientCapabilitiesTagSupport
 {
-    /**
-     * @param list<DiagnosticTag> $valueSet
-     */
-    final public function __construct(
-        public readonly array $valueSet,
+    public function __construct(
+        /**
+         * The tags supported by the client.
+         *
+         * @var list<DiagnosticTag>
+         */
+        public readonly array $valueSet = [],
     ) {}
 }

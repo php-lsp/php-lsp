@@ -1,16 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
 final class CancelParams
 {
-    /**
-     * @param int<-2147483648, 2147483647>|string $id
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The request id to cancel.
+         *
+         * @var int<-2147483648, 2147483647>|string
+         */
         public readonly int|string $id,
     ) {}
 }

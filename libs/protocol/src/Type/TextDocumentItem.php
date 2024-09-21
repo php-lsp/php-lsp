@@ -1,23 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * An item to transfer a text document from the client to the
- * server.
+ * An item to transfer a text document from the client to the server.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class TextDocumentItem
 {
-    /**
-     * @param non-empty-string $uri
-     * @param int<-2147483648, 2147483647> $version
-     */
-    final public function __construct(
+    public function __construct(
+        /**
+         * The text document's uri.
+         *
+         * @var non-empty-string
+         */
         public readonly string $uri,
+        /**
+         * The text document's language identifier.
+         */
         public readonly string $languageId,
+        /**
+         * The version number of this document (it will increase after each
+         * change, including undo/redo).
+         *
+         * @var int<-2147483648, 2147483647>
+         */
         public readonly int $version,
+        /**
+         * The content of the opened text document.
+         */
         public readonly string $text,
     ) {}
 }

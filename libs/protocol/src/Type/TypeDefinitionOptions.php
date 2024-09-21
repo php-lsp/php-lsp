@@ -1,16 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
+ * @generated 2024-09-21
  */
-class TypeDefinitionOptions
+final class TypeDefinitionOptions
 {
     use TypeDefinitionOptionsMixin;
 
-    public function __construct(bool|null $workDoneProgress)
+    public function __construct(?bool $workDoneProgress = null)
     {
-            $this->workDoneProgress = $workDoneProgress;
+        $this->workDoneProgress = $workDoneProgress;
     }
 }

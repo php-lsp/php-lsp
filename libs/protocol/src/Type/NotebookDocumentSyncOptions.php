@@ -1,34 +1,35 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * Options specific to a notebook plus its cells
- * to be synced to the server.
+ * Options specific to a notebook plus its cells to be synced to the server.
  *
- * If a selector provides a notebook document
- * filter but no cell selector all cells of a
- * matching notebook document will be synced.
+ * If a selector provides a notebook document filter but no cell selector all
+ * cells of a matching notebook document will be synced.
  *
- * If a selector provides no notebook document
- * filter but only a cell selector all notebook
- * document that contain at least one matching
- * cell will be synced.
+ * If a selector provides no notebook document filter but only a cell selector
+ * all notebook document that contain at least one matching cell will be synced.
  *
- * @generated
  * @since 3.17.0
+ *
+ * @generated 2024-09-21
  */
-class NotebookDocumentSyncOptions
+final class NotebookDocumentSyncOptions
 {
     use NotebookDocumentSyncOptionsMixin;
 
     /**
-     * @param list<NotebookDocumentSyncOptionsNotebookSelector> $notebookSelector
+     * @param list<NotebookDocumentSyncOptionsNotebookSelector>
+     *        $notebookSelector The notebooks to be synced
+     * @param bool|null $save Whether save notification should be forwarded to
+     *        the server. Will only be honored if mode === `notebook`.
      */
-    public function __construct(array $notebookSelector, bool|null $save)
+    public function __construct(array $notebookSelector = [], ?bool $save = null)
     {
-            $this->notebookSelector = $notebookSelector;
-    
-            $this->save = $save;
+        $this->notebookSelector = $notebookSelector;
+        $this->save = $save;
     }
 }

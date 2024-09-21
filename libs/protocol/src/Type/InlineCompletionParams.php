@@ -1,33 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
  * A parameter literal used in inline completion requests.
  *
- * @generated
  * @since 3.18.0
- * @internal Describes the upcoming version of the Language Server Protocol and is under development
+ *
+ * @internal This is a proposed type, which means that the implementation of
+ *           this type is not final. Please use this type at your own risk.
+ *
+ * @generated 2024-09-21
  */
 final class InlineCompletionParams
 {
+    use TextDocumentPositionParamsMixin;
     use WorkDoneProgressParamsMixin;
 
-    use TextDocumentPositionParamsMixin;
-
     /**
-     * @param int<-2147483648, 2147483647>|string|null $workDoneToken
+     * @param TextDocumentIdentifier $textDocument the text document
+     * @param Position $position the position inside the text document
+     * @param int<-2147483648, 2147483647>|string|null $workDoneToken an
+     *        optional token that a server can use to report work done progress
      */
-    final public function __construct(
+    public function __construct(
+        /**
+         * Additional information about the context in which inline completions
+         * were requested.
+         */
         public readonly InlineCompletionContext $context,
         TextDocumentIdentifier $textDocument,
         Position $position,
         int|string|null $workDoneToken = null,
     ) {
-            $this->textDocument = $textDocument;
-    
-            $this->position = $position;
-    
-            $this->workDoneToken = $workDoneToken;
+        $this->textDocument = $textDocument;
+        $this->position = $position;
+        $this->workDoneToken = $workDoneToken;
     }
 }

@@ -1,18 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * Represents a related message and source code location for a diagnostic. This should be
- * used to point to code locations that cause or related to a diagnostics, e.g when duplicating
- * a symbol in a scope.
+ * Represents a related message and source code location for a diagnostic. This
+ * should be used to point to code locations that cause or related to a
+ * diagnostics, e.g when duplicating a symbol in a scope.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class DiagnosticRelatedInformation
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * The location of this related diagnostic information.
+         */
         public readonly Location $location,
+        /**
+         * The message of this related diagnostic information.
+         */
         public readonly string $message,
     ) {}
 }

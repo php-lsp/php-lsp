@@ -1,14 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
- * @internal This class is an internal dependency of {@see SemanticTokensOptions}
+ * @generated 2024-09-21
  */
 final class SemanticTokensOptionsFull
 {
-    final public function __construct(
-        public readonly bool $delta = null,
+    public function __construct(
+        /**
+         * The server supports deltas for full documents.
+         */
+        public readonly ?bool $delta = null,
     ) {}
 }

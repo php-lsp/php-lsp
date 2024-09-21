@@ -1,17 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * @generated
- * @internal This class is an internal dependency of {@see CodeActionClientCapabilities}
+ * @generated 2024-09-21
  */
 final class CodeActionClientCapabilitiesResolveSupport
 {
-    /**
-     * @param list<string> $properties
-     */
-    final public function __construct(
-        public readonly array $properties,
+    public function __construct(
+        /**
+         * The properties that a client can resolve lazily.
+         *
+         * @var list<string>
+         */
+        public readonly array $properties = [],
     ) {}
 }

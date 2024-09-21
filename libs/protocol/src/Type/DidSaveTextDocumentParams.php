@@ -1,16 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lsp\Protocol\Type;
 
 /**
- * The parameters sent in a save text document notification
+ * The parameters sent in a save text document notification.
  *
- * @generated
+ * @generated 2024-09-21
  */
 final class DidSaveTextDocumentParams
 {
-    final public function __construct(
+    public function __construct(
+        /**
+         * The document that was saved.
+         */
         public readonly TextDocumentIdentifier $textDocument,
-        public readonly string|null $text = null,
+        /**
+         * Optional the content when saved. Depends on the includeText value
+         * when the save notification was requested.
+         */
+        public readonly ?string $text = null,
     ) {}
 }
