@@ -55,8 +55,11 @@ final class StructBuilder extends Builder
                 $methodDescription->addTag(new TypedTag(
                     name: 'param',
                     type: $property->type,
-                    description: (string) $this->docblock->buildDocBlockFromStatement($property)
-                        ->description,
+                    description: \vsprintf('$%s %s', [
+                        $property->name,
+                        $this->docblock->buildDocBlockFromStatement($property)
+                            ->description,
+                    ]),
                 ));
 
                 $method->stmts[] = new PhpExpression(

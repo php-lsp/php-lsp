@@ -5,16 +5,14 @@ declare(strict_types=1);
 namespace Lsp\Protocol\Generator\IR\Visitor\Generator;
 
 use Lsp\Protocol\Generator\IR\Node\IRMixinStatement;
-use Lsp\Protocol\Generator\IR\Node\IRPropertyStatement;
 use Lsp\Protocol\Generator\IR\Node\IRStructStatement;
 use Lsp\Protocol\Generator\IR\Visitor\Analyzer\MixinsAnalyzerVisitor;
-use Lsp\Protocol\Generator\MetaModel\Node\MetaProperty;
 use Lsp\Protocol\Generator\MetaModel\Node\MetaStructure;
 use PhpParser\Node;
 
 final class MixinGeneratorVisitor extends GeneratorVisitor
 {
-    public function enterNode(Node $node): mixed
+    public function leaveNode(Node $node): mixed
     {
         if (!$node instanceof MetaStructure || !MixinsAnalyzerVisitor::isMixin($node)) {
             return null;
@@ -64,26 +62,5 @@ final class MixinGeneratorVisitor extends GeneratorVisitor
         $struct->mixins[] = $context;
 
         return $struct;
-    }
-
-    private function createProperty(MetaProperty $node): IRPropertyStatement
-    {
-        $type = $this->types->build($node->type);
-
-        if ($node->optional === true) {
-            $type = $this->types->optional($type);
-        }
-
-        $property = new IRPropertyStatement(
-            name: $node->name,
-            type: $type,
-        );
-
-        $property->description = $node->documentation;
-        $property->deprecated = $node->deprecated;
-        $property->since = $node->since;
-        $property->proposed = (bool) $node->proposed;
-
-        return $property;
     }
 }

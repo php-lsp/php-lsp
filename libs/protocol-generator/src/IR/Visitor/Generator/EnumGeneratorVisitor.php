@@ -13,7 +13,7 @@ use PhpParser\Node;
 
 final class EnumGeneratorVisitor extends GeneratorVisitor
 {
-    public function enterNode(Node $node): mixed
+    public function leaveNode(Node $node): mixed
     {
         if (!$node instanceof Enumeration) {
             return null;

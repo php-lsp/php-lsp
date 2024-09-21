@@ -26,6 +26,7 @@ use TypeLang\Parser\Node\Stmt\IntersectionTypeNode;
 use TypeLang\Parser\Node\Stmt\NamedTypeNode;
 use TypeLang\Parser\Node\Stmt\Shape\FieldsListNode;
 use TypeLang\Parser\Node\Stmt\Shape\ImplicitFieldNode;
+use TypeLang\Parser\Node\Stmt\Shape\NamedFieldNode;
 use TypeLang\Parser\Node\Stmt\Template\ArgumentNode;
 use TypeLang\Parser\Node\Stmt\Template\ArgumentsListNode;
 use TypeLang\Parser\Node\Stmt\TypeStatement;
@@ -304,16 +305,26 @@ final class TypeBuilder
         };
     }
 
-    /**
-     * TODO Add structural fields.
-     */
     private function buildStructure(MetaStructureLiteralType $type): TypeStatement
     {
-        return new NamedTypeNode('object');
+        $fields = new FieldsListNode();
+
+        foreach ($type->value->properties as $property) {
+            $fields->items[] = new NamedFieldNode(
+                key: $property->name,
+                of: $this->build($property->type),
+            );
+        }
+
+        return new NamedTypeNode('object', fields: $fields);
     }
 
     public function optional(TypeStatement $type): TypeStatement
     {
+        if ($type instanceof UnionTypeNode) {
+            return $this->unionOf([...$type->statements, $this->null()]);
+        }
+
         return $this->unionOf([$type, $this->null()]);
     }
 
