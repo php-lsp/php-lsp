@@ -16,7 +16,7 @@ final class WorkspaceFullDocumentDiagnosticReport
     use FullDocumentDiagnosticReportMixin;
 
     /**
-     * @param full $kind a full document diagnostic report
+     * @param "full" $kind a full document diagnostic report
      * @param string|null $resultId An optional result id. If provided it will
      *        be sent on the next diagnostic request for the same document.
      * @param list<Diagnostic> $items the actual items

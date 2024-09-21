@@ -95,7 +95,7 @@ final class TypeBuilder
 
     public function stringOf(string $value): StringLiteralNode
     {
-        return new StringLiteralNode($value);
+        return StringLiteralNode::createFromValue($value);
     }
 
     public function bool(): NamedTypeNode
