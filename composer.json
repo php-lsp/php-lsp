@@ -43,7 +43,7 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.64",
-        "humbug/box": "^4.6",
+        "humbug/box": "^4.3",
         "php-lsp/protocol-generator": "^1.0",
         "phpstan/extension-installer": "^1.3",
         "phpstan/phpstan": "^1.10",
