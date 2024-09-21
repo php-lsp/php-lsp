@@ -20,7 +20,7 @@ final class CallHierarchyIncomingCall
         public readonly CallHierarchyItem $from,
         /**
          * The ranges at which the calls appear. This is relative to the caller
-         * denoted by {@link CallHierarchyIncomingCall.from `this.from`}.
+         * denoted by {@see CallHierarchyIncomingCall::$from `this.from`}.
          *
          * @var list<Range>
          */

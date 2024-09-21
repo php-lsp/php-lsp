@@ -15,15 +15,9 @@ final class Hover
         /**
          * The hover's content.
          *
-         * @var MarkupContent|string|object{
-         *          language: string,
-         *          value: string
-         *      }|list<string|object{
-         *          language: string,
-         *          value: string
-         *      }>
+         * @var MarkupContent|string|HoverContents|list<string|HoverContents>
          */
-        public readonly MarkupContent|string|object|array $contents = [],
+        public readonly MarkupContent|string|HoverContents|array $contents = [],
         /**
          * An optional range inside the text document that is used to visualize
          * the hover, e.g. by changing the background color.

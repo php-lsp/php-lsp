@@ -21,9 +21,10 @@ final class CallHierarchyOutgoingCall
         public readonly CallHierarchyItem $to,
         /**
          * The range at which this item is called. This is the range relative to
-         * the caller, e.g the item passed to {@link * CallHierarchyItemProvider.provideCallHierarchyOutgoingCalls
+         * the caller, e.g the item passed to {@see
+         * CallHierarchyItemProvider::$provideCallHierarchyOutgoingCalls
          * `provideCallHierarchyOutgoingCalls`}
-         * and not {@link CallHierarchyOutgoingCall.to `this.to`}.
+         * and not {@see CallHierarchyOutgoingCall::$to `this.to`}.
          *
          * @var list<Range>
          */

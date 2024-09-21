@@ -12,7 +12,7 @@ final class NotebookDocumentChangeEventCellsTextContent
     public function __construct(
         public readonly VersionedTextDocumentIdentifier $document,
         /**
-         * @var list<object{text: string}>
+         * @var list<DidChangeTextDocumentParamsContentChanges>
          */
         public readonly array $changes = [],
     ) {}

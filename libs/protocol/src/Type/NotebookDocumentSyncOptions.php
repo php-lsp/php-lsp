@@ -22,8 +22,8 @@ final class NotebookDocumentSyncOptions
     use NotebookDocumentSyncOptionsMixin;
 
     /**
-     * @param list<NotebookDocumentSyncOptionsNotebookSelector>
-     *        $notebookSelector The notebooks to be synced
+     * @param list<NotebookDocumentSyncOptionsNotebookSelector> $notebookSelector
+     *        The notebooks to be synced
      * @param bool|null $save Whether save notification should be forwarded to
      *        the server. Will only be honored if mode === `notebook`.
      */

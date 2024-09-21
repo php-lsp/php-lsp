@@ -24,7 +24,7 @@ final class InlineCompletionItem
         public readonly string|StringValue $insertText,
         /**
          * A text that is used to decide if this inline completion should be
-         * shown. When `falsy` the {@link InlineCompletionItem.insertText} is
+         * shown. When `falsy` the {@see InlineCompletionItem::$insertText} is
          * used.
          */
         public readonly ?string $filterText = null,

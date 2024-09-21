@@ -15,8 +15,7 @@ final class DocumentDiagnosticReportPartialResult
 {
     public function __construct(
         /**
-         * @var list<non-empty-string,
-         *      FullDocumentDiagnosticReport|UnchangedDocumentDiagnosticReport>
+         * @var list<non-empty-string, FullDocumentDiagnosticReport|UnchangedDocumentDiagnosticReport>
          */
         public readonly array $relatedDocuments = [],
     ) {}

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Lsp\Protocol\Type;
 
 /**
- * Contains additional diagnostic information about the context in which a
- * {@link CodeActionProvider.provideCodeActions code action} is run.
+ * Contains additional diagnostic information about the context in which a {@see
+ * CodeActionProvider::$provideCodeActions code action} is run.
  *
  * @generated 2024-09-21
  */

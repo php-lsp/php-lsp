@@ -33,7 +33,7 @@ final class DidChangeTextDocumentParams
          * notification in the order
          *   you receive them.
          *
-         * @var list<object{text: string}>
+         * @var list<DidChangeTextDocumentParamsContentChanges>
          */
         public readonly array $contentChanges = [],
     ) {}

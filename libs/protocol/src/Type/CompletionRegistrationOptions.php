@@ -15,13 +15,9 @@ final class CompletionRegistrationOptions
     use CompletionOptionsMixin;
 
     /**
-     * @param list<object{
-     *            language: string,
-     *            scheme: string,
-     *            pattern: string
-     *        }|NotebookCellTextDocumentFilter>|null $documentSelector A document
-     *        selector to identify the scope of the registration. If set to null the
-     *        document selector provided on the client side will be used.
+     * @param list<TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter>|null $documentSelector
+     *        A document selector to identify the scope of the registration. If set to
+     *        null the document selector provided on the client side will be used.
      * @param list<string>|null $triggerCharacters Most tools trigger completion
      *        request automatically without explicitly requesting it using a keyboard
      *        shortcut (e.g. Ctrl+Space). Typically they do so when the user starts to

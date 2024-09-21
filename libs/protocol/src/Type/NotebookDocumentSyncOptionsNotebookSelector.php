@@ -13,14 +13,8 @@ final class NotebookDocumentSyncOptionsNotebookSelector
         /**
          * The notebook to be synced If a string value is provided it matches
          * against the notebook type. '*' matches every notebook.
-         *
-         * @var string|object{
-         *          notebookType: string,
-         *          scheme: string,
-         *          pattern: string
-         *      }|null
          */
-        public readonly string|object|null $notebook = null,
+        public readonly string|NotebookCellTextDocumentFilterNotebook|null $notebook = null,
         /**
          * The cells of the matching notebook to be synced.
          *

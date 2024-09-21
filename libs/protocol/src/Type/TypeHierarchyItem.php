@@ -34,7 +34,7 @@ final class TypeHierarchyItem
         /**
          * The range that should be selected and revealed when this symbol is
          * being picked, e.g. the name of a function. Must be contained by the
-         * {@link TypeHierarchyItem.range `range`}.
+         * {@see TypeHierarchyItem::$range `range`}.
          */
         public readonly Range $selectionRange,
         /**

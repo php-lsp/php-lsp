@@ -18,14 +18,15 @@ final class ColorPresentation
         public readonly string $label,
         /**
          * An {@link TextEdit edit} which is applied to a document when
-         * selecting this presentation for the color.  When `falsy` the {@link * ColorPresentation.label label}
+         * selecting this presentation for the color.  When `falsy` the {@see
+         * ColorPresentation::$label label}
          * is used.
          */
         public readonly ?TextEdit $textEdit = null,
         /**
          * An optional array of additional {@link TextEdit text edits} that are
          * applied when selecting this color presentation. Edits must not
-         * overlap with the main {@link ColorPresentation.textEdit edit} nor
+         * overlap with the main {@see ColorPresentation::$textEdit edit} nor
          * with themselves.
          *
          * @var list<TextEdit>|null

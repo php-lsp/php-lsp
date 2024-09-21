@@ -13,13 +13,9 @@ final class MonikerRegistrationOptions
     use MonikerOptionsMixin;
 
     /**
-     * @param list<object{
-     *            language: string,
-     *            scheme: string,
-     *            pattern: string
-     *        }|NotebookCellTextDocumentFilter>|null $documentSelector A document
-     *        selector to identify the scope of the registration. If set to null the
-     *        document selector provided on the client side will be used.
+     * @param list<TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter>|null $documentSelector
+     *        A document selector to identify the scope of the registration. If set to
+     *        null the document selector provided on the client side will be used.
      */
     public function __construct(?array $documentSelector = null, ?bool $workDoneProgress = null)
     {

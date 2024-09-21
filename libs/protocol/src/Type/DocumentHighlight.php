@@ -19,7 +19,7 @@ final class DocumentHighlight
          */
         public readonly Range $range,
         /**
-         * The highlight kind, default is {@link DocumentHighlightKind.Text
+         * The highlight kind, default is {@see DocumentHighlightKind::$Text
          * text}.
          */
         public readonly ?DocumentHighlightKind $kind = null,

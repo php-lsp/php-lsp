@@ -15,13 +15,9 @@ final class CodeActionRegistrationOptions
     use CodeActionOptionsMixin;
 
     /**
-     * @param list<object{
-     *            language: string,
-     *            scheme: string,
-     *            pattern: string
-     *        }|NotebookCellTextDocumentFilter>|null $documentSelector A document
-     *        selector to identify the scope of the registration. If set to null the
-     *        document selector provided on the client side will be used.
+     * @param list<TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter>|null $documentSelector
+     *        A document selector to identify the scope of the registration. If set to
+     *        null the document selector provided on the client side will be used.
      * @param list<CodeActionKind>|null $codeActionKinds CodeActionKinds that
      *        this server may return.
      *

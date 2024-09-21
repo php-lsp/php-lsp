@@ -19,14 +19,8 @@ final class NotebookCellTextDocumentFilter
          * A filter that matches against the notebook containing the notebook
          * cell. If a string value is provided it matches against the notebook
          * type. '*' matches every notebook.
-         *
-         * @var string|object{
-         *          notebookType: string,
-         *          scheme: string,
-         *          pattern: string
-         *      }
          */
-        public readonly string|object $notebook,
+        public readonly string|NotebookCellTextDocumentFilterNotebook $notebook,
         /**
          * A language id like `python`.
          *

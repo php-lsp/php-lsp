@@ -16,14 +16,15 @@ final class CompletionItemLabelDetails
     public function __construct(
         /**
          * An optional string which is rendered less prominently directly after
-         * {@link CompletionItem.label label},
+         * {@see CompletionItem::$label label},
          * without any spacing. Should be used for function signatures and type
          * annotations.
          */
         public readonly ?string $detail = null,
         /**
-         * An optional string which is rendered less prominently after {@link * CompletionItem.detail}. Should be used for fully qualified names and
-         * file paths.
+         * An optional string which is rendered less prominently after {@see
+         * CompletionItem::$detail}. Should be used for fully qualified names
+         * and file paths.
          */
         public readonly ?string $description = null,
     ) {}

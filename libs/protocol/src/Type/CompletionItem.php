@@ -68,19 +68,19 @@ final class CompletionItem
         public readonly ?bool $preselect = null,
         /**
          * A string that should be used when comparing this item with other
-         * items. When `falsy` the {@link CompletionItem.label label}
+         * items. When `falsy` the {@see CompletionItem::$label label}
          * is used.
          */
         public readonly ?string $sortText = null,
         /**
          * A string that should be used when filtering a set of completion
-         * items. When `falsy` the {@link CompletionItem.label label}
+         * items. When `falsy` the {@see CompletionItem::$label label}
          * is used.
          */
         public readonly ?string $filterText = null,
         /**
          * A string that should be inserted into a document when selecting this
-         * completion. When `falsy` the {@link CompletionItem.label label}
+         * completion. When `falsy` the {@see CompletionItem::$label label}
          * is used.
          *
          * The `insertText` is subject to interpretation by the client side.
@@ -112,7 +112,7 @@ final class CompletionItem
         /**
          * An {@link TextEdit edit} which is applied to a document when
          * selecting this completion. When an edit is provided the value of
-         * {@link CompletionItem.insertText insertText} is ignored.
+         * {@see CompletionItem::$insertText insertText} is ignored.
          *
          * Most editors support two different operations when accepting a
          * completion item. One is to insert a completion text and the other is
@@ -150,7 +150,7 @@ final class CompletionItem
          * An optional array of additional {@link TextEdit text edits} that are
          * applied when selecting this completion. Edits must not overlap
          * (including the same insert position)
-         * with the main {@link CompletionItem.textEdit edit} nor with
+         * with the main {@see CompletionItem::$textEdit edit} nor with
          * themselves.
          *
          * Additional text edits should be used to change text unrelated to the
@@ -174,7 +174,7 @@ final class CompletionItem
          * An optional {@link Command command} that is executed *after*
          * inserting this completion. *Note* that additional modifications to
          * the current document should be described with the
-         * {@link CompletionItem.additionalTextEdits
+         * {@see CompletionItem::$additionalTextEdits
          * additionalTextEdits}-property.
          */
         public readonly ?Command $command = null,

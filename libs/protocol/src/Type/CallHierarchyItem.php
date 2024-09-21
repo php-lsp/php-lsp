@@ -37,7 +37,7 @@ final class CallHierarchyItem
         /**
          * The range that should be selected and revealed when this symbol is
          * being picked, e.g. the name of a function.
-         * Must be contained by the {@link CallHierarchyItem.range `range`}.
+         * Must be contained by the {@see CallHierarchyItem::$range `range`}.
          */
         public readonly Range $selectionRange,
         /**

@@ -20,13 +20,9 @@ final class InlayHintRegistrationOptions
     /**
      * @param bool|null $resolveProvider the server provides support to resolve
      *        additional information for an inlay hint item
-     * @param list<object{
-     *            language: string,
-     *            scheme: string,
-     *            pattern: string
-     *        }|NotebookCellTextDocumentFilter>|null $documentSelector A document
-     *        selector to identify the scope of the registration. If set to null the
-     *        document selector provided on the client side will be used.
+     * @param list<TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter>|null $documentSelector
+     *        A document selector to identify the scope of the registration. If set to
+     *        null the document selector provided on the client side will be used.
      * @param string|null $id The id used to register the request. The id can be
      *        used to deregister the request again. See also Registration#id.
      */

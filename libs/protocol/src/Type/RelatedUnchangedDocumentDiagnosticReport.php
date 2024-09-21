@@ -34,8 +34,7 @@ final class RelatedUnchangedDocumentDiagnosticReport
          *
          * @since 3.17.0
          *
-         * @var list<non-empty-string,
-         *      FullDocumentDiagnosticReport|UnchangedDocumentDiagnosticReport>|null
+         * @var list<non-empty-string, FullDocumentDiagnosticReport|UnchangedDocumentDiagnosticReport>|null
          */
         public readonly ?array $relatedDocuments = null,
     ) {

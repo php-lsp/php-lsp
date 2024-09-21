@@ -17,8 +17,8 @@ final class NotebookDocumentSyncRegistrationOptions
     use StaticRegistrationOptionsMixin;
 
     /**
-     * @param list<NotebookDocumentSyncOptionsNotebookSelector>
-     *        $notebookSelector The notebooks to be synced
+     * @param list<NotebookDocumentSyncOptionsNotebookSelector> $notebookSelector
+     *        The notebooks to be synced
      * @param bool|null $save Whether save notification should be forwarded to
      *        the server. Will only be honored if mode === `notebook`.
      * @param string|null $id The id used to register the request. The id can be

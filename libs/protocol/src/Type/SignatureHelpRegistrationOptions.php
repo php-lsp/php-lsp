@@ -15,13 +15,9 @@ final class SignatureHelpRegistrationOptions
     use SignatureHelpOptionsMixin;
 
     /**
-     * @param list<object{
-     *            language: string,
-     *            scheme: string,
-     *            pattern: string
-     *        }|NotebookCellTextDocumentFilter>|null $documentSelector A document
-     *        selector to identify the scope of the registration. If set to null the
-     *        document selector provided on the client side will be used.
+     * @param list<TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter>|null $documentSelector
+     *        A document selector to identify the scope of the registration. If set to
+     *        null the document selector provided on the client side will be used.
      * @param list<string>|null $triggerCharacters list of characters that
      *        trigger signature help automatically
      * @param list<string>|null $retriggerCharacters List of characters that
