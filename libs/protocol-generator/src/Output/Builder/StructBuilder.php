@@ -7,6 +7,7 @@ namespace Lsp\Protocol\Generator\Output\Builder;
 use Lsp\Protocol\Generator\IR\Node\IRStatement;
 use Lsp\Protocol\Generator\IR\Node\IRStructStatement;
 use Lsp\Protocol\Generator\Output\DocBlock\DocBlock;
+use Lsp\Protocol\Generator\Output\DocBlock\NamedTypedTag;
 use Lsp\Protocol\Generator\Output\DocBlock\TypedTag;
 use PhpParser\Modifiers;
 use PhpParser\Node\Expr\Assign as PhpAssign;
@@ -52,15 +53,17 @@ final class StructBuilder extends Builder
             $param->default = $this->types->resolveDefaultValue($param->type);
 
             if ($context !== $stmt) {
-                $methodDescription->addTag(new TypedTag(
-                    name: 'param',
-                    type: $property->type,
-                    description: \vsprintf('$%s %s', [
-                        $property->name,
-                        $this->docblock->buildDocBlockFromStatement($property)
-                            ->description,
-                    ]),
-                ));
+                $paramDescription = (string) $this->docblock->buildDocBlockFromStatement($property)
+                    ->description;
+
+                if ($paramDescription !== '' || $this->docblock->shouldPrintType($property->type)) {
+                    $methodDescription->addTag(new NamedTypedTag(
+                        name: 'param',
+                        type: $property->type,
+                        variable: $property->name,
+                        description: $paramDescription,
+                    ));
+                }
 
                 $method->stmts[] = new PhpExpression(
                     expr: new PhpAssign(

@@ -59,24 +59,43 @@ final class DocBlockBuilder
 
     private function formatDescription(string $description, int $level): string
     {
+        $length = 77 - ($level * 4);
+
         $description = \preg_replace('/([\w`])\n([\w`])/isum', '$1 $2', $description)
            ?? $description;
 
-        return \wordwrap($description, 77 - ($level * 4));
+        $diff = \strlen($description) - \strlen(\ltrim($description));
+
+        if ($diff > $length) {
+            return \str_repeat(' ', $diff)
+                . "\n" . \wordwrap(\ltrim($description), $length);
+        }
+
+        return \wordwrap($description, $length);
     }
 
     private function buildTagString(Tag $tag, int $level): string
     {
-        $prefix = \str_repeat(' ', \strlen($tag->name) + 2);
+        $descriptionBeforePrefix = $prefix = \str_repeat(' ', \strlen($tag->name) + 2);
+        $descriptionAfterPrefix = '';
         $description = $tag->description;
 
         if ($tag instanceof TypedTag) {
-            $description = $this->pretty->print($tag->type) . ' ' . $description;
+            $type = $this->pretty->print($tag->type) . ' ';
+            $descriptionBeforePrefix .= \str_repeat(' ', \strlen($type));
+            $descriptionAfterPrefix .= $type;
         }
 
-        $description = $prefix . $description;
+        if ($tag instanceof NamedTypedTag) {
+            $name = '$' . $tag->variable . ' ';
+            $descriptionBeforePrefix .= \str_repeat(' ', \strlen($name));
+            $descriptionAfterPrefix .= $name;
+        }
+
+        $description = $descriptionBeforePrefix . $description;
         $description = $this->formatDescription($description, $level);
-        $description = \substr($description, \strlen($prefix));
+        $description = \substr($description, \strlen($descriptionBeforePrefix));
+        $description = $descriptionAfterPrefix . $description;
 
         $lines = \explode("\n", $description);
 
@@ -158,6 +177,7 @@ final class DocBlockBuilder
     {
         $tags = [];
 
+        // Remove inner trailing tags
         $description = \preg_replace_callback(
             pattern: '/^\h*@(\w+)(?:\h+([^\n]+))?$/isum',
             callback: function (array $matches) use (&$tags): string {
@@ -168,6 +188,15 @@ final class DocBlockBuilder
                 $tags[] = new Tag($matches[1], $matches[2] ?? '');
 
                 return '';
+            },
+            subject: $description,
+        ) ?? $description;
+
+        // Replace "{@link Some.type Description}" to "{@link Some::$type Description}"
+        $description = \preg_replace_callback(
+            pattern: '/{@link (\w+)\./isum',
+            callback: function (array $matches): string {
+                return '{@see ' . $matches[1] . '::$';
             },
             subject: $description,
         ) ?? $description;
