@@ -45,10 +45,8 @@ final class CompletionClientCapabilitiesCompletionItem
          * item back to the server in a resolve call.
          *
          * @since 3.15.0
-         *
-         * @var object{valueSet: list<CompletionItemTag>}|null
          */
-        public readonly ?object $tagSupport = null,
+        public readonly ?CompletionClientCapabilitiesCompletionItemTagSupport $tagSupport = null,
         /**
          * Client support insert replace edit to control different behavior if a
          * completion item is inserted in the text or should replace text.
@@ -62,20 +60,16 @@ final class CompletionClientCapabilitiesCompletionItem
          * `documentation` and `details` could be resolved lazily.
          *
          * @since 3.16.0
-         *
-         * @var object{properties: list<string>}|null
          */
-        public readonly ?object $resolveSupport = null,
+        public readonly ?CompletionClientCapabilitiesCompletionItemResolveSupport $resolveSupport = null,
         /**
          * The client supports the `insertTextMode` property on a completion
          * item to override the whitespace handling mode as defined by the
          * client (see `insertTextMode`).
          *
          * @since 3.16.0
-         *
-         * @var object{valueSet: list<InsertTextMode>}|null
          */
-        public readonly ?object $insertTextModeSupport = null,
+        public readonly ?CompletionClientCapabilitiesCompletionItemInsertTextModeSupport $insertTextModeSupport = null,
         /**
          * The client has support for completion item label details (see also
          * `CompletionItemLabelDetails`).

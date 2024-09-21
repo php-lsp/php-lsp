@@ -14,9 +14,7 @@ final class ServerCapabilitiesTextDocument
          * Capabilities specific to the diagnostic pull model.
          *
          * @since 3.18.0
-         *
-         * @var object{markupMessageSupport: bool}|null
          */
-        public readonly ?object $diagnostic = null,
+        public readonly ?ServerCapabilitiesTextDocumentDiagnostic $diagnostic = null,
     ) {}
 }

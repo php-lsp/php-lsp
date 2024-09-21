@@ -19,10 +19,8 @@ final class SignatureHelpClientCapabilitiesSignatureInformation
         public readonly ?array $documentationFormat = null,
         /**
          * Client capabilities specific to parameter information.
-         *
-         * @var object{labelOffsetSupport: bool}|null
          */
-        public readonly ?object $parameterInformation = null,
+        public readonly ?SignatureHelpClientCapabilitiesSignatureInformationParameterInformation $parameterInformation = null,
         /**
          * The client supports the `activeParameter` property on
          * `SignatureInformation` literal.

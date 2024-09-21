@@ -22,13 +22,8 @@ final class CompletionListItemDefaults
          * A default edit range.
          *
          * @since 3.17.0
-         *
-         * @var Range|object{
-         *          insert: Range,
-         *          replace: Range
-         *      }|null
          */
-        public readonly Range|object|null $editRange = null,
+        public readonly Range|CompletionListItemDefaultsEditRange|null $editRange = null,
         /**
          * A default insert text format.
          *

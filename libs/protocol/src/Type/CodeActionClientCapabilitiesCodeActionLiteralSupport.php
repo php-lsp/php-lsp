@@ -12,9 +12,7 @@ final class CodeActionClientCapabilitiesCodeActionLiteralSupport
     public function __construct(
         /**
          * The code action kind is support with the following value set.
-         *
-         * @var object{valueSet: list<CodeActionKind>}
          */
-        public readonly object $codeActionKind,
+        public readonly CodeActionClientCapabilitiesCodeActionLiteralSupportCodeActionKind $codeActionKind,
     ) {}
 }

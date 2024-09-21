@@ -24,7 +24,7 @@ final class NotebookDocumentSyncOptionsNotebookSelector
         /**
          * The cells of the matching notebook to be synced.
          *
-         * @var list<object{language: string}>
+         * @var list<NotebookDocumentSyncOptionsNotebookSelectorCells>
          */
         public readonly array $cells = [],
     ) {}
