@@ -33,7 +33,7 @@ final class VirtualStructExtractorVisitor extends ExtractorVisitor
         return $result;
     }
 
-    public function enterNode(Node $node): mixed
+    public function enterNode(Node $node): ?MetaReferenceType
     {
         if ($node instanceof MetaStructure) {
             $this->struct = $node;

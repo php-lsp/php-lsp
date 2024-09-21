@@ -13,7 +13,7 @@ final class ReplaceReferencesExtractorVisitor extends ExtractorVisitor
 {
     private ?MetaProperty $property = null;
 
-    public function enterNode(Node $node): mixed
+    public function enterNode(Node $node): ?MetaType
     {
         if ($node instanceof MetaProperty) {
             $this->property = $node;
