@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Protocol\Generator\IR\Visitor\Analyzer;
+namespace Lsp\Protocol\Generator\IR\Visitor\Extractor;
 
 use Lsp\Protocol\Generator\MetaModel\Node\MetaProperty;
 use Lsp\Protocol\Generator\MetaModel\Node\MetaStructure;
@@ -10,7 +10,7 @@ use Lsp\Protocol\Generator\MetaModel\Node\Type\MetaReferenceType;
 use Lsp\Protocol\Generator\MetaModel\Node\Type\MetaStructureLiteralType;
 use PhpParser\Node;
 
-final class VirtualStructExtractorVisitor extends AnalyzerVisitor
+final class VirtualStructExtractorVisitor extends ExtractorVisitor
 {
     private ?MetaStructure $struct = null;
 
@@ -33,16 +33,16 @@ final class VirtualStructExtractorVisitor extends AnalyzerVisitor
         return $result;
     }
 
-    public function enterNode(Node $node): ?MetaReferenceType
+    public function enterNode(Node $node): mixed
     {
-        if ($node instanceof MetaProperty) {
-            $this->property = $node;
+        if ($node instanceof MetaStructure) {
+            $this->struct = $node;
 
             return null;
         }
 
-        if ($node instanceof MetaStructure) {
-            $this->struct = $node;
+        if ($node instanceof MetaProperty) {
+            $this->property = $node;
 
             return null;
         }

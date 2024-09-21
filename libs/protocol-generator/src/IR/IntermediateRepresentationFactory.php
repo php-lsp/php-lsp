@@ -7,7 +7,8 @@ namespace Lsp\Protocol\Generator\IR;
 use Lsp\Protocol\Generator\IR\Node\IRDocument;
 use Lsp\Protocol\Generator\IR\Visitor\Analyzer\EnumReservedCaseNamesAnalyzerVisitor;
 use Lsp\Protocol\Generator\IR\Visitor\Analyzer\MixinsAnalyzerVisitor;
-use Lsp\Protocol\Generator\IR\Visitor\Analyzer\VirtualStructExtractorVisitor;
+use Lsp\Protocol\Generator\IR\Visitor\Extractor\ReplaceReferencesExtractorVisitor;
+use Lsp\Protocol\Generator\IR\Visitor\Extractor\VirtualStructExtractorVisitor;
 use Lsp\Protocol\Generator\IR\Visitor\Generator\EnumGeneratorVisitor;
 use Lsp\Protocol\Generator\IR\Visitor\Generator\MixinGeneratorVisitor;
 use Lsp\Protocol\Generator\IR\Visitor\Generator\StructGeneratorVisitor;
@@ -22,7 +23,9 @@ final class IntermediateRepresentationFactory
     {
         $types = new TypeBuilder($model);
 
-        $model = $this->analyze($model, $types);
+        $this->analyze($model, $types);
+
+        $model = $this->extract($model, $types);
 
         $document = $this->generate($model, $types);
 
@@ -31,6 +34,9 @@ final class IntermediateRepresentationFactory
         return $document;
     }
 
+    /**
+     * Link generated nodes to another one.
+     */
     private function link(MetaModel $model, IRDocument $document): void
     {
         (new NodeTraverser(
@@ -39,15 +45,17 @@ final class IntermediateRepresentationFactory
             ->traverse([$model]);
     }
 
-    private function analyze(MetaModel $model, TypeBuilder $types): MetaModel
+    /**
+     * Extract virtual types from generated context to resulted meta model
+     */
+    private function extract(MetaModel $model, TypeBuilder $types): MetaModel
     {
         do {
             $generated = false;
 
             (new NodeTraverser(
-                $extractor = new VirtualStructExtractorVisitor($model, $types),
-                new EnumReservedCaseNamesAnalyzerVisitor($model, $types),
-                new MixinsAnalyzerVisitor($model, $types),
+                new ReplaceReferencesExtractorVisitor($model, $types),
+                $extractor = new VirtualStructExtractorVisitor($model, $types)
             ))
                 ->traverse([$model]);
 
@@ -60,6 +68,21 @@ final class IntermediateRepresentationFactory
         return $model;
     }
 
+    /**
+     * Analyze source AST and add system tags
+     */
+    private function analyze(MetaModel $model, TypeBuilder $types): void
+    {
+        (new NodeTraverser(
+            new EnumReservedCaseNamesAnalyzerVisitor($model, $types),
+            new MixinsAnalyzerVisitor($model, $types),
+        ))
+            ->traverse([$model]);
+    }
+
+    /**
+     * Generate intermediate representation nodes from source AST
+     */
     private function generate(MetaModel $model, TypeBuilder $types): IRDocument
     {
         $document = new IRDocument();
