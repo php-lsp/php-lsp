@@ -26,7 +26,11 @@ final class VirtualStructExtractorVisitor extends AnalyzerVisitor
      */
     public function getGeneratedStructures(): array
     {
-        return $this->generated;
+        $result = $this->generated;
+
+        $this->generated = [];
+
+        return $result;
     }
 
     public function enterNode(Node $node): ?MetaReferenceType

@@ -41,16 +41,21 @@ final class IntermediateRepresentationFactory
 
     private function analyze(MetaModel $model, TypeBuilder $types): MetaModel
     {
-        (new NodeTraverser(
-            $extractor = new VirtualStructExtractorVisitor($model, $types),
-            new EnumReservedCaseNamesAnalyzerVisitor($model, $types),
-            new MixinsAnalyzerVisitor($model, $types),
-        ))
-            ->traverse([$model]);
+        do {
+            $generated = false;
 
-        foreach ($extractor->getGeneratedStructures() as $generated) {
-            $model->structures[] = $generated;
-        }
+            (new NodeTraverser(
+                $extractor = new VirtualStructExtractorVisitor($model, $types),
+                new EnumReservedCaseNamesAnalyzerVisitor($model, $types),
+                new MixinsAnalyzerVisitor($model, $types),
+            ))
+                ->traverse([$model]);
+
+            foreach ($extractor->getGeneratedStructures() as $struct) {
+                $model->structures[] = $struct;
+                $generated = true;
+            }
+        } while ($generated);
 
         return $model;
     }
