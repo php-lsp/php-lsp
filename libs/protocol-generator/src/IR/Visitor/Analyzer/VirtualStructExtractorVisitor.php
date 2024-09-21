@@ -29,7 +29,7 @@ final class VirtualStructExtractorVisitor extends AnalyzerVisitor
         return $this->generated;
     }
 
-    public function enterNode(Node $node): mixed
+    public function enterNode(Node $node): ?MetaReferenceType
     {
         if ($node instanceof MetaProperty) {
             $this->property = $node;
