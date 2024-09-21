@@ -15,20 +15,25 @@ const LSP_NAMESPACE = __NAMESPACE__;
 
 $generator = new Generator();
 $directory = \realpath(LSP_DIRECTORY) ?: LSP_DIRECTORY;
+$index = 0;
 
 \fwrite(\STDOUT, "Cleanup previous files from $directory:\n");
 foreach (\glob($directory . '/*.php') as $pathname) {
-    \fwrite(\STDOUT, "  - Removing $pathname...");
+    ++$index;
+
+    \fwrite(\STDOUT, "  - [$index] Removing $pathname...");
     \unlink($pathname);
     \fwrite(\STDOUT, " OK\n");
 }
 
+$index = 0;
 
 \fwrite(\STDOUT, "Generate new files in $directory:\n");
 foreach ($generator->getOutputForVersion(Version::LATEST, LSP_NAMESPACE) as $name => $result) {
+    ++$index;
     $pathname = $directory . '/' . $name . '.php';
 
-    \fwrite(\STDOUT, "  - Saving $pathname...");
+    \fwrite(\STDOUT, "  - [$index] Saving $pathname...");
     \file_put_contents($pathname, $result);
     \fwrite(\STDOUT, " OK\n");
 }
