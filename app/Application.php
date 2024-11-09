@@ -6,6 +6,4 @@ namespace App;
 
 use Lsp\Kernel\Kernel;
 
-final class Application extends Kernel
-{
-}
+final class Application extends Kernel {}

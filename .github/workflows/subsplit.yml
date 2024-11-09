@@ -20,13 +20,14 @@ jobs:
       matrix:
         package:
           # Kernel
+          - local_path: 'dispatcher'
+            split_repository: 'dispatcher'
           - local_path: 'protocol'
             split_repository: 'protocol'
+          - local_path: 'kernel'
+            split_repository: 'kernel'
           - local_path: 'router'
             split_repository: 'router'
-          # Development
-          - local_path: 'protocol-generator'
-            split_repository: 'protocol-generator'
           # RPC
           # - RPC: Contracts
           - local_path: 'rpc/contracts/rpc-codec-contracts'

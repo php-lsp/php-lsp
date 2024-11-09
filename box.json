@@ -1,12 +1,10 @@
 {
-    "chmod": "0777",
     "stub": "bin/bootstrap.php",
     "main": false,
-    "output": "bin/lsp.phar",
+    "output": "build/prod/server.phar",
     "directories": [
         "./libs/dispatcher/src",
         "./libs/protocol/src",
-        "./libs/protocol-generator/src",
         "./libs/router/src",
         "./libs/rpc/contracts/rpc-codec-contracts/src",
         "./libs/rpc/contracts/rpc-message-contracts/src",

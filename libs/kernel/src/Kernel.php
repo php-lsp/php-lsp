@@ -22,6 +22,9 @@ use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
+/**
+ * @phpstan-consistent-constructor
+ */
 class Kernel implements KernelInterface
 {
     /**
@@ -63,9 +66,10 @@ class Kernel implements KernelInterface
      *
      * @return class-string<static>
      */
-    public static function dotenv(string $directory, array $names = ['.env', '.env.example']): string
+    public static function dotenv(?string $directory = null, array $names = ['.env', '.env.example']): string
     {
         $isLoadable = false;
+        $directory ??= (string) \getcwd();
 
         foreach ($names as $name) {
             if (\is_file($directory . '/' . $name)) {
@@ -80,6 +84,29 @@ class Kernel implements KernelInterface
         }
 
         return static::class;
+    }
+
+    public static function dev(): static
+    {
+        return new static('dev', true);
+    }
+
+    public static function prod(): static
+    {
+        return new static('prod', true);
+    }
+
+    /**
+     * @return non-empty-string
+     */
+    protected function getEnvironment(): string
+    {
+        return $this->env;
+    }
+
+    protected function isDebug(): bool
+    {
+        return $this->debug;
     }
 
     /**
@@ -107,7 +134,7 @@ class Kernel implements KernelInterface
      */
     protected function getCacheDirectory(): string
     {
-        return $this->getProjectDirectory() . '/var/' . $this->env;
+        return $this->getProjectDirectory() . '/var/' . $this->getEnvironment();
     }
 
     /**
@@ -126,36 +153,6 @@ class Kernel implements KernelInterface
         return $this->getProjectDirectory() . '/var/logs';
     }
 
-    public function has(string $id): bool
-    {
-        return $this->container->has($id);
-    }
-
-    /**
-     * @template TEntryObject of object
-     *
-     * @param class-string<TEntryObject>|string $id
-     *
-     * @return ($id is class-string<TEntryObject> ? TEntryObject : object)
-     * @throws \Exception
-     *
-     * @psalm-suppress InvalidReturnType
-     * @psalm-suppress InvalidReturnStatement
-     */
-    public function get(string $id): object
-    {
-        if (!isset($this->container)) {
-            if ($id === static::class || $id === self::class) {
-                return $this;
-            }
-
-            $message = 'Could not fetch service "%s" from non-initialized container';
-            throw new \UnderflowException(\sprintf($message, $id));
-        }
-
-        return $this->container->get($id);
-    }
-
     /**
      * @param non-empty-string $pathname
      * @param class-string<Container> $class
@@ -165,7 +162,7 @@ class Kernel implements KernelInterface
      */
     private function getCachedContainer(string $pathname, string $class): Container
     {
-        if ($this->debug || !\is_file($pathname)) {
+        if ($this->isDebug() || !\is_file($pathname)) {
             $dumper = new PhpDumper($this->createContainer());
 
             if (!@\mkdir($directory = \dirname($pathname), recursive: true)
@@ -209,23 +206,17 @@ class Kernel implements KernelInterface
 
     protected function extendContainerBuilderParameters(ContainerBuilder $builder): void
     {
-        $builder->setParameter('kernel.os', \strtolower(\PHP_OS_FAMILY));
+        $builder->setParameter('kernel.secret', '%env(string:default::APP_SECRET)%');
         $builder->setParameter('kernel.environment', $this->getEnvironment());
-        $builder->setParameter('kernel.debug', $this->debug);
+        $builder->setParameter('kernel.debug', $this->isDebug());
+        $builder->setParameter('kernel.charset', 'UTF-8');
+        $builder->setParameter('kernel.default_locale', 'en');
         $builder->setParameter('kernel.container_build_time', \time());
         $builder->setParameter('kernel.container_class', $this->getContainerClass());
         $builder->setParameter('kernel.project_dir', $this->getProjectDirectory());
         $builder->setParameter('kernel.build_dir', $this->getBuildDirectory());
         $builder->setParameter('kernel.cache_dir', $this->getCacheDirectory());
         $builder->setParameter('kernel.logs_dir', $this->getLogsDirectory());
-    }
-
-    /**
-     * @return non-empty-string
-     */
-    private function getEnvironment(): string
-    {
-        return $this->env;
     }
 
     protected function extendContainerBuilderDefinitions(ContainerBuilder $builder): void
