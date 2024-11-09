@@ -9,10 +9,10 @@ use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
-use Lsp\Dispatcher\HandlerResolver\HandlerResolverInterface;
-use Lsp\Dispatcher\HandlerResolver\InstanceMethodHandlerResolver;
-use Lsp\Dispatcher\HandlerResolver\StaticMethodHandlerResolver;
 use Lsp\Router\Exception\RoutingExceptionInterface;
+use Lsp\Router\Handler\Resolver\HandlerResolverInterface;
+use Lsp\Router\Handler\Resolver\InstanceMethodHandlerResolver;
+use Lsp\Router\Handler\Resolver\StaticMethodHandlerResolver;
 use Lsp\Router\Route\MatchedRouteInterface;
 use Lsp\Router\RouterInterface;
 

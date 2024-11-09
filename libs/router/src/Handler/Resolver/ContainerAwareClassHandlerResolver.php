@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Dispatcher\HandlerResolver;
+namespace Lsp\Router\Handler\Resolver;
 
 use Lsp\Router\Handler\ClassMethodHandler;
 use Lsp\Router\Route\MatchedRouteInterface;

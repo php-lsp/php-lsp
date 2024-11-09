@@ -8,12 +8,7 @@ use Composer\InstalledVersions;
 use Lsp\Contracts\Rpc\Message\Factory\ResponseFactoryInterface;
 use Lsp\Dispatcher\Dispatcher;
 use Lsp\Dispatcher\DispatcherInterface;
-use Lsp\Dispatcher\HandlerResolver\ContainerAwareClassHandlerResolver;
-use Lsp\Dispatcher\HandlerResolver\HandlerResolverInterface;
-use Lsp\Dispatcher\HandlerResolver\InstanceMethodHandlerResolver;
-use Lsp\Dispatcher\HandlerResolver\StaticMethodHandlerResolver;
 use Lsp\Router\RouterInterface;
-use Psr\Container\ContainerInterface;
 use Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -27,8 +22,6 @@ final class DispatcherCompilerPass implements CompilerPassInterface
             return;
         }
 
-        $this->registerAutoconfiguredInterfaces($container);
-        $this->registerHandlerResolvers($container);
         $this->registerDispatcher($container);
     }
 
@@ -36,29 +29,6 @@ final class DispatcherCompilerPass implements CompilerPassInterface
     {
         return \class_exists(InstalledVersions::class)
             && InstalledVersions::isInstalled('php-lsp/dispatcher');
-    }
-
-    private function registerAutoconfiguredInterfaces(ContainerBuilder $container): void
-    {
-        $container->registerForAutoconfiguration(HandlerResolverInterface::class)
-            ->addTag('lsp.dispatcher.handler_resolver');
-    }
-
-    private function registerHandlerResolvers(ContainerBuilder $container): void
-    {
-        $container->register(StaticMethodHandlerResolver::class)
-            ->setClass(StaticMethodHandlerResolver::class)
-            ->addTag('lsp.dispatcher.handler_resolver');
-
-        $container->register(InstanceMethodHandlerResolver::class)
-            ->setClass(InstanceMethodHandlerResolver::class)
-            ->addTag('lsp.dispatcher.handler_resolver');
-
-        $container->register(ContainerAwareClassHandlerResolver::class)
-            ->setClass(ContainerAwareClassHandlerResolver::class)
-            ->addArgument(new Reference(ContainerInterface::class))
-            ->addArgument(false)
-            ->addTag('lsp.dispatcher.handler_resolver');
     }
 
     private function registerDispatcher(ContainerBuilder $container): void

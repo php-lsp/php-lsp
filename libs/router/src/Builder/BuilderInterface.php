@@ -12,6 +12,9 @@ use Lsp\Router\RouterInterface;
  */
 interface BuilderInterface extends \Traversable, \Countable
 {
+    /**
+     * Build router instance.
+     */
     public function build(): RouterInterface;
 
     /**
