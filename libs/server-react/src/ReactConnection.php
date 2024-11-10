@@ -46,8 +46,6 @@ final class ReactConnection implements ConnectionInterface
 
     private function onReceivedMessage(MessageInterface $message): void
     {
-        dump('Incoming Message', $message);
-
         switch (true) {
             case $message instanceof RequestInterface:
                 $this->onReceivedRequest($message);
@@ -111,8 +109,6 @@ final class ReactConnection implements ConnectionInterface
      */
     private function send(MessageInterface $message): void
     {
-        dump('Outgoing Message', $message);
-
         $encoded = $this->config->encoder->encode($message);
 
         $this->connection->write($encoded);
