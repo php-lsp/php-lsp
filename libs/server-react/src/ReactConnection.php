@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Lsp\Server\React;
 
+use Lsp\Contracts\Dispatcher\DispatcherInterface;
+use Lsp\Contracts\Rpc\Codec\DecoderInterface;
+use Lsp\Contracts\Rpc\Codec\EncoderInterface;
 use Lsp\Contracts\Rpc\Codec\Exception\EncodingExceptionInterface;
 use Lsp\Contracts\Rpc\Message\IdentifiableInterface;
 use Lsp\Contracts\Rpc\Message\MessageInterface;
@@ -12,7 +15,6 @@ use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
 use Lsp\Contracts\Server\ConnectionInterface;
 use Lsp\Server\React\Connection\Buffer;
-use Lsp\Server\React\Driver\ReactDriverConfiguration;
 use React\Promise\Deferred;
 use React\Promise\PromiseInterface;
 use React\Socket\ConnectionInterface as SocketConnectionInterface;
@@ -32,10 +34,12 @@ final class ReactConnection implements ConnectionInterface
 
     public function __construct(
         private readonly ReactServer $server,
-        private readonly ReactDriverConfiguration $config,
         private readonly SocketConnectionInterface $connection,
+        private readonly DecoderInterface $decoder,
+        private readonly EncoderInterface $encoder,
+        private readonly DispatcherInterface $dispatcher,
     ) {
-        $this->buffer = new Buffer($this->config->decoder);
+        $this->buffer = new Buffer($this->decoder);
 
         $connection->on('data', function (string $data): void {
             foreach ($this->buffer->push($data) as $message) {
@@ -101,7 +105,7 @@ final class ReactConnection implements ConnectionInterface
 
     private function onReceivedNotification(NotificationInterface $request): void
     {
-        $this->config->dispatcher->notify($request);
+        $this->dispatcher->notify($request);
     }
 
     /**
@@ -109,7 +113,7 @@ final class ReactConnection implements ConnectionInterface
      */
     private function send(MessageInterface $message): void
     {
-        $encoded = $this->config->encoder->encode($message);
+        $encoded = $this->encoder->encode($message);
 
         $this->connection->write($encoded);
     }
