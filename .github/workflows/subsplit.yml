@@ -24,6 +24,8 @@ jobs:
             split_repository: 'dispatcher-contracts'
           - local_path: 'contracts/router-contracts'
             split_repository: 'router-contracts'
+          - local_path: 'contracts/server-contracts'
+            split_repository: 'server-contracts'
           # Kernel
           - local_path: 'dispatcher'
             split_repository: 'dispatcher'
@@ -33,6 +35,8 @@ jobs:
             split_repository: 'kernel'
           - local_path: 'router'
             split_repository: 'router'
+          - local_path: 'contracts/server-react'
+            split_repository: 'server-react'
           # RPC
           # - RPC: Contracts
           - local_path: 'rpc/contracts/rpc-codec-contracts'

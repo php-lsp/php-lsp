@@ -1,11 +1,11 @@
 {
-    "name": "php-lsp/kernel",
-    "description": "Language Service Protocol Application Kernel",
+    "name": "php-lsp/server-contracts",
+    "description": "RPC Server Contracts",
     "type": "library",
     "license": "MIT",
-    "keywords": ["kernel", "core", "php", "lsp"],
+    "keywords": ["rpc", "server", "interoperability", "php", "lsp"],
     "support": {
-        "source": "https://github.com/php-lsp/kernel",
+        "source": "https://github.com/php-lsp/server-contracts",
         "issues": "https://github.com/php-lsp/php-lsp/issues"
     },
     "authors": [
@@ -17,17 +17,11 @@
     ],
     "require": {
         "php": "^8.1",
-        "psr/container": "^1.0|^2.0",
-        "symfony/yaml": "^6.4|^7.0",
-        "symfony/config": "^6.4|^7.0",
-        "symfony/expression-language": "^6.4|^7.0",
-        "symfony/dependency-injection": "^6.4|^7.0",
-        "php-lsp/server-contracts-implementation": "^1.0",
-        "vlucas/phpdotenv": "^5.6"
+        "react/promise": "^3.2"
     },
     "autoload": {
         "psr-4": {
-            "Lsp\\Kernel\\": "src"
+            "Lsp\\Contracts\\Server\\": "src"
         }
     },
     "require-dev": {
@@ -35,7 +29,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lsp\\Kernel\\Tests\\": "tests"
+            "Lsp\\Contracts\\Server\\Tests\\": "tests"
         }
     },
     "scripts": {

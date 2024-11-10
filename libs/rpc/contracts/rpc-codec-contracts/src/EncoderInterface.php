@@ -8,7 +8,7 @@ use Lsp\Contracts\Rpc\Codec\Exception\EncodingExceptionInterface;
 use Lsp\Contracts\Rpc\Message\MessageInterface;
 
 /**
- * @template T of MessageInterface
+ * @template T of MessageInterface = MessageInterface
  */
 interface EncoderInterface
 {

@@ -5,11 +5,6 @@ declare(strict_types=1);
 namespace Lsp\Kernel;
 
 use Dotenv\Dotenv;
-use Lsp\Kernel\DependencyInjection\CodecCompilerPass;
-use Lsp\Kernel\DependencyInjection\DispatcherCompilerPass;
-use Lsp\Kernel\DependencyInjection\MessageFactoryCompilerPass;
-use Lsp\Kernel\DependencyInjection\RouteLoaderCompilerPass;
-use Lsp\Kernel\DependencyInjection\RouterCompilerPass;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Config\Exception\FileLoaderImportCircularReferenceException;
 use Symfony\Component\Config\Exception\LoaderLoadException;
@@ -17,9 +12,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface as SymfonyContainerInterface;
-use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
-use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
@@ -37,7 +30,7 @@ class Kernel implements KernelInterface
      */
     public const DEFAULT_DEBUG = false;
 
-    public readonly Container $container;
+    protected readonly Container $container;
 
     /**
      * @param non-empty-string $env
@@ -45,18 +38,12 @@ class Kernel implements KernelInterface
      * @throws \Exception
      */
     public function __construct(
-        public readonly string $env = self::DEFAULT_ENV,
-        public readonly bool $debug = self::DEFAULT_DEBUG,
+        private readonly string $env = self::DEFAULT_ENV,
+        private readonly bool $debug = self::DEFAULT_DEBUG,
     ) {
-        $this->container = $this->getCachedContainer(
-            pathname: \vsprintf('%s/%s.php', [
-                $this->getBuildDirectory(),
-                $this->getContainerClass(),
-            ]),
-            class: $this->getContainerClass(),
-        );
+        $this->container = $this->createOrGetContainer();
 
-        $this->extendContainerDefinitions($this->container);
+        $this->bootContainer($this->container);
     }
 
     /**
@@ -99,12 +86,12 @@ class Kernel implements KernelInterface
     /**
      * @return non-empty-string
      */
-    protected function getEnvironment(): string
+    public function getEnvironment(): string
     {
         return $this->env;
     }
 
-    protected function isDebug(): bool
+    public function isDebug(): bool
     {
         return $this->debug;
     }
@@ -154,14 +141,28 @@ class Kernel implements KernelInterface
     }
 
     /**
-     * @param non-empty-string $pathname
-     * @param class-string<Container> $class
-     *
+     * @return array<non-empty-string>
+     */
+    protected function getConfigDirectories(): array
+    {
+        $directory = $this->getConfigDirectory();
+
+        if (!\is_dir($directory)) {
+            return [];
+        }
+
+        return [$directory];
+    }
+
+    /**
      * @throws FileLoaderImportCircularReferenceException
      * @throws LoaderLoadException
      */
-    private function getCachedContainer(string $pathname, string $class): Container
+    private function createOrGetContainer(): Container
     {
+        $class = $this->getContainerClass();
+        $pathname = $this->getContainerPathname($class);
+
         if ($this->isDebug() || !\is_file($pathname)) {
             $dumper = new PhpDumper($this->createContainer());
 
@@ -178,6 +179,7 @@ class Kernel implements KernelInterface
 
         require_once $pathname;
 
+        // @phpstan-ignore-next-line
         return new $class();
     }
 
@@ -189,14 +191,8 @@ class Kernel implements KernelInterface
     {
         $builder = new ContainerBuilder();
 
-        $this->extendContainerBuilderParameters($builder);
-        $this->extendContainerBuilderDefinitions($builder);
-        $this->extendContainerBuilderConfigs($builder);
-
-        foreach ($this->getExtensions() as $extension) {
-            $builder->registerExtension($extension);
-        }
-
+        $this->buildDefaultParameters($builder);
+        $this->buildDefaultConfigs($builder);
         $this->build($builder);
 
         $builder->compile(true);
@@ -204,7 +200,7 @@ class Kernel implements KernelInterface
         return $builder;
     }
 
-    protected function extendContainerBuilderParameters(ContainerBuilder $builder): void
+    private function buildDefaultParameters(ContainerBuilder $builder): void
     {
         $builder->setParameter('kernel.secret', '%env(string:default::APP_SECRET)%');
         $builder->setParameter('kernel.environment', $this->getEnvironment());
@@ -219,32 +215,11 @@ class Kernel implements KernelInterface
         $builder->setParameter('kernel.logs_dir', $this->getLogsDirectory());
     }
 
-    protected function extendContainerBuilderDefinitions(ContainerBuilder $builder): void
-    {
-        // Kernel
-        $builder->setDefinition(KernelInterface::class, (new Definition(KernelInterface::class))
-            ->setSynthetic(true));
-
-        $builder->setAlias(self::class, KernelInterface::class);
-        $builder->setAlias(static::class, KernelInterface::class);
-
-        // Container
-        $builder->setDefinition(ContainerInterface::class, (new Definition(ContainerInterface::class))
-            ->setSynthetic(true));
-        $builder->setAlias(SymfonyContainerInterface::class, ContainerInterface::class);
-    }
-
-    protected function extendContainerDefinitions(Container $container): void
-    {
-        $container->set(KernelInterface::class, $this);
-        $container->set(ContainerInterface::class, $this->container);
-    }
-
     /**
      * @throws FileLoaderImportCircularReferenceException
      * @throws LoaderLoadException
      */
-    protected function extendContainerBuilderConfigs(ContainerBuilder $builder): void
+    private function buildDefaultConfigs(ContainerBuilder $builder): void
     {
         $loader = new YamlFileLoader($builder, new FileLocator(
             $this->getConfigDirectories(),
@@ -256,44 +231,60 @@ class Kernel implements KernelInterface
         }
     }
 
-    /**
-     * @return array<non-empty-string>
-     */
-    protected function getConfigDirectories(): array
-    {
-        $directory = $this->getConfigDirectory();
-
-        if (!\is_dir($directory)) {
-            return [];
-        }
-
-        return [$directory];
-    }
-
-    /**
-     * @return iterable<array-key, ExtensionInterface>
-     */
-    protected function getExtensions(): iterable
-    {
-        return [];
-    }
-
     protected function build(ContainerBuilder $container): void
     {
-        $container->addCompilerPass(new MessageFactoryCompilerPass(), priority: 1000);
-        $container->addCompilerPass(new CodecCompilerPass(), priority: 1000);
-        $container->addCompilerPass(new RouterCompilerPass(), priority: 1000);
-        $container->addCompilerPass(new DispatcherCompilerPass(), priority: 1000);
+        // Kernel
+        $container->register(KernelInterface::class)
+            ->setSynthetic(true);
 
-        $container->addCompilerPass(new RouteLoaderCompilerPass());
+        $container->setAlias(self::class, KernelInterface::class);
+        $container->setAlias(static::class, KernelInterface::class);
+
+        // Container
+        $container->register(ContainerInterface::class)
+            ->setSynthetic(true);
+
+        $container->setAlias(SymfonyContainerInterface::class, ContainerInterface::class);
+    }
+
+    private function bootContainer(Container $container): void
+    {
+        $container->set(KernelInterface::class, $this);
+        $container->set(ContainerInterface::class, $this->container);
+    }
+
+    /**
+     * @param non-empty-string $class
+     * @return non-empty-string
+     */
+    private function getContainerPathname(string $class): string
+    {
+        return \vsprintf('%s/%s.php', [
+            $this->getBuildDirectory(),
+            $class,
+        ]);
+    }
+
+    /**
+     * @return non-empty-string
+     */
+    protected function getContainerClassSuffix(): string
+    {
+        return 'Container';
     }
 
     /**
      * @return class-string<Container>
+     * @return non-empty-string
      */
-    protected function getContainerClass(): string
+    private function getContainerClass(): string
     {
+        $offset = \strrpos(static::class, '\\');
+        $offset = $offset === false ? 0 : $offset + 1;
+
         /** @var class-string<Container> */
-        return \ucfirst($this->getEnvironment()) . 'AppContainer';
+        return \ucfirst($this->getEnvironment())
+            . \substr(static::class, $offset)
+            . $this->getContainerClassSuffix();
     }
 }

@@ -4,6 +4,6 @@ declare(strict_types=1);
 
 namespace App;
 
-use Lsp\Kernel\Kernel;
+use Lsp\Kernel\LanguageServerKernel;
 
-final class Application extends Kernel {}
+final class Application extends LanguageServerKernel {}

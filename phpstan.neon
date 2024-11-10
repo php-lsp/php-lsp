@@ -9,9 +9,11 @@ parameters:
   paths:
     - libs/contracts/dispatcher-contracts/src
     - libs/contracts/router-contracts/src
+    - libs/contracts/server-contracts/src
     - libs/dispatcher/src
     - libs/protocol/src
     - libs/router/src
+    - libs/server-react/src
     - libs/rpc/contracts/rpc-codec-contracts/src
     - libs/rpc/contracts/rpc-message-contracts/src
     - libs/rpc/contracts/rpc-message-factory-contracts/src

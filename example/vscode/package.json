@@ -36,12 +36,17 @@
             "type": "object",
             "title": "PHP Language Server",
             "properties": {
-                "php-lsp.phpExecutablePath": {
+                "php-lsp.php": {
                     "type": "string",
                     "default": "php",
                     "description": "Optional, defaults to searching for \"php\". The path to a PHP 8.1+ executable to use to execute the Zend Debug LSP server"
                 },
-                "php-lsp.languageServerPort": {
+                "php-lsp.host": {
+                    "type": "string",
+                    "default": "127.0.0.1",
+                    "description": ""
+                },
+                "php-lsp.port": {
                     "type": "number",
                     "default": 5007,
                     "description": ""

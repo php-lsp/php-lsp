@@ -34,4 +34,6 @@ $app = new (Application::dotenv(__DIR__))(
     debug: (bool) ($_SERVER['APP_DEBUG'] ?? Kernel::DEFAULT_DEBUG),
 );
 
+$app->run('127.0.0.1', 5007);
+
 __halt_compiler();

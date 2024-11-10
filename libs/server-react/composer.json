@@ -1,11 +1,11 @@
 {
-    "name": "php-lsp/kernel",
-    "description": "Language Service Protocol Application Kernel",
+    "name": "php-lsp/server-react",
+    "description": "LSP Server based on ReactPHP",
     "type": "library",
     "license": "MIT",
-    "keywords": ["kernel", "core", "php", "lsp"],
+    "keywords": ["runtime", "reactphp", "async", "server", "php", "lsp"],
     "support": {
-        "source": "https://github.com/php-lsp/kernel",
+        "source": "https://github.com/php-lsp/server-react",
         "issues": "https://github.com/php-lsp/php-lsp/issues"
     },
     "authors": [
@@ -17,17 +17,12 @@
     ],
     "require": {
         "php": "^8.1",
-        "psr/container": "^1.0|^2.0",
-        "symfony/yaml": "^6.4|^7.0",
-        "symfony/config": "^6.4|^7.0",
-        "symfony/expression-language": "^6.4|^7.0",
-        "symfony/dependency-injection": "^6.4|^7.0",
-        "php-lsp/server-contracts-implementation": "^1.0",
-        "vlucas/phpdotenv": "^5.6"
+        "php-lsp/server-contracts": "^1.0",
+        "react/socket": "^1.16"
     },
     "autoload": {
         "psr-4": {
-            "Lsp\\Kernel\\": "src"
+            "Lsp\\Server\\React\\": "src"
         }
     },
     "require-dev": {
@@ -35,8 +30,11 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lsp\\Kernel\\Tests\\": "tests"
+            "Lsp\\Server\\React\\Tests\\": "tests"
         }
+    },
+    "provide": {
+        "php-lsp/server-contracts-implementation": "^1.0"
     },
     "scripts": {
         "test": "@test:unit",

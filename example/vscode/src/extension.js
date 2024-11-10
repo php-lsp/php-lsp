@@ -12,7 +12,8 @@ function activate(context) {
     const serverOptions = () => {
         // Connect to language server via socket
         let socket = net.connect({
-            port: config.get('languageServerPort'),
+            host: config.get('host'),
+            port: config.get('port'),
         });
 
         return Promise.resolve({
@@ -29,7 +30,8 @@ function activate(context) {
     };
 
     client = new lsp.LanguageClient(
-        '',
+        'php-lsp',
+        'php-lsp',
         serverOptions,
         clientOptions
     );
