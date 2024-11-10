@@ -7,9 +7,10 @@ parameters:
   fileExtensions:
     - php
   paths:
+    - libs/contracts/dispatcher-contracts/src
+    - libs/contracts/router-contracts/src
     - libs/dispatcher/src
     - libs/protocol/src
-    - libs/protocol-generator/src
     - libs/router/src
     - libs/rpc/contracts/rpc-codec-contracts/src
     - libs/rpc/contracts/rpc-message-contracts/src

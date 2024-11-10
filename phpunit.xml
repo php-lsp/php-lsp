@@ -14,9 +14,10 @@
 >
     <testsuites>
         <testsuite name="unit">
+            <directory>libs/contracts/dispatcher-contracts/tests</directory>
+            <directory>libs/contracts/router-contracts/tests</directory>
             <directory>libs/dispatcher/tests</directory>
             <directory>libs/protocol/tests</directory>
-            <directory>libs/protocol-generator/tests</directory>
             <directory>libs/router/tests</directory>
             <directory>libs/rpc/contracts/rpc-codec-contracts/tests</directory>
             <directory>libs/rpc/contracts/rpc-message-contracts/tests</directory>
@@ -34,9 +35,10 @@
 
     <source>
         <include>
+            <directory>libs/contracts/dispatcher-contracts/src</directory>
+            <directory>libs/contracts/router-contracts/src</directory>
             <directory>libs/dispatcher/src</directory>
             <directory>libs/protocol/src</directory>
-            <directory>libs/protocol-generator/src</directory>
             <directory>libs/router/src</directory>
             <directory>libs/rpc/contracts/rpc-codec-contracts/src</directory>
             <directory>libs/rpc/contracts/rpc-message-contracts/src</directory>

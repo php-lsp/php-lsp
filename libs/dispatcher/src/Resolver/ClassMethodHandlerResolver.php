@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Router\Handler\Resolver;
+namespace Lsp\Dispatcher\Resolver;
 
+use Lsp\Contracts\Router\MatchedRouteInterface;
 use Lsp\Router\Handler\InstanceMethodHandler;
-use Lsp\Router\Route\MatchedRouteInterface;
 
-final class InstanceMethodHandlerResolver implements HandlerResolverInterface
+final class ClassMethodHandlerResolver implements HandlerResolverInterface
 {
     public function resolve(MatchedRouteInterface $route): ?callable
     {

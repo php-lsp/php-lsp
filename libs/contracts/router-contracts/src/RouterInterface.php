@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Router;
+namespace Lsp\Contracts\Router;
 
+use Lsp\Contracts\Router\Exception\RoutingExceptionInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
-use Lsp\Router\Exception\RoutingExceptionInterface;
-use Lsp\Router\Route\MatchedRouteInterface;
 
 interface RouterInterface
 {
@@ -19,6 +18,8 @@ interface RouterInterface
     /**
      * Same as {@see self::match()} however, it returns an exception if there
      * is no route for the given request (notification) payload.
+     *
+     * @api
      *
      * @throws RoutingExceptionInterface if no route was found for the given
      *         request (notification) payload

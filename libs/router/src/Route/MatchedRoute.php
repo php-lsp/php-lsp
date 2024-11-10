@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Lsp\Router\Route;
 
+use Lsp\Contracts\Router\MatchedRouteInterface;
+use Lsp\Contracts\Router\RouteInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
-use Lsp\Router\Handler\HandlerInterface;
 
 final class MatchedRoute implements MatchedRouteInterface
 {
@@ -19,7 +20,7 @@ final class MatchedRoute implements MatchedRouteInterface
         return $this->route->getMethod();
     }
 
-    public function getHandler(): HandlerInterface
+    public function getHandler(): mixed
     {
         return $this->route->getHandler();
     }

@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Lsp\Router\Builder;
 
-use Lsp\Router\Handler\HandlerInterface;
+use Lsp\Contracts\Router\RouteInterface;
+use Lsp\Contracts\Router\RouterInterface;
 use Lsp\Router\Route\Route;
-use Lsp\Router\Route\RouteInterface;
 use Lsp\Router\Router;
-use Lsp\Router\RouterInterface;
 
 /**
  * @template-implements \IteratorAggregate<array-key, RouteInterface>
@@ -21,9 +20,11 @@ final class RouteCollector implements BuilderInterface, \IteratorAggregate
     private array $routes = [];
 
     /**
+     * @api
+     *
      * @param non-empty-string $method
      */
-    private function createRouteAndAdd(string $method, HandlerInterface $handler): self
+    public function add(string $method, mixed $handler): self
     {
         $this->routes[] = new Route($method, $handler);
 
@@ -31,15 +32,9 @@ final class RouteCollector implements BuilderInterface, \IteratorAggregate
     }
 
     /**
-     * @param non-empty-string $method
-     */
-    public function add(string $method, HandlerInterface $handler): self
-    {
-        return $this->createRouteAndAdd($method, $handler);
-    }
-
-    /**
-     * @param iterable<non-empty-string, HandlerInterface> $routes
+     * @api
+     *
+     * @param iterable<non-empty-string, mixed> $routes
      */
     public function addMany(iterable $routes): self
     {

@@ -25,6 +25,10 @@
         },
         {
             "type": "path",
+            "url": "libs/contracts/*"
+        },
+        {
+            "type": "path",
             "url": "libs/rpc/contracts/*"
         }
     ],
@@ -52,6 +56,8 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "Lsp\\Contracts\\Dispatcher\\Tests\\": "libs/contracts/dispatcher-contracts/tests",
+            "Lsp\\Contracts\\Router\\Tests\\": "libs/contracts/router-contracts/tests",
             "Lsp\\Dispatcher\\Tests\\": "libs/dispatcher/tests",
             "Lsp\\Kernel\\Tests\\": "libs/protocol/tests",
             "Lsp\\Protocol\\Tests\\": "libs/protocol/tests",

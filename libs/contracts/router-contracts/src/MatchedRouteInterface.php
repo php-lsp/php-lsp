@@ -2,10 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Router\Route;
+namespace Lsp\Contracts\Router;
 
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 
+/**
+ * Representation of a matched route to some request/notification.
+ */
 interface MatchedRouteInterface extends RouteInterface
 {
     /**
@@ -13,9 +16,4 @@ interface MatchedRouteInterface extends RouteInterface
      * the given matched route.
      */
     public function getRequest(): NotificationInterface;
-
-    /**
-     * Returns original route definition instance for the given matched route.
-     */
-    public function getDefinition(): RouteInterface;
 }

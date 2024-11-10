@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Router\Handler;
 
-final class ClassMethodHandler
+final class ClassStaticMethodHandler
 {
     /**
      * @param class-string $class
@@ -17,7 +17,7 @@ final class ClassMethodHandler
 
     public function __toString(): string
     {
-        return \vsprintf('service(%s)->%s()', [
+        return \vsprintf('%s::%s()', [
             $this->class,
             $this->method,
         ]);

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Router\Handler\Resolver;
+namespace Lsp\Dispatcher\Resolver;
 
+use Lsp\Contracts\Router\MatchedRouteInterface;
 use Lsp\Router\Handler\ClassMethodHandler;
-use Lsp\Router\Route\MatchedRouteInterface;
 use Psr\Container\ContainerInterface;
 
-final class ContainerAwareClassHandlerResolver implements HandlerResolverInterface
+final class ContainerAwareClassMethodHandlerResolver implements HandlerResolverInterface
 {
     public function __construct(
         private readonly ContainerInterface $container,

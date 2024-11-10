@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Lsp\Router\Builder;
 
+use Lsp\Contracts\Router\RouteInterface;
+use Lsp\Contracts\Router\RouterInterface;
 use Lsp\Router\Builder\AttributeCollector\AttributeReader;
 use Lsp\Router\Handler\ClassMethodHandler;
+use Lsp\Router\Handler\ClassStaticMethodHandler;
 use Lsp\Router\Handler\InstanceMethodHandler;
-use Lsp\Router\Handler\StaticMethodHandler;
-use Lsp\Router\Route\RouteInterface;
-use Lsp\Router\RouterInterface;
 
 /**
  * @template-implements \IteratorAggregate<array-key, RouteInterface>
@@ -63,7 +63,7 @@ final class AttributeCollector implements BuilderInterface, \IteratorAggregate
 
         foreach ($this->reader->getAllMethods($object) as $action => $method) {
             $this->collector->add($action, match ($method->isStatic()) {
-                true => new StaticMethodHandler(
+                true => new ClassStaticMethodHandler(
                     class: $object->getName(),
                     method: $method->getName(),
                 ),
@@ -88,7 +88,7 @@ final class AttributeCollector implements BuilderInterface, \IteratorAggregate
 
         foreach ($this->reader->getAllMethods($class) as $action => $method) {
             $this->collector->add($action, match ($method->isStatic()) {
-                true => new StaticMethodHandler(
+                true => new ClassStaticMethodHandler(
                     class: $class->getName(),
                     method: $method->getName(),
                 ),

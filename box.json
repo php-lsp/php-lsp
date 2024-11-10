@@ -3,6 +3,8 @@
     "main": false,
     "output": "build/prod/server.phar",
     "directories": [
+        "./libs/contracts/dispatcher-contracts/src",
+        "./libs/contracts/router-contracts/src",
         "./libs/dispatcher/src",
         "./libs/protocol/src",
         "./libs/router/src",

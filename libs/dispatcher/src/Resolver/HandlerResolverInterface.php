@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Router\Handler\Resolver;
+namespace Lsp\Dispatcher\Resolver;
 
-use Lsp\Router\Route\MatchedRouteInterface;
+use Lsp\Contracts\Router\MatchedRouteInterface;
 
 interface HandlerResolverInterface
 {

@@ -19,6 +19,11 @@ jobs:
       fail-fast: false
       matrix:
         package:
+          # Contracts
+          - local_path: 'contracts/dispatcher-contracts'
+            split_repository: 'dispatcher-contracts'
+          - local_path: 'contracts/router-contracts'
+            split_repository: 'router-contracts'
           # Kernel
           - local_path: 'dispatcher'
             split_repository: 'dispatcher'

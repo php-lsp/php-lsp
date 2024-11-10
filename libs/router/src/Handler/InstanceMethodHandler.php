@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Router\Handler;
 
-class InstanceMethodHandler implements HandlerInterface
+final class InstanceMethodHandler
 {
     /**
      * @param non-empty-string $method

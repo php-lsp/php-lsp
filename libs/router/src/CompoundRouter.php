@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Lsp\Router;
 
+use Lsp\Contracts\Router\MatchedRouteInterface;
+use Lsp\Contracts\Router\RouterInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Router\Exception\RouteNotFoundException;
-use Lsp\Router\Route\MatchedRouteInterface;
 
-final class DelegateRouter implements RouterInterface
+final class CompoundRouter implements RouterInterface
 {
     /**
      * @var list<RouterInterface>

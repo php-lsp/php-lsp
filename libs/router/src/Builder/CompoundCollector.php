@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Lsp\Router\Builder;
 
-use Lsp\Router\DelegateRouter;
-use Lsp\Router\Route\RouteInterface;
+use Lsp\Contracts\Router\RouteInterface;
+use Lsp\Contracts\Router\RouterInterface;
+use Lsp\Router\CompoundRouter;
 use Lsp\Router\Router;
-use Lsp\Router\RouterInterface;
 
 /**
  * @template-implements \IteratorAggregate<array-key, RouteInterface>
  */
-final class DelegateCollector implements BuilderInterface, \IteratorAggregate
+final class CompoundCollector implements BuilderInterface, \IteratorAggregate
 {
     /**
      * @var list<BuilderInterface>
@@ -54,7 +54,7 @@ final class DelegateCollector implements BuilderInterface, \IteratorAggregate
         return match (\count($routers)) {
             0 => new Router(),
             1 => $routers[0],
-            default => new DelegateRouter($routers),
+            default => new CompoundRouter($routers),
         };
     }
 

@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Router\Handler\Resolver;
+namespace Lsp\Dispatcher\Resolver;
 
-use Lsp\Router\Handler\StaticMethodHandler;
-use Lsp\Router\Route\MatchedRouteInterface;
+use Lsp\Contracts\Router\MatchedRouteInterface;
+use Lsp\Router\Handler\ClassStaticMethodHandler;
 
-final class StaticMethodHandlerResolver implements HandlerResolverInterface
+final class ClassStaticMethodHandlerResolver implements HandlerResolverInterface
 {
     public function resolve(MatchedRouteInterface $route): ?callable
     {
         $handler = $route->getHandler();
 
-        if (!$handler instanceof StaticMethodHandler) {
+        if (!$handler instanceof ClassStaticMethodHandler) {
             return null;
         }
 

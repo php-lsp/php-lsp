@@ -4,17 +4,19 @@ declare(strict_types=1);
 
 namespace Lsp\Dispatcher;
 
+use Lsp\Contracts\Dispatcher\DispatcherInterface;
+use Lsp\Contracts\Router\MatchedRouteInterface;
+use Lsp\Contracts\Router\RouterInterface;
 use Lsp\Contracts\Rpc\Message\Factory\ResponseFactoryInterface;
 use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
-use Lsp\Router\Exception\RoutingExceptionInterface;
-use Lsp\Router\Handler\Resolver\HandlerResolverInterface;
-use Lsp\Router\Handler\Resolver\InstanceMethodHandlerResolver;
-use Lsp\Router\Handler\Resolver\StaticMethodHandlerResolver;
-use Lsp\Router\Route\MatchedRouteInterface;
-use Lsp\Router\RouterInterface;
+use Lsp\Dispatcher\Resolver\CallableHandlerResolver;
+use Lsp\Dispatcher\Resolver\ClassMethodHandlerResolver;
+use Lsp\Dispatcher\Resolver\ClassStaticMethodHandlerResolver;
+use Lsp\Dispatcher\Resolver\FunctionHandlerResolver;
+use Lsp\Dispatcher\Resolver\HandlerResolverInterface;
 
 final class Dispatcher implements DispatcherInterface
 {
@@ -30,8 +32,10 @@ final class Dispatcher implements DispatcherInterface
         private readonly RouterInterface $router,
         private readonly ResponseFactoryInterface $responses,
         private readonly iterable $resolvers = [
-            new InstanceMethodHandlerResolver(),
-            new StaticMethodHandlerResolver(),
+            new CallableHandlerResolver(),
+            new ClassMethodHandlerResolver(),
+            new ClassStaticMethodHandlerResolver(),
+            new FunctionHandlerResolver(),
         ],
     ) {}
 
@@ -68,31 +72,28 @@ final class Dispatcher implements DispatcherInterface
             }
         }
 
+        $handler = $route->getHandler();
+
         throw new \InvalidArgumentException(\sprintf(
             'There is no resolver to convert handler %s for route "%s" to a function',
-            $route->getHandler(),
+            $handler instanceof \Stringable ? $handler : \get_debug_type($handler),
             $route->getMethod(),
         ));
     }
 
-    /**
-     * @throws RoutingExceptionInterface
-     */
-    public function notify(NotificationInterface $notification): void
+    public function notify(NotificationInterface $notification): ?\Throwable
     {
         try {
             $route = $this->router->matchOrFail($notification);
 
             $this->dispatch($route);
         } catch (\Throwable $e) {
-            // NO OP
-            return;
+            return $e;
         }
+
+        return null;
     }
 
-    /**
-     * @throws RoutingExceptionInterface
-     */
     public function call(RequestInterface $request): ResponseInterface
     {
         try {

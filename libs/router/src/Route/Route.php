@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Router\Route;
 
-use Lsp\Router\Handler\HandlerInterface;
+use Lsp\Contracts\Router\RouteInterface;
 
 final class Route implements RouteInterface
 {
@@ -13,7 +13,7 @@ final class Route implements RouteInterface
          * @var non-empty-string
          */
         private readonly string $method,
-        private readonly HandlerInterface $handler,
+        private readonly mixed $handler,
     ) {}
 
     public function getMethod(): string
@@ -21,7 +21,7 @@ final class Route implements RouteInterface
         return $this->method;
     }
 
-    public function getHandler(): HandlerInterface
+    public function getHandler(): mixed
     {
         return $this->handler;
     }

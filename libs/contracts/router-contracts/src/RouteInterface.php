@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Router\Route;
+namespace Lsp\Contracts\Router;
 
-use Lsp\Router\Handler\HandlerInterface;
-
+/**
+ * Route object representation.
+ */
 interface RouteInterface
 {
     /**
@@ -17,6 +18,9 @@ interface RouteInterface
 
     /**
      * Returns handler for the given route.
+     *
+     * Separate services should be used to determine
+     * how to invoke this handler.
      */
-    public function getHandler(): HandlerInterface;
+    public function getHandler(): mixed;
 }
