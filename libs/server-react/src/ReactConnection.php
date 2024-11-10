@@ -8,29 +8,29 @@ use Lsp\Contracts\Dispatcher\DispatcherInterface;
 use Lsp\Contracts\Rpc\Codec\DecoderInterface;
 use Lsp\Contracts\Rpc\Codec\EncoderInterface;
 use Lsp\Contracts\Rpc\Codec\Exception\EncodingExceptionInterface;
-use Lsp\Contracts\Rpc\Message\IdentifiableInterface;
 use Lsp\Contracts\Rpc\Message\MessageInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
 use Lsp\Contracts\Server\ConnectionInterface;
 use Lsp\Server\React\Connection\Buffer;
-use React\Promise\Deferred;
+use Lsp\Server\React\Connection\RequestPool;
+use Lsp\Server\React\Server\ReactServer;
 use React\Promise\PromiseInterface;
 use React\Socket\ConnectionInterface as SocketConnectionInterface;
 
 /**
  * TODO 1) Add support of promise TTLs for {@see ReactConnection::$requests}
  * TODO 2) Add support of max in-memory promise instances for {@see ReactConnection::$requests}
+ *
+ * @internal this is an internal library class, please do not use it in your code.
+ * @psalm-internal Lsp\Server\React
  */
 final class ReactConnection implements ConnectionInterface
 {
     private readonly Buffer $buffer;
 
-    /**
-     * @var array<array-key, Deferred<ResponseInterface<mixed>>>
-     */
-    private array $requests = [];
+    private readonly RequestPool $requests;
 
     public function __construct(
         private readonly ReactServer $server,
@@ -40,6 +40,7 @@ final class ReactConnection implements ConnectionInterface
         private readonly DispatcherInterface $dispatcher,
     ) {
         $this->buffer = new Buffer($this->decoder);
+        $this->requests = new RequestPool();
 
         $connection->on('data', function (string $data): void {
             foreach ($this->buffer->push($data) as $message) {
@@ -70,23 +71,7 @@ final class ReactConnection implements ConnectionInterface
      */
     private function onReceivedResponse(ResponseInterface $response): void
     {
-        $key = $this->getKey($response);
-
-        if ($key === null) {
-            // TODO Error: Could not resolve non-array-key ID
-            return;
-        }
-
-        $deferred = $this->requests[$key] ?? null;
-
-        if ($deferred === null) {
-            // TODO Error: Could not find expected deferred
-            return;
-        }
-
-        unset($this->requests[$key]);
-
-        $deferred->resolve($response);
+        $this->requests->resolve($response);
     }
 
     /**
@@ -94,7 +79,7 @@ final class ReactConnection implements ConnectionInterface
      */
     private function onReceivedRequest(RequestInterface $request): void
     {
-        $response = $this->config->dispatcher->call($request);
+        $response = $this->dispatcher->call($request);
 
         try {
             $this->send($response);
@@ -130,53 +115,13 @@ final class ReactConnection implements ConnectionInterface
     }
 
     /**
-     * @template T of mixed
-     * @param IdentifiableInterface<T> $ctx
-     * @return (T is string ? T :
-     *     (T is int ? T : null)
-     * )
-     */
-    private function getKey(IdentifiableInterface $ctx): string|int|null
-    {
-        $id = $ctx->getId();
-
-        $primitive = $id->toPrimitive();
-
-        if (\is_string($primitive) || \is_int($primitive)) {
-            return $primitive;
-        }
-
-        return null;
-    }
-
-    /**
-     * @template TArgIdentifier of mixed
-     *
-     * @param RequestInterface<TArgIdentifier> $request
-     *
-     * @return PromiseInterface<ResponseInterface<TArgIdentifier>>
-     *
      * @throws EncodingExceptionInterface
      */
     public function call(RequestInterface $request): PromiseInterface
     {
         $this->send($request);
 
-        $deferred = new Deferred();
-
-        $key = $this->getKey($request);
-
-        if ($key !== null) {
-            $this->requests[$key] = $deferred;
-        } else {
-            $deferred->reject(new \InvalidArgumentException(\sprintf(
-                'Cannot store request promise for unsupported ID of type %s',
-                \get_debug_type($request->getId()),
-            )));
-        }
-
-        /** @var PromiseInterface<ResponseInterface<TArgIdentifier>> */
-        return $deferred->promise();
+        return $this->requests->await($request);
     }
 
     public function close(): void

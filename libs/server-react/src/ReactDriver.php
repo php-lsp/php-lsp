@@ -10,6 +10,7 @@ use Lsp\Contracts\Rpc\Codec\EncoderInterface;
 use Lsp\Contracts\Rpc\Message\MessageInterface;
 use Lsp\Contracts\Server\DriverInterface;
 use Lsp\Contracts\Server\ServerInterface;
+use Lsp\Server\React\Server\ReactTcpServer;
 use React\EventLoop\LoopInterface;
 
 final class ReactDriver implements DriverInterface

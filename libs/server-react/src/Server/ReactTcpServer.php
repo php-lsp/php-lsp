@@ -2,15 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Server\React;
+namespace Lsp\Server\React\Server;
 
 use Lsp\Contracts\Dispatcher\DispatcherInterface;
 use Lsp\Contracts\Rpc\Codec\DecoderInterface;
 use Lsp\Contracts\Rpc\Codec\EncoderInterface;
+use Lsp\Server\React\ReactConnection;
+use Lsp\Server\React\ReactDriver;
 use React\EventLoop\LoopInterface;
 use React\Socket\ConnectionInterface as SocketInterface;
 use React\Socket\TcpServer as SocketTcpServer;
 
+/**
+ * @internal this is an internal library class, please do not use it in your code.
+ * @psalm-internal Lsp\Server\React
+ */
 final class ReactTcpServer extends ReactServer
 {
     private readonly SocketTcpServer $socket;
