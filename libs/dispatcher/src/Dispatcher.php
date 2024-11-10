@@ -12,6 +12,8 @@ use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
+use Lsp\Dispatcher\Provider\HandlerProviderInterface;
+use Lsp\Dispatcher\Provider\SelectableHandlerProvider;
 use Lsp\Dispatcher\Resolver\CallableHandlerResolver;
 use Lsp\Dispatcher\Resolver\ClassMethodHandlerResolver;
 use Lsp\Dispatcher\Resolver\ClassStaticMethodHandlerResolver;
@@ -20,10 +22,7 @@ use Lsp\Dispatcher\Resolver\HandlerResolverInterface;
 
 final class Dispatcher implements DispatcherInterface
 {
-    /**
-     * @var array<non-empty-string, HandlerResolverInterface>
-     */
-    private array $optimizedResolvers = [];
+    private readonly HandlerProviderInterface $provider;
 
     /**
      * @param iterable<array-key, HandlerResolverInterface> $resolvers
@@ -31,54 +30,14 @@ final class Dispatcher implements DispatcherInterface
     public function __construct(
         private readonly RouterInterface $router,
         private readonly ResponseFactoryInterface $responses,
-        private readonly iterable $resolvers = [
+        iterable $resolvers = [
             new CallableHandlerResolver(),
             new ClassMethodHandlerResolver(),
             new ClassStaticMethodHandlerResolver(),
             new FunctionHandlerResolver(),
         ],
-    ) {}
-
-    private function getOptimizedHandler(MatchedRouteInterface $route): ?callable
-    {
-        $method = $route->getMethod();
-
-        if (!isset($this->optimizedResolvers[$method])) {
-            return null;
-        }
-
-        return $this->optimizedResolvers[$method]->resolve($route);
-    }
-
-    private function optimizeHandlerResolver(MatchedRouteInterface $route, HandlerResolverInterface $resolver): void
-    {
-        $this->optimizedResolvers[$route->getMethod()] = $resolver;
-    }
-
-    protected function getHandler(MatchedRouteInterface $route): callable
-    {
-        // Resolver priority sampling optimization
-        if (($result = $this->getOptimizedHandler($route)) !== null) {
-            return $result;
-        }
-
-        foreach ($this->resolvers as $resolver) {
-            $result = $resolver->resolve($route);
-
-            if ($result !== null) {
-                $this->optimizeHandlerResolver($route, $resolver);
-
-                return $result;
-            }
-        }
-
-        $handler = $route->getHandler();
-
-        throw new \InvalidArgumentException(\sprintf(
-            'There is no resolver to convert handler %s for route "%s" to a function',
-            $handler instanceof \Stringable ? $handler : \get_debug_type($handler),
-            $route->getMethod(),
-        ));
+    ) {
+        $this->provider = new SelectableHandlerProvider($resolvers);
     }
 
     public function notify(NotificationInterface $notification): ?\Throwable
@@ -101,7 +60,7 @@ final class Dispatcher implements DispatcherInterface
 
             $result = $this->dispatch($route);
         } catch (\Throwable $e) {
-            return $this->createFailureResponseForRequest($request, $e);
+            return $this->createFailureResponse($request, $e);
         }
 
         return $this->responses->createSuccess($request, $result);
@@ -116,7 +75,7 @@ final class Dispatcher implements DispatcherInterface
      *
      * @return FailureResponseInterface<TArgIdentifier, TArgException>
      */
-    private function createFailureResponseForRequest(RequestInterface $request, \Throwable $e): FailureResponseInterface
+    private function createFailureResponse(RequestInterface $request, \Throwable $e): FailureResponseInterface
     {
         return $this->responses->createFailure(
             id: $request->getId(),
@@ -128,7 +87,7 @@ final class Dispatcher implements DispatcherInterface
 
     protected function dispatch(MatchedRouteInterface $route): mixed
     {
-        $handler = $this->getHandler($route);
+        $handler = $this->provider->getHandler($route);
 
         return $handler($route);
     }
