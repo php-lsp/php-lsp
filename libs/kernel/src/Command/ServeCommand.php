@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Lsp\Kernel\Command;
 
-use App\Application;
+use Lsp\Kernel\Kernel;
+use Lsp\Kernel\LanguageServerKernel;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -26,6 +28,13 @@ final class ServeCommand extends Command
     #[\Override]
     protected function configure(): void
     {
+        $this->addArgument(
+            name: 'kernel',
+            mode: InputArgument::OPTIONAL,
+            description: 'An application kernel class FQN',
+            default: LanguageServerKernel::class,
+        );
+
         $this->addOption(
             name: 'addr',
             shortcut: 'a',
@@ -73,7 +82,13 @@ final class ServeCommand extends Command
 
         $this->setProcessTitle($title);
 
-        $app = new Application(
+        $kernel = $input->getArgument('kernel');
+
+        if (!\is_string($kernel) && !\is_a($kernel, Kernel::class, true)) {
+            throw new \InvalidArgumentException('Unsupported kernel class');
+        }
+
+        $app = new $kernel(
             // @phpstan-ignore-next-line
             env: (string) $input->getOption('env'),
             debug: false,
