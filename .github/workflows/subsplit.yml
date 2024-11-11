@@ -40,7 +40,7 @@ jobs:
             split_repository: 'protocol'
           - local_path: 'router'
             split_repository: 'router'
-          - local_path: 'contracts/server-react'
+          - local_path: 'server-react'
             split_repository: 'server-react'
           # RPC
           # - RPC: Contracts

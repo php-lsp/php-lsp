@@ -75,7 +75,6 @@
         "linter:check": ["linter", "stan", "analyze", "phpstan"],
         "phpcs:fix": ["phpcs", "per2", "per", "percs", "codestyle", "cs"],
         "test:unit": ["phpunit", "unit"],
-        "rector:check": ["rector", "upgrade"],
         "build:prod": ["build"]
     },
     "scripts-descriptions": {
@@ -111,9 +110,6 @@
         "sort-packages": true,
         "allow-plugins": {
             "phpstan/extension-installer": true
-        },
-        "platform": {
-            "php": "8.1"
         }
     },
     "minimum-stability": "dev",
