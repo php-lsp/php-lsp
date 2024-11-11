@@ -45,6 +45,9 @@ jobs:
           - local_path: 'server-react'
             split_repository: 'server-react'
           # RPC
+          # - RPC: Metadata
+          - local_path: 'rpc/meta'
+            split_repository: 'rpc'
           # - RPC: Contracts
           - local_path: 'rpc/contracts/rpc-codec-contracts'
             split_repository: 'rpc-codec-contracts'
