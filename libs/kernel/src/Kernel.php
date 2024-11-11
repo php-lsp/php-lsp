@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Lsp\Kernel;
 
-use Dotenv\Dotenv;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Config\Exception\FileLoaderImportCircularReferenceException;
 use Symfony\Component\Config\Exception\LoaderLoadException;
@@ -30,16 +29,18 @@ class Kernel implements KernelInterface
      */
     public const DEFAULT_DEBUG = false;
 
-    protected readonly Container $container;
+    public readonly Container $container;
 
     /**
      * @param non-empty-string $env
+     * @param non-empty-string|null $projectDirectory
      *
      * @throws \Exception
      */
     public function __construct(
         private readonly string $env = self::DEFAULT_ENV,
         private readonly bool $debug = self::DEFAULT_DEBUG,
+        private readonly ?string $projectDirectory = null,
     ) {
         $this->container = $this->createOrGetContainer();
 
@@ -47,40 +48,23 @@ class Kernel implements KernelInterface
     }
 
     /**
-     * @psalm-taint-sink file $directory
-     * @param non-empty-string $directory
-     * @param list<non-empty-string> $names
-     *
-     * @return class-string<static>
+     * @api
+     * @param non-empty-string|null $projectDirectory
+     * @throws \Exception
      */
-    public static function dotenv(?string $directory = null, array $names = ['.env', '.env.example']): string
+    public static function dev(string $projectDirectory = null): static
     {
-        $isLoadable = false;
-        $directory ??= (string) \getcwd();
-
-        foreach ($names as $name) {
-            if (\is_file($directory . '/' . $name)) {
-                $isLoadable = true;
-                break;
-            }
-        }
-
-        if ($isLoadable) {
-            $dotenv = Dotenv::createImmutable($directory, $names);
-            $dotenv->load();
-        }
-
-        return static::class;
+        return new static('dev', true, $projectDirectory);
     }
 
-    public static function dev(): static
+    /**
+     * @api
+     * @param non-empty-string|null $projectDirectory
+     * @throws \Exception
+     */
+    public static function prod(string $projectDirectory = null): static
     {
-        return new static('dev', true);
-    }
-
-    public static function prod(): static
-    {
-        return new static('prod', true);
+        return new static('prod', true, $projectDirectory);
     }
 
     /**
@@ -101,6 +85,14 @@ class Kernel implements KernelInterface
      */
     protected function getProjectDirectory(): string
     {
+        if ($this->projectDirectory !== null) {
+            return $this->projectDirectory;
+        }
+
+        if (self::class !== static::class) {
+            return \getcwd() ?: '.';
+        }
+
         $pathname = (new \ReflectionClass(static::class))
             ->getFileName();
 
@@ -121,7 +113,7 @@ class Kernel implements KernelInterface
      */
     protected function getCacheDirectory(): string
     {
-        return $this->getProjectDirectory() . '/var/' . $this->getEnvironment();
+        return $this->getProjectDirectory() . '/build/' . $this->getEnvironment() . '/var';
     }
 
     /**

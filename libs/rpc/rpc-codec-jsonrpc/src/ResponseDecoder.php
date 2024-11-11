@@ -86,7 +86,6 @@ final class ResponseDecoder extends Decoder
             throw InvalidFieldTypeException::fromTypeOfField('error.message', 'string', $data['error']['message']);
         }
 
-        // @phpstan-ignore-next-line : PHPStan cannot infer an "error.data" parameter.
         return $this->responses->createFailure(
             id: $this->tryDecodeId($data),
             code: $data['error']['code'] ?? 0,

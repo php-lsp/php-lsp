@@ -1,0 +1,117 @@
+#!/usr/bin/env php
+<?php
+
+use Composer\InstalledVersions;
+use Lsp\Kernel\Command\CacheClearCommand;
+use Lsp\Kernel\Command\CacheWarmupCommand;
+use Lsp\Kernel\Command\ServeCommand;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Command\HelpCommand;
+use Symfony\Component\Console\Command\ListCommand;
+
+
+// -----------------------------------------------------------------------------
+//  Prepare Global Environment
+// -----------------------------------------------------------------------------
+
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+
+set_error_handler(static function (int $severity, string $message, string $file, int $line): bool {
+    if (0 !== ($severity & error_reporting())) {
+        throw new ErrorException($message, 0, $severity, $file, $line);
+    }
+
+    return true;
+});
+
+
+
+// -----------------------------------------------------------------------------
+//  Detect Environment
+// -----------------------------------------------------------------------------
+
+if (class_exists(Phar::class) && Phar::running() !== '') {
+    Phar::mapPhar('build.phar');
+}
+
+if (!in_array(PHP_SAPI, ['cli', 'phpdbg', 'embed'], true)) {
+    echo PHP_EOL . 'This app may only be invoked from a command line, got "' . PHP_SAPI . '"' . PHP_EOL;
+
+    exit(1);
+}
+
+
+
+// -----------------------------------------------------------------------------
+//  Load Composer's Autoloader
+// -----------------------------------------------------------------------------
+
+(static function (): mixed {
+    if (class_exists(Phar::class) && Phar::running() !== '') {
+        try {
+            return require_once 'phar://build.phar/vendor/autoload.php';
+        } catch (PharException $e) {
+            // Could not load autoloader from phar
+        }
+    }
+
+    $files = [
+        __DIR__ . '/../../autoload.php',
+        __DIR__ . '/../autoload.php',
+        __DIR__ . '/../../vendor/autoload.php',
+        __DIR__ . '/../vendor/autoload.php',
+        __DIR__ . '/vendor/autoload.php',
+    ];
+
+    foreach ($files as $autoloader) {
+        if (!\is_file($autoloader)) {
+            continue;
+        }
+
+        return require $autoloader;
+    }
+
+    throw new RuntimeException('Unable to find the Composer autoloader');
+})();
+
+
+
+// -----------------------------------------------------------------------------
+//  Execute An Application
+// -----------------------------------------------------------------------------
+
+$app = new class extends Application {
+    public function getName(): string
+    {
+        return 'PHP Language Server';
+    }
+
+    public function getVersion(): string
+    {
+        $package = InstalledVersions::getRootPackage();
+
+        return $package['pretty_version']
+            ?? $package['version']
+            ?? 'dev-master';
+    }
+
+    /** @return list<Command> */
+    protected function getDefaultCommands(): array
+    {
+        return [
+            new HelpCommand(),
+            new ListCommand(),
+            new ServeCommand(),
+            new CacheClearCommand(),
+            new CacheWarmupCommand(),
+        ];
+    }
+};
+
+$input = new \Symfony\Component\Console\Input\ArgvInput();
+$output = new \Symfony\Component\Console\Output\ConsoleOutput();
+
+$app->run($input, $output);
+
+__HALT_COMPILER();

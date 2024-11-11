@@ -1,23 +1,26 @@
 {
-    "alias": "server.phar",
-    "banner": false,
-    "stub": "bin/bootstrap.php",
-    "main": false,
-    "output": "build/prod/server.phar",
-    "chmod": "0777",
-    "directories": [
-        "./libs/contracts/dispatcher-contracts/src",
-        "./libs/contracts/router-contracts/src",
-        "./libs/contracts/server-contracts/src",
-        "./libs/dispatcher/src",
-        "./libs/protocol/src",
-        "./libs/router/src",
-        "./libs/server-react/src",
-        "./libs/rpc/contracts/rpc-codec-contracts/src",
-        "./libs/rpc/contracts/rpc-message-contracts/src",
-        "./libs/rpc/contracts/rpc-message-factory-contracts/src",
-        "./libs/rpc/rpc-codec-jsonrpc/src",
-        "./libs/rpc/rpc-message/src",
-        "./libs/rpc/rpc-message-factory/src"
+    "check-requirements": false,
+    "dump-autoload": false,
+    "stub": "bin/lsp",
+    "output": "build/prod/build.phar",
+    "main": "bin/lsp",
+    "finder": [
+        {
+            "name": [
+                "*.php"
+            ],
+            "exclude": [
+                "Test",
+                "test",
+                "Tests",
+                "tests"
+            ],
+            "in": [
+                "app",
+                "config",
+                "build/prod/var",
+                "vendor"
+            ]
+        }
     ]
 }

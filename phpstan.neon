@@ -1,7 +1,7 @@
 includes:
     - phar://phpstan.phar/conf/bleedingEdge.neon
 parameters:
-  level: 9
+  level: 10
   strictRules:
     allRules: true
   fileExtensions:
