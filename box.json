@@ -1,7 +1,10 @@
 {
+    "alias": "server.phar",
+    "banner": false,
     "stub": "bin/bootstrap.php",
     "main": false,
     "output": "build/prod/server.phar",
+    "chmod": "0777",
     "directories": [
         "./libs/contracts/dispatcher-contracts/src",
         "./libs/contracts/router-contracts/src",
