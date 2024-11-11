@@ -22,6 +22,8 @@ jobs:
           # Contracts
           - local_path: 'contracts/dispatcher-contracts'
             split_repository: 'dispatcher-contracts'
+          - local_path: 'contracts/hydrator-contracts'
+            split_repository: 'hydrator-contracts'
           - local_path: 'contracts/router-contracts'
             split_repository: 'router-contracts'
           - local_path: 'contracts/server-contracts'
@@ -29,10 +31,10 @@ jobs:
           # Kernel
           - local_path: 'dispatcher'
             split_repository: 'dispatcher'
-          - local_path: 'protocol'
-            split_repository: 'protocol'
           - local_path: 'kernel'
             split_repository: 'kernel'
+          - local_path: 'protocol'
+            split_repository: 'protocol'
           - local_path: 'router'
             split_repository: 'router'
           - local_path: 'contracts/server-react'

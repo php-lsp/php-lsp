@@ -15,6 +15,7 @@
     <testsuites>
         <testsuite name="unit">
             <directory>libs/contracts/dispatcher-contracts/tests</directory>
+            <directory>libs/contracts/hydrator-contracts/tests</directory>
             <directory>libs/contracts/router-contracts/tests</directory>
             <directory>libs/contracts/server-contracts/tests</directory>
             <directory>libs/dispatcher/tests</directory>
@@ -38,6 +39,7 @@
     <source>
         <include>
             <directory>libs/contracts/dispatcher-contracts/src</directory>
+            <directory>libs/contracts/hydrator-contracts/src</directory>
             <directory>libs/contracts/router-contracts/src</directory>
             <directory>libs/contracts/server-contracts/src</directory>
             <directory>libs/dispatcher/src</directory>
