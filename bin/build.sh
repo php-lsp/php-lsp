@@ -15,18 +15,17 @@ composer info -D | sort
 chmod +x bin/lsp
 
 bin/lsp cache:clear --env=prod
-bin/lsp cache:warmup --env=prod
 
 # install box/phar
-mkdir -p build/bin
-if [ ! -x build/bin/box ]; then
-    wget -O build/bin/box "https://github.com/box-project/box/releases/download/4.1.0/box.phar"
-    chmod +x build/bin/box
+mkdir -p var/bin
+if [ ! -x var/bin/box ]; then
+    wget -O var/bin/box "https://github.com/box-project/box/releases/download/4.1.0/box.phar"
+    chmod +x var/bin/box
 fi
-build/bin/box --version
+var/bin/box --version
 
 # build phar file
-build/bin/box compile
+var/bin/box compile
 
 # cleanup previous vendor files
 rm -rf vendor

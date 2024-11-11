@@ -2,7 +2,7 @@
     "check-requirements": false,
     "dump-autoload": false,
     "stub": "bin/lsp",
-    "output": "build/prod/build.phar",
+    "output": "var/prod/build.phar",
     "main": "bin/lsp",
     "finder": [
         {
@@ -18,7 +18,6 @@
             "in": [
                 "app",
                 "config",
-                "build/prod/var",
                 "vendor"
             ]
         }

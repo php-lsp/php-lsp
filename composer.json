@@ -100,7 +100,7 @@
         "build:prod": "bin/build.sh",
         "build:run": [
             "Composer\\Config::disableProcessTimeout",
-            "@php build/prod/build.phar serve --port=5007"
+            "@php var/prod/build.phar serve --port=5007"
         ]
     },
     "extra": {

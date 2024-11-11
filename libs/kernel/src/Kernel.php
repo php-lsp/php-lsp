@@ -113,7 +113,7 @@ class Kernel implements KernelInterface
      */
     protected function getCacheDirectory(): string
     {
-        return $this->getProjectDirectory() . '/build/' . $this->getEnvironment() . '/var';
+        return $this->getProjectDirectory() . '/var/' . $this->getEnvironment();
     }
 
     /**
@@ -262,7 +262,7 @@ class Kernel implements KernelInterface
      */
     protected function getContainerClassSuffix(): string
     {
-        return 'Container';
+        return 'ServerContainer';
     }
 
     /**
@@ -271,12 +271,8 @@ class Kernel implements KernelInterface
      */
     private function getContainerClass(): string
     {
-        $offset = \strrpos(static::class, '\\');
-        $offset = $offset === false ? 0 : $offset + 1;
-
         /** @var class-string<Container> */
         return \ucfirst($this->getEnvironment())
-            . \substr(static::class, $offset)
             . $this->getContainerClassSuffix();
     }
 }

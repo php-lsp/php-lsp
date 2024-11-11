@@ -44,20 +44,34 @@ final class ReactConnection implements ConnectionInterface
 
         $connection->on('data', function (string $data): void {
             foreach ($this->buffer->push($data) as $message) {
-                $this->onReceivedMessage($message);
+                $this->onMessageReceived($message);
             }
         });
     }
 
-    private function onReceivedMessage(MessageInterface $message): void
+    private function beforeMessageReceived(MessageInterface $message): void
     {
+        dump('>', $message);
+        // TODO
+    }
+
+    private function beforeMessageSend(MessageInterface $message): void
+    {
+        dump('<', $message);
+        // TODO
+    }
+
+    private function onMessageReceived(MessageInterface $message): void
+    {
+        $this->beforeMessageReceived($message);
+
         switch (true) {
             case $message instanceof RequestInterface:
-                $this->onReceivedRequest($message);
+                $this->onRequestReceived($message);
                 break;
 
             case $message instanceof NotificationInterface:
-                $this->onReceivedNotification($message);
+                $this->onNotificationReceived($message);
                 break;
 
             case $message instanceof ResponseInterface:
@@ -77,7 +91,7 @@ final class ReactConnection implements ConnectionInterface
     /**
      * @param RequestInterface<mixed> $request
      */
-    private function onReceivedRequest(RequestInterface $request): void
+    private function onRequestReceived(RequestInterface $request): void
     {
         $response = $this->dispatcher->call($request);
 
@@ -88,7 +102,7 @@ final class ReactConnection implements ConnectionInterface
         }
     }
 
-    private function onReceivedNotification(NotificationInterface $request): void
+    private function onNotificationReceived(NotificationInterface $request): void
     {
         $this->dispatcher->notify($request);
     }
@@ -98,6 +112,8 @@ final class ReactConnection implements ConnectionInterface
      */
     private function send(MessageInterface $message): void
     {
+        $this->beforeMessageSend($message);
+
         $encoded = $this->encoder->encode($message);
 
         $this->connection->write($encoded);
