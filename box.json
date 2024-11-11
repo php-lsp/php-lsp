@@ -3,7 +3,8 @@
     "dump-autoload": false,
     "stub": "bin/lsp",
     "output": "var/prod/build.phar",
-    "main": "bin/lsp",
+    "main": false,
+    "compression": "GZ",
     "finder": [
         {
             "name": [
