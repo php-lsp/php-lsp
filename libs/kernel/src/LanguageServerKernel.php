@@ -7,6 +7,7 @@ namespace Lsp\Kernel;
 use Lsp\Contracts\Server\DriverInterface;
 use Lsp\Kernel\DependencyInjection\CodecCompilerPass;
 use Lsp\Kernel\DependencyInjection\DispatcherCompilerPass;
+use Lsp\Kernel\DependencyInjection\DispatcherLoaderCompilerPass;
 use Lsp\Kernel\DependencyInjection\MessageFactoryCompilerPass;
 use Lsp\Kernel\DependencyInjection\PublishServerCompilerPass;
 use Lsp\Kernel\DependencyInjection\RouteLoaderCompilerPass;
@@ -31,9 +32,10 @@ class LanguageServerKernel extends Kernel implements ServerKernelInterface
 
         $container->addCompilerPass(new PublishServerCompilerPass(), priority: -1000);
         $container->addCompilerPass(new RouteLoaderCompilerPass(), priority: -1000);
+        $container->addCompilerPass(new DispatcherLoaderCompilerPass(), priority: -1000);
     }
 
-    public function run(string $host, int $port): void
+    public function run(int $port = 0, string $host = '127.0.0.1'): void
     {
         $driver = $this->container->get(DriverInterface::class);
 

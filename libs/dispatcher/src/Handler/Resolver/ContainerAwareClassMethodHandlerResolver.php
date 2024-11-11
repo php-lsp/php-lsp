@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Dispatcher\Resolver;
+namespace Lsp\Dispatcher\Handler\Resolver;
 
 use Lsp\Contracts\Router\MatchedRouteInterface;
 use Lsp\Router\Handler\ClassMethodHandler;
@@ -15,7 +15,7 @@ final class ContainerAwareClassMethodHandlerResolver implements HandlerResolverI
         private readonly bool $checkForExistence = true,
     ) {}
 
-    public function resolve(MatchedRouteInterface $route): ?callable
+    public function resolve(MatchedRouteInterface $route): ?\Closure
     {
         $handler = $route->getHandler();
 

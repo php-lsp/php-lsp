@@ -2,16 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Dispatcher\Provider;
+namespace Lsp\Dispatcher\Handler\Provider;
 
 use Lsp\Contracts\Router\MatchedRouteInterface;
-use Lsp\Dispatcher\Resolver\CallableHandlerResolver;
-use Lsp\Dispatcher\Resolver\ClassMethodHandlerResolver;
-use Lsp\Dispatcher\Resolver\ClassStaticMethodHandlerResolver;
-use Lsp\Dispatcher\Resolver\FunctionHandlerResolver;
-use Lsp\Dispatcher\Resolver\HandlerResolverInterface;
+use Lsp\Dispatcher\Handler\Resolver\HandlerResolverInterface;
 
-final class SelectableHandlerProvider implements HandlerProviderInterface
+final class OrderedHandlerProvider implements HandlerProviderInterface
 {
     /**
      * @var list<HandlerResolverInterface>
@@ -39,7 +35,7 @@ final class SelectableHandlerProvider implements HandlerProviderInterface
         };
     }
 
-    public function getHandler(MatchedRouteInterface $route): callable
+    public function getHandler(MatchedRouteInterface $route): \Closure
     {
         foreach ($this->resolvers as $resolver) {
             $result = $resolver->resolve($route);

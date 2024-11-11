@@ -12,33 +12,17 @@ use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
-use Lsp\Dispatcher\Provider\HandlerProviderInterface;
-use Lsp\Dispatcher\Provider\SelectableHandlerProvider;
-use Lsp\Dispatcher\Resolver\CallableHandlerResolver;
-use Lsp\Dispatcher\Resolver\ClassMethodHandlerResolver;
-use Lsp\Dispatcher\Resolver\ClassStaticMethodHandlerResolver;
-use Lsp\Dispatcher\Resolver\FunctionHandlerResolver;
-use Lsp\Dispatcher\Resolver\HandlerResolverInterface;
+use Lsp\Dispatcher\Argument\Provider\ArgumentProviderInterface;
+use Lsp\Dispatcher\Handler\Provider\HandlerProviderInterface;
 
 final class Dispatcher implements DispatcherInterface
 {
-    private readonly HandlerProviderInterface $provider;
-
-    /**
-     * @param iterable<array-key, HandlerResolverInterface> $resolvers
-     */
     public function __construct(
         private readonly RouterInterface $router,
         private readonly ResponseFactoryInterface $responses,
-        iterable $resolvers = [
-            new CallableHandlerResolver(),
-            new ClassMethodHandlerResolver(),
-            new ClassStaticMethodHandlerResolver(),
-            new FunctionHandlerResolver(),
-        ],
-    ) {
-        $this->provider = new SelectableHandlerProvider($resolvers);
-    }
+        private readonly HandlerProviderInterface $handlers,
+        private readonly ArgumentProviderInterface $arguments,
+    ) {}
 
     public function notify(NotificationInterface $notification): ?\Throwable
     {
@@ -87,8 +71,10 @@ final class Dispatcher implements DispatcherInterface
 
     protected function dispatch(MatchedRouteInterface $route): mixed
     {
-        $handler = $this->provider->getHandler($route);
+        $handler = $this->handlers->getHandler($route);
 
-        return $handler($route);
+        $arguments = $this->arguments->getAllArguments($route, $handler);
+
+        return $handler(...$arguments);
     }
 }
