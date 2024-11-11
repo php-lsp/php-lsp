@@ -30,8 +30,8 @@ interface ExtractorInterface
      * // ]
      * ```
      *
-     * @throws HydratorExceptionInterface The general exception that occurs
-     *         in case of hydrator errors.
+     * @throws HydratorExceptionInterface the general exception that occurs
+     *         in case of hydrator errors
      */
     public function extract(mixed $data): mixed;
 }

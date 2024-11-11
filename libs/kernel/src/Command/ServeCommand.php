@@ -23,7 +23,6 @@ final class ServeCommand extends Command
         parent::__construct($name);
     }
 
-
     #[\Override]
     protected function configure(): void
     {

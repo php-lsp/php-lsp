@@ -12,6 +12,7 @@ parameters:
     - libs/contracts/router-contracts/src
     - libs/contracts/server-contracts/src
     - libs/dispatcher/src
+    - libs/hydrator-jms/src
     - libs/kernel/src
     - libs/protocol/src
     - libs/router/src

@@ -23,7 +23,7 @@ use React\Socket\ConnectionInterface as SocketConnectionInterface;
  * TODO 1) Add support of promise TTLs for {@see ReactConnection::$requests}
  * TODO 2) Add support of max in-memory promise instances for {@see ReactConnection::$requests}
  *
- * @internal this is an internal library class, please do not use it in your code.
+ * @internal this is an internal library class, please do not use it in your code
  * @psalm-internal Lsp\Server\React
  */
 final class ReactConnection implements ConnectionInterface

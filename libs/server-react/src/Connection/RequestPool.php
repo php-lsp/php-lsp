@@ -14,7 +14,7 @@ use React\Promise\PromiseInterface;
  * TODO 1) Add support of promise TTLs for {@see RequestPool::$requests}
  * TODO 2) Add support of max in-memory promise instances for {@see RequestPool::$requests}
  *
- * @internal this is an internal library class, please do not use it in your code.
+ * @internal this is an internal library class, please do not use it in your code
  * @psalm-internal Lsp\Server\React
  */
 final class RequestPool
@@ -76,7 +76,9 @@ final class RequestPool
 
     /**
      * @template T of mixed
+     *
      * @param IdentifiableInterface<T> $ctx
+     *
      * @return (T is string ? T :
      *     (T is int ? T : null)
      * )

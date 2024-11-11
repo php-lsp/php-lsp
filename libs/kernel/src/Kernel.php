@@ -49,20 +49,24 @@ class Kernel implements KernelInterface
 
     /**
      * @api
+     *
      * @param non-empty-string|null $projectDirectory
+     *
      * @throws \Exception
      */
-    public static function dev(string $projectDirectory = null): static
+    public static function dev(?string $projectDirectory = null): static
     {
         return new static('dev', true, $projectDirectory);
     }
 
     /**
      * @api
+     *
      * @param non-empty-string|null $projectDirectory
+     *
      * @throws \Exception
      */
-    public static function prod(string $projectDirectory = null): static
+    public static function prod(?string $projectDirectory = null): static
     {
         return new static('prod', true, $projectDirectory);
     }
@@ -247,6 +251,7 @@ class Kernel implements KernelInterface
 
     /**
      * @param non-empty-string $class
+     *
      * @return non-empty-string
      */
     private function getContainerPathname(string $class): string

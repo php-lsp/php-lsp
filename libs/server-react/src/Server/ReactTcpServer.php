@@ -14,7 +14,7 @@ use React\Socket\ConnectionInterface as SocketInterface;
 use React\Socket\TcpServer as SocketTcpServer;
 
 /**
- * @internal this is an internal library class, please do not use it in your code.
+ * @internal this is an internal library class, please do not use it in your code
  * @psalm-internal Lsp\Server\React
  */
 final class ReactTcpServer extends ReactServer

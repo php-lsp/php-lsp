@@ -22,7 +22,7 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements ExtractorInterface {
+        new class implements ExtractorInterface {
             public function extract(mixed $data): mixed {}
         };
     }
@@ -31,7 +31,7 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () implements HydratorInterface {
+        new class implements HydratorInterface {
             public function hydrate(string $type, mixed $data): mixed {}
         };
     }
@@ -40,16 +40,18 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () extends \Exception implements HydratorExceptionInterface {};
+        new class extends \Exception implements HydratorExceptionInterface {};
     }
 
     public function testMappingExceptionCompatibility(): void
     {
         self::expectNotToPerformAssertions();
 
-        new class () extends \Exception implements MappingExceptionInterface {
+        new class extends \Exception implements MappingExceptionInterface {
             public function getPath(): array {}
+
             public function getActualType(): ?string {}
+
             public function getExpectedType(): string {}
         };
     }
@@ -58,8 +60,9 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class () extends \Exception implements MarshallingExceptionInterface {
+        new class extends \Exception implements MarshallingExceptionInterface {
             public function getPath(): array {}
+
             public function getActualType(): ?string {}
         };
     }

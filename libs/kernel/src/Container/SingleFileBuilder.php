@@ -63,6 +63,7 @@ final class SingleFileBuilder extends Builder
 
     /**
      * @param non-empty-string $class
+     *
      * @return non-empty-string
      */
     private function getContainerPathname(string $class): string

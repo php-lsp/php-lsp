@@ -24,6 +24,7 @@ final class OrderedArgumentProvider implements ArgumentProviderInterface
 
     /**
      * @param iterable<array-key, ArgumentResolverInterface> $resolvers
+     *
      * @return list<ArgumentResolverInterface>
      */
     private static function iterableToList(iterable $resolvers): array

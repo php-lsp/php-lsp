@@ -43,7 +43,7 @@ class LanguageServerKernel extends Kernel implements ServerKernelInterface
             throw new \LogicException('Could not fetch server driver instance from container');
         }
 
-        $driver->create('tcp://'. $host. ':'. $port);
+        $driver->create('tcp://' . $host . ':' . $port);
         $driver->run();
     }
 }

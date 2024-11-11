@@ -11,7 +11,10 @@ final class RouteArgumentResolver extends ArgumentResolver
 {
     public function resolve(MatchedRouteInterface $route, \ReflectionParameter $parameter): iterable
     {
-        yield from $this->whenType($parameter, RouteInterface::class, static fn(): iterable
+        yield from $this->whenType(
+            $parameter,
+            RouteInterface::class,
+            static fn(): iterable
             => yield $route,
         );
     }

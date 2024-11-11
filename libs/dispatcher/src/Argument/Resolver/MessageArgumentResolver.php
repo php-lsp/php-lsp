@@ -11,7 +11,10 @@ final class MessageArgumentResolver extends ArgumentResolver
 {
     public function resolve(MatchedRouteInterface $route, \ReflectionParameter $parameter): iterable
     {
-        yield from $this->whenType($parameter, MessageInterface::class, static fn(): iterable
+        yield from $this->whenType(
+            $parameter,
+            MessageInterface::class,
+            static fn(): iterable
             => yield $route->getRequest(),
         );
     }

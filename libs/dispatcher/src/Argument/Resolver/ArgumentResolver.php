@@ -19,8 +19,10 @@ abstract class ArgumentResolver implements ArgumentResolverInterface
 
     /**
      * @template T of mixed
+     *
      * @param non-empty-string $type
      * @param \Closure(\ReflectionParameter):iterable<array-key, T> $then
+     *
      * @return iterable<array-key, T>
      */
     protected function whenType(\ReflectionParameter $parameter, string $type, \Closure $then): iterable

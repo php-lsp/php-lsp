@@ -24,6 +24,7 @@ final class OrderedHandlerProvider implements HandlerProviderInterface
 
     /**
      * @param iterable<array-key, HandlerResolverInterface> $resolvers
+     *
      * @return list<HandlerResolverInterface>
      */
     private static function iterableToList(iterable $resolvers): array
