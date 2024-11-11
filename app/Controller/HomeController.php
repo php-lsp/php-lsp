@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use Lsp\Contracts\Router\MatchedRouteInterface;
 use Lsp\Kernel\Attribute\AsController;
-use Lsp\Protocol\Type\InitializedParams;
+use Lsp\Protocol\Type\InitializeParams;
 use Lsp\Protocol\Type\InitializeResult;
 use Lsp\Protocol\Type\InitializeResultServerInfo;
 use Lsp\Protocol\Type\PositionEncodingKind;
@@ -17,10 +16,8 @@ use Lsp\Router\Attribute\Route;
 #[AsController, Route('initialize')]
 final class HomeController
 {
-    public function __invoke(MatchedRouteInterface $route): InitializeResult
+    public function __invoke(InitializeParams $params): InitializeResult
     {
-        dd(__METHOD__, $route);
-
         return new InitializeResult(
             capabilities: new ServerCapabilities(
                 positionEncoding: PositionEncodingKind::UTF8,
