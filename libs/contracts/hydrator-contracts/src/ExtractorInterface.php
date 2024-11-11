@@ -29,6 +29,7 @@ interface ExtractorInterface
      * //   name => string("Vasya"),
      * // ]
      * ```
+     *
      * @param non-empty-string|null $type
      *
      * @throws HydratorExceptionInterface the general exception that occurs

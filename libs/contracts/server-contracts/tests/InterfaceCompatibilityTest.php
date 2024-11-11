@@ -26,8 +26,11 @@ final class InterfaceCompatibilityTest extends TestCase
 
         new class implements ConnectionInterface {
             public function getServer(): ServerInterface {}
+
             public function notify(NotificationInterface $notification): ?\Throwable {}
+
             public function call(RequestInterface $request): PromiseInterface {}
+
             public function close(): void {}
         };
     }
@@ -38,7 +41,9 @@ final class InterfaceCompatibilityTest extends TestCase
 
         new class implements DriverInterface {
             public function create(string $dsn): ServerInterface {}
+
             public function run(): void {}
+
             public function stop(): void {}
         };
     }
@@ -49,6 +54,7 @@ final class InterfaceCompatibilityTest extends TestCase
 
         new class implements RunnableInterface {
             public function run(): void {}
+
             public function stop(): void {}
         };
     }
@@ -59,6 +65,7 @@ final class InterfaceCompatibilityTest extends TestCase
 
         new class implements ServerInterface {
             public function getDriver(): DriverInterface {}
+
             public function getDataSourceName(): string {}
         };
     }
