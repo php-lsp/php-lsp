@@ -8,6 +8,7 @@ use Lsp\Contracts\Server\DriverInterface;
 use Lsp\Kernel\DependencyInjection\CodecCompilerPass;
 use Lsp\Kernel\DependencyInjection\DispatcherCompilerPass;
 use Lsp\Kernel\DependencyInjection\DispatcherLoaderCompilerPass;
+use Lsp\Kernel\DependencyInjection\HydratorCompilerPass;
 use Lsp\Kernel\DependencyInjection\MessageFactoryCompilerPass;
 use Lsp\Kernel\DependencyInjection\PublishServerCompilerPass;
 use Lsp\Kernel\DependencyInjection\RouteLoaderCompilerPass;
@@ -29,6 +30,7 @@ class LanguageServerKernel extends Kernel implements ServerKernelInterface
         $container->addCompilerPass(new RouterCompilerPass(), priority: 1000);
         $container->addCompilerPass(new DispatcherCompilerPass(), priority: 1000);
         $container->addCompilerPass(new ServerCompilerPass(), priority: 1000);
+        $container->addCompilerPass(new HydratorCompilerPass(), priority: 1000);
 
         $container->addCompilerPass(new PublishServerCompilerPass(), priority: -1000);
         $container->addCompilerPass(new RouteLoaderCompilerPass(), priority: -1000);

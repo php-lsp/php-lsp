@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Lsp\Kernel\DependencyInjection;
 
 use Composer\InstalledVersions;
+use Lsp\Contracts\Hydrator\HydratorInterface;
 use Lsp\Dispatcher\Argument\Resolver\ArgumentResolverInterface;
+use Lsp\Dispatcher\Argument\Resolver\DTOArgumentResolver;
 use Lsp\Dispatcher\Argument\Resolver\MessageArgumentResolver;
 use Lsp\Dispatcher\Argument\Resolver\MessageIdArgumentResolver;
 use Lsp\Dispatcher\Argument\Resolver\RouteArgumentResolver;
@@ -56,6 +58,10 @@ final class DispatcherCompilerPass implements CompilerPassInterface
             ->addTag('lsp.dispatcher.argument_resolver');
 
         $container->register(MessageIdArgumentResolver::class)
+            ->addTag('lsp.dispatcher.argument_resolver');
+
+        $container->register(DTOArgumentResolver::class)
+            ->setArgument('$hydrator', new Reference(HydratorInterface::class))
             ->addTag('lsp.dispatcher.argument_resolver');
     }
 

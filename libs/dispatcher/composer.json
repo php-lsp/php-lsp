@@ -18,6 +18,7 @@
     "require": {
         "php": "^8.1",
         "php-lsp/dispatcher-contracts": "^1.0",
+        "php-lsp/hydrator-contracts-implementation": "^1.0",
         "php-lsp/rpc-message-contracts": "^1.0",
         "php-lsp/rpc-message-factory-contracts": "^1.0",
         "php-lsp/rpc-message-factory-contracts-implementation": "^1.0",

@@ -14,7 +14,8 @@ parameters:
     - libs/dispatcher/src
     - libs/hydrator-jms/src
     - libs/kernel/src
-    - libs/protocol/src
+    # - libs/protocol/src
+    - libs/protocol-generator/src
     - libs/router/src
     - libs/server-react/src
     - libs/rpc/contracts/rpc-codec-contracts/src
@@ -23,9 +24,5 @@ parameters:
     - libs/rpc/rpc-codec-jsonrpc/src
     - libs/rpc/rpc-message/src
     - libs/rpc/rpc-message-factory/src
-  excludePaths:
-    analyse:
-      # Exclude generated types
-      - libs/protocol/src/Type/*
   tmpDir: vendor/.cache.phpstan
   reportUnmatchedIgnoredErrors: true

@@ -19,6 +19,9 @@ jobs:
       fail-fast: false
       matrix:
         package:
+          # Dev
+          - local_path: 'protocol-generator'
+            split_repository: 'protocol-generator'
           # Contracts
           - local_path: 'contracts/dispatcher-contracts'
             split_repository: 'dispatcher-contracts'

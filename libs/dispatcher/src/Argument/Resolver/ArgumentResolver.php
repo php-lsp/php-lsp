@@ -6,7 +6,7 @@ namespace Lsp\Dispatcher\Argument\Resolver;
 
 abstract class ArgumentResolver implements ArgumentResolverInterface
 {
-    protected function findTypeName(\ReflectionParameter $parameter): ?string
+    protected function fetchTypeName(\ReflectionParameter $parameter): ?string
     {
         $type = $parameter->getType();
 
@@ -27,7 +27,7 @@ abstract class ArgumentResolver implements ArgumentResolverInterface
      */
     protected function whenType(\ReflectionParameter $parameter, string $type, \Closure $then): iterable
     {
-        $actual = $this->findTypeName($parameter);
+        $actual = $this->fetchTypeName($parameter);
 
         if ($actual === null) {
             return;

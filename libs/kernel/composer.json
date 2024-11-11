@@ -23,6 +23,7 @@
         "symfony/console": "^6.4|^7.0",
         "symfony/expression-language": "^6.4|^7.0",
         "symfony/dependency-injection": "^6.4|^7.0",
+        "php-lsp/hydrator-contracts-implementation": "^1.0",
         "php-lsp/server-contracts-implementation": "^1.0"
     },
     "autoload": {

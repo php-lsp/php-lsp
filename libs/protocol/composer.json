@@ -24,7 +24,8 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.5|^11.0"
+        "phpunit/phpunit": "^10.5|^11.0",
+        "php-lsp/protocol-generator": "^1.0"
     },
     "autoload-dev": {
         "psr-4": {

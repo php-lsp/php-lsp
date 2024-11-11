@@ -33,5 +33,5 @@ interface ExtractorInterface
      * @throws HydratorExceptionInterface the general exception that occurs
      *         in case of hydrator errors
      */
-    public function extract(mixed $data): mixed;
+    public function extract(mixed $data, ?string $type = null): mixed;
 }

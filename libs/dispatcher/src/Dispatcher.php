@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Lsp\Dispatcher;
 
 use Lsp\Contracts\Dispatcher\DispatcherInterface;
+use Lsp\Contracts\Hydrator\ExtractorInterface;
 use Lsp\Contracts\Router\MatchedRouteInterface;
 use Lsp\Contracts\Router\RouterInterface;
 use Lsp\Contracts\Rpc\Message\Factory\ResponseFactoryInterface;
@@ -19,6 +20,7 @@ final class Dispatcher implements DispatcherInterface
 {
     public function __construct(
         private readonly RouterInterface $router,
+        private readonly ExtractorInterface $extractor,
         private readonly ResponseFactoryInterface $responses,
         private readonly HandlerProviderInterface $handlers,
         private readonly ArgumentProviderInterface $arguments,
@@ -40,14 +42,19 @@ final class Dispatcher implements DispatcherInterface
     public function call(RequestInterface $request): ResponseInterface
     {
         try {
+            // Matched route
             $route = $this->router->matchOrFail($request);
 
+            // Dispatch route and fetch result
             $result = $this->dispatch($route);
+
+            // Transform result to the response format
+            $response = $this->extractor->extract($result);
         } catch (\Throwable $e) {
             return $this->createFailureResponse($request, $e);
         }
 
-        return $this->responses->createSuccess($request, $result);
+        return $this->responses->createSuccess($request, $response);
     }
 
     /**

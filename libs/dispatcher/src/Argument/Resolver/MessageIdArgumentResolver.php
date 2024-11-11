@@ -12,16 +12,14 @@ final class MessageIdArgumentResolver extends ArgumentResolver
 {
     public function resolve(MatchedRouteInterface $route, \ReflectionParameter $parameter): iterable
     {
-        yield from $this->whenType(
-            parameter: $parameter,
-            type: IdInterface::class,
-            then: static function () use ($route): iterable {
-                $request = $route->getRequest();
+        $then = static function () use ($route): iterable {
+            $request = $route->getRequest();
 
-                if ($request instanceof IdentifiableInterface) {
-                    yield $request->getId();
-                }
-            },
-        );
+            if ($request instanceof IdentifiableInterface) {
+                yield $request->getId();
+            }
+        };
+
+        yield from $this->whenType($parameter, IdInterface::class, $then);
     }
 }
