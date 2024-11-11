@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Lsp\Contracts\Rpc\Message;
 
 /**
- * @template TIdentifier of mixed
+ * @template-covariant TIdentifier of mixed
  */
 interface IdentifiableInterface
 {

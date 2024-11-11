@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Router\Exception;
 
+use Lsp\Contracts\Router\Exception\RoutingExceptionInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 
 /**

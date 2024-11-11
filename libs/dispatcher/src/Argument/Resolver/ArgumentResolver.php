@@ -6,6 +6,9 @@ namespace Lsp\Dispatcher\Argument\Resolver;
 
 abstract class ArgumentResolver implements ArgumentResolverInterface
 {
+    /**
+     * @return non-empty-string|null
+     */
     protected function fetchTypeName(\ReflectionParameter $parameter): ?string
     {
         $type = $parameter->getType();
@@ -14,6 +17,7 @@ abstract class ArgumentResolver implements ArgumentResolverInterface
             return null;
         }
 
+        /** @var non-empty-string */
         return $type->getName();
     }
 

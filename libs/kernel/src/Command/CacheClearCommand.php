@@ -39,7 +39,7 @@ final class CacheClearCommand extends Command
             shortcut: 'r',
             mode: InputOption::VALUE_OPTIONAL,
             description: 'Sets an application root directory',
-            default: \getcwd() ?: '.',
+            default: ($directory = \getcwd()) === false ? '.' : $directory,
         );
     }
 
@@ -48,18 +48,22 @@ final class CacheClearCommand extends Command
     {
         $output->writeln('<info>Clearing outdated cache directory</info>');
         $output->writeln(\vsprintf(' - Using project directory: <comment>%s</comment>', [
-            $input->getOption('root'),
+            // @phpstan-ignore-next-line
+            (string) $input->getOption('root'),
         ]));
 
         $app = new LanguageServerKernel(
-            env: $input->getOption('env'),
+            // @phpstan-ignore-next-line
+            env: (string) $input->getOption('env'),
             debug: true,
-            projectDirectory: $input->getOption('root'),
+            // @phpstan-ignore-next-line
+            projectDirectory: (string) $input->getOption('root'),
         );
 
         $files = new \RecursiveIteratorIterator(
             iterator: new \RecursiveDirectoryIterator(
-                directory: $app->container->getParameter('kernel.build_dir'),
+                // @phpstan-ignore-next-line
+                directory: (string) $app->container->getParameter('kernel.build_dir'),
                 flags: \FilesystemIterator::SKIP_DOTS,
             ),
             mode: \RecursiveIteratorIterator::CHILD_FIRST,

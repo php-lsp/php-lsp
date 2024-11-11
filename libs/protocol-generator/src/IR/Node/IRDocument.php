@@ -20,7 +20,7 @@ final class IRDocument extends IRNode
      */
     public function find(string $name): ?IRStatement
     {
-        return $this->statements[$name] ?? null;
+        return $this->statements[\strtolower($name)] ?? null;
     }
 
     public function replace(IRStatement $from, IRStatement $to): void
@@ -31,11 +31,11 @@ final class IRDocument extends IRNode
 
     public function remove(IRStatement $stmt): void
     {
-        unset($this->statements[$stmt->name]);
+        unset($this->statements[\strtolower($stmt->name)]);
     }
 
     public function add(IRStatement $stmt): void
     {
-        $this->statements[$stmt->name] = $stmt;
+        $this->statements[\strtolower($stmt->name)] = $stmt;
     }
 }

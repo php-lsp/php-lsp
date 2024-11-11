@@ -94,7 +94,13 @@ class Kernel implements KernelInterface
         }
 
         if (self::class !== static::class) {
-            return \getcwd() ?: '.';
+            $directory = \getcwd();
+
+            if ($directory === false) {
+                return '.';
+            }
+
+            return $directory;
         }
 
         $pathname = (new \ReflectionClass(static::class))

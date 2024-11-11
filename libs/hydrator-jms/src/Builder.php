@@ -24,7 +24,7 @@ final class Builder
     {
         return $builder->setDebug($this->debug)
             ->enableEnumSupport()
-            //->setMetadataDirs([__DIR__ . '/../resources'])
+            // ->setMetadataDirs([__DIR__ . '/../resources'])
         ;
     }
 

@@ -30,7 +30,7 @@ final class CacheWarmupCommand extends Command
             shortcut: 'r',
             mode: InputOption::VALUE_OPTIONAL,
             description: 'Sets an application root directory',
-            default: \getcwd() ?: '.',
+            default: ($directory = \getcwd()) === false ? '.' : $directory,
         );
     }
 
@@ -39,17 +39,21 @@ final class CacheWarmupCommand extends Command
     {
         $output->writeln('<info>Clearing outdated cache directory</info>');
         $output->writeln(\vsprintf(' - Using project directory: <comment>%s</comment>', [
-            $input->getOption('root'),
+            // @phpstan-ignore-next-line
+            (string) $input->getOption('root'),
         ]));
 
         $app = new LanguageServerKernel(
-            env: $input->getOption('env'),
+            // @phpstan-ignore-next-line
+            env: (string) $input->getOption('env'),
             debug: true,
-            projectDirectory: $input->getOption('root'),
+            // @phpstan-ignore-next-line
+            projectDirectory: (string) $input->getOption('root'),
         );
 
         $output->writeln(\vsprintf('Cache Directory: <comment>%s</comment>', [
-            $app->container->getParameter('kernel.build_dir'),
+            // @phpstan-ignore-next-line
+            (string) $app->container->getParameter('kernel.build_dir'),
         ]));
 
         $output->writeln('<info>Finished</info>');

@@ -29,6 +29,8 @@ use TypeLang\Parser\Node\Stmt\Shape\ImplicitFieldNode;
 use TypeLang\Parser\Node\Stmt\Shape\NamedFieldNode;
 use TypeLang\Parser\Node\Stmt\Template\ArgumentNode;
 use TypeLang\Parser\Node\Stmt\Template\ArgumentsListNode;
+use TypeLang\Parser\Node\Stmt\Template\TemplateArgumentNode;
+use TypeLang\Parser\Node\Stmt\Template\TemplateArgumentsListNode;
 use TypeLang\Parser\Node\Stmt\TypeStatement;
 use TypeLang\Parser\Node\Stmt\UnionTypeNode;
 
@@ -60,9 +62,9 @@ final class TypeBuilder
     {
         return new NamedTypeNode(
             name: 'int',
-            arguments: new ArgumentsListNode([
-                new ArgumentNode($this->int32Min()),
-                new ArgumentNode($this->int32Max()),
+            arguments: new TemplateArgumentsListNode([
+                new TemplateArgumentNode($this->int32Min()),
+                new TemplateArgumentNode($this->int32Max()),
             ]),
         );
     }
@@ -81,9 +83,9 @@ final class TypeBuilder
     {
         return new NamedTypeNode(
             name: 'int',
-            arguments: new ArgumentsListNode([
-                new ArgumentNode(new IntLiteralNode(0)),
-                new ArgumentNode($this->int32Max()),
+            arguments: new TemplateArgumentsListNode([
+                new TemplateArgumentNode(new IntLiteralNode(0)),
+                new TemplateArgumentNode($this->int32Max()),
             ]),
         );
     }
@@ -134,9 +136,9 @@ final class TypeBuilder
             a: new NamedTypeNode('float'),
             b: new NamedTypeNode(
                 name: 'int',
-                arguments: new ArgumentsListNode([
-                    new ArgumentNode($this->intOf(0)),
-                    new ArgumentNode($this->intOf(1)),
+                arguments: new TemplateArgumentsListNode([
+                    new TemplateArgumentNode($this->intOf(0)),
+                    new TemplateArgumentNode($this->intOf(1)),
                 ]),
             ),
         );
@@ -151,8 +153,8 @@ final class TypeBuilder
     {
         return new NamedTypeNode(
             name: 'list',
-            arguments: new ArgumentsListNode([
-                new ArgumentNode($type),
+            arguments: new TemplateArgumentsListNode([
+                new TemplateArgumentNode($type),
             ]),
         );
     }
@@ -166,9 +168,9 @@ final class TypeBuilder
     {
         return new NamedTypeNode(
             name: 'list',
-            arguments: new ArgumentsListNode([
-                new ArgumentNode($key),
-                new ArgumentNode($value),
+            arguments: new TemplateArgumentsListNode([
+                new TemplateArgumentNode($key),
+                new TemplateArgumentNode($value),
             ]),
         );
     }

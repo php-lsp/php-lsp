@@ -55,7 +55,7 @@ final class ServeCommand extends Command
             shortcut: 'r',
             mode: InputOption::VALUE_OPTIONAL,
             description: 'Sets an application root directory',
-            default: \getcwd() ?: '.',
+            default: ($directory = \getcwd()) === false ? '.' : $directory,
         );
     }
 
@@ -63,8 +63,10 @@ final class ServeCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $title = \vsprintf('PHP Language Server (tcp://%s:%d)', [
-            $input->getOption('addr'),
-            $input->getOption('port'),
+            // @phpstan-ignore-next-line
+            (string) $input->getOption('addr'),
+            // @phpstan-ignore-next-line
+            (int) $input->getOption('port'),
         ]);
 
         $output->writeln('Running <info>' . $title . '</info>');
@@ -72,13 +74,17 @@ final class ServeCommand extends Command
         $this->setProcessTitle($title);
 
         $app = new Application(
-            env: $input->getOption('env'),
+            // @phpstan-ignore-next-line
+            env: (string) $input->getOption('env'),
             debug: false,
-            projectDirectory: $input->getOption('root'),
+            // @phpstan-ignore-next-line
+            projectDirectory: (string) $input->getOption('root'),
         );
 
         $app->run(
+            // @phpstan-ignore-next-line
             port: (int) $input->getOption('port'),
+            // @phpstan-ignore-next-line
             host: (string) $input->getOption('addr'),
         );
 

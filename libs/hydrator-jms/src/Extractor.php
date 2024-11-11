@@ -16,10 +16,13 @@ final class Extractor implements ExtractorInterface
         private readonly SerializationContext $context = new SerializationContext(),
     ) {}
 
+    /**
+     * @return array<array-key, mixed>
+     */
     public function extract(mixed $data, ?string $type = null): array
     {
         try {
-            return $this->transformer->toArray((array)$data, $this->context, $type);
+            return $this->transformer->toArray($data, $this->context, $type);
         } catch (\Throwable $e) {
             throw new MappingException($e->getMessage(), previous: $e);
         }

@@ -7,14 +7,14 @@ namespace Lsp\Contracts\Rpc\Message;
 /**
  * RPC identifier representation.
  *
- * @template TValue of mixed
+ * @template-covariant TValue of mixed
  */
 interface IdInterface extends \Stringable
 {
     /**
      * Checks the value object equivalence.
      *
-     * @param IdInterface<mixed> $id
+     * @param self<mixed> $id
      */
     public function equals(self $id): bool;
 
