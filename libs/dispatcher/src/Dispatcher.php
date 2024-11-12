@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Lsp\Dispatcher;
 
-use Lsp\Contracts\Dispatcher\DispatcherInterface;
 use Lsp\Contracts\Hydrator\ExtractorInterface;
 use Lsp\Contracts\Router\MatchedRouteInterface;
 use Lsp\Contracts\Router\RouterInterface;

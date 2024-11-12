@@ -7,7 +7,6 @@ parameters:
   fileExtensions:
     - php
   paths:
-    - libs/contracts/dispatcher-contracts/src
     - libs/contracts/hydrator-contracts/src
     - libs/contracts/router-contracts/src
     - libs/dispatcher/src

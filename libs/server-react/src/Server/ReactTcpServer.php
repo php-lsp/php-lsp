@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Lsp\Server\React\Server;
 
-use Lsp\Contracts\Dispatcher\DispatcherInterface;
 use Lsp\Contracts\Rpc\Codec\DecoderInterface;
 use Lsp\Contracts\Rpc\Codec\EncoderInterface;
+use Lsp\Dispatcher\DispatcherInterface;
 use Lsp\Server\React\ReactConnection;
 use Lsp\Server\React\ReactDriver;
 use Psr\EventDispatcher\EventDispatcherInterface;

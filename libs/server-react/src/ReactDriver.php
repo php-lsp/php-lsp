@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Lsp\Server\React;
 
-use Lsp\Contracts\Dispatcher\DispatcherInterface;
 use Lsp\Contracts\Rpc\Codec\DecoderInterface;
 use Lsp\Contracts\Rpc\Codec\EncoderInterface;
 use Lsp\Contracts\Rpc\Message\MessageInterface;
+use Lsp\Dispatcher\DispatcherInterface;
 use Lsp\Server\DriverInterface;
-use Lsp\Server\ServerInterface;
 use Lsp\Server\React\Server\ReactTcpServer;
+use Lsp\Server\ServerInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use React\EventLoop\LoopInterface;
 

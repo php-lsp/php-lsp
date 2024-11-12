@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Lsp\Kernel\DependencyInjection\Dispatcher;
 
-use Lsp\Contracts\Dispatcher\DispatcherInterface;
 use Lsp\Contracts\Hydrator\ExtractorInterface;
 use Lsp\Contracts\Router\RouterInterface;
 use Lsp\Contracts\Rpc\Message\Factory\ResponseFactoryInterface;
 use Lsp\Dispatcher\Argument\Provider\ArgumentProviderInterface;
 use Lsp\Dispatcher\Argument\Provider\OrderedArgumentProvider;
 use Lsp\Dispatcher\Dispatcher;
+use Lsp\Dispatcher\DispatcherInterface;
 use Lsp\Dispatcher\Handler\Provider\HandlerProviderInterface;
 use Lsp\Dispatcher\Handler\Provider\OrderedHandlerProvider;
 use Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;

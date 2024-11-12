@@ -23,8 +23,6 @@ jobs:
           - local_path: 'protocol-generator'
             split_repository: 'protocol-generator'
           # Contracts
-          - local_path: 'contracts/dispatcher-contracts'
-            split_repository: 'dispatcher-contracts'
           - local_path: 'contracts/hydrator-contracts'
             split_repository: 'hydrator-contracts'
           - local_path: 'contracts/router-contracts'

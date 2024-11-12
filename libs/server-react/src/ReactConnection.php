@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Lsp\Server\React;
 
-use Lsp\Contracts\Dispatcher\DispatcherInterface;
 use Lsp\Contracts\Rpc\Codec\DecoderInterface;
 use Lsp\Contracts\Rpc\Codec\EncoderInterface;
 use Lsp\Contracts\Rpc\Codec\Exception\EncodingExceptionInterface;
@@ -14,6 +13,7 @@ use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
 use Lsp\Contracts\Rpc\Message\SuccessfulResponseInterface;
+use Lsp\Dispatcher\DispatcherInterface;
 use Lsp\Server\ConnectionInterface;
 use Lsp\Server\Event\FailureResponseReceived;
 use Lsp\Server\Event\FailureResponseSent;
