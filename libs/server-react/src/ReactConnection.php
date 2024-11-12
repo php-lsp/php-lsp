@@ -51,13 +51,11 @@ final class ReactConnection implements ConnectionInterface
 
     private function beforeMessageReceived(MessageInterface $message): void
     {
-        dump('>', $message);
         // TODO
     }
 
     private function beforeMessageSend(MessageInterface $message): void
     {
-        dump('<', $message);
         // TODO
     }
 
