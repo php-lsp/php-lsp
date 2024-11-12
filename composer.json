@@ -14,6 +14,24 @@
             "homepage": "https://nesk.me"
         }
     ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "libs/*"
+        },
+        {
+            "type": "path",
+            "url": "libs/rpc/*"
+        },
+        {
+            "type": "path",
+            "url": "libs/contracts/*"
+        },
+        {
+            "type": "path",
+            "url": "libs/rpc/contracts/*"
+        }
+    ],
     "require": {
         "php": "^8.1",
         "php-lsp/dispatcher": "^1.0",
