@@ -25,7 +25,8 @@
         "symfony/expression-language": "^6.4|^7.0",
         "symfony/dependency-injection": "^6.4|^7.0",
         "php-lsp/hydrator-contracts-implementation": "^1.0",
-        "php-lsp/server-contracts-implementation": "^1.0"
+        "php-lsp/server": "^1.0",
+        "php-lsp/rpc-codec-jsonrpc": "^1.0"
     },
     "autoload": {
         "psr-4": {

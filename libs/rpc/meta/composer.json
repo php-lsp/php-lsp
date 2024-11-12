@@ -20,8 +20,7 @@
         "php-lsp/rpc-message-contracts": "^1.0",
         "php-lsp/rpc-message-factory": "^1.0",
         "php-lsp/rpc-message-factory-contracts": "^1.0",
-        "php-lsp/rpc-codec-contracts": "^1.0",
-        "php-lsp/rpc-codec-jsonrpc": "^1.0"
+        "php-lsp/rpc-codec-contracts": "^1.0"
     },
     "extra": {
         "branch-alias": {
