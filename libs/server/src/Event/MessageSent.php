@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Contracts\Server\Event;
+namespace Lsp\Server\Event;
 
 use Lsp\Contracts\Rpc\Message\MessageInterface;
-use Lsp\Contracts\Server\ConnectionInterface;
+use Lsp\Server\ConnectionInterface;
 
-class MessageReceived
+class MessageSent
 {
     public function __construct(
         public readonly MessageInterface $message,

@@ -17,11 +17,11 @@
             <directory>libs/contracts/dispatcher-contracts/tests</directory>
             <directory>libs/contracts/hydrator-contracts/tests</directory>
             <directory>libs/contracts/router-contracts/tests</directory>
-            <directory>libs/contracts/server-contracts/tests</directory>
             <directory>libs/dispatcher/tests</directory>
             <directory>libs/hydrator-jms/tests</directory>
             <directory>libs/protocol/tests</directory>
             <directory>libs/router/tests</directory>
+            <directory>libs/server/tests</directory>
             <directory>libs/server-react/tests</directory>
             <directory>libs/rpc/contracts/rpc-codec-contracts/tests</directory>
             <directory>libs/rpc/contracts/rpc-message-contracts/tests</directory>
@@ -42,11 +42,11 @@
             <directory>libs/contracts/dispatcher-contracts/src</directory>
             <directory>libs/contracts/hydrator-contracts/src</directory>
             <directory>libs/contracts/router-contracts/src</directory>
-            <directory>libs/contracts/server-contracts/src</directory>
             <directory>libs/dispatcher/src</directory>
             <directory>libs/hydrator-jms/src</directory>
             <directory>libs/protocol/src</directory>
             <directory>libs/router/src</directory>
+            <directory>libs/server/src</directory>
             <directory>libs/server-react/src</directory>
             <directory>libs/rpc/contracts/rpc-codec-contracts/src</directory>
             <directory>libs/rpc/contracts/rpc-message-contracts/src</directory>

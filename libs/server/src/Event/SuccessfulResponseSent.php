@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Contracts\Server\Event;
+namespace Lsp\Server\Event;
 
 use Lsp\Contracts\Rpc\Message\SuccessfulResponseInterface;
-use Lsp\Contracts\Server\ConnectionInterface;
+use Lsp\Server\ConnectionInterface;
 
-class SuccessfulResponseReceived extends ResponseReceived
+class SuccessfulResponseSent extends ResponseSent
 {
     /**
      * @param SuccessfulResponseInterface<mixed, mixed> $response

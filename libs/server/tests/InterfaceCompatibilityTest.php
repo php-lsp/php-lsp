@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Contracts\Server\Tests;
+namespace Lsp\Server\Tests;
 
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
-use Lsp\Contracts\Server\ConnectionInterface;
-use Lsp\Contracts\Server\DriverInterface;
-use Lsp\Contracts\Server\RunnableInterface;
-use Lsp\Contracts\Server\ServerInterface;
+use Lsp\Server\ConnectionInterface;
+use Lsp\Server\DriverInterface;
+use Lsp\Server\RunnableInterface;
+use Lsp\Server\ServerInterface;
 use PHPUnit\Framework\Attributes\Group;
 use React\Promise\PromiseInterface;
 
@@ -17,7 +17,7 @@ use React\Promise\PromiseInterface;
  * Note: Changing the behavior of these tests is allowed ONLY when updating
  *       a MAJOR version of the package.
  */
-#[Group('php-lsp/server-contracts'), Group('unit')]
+#[Group('php-lsp/server'), Group('unit')]
 final class InterfaceCompatibilityTest extends TestCase
 {
     public function testConnectionCompatibility(): void
@@ -25,6 +25,8 @@ final class InterfaceCompatibilityTest extends TestCase
         self::expectNotToPerformAssertions();
 
         new class implements ConnectionInterface {
+            public function getClientAddress(): string {}
+
             public function getServer(): ServerInterface {}
 
             public function notify(NotificationInterface $notification): ?\Throwable {}

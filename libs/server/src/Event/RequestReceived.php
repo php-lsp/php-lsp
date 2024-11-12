@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Contracts\Server\Event;
+namespace Lsp\Server\Event;
 
 use Lsp\Contracts\Rpc\Message\RequestInterface;
-use Lsp\Contracts\Server\ConnectionInterface;
+use Lsp\Server\ConnectionInterface;
 
 class RequestReceived extends NotificationReceived
 {

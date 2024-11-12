@@ -1,11 +1,11 @@
 {
-    "name": "php-lsp/server-contracts",
-    "description": "RPC Server Contracts",
+    "name": "php-lsp/server",
+    "description": "RPC Server Kernel Library",
     "type": "library",
     "license": "MIT",
-    "keywords": ["rpc", "server", "interoperability", "php", "lsp"],
+    "keywords": ["rpc", "server", "php", "lsp"],
     "support": {
-        "source": "https://github.com/php-lsp/server-contracts",
+        "source": "https://github.com/php-lsp/server",
         "issues": "https://github.com/php-lsp/php-lsp/issues"
     },
     "authors": [
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lsp\\Contracts\\Server\\": "src"
+            "Lsp\\Server\\": "src"
         }
     },
     "require-dev": {
@@ -29,7 +29,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lsp\\Contracts\\Server\\Tests\\": "tests"
+            "Lsp\\Server\\Tests\\": "tests"
         }
     },
     "scripts": {

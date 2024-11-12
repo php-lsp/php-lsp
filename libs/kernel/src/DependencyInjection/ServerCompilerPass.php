@@ -7,7 +7,7 @@ namespace Lsp\Kernel\DependencyInjection;
 use Lsp\Contracts\Dispatcher\DispatcherInterface;
 use Lsp\Contracts\Rpc\Codec\DecoderInterface;
 use Lsp\Contracts\Rpc\Codec\EncoderInterface;
-use Lsp\Contracts\Server\DriverInterface;
+use Lsp\Server\DriverInterface;
 use Lsp\Server\React\ReactDriver;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use React\EventLoop\Loop;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Contracts\Server;
+namespace Lsp\Server;
 
 interface DriverInterface extends RunnableInterface
 {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Server\React\Server;
 
-use Lsp\Contracts\Server\ServerInterface;
+use Lsp\Server\ServerInterface;
 use Lsp\Server\React\ReactDriver;
 
 /**

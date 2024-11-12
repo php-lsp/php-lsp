@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Kernel\DependencyInjection\Server;
 
-use Lsp\Contracts\Server\DriverInterface;
+use Lsp\Server\DriverInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Contracts\Server;
+namespace Lsp\Server;
 
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;

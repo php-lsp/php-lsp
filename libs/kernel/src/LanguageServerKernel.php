@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Kernel;
 
-use Lsp\Contracts\Server\DriverInterface;
+use Lsp\Server\DriverInterface;
 use Lsp\Kernel\DependencyInjection\CodecCompilerPass;
 use Lsp\Kernel\DependencyInjection\Dispatcher\DispatcherLoaderCompilerPass;
 use Lsp\Kernel\DependencyInjection\DispatcherCompilerPass;
