@@ -12,6 +12,11 @@ use React\Promise\PromiseInterface;
 interface ConnectionInterface
 {
     /**
+     * @return non-empty-string
+     */
+    public function getClientAddress(): string;
+
+    /**
      * Returns the server that this connection is associated with.
      */
     public function getServer(): ServerInterface;

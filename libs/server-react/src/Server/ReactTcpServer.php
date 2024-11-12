@@ -9,6 +9,7 @@ use Lsp\Contracts\Rpc\Codec\DecoderInterface;
 use Lsp\Contracts\Rpc\Codec\EncoderInterface;
 use Lsp\Server\React\ReactConnection;
 use Lsp\Server\React\ReactDriver;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use React\EventLoop\LoopInterface;
 use React\Socket\ConnectionInterface as SocketInterface;
 use React\Socket\TcpServer as SocketTcpServer;
@@ -31,6 +32,7 @@ final class ReactTcpServer extends ReactServer
         private readonly DecoderInterface $decoder,
         private readonly EncoderInterface $encoder,
         private readonly DispatcherInterface $dispatcher,
+        private readonly EventDispatcherInterface $events,
     ) {
         parent::__construct($driver, $dsn);
 
@@ -50,6 +52,7 @@ final class ReactTcpServer extends ReactServer
                 decoder: $this->decoder,
                 encoder: $this->encoder,
                 dispatcher: $this->dispatcher,
+                events: $this->events,
             );
         });
     }

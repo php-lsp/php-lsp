@@ -4,15 +4,19 @@ declare(strict_types=1);
 
 namespace Lsp\Kernel;
 
+use Lsp\Kernel\DependencyInjection\EventDispatcher\EventListenerLoaderCompilerPass;
+use Lsp\Kernel\DependencyInjection\EventDispatcherCompilerPass;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Config\Exception\FileLoaderImportCircularReferenceException;
 use Symfony\Component\Config\Exception\LoaderLoadException;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface as SymfonyContainerInterface;
 use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Symfony\Component\EventDispatcher\DependencyInjection\RegisterListenersPass;
 
 /**
  * @phpstan-consistent-constructor
@@ -33,14 +37,14 @@ class Kernel implements KernelInterface
 
     /**
      * @param non-empty-string $env
-     * @param non-empty-string|null $projectDirectory
+     * @param non-empty-string|null $root
      *
      * @throws \Exception
      */
     public function __construct(
         private readonly string $env = self::DEFAULT_ENV,
         private readonly bool $debug = self::DEFAULT_DEBUG,
-        private readonly ?string $projectDirectory = null,
+        private readonly ?string $root = null,
     ) {
         $this->container = $this->createOrGetContainer();
 
@@ -50,25 +54,25 @@ class Kernel implements KernelInterface
     /**
      * @api
      *
-     * @param non-empty-string|null $projectDirectory
+     * @param non-empty-string|null $root
      *
      * @throws \Exception
      */
-    public static function dev(?string $projectDirectory = null): static
+    public static function dev(?string $root = null): static
     {
-        return new static('dev', true, $projectDirectory);
+        return new static('dev', true, $root);
     }
 
     /**
      * @api
      *
-     * @param non-empty-string|null $projectDirectory
+     * @param non-empty-string|null $root
      *
      * @throws \Exception
      */
-    public static function prod(?string $projectDirectory = null): static
+    public static function prod(?string $root = null): static
     {
-        return new static('prod', true, $projectDirectory);
+        return new static('prod', true, $root);
     }
 
     /**
@@ -89,8 +93,8 @@ class Kernel implements KernelInterface
      */
     protected function getProjectDirectory(): string
     {
-        if ($this->projectDirectory !== null) {
-            return $this->projectDirectory;
+        if ($this->root !== null) {
+            return $this->root;
         }
 
         if (self::class !== static::class) {
@@ -242,11 +246,10 @@ class Kernel implements KernelInterface
         $container->setAlias(self::class, KernelInterface::class);
         $container->setAlias(static::class, KernelInterface::class);
 
-        // Container
-        $container->register(ContainerInterface::class)
-            ->setSynthetic(true);
-
-        $container->setAlias(SymfonyContainerInterface::class, ContainerInterface::class);
+        // Builtin Components
+        $container->addCompilerPass(new EventDispatcherCompilerPass(), priority: 1000);
+        $container->addCompilerPass(new EventListenerLoaderCompilerPass(), priority: 1000);
+        $container->addCompilerPass(new RegisterListenersPass(), priority: -1000);
     }
 
     private function bootContainer(Container $container): void

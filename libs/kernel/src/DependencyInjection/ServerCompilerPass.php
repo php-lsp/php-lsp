@@ -9,6 +9,7 @@ use Lsp\Contracts\Rpc\Codec\DecoderInterface;
 use Lsp\Contracts\Rpc\Codec\EncoderInterface;
 use Lsp\Contracts\Server\DriverInterface;
 use Lsp\Server\React\ReactDriver;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use React\EventLoop\Loop;
 use React\EventLoop\LoopInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
@@ -40,6 +41,7 @@ final class ServerCompilerPass implements CompilerPassInterface
             ->setArgument('$decoder', new Reference(DecoderInterface::class))
             ->setArgument('$encoder', new Reference(EncoderInterface::class))
             ->setArgument('$dispatcher', new Reference(DispatcherInterface::class))
+            ->setArgument('$events', new Reference(EventDispatcherInterface::class))
         ;
     }
 }

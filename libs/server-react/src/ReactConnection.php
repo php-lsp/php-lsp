@@ -8,14 +8,29 @@ use Lsp\Contracts\Dispatcher\DispatcherInterface;
 use Lsp\Contracts\Rpc\Codec\DecoderInterface;
 use Lsp\Contracts\Rpc\Codec\EncoderInterface;
 use Lsp\Contracts\Rpc\Codec\Exception\EncodingExceptionInterface;
+use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
 use Lsp\Contracts\Rpc\Message\MessageInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
+use Lsp\Contracts\Rpc\Message\SuccessfulResponseInterface;
 use Lsp\Contracts\Server\ConnectionInterface;
+use Lsp\Contracts\Server\Event\FailureResponseReceived;
+use Lsp\Contracts\Server\Event\FailureResponseSent;
+use Lsp\Contracts\Server\Event\MessageReceived;
+use Lsp\Contracts\Server\Event\MessageSent;
+use Lsp\Contracts\Server\Event\NotificationReceived;
+use Lsp\Contracts\Server\Event\NotificationSent;
+use Lsp\Contracts\Server\Event\RequestReceived;
+use Lsp\Contracts\Server\Event\RequestSent;
+use Lsp\Contracts\Server\Event\ResponseReceived;
+use Lsp\Contracts\Server\Event\ResponseSent;
+use Lsp\Contracts\Server\Event\SuccessfulResponseReceived;
+use Lsp\Contracts\Server\Event\SuccessfulResponseSent;
 use Lsp\Server\React\Connection\Buffer;
 use Lsp\Server\React\Connection\RequestPool;
 use Lsp\Server\React\Server\ReactServer;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use React\Promise\PromiseInterface;
 use React\Socket\ConnectionInterface as SocketConnectionInterface;
 
@@ -32,15 +47,25 @@ final class ReactConnection implements ConnectionInterface
 
     private readonly RequestPool $requests;
 
+    /**
+     * @var non-empty-string|null
+     */
+    private readonly ?string $address;
+
     public function __construct(
         private readonly ReactServer $server,
         private readonly SocketConnectionInterface $connection,
         private readonly DecoderInterface $decoder,
         private readonly EncoderInterface $encoder,
         private readonly DispatcherInterface $dispatcher,
+        private readonly EventDispatcherInterface $events,
     ) {
         $this->buffer = new Buffer($this->decoder);
         $this->requests = new RequestPool();
+
+        $address = $this->connection->getRemoteAddress();
+
+        $this->address = $address === '' ? null : $address;
 
         $connection->on('data', function (string $data): void {
             foreach ($this->buffer->push($data) as $message) {
@@ -51,12 +76,93 @@ final class ReactConnection implements ConnectionInterface
 
     private function beforeMessageReceived(MessageInterface $message): void
     {
-        // TODO
+        $this->events->dispatch(new MessageReceived(
+            message: $message,
+            connection: $this,
+        ));
+
+        if ($message instanceof NotificationInterface) {
+            $this->events->dispatch(new NotificationReceived(
+                notification: $message,
+                connection: $this,
+            ));
+
+            if ($message instanceof RequestInterface) {
+                $this->events->dispatch(new RequestReceived(
+                    request: $message,
+                    connection: $this,
+                ));
+            }
+
+            return;
+        }
+
+        if ($message instanceof ResponseInterface) {
+            $this->events->dispatch(new ResponseReceived(
+                response: $message,
+                connection: $this,
+            ));
+
+            if ($message instanceof SuccessfulResponseInterface) {
+                $this->events->dispatch(new SuccessfulResponseReceived(
+                    response: $message,
+                    connection: $this,
+                ));
+            } elseif ($message instanceof FailureResponseInterface) {
+                $this->events->dispatch(new FailureResponseReceived(
+                    response: $message,
+                    connection: $this,
+                ));
+            }
+        }
     }
 
     private function beforeMessageSend(MessageInterface $message): void
     {
-        // TODO
+        $this->events->dispatch(new MessageSent(
+            message: $message,
+            connection: $this,
+        ));
+
+        if ($message instanceof NotificationInterface) {
+            $this->events->dispatch(new NotificationSent(
+                notification: $message,
+                connection: $this,
+            ));
+
+            if ($message instanceof RequestInterface) {
+                $this->events->dispatch(new RequestSent(
+                    request: $message,
+                    connection: $this,
+                ));
+            }
+
+            return;
+        }
+
+        if ($message instanceof ResponseInterface) {
+            $this->events->dispatch(new ResponseSent(
+                response: $message,
+                connection: $this,
+            ));
+
+            if ($message instanceof SuccessfulResponseInterface) {
+                $this->events->dispatch(new SuccessfulResponseSent(
+                    response: $message,
+                    connection: $this,
+                ));
+            } elseif ($message instanceof FailureResponseInterface) {
+                $this->events->dispatch(new FailureResponseSent(
+                    response: $message,
+                    connection: $this,
+                ));
+            }
+        }
+    }
+
+    public function getClientAddress(): string
+    {
+        return $this->address ?? 'tcp://<unknown>';
     }
 
     private function onMessageReceived(MessageInterface $message): void

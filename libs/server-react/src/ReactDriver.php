@@ -11,6 +11,7 @@ use Lsp\Contracts\Rpc\Message\MessageInterface;
 use Lsp\Contracts\Server\DriverInterface;
 use Lsp\Contracts\Server\ServerInterface;
 use Lsp\Server\React\Server\ReactTcpServer;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use React\EventLoop\LoopInterface;
 
 final class ReactDriver implements DriverInterface
@@ -29,6 +30,7 @@ final class ReactDriver implements DriverInterface
         private readonly DecoderInterface $decoder,
         private readonly EncoderInterface $encoder,
         private readonly DispatcherInterface $dispatcher,
+        private readonly EventDispatcherInterface $events,
     ) {}
 
     public function create(string $dsn): ServerInterface
@@ -55,6 +57,7 @@ final class ReactDriver implements DriverInterface
                 decoder: $this->decoder,
                 encoder: $this->encoder,
                 dispatcher: $this->dispatcher,
+                events: $this->events,
             ),
             default => throw new \InvalidArgumentException('Unsupported connection type'),
         };

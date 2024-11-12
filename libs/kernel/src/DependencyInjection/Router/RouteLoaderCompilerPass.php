@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Kernel\DependencyInjection;
+namespace Lsp\Kernel\DependencyInjection\Router;
 
 use Lsp\Router\Builder\AttributeCollector;
 use Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;

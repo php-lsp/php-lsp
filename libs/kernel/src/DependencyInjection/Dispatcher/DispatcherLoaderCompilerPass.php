@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Kernel\DependencyInjection;
+namespace Lsp\Kernel\DependencyInjection\Dispatcher;
 
-use Composer\InstalledVersions;
 use Lsp\Contracts\Dispatcher\DispatcherInterface;
 use Lsp\Contracts\Hydrator\ExtractorInterface;
 use Lsp\Contracts\Router\RouterInterface;
@@ -23,20 +22,10 @@ final class DispatcherLoaderCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void
     {
-        if (!self::isPackageInstalled()) {
-            return;
-        }
-
         $this->registerHandlerProviders($container);
         $this->registerArgumentProviders($container);
 
         $this->registerDispatcher($container);
-    }
-
-    private static function isPackageInstalled(): bool
-    {
-        return \class_exists(InstalledVersions::class)
-            && InstalledVersions::isInstalled('php-lsp/dispatcher');
     }
 
     private function registerHandlerProviders(ContainerBuilder $container): void

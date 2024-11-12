@@ -6,13 +6,13 @@ namespace Lsp\Kernel;
 
 use Lsp\Contracts\Server\DriverInterface;
 use Lsp\Kernel\DependencyInjection\CodecCompilerPass;
+use Lsp\Kernel\DependencyInjection\Dispatcher\DispatcherLoaderCompilerPass;
 use Lsp\Kernel\DependencyInjection\DispatcherCompilerPass;
-use Lsp\Kernel\DependencyInjection\DispatcherLoaderCompilerPass;
 use Lsp\Kernel\DependencyInjection\HydratorCompilerPass;
 use Lsp\Kernel\DependencyInjection\MessageFactoryCompilerPass;
-use Lsp\Kernel\DependencyInjection\PublishServerCompilerPass;
-use Lsp\Kernel\DependencyInjection\RouteLoaderCompilerPass;
+use Lsp\Kernel\DependencyInjection\Router\RouteLoaderCompilerPass;
 use Lsp\Kernel\DependencyInjection\RouterCompilerPass;
+use Lsp\Kernel\DependencyInjection\Server\ServerPublisherCompilerPass;
 use Lsp\Kernel\DependencyInjection\ServerCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
@@ -27,14 +27,19 @@ class LanguageServerKernel extends Kernel implements ServerKernelInterface
 
         $container->addCompilerPass(new MessageFactoryCompilerPass(), priority: 1000);
         $container->addCompilerPass(new CodecCompilerPass(), priority: 1000);
-        $container->addCompilerPass(new RouterCompilerPass(), priority: 1000);
-        $container->addCompilerPass(new DispatcherCompilerPass(), priority: 1000);
-        $container->addCompilerPass(new ServerCompilerPass(), priority: 1000);
+        {
+            $container->addCompilerPass(new RouterCompilerPass(), priority: 1000);
+            $container->addCompilerPass(new RouteLoaderCompilerPass(), priority: -1000);
+        }
+        {
+            $container->addCompilerPass(new DispatcherCompilerPass(), priority: 1000);
+            $container->addCompilerPass(new DispatcherLoaderCompilerPass(), priority: -1000);
+        }
+        {
+            $container->addCompilerPass(new ServerCompilerPass(), priority: 1000);
+            $container->addCompilerPass(new ServerPublisherCompilerPass(), priority: -1000);
+        }
         $container->addCompilerPass(new HydratorCompilerPass(), priority: 1000);
-
-        $container->addCompilerPass(new PublishServerCompilerPass(), priority: -1000);
-        $container->addCompilerPass(new RouteLoaderCompilerPass(), priority: -1000);
-        $container->addCompilerPass(new DispatcherLoaderCompilerPass(), priority: -1000);
     }
 
     public function run(int $port = 0, string $host = '127.0.0.1'): void

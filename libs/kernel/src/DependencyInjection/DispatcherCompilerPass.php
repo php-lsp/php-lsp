@@ -83,7 +83,7 @@ final class DispatcherCompilerPass implements CompilerPassInterface
             ->addTag('lsp.dispatcher.handler_resolver');
 
         $container->register(ContainerAwareClassMethodHandlerResolver::class)
-            ->addArgument(new Reference(ContainerInterface::class))
+            ->addArgument(new Reference('service_container'))
             ->addArgument(true)
             ->addTag('lsp.dispatcher.handler_resolver');
 
