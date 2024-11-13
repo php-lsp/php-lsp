@@ -60,7 +60,7 @@ abstract class KernelAwareCommand extends Command
             env: (string) $input->getOption('env'),
             debug: true,
             // @phpstan-ignore-next-line
-            projectDirectory: (string) $input->getOption('root'),
+            root: (string) $input->getOption('root'),
         );
     }
 }
