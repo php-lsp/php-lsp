@@ -35,6 +35,7 @@ final class HydratorCompilerPass implements CompilerPassInterface
             ->setArgument('$debug', new Parameter('kernel.debug'));
 
         $container->register(HydratorInterface::class)
+            ->setPublic(true) # debug only
             ->setFactory([new Reference(Builder::class), 'getHydrator']);
 
         $container->register(ExtractorInterface::class)

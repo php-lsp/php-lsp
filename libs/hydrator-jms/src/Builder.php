@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Hydrator\JMS;
 
+use JMS\Serializer\Accessor\DefaultAccessorStrategy;
 use JMS\Serializer\ArrayTransformerInterface;
 use JMS\Serializer\SerializerBuilder;
 use Lsp\Contracts\Hydrator\ExtractorInterface;
@@ -16,16 +17,15 @@ final class Builder
     public function __construct(
         private readonly bool $debug = false,
     ) {
-        $this->transformer = $this->build(SerializerBuilder::create())
-            ->build();
-    }
-
-    private function build(SerializerBuilder $builder): SerializerBuilder
-    {
-        return $builder->setDebug($this->debug)
+        $this->transformer = SerializerBuilder::create()
+            //->setMetadataDirs([
+            //    'Lsp\\Protocol\\Type\\' => __DIR__ . '/../resources'
+            //])
+            ->addDefaultListeners()
+            ->addDefaultHandlers()
             ->enableEnumSupport()
-            // ->setMetadataDirs([__DIR__ . '/../resources'])
-        ;
+            ->setDebug($this->debug)
+            ->build();
     }
 
     /**
