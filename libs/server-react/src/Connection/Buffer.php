@@ -11,7 +11,7 @@ use Lsp\Contracts\Rpc\Message\MessageInterface;
 /**
  * TODO Add max buffer size option.
  *
- * @internal this is an internal library class, please do not use it in your code.
+ * @internal this is an internal library class, please do not use it in your code
  * @psalm-internal Lsp\Server\React
  */
 final class Buffer

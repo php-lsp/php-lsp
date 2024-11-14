@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Registration options for a {@link ReferencesRequest}.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class ReferenceRegistrationOptions
 {
@@ -15,7 +15,7 @@ final class ReferenceRegistrationOptions
     use ReferenceOptionsMixin;
 
     /**
-     * @param list<TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter>|null $documentSelector
+     * @param list<(TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter)>|null $documentSelector
      *        A document selector to identify the scope of the registration. If set to
      *        null the document selector provided on the client side will be used.
      */

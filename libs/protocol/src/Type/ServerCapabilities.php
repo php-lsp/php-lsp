@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Defines the capabilities provided by a language server.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class ServerCapabilities
 {

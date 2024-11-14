@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * General parameters to register for a notification or to register a provider.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class Registration
 {

@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The parameters of a `workspace/didChangeWorkspaceFolders` notification.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class DidChangeWorkspaceFoldersParams
 {

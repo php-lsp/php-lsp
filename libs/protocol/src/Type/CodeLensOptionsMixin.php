@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Code Lens provider options of a {@link CodeLensRequest}.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 trait CodeLensOptionsMixin
 {

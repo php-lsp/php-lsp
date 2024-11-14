@@ -17,7 +17,6 @@ use Lsp\Dispatcher\Handler\Resolver\ClassStaticMethodHandlerResolver;
 use Lsp\Dispatcher\Handler\Resolver\ContainerAwareClassMethodHandlerResolver;
 use Lsp\Dispatcher\Handler\Resolver\FunctionHandlerResolver;
 use Lsp\Dispatcher\Handler\Resolver\HandlerResolverInterface;
-use Psr\Container\ContainerInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;

@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Options to create a file.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class CreateFileOptions
 {

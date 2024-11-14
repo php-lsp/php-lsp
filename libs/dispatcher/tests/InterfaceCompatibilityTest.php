@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Lsp\Dispatcher\Tests;
 
-use Lsp\Dispatcher\DispatcherInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
+use Lsp\Dispatcher\DispatcherInterface;
 use PHPUnit\Framework\Attributes\Group;
 
 /**

@@ -25,9 +25,9 @@ abstract class ServerPool implements ServerPoolInterface, \IteratorAggregate
         $this->servers = new \SplObjectStorage();
     }
 
-    abstract protected function create(AddressInterface $address): ListenedServerInterface;
+    abstract protected function create(AddressInterface $address): TServer;
 
-    public function listen(string|AddressInterface $dsn): ListenedServerInterface
+    public function listen(string|AddressInterface $dsn): TServer
     {
         if (\is_string($dsn)) {
             $dsn = $this->addresses->create($dsn);
@@ -40,10 +40,7 @@ abstract class ServerPool implements ServerPoolInterface, \IteratorAggregate
         return $server;
     }
 
-    /**
-     * @param TServer $server
-     */
-    public function close(ListenedServerInterface $server): void
+    public function close(TServer $server): void
     {
         if ($this->servers->contains($server)) {
             $this->servers->detach($server);

@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Static registration options to be returned in the initialize request.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 trait StaticRegistrationOptionsMixin
 {

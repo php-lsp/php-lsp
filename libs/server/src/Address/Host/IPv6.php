@@ -9,6 +9,7 @@ namespace Lsp\Server\Address\Host;
  * designed as the successor to IP version 4 RFC-791.
  *
  * @api
+ *
  * @link https://datatracker.ietf.org/doc/html/rfc791
  * @link https://datatracker.ietf.org/doc/html/rfc2460
  */

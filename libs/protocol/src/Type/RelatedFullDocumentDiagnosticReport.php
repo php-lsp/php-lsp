@@ -9,7 +9,7 @@ namespace Lsp\Protocol\Type;
  *
  * @since 3.17.0
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class RelatedFullDocumentDiagnosticReport
 {
@@ -32,7 +32,7 @@ final class RelatedFullDocumentDiagnosticReport
          *
          * @since 3.17.0
          *
-         * @var list<non-empty-string, FullDocumentDiagnosticReport|UnchangedDocumentDiagnosticReport>|null
+         * @var list<non-empty-string, (FullDocumentDiagnosticReport|UnchangedDocumentDiagnosticReport)>|null
          */
         public readonly ?array $relatedDocuments = null,
         ?string $resultId = null,

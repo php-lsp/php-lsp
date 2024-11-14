@@ -8,7 +8,7 @@ namespace Lsp\Protocol\Type;
  * Defines whether the insert text in a completion item should be interpreted as
  * plain text or a snippet.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 enum InsertTextFormat: int
 {

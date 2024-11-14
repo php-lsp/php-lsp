@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The initialize parameters.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class _InitializeParams
 {

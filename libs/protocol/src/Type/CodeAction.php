@@ -11,7 +11,7 @@ namespace Lsp\Protocol\Type;
  * A CodeAction must set either `edit` and/or a `command`. If both are supplied,
  * the `edit` is applied first, then the `command` is executed.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class CodeAction
 {

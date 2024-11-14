@@ -9,7 +9,7 @@ namespace Lsp\Protocol\Type;
  *
  * @since 3.16.0
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class InsertReplaceEdit
 {

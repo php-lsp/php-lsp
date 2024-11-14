@@ -8,7 +8,7 @@ namespace Lsp\Protocol\Type;
  * A completion item represents a text snippet that is proposed to complete text
  * that is being typed.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class CompletionItem
 {

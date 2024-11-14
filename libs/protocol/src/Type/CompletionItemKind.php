@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The kind of a completion entry.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 enum CompletionItemKind: int
 {

@@ -27,18 +27,16 @@ class LanguageServerKernel extends Kernel implements ServerKernelInterface
 
         $container->addCompilerPass(new MessageFactoryCompilerPass(), priority: 1000);
         $container->addCompilerPass(new CodecCompilerPass(), priority: 1000);
-        {
-            $container->addCompilerPass(new RouterCompilerPass(), priority: 1000);
-            $container->addCompilerPass(new RouteLoaderCompilerPass(), priority: -1000);
-        }
-        {
-            $container->addCompilerPass(new DispatcherCompilerPass(), priority: 1000);
-            $container->addCompilerPass(new DispatcherLoaderCompilerPass(), priority: -1000);
-        }
-        {
-            $container->addCompilerPass(new ServerCompilerPass(), priority: 1000);
-            $container->addCompilerPass(new ServerPublisherCompilerPass(), priority: -1000);
-        }
+
+        $container->addCompilerPass(new RouterCompilerPass(), priority: 1000);
+        $container->addCompilerPass(new RouteLoaderCompilerPass(), priority: -1000);
+
+        $container->addCompilerPass(new DispatcherCompilerPass(), priority: 1000);
+        $container->addCompilerPass(new DispatcherLoaderCompilerPass(), priority: -1000);
+
+        $container->addCompilerPass(new ServerCompilerPass(), priority: 1000);
+        $container->addCompilerPass(new ServerPublisherCompilerPass(), priority: -1000);
+
         $container->addCompilerPass(new HydratorCompilerPass(), priority: 1000);
     }
 

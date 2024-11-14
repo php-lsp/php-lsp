@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Provider options for a {@link RenameRequest}.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class RenameOptions
 {

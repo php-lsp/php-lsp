@@ -8,7 +8,7 @@ namespace Lsp\Protocol\Type;
  * A text document identifier to optionally denote a specific version of a text
  * document.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class OptionalVersionedTextDocumentIdentifier
 {

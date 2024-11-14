@@ -10,7 +10,7 @@ namespace Lsp\Protocol\Type;
  * two ranges: one that encloses its definition and one that points to its most
  * interesting range, e.g. the range of an identifier.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class DocumentSymbol
 {

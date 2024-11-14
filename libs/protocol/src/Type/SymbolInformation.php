@@ -8,7 +8,7 @@ namespace Lsp\Protocol\Type;
  * Represents information about programming constructs like variables, classes,
  * interfaces etc.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class SymbolInformation
 {

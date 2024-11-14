@@ -93,8 +93,8 @@ final class OutputFactory
      */
     public function buildDocument(IRDocument $document): iterable
     {
-        foreach ($document->statements as $name => $statement) {
-            yield $name => $this->buildStatement($statement);
+        foreach ($document->statements as $statement) {
+            yield $statement->name => $this->buildStatement($statement);
         }
     }
 

@@ -9,6 +9,7 @@ namespace Lsp\Server\Address\Host;
  * packet-switched computer communication networks.
  *
  * @api
+ *
  * @link https://datatracker.ietf.org/doc/html/rfc791
  */
 final class IPv4 extends Host {}

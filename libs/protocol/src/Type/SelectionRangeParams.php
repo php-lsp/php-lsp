@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * A parameter literal used in selection range requests.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class SelectionRangeParams
 {

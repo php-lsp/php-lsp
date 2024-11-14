@@ -8,7 +8,7 @@ namespace Lsp\Protocol\Type;
  * A selection range represents a part of a selection hierarchy. A selection
  * range may have a parent selection range that contains it.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class SelectionRange
 {

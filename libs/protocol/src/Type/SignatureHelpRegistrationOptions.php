@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Registration options for a {@link SignatureHelpRequest}.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class SignatureHelpRegistrationOptions
 {
@@ -15,7 +15,7 @@ final class SignatureHelpRegistrationOptions
     use SignatureHelpOptionsMixin;
 
     /**
-     * @param list<TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter>|null $documentSelector
+     * @param list<(TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter)>|null $documentSelector
      *        A document selector to identify the scope of the registration. If set to
      *        null the document selector provided on the client side will be used.
      * @param list<string>|null $triggerCharacters list of characters that

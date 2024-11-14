@@ -22,7 +22,7 @@ namespace Lsp\Protocol\Type;
  * failure is described by the client capability:
  * `workspace.workspaceEdit.failureHandling`.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class WorkspaceEdit
 {
@@ -49,7 +49,7 @@ final class WorkspaceEdit
          * `workspace.workspaceEdit.resourceOperations` then only plain
          * `TextEdit`s using the `changes` property are supported.
          *
-         * @var list<TextDocumentEdit|CreateFile|RenameFile|DeleteFile>|null
+         * @var list<(TextDocumentEdit|CreateFile|RenameFile|DeleteFile)>|null
          */
         public readonly ?array $documentChanges = null,
         /**

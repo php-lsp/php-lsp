@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The client capabilities of a {@link ExecuteCommandRequest}.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class ExecuteCommandClientCapabilities
 {

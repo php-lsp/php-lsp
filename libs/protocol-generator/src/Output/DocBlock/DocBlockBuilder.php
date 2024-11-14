@@ -17,7 +17,10 @@ final class DocBlockBuilder
 {
     public function __construct(
         private readonly ClockInterface $clock = new NativeClock(),
-        private readonly PrinterInterface $pretty = new PrettyPrinter(),
+        private readonly PrinterInterface $pretty = new PrettyPrinter(
+            wrapUnionType: false,
+            wrapIntersectionType: false,
+        ),
         private readonly PrinterInterface $native = new NativeTypePrinter(),
     ) {}
 

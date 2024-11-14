@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The result of a hover request.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class Hover
 {
@@ -15,7 +15,7 @@ final class Hover
         /**
          * The hover's content.
          *
-         * @var MarkupContent|string|HoverContents|list<string|HoverContents>
+         * @var MarkupContent|string|HoverContents|list<(string|HoverContents)>
          */
         public readonly MarkupContent|string|HoverContents|array $contents = [],
         /**

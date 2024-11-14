@@ -12,7 +12,7 @@ namespace Lsp\Protocol\Type;
  * performance reasons the creation of a code lens and resolving should be done
  * in two stages.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class CodeLens
 {

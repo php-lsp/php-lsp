@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Since 3.6.0.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class TypeDefinitionClientCapabilities
 {

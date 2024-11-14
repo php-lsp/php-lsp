@@ -11,7 +11,7 @@ namespace Lsp\Protocol\Type;
  * So the creator of a TextDocumentEdit doesn't need to sort the array of edits
  * or do any kind of ordering. However the edits must be non overlapping.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class TextDocumentEdit
 {

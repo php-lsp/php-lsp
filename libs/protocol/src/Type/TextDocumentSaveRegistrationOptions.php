@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Save registration options.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class TextDocumentSaveRegistrationOptions
 {
@@ -15,7 +15,7 @@ final class TextDocumentSaveRegistrationOptions
     use SaveOptionsMixin;
 
     /**
-     * @param list<TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter>|null $documentSelector
+     * @param list<(TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter)>|null $documentSelector
      *        A document selector to identify the scope of the registration. If set to
      *        null the document selector provided on the client side will be used.
      * @param bool|null $includeText the client is supposed to include the

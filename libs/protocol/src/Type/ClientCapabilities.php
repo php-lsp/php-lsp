@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Defines the capabilities provided by the client.
  *
- * @generated 2024-09-21
+ * @generated 2024-11-14
  */
 final class ClientCapabilities
 {
