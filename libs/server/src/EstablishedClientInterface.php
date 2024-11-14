@@ -7,19 +7,20 @@ namespace Lsp\Server;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
+use Lsp\Server\Address\AddressInterface;
 use React\Promise\PromiseInterface;
 
-interface ConnectionInterface
+interface EstablishedClientInterface
 {
     /**
-     * @return non-empty-string
+     * Returns local address of the established client (i.e. connection).
      */
-    public function getClientAddress(): string;
+    public function getAddress(): AddressInterface;
 
     /**
-     * Returns the server that this connection is associated with.
+     * Returns the server (that is parent) that this client is associated with.
      */
-    public function getServer(): ServerInterface;
+    public function getServer(): ListenedServerInterface;
 
     /**
      * Notify client by a notification message.
@@ -40,5 +41,8 @@ interface ConnectionInterface
      */
     public function call(RequestInterface $request): PromiseInterface;
 
+    /**
+     * Closes established connection.
+     */
     public function close(): void;
 }

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Lsp\Server\React;
 
-use Lsp\Contracts\Rpc\Codec\DecoderInterface;
-use Lsp\Contracts\Rpc\Codec\EncoderInterface;
 use Lsp\Contracts\Rpc\Codec\Exception\EncodingExceptionInterface;
 use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
 use Lsp\Contracts\Rpc\Message\MessageInterface;
@@ -13,8 +11,8 @@ use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
 use Lsp\Contracts\Rpc\Message\SuccessfulResponseInterface;
-use Lsp\Dispatcher\DispatcherInterface;
-use Lsp\Server\ConnectionInterface;
+use Lsp\Server\Address\AddressInterface;
+use Lsp\Server\EstablishedClient;
 use Lsp\Server\Event\FailureResponseReceived;
 use Lsp\Server\Event\FailureResponseSent;
 use Lsp\Server\Event\MessageReceived;
@@ -27,46 +25,38 @@ use Lsp\Server\Event\ResponseReceived;
 use Lsp\Server\Event\ResponseSent;
 use Lsp\Server\Event\SuccessfulResponseReceived;
 use Lsp\Server\Event\SuccessfulResponseSent;
+use Lsp\Server\ListenedServerInterface;
 use Lsp\Server\React\Connection\Buffer;
 use Lsp\Server\React\Connection\RequestPool;
-use Lsp\Server\React\Server\ReactServer;
-use Psr\EventDispatcher\EventDispatcherInterface;
 use React\Promise\PromiseInterface;
-use React\Socket\ConnectionInterface as SocketConnectionInterface;
+use React\Socket\ConnectionInterface as SocketInterface;
 
 /**
- * TODO 1) Add support of promise TTLs for {@see ReactConnection::$requests}
- * TODO 2) Add support of max in-memory promise instances for {@see ReactConnection::$requests}
- *
- * @internal this is an internal library class, please do not use it in your code
- * @psalm-internal Lsp\Server\React
+ * TODO 1) Add support of promise TTLs for {@see ReactEstablishedClient::$requests}
+ * TODO 2) Add support of max in-memory promise instances for {@see ReactEstablishedClient::$requests}
  */
-final class ReactConnection implements ConnectionInterface
+final class ReactEstablishedClient extends EstablishedClient
 {
     private readonly Buffer $buffer;
 
     private readonly RequestPool $requests;
 
-    /**
-     * @var non-empty-string|null
-     */
-    private readonly ?string $address;
-
     public function __construct(
-        private readonly ReactServer $server,
-        private readonly SocketConnectionInterface $connection,
-        private readonly DecoderInterface $decoder,
-        private readonly EncoderInterface $encoder,
-        private readonly DispatcherInterface $dispatcher,
-        private readonly EventDispatcherInterface $events,
+        private readonly SocketInterface $connection,
+        private readonly ReactServerConfiguration $config,
+        ListenedServerInterface $server,
+        AddressInterface $address,
     ) {
-        $this->buffer = new Buffer($this->decoder);
+        $this->buffer = new Buffer($config->decoder);
         $this->requests = new RequestPool();
 
-        $address = $this->connection->getRemoteAddress();
+        parent::__construct($server, $address);
 
-        $this->address = $address === '' ? null : $address;
+        $this->listen($this->connection);
+    }
 
+    private function listen(SocketInterface $connection): void
+    {
         $connection->on('data', function (string $data): void {
             foreach ($this->buffer->push($data) as $message) {
                 $this->onMessageReceived($message);
@@ -76,19 +66,19 @@ final class ReactConnection implements ConnectionInterface
 
     private function beforeMessageReceived(MessageInterface $message): void
     {
-        $this->events->dispatch(new MessageReceived(
+        $this->config->events->dispatch(new MessageReceived(
             message: $message,
             connection: $this,
         ));
 
         if ($message instanceof NotificationInterface) {
-            $this->events->dispatch(new NotificationReceived(
+            $this->config->events->dispatch(new NotificationReceived(
                 notification: $message,
                 connection: $this,
             ));
 
             if ($message instanceof RequestInterface) {
-                $this->events->dispatch(new RequestReceived(
+                $this->config->events->dispatch(new RequestReceived(
                     request: $message,
                     connection: $this,
                 ));
@@ -98,18 +88,18 @@ final class ReactConnection implements ConnectionInterface
         }
 
         if ($message instanceof ResponseInterface) {
-            $this->events->dispatch(new ResponseReceived(
+            $this->config->events->dispatch(new ResponseReceived(
                 response: $message,
                 connection: $this,
             ));
 
             if ($message instanceof SuccessfulResponseInterface) {
-                $this->events->dispatch(new SuccessfulResponseReceived(
+                $this->config->events->dispatch(new SuccessfulResponseReceived(
                     response: $message,
                     connection: $this,
                 ));
             } elseif ($message instanceof FailureResponseInterface) {
-                $this->events->dispatch(new FailureResponseReceived(
+                $this->config->events->dispatch(new FailureResponseReceived(
                     response: $message,
                     connection: $this,
                 ));
@@ -119,19 +109,19 @@ final class ReactConnection implements ConnectionInterface
 
     private function beforeMessageSend(MessageInterface $message): void
     {
-        $this->events->dispatch(new MessageSent(
+        $this->config->events->dispatch(new MessageSent(
             message: $message,
             connection: $this,
         ));
 
         if ($message instanceof NotificationInterface) {
-            $this->events->dispatch(new NotificationSent(
+            $this->config->events->dispatch(new NotificationSent(
                 notification: $message,
                 connection: $this,
             ));
 
             if ($message instanceof RequestInterface) {
-                $this->events->dispatch(new RequestSent(
+                $this->config->events->dispatch(new RequestSent(
                     request: $message,
                     connection: $this,
                 ));
@@ -141,28 +131,23 @@ final class ReactConnection implements ConnectionInterface
         }
 
         if ($message instanceof ResponseInterface) {
-            $this->events->dispatch(new ResponseSent(
+            $this->config->events->dispatch(new ResponseSent(
                 response: $message,
                 connection: $this,
             ));
 
             if ($message instanceof SuccessfulResponseInterface) {
-                $this->events->dispatch(new SuccessfulResponseSent(
+                $this->config->events->dispatch(new SuccessfulResponseSent(
                     response: $message,
                     connection: $this,
                 ));
             } elseif ($message instanceof FailureResponseInterface) {
-                $this->events->dispatch(new FailureResponseSent(
+                $this->config->events->dispatch(new FailureResponseSent(
                     response: $message,
                     connection: $this,
                 ));
             }
         }
-    }
-
-    public function getClientAddress(): string
-    {
-        return $this->address ?? 'tcp://<unknown>';
     }
 
     private function onMessageReceived(MessageInterface $message): void
@@ -179,7 +164,7 @@ final class ReactConnection implements ConnectionInterface
                 break;
 
             case $message instanceof ResponseInterface:
-                $this->onReceivedResponse($message);
+                $this->onResponseReceived($message);
                 break;
         }
     }
@@ -187,7 +172,7 @@ final class ReactConnection implements ConnectionInterface
     /**
      * @param ResponseInterface<mixed> $response
      */
-    private function onReceivedResponse(ResponseInterface $response): void
+    private function onResponseReceived(ResponseInterface $response): void
     {
         $this->requests->resolve($response);
     }
@@ -197,7 +182,7 @@ final class ReactConnection implements ConnectionInterface
      */
     private function onRequestReceived(RequestInterface $request): void
     {
-        $response = $this->dispatcher->call($request);
+        $response = $this->config->dispatcher->call($request);
 
         try {
             $this->send($response);
@@ -208,7 +193,12 @@ final class ReactConnection implements ConnectionInterface
 
     private function onNotificationReceived(NotificationInterface $request): void
     {
-        $this->dispatcher->notify($request);
+        $this->config->dispatcher->notify($request);
+    }
+
+    protected function onClose(): void
+    {
+        $this->connection->close();
     }
 
     /**
@@ -218,7 +208,7 @@ final class ReactConnection implements ConnectionInterface
     {
         $this->beforeMessageSend($message);
 
-        $encoded = $this->encoder->encode($message);
+        $encoded = $this->config->encoder->encode($message);
 
         $this->connection->write($encoded);
     }
@@ -242,15 +232,5 @@ final class ReactConnection implements ConnectionInterface
         $this->send($request);
 
         return $this->requests->await($request);
-    }
-
-    public function close(): void
-    {
-        $this->connection->close();
-    }
-
-    public function getServer(): ReactServer
-    {
-        return $this->server;
     }
 }

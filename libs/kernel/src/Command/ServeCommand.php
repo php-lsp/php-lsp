@@ -55,12 +55,12 @@ final class ServeCommand extends KernelAwareCommand
             throw new \InvalidArgumentException('Unsupported server kernel class: ' . $app::class);
         }
 
-        $app->run(
+        $app->listen(\vsprintf('tcp://%s:%d', [
             // @phpstan-ignore-next-line
-            port: (int) $input->getOption('port'),
+            (string) $input->getOption('addr'),
             // @phpstan-ignore-next-line
-            host: (string) $input->getOption('addr'),
-        );
+            (int) $input->getOption('port'),
+        ]));
 
         return self::SUCCESS;
     }

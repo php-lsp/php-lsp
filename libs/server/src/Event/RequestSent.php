@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Lsp\Server\Event;
 
 use Lsp\Contracts\Rpc\Message\RequestInterface;
-use Lsp\Server\ConnectionInterface;
+use Lsp\Server\EstablishedClientInterface;
 
 class RequestSent extends NotificationSent
 {
@@ -14,7 +14,7 @@ class RequestSent extends NotificationSent
      */
     public function __construct(
         RequestInterface $request,
-        ConnectionInterface $connection,
+        EstablishedClientInterface $connection,
     ) {
         parent::__construct($request, $connection);
     }

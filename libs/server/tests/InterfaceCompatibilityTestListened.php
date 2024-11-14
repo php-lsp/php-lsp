@@ -6,9 +6,9 @@ namespace Lsp\Server\Tests;
 
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
-use Lsp\Server\ConnectionInterface;
-use Lsp\Server\DriverInterface;
-use Lsp\Server\RunnableInterface;
+use Lsp\Server\ClientInterface;
+use Lsp\Server\ListenedServerInterface;
+use Lsp\Server\ServerInterface;
 use Lsp\Server\ServerInterface;
 use PHPUnit\Framework\Attributes\Group;
 use React\Promise\PromiseInterface;
@@ -24,10 +24,10 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class implements ConnectionInterface {
+        new class implements ClientInterface {
             public function getClientAddress(): string {}
 
-            public function getServer(): ServerInterface {}
+            public function getServer(): ListenedServerInterface {}
 
             public function notify(NotificationInterface $notification): ?\Throwable {}
 
@@ -41,8 +41,8 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class implements DriverInterface {
-            public function create(string $dsn): ServerInterface {}
+        new class implements ServerInterface {
+            public function listen(string $dsn): ListenedServerInterface {}
 
             public function run(): void {}
 
@@ -54,7 +54,7 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class implements RunnableInterface {
+        new class implements ServerInterface {
             public function run(): void {}
 
             public function stop(): void {}
@@ -65,8 +65,8 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class implements ServerInterface {
-            public function getDriver(): DriverInterface {}
+        new class implements ListenedServerInterface {
+            public function getDriver(): ServerInterface {}
 
             public function getDataSourceName(): string {}
         };

@@ -7,14 +7,7 @@ namespace Lsp\Server;
 interface ServerInterface
 {
     /**
-     * Returns the driver instance for this server.
+     * Forces the application to stop running.
      */
-    public function getDriver(): DriverInterface;
-
-    /**
-     * Returns the name of the data source that this server is connected to.
-     *
-     * @return non-empty-string
-     */
-    public function getDataSourceName(): string;
+    public function stop(): void;
 }
