@@ -21,6 +21,6 @@ final class InitializeResult
          *
          * @since 3.15.0
          */
-        public readonly ?InitializeResultServerInfo $serverInfo = null,
+        public readonly ?ServerInfo $serverInfo = null,
     ) {}
 }

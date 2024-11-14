@@ -38,9 +38,8 @@ final class SignatureHelp
          *
          * If `null`, no parameter of the signature is active (for example a
          * named argument that does not match any declared parameters). This is
-         * only valid since 3.18.0 and if the client specifies the client
-         * capability `textDocument.signatureHelp.noActiveParameterSupport ===
-         * true`
+         * only valid if the client specifies the client capability
+         * `textDocument.signatureHelp.noActiveParameterSupport === true`
          *
          * If omitted or the value lies outside the range of
          * `signatures[activeSignature].parameters` defaults to 0 if the active

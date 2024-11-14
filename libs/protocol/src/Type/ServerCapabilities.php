@@ -187,15 +187,9 @@ final class ServerCapabilities
          */
         public readonly bool|InlineCompletionOptions|null $inlineCompletionProvider = null,
         /**
-         * Text document specific server capabilities.
-         *
-         * @since 3.18.0
-         */
-        public readonly ?ServerCapabilitiesTextDocument $textDocument = null,
-        /**
          * Workspace specific server capabilities.
          */
-        public readonly ?ServerCapabilitiesWorkspace $workspace = null,
+        public readonly ?WorkspaceOptions $workspace = null,
         /**
          * Experimental server capabilities.
          */

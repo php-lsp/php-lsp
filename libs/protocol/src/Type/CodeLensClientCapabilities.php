@@ -16,5 +16,12 @@ final class CodeLensClientCapabilities
          * Whether code lens supports dynamic registration.
          */
         public readonly ?bool $dynamicRegistration = null,
+        /**
+         * Whether the client supports resolving additional code lens properties
+         * via a separate `codeLens/resolve` request.
+         *
+         * @since 3.18.0
+         */
+        public readonly ?ClientCodeLensResolveOptions $resolveSupport = null,
     ) {}
 }

@@ -40,6 +40,9 @@ enum MessageType: int
      *
      * @since 3.18.0
      *
+     * @internal This is a proposed type, which means that the implementation of
+     *           this type is not final. Please use this type at your own risk.
+     *
      * @var int<0, 2147483647>
      */
     case Debug = 5;

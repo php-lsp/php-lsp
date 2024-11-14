@@ -22,7 +22,7 @@ trait NotebookDocumentSyncOptionsMixin
     /**
      * The notebooks to be synced.
      *
-     * @var list<NotebookDocumentSyncOptionsNotebookSelector>
+     * @var list<NotebookDocumentFilterWithNotebook|NotebookDocumentFilterWithCells>
      *
      * @readonly
      */

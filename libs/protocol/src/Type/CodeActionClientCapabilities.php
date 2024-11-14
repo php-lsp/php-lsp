@@ -23,7 +23,7 @@ final class CodeActionClientCapabilities
          *
          * @since 3.8.0
          */
-        public readonly ?CodeActionClientCapabilitiesCodeActionLiteralSupport $codeActionLiteralSupport = null,
+        public readonly ?ClientCodeActionLiteralOptions $codeActionLiteralSupport = null,
         /**
          * Whether code action supports the `isPreferred` property.
          *
@@ -50,7 +50,7 @@ final class CodeActionClientCapabilities
          *
          * @since 3.16.0
          */
-        public readonly ?CodeActionClientCapabilitiesResolveSupport $resolveSupport = null,
+        public readonly ?ClientCodeActionResolveOptions $resolveSupport = null,
         /**
          * Whether the client honors the change annotations in text edits and
          * resource operations returned via the `CodeAction#edit` property by
@@ -60,5 +60,23 @@ final class CodeActionClientCapabilities
          * @since 3.16.0
          */
         public readonly ?bool $honorsChangeAnnotations = null,
+        /**
+         * Whether the client supports documentation for a class of code
+         * actions.
+         *
+         * @since 3.18.0
+         *
+         * @internal This is a proposed type, which means that the
+         *           implementation of this type is not final. Please use this type at
+         *           your own risk.
+         */
+        public readonly ?bool $documentationSupport = null,
+        /**
+         * Client supports the tag property on a code action. Clients supporting
+         * tags have to handle unknown tags gracefully.
+         *
+         * @since 3.18.0 - proposed
+         */
+        public readonly ?CodeActionTagOptions $tagSupport = null,
     ) {}
 }

@@ -36,7 +36,7 @@ final class CompletionList
          *
          * @since 3.17.0
          */
-        public readonly ?CompletionListItemDefaults $itemDefaults = null,
+        public readonly ?CompletionItemDefaults $itemDefaults = null,
         /**
          * The completion items.
          *

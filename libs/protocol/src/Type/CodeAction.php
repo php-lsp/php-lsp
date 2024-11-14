@@ -83,5 +83,13 @@ final class CodeAction
          * @since 3.16.0
          */
         public readonly mixed $data = null,
+        /**
+         * Tags for this code action.
+         *
+         * @since 3.18.0 - proposed
+         *
+         * @var list<CodeActionTag>|null
+         */
+        public readonly ?array $tags = null,
     ) {}
 }

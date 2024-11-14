@@ -19,14 +19,12 @@ final class Diagnostic
         public readonly Range $range,
         /**
          * The diagnostic's message. It usually appears in the user interface.
-         *
-         * @since 3.18.0 - support for `MarkupContent`. This is guarded by the
-         *        client capability `textDocument.diagnostic.markupMessageSupport`.
          */
-        public readonly string|MarkupContent $message,
+        public readonly string $message,
         /**
-         * The diagnostic's severity. Can be omitted. If omitted it is up to the
-         * client to interpret diagnostics as error, warning, info or hint.
+         * The diagnostic's severity. To avoid interpretation mismatches when a
+         * server is used with different clients it is highly recommended that
+         * servers always provide a severity value.
          */
         public readonly ?DiagnosticSeverity $severity = null,
         /**

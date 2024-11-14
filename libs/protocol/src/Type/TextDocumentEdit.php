@@ -25,10 +25,13 @@ final class TextDocumentEdit
          *
          * client capability.
          *
-         * @since 3.16.0 - support for AnnotatedTextEdit. This is guarded using
-         *        a client capability.
          *
-         * @var list<TextEdit|AnnotatedTextEdit>
+         * client capability.
+         *
+         * @since 3.18.0 - support for SnippetTextEdit. This is guarded using a
+         *        client capability.
+         *
+         * @var list<TextEdit|AnnotatedTextEdit|SnippetTextEdit>
          */
         public readonly array $edits = [],
     ) {}

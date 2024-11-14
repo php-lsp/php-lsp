@@ -21,10 +21,6 @@ final class CodeActionContext
          * these accurately reflect the error state of the resource. The primary
          * parameter to compute code actions is the provided range.
          *
-         * Note that the client should check the
-         * `textDocument.diagnostic.markupMessageSupport` server capability
-         * before sending diagnostics with markup messages to a server.
-         *
          * @var list<Diagnostic>
          */
         public readonly array $diagnostics = [],

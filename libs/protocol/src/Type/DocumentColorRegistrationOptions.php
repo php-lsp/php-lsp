@@ -14,7 +14,7 @@ final class DocumentColorRegistrationOptions
     use StaticRegistrationOptionsMixin;
 
     /**
-     * @param list<(TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter)>|null $documentSelector
+     * @param list<(TextDocumentFilterLanguage|TextDocumentFilterScheme|TextDocumentFilterPattern|NotebookCellTextDocumentFilter)>|null $documentSelector
      *        A document selector to identify the scope of the registration. If set to
      *        null the document selector provided on the client side will be used.
      * @param string|null $id The id used to register the request. The id can be

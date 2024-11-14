@@ -17,13 +17,13 @@ final class SemanticTokensOptions
      * @param SemanticTokensLegend $legend The legend used by the server
      * @param bool|SemanticTokensOptionsRange|null $range server supports
      *        providing semantic tokens for a specific range of a document
-     * @param bool|SemanticTokensOptionsFull|null $full server supports
-     *        providing semantic tokens for a full document
+     * @param bool|SemanticTokensFullDelta|null $full server supports providing
+     *        semantic tokens for a full document
      */
     public function __construct(
         SemanticTokensLegend $legend,
         bool|SemanticTokensOptionsRange|null $range = null,
-        bool|SemanticTokensOptionsFull|null $full = null,
+        bool|SemanticTokensFullDelta|null $full = null,
         ?bool $workDoneProgress = null,
     ) {
         $this->legend = $legend;

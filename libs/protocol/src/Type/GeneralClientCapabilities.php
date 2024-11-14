@@ -21,7 +21,7 @@ final class GeneralClientCapabilities
          *
          * @since 3.17.0
          */
-        public readonly ?GeneralClientCapabilitiesStaleRequestSupport $staleRequestSupport = null,
+        public readonly ?StaleRequestSupportOptions $staleRequestSupport = null,
         /**
          * Client capabilities specific to regular expressions.
          *

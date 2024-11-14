@@ -46,6 +46,27 @@ final class WorkspaceEditClientCapabilities
          *
          * @since 3.16.0
          */
-        public readonly ?WorkspaceEditClientCapabilitiesChangeAnnotationSupport $changeAnnotationSupport = null,
+        public readonly ?ChangeAnnotationsSupportOptions $changeAnnotationSupport = null,
+        /**
+         * Whether the client supports `WorkspaceEditMetadata` in
+         * `WorkspaceEdit`s.
+         *
+         * @since 3.18.0
+         *
+         * @internal This is a proposed type, which means that the
+         *           implementation of this type is not final. Please use this type at
+         *           your own risk.
+         */
+        public readonly ?bool $metadataSupport = null,
+        /**
+         * Whether the client supports snippets as text edits.
+         *
+         * @since 3.18.0
+         *
+         * @internal This is a proposed type, which means that the
+         *           implementation of this type is not final. Please use this type at
+         *           your own risk.
+         */
+        public readonly ?bool $snippetEditSupport = null,
     ) {}
 }

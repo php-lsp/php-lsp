@@ -34,14 +34,14 @@ final class CompletionOptions
      *        an individual completion item the ones on the completion item win.
      * @param bool|null $resolveProvider the server provides support to resolve
      *        additional information for a completion item
-     * @param CompletionOptionsCompletionItem|null $completionItem the server
+     * @param ServerCompletionItemOptions|null $completionItem the server
      *        supports the following `CompletionItem` specific capabilities
      */
     public function __construct(
         ?array $triggerCharacters = null,
         ?array $allCommitCharacters = null,
         ?bool $resolveProvider = null,
-        ?CompletionOptionsCompletionItem $completionItem = null,
+        ?ServerCompletionItemOptions $completionItem = null,
         ?bool $workDoneProgress = null,
     ) {
         $this->triggerCharacters = $triggerCharacters;

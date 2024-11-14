@@ -17,7 +17,7 @@ final class NotebookDocumentSyncRegistrationOptions
     use StaticRegistrationOptionsMixin;
 
     /**
-     * @param list<NotebookDocumentSyncOptionsNotebookSelector> $notebookSelector
+     * @param list<NotebookDocumentFilterWithNotebook|NotebookDocumentFilterWithCells> $notebookSelector
      *        The notebooks to be synced
      * @param bool|null $save Whether save notification should be forwarded to
      *        the server. Will only be honored if mode === `notebook`.

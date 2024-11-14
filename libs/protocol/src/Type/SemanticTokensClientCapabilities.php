@@ -22,7 +22,7 @@ final class SemanticTokensClientCapabilities
          * range provider the client might not render a minimap correctly or
          * might even decide to not show any semantic tokens at all.
          */
-        public readonly SemanticTokensClientCapabilitiesRequests $requests,
+        public readonly ClientSemanticTokensRequestOptions $requests,
         /**
          * Whether implementation supports dynamic registration. If this is set
          * to `true` the client supports the new

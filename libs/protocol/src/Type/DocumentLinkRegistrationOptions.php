@@ -15,7 +15,7 @@ final class DocumentLinkRegistrationOptions
     use DocumentLinkOptionsMixin;
 
     /**
-     * @param list<(TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter)>|null $documentSelector
+     * @param list<(TextDocumentFilterLanguage|TextDocumentFilterScheme|TextDocumentFilterPattern|NotebookCellTextDocumentFilter)>|null $documentSelector
      *        A document selector to identify the scope of the registration. If set to
      *        null the document selector provided on the client side will be used.
      * @param bool|null $resolveProvider document links have a resolve provider

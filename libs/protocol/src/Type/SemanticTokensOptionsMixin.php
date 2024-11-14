@@ -28,5 +28,5 @@ trait SemanticTokensOptionsMixin
      *
      * @readonly
      */
-    public bool|SemanticTokensOptionsFull|null $full = null;
+    public bool|SemanticTokensFullDelta|null $full = null;
 }

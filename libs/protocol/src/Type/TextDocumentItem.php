@@ -21,7 +21,7 @@ final class TextDocumentItem
         /**
          * The text document's language identifier.
          */
-        public readonly string $languageId,
+        public readonly LanguageKind $languageId,
         /**
          * The version number of this document (it will increase after each
          * change, including undo/redo).

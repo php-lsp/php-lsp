@@ -19,8 +19,7 @@ final class _InitializeParams
      *
      *        Is `null` if the process has not been started by another process.
      *        If the parent process is not alive then the server should exit.
-     * @param _InitializeParamsClientInfo|null $clientInfo Information about the
-     *        client
+     * @param ClientInfo|null $clientInfo Information about the client
      * @param string|null $locale The locale the client is currently showing the
      *        user interface in. This must not necessarily be the locale of the
      *        operating system.
@@ -35,20 +34,20 @@ final class _InitializeParams
      * @param ClientCapabilities $capabilities The capabilities provided by the
      *        client (editor or tool)
      * @param mixed $initializationOptions user provided initialization options
-     * @param TraceValues|null $trace The initial trace setting. If omitted
-     *        trace is disabled ('off').
+     * @param TraceValue|null $trace The initial trace setting. If omitted trace
+     *        is disabled ('off').
      * @param int<-2147483648, 2147483647>|string|null $workDoneToken an
      *        optional token that a server can use to report work done progress
      */
     public function __construct(
         ClientCapabilities $capabilities,
         ?int $processId = null,
-        ?_InitializeParamsClientInfo $clientInfo = null,
+        ?ClientInfo $clientInfo = null,
         ?string $locale = null,
         ?string $rootPath = null,
         ?string $rootUri = null,
         mixed $initializationOptions = null,
-        ?TraceValues $trace = null,
+        ?TraceValue $trace = null,
         int|string|null $workDoneToken = null,
     ) {
         $this->processId = $processId;

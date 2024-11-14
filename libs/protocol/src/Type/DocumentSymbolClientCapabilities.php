@@ -20,7 +20,7 @@ final class DocumentSymbolClientCapabilities
          * Specific capabilities for the `SymbolKind` in the
          * `textDocument/documentSymbol` request.
          */
-        public readonly ?DocumentSymbolClientCapabilitiesSymbolKind $symbolKind = null,
+        public readonly ?ClientSymbolKindOptions $symbolKind = null,
         /**
          * The client supports hierarchical document symbols.
          */
@@ -33,7 +33,7 @@ final class DocumentSymbolClientCapabilities
          *
          * @since 3.16.0
          */
-        public readonly ?DocumentSymbolClientCapabilitiesTagSupport $tagSupport = null,
+        public readonly ?ClientSymbolTagOptions $tagSupport = null,
         /**
          * The client supports an additional label presented in the UI when
          * registering a document symbol provider.

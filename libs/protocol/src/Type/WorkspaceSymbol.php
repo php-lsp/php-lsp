@@ -34,7 +34,7 @@ final class WorkspaceSymbol
          *
          * See SymbolInformation#location for more details.
          */
-        public readonly Location|WorkspaceSymbolLocation $location,
+        public readonly Location|LocationUriOnly $location,
         string $name,
         SymbolKind $kind,
         /**

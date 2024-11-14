@@ -13,6 +13,20 @@ namespace Lsp\Protocol\Type;
  */
 final class DiagnosticClientCapabilities
 {
+    use DiagnosticsCapabilitiesMixin;
+
+    /**
+     * @param bool|null $relatedInformation whether the clients accepts
+     *        diagnostics with related information
+     * @param ClientDiagnosticsTagOptions|null $tagSupport Client supports the
+     *        tag property to provide meta data about a diagnostic.
+     *        Clients supporting tags have to handle unknown tags gracefully.
+     * @param bool|null $codeDescriptionSupport Client supports a
+     *        codeDescription property
+     * @param bool|null $dataSupport whether code action supports the `data`
+     *        property which is preserved between a `textDocument/publishDiagnostics`
+     *        and `textDocument/codeAction` request
+     */
     public function __construct(
         /**
          * Whether implementation supports dynamic registration. If this is set
@@ -26,15 +40,14 @@ final class DiagnosticClientCapabilities
          * diagnostic pulls.
          */
         public readonly ?bool $relatedDocumentSupport = null,
-        /**
-         * Whether the client supports `MarkupContent` in diagnostic messages.
-         *
-         * @since 3.18.0
-         *
-         * @internal This is a proposed type, which means that the
-         *           implementation of this type is not final. Please use this type at
-         *           your own risk.
-         */
-        public readonly ?bool $markupMessageSupport = null,
-    ) {}
+        ?bool $relatedInformation = null,
+        ?ClientDiagnosticsTagOptions $tagSupport = null,
+        ?bool $codeDescriptionSupport = null,
+        ?bool $dataSupport = null,
+    ) {
+        $this->relatedInformation = $relatedInformation;
+        $this->tagSupport = $tagSupport;
+        $this->codeDescriptionSupport = $codeDescriptionSupport;
+        $this->dataSupport = $dataSupport;
+    }
 }

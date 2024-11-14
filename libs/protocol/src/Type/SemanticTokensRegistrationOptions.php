@@ -16,14 +16,14 @@ final class SemanticTokensRegistrationOptions
     use StaticRegistrationOptionsMixin;
 
     /**
-     * @param list<(TextDocumentRegistrationOptionsDocumentSelector|NotebookCellTextDocumentFilter)>|null $documentSelector
+     * @param list<(TextDocumentFilterLanguage|TextDocumentFilterScheme|TextDocumentFilterPattern|NotebookCellTextDocumentFilter)>|null $documentSelector
      *        A document selector to identify the scope of the registration. If set to
      *        null the document selector provided on the client side will be used.
      * @param SemanticTokensLegend $legend The legend used by the server
      * @param bool|SemanticTokensOptionsRange|null $range server supports
      *        providing semantic tokens for a specific range of a document
-     * @param bool|SemanticTokensOptionsFull|null $full server supports
-     *        providing semantic tokens for a full document
+     * @param bool|SemanticTokensFullDelta|null $full server supports providing
+     *        semantic tokens for a full document
      * @param string|null $id The id used to register the request. The id can be
      *        used to deregister the request again. See also Registration#id.
      */
@@ -31,7 +31,7 @@ final class SemanticTokensRegistrationOptions
         SemanticTokensLegend $legend,
         ?array $documentSelector = null,
         bool|SemanticTokensOptionsRange|null $range = null,
-        bool|SemanticTokensOptionsFull|null $full = null,
+        bool|SemanticTokensFullDelta|null $full = null,
         ?bool $workDoneProgress = null,
         ?string $id = null,
     ) {

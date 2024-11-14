@@ -22,6 +22,6 @@ final class InlayHintClientCapabilities
          * Indicates which properties a client can resolve lazily on an inlay
          * hint.
          */
-        public readonly ?InlayHintClientCapabilitiesResolveSupport $resolveSupport = null,
+        public readonly ?ClientInlayHintResolveOptions $resolveSupport = null,
     ) {}
 }

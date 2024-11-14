@@ -25,6 +25,6 @@ final class NotebookDocumentChangeEvent
         /**
          * Changes to cells.
          */
-        public readonly ?NotebookDocumentChangeEventCells $cells = null,
+        public readonly ?NotebookDocumentCellChanges $cells = null,
     ) {}
 }

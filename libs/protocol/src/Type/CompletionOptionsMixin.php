@@ -59,5 +59,5 @@ trait CompletionOptionsMixin
      *
      * @readonly
      */
-    public ?CompletionOptionsCompletionItem $completionItem = null;
+    public ?ServerCompletionItemOptions $completionItem = null;
 }

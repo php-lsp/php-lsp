@@ -10,6 +10,6 @@ namespace Lsp\Protocol\Type;
 final class SetTraceParams
 {
     public function __construct(
-        public readonly TraceValues $value,
+        public readonly TraceValue $value,
     ) {}
 }

@@ -15,6 +15,6 @@ final class ShowMessageRequestClientCapabilities
         /**
          * Capabilities specific to the `MessageActionItem` type.
          */
-        public readonly ?ShowMessageRequestClientCapabilitiesMessageActionItem $messageActionItem = null,
+        public readonly ?ClientShowMessageActionItemOptions $messageActionItem = null,
     ) {}
 }

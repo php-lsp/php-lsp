@@ -20,8 +20,8 @@ final class CompletionClientCapabilities
          * The client supports the following `CompletionItem` specific
          * capabilities.
          */
-        public readonly ?CompletionClientCapabilitiesCompletionItem $completionItem = null,
-        public readonly ?CompletionClientCapabilitiesCompletionItemKind $completionItemKind = null,
+        public readonly ?ClientCompletionItemOptions $completionItem = null,
+        public readonly ?ClientCompletionItemOptionsKind $completionItemKind = null,
         /**
          * Defines how the client handles whitespace and indentation when
          * accepting a completion item that uses multi line text in either
@@ -41,6 +41,6 @@ final class CompletionClientCapabilities
          *
          * @since 3.17.0
          */
-        public readonly ?CompletionClientCapabilitiesCompletionList $completionList = null,
+        public readonly ?CompletionListCapabilities $completionList = null,
     ) {}
 }

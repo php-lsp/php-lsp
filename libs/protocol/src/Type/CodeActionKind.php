@@ -57,6 +57,24 @@ enum CodeActionKind: string
      */
     case RefactorInline = 'refactor.inline';
     /**
+     * Base kind for refactoring move actions: `refactor.move`
+     *
+     * Example move actions:
+     *
+     * - Move a function to a new file
+     * - Move a property between classes
+     * - Move method to base class
+     * - ...
+     *
+     * @since 3.18.0
+     *
+     * @internal This is a proposed type, which means that the implementation of
+     *           this type is not final. Please use this type at your own risk.
+     *
+     * @var string
+     */
+    case RefactorMove = 'refactor.move';
+    /**
      * Base kind for refactoring rewrite actions: 'refactor.rewrite'
      *
      * Example rewrite actions:
@@ -99,4 +117,13 @@ enum CodeActionKind: string
      * @var string
      */
     case SourceFixAll = 'source.fixAll';
+    /**
+     * Base kind for all code actions applying to the entire notebook's scope.
+     * CodeActionKinds using this should always begin with `notebook.`.
+     *
+     * @since 3.18.0
+     *
+     * @var string
+     */
+    case Notebook = 'notebook';
 }

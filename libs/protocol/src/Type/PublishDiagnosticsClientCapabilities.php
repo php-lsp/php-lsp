@@ -11,19 +11,21 @@ namespace Lsp\Protocol\Type;
  */
 final class PublishDiagnosticsClientCapabilities
 {
+    use DiagnosticsCapabilitiesMixin;
+
+    /**
+     * @param bool|null $relatedInformation whether the clients accepts
+     *        diagnostics with related information
+     * @param ClientDiagnosticsTagOptions|null $tagSupport Client supports the
+     *        tag property to provide meta data about a diagnostic.
+     *        Clients supporting tags have to handle unknown tags gracefully.
+     * @param bool|null $codeDescriptionSupport Client supports a
+     *        codeDescription property
+     * @param bool|null $dataSupport whether code action supports the `data`
+     *        property which is preserved between a `textDocument/publishDiagnostics`
+     *        and `textDocument/codeAction` request
+     */
     public function __construct(
-        /**
-         * Whether the clients accepts diagnostics with related information.
-         */
-        public readonly ?bool $relatedInformation = null,
-        /**
-         * Client supports the tag property to provide meta data about a
-         * diagnostic.
-         * Clients supporting tags have to handle unknown tags gracefully.
-         *
-         * @since 3.15.0
-         */
-        public readonly ?PublishDiagnosticsClientCapabilitiesTagSupport $tagSupport = null,
         /**
          * Whether the client interprets the version property of the
          * `textDocument/publishDiagnostics` notification's parameter.
@@ -31,19 +33,14 @@ final class PublishDiagnosticsClientCapabilities
          * @since 3.15.0
          */
         public readonly ?bool $versionSupport = null,
-        /**
-         * Client supports a codeDescription property.
-         *
-         * @since 3.16.0
-         */
-        public readonly ?bool $codeDescriptionSupport = null,
-        /**
-         * Whether code action supports the `data` property which is preserved
-         * between a `textDocument/publishDiagnostics` and
-         * `textDocument/codeAction` request.
-         *
-         * @since 3.16.0
-         */
-        public readonly ?bool $dataSupport = null,
-    ) {}
+        ?bool $relatedInformation = null,
+        ?ClientDiagnosticsTagOptions $tagSupport = null,
+        ?bool $codeDescriptionSupport = null,
+        ?bool $dataSupport = null,
+    ) {
+        $this->relatedInformation = $relatedInformation;
+        $this->tagSupport = $tagSupport;
+        $this->codeDescriptionSupport = $codeDescriptionSupport;
+        $this->dataSupport = $dataSupport;
+    }
 }
