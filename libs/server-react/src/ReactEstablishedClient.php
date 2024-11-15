@@ -210,7 +210,25 @@ final class ReactEstablishedClient extends EstablishedClient
 
         $encoded = $this->config->encoder->encode($message);
 
-        $this->connection->write($encoded);
+        $this->write($encoded, [
+            'Content-Length' => \strlen($encoded),
+        ]);
+    }
+
+    /**
+     * @param iterable<non-empty-string, string> $headers
+     */
+    private function write(string $data, iterable $headers = []): void
+    {
+        $message = '';
+
+        foreach ($headers as $name => $value) {
+            $message .= "$name: $value\r\n";
+        }
+
+        $message .= "\r\n$data";
+
+        $this->connection->write($message);
     }
 
     public function notify(NotificationInterface $notification): ?\Throwable
