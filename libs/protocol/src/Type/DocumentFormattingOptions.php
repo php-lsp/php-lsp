@@ -7,14 +7,11 @@ namespace Lsp\Protocol\Type;
 /**
  * Provider options for a {@link DocumentFormattingRequest}.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class DocumentFormattingOptions
 {
-    use DocumentFormattingOptionsMixin;
-
-    public function __construct(?bool $workDoneProgress = null)
-    {
-        $this->workDoneProgress = $workDoneProgress;
-    }
+    public function __construct(
+        public readonly ?bool $workDoneProgress = null,
+    ) {}
 }

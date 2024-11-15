@@ -7,14 +7,11 @@ namespace Lsp\Protocol\Type;
 /**
  * Hover options.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class HoverOptions
 {
-    use HoverOptionsMixin;
-
-    public function __construct(?bool $workDoneProgress = null)
-    {
-        $this->workDoneProgress = $workDoneProgress;
-    }
+    public function __construct(
+        public readonly ?bool $workDoneProgress = null,
+    ) {}
 }

@@ -7,18 +7,15 @@ namespace Lsp\Protocol\Type;
 /**
  * Static registration options to be returned in the initialize request.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class StaticRegistrationOptions
 {
-    use StaticRegistrationOptionsMixin;
-
-    /**
-     * @param string|null $id The id used to register the request. The id can be
-     *        used to deregister the request again. See also Registration#id.
-     */
-    public function __construct(?string $id = null)
-    {
-        $this->id = $id;
-    }
+    public function __construct(
+        /**
+         * The id used to register the request. The id can be used to deregister
+         * the request again. See also Registration#id.
+         */
+        public readonly ?string $id = null,
+    ) {}
 }

@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The data type of the ResponseError if the initialize request fails.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class InitializeError
 {

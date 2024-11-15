@@ -7,23 +7,24 @@ namespace Lsp\Protocol\Type;
 /**
  * Parameters for a {@link HoverRequest}.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class HoverParams
 {
-    use TextDocumentPositionParamsMixin;
-    use WorkDoneProgressParamsMixin;
-
-    /**
-     * @param TextDocumentIdentifier $textDocument the text document
-     * @param Position $position the position inside the text document
-     * @param int<-2147483648, 2147483647>|string|null $workDoneToken an
-     *        optional token that a server can use to report work done progress
-     */
-    public function __construct(TextDocumentIdentifier $textDocument, Position $position, int|string|null $workDoneToken = null)
-    {
-        $this->textDocument = $textDocument;
-        $this->position = $position;
-        $this->workDoneToken = $workDoneToken;
-    }
+    public function __construct(
+        /**
+         * The text document.
+         */
+        public readonly TextDocumentIdentifier $textDocument,
+        /**
+         * The position inside the text document.
+         */
+        public readonly Position $position,
+        /**
+         * An optional token that a server can use to report work done progress.
+         *
+         * @var int<-2147483648, 2147483647>|string|null
+         */
+        public readonly int|string|null $workDoneToken = null,
+    ) {}
 }

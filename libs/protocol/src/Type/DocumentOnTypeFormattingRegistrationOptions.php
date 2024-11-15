@@ -7,25 +7,28 @@ namespace Lsp\Protocol\Type;
 /**
  * Registration options for a {@link DocumentOnTypeFormattingRequest}.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class DocumentOnTypeFormattingRegistrationOptions
 {
-    use TextDocumentRegistrationOptionsMixin;
-    use DocumentOnTypeFormattingOptionsMixin;
-
-    /**
-     * @param list<(TextDocumentFilterLanguage|TextDocumentFilterScheme|TextDocumentFilterPattern|NotebookCellTextDocumentFilter)>|null $documentSelector
-     *        A document selector to identify the scope of the registration. If set to
-     *        null the document selector provided on the client side will be used.
-     * @param string $firstTriggerCharacter a character on which formatting
-     *        should be triggered, like `{`
-     * @param list<string>|null $moreTriggerCharacter more trigger characters
-     */
-    public function __construct(string $firstTriggerCharacter, ?array $documentSelector = null, ?array $moreTriggerCharacter = null)
-    {
-        $this->documentSelector = $documentSelector;
-        $this->firstTriggerCharacter = $firstTriggerCharacter;
-        $this->moreTriggerCharacter = $moreTriggerCharacter;
-    }
+    public function __construct(
+        /**
+         * A character on which formatting should be triggered, like `{`.
+         */
+        public readonly string $firstTriggerCharacter,
+        /**
+         * A document selector to identify the scope of the registration. If set
+         * to null the document selector provided on the client side will be
+         * used.
+         *
+         * @var list<(TextDocumentFilterLanguage|TextDocumentFilterScheme|TextDocumentFilterPattern|NotebookCellTextDocumentFilter)>|null
+         */
+        public readonly ?array $documentSelector = null,
+        /**
+         * More trigger characters.
+         *
+         * @var list<string>|null
+         */
+        public readonly ?array $moreTriggerCharacter = null,
+    ) {}
 }

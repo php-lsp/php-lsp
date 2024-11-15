@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The change text document notification's parameters.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class DidChangeTextDocumentParams
 {

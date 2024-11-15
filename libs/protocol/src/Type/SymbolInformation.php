@@ -8,21 +8,10 @@ namespace Lsp\Protocol\Type;
  * Represents information about programming constructs like variables, classes,
  * interfaces etc.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class SymbolInformation
 {
-    use BaseSymbolInformationMixin;
-
-    /**
-     * @param string $name the name of this symbol
-     * @param SymbolKind $kind the kind of this symbol
-     * @param list<SymbolTag>|null $tags tags for this symbol
-     * @param string|null $containerName The name of the symbol containing this
-     *        symbol. This information is for user interface purposes (e.g. to render a
-     *        qualifier in the user interface if necessary). It can't be used to
-     *        re-infer a hierarchy for the document symbols.
-     */
     public function __construct(
         /**
          * The location of this symbol. The location's range is used by a tool
@@ -36,20 +25,34 @@ final class SymbolInformation
          * hierarchy of the symbols.
          */
         public readonly Location $location,
-        string $name,
-        SymbolKind $kind,
+        /**
+         * The name of this symbol.
+         */
+        public readonly string $name,
+        /**
+         * The kind of this symbol.
+         */
+        public readonly SymbolKind $kind,
         /**
          * Indicates if this symbol is deprecated.
          *
          * @deprecated Use tags instead
          */
         public readonly ?bool $deprecated = null,
-        ?array $tags = null,
-        ?string $containerName = null,
-    ) {
-        $this->name = $name;
-        $this->kind = $kind;
-        $this->tags = $tags;
-        $this->containerName = $containerName;
-    }
+        /**
+         * Tags for this symbol.
+         *
+         * @since 3.16.0
+         *
+         * @var list<SymbolTag>|null
+         */
+        public readonly ?array $tags = null,
+        /**
+         * The name of the symbol containing this symbol. This information is
+         * for user interface purposes (e.g. to render a qualifier in the user
+         * interface if necessary). It can't be used to re-infer a hierarchy for
+         * the document symbols.
+         */
+        public readonly ?string $containerName = null,
+    ) {}
 }

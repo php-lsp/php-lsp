@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The message type.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 enum MessageType: int
 {

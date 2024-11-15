@@ -7,21 +7,13 @@ namespace Lsp\Protocol\Generator\Output\Builder;
 use Lsp\Protocol\Generator\IR\Node\IRStatement;
 use Lsp\Protocol\Generator\IR\Node\IRStructStatement;
 use Lsp\Protocol\Generator\Output\DocBlock\DocBlock;
-use Lsp\Protocol\Generator\Output\DocBlock\NamedTypedTag;
 use Lsp\Protocol\Generator\Output\DocBlock\TypedTag;
 use PhpParser\Modifiers;
-use PhpParser\Node\Expr\Assign as PhpAssign;
-use PhpParser\Node\Expr\PropertyFetch as PhpPropertyFetch;
 use PhpParser\Node\Expr\Variable as PhpVariable;
-use PhpParser\Node\Identifier as PhpIdentifier;
-use PhpParser\Node\Name;
 use PhpParser\Node\Param as PhpParam;
 use PhpParser\Node\Stmt as PhpStatement;
 use PhpParser\Node\Stmt\Class_ as PhpClassStatement;
 use PhpParser\Node\Stmt\ClassMethod as PhpClassMethod;
-use PhpParser\Node\Stmt\Expression as PhpExpression;
-use PhpParser\Node\Stmt\Use_ as PhpUseStatement;
-use PhpParser\Node\UseItem;
 
 final class StructBuilder extends Builder
 {
@@ -51,46 +43,21 @@ final class StructBuilder extends Builder
             $param = new PhpParam(new PhpVariable($property->name));
             $param->type = $this->types->build($property->type);
             $param->default = $this->types->resolveDefaultValue($param->type);
+            $param->flags |= Modifiers::PUBLIC | Modifiers::READONLY;
 
-            if ($context !== $stmt) {
-                $paramDescription = (string) $this->docblock->buildDocBlockFromStatement($property)
-                    ->description;
+            $propertyDescription = $this->docblock->buildDocBlockFromStatement($property);
 
-                if ($paramDescription !== '' || $this->docblock->shouldPrintType($property->type)) {
-                    $methodDescription->addTag(new NamedTypedTag(
-                        name: 'param',
-                        type: $property->type,
-                        variable: $property->name,
-                        description: $paramDescription,
-                    ));
-                }
+            if ($this->docblock->shouldPrintType($property->type)) {
+                $propertyDescription->addTag(new TypedTag(
+                    name: 'var',
+                    type: $property->type,
+                ));
+            }
 
-                $method->stmts[] = new PhpExpression(
-                    expr: new PhpAssign(
-                        var: new PhpPropertyFetch(
-                            var: new PhpVariable('this'),
-                            name: new PhpIdentifier($property->name),
-                        ),
-                        expr: new PhpVariable($property->name),
-                    ),
-                );
-            } else {
-                $propertyDescription = $this->docblock->buildDocBlockFromStatement($property);
+            $doc = $this->docblock->buildCommentFromDocBlock($propertyDescription, 2);
 
-                if ($this->docblock->shouldPrintType($property->type)) {
-                    $propertyDescription->addTag(new TypedTag(
-                        name: 'var',
-                        type: $property->type,
-                    ));
-                }
-
-                $doc = $this->docblock->buildCommentFromDocBlock($propertyDescription, 2);
-
-                if ($doc !== null) {
-                    $param->setDocComment($doc);
-                }
-
-                $param->flags |= Modifiers::PUBLIC | Modifiers::READONLY;
+            if ($doc !== null) {
+                $param->setDocComment($doc);
             }
 
             if ($param->default === null) {
@@ -118,20 +85,8 @@ final class StructBuilder extends Builder
         $class->stmts = [];
 
         $this->addClassDocBlock($stmt, $class);
-        $this->addClassMixins($stmt, $class);
 
         return $class;
-    }
-
-    private function addClassMixins(IRStructStatement $stmt, PhpClassStatement $class): void
-    {
-        foreach ($stmt->mixins as $mixin) {
-            $class->stmts[] = new PhpUseStatement([
-                new UseItem(new Name(
-                    name: $mixin->name,
-                )),
-            ]);
-        }
     }
 
     private function addClassDocBlock(IRStructStatement $stmt, PhpClassStatement $class): void

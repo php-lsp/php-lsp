@@ -7,19 +7,15 @@ namespace Lsp\Protocol\Type;
 /**
  * Delete file operation.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class DeleteFile
 {
-    use ResourceOperationMixin;
-
-    /**
-     * @param string $kind the resource operation kind
-     * @param string|null $annotationId an optional annotation identifier
-     *        describing the operation
-     */
     public function __construct(
-        string $kind,
+        /**
+         * The resource operation kind.
+         */
+        public readonly string $kind,
         /**
          * The file to delete.
          *
@@ -30,9 +26,11 @@ final class DeleteFile
          * Delete options.
          */
         public readonly ?DeleteFileOptions $options = null,
-        ?string $annotationId = null,
-    ) {
-        $this->kind = $kind;
-        $this->annotationId = $annotationId;
-    }
+        /**
+         * An optional annotation identifier describing the operation.
+         *
+         * @since 3.16.0
+         */
+        public readonly ?string $annotationId = null,
+    ) {}
 }

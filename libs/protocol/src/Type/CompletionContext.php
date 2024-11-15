@@ -8,7 +8,7 @@ namespace Lsp\Protocol\Type;
  * Contains additional information about the context in which a completion
  * request is triggered.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class CompletionContext
 {

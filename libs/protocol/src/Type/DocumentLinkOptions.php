@@ -7,19 +7,15 @@ namespace Lsp\Protocol\Type;
 /**
  * Provider options for a {@link DocumentLinkRequest}.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class DocumentLinkOptions
 {
-    use DocumentLinkOptionsMixin;
-
-    /**
-     * @param bool|null $resolveProvider document links have a resolve provider
-     *        as well
-     */
-    public function __construct(?bool $resolveProvider = null, ?bool $workDoneProgress = null)
-    {
-        $this->resolveProvider = $resolveProvider;
-        $this->workDoneProgress = $workDoneProgress;
-    }
+    public function __construct(
+        /**
+         * Document links have a resolve provider as well.
+         */
+        public readonly ?bool $resolveProvider = null,
+        public readonly ?bool $workDoneProgress = null,
+    ) {}
 }

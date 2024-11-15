@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Represents reasons why a text document is saved.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 enum TextDocumentSaveReason: int
 {

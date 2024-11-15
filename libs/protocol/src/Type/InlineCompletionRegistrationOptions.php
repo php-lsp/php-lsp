@@ -12,25 +12,24 @@ namespace Lsp\Protocol\Type;
  * @internal This is a proposed type, which means that the implementation of
  *           this type is not final. Please use this type at your own risk.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class InlineCompletionRegistrationOptions
 {
-    use InlineCompletionOptionsMixin;
-    use TextDocumentRegistrationOptionsMixin;
-    use StaticRegistrationOptionsMixin;
-
-    /**
-     * @param list<(TextDocumentFilterLanguage|TextDocumentFilterScheme|TextDocumentFilterPattern|NotebookCellTextDocumentFilter)>|null $documentSelector
-     *        A document selector to identify the scope of the registration. If set to
-     *        null the document selector provided on the client side will be used.
-     * @param string|null $id The id used to register the request. The id can be
-     *        used to deregister the request again. See also Registration#id.
-     */
-    public function __construct(?bool $workDoneProgress = null, ?array $documentSelector = null, ?string $id = null)
-    {
-        $this->workDoneProgress = $workDoneProgress;
-        $this->documentSelector = $documentSelector;
-        $this->id = $id;
-    }
+    public function __construct(
+        public readonly ?bool $workDoneProgress = null,
+        /**
+         * A document selector to identify the scope of the registration. If set
+         * to null the document selector provided on the client side will be
+         * used.
+         *
+         * @var list<(TextDocumentFilterLanguage|TextDocumentFilterScheme|TextDocumentFilterPattern|NotebookCellTextDocumentFilter)>|null
+         */
+        public readonly ?array $documentSelector = null,
+        /**
+         * The id used to register the request. The id can be used to deregister
+         * the request again. See also Registration#id.
+         */
+        public readonly ?string $id = null,
+    ) {}
 }

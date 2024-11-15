@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The parameters of a {@link DocumentOnTypeFormattingRequest}.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class DocumentOnTypeFormattingParams
 {

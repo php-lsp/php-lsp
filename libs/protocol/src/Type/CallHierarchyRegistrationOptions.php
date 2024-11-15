@@ -9,25 +9,24 @@ namespace Lsp\Protocol\Type;
  *
  * @since 3.16.0
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class CallHierarchyRegistrationOptions
 {
-    use TextDocumentRegistrationOptionsMixin;
-    use CallHierarchyOptionsMixin;
-    use StaticRegistrationOptionsMixin;
-
-    /**
-     * @param list<(TextDocumentFilterLanguage|TextDocumentFilterScheme|TextDocumentFilterPattern|NotebookCellTextDocumentFilter)>|null $documentSelector
-     *        A document selector to identify the scope of the registration. If set to
-     *        null the document selector provided on the client side will be used.
-     * @param string|null $id The id used to register the request. The id can be
-     *        used to deregister the request again. See also Registration#id.
-     */
-    public function __construct(?array $documentSelector = null, ?bool $workDoneProgress = null, ?string $id = null)
-    {
-        $this->documentSelector = $documentSelector;
-        $this->workDoneProgress = $workDoneProgress;
-        $this->id = $id;
-    }
+    public function __construct(
+        /**
+         * A document selector to identify the scope of the registration. If set
+         * to null the document selector provided on the client side will be
+         * used.
+         *
+         * @var list<(TextDocumentFilterLanguage|TextDocumentFilterScheme|TextDocumentFilterPattern|NotebookCellTextDocumentFilter)>|null
+         */
+        public readonly ?array $documentSelector = null,
+        public readonly ?bool $workDoneProgress = null,
+        /**
+         * The id used to register the request. The id can be used to deregister
+         * the request again. See also Registration#id.
+         */
+        public readonly ?string $id = null,
+    ) {}
 }

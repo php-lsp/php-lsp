@@ -15,21 +15,21 @@ namespace Lsp\Protocol\Type;
  *
  * @since 3.17.0
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class NotebookDocumentSyncOptions
 {
-    use NotebookDocumentSyncOptionsMixin;
-
-    /**
-     * @param list<NotebookDocumentFilterWithNotebook|NotebookDocumentFilterWithCells> $notebookSelector
-     *        The notebooks to be synced
-     * @param bool|null $save Whether save notification should be forwarded to
-     *        the server. Will only be honored if mode === `notebook`.
-     */
-    public function __construct(array $notebookSelector = [], ?bool $save = null)
-    {
-        $this->notebookSelector = $notebookSelector;
-        $this->save = $save;
-    }
+    public function __construct(
+        /**
+         * The notebooks to be synced.
+         *
+         * @var list<NotebookDocumentFilterWithNotebook|NotebookDocumentFilterWithCells>
+         */
+        public readonly array $notebookSelector = [],
+        /**
+         * Whether save notification should be forwarded to the server. Will
+         * only be honored if mode === `notebook`.
+         */
+        public readonly ?bool $save = null,
+    ) {}
 }

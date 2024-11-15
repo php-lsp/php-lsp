@@ -9,7 +9,7 @@ namespace Lsp\Protocol\Type;
  * than zero and smaller than the number of lines in the document. Clients are
  * free to ignore invalid ranges.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class FoldingRange
 {

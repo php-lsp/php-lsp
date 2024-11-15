@@ -8,7 +8,6 @@ use Lsp\Protocol\Generator\IR\Node\IRDocument;
 use Lsp\Protocol\Generator\IR\Node\IRStatement;
 use Lsp\Protocol\Generator\Output\Builder\BuilderInterface;
 use Lsp\Protocol\Generator\Output\Builder\EnumBuilder;
-use Lsp\Protocol\Generator\Output\Builder\MixinBuilder;
 use Lsp\Protocol\Generator\Output\Builder\Service\PhpTypeBuilder;
 use Lsp\Protocol\Generator\Output\Builder\StructBuilder;
 use Lsp\Protocol\Generator\Output\DocBlock\DocBlockBuilder;
@@ -48,7 +47,6 @@ final class OutputFactory
         $phpdoc = new DocBlockBuilder();
 
         yield new EnumBuilder($types, $phpdoc);
-        yield new MixinBuilder($types, $phpdoc);
         yield new StructBuilder($types, $phpdoc);
     }
 
@@ -60,7 +58,7 @@ final class OutputFactory
         $this->builders[] = $builder;
     }
 
-    public function buildStatement(IRStatement $statement): PhpStatement
+    public function buildStatement(IRStatement $statement): ?PhpStatement
     {
         foreach ($this->builders as $builder) {
             $result = $builder->build($statement);
@@ -70,20 +68,7 @@ final class OutputFactory
             }
         }
 
-        throw new \LogicException(\sprintf(
-            'Could not build %s statement',
-            $statement->getType(),
-        ));
-    }
-
-    /**
-     * @api
-     */
-    public function buildStatementToString(IRStatement $statement): string
-    {
-        return $this->printer->prettyPrint([
-            $this->buildStatement($statement),
-        ]);
+        return null;
     }
 
     /**
@@ -94,7 +79,11 @@ final class OutputFactory
     public function buildDocument(IRDocument $document): iterable
     {
         foreach ($document->statements as $statement) {
-            yield $statement->name => $this->buildStatement($statement);
+            $result = $this->buildStatement($statement);
+
+            if ($result instanceof PhpStatement) {
+                yield $statement->name => $result;
+            }
         }
     }
 

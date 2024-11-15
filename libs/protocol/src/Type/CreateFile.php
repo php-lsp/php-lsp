@@ -7,19 +7,15 @@ namespace Lsp\Protocol\Type;
 /**
  * Create file operation.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class CreateFile
 {
-    use ResourceOperationMixin;
-
-    /**
-     * @param string $kind the resource operation kind
-     * @param string|null $annotationId an optional annotation identifier
-     *        describing the operation
-     */
     public function __construct(
-        string $kind,
+        /**
+         * The resource operation kind.
+         */
+        public readonly string $kind,
         /**
          * The resource to create.
          *
@@ -30,9 +26,11 @@ final class CreateFile
          * Additional options.
          */
         public readonly ?CreateFileOptions $options = null,
-        ?string $annotationId = null,
-    ) {
-        $this->kind = $kind;
-        $this->annotationId = $annotationId;
-    }
+        /**
+         * An optional annotation identifier describing the operation.
+         *
+         * @since 3.16.0
+         */
+        public readonly ?string $annotationId = null,
+    ) {}
 }

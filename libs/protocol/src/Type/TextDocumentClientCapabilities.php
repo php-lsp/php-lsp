@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Text document specific client capabilities.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class TextDocumentClientCapabilities
 {

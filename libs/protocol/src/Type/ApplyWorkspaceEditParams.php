@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The parameters passed via an apply workspace edit request.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class ApplyWorkspaceEditParams
 {

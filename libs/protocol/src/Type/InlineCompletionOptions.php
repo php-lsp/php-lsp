@@ -12,14 +12,11 @@ namespace Lsp\Protocol\Type;
  * @internal This is a proposed type, which means that the implementation of
  *           this type is not final. Please use this type at your own risk.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class InlineCompletionOptions
 {
-    use InlineCompletionOptionsMixin;
-
-    public function __construct(?bool $workDoneProgress = null)
-    {
-        $this->workDoneProgress = $workDoneProgress;
-    }
+    public function __construct(
+        public readonly ?bool $workDoneProgress = null,
+    ) {}
 }

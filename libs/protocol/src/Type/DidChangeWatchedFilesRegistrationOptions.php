@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Describe options to be used when registered for text document change events.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class DidChangeWatchedFilesRegistrationOptions
 {

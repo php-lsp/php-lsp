@@ -9,7 +9,7 @@ namespace Lsp\Protocol\Type;
  * normal {@link Location locations},
  * including an origin range.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class LocationLink
 {

@@ -9,22 +9,25 @@ namespace Lsp\Protocol\Type;
  *
  * @since 3.17.0
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class FullDocumentDiagnosticReport
 {
-    use FullDocumentDiagnosticReportMixin;
-
-    /**
-     * @param "full" $kind a full document diagnostic report
-     * @param string|null $resultId An optional result id. If provided it will
-     *        be sent on the next diagnostic request for the same document.
-     * @param list<Diagnostic> $items the actual items
-     */
-    public function __construct(string $kind, ?string $resultId = null, array $items = [])
-    {
-        $this->kind = $kind;
-        $this->resultId = $resultId;
-        $this->items = $items;
-    }
+    public function __construct(
+        /**
+         * A full document diagnostic report.
+         */
+        public readonly string $kind,
+        /**
+         * An optional result id. If provided it will be sent on the next
+         * diagnostic request for the same document.
+         */
+        public readonly ?string $resultId = null,
+        /**
+         * The actual items.
+         *
+         * @var list<Diagnostic>
+         */
+        public readonly array $items = [],
+    ) {}
 }

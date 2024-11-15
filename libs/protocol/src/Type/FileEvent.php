@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * An event describing a file change.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class FileEvent
 {

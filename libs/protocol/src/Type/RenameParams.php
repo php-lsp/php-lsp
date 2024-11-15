@@ -7,16 +7,10 @@ namespace Lsp\Protocol\Type;
 /**
  * The parameters of a {@link RenameRequest}.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class RenameParams
 {
-    use WorkDoneProgressParamsMixin;
-
-    /**
-     * @param int<-2147483648, 2147483647>|string|null $workDoneToken an
-     *        optional token that a server can use to report work done progress
-     */
     public function __construct(
         /**
          * The document to rename.
@@ -32,8 +26,11 @@ final class RenameParams
          * message set.
          */
         public readonly string $newName,
-        int|string|null $workDoneToken = null,
-    ) {
-        $this->workDoneToken = $workDoneToken;
-    }
+        /**
+         * An optional token that a server can use to report work done progress.
+         *
+         * @var int<-2147483648, 2147483647>|string|null
+         */
+        public readonly int|string|null $workDoneToken = null,
+    ) {}
 }

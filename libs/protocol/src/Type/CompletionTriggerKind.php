@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * How a completion was triggered.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 enum CompletionTriggerKind: int
 {

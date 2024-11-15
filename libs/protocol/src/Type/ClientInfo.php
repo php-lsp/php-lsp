@@ -9,7 +9,7 @@ namespace Lsp\Protocol\Type;
  *
  * @since 3.18.0 ClientInfo type name added.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class ClientInfo
 {

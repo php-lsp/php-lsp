@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * General parameters to unregister a request or notification.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class Unregistration
 {

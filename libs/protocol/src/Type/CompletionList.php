@@ -8,7 +8,7 @@ namespace Lsp\Protocol\Type;
  * Represents a collection of {@link CompletionItem completion items} to be
  * presented in the editor.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class CompletionList
 {

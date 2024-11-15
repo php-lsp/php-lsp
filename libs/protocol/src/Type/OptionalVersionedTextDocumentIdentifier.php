@@ -8,17 +8,17 @@ namespace Lsp\Protocol\Type;
  * A text document identifier to optionally denote a specific version of a text
  * document.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class OptionalVersionedTextDocumentIdentifier
 {
-    use TextDocumentIdentifierMixin;
-
-    /**
-     * @param non-empty-string $uri the text document's uri
-     */
     public function __construct(
-        string $uri,
+        /**
+         * The text document's uri.
+         *
+         * @var non-empty-string
+         */
+        public readonly string $uri,
         /**
          * The version number of this document. If a versioned text document
          * identifier is sent from the server to the client and the file is not
@@ -31,7 +31,5 @@ final class OptionalVersionedTextDocumentIdentifier
          * @var int<-2147483648, 2147483647>|null
          */
         public readonly ?int $version = null,
-    ) {
-        $this->uri = $uri;
-    }
+    ) {}
 }

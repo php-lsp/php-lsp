@@ -8,7 +8,7 @@ namespace Lsp\Protocol\Type;
  * Contains additional diagnostic information about the context in which a {@see
  * CodeActionProvider::$provideCodeActions code action} is run.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class CodeActionContext
 {

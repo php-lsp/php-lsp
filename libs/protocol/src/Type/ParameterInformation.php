@@ -8,7 +8,7 @@ namespace Lsp\Protocol\Type;
  * Represents a parameter of a callable-signature. A parameter can have a label
  * and a doc-comment.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class ParameterInformation
 {

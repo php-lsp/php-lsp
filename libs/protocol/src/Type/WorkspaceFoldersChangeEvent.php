@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The workspace folder change event.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class WorkspaceFoldersChangeEvent
 {

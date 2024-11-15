@@ -9,7 +9,7 @@ namespace Lsp\Protocol\Type;
  * should be used to point to code locations that cause or related to a
  * diagnostics, e.g when duplicating a symbol in a scope.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class DiagnosticRelatedInformation
 {

@@ -8,7 +8,7 @@ namespace Lsp\Protocol\Type;
  * Signature help represents the signature of something callable. There can be
  * multiple signature but only one active and only one active parameter.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class SignatureHelp
 {

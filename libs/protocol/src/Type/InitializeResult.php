@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The result returned from an initialize request.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class InitializeResult
 {

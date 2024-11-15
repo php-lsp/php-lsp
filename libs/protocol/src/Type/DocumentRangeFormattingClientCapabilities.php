@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Client capabilities of a {@link DocumentRangeFormattingRequest}.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class DocumentRangeFormattingClientCapabilities
 {

@@ -12,16 +12,10 @@ namespace Lsp\Protocol\Type;
  * @internal This is a proposed type, which means that the implementation of
  *           this type is not final. Please use this type at your own risk.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class DocumentRangesFormattingParams
 {
-    use WorkDoneProgressParamsMixin;
-
-    /**
-     * @param int<-2147483648, 2147483647>|string|null $workDoneToken an
-     *        optional token that a server can use to report work done progress
-     */
     public function __construct(
         /**
          * The document to format.
@@ -37,8 +31,11 @@ final class DocumentRangesFormattingParams
          * @var list<Range>
          */
         public readonly array $ranges = [],
-        int|string|null $workDoneToken = null,
-    ) {
-        $this->workDoneToken = $workDoneToken;
-    }
+        /**
+         * An optional token that a server can use to report work done progress.
+         *
+         * @var int<-2147483648, 2147483647>|string|null
+         */
+        public readonly int|string|null $workDoneToken = null,
+    ) {}
 }

@@ -9,7 +9,7 @@ namespace Lsp\Protocol\Type;
  *
  * @deprecated use MarkupContent instead
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class MarkedStringWithLanguage
 {

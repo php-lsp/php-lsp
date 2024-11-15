@@ -7,20 +7,10 @@ namespace Lsp\Protocol\Type;
 /**
  * @since 3.16.0
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class SemanticTokensRangeParams
 {
-    use WorkDoneProgressParamsMixin;
-    use PartialResultParamsMixin;
-
-    /**
-     * @param int<-2147483648, 2147483647>|string|null $workDoneToken an
-     *        optional token that a server can use to report work done progress
-     * @param int<-2147483648, 2147483647>|string|null $partialResultToken An
-     *        optional token that a server can use to report partial results (e.g.
-     *        streaming) to the client.
-     */
     public function __construct(
         /**
          * The text document.
@@ -30,10 +20,18 @@ final class SemanticTokensRangeParams
          * The range the semantic tokens are requested for.
          */
         public readonly Range $range,
-        int|string|null $workDoneToken = null,
-        int|string|null $partialResultToken = null,
-    ) {
-        $this->workDoneToken = $workDoneToken;
-        $this->partialResultToken = $partialResultToken;
-    }
+        /**
+         * An optional token that a server can use to report work done progress.
+         *
+         * @var int<-2147483648, 2147483647>|string|null
+         */
+        public readonly int|string|null $workDoneToken = null,
+        /**
+         * An optional token that a server can use to report partial results
+         * (e.g. streaming) to the client.
+         *
+         * @var int<-2147483648, 2147483647>|string|null
+         */
+        public readonly int|string|null $partialResultToken = null,
+    ) {}
 }

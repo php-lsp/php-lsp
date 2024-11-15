@@ -7,14 +7,11 @@ namespace Lsp\Protocol\Type;
 /**
  * Server Capabilities for a {@link DefinitionRequest}.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class DefinitionOptions
 {
-    use DefinitionOptionsMixin;
-
-    public function __construct(?bool $workDoneProgress = null)
-    {
-        $this->workDoneProgress = $workDoneProgress;
-    }
+    public function __construct(
+        public readonly ?bool $workDoneProgress = null,
+    ) {}
 }

@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * Value-object describing what options formatting should use.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class FormattingOptions
 {

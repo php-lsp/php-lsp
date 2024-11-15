@@ -22,7 +22,7 @@ namespace Lsp\Protocol\Type;
  * failure is described by the client capability:
  * `workspace.workspaceEdit.failureHandling`.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class WorkspaceEdit
 {

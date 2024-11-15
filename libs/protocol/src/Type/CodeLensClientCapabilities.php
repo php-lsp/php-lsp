@@ -7,7 +7,7 @@ namespace Lsp\Protocol\Type;
 /**
  * The client capabilities  of a {@link CodeLensRequest}.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class CodeLensClientCapabilities
 {

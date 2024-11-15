@@ -7,19 +7,15 @@ namespace Lsp\Protocol\Type;
 /**
  * Code Lens provider options of a {@link CodeLensRequest}.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class CodeLensOptions
 {
-    use CodeLensOptionsMixin;
-
-    /**
-     * @param bool|null $resolveProvider code lens has a resolve provider as
-     *        well
-     */
-    public function __construct(?bool $resolveProvider = null, ?bool $workDoneProgress = null)
-    {
-        $this->resolveProvider = $resolveProvider;
-        $this->workDoneProgress = $workDoneProgress;
-    }
+    public function __construct(
+        /**
+         * Code lens has a resolve provider as well.
+         */
+        public readonly ?bool $resolveProvider = null,
+        public readonly ?bool $workDoneProgress = null,
+    ) {}
 }

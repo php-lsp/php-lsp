@@ -7,18 +7,17 @@ namespace Lsp\Protocol\Type;
 /**
  * The server capabilities of a {@link ExecuteCommandRequest}.
  *
- * @generated 2024-11-14
+ * @generated 2024-11-15
  */
 final class ExecuteCommandOptions
 {
-    use ExecuteCommandOptionsMixin;
-
-    /**
-     * @param list<string> $commands The commands to be executed on the server
-     */
-    public function __construct(array $commands = [], ?bool $workDoneProgress = null)
-    {
-        $this->commands = $commands;
-        $this->workDoneProgress = $workDoneProgress;
-    }
+    public function __construct(
+        /**
+         * The commands to be executed on the server.
+         *
+         * @var list<string>
+         */
+        public readonly array $commands = [],
+        public readonly ?bool $workDoneProgress = null,
+    ) {}
 }
