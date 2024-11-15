@@ -7,24 +7,19 @@ namespace Lsp\Dispatcher\Argument\Resolver;
 use Lsp\Contracts\Hydrator\HydratorInterface;
 use Lsp\Contracts\Router\MatchedRouteInterface;
 
-final class DTOArgumentResolver extends ArgumentResolver
+final class ProtocolTypeArgumentResolver extends ArgumentResolver
 {
-    private const TYPES_NAMESPACE = 'Lsp\Protocol\Type';
+    private const PROTOCOL_TYPE_NAMESPACE = 'Lsp\Protocol\Type\\';
 
     public function __construct(
         private readonly HydratorInterface $hydrator,
     ) {}
 
-    private static function matchType(string $type): bool
-    {
-        return \str_starts_with(\ltrim($type, '\\'), self::TYPES_NAMESPACE);
-    }
-
     public function resolve(MatchedRouteInterface $route, \ReflectionParameter $parameter): iterable
     {
         $type = $this->fetchTypeName($parameter);
 
-        if ($type === null || !self::matchType($type)) {
+        if ($type === null || !\str_starts_with($type, self::PROTOCOL_TYPE_NAMESPACE)) {
             return;
         }
 

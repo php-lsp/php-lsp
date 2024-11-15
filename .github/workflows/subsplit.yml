@@ -30,8 +30,8 @@ jobs:
           # Kernel
           - local_path: 'dispatcher'
             split_repository: 'dispatcher'
-          - local_path: 'hydrator-jms'
-            split_repository: 'hydrator-jms'
+          - local_path: 'hydrator-type-lang'
+            split_repository: 'hydrator-type-lang'
           - local_path: 'kernel'
             split_repository: 'kernel'
           - local_path: 'protocol'

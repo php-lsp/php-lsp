@@ -17,7 +17,7 @@
             <directory>libs/contracts/hydrator-contracts/tests</directory>
             <directory>libs/contracts/router-contracts/tests</directory>
             <directory>libs/dispatcher/tests</directory>
-            <directory>libs/hydrator-jms/tests</directory>
+            <directory>libs/hydrator-type-lang/tests</directory>
             <directory>libs/protocol/tests</directory>
             <directory>libs/router/tests</directory>
             <directory>libs/server/tests</directory>
@@ -41,7 +41,7 @@
             <directory>libs/contracts/hydrator-contracts/src</directory>
             <directory>libs/contracts/router-contracts/src</directory>
             <directory>libs/dispatcher/src</directory>
-            <directory>libs/hydrator-jms/src</directory>
+            <directory>libs/hydrator-type-lang/src</directory>
             <directory>libs/protocol/src</directory>
             <directory>libs/router/src</directory>
             <directory>libs/server/src</directory>

@@ -10,7 +10,7 @@ parameters:
     - libs/contracts/hydrator-contracts/src
     - libs/contracts/router-contracts/src
     - libs/dispatcher/src
-    - libs/hydrator-jms/src
+    - libs/hydrator-type-lang/src
     - libs/kernel/src
     # - libs/protocol/src
     - libs/protocol-generator/src

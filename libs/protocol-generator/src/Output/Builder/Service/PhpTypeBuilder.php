@@ -102,7 +102,9 @@ final class PhpTypeBuilder
                 : new PhpName($stmt->name->getPartsAsString()),
             $stmt instanceof UnionTypeNode => new PhpUnionType(
                 // @phpstan-ignore-next-line
-                types: \array_map($this->build(...), $stmt->statements),
+                types: $this->sortScalars(
+                    types: \array_map($this->build(...), $stmt->statements),
+                ),
             ),
             $stmt instanceof IntersectionTypeNode => new PhpIntersectionType(
                 // @phpstan-ignore-next-line
@@ -116,6 +118,21 @@ final class PhpTypeBuilder
                 'Unsupported type of class ' . $stmt::class,
             ),
         };
+    }
+
+    private function sortScalars(array $types): array
+    {
+        \uasort($types, function (PhpIdentifier $a, PhpIdentifier $b): int {
+            return $this->getPriority($a) <=> $this->getPriority($b);
+        });
+
+        return $types;
+    }
+
+    private function getPriority(PhpIdentifier $identifier): int
+    {
+        return (int) (new Identifier($identifier->toLowerString()))
+            ->isBuiltin();
     }
 
     private function simplify(Identifier $type): PhpIdentifier

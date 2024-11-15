@@ -49,7 +49,7 @@ final class InlayHint
         /**
          * The tooltip text when you hover over this item.
          */
-        public readonly string|MarkupContent|null $tooltip = null,
+        public readonly MarkupContent|string|null $tooltip = null,
         /**
          * Render padding before the hint.
          *

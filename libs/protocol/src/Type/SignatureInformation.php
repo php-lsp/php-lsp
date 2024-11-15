@@ -21,7 +21,7 @@ final class SignatureInformation
          * The human-readable doc-comment of this signature. Will be shown in
          * the UI but can be omitted.
          */
-        public readonly string|MarkupContent|null $documentation = null,
+        public readonly MarkupContent|string|null $documentation = null,
         /**
          * The parameters of this signature.
          *

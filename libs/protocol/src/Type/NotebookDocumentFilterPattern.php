@@ -17,7 +17,7 @@ final class NotebookDocumentFilterPattern
         /**
          * A glob pattern.
          */
-        public readonly string|RelativePattern $pattern,
+        public readonly RelativePattern|string $pattern,
         /**
          * The type of the enclosing notebook.
          */

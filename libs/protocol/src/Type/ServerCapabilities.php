@@ -43,7 +43,7 @@ final class ServerCapabilities
         /**
          * The server provides hover support.
          */
-        public readonly bool|HoverOptions|null $hoverProvider = null,
+        public readonly HoverOptions|bool|null $hoverProvider = null,
         /**
          * The server provides signature help support.
          */
@@ -51,37 +51,37 @@ final class ServerCapabilities
         /**
          * The server provides Goto Declaration support.
          */
-        public readonly bool|DeclarationOptions|DeclarationRegistrationOptions|null $declarationProvider = null,
+        public readonly DeclarationOptions|DeclarationRegistrationOptions|bool|null $declarationProvider = null,
         /**
          * The server provides goto definition support.
          */
-        public readonly bool|DefinitionOptions|null $definitionProvider = null,
+        public readonly DefinitionOptions|bool|null $definitionProvider = null,
         /**
          * The server provides Goto Type Definition support.
          */
-        public readonly bool|TypeDefinitionOptions|TypeDefinitionRegistrationOptions|null $typeDefinitionProvider = null,
+        public readonly TypeDefinitionOptions|TypeDefinitionRegistrationOptions|bool|null $typeDefinitionProvider = null,
         /**
          * The server provides Goto Implementation support.
          */
-        public readonly bool|ImplementationOptions|ImplementationRegistrationOptions|null $implementationProvider = null,
+        public readonly ImplementationOptions|ImplementationRegistrationOptions|bool|null $implementationProvider = null,
         /**
          * The server provides find references support.
          */
-        public readonly bool|ReferenceOptions|null $referencesProvider = null,
+        public readonly ReferenceOptions|bool|null $referencesProvider = null,
         /**
          * The server provides document highlight support.
          */
-        public readonly bool|DocumentHighlightOptions|null $documentHighlightProvider = null,
+        public readonly DocumentHighlightOptions|bool|null $documentHighlightProvider = null,
         /**
          * The server provides document symbol support.
          */
-        public readonly bool|DocumentSymbolOptions|null $documentSymbolProvider = null,
+        public readonly DocumentSymbolOptions|bool|null $documentSymbolProvider = null,
         /**
          * The server provides code actions. CodeActionOptions may only be
          * specified if the client states that it supports
          * `codeActionLiteralSupport` in its initial `initialize` request.
          */
-        public readonly bool|CodeActionOptions|null $codeActionProvider = null,
+        public readonly CodeActionOptions|bool|null $codeActionProvider = null,
         /**
          * The server provides code lens.
          */
@@ -93,19 +93,19 @@ final class ServerCapabilities
         /**
          * The server provides color provider support.
          */
-        public readonly bool|DocumentColorOptions|DocumentColorRegistrationOptions|null $colorProvider = null,
+        public readonly DocumentColorOptions|DocumentColorRegistrationOptions|bool|null $colorProvider = null,
         /**
          * The server provides workspace symbol support.
          */
-        public readonly bool|WorkspaceSymbolOptions|null $workspaceSymbolProvider = null,
+        public readonly WorkspaceSymbolOptions|bool|null $workspaceSymbolProvider = null,
         /**
          * The server provides document formatting.
          */
-        public readonly bool|DocumentFormattingOptions|null $documentFormattingProvider = null,
+        public readonly DocumentFormattingOptions|bool|null $documentFormattingProvider = null,
         /**
          * The server provides document range formatting.
          */
-        public readonly bool|DocumentRangeFormattingOptions|null $documentRangeFormattingProvider = null,
+        public readonly DocumentRangeFormattingOptions|bool|null $documentRangeFormattingProvider = null,
         /**
          * The server provides document formatting on typing.
          */
@@ -115,15 +115,15 @@ final class ServerCapabilities
          * specified if the client states that it supports `prepareSupport` in
          * its initial `initialize` request.
          */
-        public readonly bool|RenameOptions|null $renameProvider = null,
+        public readonly RenameOptions|bool|null $renameProvider = null,
         /**
          * The server provides folding provider support.
          */
-        public readonly bool|FoldingRangeOptions|FoldingRangeRegistrationOptions|null $foldingRangeProvider = null,
+        public readonly FoldingRangeOptions|FoldingRangeRegistrationOptions|bool|null $foldingRangeProvider = null,
         /**
          * The server provides selection range support.
          */
-        public readonly bool|SelectionRangeOptions|SelectionRangeRegistrationOptions|null $selectionRangeProvider = null,
+        public readonly SelectionRangeOptions|SelectionRangeRegistrationOptions|bool|null $selectionRangeProvider = null,
         /**
          * The server provides execute command support.
          */
@@ -133,13 +133,13 @@ final class ServerCapabilities
          *
          * @since 3.16.0
          */
-        public readonly bool|CallHierarchyOptions|CallHierarchyRegistrationOptions|null $callHierarchyProvider = null,
+        public readonly CallHierarchyOptions|CallHierarchyRegistrationOptions|bool|null $callHierarchyProvider = null,
         /**
          * The server provides linked editing range support.
          *
          * @since 3.16.0
          */
-        public readonly bool|LinkedEditingRangeOptions|LinkedEditingRangeRegistrationOptions|null $linkedEditingRangeProvider = null,
+        public readonly LinkedEditingRangeOptions|LinkedEditingRangeRegistrationOptions|bool|null $linkedEditingRangeProvider = null,
         /**
          * The server provides semantic tokens support.
          *
@@ -151,25 +151,25 @@ final class ServerCapabilities
          *
          * @since 3.16.0
          */
-        public readonly bool|MonikerOptions|MonikerRegistrationOptions|null $monikerProvider = null,
+        public readonly MonikerOptions|MonikerRegistrationOptions|bool|null $monikerProvider = null,
         /**
          * The server provides type hierarchy support.
          *
          * @since 3.17.0
          */
-        public readonly bool|TypeHierarchyOptions|TypeHierarchyRegistrationOptions|null $typeHierarchyProvider = null,
+        public readonly TypeHierarchyOptions|TypeHierarchyRegistrationOptions|bool|null $typeHierarchyProvider = null,
         /**
          * The server provides inline values.
          *
          * @since 3.17.0
          */
-        public readonly bool|InlineValueOptions|InlineValueRegistrationOptions|null $inlineValueProvider = null,
+        public readonly InlineValueOptions|InlineValueRegistrationOptions|bool|null $inlineValueProvider = null,
         /**
          * The server provides inlay hints.
          *
          * @since 3.17.0
          */
-        public readonly bool|InlayHintOptions|InlayHintRegistrationOptions|null $inlayHintProvider = null,
+        public readonly InlayHintOptions|InlayHintRegistrationOptions|bool|null $inlayHintProvider = null,
         /**
          * The server has support for pull model diagnostics.
          *
@@ -185,7 +185,7 @@ final class ServerCapabilities
          *           implementation of this type is not final. Please use this type at
          *           your own risk.
          */
-        public readonly bool|InlineCompletionOptions|null $inlineCompletionProvider = null,
+        public readonly InlineCompletionOptions|bool|null $inlineCompletionProvider = null,
         /**
          * Workspace specific server capabilities.
          */

@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Lsp\Kernel\DependencyInjection;
 
 use Composer\InstalledVersions;
+use Lsp\Contracts\Hydrator\ExtractorInterface;
 use Lsp\Contracts\Hydrator\HydratorInterface;
 use Lsp\Dispatcher\Argument\Resolver\ArgumentResolverInterface;
-use Lsp\Dispatcher\Argument\Resolver\DTOArgumentResolver;
+use Lsp\Dispatcher\Argument\Resolver\ProtocolTypeArgumentResolver;
 use Lsp\Dispatcher\Argument\Resolver\MessageArgumentResolver;
 use Lsp\Dispatcher\Argument\Resolver\MessageIdArgumentResolver;
 use Lsp\Dispatcher\Argument\Resolver\RouteArgumentResolver;
@@ -17,6 +18,8 @@ use Lsp\Dispatcher\Handler\Resolver\ClassStaticMethodHandlerResolver;
 use Lsp\Dispatcher\Handler\Resolver\ContainerAwareClassMethodHandlerResolver;
 use Lsp\Dispatcher\Handler\Resolver\FunctionHandlerResolver;
 use Lsp\Dispatcher\Handler\Resolver\HandlerResolverInterface;
+use Lsp\Dispatcher\Result\Resolver\ResultResolverInterface;
+use Lsp\Dispatcher\Result\Resolver\ProtocolTypeResultResolver;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
@@ -34,6 +37,9 @@ final class DispatcherCompilerPass implements CompilerPassInterface
 
         $this->registerAutoconfiguredArgumentResolvers($container);
         $this->registerArgumentResolvers($container);
+
+        $this->registerAutoconfiguredResultResolvers($container);
+        $this->registerResultResolvers($container);
     }
 
     private static function isPackageInstalled(): bool
@@ -59,7 +65,7 @@ final class DispatcherCompilerPass implements CompilerPassInterface
         $container->register(MessageIdArgumentResolver::class)
             ->addTag('lsp.dispatcher.argument_resolver');
 
-        $container->register(DTOArgumentResolver::class)
+        $container->register(ProtocolTypeArgumentResolver::class)
             ->setArgument('$hydrator', new Reference(HydratorInterface::class))
             ->addTag('lsp.dispatcher.argument_resolver');
     }
@@ -88,5 +94,24 @@ final class DispatcherCompilerPass implements CompilerPassInterface
 
         $container->register(ClassMethodHandlerResolver::class)
             ->addTag('lsp.dispatcher.handler_resolver');
+    }
+
+    private function registerAutoconfiguredResultResolvers(ContainerBuilder $container): void
+    {
+        $container->registerForAutoconfiguration(ResultResolverInterface::class)
+            ->addTag('lsp.dispatcher.result_resolver');
+    }
+
+    private function registerResultResolvers(ContainerBuilder $container): void
+    {
+        $container->register(ProtocolTypeResultResolver::class)
+            ->setArgument('$extractor', new Reference(ExtractorInterface::class))
+            ->addTag('lsp.dispatcher.result_resolver');
+    }
+
+    private function defined(ContainerBuilder $container, string $service): bool
+    {
+        return $container->hasDefinition($service)
+            || $container->hasAlias($service);
     }
 }

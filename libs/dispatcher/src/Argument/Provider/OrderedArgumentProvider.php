@@ -17,7 +17,7 @@ final class OrderedArgumentProvider implements ArgumentProviderInterface
     /**
      * @param iterable<array-key, ArgumentResolverInterface> $resolvers
      */
-    public function __construct(iterable $resolvers)
+    public function __construct(iterable $resolvers = [])
     {
         $this->resolvers = self::iterableToList($resolvers);
     }
@@ -55,10 +55,17 @@ final class OrderedArgumentProvider implements ArgumentProviderInterface
             }
 
             if ($resolved === false) {
+                $suffix = '';
+
+                if (($scope = $reflection->getClosureScopeClass()) !== null) {
+                    $suffix .= \sprintf(' in %s', $scope->getName());
+                }
+
                 throw new \InvalidArgumentException(\sprintf(
-                    'Could not resolve argument $%s for method %s',
+                    'Could not resolve argument $%s for method %s%s',
                     $parameter->getName(),
                     $reflection->getName(),
+                    $suffix,
                 ));
             }
         }

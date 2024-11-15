@@ -20,11 +20,11 @@ final class SemanticTokensOptions
          * Server supports providing semantic tokens for a specific range of a
          * document.
          */
-        public readonly bool|SemanticTokensOptionsRange|null $range = null,
+        public readonly SemanticTokensOptionsRange|bool|null $range = null,
         /**
          * Server supports providing semantic tokens for a full document.
          */
-        public readonly bool|SemanticTokensFullDelta|null $full = null,
+        public readonly SemanticTokensFullDelta|bool|null $full = null,
         public readonly ?bool $workDoneProgress = null,
     ) {}
 }

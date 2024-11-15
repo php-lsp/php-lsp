@@ -6,39 +6,36 @@ namespace Lsp\Kernel\DependencyInjection;
 
 use Lsp\Contracts\Hydrator\ExtractorInterface;
 use Lsp\Contracts\Hydrator\HydratorInterface;
-use Lsp\Hydrator\JMS\Builder;
-use Lsp\Hydrator\JMS\Extractor;
-use Lsp\Hydrator\JMS\Hydrator;
+use Lsp\Hydrator\TypeLang\TypeLangMapper;
+use Psr\SimpleCache\CacheInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Parameter;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Reference;
 
 final class HydratorCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void
     {
-        if ($this->supportsJmsHydrator()) {
-            $this->registerJmsHydrator($container);
+        if ($this->supportsTypeLang()) {
+            $this->registerTypeLang($container);
         }
     }
 
-    private function supportsJmsHydrator(): bool
+    private function supportsTypeLang(): bool
     {
-        return \class_exists(Hydrator::class)
-            && \class_exists(Extractor::class);
+        return \class_exists(TypeLangMapper::class);
     }
 
-    private function registerJmsHydrator(ContainerBuilder $container): void
+    private function registerTypeLang(ContainerBuilder $container): void
     {
-        $container->register(Builder::class)
-            ->setArgument('$debug', new Parameter('kernel.debug'));
+        $container->register(TypeLangMapper::class)
+            ->setArgument('$cache', new Reference(
+                id: CacheInterface::class,
+                invalidBehavior: ContainerInterface::NULL_ON_INVALID_REFERENCE,
+            ));
 
-        $container->register(HydratorInterface::class)
-            ->setPublic(true) // debug only
-            ->setFactory([new Reference(Builder::class), 'getHydrator']);
-
-        $container->register(ExtractorInterface::class)
-            ->setFactory([new Reference(Builder::class), 'getExtractor']);
+        $container->setAlias(HydratorInterface::class, TypeLangMapper::class);
+        $container->setAlias(ExtractorInterface::class, TypeLangMapper::class);
     }
 }

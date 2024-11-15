@@ -17,7 +17,7 @@ final class OrderedHandlerProvider implements HandlerProviderInterface
     /**
      * @param iterable<array-key, HandlerResolverInterface> $resolvers
      */
-    public function __construct(iterable $resolvers)
+    public function __construct(iterable $resolvers = [])
     {
         $this->resolvers = self::iterableToList($resolvers);
     }

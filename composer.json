@@ -35,7 +35,7 @@
     "require": {
         "php": "^8.1",
         "php-lsp/dispatcher": "^1.0",
-        "php-lsp/hydrator-jms": "^1.0",
+        "php-lsp/hydrator-type-lang": "^1.0",
         "php-lsp/kernel": "^1.0",
         "php-lsp/protocol": "^1.0",
         "php-lsp/router": "^1.0",
@@ -56,7 +56,7 @@
             "Lsp\\Contracts\\Hydrator\\Tests\\": "libs/contracts/hydrator-contracts/tests",
             "Lsp\\Contracts\\Router\\Tests\\": "libs/contracts/router-contracts/tests",
             "Lsp\\Dispatcher\\Tests\\": "libs/dispatcher/tests",
-            "Lsp\\Hydrator\\JMS\\Tests\\": "libs/hydrator-jms/tests",
+            "Lsp\\Hydrator\\TypeLang\\Tests\\": "libs/hydrator-type-lang/tests",
             "Lsp\\Kernel\\Tests\\": "libs/protocol/tests",
             "Lsp\\Protocol\\Tests\\": "libs/protocol/tests",
             "Lsp\\Router\\Tests\\": "libs/router/tests",
