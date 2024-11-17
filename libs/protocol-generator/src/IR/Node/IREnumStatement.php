@@ -19,6 +19,7 @@ final class IREnumStatement extends IRClassLikeStatement
     public function __construct(
         string $name,
         public readonly ?TypeStatement $type = null,
+        public readonly bool $sealed = false,
     ) {
         parent::__construct($name);
     }

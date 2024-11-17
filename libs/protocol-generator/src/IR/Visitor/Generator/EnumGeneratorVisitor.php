@@ -54,6 +54,7 @@ final class EnumGeneratorVisitor extends GeneratorVisitor
         $enum = new IREnumStatement(
             name: $node->name,
             type: $this->types->buildNullable($node->type),
+            sealed: !($node->supportsCustomValues ?? false),
         );
 
         $enum->description = $node->documentation;
