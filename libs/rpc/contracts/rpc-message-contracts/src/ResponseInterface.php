@@ -12,7 +12,6 @@ namespace Lsp\Contracts\Rpc\Message;
  * The {@see ResponseInterface} is expressed as a single Object, with "id".
  *
  * @template-covariant TIdentifier of mixed
- *
  * @template-extends IdentifiableInterface<TIdentifier>
  */
 interface ResponseInterface extends

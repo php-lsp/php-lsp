@@ -25,4 +25,3 @@ final class LanguageServerPlatform extends StandardPlatform
         }
     }
 }
-

@@ -14,7 +14,6 @@ namespace Lsp\Contracts\Rpc\Message;
  *
  * @template-covariant TIdentifier of mixed
  * @template-covariant TData of mixed
- *
  * @template-extends ResponseInterface<TIdentifier>
  */
 interface FailureResponseInterface extends ResponseInterface

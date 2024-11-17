@@ -178,6 +178,7 @@ final class ReactEstablishedClient extends EstablishedClient
 
     /**
      * @param ResponseInterface<mixed> $response
+     *
      * @throws \Throwable
      */
     private function onResponseReceived(ResponseInterface $response): void
@@ -196,6 +197,7 @@ final class ReactEstablishedClient extends EstablishedClient
 
     /**
      * @param RequestInterface<mixed> $request
+     *
      * @throws \Throwable
      */
     private function onRequestReceived(RequestInterface $request): void

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Lsp\Kernel\DependencyInjection\Dispatcher;
 
-use Lsp\Contracts\Hydrator\ExtractorInterface;
 use Lsp\Contracts\Router\RouterInterface;
 use Lsp\Contracts\Rpc\Message\Factory\ResponseFactoryInterface;
 use Lsp\Dispatcher\Argument\Provider\ArgumentProviderInterface;

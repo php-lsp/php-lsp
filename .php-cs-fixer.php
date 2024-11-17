@@ -190,6 +190,7 @@ return (new Config())
                 ],
                 [
                     'template',
+                    'template-covariant',
                     'template-extends',
                     'extends',
                     'template-implements',

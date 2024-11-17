@@ -17,6 +17,7 @@ interface ResultResolverInterface
 
     /**
      * @param TExpectedInput $value
+     *
      * @return TOutput
      */
     public function resolve(mixed $value): mixed;
