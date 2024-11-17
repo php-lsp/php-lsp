@@ -14,8 +14,6 @@ enum CodeActionTag: int
 {
     /**
      * Marks the code action as LLM-generated.
-     *
-     * @var int<0, 2147483647>
      */
     case LLMGenerated = 1;
 }

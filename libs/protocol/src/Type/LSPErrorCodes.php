@@ -12,8 +12,6 @@ enum LSPErrorCodes: int
      * human readable information about why the request failed.
      *
      * @since 3.17.0
-     *
-     * @var int<-2147483648, 2147483647>
      */
     case RequestFailed = -32803;
     /**
@@ -21,8 +19,6 @@ enum LSPErrorCodes: int
      * requests that explicitly support being server cancellable.
      *
      * @since 3.17.0
-     *
-     * @var int<-2147483648, 2147483647>
      */
     case ServerCancelled = -32802;
     /**
@@ -33,14 +29,10 @@ enum LSPErrorCodes: int
      *
      * If a client decides that a result is not of any use anymore the client
      * should cancel the request.
-     *
-     * @var int<-2147483648, 2147483647>
      */
     case ContentModified = -32801;
     /**
      * The client has canceled a request and a server has detected the cancel.
-     *
-     * @var int<-2147483648, 2147483647>
      */
     case RequestCancelled = -32800;
 }

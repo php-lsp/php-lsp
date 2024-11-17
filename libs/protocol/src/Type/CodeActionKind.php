@@ -11,20 +11,14 @@ enum CodeActionKind: string
 {
     /**
      * Empty kind.
-     *
-     * @var string
      */
     case Empty = '';
     /**
      * Base kind for quickfix actions: 'quickfix'.
-     *
-     * @var string
      */
     case QuickFix = 'quickfix';
     /**
      * Base kind for refactoring actions: 'refactor'.
-     *
-     * @var string
      */
     case Refactor = 'refactor';
     /**
@@ -37,8 +31,6 @@ enum CodeActionKind: string
      * - Extract variable
      * - Extract interface from class
      * - ...
-     *
-     * @var string
      */
     case RefactorExtract = 'refactor.extract';
     /**
@@ -50,8 +42,6 @@ enum CodeActionKind: string
      * - Inline variable
      * - Inline constant
      * - ...
-     *
-     * @var string
      */
     case RefactorInline = 'refactor.inline';
     /**
@@ -68,8 +58,6 @@ enum CodeActionKind: string
      *
      * @internal This is a proposed type, which means that the implementation of
      *           this type is not final. Please use this type at your own risk.
-     *
-     * @var string
      */
     case RefactorMove = 'refactor.move';
     /**
@@ -83,23 +71,17 @@ enum CodeActionKind: string
      * - Make method static
      * - Move method to base class
      * - ...
-     *
-     * @var string
      */
     case RefactorRewrite = 'refactor.rewrite';
     /**
      * Base kind for source actions: `source`
      *
      * Source code actions apply to the entire file.
-     *
-     * @var string
      */
     case Source = 'source';
     /**
      * Base kind for an organize imports source action:
      * `source.organizeImports`.
-     *
-     * @var string
      */
     case SourceOrganizeImports = 'source.organizeImports';
     /**
@@ -111,8 +93,6 @@ enum CodeActionKind: string
      * generating new types or classes.
      *
      * @since 3.15.0
-     *
-     * @var string
      */
     case SourceFixAll = 'source.fixAll';
     /**
@@ -120,8 +100,6 @@ enum CodeActionKind: string
      * CodeActionKinds using this should always begin with `notebook.`.
      *
      * @since 3.18.0
-     *
-     * @var string
      */
     case Notebook = 'notebook';
 }

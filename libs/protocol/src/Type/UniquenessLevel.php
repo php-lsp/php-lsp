@@ -13,32 +13,22 @@ enum UniquenessLevel: string
 {
     /**
      * The moniker is only unique inside a document.
-     *
-     * @var string
      */
     case Document = 'document';
     /**
      * The moniker is unique inside a project for which a dump got created.
-     *
-     * @var string
      */
     case Project = 'project';
     /**
      * The moniker is unique inside the group to which a project belongs.
-     *
-     * @var string
      */
     case Group = 'group';
     /**
      * The moniker is unique inside the moniker scheme.
-     *
-     * @var string
      */
     case Scheme = 'scheme';
     /**
      * The moniker is globally unique.
-     *
-     * @var string
      */
     case Global = 'global';
 }

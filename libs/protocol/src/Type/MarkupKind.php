@@ -15,14 +15,10 @@ enum MarkupKind: string
 {
     /**
      * Plain text is supported as a content format.
-     *
-     * @var string
      */
     case PlainText = 'plaintext';
     /**
      * Markdown is supported as a content format.
-     *
-     * @var string
      */
     case Markdown = 'markdown';
 }

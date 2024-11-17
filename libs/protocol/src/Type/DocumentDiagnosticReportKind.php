@@ -13,14 +13,10 @@ enum DocumentDiagnosticReportKind: string
 {
     /**
      * A diagnostic report with a full set of problems.
-     *
-     * @var string
      */
     case Full = 'full';
     /**
      * A report indicating that the last returned report is still accurate.
-     *
-     * @var string
      */
     case Unchanged = 'unchanged';
 }

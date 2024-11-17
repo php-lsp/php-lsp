@@ -13,8 +13,6 @@ enum CodeActionTriggerKind: int
 {
     /**
      * Code actions were explicitly requested by the user or by an extension.
-     *
-     * @var int<0, 2147483647>
      */
     case Invoked = 1;
     /**
@@ -22,8 +20,6 @@ enum CodeActionTriggerKind: int
      *
      * This typically happens when current selection in a file changes, but can
      * also be triggered when file content changes.
-     *
-     * @var int<0, 2147483647>
      */
     case Automatic = 2;
 }

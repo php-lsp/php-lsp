@@ -17,14 +17,10 @@ enum InlineCompletionTriggerKind: int
 {
     /**
      * Completion was triggered explicitly by a user gesture.
-     *
-     * @var int<0, 2147483647>
      */
     case Invoked = 1;
     /**
      * Completion was triggered automatically while editing.
-     *
-     * @var int<0, 2147483647>
      */
     case Automatic = 2;
 }

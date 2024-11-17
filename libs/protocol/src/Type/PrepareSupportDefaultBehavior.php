@@ -9,8 +9,6 @@ enum PrepareSupportDefaultBehavior: int
     /**
      * The client's default behavior is to select the identifier according the
      * to language's syntax rule.
-     *
-     * @var int<0, 2147483647>
      */
     case Identifier = 1;
 }

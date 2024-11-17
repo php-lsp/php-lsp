@@ -16,16 +16,12 @@ enum DiagnosticTag: int
      *
      * Clients are allowed to render diagnostics with this tag faded out instead
      * of having an error squiggle.
-     *
-     * @var int<0, 2147483647>
      */
     case Unnecessary = 1;
     /**
      * Deprecated or obsolete code.
      *
      * Clients are allowed to rendered diagnostics with this tag strike through.
-     *
-     * @var int<0, 2147483647>
      */
     case Deprecated = 2;
 }

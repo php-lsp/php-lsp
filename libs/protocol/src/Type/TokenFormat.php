@@ -6,8 +6,5 @@ namespace Lsp\Protocol\Type;
 
 enum TokenFormat: string
 {
-    /**
-     * @var string
-     */
     case Relative = 'relative';
 }

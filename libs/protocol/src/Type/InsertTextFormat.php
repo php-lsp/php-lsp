@@ -12,8 +12,6 @@ enum InsertTextFormat: int
 {
     /**
      * The primary text to be inserted is treated as a plain string.
-     *
-     * @var int<0, 2147483647>
      */
     case PlainText = 1;
     /**
@@ -26,8 +24,6 @@ enum InsertTextFormat: int
      *
      * See also:
      * https://microsoft.github.io/language-server-protocol/specifications/specification-current/#snippet_syntax.
-     *
-     * @var int<0, 2147483647>
      */
     case Snippet = 2;
 }

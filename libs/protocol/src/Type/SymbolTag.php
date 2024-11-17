@@ -13,8 +13,6 @@ enum SymbolTag: int
 {
     /**
      * Render a symbol as obsolete, usually using a strike-out.
-     *
-     * @var int<0, 2147483647>
      */
     case Deprecated = 1;
 }

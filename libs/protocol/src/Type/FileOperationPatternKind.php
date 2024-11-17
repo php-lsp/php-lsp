@@ -13,14 +13,10 @@ enum FileOperationPatternKind: string
 {
     /**
      * The pattern matches a file only.
-     *
-     * @var string
      */
     case File = 'file';
     /**
      * The pattern matches a folder only.
-     *
-     * @var string
      */
     case Folder = 'folder';
 }
