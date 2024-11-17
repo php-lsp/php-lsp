@@ -15,7 +15,7 @@ final class ClientCodeActionKindOptions
          * exists the client also guarantees that it will handle values outside
          * its set gracefully and falls back to a default value when unknown.
          *
-         * @var list<CodeActionKind>
+         * @var list<CodeActionKind|non-empty-string>
          */
         public readonly array $valueSet = [],
     ) {}

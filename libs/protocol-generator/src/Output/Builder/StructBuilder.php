@@ -39,7 +39,7 @@ final class StructBuilder extends Builder
 
         $optional = $required = [];
 
-        foreach ($stmt->getAllProperties() as $context => $property) {
+        foreach ($stmt->getAllProperties() as $property) {
             $param = new PhpParam(new PhpVariable($property->name));
             $param->type = $this->types->build($property->type);
             $param->default = $this->types->resolveDefaultValue($param->type);

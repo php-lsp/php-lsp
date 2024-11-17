@@ -14,7 +14,7 @@ final class NotebookDocumentFilterWithCells
          * The notebook to be synced If a string value is provided it matches
          * against the notebook type. '*' matches every notebook.
          */
-        public readonly NotebookDocumentFilterNotebookType|NotebookDocumentFilterScheme|NotebookDocumentFilterPattern|string|null $notebook = null,
+        public readonly string|NotebookDocumentFilterNotebookType|NotebookDocumentFilterScheme|NotebookDocumentFilterPattern|null $notebook = null,
         /**
          * The cells of the matching notebook to be synced.
          *

@@ -23,8 +23,10 @@ final class CodeActionKindDocumentation
          * If the kind if more specific, such as
          * `CodeActionKind.RefactorExtract`, the documentation will only be
          * shown when extract refactoring code actions are returned.
+         *
+         * @var CodeActionKind|non-empty-string
          */
-        public readonly CodeActionKind $kind,
+        public readonly string|CodeActionKind $kind,
         /**
          * Command that is ued to display the documentation to the user.
          *

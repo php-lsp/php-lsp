@@ -19,7 +19,7 @@ final class InlineCompletionItem
         /**
          * The text to replace the range with. Must be set.
          */
-        public readonly StringValue|string $insertText,
+        public readonly string|StringValue $insertText,
         /**
          * A text that is used to decide if this inline completion should be
          * shown. When `falsy` the {@see InlineCompletionItem::$insertText} is

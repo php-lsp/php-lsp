@@ -15,7 +15,7 @@ final class ClientFoldingRangeKindOptions
          * exists the client also guarantees that it will handle values outside
          * its set gracefully and falls back to a default value when unknown.
          *
-         * @var list<FoldingRangeKind>|null
+         * @var list<(FoldingRangeKind|non-empty-string)>|null
          */
         public readonly ?array $valueSet = null,
     ) {}

@@ -22,7 +22,7 @@ final class InlayHintLabelPart
          * the client capability `inlayHint.resolveSupport` clients might
          * resolve this property late using the resolve request.
          */
-        public readonly MarkupContent|string|null $tooltip = null,
+        public readonly string|MarkupContent|null $tooltip = null,
         /**
          * An optional source code location that represents this label part.
          *

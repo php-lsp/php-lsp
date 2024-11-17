@@ -120,19 +120,28 @@ final class PhpTypeBuilder
         };
     }
 
+    /**
+     * @param array<array-key, mixed> $types
+     *
+     * @return array<array-key, mixed>
+     */
     private function sortScalars(array $types): array
     {
-        \uasort($types, function (PhpIdentifier $a, PhpIdentifier $b): int {
-            return $this->getPriority($a) <=> $this->getPriority($b);
+        \uasort($types, function (mixed $a, mixed $b): int {
+            return $this->getPriority($b) <=> $this->getPriority($a);
         });
 
         return $types;
     }
 
-    private function getPriority(PhpIdentifier $identifier): int
+    private function getPriority(mixed $identifier): int
     {
-        return (int) (new Identifier($identifier->toLowerString()))
-            ->isBuiltin();
+        if ($identifier instanceof PhpIdentifier || $identifier instanceof PhpName) {
+            return (int) (new Identifier($identifier->toLowerString()))
+                ->isBuiltin();
+        }
+
+        return 0;
     }
 
     private function simplify(Identifier $type): PhpIdentifier

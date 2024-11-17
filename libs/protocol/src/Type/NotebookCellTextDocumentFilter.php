@@ -18,7 +18,7 @@ final class NotebookCellTextDocumentFilter
          * cell. If a string value is provided it matches against the notebook
          * type. '*' matches every notebook.
          */
-        public readonly NotebookDocumentFilterNotebookType|NotebookDocumentFilterScheme|NotebookDocumentFilterPattern|string $notebook,
+        public readonly string|NotebookDocumentFilterNotebookType|NotebookDocumentFilterScheme|NotebookDocumentFilterPattern $notebook,
         /**
          * A language id like `python`.
          *

@@ -52,7 +52,7 @@ final class GeneralClientCapabilities
          *
          * @since 3.17.0
          *
-         * @var list<PositionEncodingKind>|null
+         * @var list<(PositionEncodingKind|non-empty-string)>|null
          */
         public readonly ?array $positionEncodings = null,
     ) {}

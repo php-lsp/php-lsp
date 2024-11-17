@@ -22,8 +22,10 @@ final class CodeAction
          * The kind of the code action.
          *
          * Used to filter code actions.
+         *
+         * @var CodeActionKind|non-empty-string|null
          */
-        public readonly ?CodeActionKind $kind = null,
+        public readonly string|CodeActionKind|null $kind = null,
         /**
          * The diagnostics that this code action resolves.
          *

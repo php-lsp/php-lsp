@@ -50,8 +50,10 @@ final class FoldingRange
          * commands like 'Fold all comments'.
          * See {@link FoldingRangeKind} for an enumeration of standardized
          * kinds.
+         *
+         * @var FoldingRangeKind|non-empty-string|null
          */
-        public readonly ?FoldingRangeKind $kind = null,
+        public readonly string|FoldingRangeKind|null $kind = null,
         /**
          * The text that the client should show when the specified range is
          * collapsed. If not defined or not supported by the client, a default

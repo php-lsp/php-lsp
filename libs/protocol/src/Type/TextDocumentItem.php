@@ -18,8 +18,10 @@ final class TextDocumentItem
         public readonly string $uri,
         /**
          * The text document's language identifier.
+         *
+         * @var LanguageKind|non-empty-string
          */
-        public readonly LanguageKind $languageId,
+        public readonly string|LanguageKind $languageId,
         /**
          * The version number of this document (it will increase after each
          * change, including undo/redo).

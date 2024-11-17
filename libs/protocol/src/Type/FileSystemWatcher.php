@@ -13,11 +13,13 @@ final class FileSystemWatcher
          *
          * @since 3.17.0 support for relative patterns.
          */
-        public readonly RelativePattern|string $globPattern,
+        public readonly string|RelativePattern $globPattern,
         /**
          * The kind of events of interest. If omitted it defaults to
          * WatchKind.Create | WatchKind.Change | WatchKind.Delete which is 7.
+         *
+         * @var WatchKind|non-empty-string|null
          */
-        public readonly ?WatchKind $kind = null,
+        public readonly string|WatchKind|null $kind = null,
     ) {}
 }

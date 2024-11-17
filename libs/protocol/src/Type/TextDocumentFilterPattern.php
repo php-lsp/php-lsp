@@ -18,7 +18,7 @@ final class TextDocumentFilterPattern
          *
          * @since 3.18.0 - support for relative patterns.
          */
-        public readonly RelativePattern|string $pattern,
+        public readonly string|RelativePattern $pattern,
         /**
          * A language id, like `typescript`.
          */

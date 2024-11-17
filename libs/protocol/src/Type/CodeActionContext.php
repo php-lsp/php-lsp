@@ -28,7 +28,7 @@ final class CodeActionContext
          * Actions not of this kind are filtered out by the client before being
          * shown. So servers can omit computing them.
          *
-         * @var list<CodeActionKind>|null
+         * @var list<(CodeActionKind|non-empty-string)>|null
          */
         public readonly ?array $only = null,
         /**

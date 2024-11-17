@@ -20,7 +20,7 @@ final class RelativePattern
          *
          * @var WorkspaceFolder|non-empty-string
          */
-        public readonly WorkspaceFolder|string $baseUri,
+        public readonly string|WorkspaceFolder $baseUri,
         /**
          * The actual glob pattern;.
          */

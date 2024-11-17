@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Protocol\Generator\IR\Visitor\Service;
 
+use Lsp\Protocol\Generator\MetaModel\Node\Enumeration;
 use Lsp\Protocol\Generator\MetaModel\Node\Enumeration\MetaEnumerationType;
 use Lsp\Protocol\Generator\MetaModel\Node\MetaModel;
 use Lsp\Protocol\Generator\MetaModel\Node\Type\MetaAndType;
@@ -285,6 +286,16 @@ final class TypeBuilder
 
         if ($aliased !== null) {
             return $this->build($aliased);
+        }
+
+        $definition = $this->ctx->findReference($type);
+
+        // In case of reference to enum with custom values
+        if ($definition instanceof Enumeration && $definition->supportsCustomValues === true) {
+            return new UnionTypeNode(
+                a: new NamedTypeNode($type->name),
+                b: new NamedTypeNode('non-empty-string'),
+            );
         }
 
         return new NamedTypeNode($type->name);

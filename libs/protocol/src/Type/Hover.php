@@ -15,7 +15,7 @@ final class Hover
          *
          * @var MarkupContent|string|MarkedStringWithLanguage|list<(string|MarkedStringWithLanguage)>
          */
-        public readonly MarkupContent|MarkedStringWithLanguage|string|array $contents = [],
+        public readonly string|array|MarkupContent|MarkedStringWithLanguage $contents = [],
         /**
          * An optional range inside the text document that is used to visualize
          * the hover, e.g. by changing the background color.

@@ -23,6 +23,6 @@ final class NotebookDocumentFilterScheme
         /**
          * A glob pattern.
          */
-        public readonly RelativePattern|string|null $pattern = null,
+        public readonly string|RelativePattern|null $pattern = null,
     ) {}
 }
