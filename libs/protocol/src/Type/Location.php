@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Represents a location inside a resource, such as a line inside a text file.
- *
- * @generated 2024-11-15
  */
 final class Location
 {

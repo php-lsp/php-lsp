@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Completion parameters.
- *
- * @generated 2024-11-15
  */
 final class CompletionParams
 {

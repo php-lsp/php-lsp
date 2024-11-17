@@ -7,8 +7,6 @@ namespace Lsp\Protocol\Type;
 /**
  * Represents a diagnostic, such as a compiler error or warning. Diagnostic
  * objects are only valid in the scope of a resource.
- *
- * @generated 2024-11-15
  */
 final class Diagnostic
 {

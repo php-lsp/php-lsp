@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Client capabilities for the linked editing range request.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 final class LinkedEditingRangeClientCapabilities
 {

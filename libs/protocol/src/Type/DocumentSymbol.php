@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
  * that appear in a document. Document symbols can be hierarchical and they have
  * two ranges: one that encloses its definition and one that points to its most
  * interesting range, e.g. the range of an identifier.
- *
- * @generated 2024-11-15
  */
 final class DocumentSymbol
 {

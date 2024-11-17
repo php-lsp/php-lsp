@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Information about the client.
  *
  * @since 3.18.0 ClientInfo type name added.
- *
- * @generated 2024-11-15
  */
 final class ClientInfo
 {

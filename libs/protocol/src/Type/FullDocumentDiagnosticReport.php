@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * A diagnostic report with a full set of problems.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class FullDocumentDiagnosticReport
 {

@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * A set of predefined code action kinds.
- *
- * @generated 2024-11-15
  */
 enum CodeActionKind: string
 {

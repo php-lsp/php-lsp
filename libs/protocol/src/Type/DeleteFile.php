@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Delete file operation.
- *
- * @generated 2024-11-15
  */
 final class DeleteFile
 {

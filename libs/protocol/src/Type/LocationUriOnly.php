@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Location with only uri and does not include range.
  *
  * @since 3.18.0
- *
- * @generated 2024-11-15
  */
 final class LocationUriOnly
 {

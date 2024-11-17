@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Symbol tags are extra annotations that tweak the rendering of a symbol.
  *
  * @since 3.16
- *
- * @generated 2024-11-15
  */
 enum SymbolTag: int
 {

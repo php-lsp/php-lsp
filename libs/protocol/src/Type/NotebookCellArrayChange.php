@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * A change describing how to move a `NotebookCell` array from state S to S'.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class NotebookCellArrayChange
 {

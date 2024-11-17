@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * The client supports the following `CompletionList` specific capabilities.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class CompletionListCapabilities
 {

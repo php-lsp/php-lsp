@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Moniker definition to match LSIF 0.5 moniker definition.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 final class Moniker
 {

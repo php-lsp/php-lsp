@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
  * completion item.
  *
  * @since 3.15.0
- *
- * @generated 2024-11-15
  */
 enum CompletionItemTag: int
 {

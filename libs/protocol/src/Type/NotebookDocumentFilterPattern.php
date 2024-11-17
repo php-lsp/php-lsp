@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * A notebook document filter where `pattern` is required field.
  *
  * @since 3.18.0
- *
- * @generated 2024-11-15
  */
 final class NotebookDocumentFilterPattern
 {

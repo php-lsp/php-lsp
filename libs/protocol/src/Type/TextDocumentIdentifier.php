@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * A literal to identify a text document in the client.
- *
- * @generated 2024-11-15
  */
 final class TextDocumentIdentifier
 {

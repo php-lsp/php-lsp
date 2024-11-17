@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Params to show a resource in the UI.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 final class ShowDocumentParams
 {

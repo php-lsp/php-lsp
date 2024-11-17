@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Represents a folding range. To be valid, start and end line must be bigger
  * than zero and smaller than the number of lines in the document. Clients are
  * free to ignore invalid ranges.
- *
- * @generated 2024-11-15
  */
 final class FoldingRange
 {

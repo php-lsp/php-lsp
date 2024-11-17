@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
  * additional token types via the corresponding client capabilities.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 enum SemanticTokenTypes: string
 {

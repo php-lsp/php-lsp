@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * A partial result for a workspace diagnostic report.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class WorkspaceDiagnosticReportPartialResult
 {

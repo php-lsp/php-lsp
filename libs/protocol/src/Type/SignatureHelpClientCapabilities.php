@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Client Capabilities for a {@link SignatureHelpRequest}.
- *
- * @generated 2024-11-15
  */
 final class SignatureHelpClientCapabilities
 {

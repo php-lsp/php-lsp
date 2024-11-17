@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * The server capabilities of a {@link ExecuteCommandRequest}.
- *
- * @generated 2024-11-15
  */
 final class ExecuteCommandOptions
 {

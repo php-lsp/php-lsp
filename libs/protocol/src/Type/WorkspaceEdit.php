@@ -21,8 +21,6 @@ namespace Lsp\Protocol\Type;
  * a.txt) will cause failure of the operation. How the client recovers from the
  * failure is described by the client capability:
  * `workspace.workspaceEdit.failureHandling`.
- *
- * @generated 2024-11-15
  */
 final class WorkspaceEdit
 {

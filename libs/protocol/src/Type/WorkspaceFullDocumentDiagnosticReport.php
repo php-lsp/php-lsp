@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * A full document diagnostic report for a workspace diagnostic result.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class WorkspaceFullDocumentDiagnosticReport
 {

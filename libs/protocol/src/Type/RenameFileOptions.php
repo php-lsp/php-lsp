@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Rename file options.
- *
- * @generated 2024-11-15
  */
 final class RenameFileOptions
 {

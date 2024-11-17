@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * The result of a hover request.
- *
- * @generated 2024-11-15
  */
 final class Hover
 {

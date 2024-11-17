@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * The parameters of a {@link CodeLensRequest}.
- *
- * @generated 2024-11-15
  */
 final class CodeLensParams
 {

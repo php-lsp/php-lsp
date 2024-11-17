@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * A previous result id in a workspace pull request.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class PreviousResultId
 {

@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * The parameters of a change configuration notification.
- *
- * @generated 2024-11-15
  */
 final class DidChangeConfigurationParams
 {

@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * The Client Capabilities of a {@link CodeActionRequest}.
- *
- * @generated 2024-11-15
  */
 final class CodeActionClientCapabilities
 {

@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Matching options for the file operation pattern.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 final class FileOperationPatternOptions
 {

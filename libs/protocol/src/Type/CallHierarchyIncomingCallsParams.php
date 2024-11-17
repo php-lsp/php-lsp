@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * The parameter of a `callHierarchy/incomingCalls` request.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 final class CallHierarchyIncomingCallsParams
 {

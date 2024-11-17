@@ -14,8 +14,6 @@ namespace Lsp\Protocol\Type;
  * all notebook document that contain at least one matching cell will be synced.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class NotebookDocumentSyncOptions
 {

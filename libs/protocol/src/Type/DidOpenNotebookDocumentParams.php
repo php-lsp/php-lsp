@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * The params sent in an open notebook document notification.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class DidOpenNotebookDocumentParams
 {

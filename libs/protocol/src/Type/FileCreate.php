@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Represents information on a file/folder create.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 final class FileCreate
 {

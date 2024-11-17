@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Parameters for a {@link DocumentColorRequest}.
- *
- * @generated 2024-11-15
  */
 final class DocumentColorParams
 {

@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Options for notifications/requests for user operations on files.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 final class FileOperationOptions
 {

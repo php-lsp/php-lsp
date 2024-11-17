@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * How whitespace and indentation is handled during completion item insertion.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 enum InsertTextMode: int
 {

@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
  * action.
  *
  * @since 3.18.0 - proposed
- *
- * @generated 2024-11-15
  */
 enum CodeActionTag: int
 {

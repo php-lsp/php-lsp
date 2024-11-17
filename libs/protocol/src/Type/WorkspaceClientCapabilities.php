@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Workspace specific client capabilities.
- *
- * @generated 2024-11-15
  */
 final class WorkspaceClientCapabilities
 {

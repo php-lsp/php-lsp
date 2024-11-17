@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * A parameter literal used in inlay hint requests.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class InlayHintParams
 {

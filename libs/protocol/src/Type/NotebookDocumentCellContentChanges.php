@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Content changes to a cell in a notebook document.
  *
  * @since 3.18.0
- *
- * @generated 2024-11-15
  */
 final class NotebookDocumentCellContentChanges
 {

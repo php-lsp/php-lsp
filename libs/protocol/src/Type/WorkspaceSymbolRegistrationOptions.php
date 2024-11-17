@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Registration options for a {@link WorkspaceSymbolRequest}.
- *
- * @generated 2024-11-15
  */
 final class WorkspaceSymbolRegistrationOptions
 {

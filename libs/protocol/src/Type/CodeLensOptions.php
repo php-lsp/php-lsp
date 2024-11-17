@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Code Lens provider options of a {@link CodeLensRequest}.
- *
- * @generated 2024-11-15
  */
 final class CodeLensOptions
 {

@@ -16,8 +16,6 @@ namespace Lsp\Protocol\Type;
  *     end : { line 6, character : 0 }
  * }
  * ```.
- *
- * @generated 2024-11-15
  */
 final class Range
 {

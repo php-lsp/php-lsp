@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Represents the connection of two locations. Provides additional metadata over
  * normal {@link Location locations},
  * including an origin range.
- *
- * @generated 2024-11-15
  */
 final class LocationLink
 {

@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * The parameters sent in a will save text document notification.
- *
- * @generated 2024-11-15
  */
 final class WillSaveTextDocumentParams
 {

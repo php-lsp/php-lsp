@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Information about the server.
  *
  * @since 3.18.0 ServerInfo type name added.
- *
- * @generated 2024-11-15
  */
 final class ServerInfo
 {

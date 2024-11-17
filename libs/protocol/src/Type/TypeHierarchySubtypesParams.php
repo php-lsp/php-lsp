@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * The parameter of a `typeHierarchy/subtypes` request.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class TypeHierarchySubtypesParams
 {

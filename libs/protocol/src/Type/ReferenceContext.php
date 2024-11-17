@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Value-object that contains additional information when requesting references.
- *
- * @generated 2024-11-15
  */
 final class ReferenceContext
 {

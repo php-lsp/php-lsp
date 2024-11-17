@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Moniker uniqueness level to define scope of the moniker.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 enum UniquenessLevel: string
 {

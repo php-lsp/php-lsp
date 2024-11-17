@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Parameters for a {@link DefinitionRequest}.
- *
- * @generated 2024-11-15
  */
 final class DefinitionParams
 {

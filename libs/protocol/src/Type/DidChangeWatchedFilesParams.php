@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * The watched files change notification's parameters.
- *
- * @generated 2024-11-15
  */
 final class DidChangeWatchedFilesParams
 {

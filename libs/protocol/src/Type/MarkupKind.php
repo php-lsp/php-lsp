@@ -10,8 +10,6 @@ namespace Lsp\Protocol\Type;
  *
  * Please note that `MarkupKinds` must not start with a `$`. This kinds are
  * reserved for internal usage.
- *
- * @generated 2024-11-15
  */
 enum MarkupKind: string
 {

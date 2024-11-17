@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * The document diagnostic report kinds.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 enum DocumentDiagnosticReportKind: string
 {

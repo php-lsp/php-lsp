@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Captures why the code action is currently disabled.
  *
  * @since 3.18.0
- *
- * @generated 2024-11-15
  */
 final class CodeActionDisabled
 {

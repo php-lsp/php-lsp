@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * A special text edit with an additional change annotation.
  *
  * @since 3.16.0.
- *
- * @generated 2024-11-15
  */
 final class AnnotatedTextEdit
 {

@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
  * An optional expression can be used to override the extracted expression.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class InlineValueEvaluatableExpression
 {

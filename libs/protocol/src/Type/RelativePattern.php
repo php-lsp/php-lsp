@@ -10,8 +10,6 @@ namespace Lsp\Protocol\Type;
  * folder root, but it can be another absolute URI as well.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class RelativePattern
 {

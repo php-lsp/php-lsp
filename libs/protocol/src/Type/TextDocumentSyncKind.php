@@ -7,8 +7,6 @@ namespace Lsp\Protocol\Type;
 /**
  * Defines how the host (editor) should sync document changes to the language
  * server.
- *
- * @generated 2024-11-15
  */
 enum TextDocumentSyncKind: int
 {

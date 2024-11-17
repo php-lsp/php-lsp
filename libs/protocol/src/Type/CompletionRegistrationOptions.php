@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Registration options for a {@link CompletionRequest}.
- *
- * @generated 2024-11-15
  */
 final class CompletionRegistrationOptions
 {

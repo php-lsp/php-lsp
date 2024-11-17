@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
  * represent a command in the UI and, optionally,
  * an array of arguments which will be passed to the command handler function
  * when invoked.
- *
- * @generated 2024-11-15
  */
 final class Command
 {

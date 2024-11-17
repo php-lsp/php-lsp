@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Type hierarchy options used during static or dynamic registration.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class TypeHierarchyRegistrationOptions
 {

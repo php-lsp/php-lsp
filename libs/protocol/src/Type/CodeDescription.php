@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Structure to capture a description for an error code.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 final class CodeDescription
 {

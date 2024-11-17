@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
  * was triggered.
  *
  * @since 3.15.0
- *
- * @generated 2024-11-15
  */
 final class SignatureHelpContext
 {

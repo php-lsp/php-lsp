@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 final class SemanticTokensClientCapabilities
 {

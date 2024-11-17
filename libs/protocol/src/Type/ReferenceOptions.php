@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Reference options.
- *
- * @generated 2024-11-15
  */
 final class ReferenceOptions
 {

@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * A set of predefined range kinds.
- *
- * @generated 2024-11-15
  */
 enum FoldingRangeKind: string
 {

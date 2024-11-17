@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Additional details for a completion item label.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class CompletionItemLabelDetails
 {

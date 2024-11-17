@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * A special text edit to provide an insert and a replace operation.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 final class InsertReplaceEdit
 {

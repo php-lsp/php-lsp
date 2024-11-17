@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * The diagnostic tags.
  *
  * @since 3.15.0
- *
- * @generated 2024-11-15
  */
 enum DiagnosticTag: int
 {

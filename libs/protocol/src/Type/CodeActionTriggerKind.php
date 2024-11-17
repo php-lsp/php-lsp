@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * The reason why code actions were requested.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 enum CodeActionTriggerKind: int
 {

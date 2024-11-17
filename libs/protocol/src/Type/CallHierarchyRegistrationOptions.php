@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Call hierarchy options used during static or dynamic registration.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 final class CallHierarchyRegistrationOptions
 {

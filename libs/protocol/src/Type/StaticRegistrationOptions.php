@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * Static registration options to be returned in the initialize request.
- *
- * @generated 2024-11-15
  */
 final class StaticRegistrationOptions
 {

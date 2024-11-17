@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
  * context of call hierarchy.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 final class CallHierarchyItem
 {

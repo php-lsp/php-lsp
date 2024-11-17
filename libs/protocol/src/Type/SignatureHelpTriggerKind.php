@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * How a signature help was triggered.
  *
  * @since 3.15.0
- *
- * @generated 2024-11-15
  */
 enum SignatureHelpTriggerKind: int
 {

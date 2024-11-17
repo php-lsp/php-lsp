@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Client workspace capabilities specific to inlay hints.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class InlayHintWorkspaceClientCapabilities
 {

@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * General diagnostics capabilities for pull and push model.
- *
- * @generated 2024-11-15
  */
 final class DiagnosticsCapabilities
 {

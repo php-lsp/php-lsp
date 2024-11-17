@@ -7,8 +7,6 @@ namespace Lsp\Protocol\Type;
 /**
  * Represents the signature of something callable. A signature can have a label,
  * like a function-name, a doc-comment, and a set of parameters.
- *
- * @generated 2024-11-15
  */
 final class SignatureInformation
 {

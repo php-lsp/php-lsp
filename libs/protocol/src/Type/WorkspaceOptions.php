@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Defines workspace specific capabilities of the server.
  *
  * @since 3.18.0
- *
- * @generated 2024-11-15
  */
 final class WorkspaceOptions
 {

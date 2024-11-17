@@ -30,8 +30,6 @@ namespace Lsp\Protocol\Type;
  *
  * *Please Note* that clients might sanitize the return markdown. A client could
  * decide to remove HTML from the markdown to avoid script execution.
- *
- * @generated 2024-11-15
  */
 final class MarkupContent
 {

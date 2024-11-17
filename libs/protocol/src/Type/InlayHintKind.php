@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Inlay hint kinds.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 enum InlayHintKind: int
 {

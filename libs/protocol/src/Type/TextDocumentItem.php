@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * An item to transfer a text document from the client to the server.
- *
- * @generated 2024-11-15
  */
 final class TextDocumentItem
 {

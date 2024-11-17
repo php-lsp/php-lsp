@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * A document highlight kind.
- *
- * @generated 2024-11-15
  */
 enum DocumentHighlightKind: int
 {

@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * The parameter of a `textDocument/prepareTypeHierarchy` request.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class TypeHierarchyPrepareParams
 {

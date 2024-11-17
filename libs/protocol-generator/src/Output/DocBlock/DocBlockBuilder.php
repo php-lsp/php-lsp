@@ -140,8 +140,6 @@ final class DocBlockBuilder
 
         $block = $this->buildDocBlockFromStatement($statement);
 
-        $block->addTag(new Tag('generated', $now->format('Y-m-d')));
-
         return $this->buildCommentFromDocBlock($block, $level);
     }
 

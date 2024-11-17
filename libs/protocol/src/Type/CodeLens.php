@@ -11,8 +11,6 @@ namespace Lsp\Protocol\Type;
  * A code lens is _unresolved_ when no command is associated to it. For
  * performance reasons the creation of a code lens and resolving should be done
  * in two stages.
- *
- * @generated 2024-11-15
  */
 final class CodeLens
 {

@@ -17,8 +17,6 @@ namespace Lsp\Protocol\Type;
  * support for this via the `completionList.itemDefaults` capability.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class CompletionItemDefaults
 {

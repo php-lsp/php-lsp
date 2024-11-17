@@ -9,8 +9,6 @@ namespace Lsp\Protocol\Type;
  * hints.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class InlayHintLabelPart
 {

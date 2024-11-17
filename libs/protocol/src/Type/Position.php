@@ -33,8 +33,6 @@ namespace Lsp\Protocol\Type;
  * that denotes `\r|\n` or `\n|` where `|` represents the character offset.
  *
  * @since 3.17.0 - support for negotiated position encoding.
- *
- * @generated 2024-11-15
  */
 final class Position
 {

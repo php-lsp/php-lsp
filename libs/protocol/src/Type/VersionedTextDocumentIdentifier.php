@@ -6,8 +6,6 @@ namespace Lsp\Protocol\Type;
 
 /**
  * A text document identifier to denote a specific version of a text document.
- *
- * @generated 2024-11-15
  */
 final class VersionedTextDocumentIdentifier
 {

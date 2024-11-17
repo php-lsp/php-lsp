@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * A literal to identify a notebook document in the client.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class NotebookDocumentIdentifier
 {

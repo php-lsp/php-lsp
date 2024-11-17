@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * Represents an incoming call, e.g. a caller of a method or constructor.
  *
  * @since 3.16.0
- *
- * @generated 2024-11-15
  */
 final class CallHierarchyIncomingCall
 {

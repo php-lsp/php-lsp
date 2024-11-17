@@ -8,8 +8,6 @@ namespace Lsp\Protocol\Type;
  * The params sent in a change notebook document notification.
  *
  * @since 3.17.0
- *
- * @generated 2024-11-15
  */
 final class DidChangeNotebookDocumentParams
 {
