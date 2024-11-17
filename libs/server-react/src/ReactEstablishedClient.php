@@ -60,7 +60,7 @@ final class ReactEstablishedClient extends EstablishedClient
     private function listen(SocketInterface $connection): void
     {
         $connection->on('data', function (string $data): void {
-            $this->logger?->debug('Incoming data {bytes}', [
+            $this->logger?->debug('[connection] Incoming data', [
                 'bytes' => \strlen($data),
                 'data' => $data,
             ]);
@@ -186,7 +186,7 @@ final class ReactEstablishedClient extends EstablishedClient
         try {
             $this->requests->resolve($response);
         } catch (\Throwable $e) {
-            $this->logger?->error('Incoming response #{id} failed', [
+            $this->logger?->error('[rpc] Incoming response #{id} failed', [
                 'id' => (string) $response->getId(),
                 'exception' => $e,
             ]);
@@ -207,7 +207,7 @@ final class ReactEstablishedClient extends EstablishedClient
 
             $this->send($response);
         } catch (\Throwable $e) {
-            $this->logger?->error('Incoming request #{id} {method} failed', [
+            $this->logger?->error('[rpc] Incoming request #{id} {method} failed', [
                 'id' => (string) $request->getId(),
                 'method' => $request->getMethod(),
                 'exception' => $e,
@@ -222,7 +222,7 @@ final class ReactEstablishedClient extends EstablishedClient
         $result = $this->config->dispatcher->notify($request);
 
         if ($result !== null && $this->logger !== null) {
-            $this->logger->error('Incoming notification {method} failed', [
+            $this->logger->error('[rpc] Incoming notification {method} failed', [
                 'method' => $request->getMethod(),
                 'exception' => $result,
             ]);
@@ -261,7 +261,7 @@ final class ReactEstablishedClient extends EstablishedClient
 
         $message .= "\r\n$data";
 
-        $this->logger?->debug('Sent data {bytes}', [
+        $this->logger?->debug('[connection] Sent data', [
             'bytes' => \strlen($message),
             'data' => $message,
         ]);

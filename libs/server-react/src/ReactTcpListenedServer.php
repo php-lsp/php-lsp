@@ -31,12 +31,12 @@ final class ReactTcpListenedServer extends ListenedServer
 
     private function listen(SocketTcpServer $server): void
     {
-        $this->logger?->debug('Listening on {address}', [
+        $this->logger?->debug('[server] Listening on {address}', [
             'address' => $this->socket->getAddress(),
         ]);
 
         $server->on('connection', function (SocketInterface $connection): void {
-            $this->logger?->debug('Established client {address}', [
+            $this->logger?->debug('[server] Established client {address}', [
                 'address' => $connection->getRemoteAddress(),
             ]);
 
@@ -44,7 +44,7 @@ final class ReactTcpListenedServer extends ListenedServer
         });
 
         $server->once('close', function () {
-            $this->logger?->debug('Stop listening on {address}', [
+            $this->logger?->debug('[server] Stop listening on {address}', [
                 'address' => $this->socket->getAddress(),
             ]);
 
