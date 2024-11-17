@@ -16,7 +16,7 @@ abstract class ListenedServer implements ListenedServerInterface
     protected readonly \SplObjectStorage $clients;
 
     public function __construct(
-        protected readonly ServerPoolInterface $pool,
+        protected readonly ServerPoolInterface $servers,
         protected readonly AddressInterface $address,
     ) {
         $this->clients = new \SplObjectStorage();
@@ -24,7 +24,7 @@ abstract class ListenedServer implements ListenedServerInterface
 
     public function getServer(): ServerPoolInterface
     {
-        return $this->pool;
+        return $this->servers;
     }
 
     public function getAddress(): AddressInterface
@@ -52,7 +52,7 @@ abstract class ListenedServer implements ListenedServerInterface
         }
 
         $this->stopped = true;
-        $this->pool->close($this);
+        $this->servers->close($this);
         $this->onStop();
     }
 

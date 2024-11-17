@@ -59,8 +59,13 @@ final class ReactEstablishedClient extends EstablishedClient
 
     private function listen(SocketInterface $connection): void
     {
+        $this->logger?->debug('[{address}][connection] Established connection', [
+            'address' => $this->address,
+        ]);
+
         $connection->on('data', function (string $data): void {
-            $this->logger?->debug('[connection] Incoming data', [
+            $this->logger?->debug('[{address}][data] Incoming data', [
+                'address' => $this->address,
                 'bytes' => \strlen($data),
                 'data' => $data,
             ]);
@@ -68,6 +73,19 @@ final class ReactEstablishedClient extends EstablishedClient
             foreach ($this->buffer->push($data) as $message) {
                 $this->onMessageReceived($message);
             }
+        });
+
+        $connection->on('error', function (\Throwable $e) {
+            $this->logger?->debug('[{address}][connection] Error', [
+                'address' => $this->address,
+                'exception' => $e,
+            ]);
+        });
+
+        $connection->on('close', function () {
+            $this->logger?->debug('[{address}][connection] Closing connection', [
+                'address' => $this->address,
+            ]);
         });
     }
 
@@ -186,7 +204,8 @@ final class ReactEstablishedClient extends EstablishedClient
         try {
             $this->requests->resolve($response);
         } catch (\Throwable $e) {
-            $this->logger?->error('[rpc] Incoming response #{id} failed', [
+            $this->logger?->error('[{address}][rpc] Incoming response #{id} failed', [
+                'address' => $this->address,
                 'id' => (string) $response->getId(),
                 'exception' => $e,
             ]);
@@ -207,7 +226,8 @@ final class ReactEstablishedClient extends EstablishedClient
 
             $this->send($response);
         } catch (\Throwable $e) {
-            $this->logger?->error('[rpc] Incoming request #{id} {method} failed', [
+            $this->logger?->error('[{address}][rpc] Incoming request #{id} {method} failed', [
+                'address' => $this->address,
                 'id' => (string) $request->getId(),
                 'method' => $request->getMethod(),
                 'exception' => $e,
@@ -222,7 +242,8 @@ final class ReactEstablishedClient extends EstablishedClient
         $result = $this->config->dispatcher->notify($request);
 
         if ($result !== null && $this->logger !== null) {
-            $this->logger->error('[rpc] Incoming notification {method} failed', [
+            $this->logger->error('[{address}][rpc] Incoming notification {method} failed', [
+                'address' => $this->address,
                 'method' => $request->getMethod(),
                 'exception' => $result,
             ]);
@@ -261,7 +282,8 @@ final class ReactEstablishedClient extends EstablishedClient
 
         $message .= "\r\n$data";
 
-        $this->logger?->debug('[connection] Sent data', [
+        $this->logger?->debug('[{address}][data] Sent data', [
+            'address' => $this->address,
             'bytes' => \strlen($message),
             'data' => $message,
         ]);

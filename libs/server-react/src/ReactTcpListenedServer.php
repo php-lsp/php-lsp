@@ -36,10 +36,6 @@ final class ReactTcpListenedServer extends ListenedServer
         ]);
 
         $server->on('connection', function (SocketInterface $connection): void {
-            $this->logger?->debug('[server] Established client {address}', [
-                'address' => $connection->getRemoteAddress(),
-            ]);
-
             $this->attach($this->createEstablishedClient($connection));
         });
 
