@@ -8,11 +8,13 @@ use Lsp\Server\Address\AddressInterface;
 use Lsp\Server\Address\TcpNetworkAddress;
 use Lsp\Server\ListenedServerInterface;
 use Lsp\Server\ServerPool;
+use Psr\Log\LoggerInterface;
 
 final class ReactServerPool extends ServerPool
 {
     public function __construct(
         private readonly ReactServerConfiguration $config,
+        private readonly ?LoggerInterface $logger = null,
     ) {
         parent::__construct($this->config->addresses);
     }
@@ -24,6 +26,7 @@ final class ReactServerPool extends ServerPool
                 config: $this->config,
                 pool: $this,
                 address: $address,
+                logger: $this->logger,
             ),
             default => throw new \InvalidArgumentException('Unsupported connection type'),
         };

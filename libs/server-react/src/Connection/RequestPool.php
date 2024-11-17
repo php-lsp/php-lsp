@@ -32,15 +32,13 @@ final class RequestPool
         $key = $this->getKey($response);
 
         if ($key === null) {
-            // TODO Error: Could not resolve non-array-key ID
-            return;
+            throw new \OutOfRangeException('Response contains unsupported RPC ID');
         }
 
         $deferred = $this->requests[$key] ?? null;
 
         if ($deferred === null) {
-            // TODO Error: Could not find expected deferred
-            return;
+            throw new \OutOfRangeException('There is no request with the specified ID for the received response');
         }
 
         unset($this->requests[$key]);

@@ -8,6 +8,7 @@ use Lsp\Server\Address\AddressInterface;
 use Lsp\Server\Address\TcpNetworkAddress;
 use Lsp\Server\ListenedServer;
 use Lsp\Server\ServerPoolInterface;
+use Psr\Log\LoggerInterface;
 use React\Socket\ConnectionInterface as SocketInterface;
 use React\Socket\TcpServer as SocketTcpServer;
 
@@ -19,6 +20,7 @@ final class ReactTcpListenedServer extends ListenedServer
         private readonly ReactServerConfiguration $config,
         ServerPoolInterface $pool,
         TcpNetworkAddress $address,
+        private readonly ?LoggerInterface $logger = null,
     ) {
         parent::__construct($pool, $address);
 
@@ -29,11 +31,23 @@ final class ReactTcpListenedServer extends ListenedServer
 
     private function listen(SocketTcpServer $server): void
     {
+        $this->logger?->debug('Listening on {address}', [
+            'address' => $this->socket->getAddress(),
+        ]);
+
         $server->on('connection', function (SocketInterface $connection): void {
+            $this->logger?->debug('Established client {address}', [
+                'address' => $connection->getRemoteAddress(),
+            ]);
+
             $this->attach($this->createEstablishedClient($connection));
         });
 
         $server->once('close', function () {
+            $this->logger?->debug('Stop listening on {address}', [
+                'address' => $this->socket->getAddress(),
+            ]);
+
             $this->stop();
         });
     }
@@ -45,6 +59,7 @@ final class ReactTcpListenedServer extends ListenedServer
             config: $this->config,
             server: $this,
             address: $this->getRemoteAddress($connection),
+            logger: $this->logger,
         );
     }
 

@@ -15,10 +15,12 @@ use Lsp\Server\React\ReactServerConfiguration;
 use Lsp\Server\React\ReactServerPool;
 use Lsp\Server\ServerPoolInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
+use Psr\Log\LoggerInterface;
 use React\EventLoop\Loop;
 use React\EventLoop\LoopInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Reference;
 
 final class ServerCompilerPass implements CompilerPassInterface
@@ -61,6 +63,11 @@ final class ServerCompilerPass implements CompilerPassInterface
 
         $container->register(ServerPoolInterface::class)
             ->setClass(ReactServerPool::class)
-            ->setArgument('$config', new Reference(ReactServerConfiguration::class));
+            ->setArgument('$config', new Reference(ReactServerConfiguration::class))
+            ->setArgument('$logger', new Reference(
+                id: LoggerInterface::class,
+                invalidBehavior: ContainerInterface::NULL_ON_INVALID_REFERENCE,
+            ))
+        ;
     }
 }

@@ -28,6 +28,7 @@ use Lsp\Server\Event\SuccessfulResponseSent;
 use Lsp\Server\ListenedServerInterface;
 use Lsp\Server\React\Connection\Buffer;
 use Lsp\Server\React\Connection\RequestPool;
+use Psr\Log\LoggerInterface;
 use React\Promise\PromiseInterface;
 use React\Socket\ConnectionInterface as SocketInterface;
 
@@ -46,6 +47,7 @@ final class ReactEstablishedClient extends EstablishedClient
         private readonly ReactServerConfiguration $config,
         ListenedServerInterface $server,
         AddressInterface $address,
+        private readonly ?LoggerInterface $logger = null,
     ) {
         $this->buffer = new Buffer($config->decoder);
         $this->requests = new RequestPool();
@@ -58,6 +60,11 @@ final class ReactEstablishedClient extends EstablishedClient
     private function listen(SocketInterface $connection): void
     {
         $connection->on('data', function (string $data): void {
+            $this->logger?->debug('Incoming data {bytes}', [
+                'bytes' => \strlen($data),
+                'data' => $data,
+            ]);
+
             foreach ($this->buffer->push($data) as $message) {
                 $this->onMessageReceived($message);
             }
@@ -171,29 +178,53 @@ final class ReactEstablishedClient extends EstablishedClient
 
     /**
      * @param ResponseInterface<mixed> $response
+     * @throws \Throwable
      */
     private function onResponseReceived(ResponseInterface $response): void
     {
-        $this->requests->resolve($response);
+        try {
+            $this->requests->resolve($response);
+        } catch (\Throwable $e) {
+            $this->logger?->error('Incoming response #{id} failed', [
+                'id' => (string) $response->getId(),
+                'exception' => $e,
+            ]);
+
+            throw $e;
+        }
     }
 
     /**
      * @param RequestInterface<mixed> $request
+     * @throws \Throwable
      */
     private function onRequestReceived(RequestInterface $request): void
     {
-        $response = $this->config->dispatcher->call($request);
-
         try {
+            $response = $this->config->dispatcher->call($request);
+
             $this->send($response);
-        } catch (EncodingExceptionInterface) {
-            // TODO Error: Could not encode response
+        } catch (\Throwable $e) {
+            $this->logger?->error('Incoming request #{id} {method} failed', [
+                'id' => (string) $request->getId(),
+                'method' => $request->getMethod(),
+                'exception' => $e,
+            ]);
+
+            throw $e;
         }
     }
 
     private function onNotificationReceived(NotificationInterface $request): void
     {
-        $this->config->dispatcher->notify($request);
+        $result = $this->config->dispatcher->notify($request);
+
+        if ($result !== null && $this->logger !== null) {
+            $this->logger->error('Incoming notification {method} failed', [
+                'method' => $request->getMethod(),
+                'exception' => $result,
+            ]);
+        }
     }
 
     protected function onClose(): void
@@ -211,7 +242,7 @@ final class ReactEstablishedClient extends EstablishedClient
         $encoded = $this->config->encoder->encode($message);
 
         $this->write($encoded, [
-            'Content-Length' => \strlen($encoded),
+            'Content-Length' => (string) \strlen($encoded),
         ]);
     }
 
@@ -228,6 +259,11 @@ final class ReactEstablishedClient extends EstablishedClient
 
         $message .= "\r\n$data";
 
+        $this->logger?->debug('Sent data {bytes}', [
+            'bytes' => \strlen($message),
+            'data' => $message,
+        ]);
+
         $this->connection->write($message);
     }
 
@@ -235,8 +271,8 @@ final class ReactEstablishedClient extends EstablishedClient
     {
         try {
             $this->send($notification);
-        } catch (EncodingExceptionInterface) {
-            // TODO Error: Could not encode response
+        } catch (EncodingExceptionInterface $e) {
+            return $e;
         }
 
         return null;
