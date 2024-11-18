@@ -23,7 +23,7 @@ final class RouterCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void
     {
-        if (!self::isPackageInstalled()) {
+        if (!self::isPackageInstalled() || $container->has(RouterInterface::class)) {
             return;
         }
 
@@ -51,27 +51,22 @@ final class RouterCompilerPass implements CompilerPassInterface
 
     private function registerRouterBuilder(ContainerBuilder $container): void
     {
-        $container->register(AttributeCollector::class)
-            ->setClass(AttributeCollector::class)
+        $container->register(AttributeCollector::class, AttributeCollector::class)
             ->addTag('lsp.router.collector');
 
-        $container->register(RouteCollector::class)
-            ->setClass(RouteCollector::class)
+        $container->register(RouteCollector::class, RouteCollector::class)
             ->addTag('lsp.router.collector');
 
-        $container->register(BuilderInterface::class)
-            ->setClass(CompoundCollector::class)
+        $container->register(BuilderInterface::class, CompoundCollector::class)
             ->addArgument(new TaggedIteratorArgument('lsp.router.collector'));
     }
 
     private function registerRouter(ContainerBuilder $container): void
     {
-        $container->register(RouterInterface::class)
-            ->setClass(Router::class)
+        $container->register(RouterInterface::class, Router::class)
             ->setFactory([new Reference(BuilderInterface::class), 'build']);
 
-        $container->register(MemoizedRouter::class)
-            ->setClass(MemoizedRouter::class)
+        $container->register(MemoizedRouter::class, MemoizedRouter::class)
             ->setDecoratedService(RouterInterface::class)
             ->addArgument(new Reference('.inner'));
     }

@@ -54,6 +54,7 @@ final class Connection implements ConnectionInterface
         private readonly DecoderInterface $decoder,
         private readonly DispatcherInterface $dispatcher,
         private readonly EventDispatcherInterface $events,
+        private readonly ConnectionStore $store,
     ) {
         $this->responses = new PendingResponsePool();
         $this->buffer = new IncrementalBuffer($this->decoder);
@@ -174,6 +175,8 @@ final class Connection implements ConnectionInterface
 
     private function onMessageReceived(MessageInterface $message): void
     {
+        $this->store->remember($message, $this);
+
         $this->beforeMessageReceived($message);
 
         try {

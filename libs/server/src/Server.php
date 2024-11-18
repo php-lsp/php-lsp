@@ -41,6 +41,7 @@ final class Server implements ServerInterface, \IteratorAggregate
         private readonly DecoderInterface $decoder,
         private readonly DispatcherInterface $dispatcher,
         private readonly EventDispatcherInterface $events,
+        private readonly ConnectionStore $store,
     ) {
         $this->connections = new \SplObjectStorage();
 
@@ -52,6 +53,7 @@ final class Server implements ServerInterface, \IteratorAggregate
                 decoder: $this->decoder,
                 dispatcher: $this->dispatcher,
                 events: $this->events,
+                store: $this->store,
             );
 
             $this->connections->attach($connection);
@@ -78,6 +80,8 @@ final class Server implements ServerInterface, \IteratorAggregate
             $this->connections->detach($client);
             $client->close();
         }
+
+        \gc_collect_cycles();
     }
 
     public function stop(): void

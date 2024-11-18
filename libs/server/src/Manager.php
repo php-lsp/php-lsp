@@ -11,7 +11,7 @@ use Lsp\Contracts\Server\ManagerInterface;
 use Lsp\Contracts\Server\ServerInterface;
 use Lsp\Dispatcher\DispatcherInterface;
 use Lsp\Server\Driver\DriverInterface;
-use Lsp\Server\Event\Server\ServerListen;
+use Lsp\Server\Event\Server\ServerStarted;
 use Psr\EventDispatcher\EventDispatcherInterface;
 
 /**
@@ -34,6 +34,7 @@ final class Manager implements ManagerInterface, \IteratorAggregate
         private readonly DecoderInterface $decoder,
         private readonly DispatcherInterface $dispatcher,
         private readonly EventDispatcherInterface $events,
+        private readonly ConnectionStore $store = new ConnectionStore(),
     ) {
         $this->servers = new \SplObjectStorage();
     }
@@ -47,11 +48,12 @@ final class Manager implements ManagerInterface, \IteratorAggregate
             decoder: $this->decoder,
             dispatcher: $this->dispatcher,
             events: $this->events,
+            store: $this->store,
         );
 
         $this->servers->attach($server);
 
-        $this->events->dispatch(new ServerListen(
+        $this->events->dispatch(new ServerStarted(
             server: $server,
         ));
 

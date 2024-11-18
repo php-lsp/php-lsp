@@ -22,16 +22,16 @@ final class EventDispatcherCompilerPass implements CompilerPassInterface
 
     private function registerEventDispatcher(ContainerBuilder $container): void
     {
-        $container->register(EventDispatcher::class)
-            ->setClass(EventDispatcher::class);
+        if ($container->has(EventDispatcherInterface::class)) {
+            return;
+        }
 
+        $container->register(EventDispatcher::class, EventDispatcher::class);
         $container->setAlias(EventDispatcherInterface::class, EventDispatcher::class);
         $container->setAlias('event_dispatcher', EventDispatcher::class);
 
-        $container->register(ImmutableEventDispatcher::class)
-            ->setClass(ImmutableEventDispatcher::class)
+        $container->register(ImmutableEventDispatcher::class, ImmutableEventDispatcher::class)
             ->setArgument('$dispatcher', new Reference(EventDispatcher::class));
-
         $container->setAlias(ContractsEventDispatcherInterface::class, ImmutableEventDispatcher::class);
         $container->setAlias(PsrEventDispatcherInterface::class, ImmutableEventDispatcher::class);
     }

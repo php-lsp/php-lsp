@@ -29,10 +29,22 @@ final class MessageFactoryCompilerPass implements CompilerPassInterface
         }
 
         $this->registerDefaultParameters($container);
-        $this->registerIdFactory($container);
-        $this->registerIdGenerator($container);
-        $this->registerRequestFactory($container);
-        $this->registerResponseFactory($container);
+
+        if (!$container->has(IdFactoryInterface::class)) {
+            $this->registerIdFactory($container);
+        }
+
+        if (!$container->has(GeneratorInterface::class)) {
+            $this->registerIdGenerator($container);
+        }
+
+        if (!$container->has(RequestFactoryInterface::class)) {
+            $this->registerRequestFactory($container);
+        }
+
+        if (!$container->has(ResponseFactoryInterface::class)) {
+            $this->registerResponseFactory($container);
+        }
     }
 
     private static function isPackageInstalled(): bool
@@ -51,16 +63,14 @@ final class MessageFactoryCompilerPass implements CompilerPassInterface
 
     private function registerIdFactory(ContainerBuilder $container): void
     {
-        $container->register(IdFactoryInterface::class)
-            ->setClass(IdFactory::class);
+        $container->register(IdFactoryInterface::class, IdFactory::class);
 
         $container->setAlias('lsp.rpc.id_factory', IdFactoryInterface::class);
     }
 
     private function registerIdGenerator(ContainerBuilder $container): void
     {
-        $container->register(GeneratorInterface::class)
-            ->setClass($this->getPlatformDependentGeneratorClass())
+        $container->register(GeneratorInterface::class, $this->getPlatformDependentGeneratorClass())
             ->addArgument(new Reference(IdFactoryInterface::class))
             ->addArgument(new Parameter('lsp.rpc.id_generator.overflow_behaviour'))
             ->setAutowired(true);
@@ -84,8 +94,7 @@ final class MessageFactoryCompilerPass implements CompilerPassInterface
 
     private function registerRequestFactory(ContainerBuilder $container): void
     {
-        $container->register(RequestFactoryInterface::class)
-            ->setClass(RequestFactory::class)
+        $container->register(RequestFactoryInterface::class, RequestFactory::class)
             ->addArgument(new Reference(GeneratorInterface::class))
             ->setAutowired(true);
 
@@ -94,8 +103,7 @@ final class MessageFactoryCompilerPass implements CompilerPassInterface
 
     private function registerResponseFactory(ContainerBuilder $container): void
     {
-        $container->register(ResponseFactoryInterface::class)
-            ->setClass(ResponseFactory::class)
+        $container->register(ResponseFactoryInterface::class, ResponseFactory::class)
             ->setAutowired(true);
 
         $container->setAlias('lsp.rpc.response_factory', ResponseFactoryInterface::class);

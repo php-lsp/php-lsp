@@ -29,7 +29,7 @@ final class HydratorCompilerPass implements CompilerPassInterface
 
     private function registerTypeLang(ContainerBuilder $container): void
     {
-        $container->register(TypeLangMapper::class)
+        $container->register(TypeLangMapper::class, TypeLangMapper::class)
             ->setArgument('$cache', new Reference(
                 id: CacheInterface::class,
                 invalidBehavior: ContainerInterface::NULL_ON_INVALID_REFERENCE,

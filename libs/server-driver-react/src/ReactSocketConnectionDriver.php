@@ -39,5 +39,6 @@ final class ReactSocketConnectionDriver extends ReactConnectionDriver
     public function close(): void
     {
         $this->socket->close();
+        $this->socket->removeAllListeners();
     }
 }

@@ -35,14 +35,17 @@ final class CodecCompilerPass implements CompilerPassInterface
 
         $this->registerDefaultParameters($container);
 
-        $this->registerEncoder($container);
-        $this->registerDecoder($container);
+        if (!$container->has(DecoderInterface::class)) {
+            $this->registerDecoder($container);
+            $this->registerRequestDecoder($container);
+            $this->registerResponseDecoder($container);
+        }
 
-        $this->registerRequestDecoder($container);
-        $this->registerRequestEncoder($container);
-
-        $this->registerResponseDecoder($container);
-        $this->registerResponseEncoder($container);
+        if (!$container->has(EncoderInterface::class)) {
+            $this->registerEncoder($container);
+            $this->registerRequestEncoder($container);
+            $this->registerResponseEncoder($container);
+        }
     }
 
     private function registerDefaultParameters(ContainerBuilder $container): void
@@ -61,8 +64,7 @@ final class CodecCompilerPass implements CompilerPassInterface
 
     private function registerDecoder(ContainerBuilder $container): void
     {
-        $container->register(DecoderFacade::class)
-            ->setClass(DecoderFacade::class)
+        $container->register(DecoderFacade::class, DecoderFacade::class)
             ->addArgument(new Reference(RequestFactoryInterface::class))
             ->addArgument(new Reference(ResponseFactoryInterface::class))
             ->addArgument(new Reference(IdFactoryInterface::class))
@@ -76,8 +78,7 @@ final class CodecCompilerPass implements CompilerPassInterface
 
     private function registerEncoder(ContainerBuilder $container): void
     {
-        $container->register(EncoderFacade::class)
-            ->setClass(EncoderFacade::class)
+        $container->register(EncoderFacade::class, EncoderFacade::class)
             ->addArgument(new Parameter('lsp.codec.json.encoding_flags'))
             ->addArgument(new Parameter('lsp.codec.json.max_depth'))
             ->addArgument(new Parameter('lsp.codec.json.signature'));
@@ -88,8 +89,7 @@ final class CodecCompilerPass implements CompilerPassInterface
 
     private function registerRequestDecoder(ContainerBuilder $container): void
     {
-        $container->register(RequestDecoder::class)
-            ->setClass(RequestDecoder::class)
+        $container->register(RequestDecoder::class, RequestDecoder::class)
             ->setFactory([new Reference(DecoderFacade::class), 'getRequestDecoder']);
 
         $container->setAlias('lsp.codec.request_decoder', RequestDecoder::class);
@@ -97,8 +97,7 @@ final class CodecCompilerPass implements CompilerPassInterface
 
     private function registerRequestEncoder(ContainerBuilder $container): void
     {
-        $container->register(RequestEncoder::class)
-            ->setClass(RequestEncoder::class)
+        $container->register(RequestEncoder::class, RequestEncoder::class)
             ->setFactory([new Reference(EncoderFacade::class), 'getRequestEncoder']);
 
         $container->setAlias('lsp.codec.request_encoder', RequestEncoder::class);
@@ -106,8 +105,7 @@ final class CodecCompilerPass implements CompilerPassInterface
 
     private function registerResponseDecoder(ContainerBuilder $container): void
     {
-        $container->register(ResponseDecoder::class)
-            ->setClass(ResponseDecoder::class)
+        $container->register(ResponseDecoder::class, ResponseDecoder::class)
             ->setFactory([new Reference(DecoderFacade::class), 'getResponseDecoder']);
 
         $container->setAlias('lsp.codec.response_decoder', ResponseDecoder::class);
@@ -115,8 +113,7 @@ final class CodecCompilerPass implements CompilerPassInterface
 
     private function registerResponseEncoder(ContainerBuilder $container): void
     {
-        $container->register(ResponseEncoder::class)
-            ->setClass(ResponseEncoder::class)
+        $container->register(ResponseEncoder::class, ResponseEncoder::class)
             ->setFactory([new Reference(EncoderFacade::class), 'getResponseEncoder']);
 
         $container->setAlias('lsp.codec.response_encoder', ResponseEncoder::class);

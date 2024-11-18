@@ -6,6 +6,7 @@ namespace Lsp\Kernel;
 
 use Lsp\Kernel\DependencyInjection\EventDispatcher\EventListenerLoaderCompilerPass;
 use Lsp\Kernel\DependencyInjection\EventDispatcherCompilerPass;
+use Lsp\Kernel\DependencyInjection\LoggerCompilerPass;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Config\Exception\FileLoaderImportCircularReferenceException;
 use Symfony\Component\Config\Exception\LoaderLoadException;
@@ -195,9 +196,10 @@ class Kernel implements KernelInterface
     {
         $builder = new ContainerBuilder();
 
+        $this->build($builder);
+
         $this->buildDefaultParameters($builder);
         $this->buildDefaultConfigs($builder);
-        $this->build($builder);
 
         $builder->compile(true);
 
@@ -231,7 +233,6 @@ class Kernel implements KernelInterface
 
         foreach ($this->getConfigDirectories() as $directory) {
             $loader->import($directory . '/*.yaml');
-            $loader->import($directory . '/*/*.yaml');
         }
     }
 
@@ -246,7 +247,9 @@ class Kernel implements KernelInterface
 
         // Builtin Components
         $container->addCompilerPass(new EventDispatcherCompilerPass(), priority: 1000);
+        $container->addCompilerPass(new LoggerCompilerPass(), priority: 1000);
         $container->addCompilerPass(new EventListenerLoaderCompilerPass(), priority: 1000);
+
         $container->addCompilerPass(new RegisterListenersPass(), priority: -1000);
     }
 

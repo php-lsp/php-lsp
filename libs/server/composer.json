@@ -17,6 +17,7 @@
     ],
     "require": {
         "php": "^8.1",
+        "psr/log": "^1.0|^2.0|^3.0",
         "php-lsp/rpc-message-contracts": "^1.0",
         "php-lsp/server-contracts": "^1.0"
     },

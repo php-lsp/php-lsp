@@ -33,29 +33,25 @@ final class DispatcherLoaderCompilerPass implements CompilerPassInterface
 
     private function registerHandlerProviders(ContainerBuilder $container): void
     {
-        $container->register(HandlerProviderInterface::class)
-            ->setClass(OrderedHandlerProvider::class)
+        $container->register(HandlerProviderInterface::class, OrderedHandlerProvider::class)
             ->setArgument('$resolvers', new TaggedIteratorArgument('lsp.dispatcher.handler_resolver'));
     }
 
     private function registerArgumentProviders(ContainerBuilder $container): void
     {
-        $container->register(ArgumentProviderInterface::class)
-            ->setClass(OrderedArgumentProvider::class)
+        $container->register(ArgumentProviderInterface::class, OrderedArgumentProvider::class)
             ->setArgument('$resolvers', new TaggedIteratorArgument('lsp.dispatcher.argument_resolver'));
     }
 
     private function registerResultProviders(ContainerBuilder $container): void
     {
-        $container->register(ResultProviderInterface::class)
-            ->setClass(OrderedResultProvider::class)
+        $container->register(ResultProviderInterface::class, OrderedResultProvider::class)
             ->setArgument('$resolvers', new TaggedIteratorArgument('lsp.dispatcher.result_resolver'));
     }
 
     private function registerDispatcher(ContainerBuilder $container): void
     {
-        $container->register(DispatcherInterface::class)
-            ->setClass(Dispatcher::class)
+        $container->register(DispatcherInterface::class, Dispatcher::class)
             ->setArgument('$router', new Reference(RouterInterface::class))
             ->setArgument('$ids', new Reference(IdFactoryInterface::class))
             ->setArgument('$responses', new Reference(ResponseFactoryInterface::class))
