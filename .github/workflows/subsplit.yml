@@ -40,8 +40,8 @@ jobs:
             split_repository: 'protocol'
           - local_path: 'router'
             split_repository: 'router'
-          - local_path: 'server-react'
-            split_repository: 'server-react'
+          - local_path: 'server-driver-react'
+            split_repository: 'server-driver-react'
           - local_path: 'server'
             split_repository: 'server'
           # RPC

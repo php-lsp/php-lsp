@@ -14,8 +14,8 @@ use Lsp\Server\Address\AddressFactoryInterface;
 use Lsp\Server\Address\Host\HostFactory;
 use Lsp\Server\Address\Host\HostFactoryInterface;
 use Lsp\Server\Driver\DriverInterface;
+use Lsp\Server\Driver\React\ReactDriver;
 use Lsp\Server\Manager;
-use Lsp\Server\React\ReactDriver;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use React\EventLoop\Loop;
 use React\EventLoop\LoopInterface;
@@ -55,7 +55,7 @@ final class ServerCompilerPass implements CompilerPassInterface
     private function supportsReactDriver(): bool
     {
         return \class_exists(InstalledVersions::class)
-            && InstalledVersions::isInstalled('php-lsp/server-react');
+            && InstalledVersions::isInstalled('php-lsp/server-driver-react');
     }
 
     private function registerReactDriver(ContainerBuilder $container): void

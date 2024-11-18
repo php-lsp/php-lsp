@@ -62,7 +62,7 @@
             "Lsp\\Protocol\\Tests\\": "libs/protocol/tests",
             "Lsp\\Router\\Tests\\": "libs/router/tests",
             "Lsp\\Server\\Tests\\": "libs/server/tests",
-            "Lsp\\Server\\React\\Tests\\": "libs/server-react/tests",
+            "Lsp\\Server\\Driver\\React\\Tests\\": "libs/server-driver-react/tests",
             "Lsp\\Contracts\\Rpc\\Message\\Factory\\Tests\\": "libs/rpc/contracts/rpc-message-factory-contracts/tests",
             "Lsp\\Contracts\\Rpc\\Message\\Tests\\": "libs/rpc/contracts/rpc-message-contracts/tests",
             "Lsp\\Contracts\\Rpc\\Codec\\Tests\\": "libs/rpc/contracts/rpc-codec-contracts/tests",

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Server\React;
+namespace Lsp\Server\Driver\React;
 
 use Lsp\Contracts\Server\AddressInterface;
 use Lsp\Server\Driver\ConnectionDriverInterface;

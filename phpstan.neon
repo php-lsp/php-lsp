@@ -17,7 +17,7 @@ parameters:
     - libs/protocol-generator/src
     - libs/router/src
     - libs/server/src
-    - libs/server-react/src
+    - libs/server-driver-react/src
     - libs/rpc/contracts/rpc-codec-contracts/src
     - libs/rpc/contracts/rpc-message-contracts/src
     - libs/rpc/contracts/rpc-message-factory-contracts/src
