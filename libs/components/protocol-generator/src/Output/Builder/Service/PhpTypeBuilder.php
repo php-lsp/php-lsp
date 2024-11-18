@@ -137,11 +137,13 @@ final class PhpTypeBuilder
     private function getPriority(mixed $identifier): int
     {
         if ($identifier instanceof PhpIdentifier || $identifier instanceof PhpName) {
-            return (int) (new Identifier($identifier->toLowerString()))
+            $isBuiltin = (new Identifier($identifier->toLowerString()))
                 ->isBuiltin();
+
+            return $isBuiltin ? 0 : 1;
         }
 
-        return 0;
+        return 1;
     }
 
     private function simplify(Identifier $type): PhpIdentifier

@@ -53,7 +53,7 @@ final class FoldingRange
          *
          * @var FoldingRangeKind|non-empty-string|null
          */
-        public readonly string|FoldingRangeKind|null $kind = null,
+        public readonly FoldingRangeKind|string|null $kind = null,
         /**
          * The text that the client should show when the specified range is
          * collapsed. If not defined or not supported by the client, a default

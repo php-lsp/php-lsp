@@ -33,6 +33,6 @@ final class TextDocumentSyncOptions
          * If present save notifications are sent to the server. If omitted the
          * notification should not be sent.
          */
-        public readonly bool|SaveOptions|null $save = null,
+        public readonly SaveOptions|bool|null $save = null,
     ) {}
 }

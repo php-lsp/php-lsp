@@ -48,7 +48,7 @@ final class CompletionItem
         /**
          * A human-readable string that represents a doc-comment.
          */
-        public readonly string|MarkupContent|null $documentation = null,
+        public readonly MarkupContent|string|null $documentation = null,
         /**
          * Indicates if this item is deprecated.
          *

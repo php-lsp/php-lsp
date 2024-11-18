@@ -26,6 +26,6 @@ final class TextDocumentFilterScheme
          *
          * @since 3.18.0 - support for relative patterns.
          */
-        public readonly string|RelativePattern|null $pattern = null,
+        public readonly RelativePattern|string|null $pattern = null,
     ) {}
 }

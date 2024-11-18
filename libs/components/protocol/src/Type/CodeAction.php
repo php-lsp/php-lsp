@@ -25,7 +25,7 @@ final class CodeAction
          *
          * @var CodeActionKind|non-empty-string|null
          */
-        public readonly string|CodeActionKind|null $kind = null,
+        public readonly CodeActionKind|string|null $kind = null,
         /**
          * The diagnostics that this code action resolves.
          *

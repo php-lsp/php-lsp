@@ -38,6 +38,6 @@ final class ParameterInformation
          * The human-readable doc-comment of this parameter. Will be shown in
          * the UI but can be omitted.
          */
-        public readonly string|MarkupContent|null $documentation = null,
+        public readonly MarkupContent|string|null $documentation = null,
     ) {}
 }

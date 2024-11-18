@@ -8,7 +8,7 @@ namespace Lsp\Protocol\Type;
 use Lsp\Protocol\Generator\Generator;
 use Lsp\Protocol\Generator\Version;
 
-require __DIR__ . '/../../../vendor/autoload.php';
+require __DIR__ . '/../../../../vendor/autoload.php';
 
 const LSP_DIRECTORY = __DIR__ . '/../../protocol/src/Type';
 const LSP_NAMESPACE = __NAMESPACE__;

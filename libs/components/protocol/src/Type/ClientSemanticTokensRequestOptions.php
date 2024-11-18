@@ -14,11 +14,11 @@ final class ClientSemanticTokensRequestOptions
          * The client will send the `textDocument/semanticTokens/range` request
          * if the server provides a corresponding handler.
          */
-        public readonly bool|ClientSemanticTokensRequestOptionsRange|null $range = null,
+        public readonly ClientSemanticTokensRequestOptionsRange|bool|null $range = null,
         /**
          * The client will send the `textDocument/semanticTokens/full` request
          * if the server provides a corresponding handler.
          */
-        public readonly bool|ClientSemanticTokensRequestFullDelta|null $full = null,
+        public readonly ClientSemanticTokensRequestFullDelta|bool|null $full = null,
     ) {}
 }

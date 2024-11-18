@@ -26,7 +26,7 @@ final class CodeActionKindDocumentation
          *
          * @var CodeActionKind|non-empty-string
          */
-        public readonly string|CodeActionKind $kind,
+        public readonly CodeActionKind|string $kind,
         /**
          * Command that is ued to display the documentation to the user.
          *

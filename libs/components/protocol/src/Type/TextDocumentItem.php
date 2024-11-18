@@ -21,7 +21,7 @@ final class TextDocumentItem
          *
          * @var LanguageKind|non-empty-string
          */
-        public readonly string|LanguageKind $languageId,
+        public readonly LanguageKind|string $languageId,
         /**
          * The version number of this document (it will increase after each
          * change, including undo/redo).
