@@ -79,9 +79,9 @@ final class Server implements ServerInterface, \IteratorAggregate
         if ($this->connections->contains($client)) {
             $this->connections->detach($client);
             $client->close();
-        }
 
-        \gc_collect_cycles();
+            \gc_collect_cycles();
+        }
     }
 
     public function stop(): void
