@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Server\React\Connection;
+namespace Lsp\Server\Connection;
 
 use Lsp\Contracts\Rpc\Codec\DecoderInterface;
 use Lsp\Contracts\Rpc\Codec\Exception\DecodingExceptionInterface;
@@ -12,9 +12,9 @@ use Lsp\Contracts\Rpc\Message\MessageInterface;
  * TODO Add max buffer size option.
  *
  * @internal this is an internal library class, please do not use it in your code
- * @psalm-internal Lsp\Server\React
+ * @psalm-internal Lsp\Server\Connection
  */
-final class Buffer
+final class IncrementalBuffer
 {
     private string $buffer = '';
 

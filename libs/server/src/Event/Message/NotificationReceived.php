@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace Lsp\Server\Event;
 
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
-use Lsp\Server\EstablishedClientInterface;
+use Lsp\Server\ConnectionInterface;
 
-class NotificationSent extends MessageSent
+class NotificationReceived extends MessageReceived
 {
     public function __construct(
         NotificationInterface $notification,
-        EstablishedClientInterface $connection,
+        ConnectionInterface $connection,
     ) {
         parent::__construct($notification, $connection);
     }

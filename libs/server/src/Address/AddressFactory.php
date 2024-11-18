@@ -39,9 +39,9 @@ final class AddressFactory implements AddressFactoryInterface
         ];
     }
 
-    public function create(string $dsn): AddressInterface
+    public function create(string|\Stringable $dsn): AddressInterface
     {
-        $parts = $this->parse($dsn);
+        $parts = $this->parse((string) $dsn);
 
         return match (\strtolower($parts['scheme'])) {
             'tcp' => $this->createTcp($parts),

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Lsp\Kernel\DependencyInjection\Dispatcher;
 
 use Lsp\Contracts\Router\RouterInterface;
+use Lsp\Contracts\Rpc\Message\Factory\IdFactoryInterface;
 use Lsp\Contracts\Rpc\Message\Factory\ResponseFactoryInterface;
 use Lsp\Dispatcher\Argument\Provider\ArgumentProviderInterface;
 use Lsp\Dispatcher\Argument\Provider\OrderedArgumentProvider;
@@ -56,6 +57,7 @@ final class DispatcherLoaderCompilerPass implements CompilerPassInterface
         $container->register(DispatcherInterface::class)
             ->setClass(Dispatcher::class)
             ->setArgument('$router', new Reference(RouterInterface::class))
+            ->setArgument('$ids', new Reference(IdFactoryInterface::class))
             ->setArgument('$responses', new Reference(ResponseFactoryInterface::class))
             ->setArgument('$handlers', new Reference(HandlerProviderInterface::class))
             ->setArgument('$arguments', new Reference(ArgumentProviderInterface::class))

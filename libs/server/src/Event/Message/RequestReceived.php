@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Lsp\Server\Event;
 
 use Lsp\Contracts\Rpc\Message\RequestInterface;
-use Lsp\Server\EstablishedClientInterface;
+use Lsp\Server\ConnectionInterface;
 
 class RequestReceived extends NotificationReceived
 {
@@ -14,7 +14,7 @@ class RequestReceived extends NotificationReceived
      */
     public function __construct(
         RequestInterface $request,
-        EstablishedClientInterface $connection,
+        ConnectionInterface $connection,
     ) {
         parent::__construct($request, $connection);
     }

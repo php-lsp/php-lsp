@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Server\React\Connection;
+namespace Lsp\Server\Connection;
 
 use Lsp\Contracts\Rpc\Message\IdentifiableInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
@@ -11,13 +11,13 @@ use React\Promise\Deferred;
 use React\Promise\PromiseInterface;
 
 /**
- * TODO 1) Add support of promise TTLs for {@see RequestPool::$requests}
- * TODO 2) Add support of max in-memory promise instances for {@see RequestPool::$requests}
+ * TODO 1) Add support of promise TTLs for {@see PendingResponsePool::$requests}
+ * TODO 2) Add support of max in-memory promise instances for {@see PendingResponsePool::$requests}
  *
  * @internal this is an internal library class, please do not use it in your code
- * @psalm-internal Lsp\Server\React
+ * @psalm-internal Lsp\Server\Connection
  */
-final class RequestPool
+final class PendingResponsePool
 {
     /**
      * @var array<array-key, Deferred<ResponseInterface<mixed>>>

@@ -6,6 +6,7 @@ namespace Lsp\Dispatcher;
 
 use Lsp\Contracts\Router\MatchedRouteInterface;
 use Lsp\Contracts\Router\RouterInterface;
+use Lsp\Contracts\Rpc\Message\Factory\IdFactoryInterface;
 use Lsp\Contracts\Rpc\Message\Factory\ResponseFactoryInterface;
 use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
@@ -19,20 +20,26 @@ final class Dispatcher implements DispatcherInterface
 {
     public function __construct(
         private readonly RouterInterface $router,
+        private readonly IdFactoryInterface $ids,
         private readonly ResponseFactoryInterface $responses,
         private readonly HandlerProviderInterface $handlers,
         private readonly ArgumentProviderInterface $arguments,
         private readonly ResultProviderInterface $results,
     ) {}
 
-    public function notify(NotificationInterface $notification): ?\Throwable
+    public function notify(NotificationInterface $notification): ?FailureResponseInterface
     {
         try {
             $route = $this->router->matchOrFail($notification);
 
             $this->dispatch($route);
         } catch (\Throwable $e) {
-            return $e;
+            return $this->responses->createFailure(
+                id: $this->ids->create(),
+                code: $e->getCode(),
+                message: $e->getMessage(),
+                data: $e,
+            );
         }
 
         return null;
@@ -50,29 +57,15 @@ final class Dispatcher implements DispatcherInterface
             // Transform result to the response format
             $response = $this->results->getResult($result);
         } catch (\Throwable $e) {
-            return $this->createFailureResponse($request, $e);
+            return $this->responses->createFailure(
+                id: $request->getId(),
+                code: $e->getCode(),
+                message: $e->getMessage(),
+                data: $e,
+            );
         }
 
         return $this->responses->createSuccess($request, $response);
-    }
-
-    /**
-     * @template TArgIdentifier of mixed
-     * @template TArgException of \Throwable
-     *
-     * @param RequestInterface<TArgIdentifier> $request
-     * @param TArgException $e
-     *
-     * @return FailureResponseInterface<TArgIdentifier, TArgException>
-     */
-    private function createFailureResponse(RequestInterface $request, \Throwable $e): FailureResponseInterface
-    {
-        return $this->responses->createFailure(
-            id: $request->getId(),
-            code: $e->getCode(),
-            message: $e->getMessage(),
-            data: $e,
-        );
     }
 
     protected function dispatch(MatchedRouteInterface $route): mixed

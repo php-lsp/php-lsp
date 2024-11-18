@@ -7,7 +7,7 @@ namespace Lsp\Server\Tests;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Server\ClientInterface;
-use Lsp\Server\ListenedServerInterface;
+use Lsp\Server\ServerInterface;
 use Lsp\Server\ServerInterface;
 use Lsp\Server\ServerInterface;
 use PHPUnit\Framework\Attributes\Group;
@@ -27,7 +27,7 @@ final class InterfaceCompatibilityTest extends TestCase
         new class implements ClientInterface {
             public function getClientAddress(): string {}
 
-            public function getServer(): ListenedServerInterface {}
+            public function getServer(): ServerInterface {}
 
             public function notify(NotificationInterface $notification): ?\Throwable {}
 
@@ -42,7 +42,7 @@ final class InterfaceCompatibilityTest extends TestCase
         self::expectNotToPerformAssertions();
 
         new class implements ServerInterface {
-            public function listen(string $dsn): ListenedServerInterface {}
+            public function listen(string $dsn): ServerInterface {}
 
             public function run(): void {}
 
@@ -65,7 +65,7 @@ final class InterfaceCompatibilityTest extends TestCase
     {
         self::expectNotToPerformAssertions();
 
-        new class implements ListenedServerInterface {
+        new class implements ServerInterface {
             public function getDriver(): ServerInterface {}
 
             public function getDataSourceName(): string {}

@@ -10,7 +10,7 @@ use Lsp\Contracts\Rpc\Message\ResponseInterface;
 use Lsp\Server\Address\AddressInterface;
 use React\Promise\PromiseInterface;
 
-interface EstablishedClientInterface
+interface ConnectionInterface
 {
     /**
      * Returns local address of the established client (i.e. connection).
@@ -20,7 +20,7 @@ interface EstablishedClientInterface
     /**
      * Returns the server (that is parent) that this client is associated with.
      */
-    public function getServer(): ListenedServerInterface;
+    public function getServer(): ServerInterface;
 
     /**
      * Notify client by a notification message.

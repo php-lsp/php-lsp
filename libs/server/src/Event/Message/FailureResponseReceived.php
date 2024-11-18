@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Lsp\Server\Event;
 
 use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
-use Lsp\Server\EstablishedClientInterface;
+use Lsp\Server\ConnectionInterface;
 
 class FailureResponseReceived extends ResponseReceived
 {
@@ -14,7 +14,7 @@ class FailureResponseReceived extends ResponseReceived
      */
     public function __construct(
         FailureResponseInterface $response,
-        EstablishedClientInterface $connection,
+        ConnectionInterface $connection,
     ) {
         parent::__construct($response, $connection);
     }
