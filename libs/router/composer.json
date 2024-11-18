@@ -33,6 +33,9 @@
             "Lsp\\Router\\Tests\\": "tests"
         }
     },
+    "provide": {
+        "php-lsp/router-contracts-implementation": "^1.0"
+    },
     "scripts": {
         "test": "@test:unit",
         "test:unit": "phpunit --testdox"
