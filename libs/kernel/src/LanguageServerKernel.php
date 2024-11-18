@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Kernel;
 
+use Lsp\Contracts\Server\ManagerInterface;
 use Lsp\Kernel\DependencyInjection\CodecCompilerPass;
 use Lsp\Kernel\DependencyInjection\Dispatcher\DispatcherLoaderCompilerPass;
 use Lsp\Kernel\DependencyInjection\DispatcherCompilerPass;
@@ -13,7 +14,6 @@ use Lsp\Kernel\DependencyInjection\Router\RouteLoaderCompilerPass;
 use Lsp\Kernel\DependencyInjection\RouterCompilerPass;
 use Lsp\Kernel\DependencyInjection\Server\ServerPublisherCompilerPass;
 use Lsp\Kernel\DependencyInjection\ServerCompilerPass;
-use Lsp\Server\ManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**

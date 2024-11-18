@@ -9,6 +9,7 @@ parameters:
   paths:
     - libs/contracts/hydrator-contracts/src
     - libs/contracts/router-contracts/src
+    - libs/contracts/server-contracts/src
     - libs/dispatcher/src
     - libs/hydrator-type-lang/src
     - libs/kernel/src

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Lsp\Server\React;
 
+use Lsp\Contracts\Server\AddressInterface;
 use Lsp\Server\Address\AddressFactoryInterface;
-use Lsp\Server\Address\AddressInterface;
 use React\EventLoop\LoopInterface;
 use React\Socket\ConnectionInterface as SocketInterface;
 use React\Socket\TcpServer as SocketTcpServer;

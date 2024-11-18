@@ -27,6 +27,8 @@ jobs:
             split_repository: 'hydrator-contracts'
           - local_path: 'contracts/router-contracts'
             split_repository: 'router-contracts'
+          - local_path: 'contracts/server-contracts'
+            split_repository: 'server-contracts'
           # Kernel
           - local_path: 'dispatcher'
             split_repository: 'dispatcher'

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Server\Address;
 
+use Lsp\Contracts\Server\AddressInterface;
 use Lsp\Server\Address\Host\HostFactory;
 use Lsp\Server\Address\Host\HostFactoryInterface;
 

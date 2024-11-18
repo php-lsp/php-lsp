@@ -6,10 +6,10 @@ namespace Lsp\Server\Tests;
 
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
+use Lsp\Contracts\Server\ServerInterface;
+use Lsp\Contracts\Server\ServerInterface;
+use Lsp\Contracts\Server\ServerInterface;
 use Lsp\Server\ClientInterface;
-use Lsp\Server\ServerInterface;
-use Lsp\Server\ServerInterface;
-use Lsp\Server\ServerInterface;
 use PHPUnit\Framework\Attributes\Group;
 use React\Promise\PromiseInterface;
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Server\Driver;
 
-use Lsp\Server\Address\AddressInterface;
+use Lsp\Contracts\Server\AddressInterface;
 
 interface ServerDriverInterface
 {

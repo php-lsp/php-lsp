@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Server\Address;
+namespace Lsp\Contracts\Server;
 
 interface AddressInterface extends \Stringable
 {

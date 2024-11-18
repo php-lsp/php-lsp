@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Server\Event\Connection;
 
-use Lsp\Server\ConnectionInterface;
+use Lsp\Contracts\Server\ConnectionInterface;
 
 abstract class ConnectionEvent
 {

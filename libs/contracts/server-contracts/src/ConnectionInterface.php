@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Server;
+namespace Lsp\Contracts\Server;
 
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
-use Lsp\Server\Address\AddressInterface;
 use React\Promise\PromiseInterface;
 
 interface ConnectionInterface

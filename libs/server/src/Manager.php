@@ -7,6 +7,8 @@ namespace Lsp\Server;
 use Lsp\Contracts\Rpc\Codec\DecoderInterface;
 use Lsp\Contracts\Rpc\Codec\EncoderInterface;
 use Lsp\Contracts\Rpc\Message\MessageInterface;
+use Lsp\Contracts\Server\ManagerInterface;
+use Lsp\Contracts\Server\ServerInterface;
 use Lsp\Dispatcher\DispatcherInterface;
 use Lsp\Server\Driver\DriverInterface;
 use Lsp\Server\Event\Server\ServerListen;

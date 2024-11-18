@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Server\React;
 
-use Lsp\Server\Address\AddressInterface;
+use Lsp\Contracts\Server\AddressInterface;
 use Lsp\Server\Driver\ConnectionDriverInterface;
 
 abstract class ReactConnectionDriver implements ConnectionDriverInterface

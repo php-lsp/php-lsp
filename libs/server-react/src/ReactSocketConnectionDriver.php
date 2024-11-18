@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Server\React;
 
-use Lsp\Server\Address\AddressInterface;
+use Lsp\Contracts\Server\AddressInterface;
 use React\Socket\ConnectionInterface as SocketInterface;
 
 final class ReactSocketConnectionDriver extends ReactConnectionDriver

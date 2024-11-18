@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Server\Event;
+namespace Lsp\Server\Event\Message;
 
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
-use Lsp\Server\ConnectionInterface;
+use Lsp\Contracts\Server\ConnectionInterface;
 
 class ResponseSent extends MessageSent
 {

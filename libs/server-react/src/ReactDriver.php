@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Lsp\Server\React;
 
+use Lsp\Contracts\Server\AddressInterface;
 use Lsp\Server\Address\AddressFactory;
 use Lsp\Server\Address\AddressFactoryInterface;
-use Lsp\Server\Address\AddressInterface;
 use Lsp\Server\Address\TcpNetworkAddress;
 use Lsp\Server\Driver\DriverInterface;
 use React\EventLoop\LoopInterface;

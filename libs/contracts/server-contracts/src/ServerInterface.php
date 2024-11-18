@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Server;
-
-use Lsp\Server\Address\AddressInterface;
+namespace Lsp\Contracts\Server;
 
 /**
  * @template-extends \Traversable<array-key, ConnectionInterface>

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Lsp\Server\Address;
 
+use Lsp\Contracts\Server\AddressInterface;
+
 interface AddressFactoryInterface
 {
     /**

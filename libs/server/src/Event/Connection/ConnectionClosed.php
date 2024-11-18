@@ -4,4 +4,4 @@ declare(strict_types=1);
 
 namespace Lsp\Server\Event\Connection;
 
-final class ConnectionClosed extends ConnectionEvent {}
+class ConnectionClosed extends ConnectionEvent {}

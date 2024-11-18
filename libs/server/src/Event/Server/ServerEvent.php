@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Server\Event\Server;
 
-use Lsp\Server\ServerInterface;
+use Lsp\Contracts\Server\ServerInterface;
 
 abstract class ServerEvent
 {

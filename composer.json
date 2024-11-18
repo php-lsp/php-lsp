@@ -55,6 +55,7 @@
         "psr-4": {
             "Lsp\\Contracts\\Hydrator\\Tests\\": "libs/contracts/hydrator-contracts/tests",
             "Lsp\\Contracts\\Router\\Tests\\": "libs/contracts/router-contracts/tests",
+            "Lsp\\Contracts\\Server\\Tests\\": "libs/contracts/server-contracts/tests",
             "Lsp\\Dispatcher\\Tests\\": "libs/dispatcher/tests",
             "Lsp\\Hydrator\\TypeLang\\Tests\\": "libs/hydrator-type-lang/tests",
             "Lsp\\Kernel\\Tests\\": "libs/protocol/tests",
