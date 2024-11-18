@@ -17,19 +17,15 @@
     "repositories": [
         {
             "type": "path",
-            "url": "libs/*"
+            "url": "libs/components/*"
         },
         {
             "type": "path",
-            "url": "libs/rpc/*"
+            "url": "libs/bridge/*"
         },
         {
             "type": "path",
             "url": "libs/contracts/*"
-        },
-        {
-            "type": "path",
-            "url": "libs/rpc/contracts/*"
         }
     ],
     "require": {
