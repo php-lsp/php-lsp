@@ -13,11 +13,11 @@ use Lsp\Server\Address\AddressFactory;
 use Lsp\Server\Address\AddressFactoryInterface;
 use Lsp\Server\Address\Host\HostFactory;
 use Lsp\Server\Address\Host\HostFactoryInterface;
+use Lsp\Server\Bridge\React\ReactDriver;
 use Lsp\Server\ConnectionProviderInterface;
 use Lsp\Server\ConnectionStore;
 use Lsp\Server\Driver\DriverInterface;
 use Lsp\Server\Driver\LoggableDriver;
-use Lsp\Server\Driver\React\ReactDriver;
 use Lsp\Server\Manager;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
@@ -34,11 +34,7 @@ final class ServerCompilerPass implements CompilerPassInterface
         $this->registerCommonServices($container);
 
         if (!$container->has(DriverInterface::class)) {
-            if ($this->supportsReactDriver()) {
-                $this->registerReactDriver($container);
-            }
-
-            // ...other
+            $this->registerBridge($container);
         }
 
         if ($container->getParameter('kernel.debug') === true) {
@@ -68,17 +64,23 @@ final class ServerCompilerPass implements CompilerPassInterface
             ->setArgument('$decoder', new Reference(DecoderInterface::class))
             ->setArgument('$dispatcher', new Reference(DispatcherInterface::class))
             ->setArgument('$events', new Reference(EventDispatcherInterface::class))
-            ->setArgument('$store', new Reference(ConnectionProviderInterface::class))
-        ;
+            ->setArgument('$store', new Reference(ConnectionProviderInterface::class));
     }
 
-    private function supportsReactDriver(): bool
+    private function registerBridge(ContainerBuilder $container): void
+    {
+        if ($this->supportsReactBridge()) {
+            $this->registerReactBridge($container);
+        }
+    }
+
+    private function supportsReactBridge(): bool
     {
         return \class_exists(InstalledVersions::class)
-            && InstalledVersions::isInstalled('php-lsp/server-driver-react');
+            && InstalledVersions::isInstalled('php-lsp/server-bridge-react');
     }
 
-    private function registerReactDriver(ContainerBuilder $container): void
+    private function registerReactBridge(ContainerBuilder $container): void
     {
         $container->register(LoopInterface::class, LoopInterface::class)
             ->setFactory([Loop::class, 'get']);

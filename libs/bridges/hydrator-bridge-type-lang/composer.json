@@ -1,11 +1,11 @@
 {
-    "name": "php-lsp/hydrator-type-lang",
+    "name": "php-lsp/hydrator-bridge-type-lang",
     "description": "JMS Hydrator",
     "type": "library",
     "license": "MIT",
     "keywords": ["type-lang", "mapper", "hydrator", "bridge", "php", "lsp"],
     "support": {
-        "source": "https://github.com/php-lsp/hydrator-type-lang",
+        "source": "https://github.com/php-lsp/hydrator-bridge-type-lang",
         "issues": "https://github.com/php-lsp/php-lsp/issues"
     },
     "authors": [
@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lsp\\Hydrator\\TypeLang\\": "src"
+            "Lsp\\Hydrator\\Bridge\\TypeLang\\": "src"
         }
     },
     "require-dev": {
@@ -31,7 +31,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lsp\\Hydrator\\TypeLang\\Tests\\": "tests"
+            "Lsp\\Hydrator\\Bridge\\TypeLang\\Tests\\": "tests"
         }
     },
     "provide": {

@@ -1,11 +1,11 @@
 {
-    "name": "php-lsp/server-driver-react",
-    "description": "RPC Language Server Driver based on ReactPHP",
+    "name": "php-lsp/server-bridge-react",
+    "description": "RPC Language Server Driver/Bridge based on ReactPHP",
     "type": "library",
     "license": "MIT",
-    "keywords": ["runtime", "reactphp", "async", "server", "php", "lsp"],
+    "keywords": ["runtime", "reactphp", "async", "bridge", "driver", "server", "php", "lsp"],
     "support": {
-        "source": "https://github.com/php-lsp/server-driver-react",
+        "source": "https://github.com/php-lsp/server-bridge-react",
         "issues": "https://github.com/php-lsp/php-lsp/issues"
     },
     "authors": [
@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lsp\\Server\\Driver\\React\\": "src"
+            "Lsp\\Server\\Bridge\\React\\": "src"
         }
     },
     "require-dev": {
@@ -32,7 +32,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lsp\\Server\\Driver\\React\\Tests\\": "tests"
+            "Lsp\\Server\\Bridge\\React\\Tests\\": "tests"
         }
     },
     "scripts": {

@@ -14,20 +14,26 @@
 >
     <testsuites>
         <testsuite name="unit">
+            <!-- bridges -->
+            <directory>libs/bridges/hydrator-bridge-type-lang/tests</directory>
+            <directory>libs/bridges/server-bridge-react/tests</directory>
+            <!-- contracts -->
             <directory>libs/contracts/hydrator-contracts/tests</directory>
             <directory>libs/contracts/router-contracts/tests</directory>
-            <directory>libs/dispatcher/tests</directory>
-            <directory>libs/hydrator-type-lang/tests</directory>
-            <directory>libs/protocol/tests</directory>
-            <directory>libs/router/tests</directory>
-            <directory>libs/server/tests</directory>
-            <directory>libs/server-react/tests</directory>
-            <directory>libs/rpc/contracts/rpc-codec-contracts/tests</directory>
-            <directory>libs/rpc/contracts/rpc-message-contracts/tests</directory>
-            <directory>libs/rpc/contracts/rpc-message-factory-contracts/tests</directory>
-            <directory>libs/rpc/rpc-codec-jsonrpc/tests</directory>
-            <directory>libs/rpc/rpc-message/tests</directory>
-            <directory>libs/rpc/rpc-message-factory/tests</directory>
+            <directory>libs/contracts/rpc-codec-contracts/tests</directory>
+            <directory>libs/contracts/rpc-message-contracts/tests</directory>
+            <directory>libs/contracts/rpc-message-factory-contracts/tests</directory>
+            <directory>libs/contracts/server-contracts/tests</directory>
+            <!-- components -->
+            <directory>libs/components/dispatcher/tests</directory>
+            <directory>libs/components/kernel/tests</directory>
+            <directory>libs/components/protocol/tests</directory>
+            <directory>libs/components/protocol-generator/tests</directory>
+            <directory>libs/components/router/tests</directory>
+            <directory>libs/components/rpc-codec-jsonrpc/tests</directory>
+            <directory>libs/components/rpc-message/tests</directory>
+            <directory>libs/components/rpc-message-factory/tests</directory>
+            <directory>libs/components/server/tests</directory>
         </testsuite>
         <testsuite name="functional">
             <!-- ... -->
@@ -38,20 +44,26 @@
 
     <source>
         <include>
+            <!-- bridges -->
+            <directory>libs/bridges/hydrator-bridge-type-lang/src</directory>
+            <directory>libs/bridges/server-bridge-react/src</directory>
+            <!-- contracts -->
             <directory>libs/contracts/hydrator-contracts/src</directory>
             <directory>libs/contracts/router-contracts/src</directory>
-            <directory>libs/dispatcher/src</directory>
-            <directory>libs/hydrator-type-lang/src</directory>
-            <directory>libs/protocol/src</directory>
-            <directory>libs/router/src</directory>
-            <directory>libs/server/src</directory>
-            <directory>libs/server-react/src</directory>
-            <directory>libs/rpc/contracts/rpc-codec-contracts/src</directory>
-            <directory>libs/rpc/contracts/rpc-message-contracts/src</directory>
-            <directory>libs/rpc/contracts/rpc-message-factory-contracts/src</directory>
-            <directory>libs/rpc/rpc-codec-jsonrpc/src</directory>
-            <directory>libs/rpc/rpc-message/src</directory>
-            <directory>libs/rpc/rpc-message-factory/src</directory>
+            <directory>libs/contracts/rpc-codec-contracts/src</directory>
+            <directory>libs/contracts/rpc-message-contracts/src</directory>
+            <directory>libs/contracts/rpc-message-factory-contracts/src</directory>
+            <directory>libs/contracts/server-contracts/src</directory>
+            <!-- components -->
+            <directory>libs/components/dispatcher/src</directory>
+            <directory>libs/components/kernel/src</directory>
+            <directory>libs/components/protocol/src</directory>
+            <directory>libs/components/protocol-generator/src</directory>
+            <directory>libs/components/router/src</directory>
+            <directory>libs/components/rpc-codec-jsonrpc/src</directory>
+            <directory>libs/components/rpc-message/src</directory>
+            <directory>libs/components/rpc-message-factory/src</directory>
+            <directory>libs/components/server/src</directory>
         </include>
     </source>
 

@@ -21,7 +21,7 @@
         },
         {
             "type": "path",
-            "url": "libs/bridge/*"
+            "url": "libs/bridges/*"
         },
         {
             "type": "path",
@@ -30,13 +30,10 @@
     ],
     "require": {
         "php": "^8.1",
-        "php-lsp/dispatcher": "^1.0",
-        "php-lsp/hydrator-type-lang": "^1.0",
         "php-lsp/kernel": "^1.0",
         "php-lsp/protocol": "^1.0",
-        "php-lsp/router": "^1.0",
-        "php-lsp/rpc": "^1.0",
-        "php-lsp/server-react": "^1.0"
+        "php-lsp/hydrator-type-lang": "^1.0",
+        "php-lsp/server-driver-react": "^1.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.64",
@@ -49,23 +46,25 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "Lsp\\Hydrator\\TypeLang\\Tests\\": "libs/bridges/hydrator-type-lang/tests",
+            "Lsp\\Server\\Driver\\React\\Tests\\": "libs/bridges/server-driver-react/tests",
+
             "Lsp\\Contracts\\Hydrator\\Tests\\": "libs/contracts/hydrator-contracts/tests",
             "Lsp\\Contracts\\Router\\Tests\\": "libs/contracts/router-contracts/tests",
+            "Lsp\\Contracts\\Rpc\\Message\\Factory\\Tests\\": "libs/contracts/rpc-message-factory-contracts/tests",
+            "Lsp\\Contracts\\Rpc\\Message\\Tests\\": "libs/contracts/rpc-message-contracts/tests",
+            "Lsp\\Contracts\\Rpc\\Codec\\Tests\\": "libs/contracts/rpc-codec-contracts/tests",
             "Lsp\\Contracts\\Server\\Tests\\": "libs/contracts/server-contracts/tests",
-            "Lsp\\Dispatcher\\Tests\\": "libs/dispatcher/tests",
-            "Lsp\\Hydrator\\TypeLang\\Tests\\": "libs/hydrator-type-lang/tests",
-            "Lsp\\Kernel\\Tests\\": "libs/kernel/tests",
-            "Lsp\\Protocol\\Tests\\": "libs/protocol/tests",
-            "Lsp\\Protocol\\Generator\\Tests\\": "libs/protocol-generator/tests",
-            "Lsp\\Router\\Tests\\": "libs/router/tests",
-            "Lsp\\Server\\Tests\\": "libs/server/tests",
-            "Lsp\\Server\\Driver\\React\\Tests\\": "libs/server-driver-react/tests",
-            "Lsp\\Contracts\\Rpc\\Message\\Factory\\Tests\\": "libs/rpc/contracts/rpc-message-factory-contracts/tests",
-            "Lsp\\Contracts\\Rpc\\Message\\Tests\\": "libs/rpc/contracts/rpc-message-contracts/tests",
-            "Lsp\\Contracts\\Rpc\\Codec\\Tests\\": "libs/rpc/contracts/rpc-codec-contracts/tests",
-            "Lsp\\Rpc\\Message\\Factory\\Tests\\": "libs/rpc/rpc-message-factory/tests",
-            "Lsp\\Rpc\\Message\\Tests\\": "libs/rpc/rpc-message/tests",
-            "Lsp\\Rpc\\Codec\\Tests\\": "libs/rpc/rpc-codec-jsonrpc/tests"
+
+            "Lsp\\Dispatcher\\Tests\\": "libs/components/dispatcher/tests",
+            "Lsp\\Kernel\\Tests\\": "libs/components/kernel/tests",
+            "Lsp\\Protocol\\Tests\\": "libs/components/protocol/tests",
+            "Lsp\\Protocol\\Generator\\Tests\\": "libs/components/protocol-generator/tests",
+            "Lsp\\Router\\Tests\\": "libs/components/router/tests",
+            "Lsp\\Server\\Tests\\": "libs/components/server/tests",
+            "Lsp\\Rpc\\Message\\Factory\\Tests\\": "libs/components/rpc-message-factory/tests",
+            "Lsp\\Rpc\\Message\\Tests\\": "libs/components/rpc-message/tests",
+            "Lsp\\Rpc\\Codec\\Tests\\": "libs/components/rpc-codec-jsonrpc/tests"
         }
     },
     "scripts-aliases": {

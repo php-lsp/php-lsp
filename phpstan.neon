@@ -7,22 +7,25 @@ parameters:
   fileExtensions:
     - php
   paths:
+    # bridge
+    - libs/bridge/hydrator-bridge-type-lang/src
+    - libs/bridge/server-bridge-react/src
+    # contracts
     - libs/contracts/hydrator-contracts/src
     - libs/contracts/router-contracts/src
+    - libs/contracts/rpc-codec-contracts/src
+    - libs/contracts/rpc-message-contracts/src
+    - libs/contracts/rpc-message-factory-contracts/src
     - libs/contracts/server-contracts/src
-    - libs/dispatcher/src
-    - libs/hydrator-type-lang/src
-    - libs/kernel/src
-    # - libs/protocol/src
-    - libs/protocol-generator/src
-    - libs/router/src
-    - libs/server/src
-    - libs/server-driver-react/src
-    - libs/rpc/contracts/rpc-codec-contracts/src
-    - libs/rpc/contracts/rpc-message-contracts/src
-    - libs/rpc/contracts/rpc-message-factory-contracts/src
-    - libs/rpc/rpc-codec-jsonrpc/src
-    - libs/rpc/rpc-message/src
-    - libs/rpc/rpc-message-factory/src
+    # components
+    - libs/components/dispatcher/src
+    - libs/components/kernel/src
+    - libs/components/protocol/src
+    - libs/components/protocol-generator/src
+    - libs/components/router/src
+    - libs/components/rpc-codec-jsonrpc/src
+    - libs/components/rpc-message/src
+    - libs/components/rpc-message-factory/src
+    - libs/components/server/src
   tmpDir: vendor/.cache.phpstan
   reportUnmatchedIgnoredErrors: true

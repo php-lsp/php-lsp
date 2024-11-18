@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Hydrator\TypeLang\Type;
+namespace Lsp\Hydrator\Bridge\TypeLang\Type;
 
 use TypeLang\Mapper\Runtime\Context\LocalContext;
 use TypeLang\Mapper\Type\ObjectType;

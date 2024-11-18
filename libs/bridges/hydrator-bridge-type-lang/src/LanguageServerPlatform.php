@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Hydrator\TypeLang;
+namespace Lsp\Hydrator\Bridge\TypeLang;
 
-use Lsp\Hydrator\TypeLang\Type\MinifiedObjectTypeBuilder;
+use Lsp\Hydrator\Bridge\TypeLang\Type\MinifiedObjectTypeBuilder;
 use TypeLang\Mapper\Platform\StandardPlatform;
 use TypeLang\Mapper\Type\Builder\ObjectTypeBuilder;
 

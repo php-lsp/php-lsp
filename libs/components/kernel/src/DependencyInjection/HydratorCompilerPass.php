@@ -6,7 +6,7 @@ namespace Lsp\Kernel\DependencyInjection;
 
 use Lsp\Contracts\Hydrator\ExtractorInterface;
 use Lsp\Contracts\Hydrator\HydratorInterface;
-use Lsp\Hydrator\TypeLang\TypeLangMapper;
+use Lsp\Hydrator\Bridge\TypeLang\TypeLangMapper;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -17,17 +17,17 @@ final class HydratorCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void
     {
-        if ($this->supportsTypeLang()) {
-            $this->registerTypeLang($container);
+        if ($this->supportsTypeLangBridge()) {
+            $this->registerTypeLangBridge($container);
         }
     }
 
-    private function supportsTypeLang(): bool
+    private function supportsTypeLangBridge(): bool
     {
         return \class_exists(TypeLangMapper::class);
     }
 
-    private function registerTypeLang(ContainerBuilder $container): void
+    private function registerTypeLangBridge(ContainerBuilder $container): void
     {
         $container->register(TypeLangMapper::class, TypeLangMapper::class)
             ->setArgument('$cache', new Reference(
