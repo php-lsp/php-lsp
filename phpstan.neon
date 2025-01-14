@@ -8,8 +8,8 @@ parameters:
     - php
   paths:
     # bridge
-    - libs/bridge/bridge-hydrator-type-lang/src
-    - libs/bridge/bridge-server-react/src
+    - libs/bridges/bridge-hydrator-type-lang/src
+    - libs/bridges/bridge-server-react/src
     # contracts
     - libs/contracts/hydrator-contracts/src
     - libs/contracts/router-contracts/src
