@@ -28,7 +28,7 @@ final class WorkspaceEdit
         /**
          * Holds changes to existing resources.
          *
-         * @var list<non-empty-string, list<TextEdit>>|null
+         * @var array<non-empty-string, list<TextEdit>>|null
          */
         public readonly ?array $changes = null,
         /**
@@ -60,7 +60,7 @@ final class WorkspaceEdit
          *
          * @since 3.16.0
          *
-         * @var list<string, ChangeAnnotation>|null
+         * @var array<string, ChangeAnnotation>|null
          */
         public readonly ?array $changeAnnotations = null,
     ) {}

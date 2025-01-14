@@ -166,7 +166,7 @@ final class TypeBuilder
     public function mapOf(TypeStatement $key, TypeStatement $value): TypeStatement
     {
         return new NamedTypeNode(
-            name: 'list',
+            name: 'array',
             arguments: new TemplateArgumentsListNode([
                 new TemplateArgumentNode($key),
                 new TemplateArgumentNode($value),

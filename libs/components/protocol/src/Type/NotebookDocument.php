@@ -34,7 +34,7 @@ final class NotebookDocument
          *
          * Note: should always be an object literal (e.g. LSPObject).
          *
-         * @var list<string, mixed>|null
+         * @var array<string, mixed>|null
          */
         public readonly ?array $metadata = null,
         /**

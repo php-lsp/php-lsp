@@ -14,6 +14,8 @@ final class FullDocumentDiagnosticReport
     public function __construct(
         /**
          * A full document diagnostic report.
+         *
+         * @var "full"
          */
         public readonly string $kind,
         /**

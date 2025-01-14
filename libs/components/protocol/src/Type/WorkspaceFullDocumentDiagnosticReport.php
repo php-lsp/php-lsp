@@ -20,6 +20,8 @@ final class WorkspaceFullDocumentDiagnosticReport
         public readonly string $uri,
         /**
          * A full document diagnostic report.
+         *
+         * @var "full"
          */
         public readonly string $kind,
         /**

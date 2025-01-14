@@ -7,6 +7,9 @@ namespace Lsp\Protocol\Type;
 final class WorkDoneProgressReport
 {
     public function __construct(
+        /**
+         * @var "report"
+         */
         public readonly string $kind,
         /**
          * Controls enablement state of a cancel button.

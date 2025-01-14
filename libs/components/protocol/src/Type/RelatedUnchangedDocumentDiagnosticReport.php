@@ -16,6 +16,8 @@ final class RelatedUnchangedDocumentDiagnosticReport
          * A document diagnostic report indicating no changes to the last
          * result. A server can only return `unchanged` if result ids are
          * provided.
+         *
+         * @var "unchanged"
          */
         public readonly string $kind,
         /**
@@ -32,7 +34,7 @@ final class RelatedUnchangedDocumentDiagnosticReport
          *
          * @since 3.17.0
          *
-         * @var list<non-empty-string, (FullDocumentDiagnosticReport|UnchangedDocumentDiagnosticReport)>|null
+         * @var array<non-empty-string, (FullDocumentDiagnosticReport|UnchangedDocumentDiagnosticReport)>|null
          */
         public readonly ?array $relatedDocuments = null,
     ) {}

@@ -14,6 +14,8 @@ final class RelatedFullDocumentDiagnosticReport
     public function __construct(
         /**
          * A full document diagnostic report.
+         *
+         * @var "full"
          */
         public readonly string $kind,
         /**
@@ -25,7 +27,7 @@ final class RelatedFullDocumentDiagnosticReport
          *
          * @since 3.17.0
          *
-         * @var list<non-empty-string, (FullDocumentDiagnosticReport|UnchangedDocumentDiagnosticReport)>|null
+         * @var array<non-empty-string, (FullDocumentDiagnosticReport|UnchangedDocumentDiagnosticReport)>|null
          */
         public readonly ?array $relatedDocuments = null,
         /**

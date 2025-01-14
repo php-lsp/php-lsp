@@ -22,6 +22,8 @@ final class WorkspaceUnchangedDocumentDiagnosticReport
          * A document diagnostic report indicating no changes to the last
          * result. A server can only return `unchanged` if result ids are
          * provided.
+         *
+         * @var "unchanged"
          */
         public readonly string $kind,
         /**

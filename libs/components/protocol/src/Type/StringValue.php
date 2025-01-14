@@ -22,6 +22,8 @@ final class StringValue
     public function __construct(
         /**
          * The kind of string value.
+         *
+         * @var "snippet"
          */
         public readonly string $kind,
         /**

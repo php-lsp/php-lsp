@@ -7,6 +7,9 @@ namespace Lsp\Protocol\Type;
 final class WorkDoneProgressEnd
 {
     public function __construct(
+        /**
+         * @var "end"
+         */
         public readonly string $kind,
         /**
          * Optional, a final message indicating to for example indicate the

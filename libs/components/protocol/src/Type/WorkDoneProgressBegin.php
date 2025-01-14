@@ -7,6 +7,9 @@ namespace Lsp\Protocol\Type;
 final class WorkDoneProgressBegin
 {
     public function __construct(
+        /**
+         * @var "begin"
+         */
         public readonly string $kind,
         /**
          * Mandatory title of the progress operation. Used to briefly inform
