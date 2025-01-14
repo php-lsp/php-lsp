@@ -33,7 +33,7 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.4",
         "php-lsp/kernel": "^1.0",
         "php-lsp/protocol": "^1.0",
         "php-lsp/bridge-hydrator-type-lang": "^1.0",

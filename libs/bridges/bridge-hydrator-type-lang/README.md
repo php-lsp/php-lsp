@@ -7,7 +7,7 @@
 ---
 
 <p align="center">
-    <a href="https://packagist.org/packages/php-lsp/bridge-hydrator-type-lang"><img src="https://poser.pugx.org/php-lsp/bridge-hydrator-type-lang/require/php?style=for-the-badge" alt="PHP 8.1+"></a>
+    <a href="https://packagist.org/packages/php-lsp/bridge-hydrator-type-lang"><img src="https://poser.pugx.org/php-lsp/bridge-hydrator-type-lang/require/php?style=for-the-badge" alt="PHP 8.4+"></a>
     <a href="https://packagist.org/packages/php-lsp/bridge-hydrator-type-lang"><img src="https://poser.pugx.org/php-lsp/bridge-hydrator-type-lang/version?style=for-the-badge" alt="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/php-lsp/bridge-hydrator-type-lang"><img src="https://poser.pugx.org/php-lsp/bridge-hydrator-type-lang/v/unstable?style=for-the-badge" alt="Latest Unstable Version"></a>
     <a href="https://raw.githubusercontent.com/php-lsp/bridge-hydrator-type-lang/blob/master/LICENSE"><img src="https://poser.pugx.org/php-lsp/bridge-hydrator-type-lang/license?style=for-the-badge" alt="License MIT"></a>

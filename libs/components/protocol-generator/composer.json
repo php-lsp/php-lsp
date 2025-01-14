@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.4",
         "symfony/clock": "^6.4|^7.0",
         "nikic/php-parser": "^4.19|^5.0",
         "type-lang/parser": "^1.3",

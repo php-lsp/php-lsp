@@ -7,7 +7,7 @@
 ---
 
 <p align="center">
-    <a href="https://packagist.org/packages/php-lsp/router"><img src="https://poser.pugx.org/php-lsp/router/require/php?style=for-the-badge" alt="PHP 8.1+"></a>
+    <a href="https://packagist.org/packages/php-lsp/router"><img src="https://poser.pugx.org/php-lsp/router/require/php?style=for-the-badge" alt="PHP 8.4+"></a>
     <a href="https://packagist.org/packages/php-lsp/router"><img src="https://poser.pugx.org/php-lsp/router/version?style=for-the-badge" alt="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/php-lsp/router"><img src="https://poser.pugx.org/php-lsp/router/v/unstable?style=for-the-badge" alt="Latest Unstable Version"></a>
     <a href="https://raw.githubusercontent.com/php-lsp/router/blob/master/LICENSE"><img src="https://poser.pugx.org/php-lsp/router/license?style=for-the-badge" alt="License MIT"></a>

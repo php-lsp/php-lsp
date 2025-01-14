@@ -7,7 +7,7 @@
 ---
 
 <p align="center">
-    <a href="https://packagist.org/packages/php-lsp/rpc-message-factory"><img src="https://poser.pugx.org/php-lsp/rpc-message-factory/require/php?style=for-the-badge" alt="PHP 8.1+"></a>
+    <a href="https://packagist.org/packages/php-lsp/rpc-message-factory"><img src="https://poser.pugx.org/php-lsp/rpc-message-factory/require/php?style=for-the-badge" alt="PHP 8.4+"></a>
     <a href="https://packagist.org/packages/php-lsp/rpc-message-factory"><img src="https://poser.pugx.org/php-lsp/rpc-message-factory/version?style=for-the-badge" alt="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/php-lsp/rpc-message-factory"><img src="https://poser.pugx.org/php-lsp/rpc-message-factory/v/unstable?style=for-the-badge" alt="Latest Unstable Version"></a>
     <a href="https://raw.githubusercontent.com/php-lsp/rpc-message-factory/blob/master/LICENSE"><img src="https://poser.pugx.org/php-lsp/rpc-message-factory/license?style=for-the-badge" alt="License MIT"></a>

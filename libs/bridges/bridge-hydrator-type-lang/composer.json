@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.4",
         "type-lang/mapper": "^0.4",
         "type-lang/phpdoc-standard-tags": "^1.0",
         "php-lsp/hydrator-contracts": "^1.0"

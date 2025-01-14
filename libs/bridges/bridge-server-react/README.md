@@ -7,7 +7,7 @@
 ---
 
 <p align="center">
-    <a href="https://packagist.org/packages/php-lsp/bridge-server-react"><img src="https://poser.pugx.org/php-lsp/bridge-server-react/require/php?style=for-the-badge" alt="PHP 8.1+"></a>
+    <a href="https://packagist.org/packages/php-lsp/bridge-server-react"><img src="https://poser.pugx.org/php-lsp/bridge-server-react/require/php?style=for-the-badge" alt="PHP 8.4+"></a>
     <a href="https://packagist.org/packages/php-lsp/bridge-server-react"><img src="https://poser.pugx.org/php-lsp/bridge-server-react/version?style=for-the-badge" alt="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/php-lsp/bridge-server-react"><img src="https://poser.pugx.org/php-lsp/bridge-server-react/v/unstable?style=for-the-badge" alt="Latest Unstable Version"></a>
     <a href="https://raw.githubusercontent.com/php-lsp/bridge-server-react/blob/master/LICENSE"><img src="https://poser.pugx.org/php-lsp/bridge-server-react/license?style=for-the-badge" alt="License MIT"></a>

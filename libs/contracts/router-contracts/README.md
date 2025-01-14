@@ -7,7 +7,7 @@
 ---
 
 <p align="center">
-    <a href="https://packagist.org/packages/php-lsp/router-contracts"><img src="https://poser.pugx.org/php-lsp/router-contracts/require/php?style=for-the-badge" alt="PHP 8.1+"></a>
+    <a href="https://packagist.org/packages/php-lsp/router-contracts"><img src="https://poser.pugx.org/php-lsp/router-contracts/require/php?style=for-the-badge" alt="PHP 8.4+"></a>
     <a href="https://packagist.org/packages/php-lsp/router-contracts"><img src="https://poser.pugx.org/php-lsp/router-contracts/version?style=for-the-badge" alt="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/php-lsp/router-contracts"><img src="https://poser.pugx.org/php-lsp/router-contracts/v/unstable?style=for-the-badge" alt="Latest Unstable Version"></a>
     <a href="https://raw.githubusercontent.com/php-lsp/router-contracts/blob/master/LICENSE"><img src="https://poser.pugx.org/php-lsp/router-contracts/license?style=for-the-badge" alt="License MIT"></a>

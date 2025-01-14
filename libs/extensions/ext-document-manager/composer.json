@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.4",
         "league/uri": "^7.5",
         "phplrt/source": "^3.7",
         "phplrt/position": "^3.7",

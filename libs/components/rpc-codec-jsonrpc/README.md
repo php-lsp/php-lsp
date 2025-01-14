@@ -7,7 +7,7 @@
 ---
 
 <p align="center">
-    <a href="https://packagist.org/packages/php-lsp/rpc-codec-jsonrpc"><img src="https://poser.pugx.org/php-lsp/rpc-codec-jsonrpc/require/php?style=for-the-badge" alt="PHP 8.1+"></a>
+    <a href="https://packagist.org/packages/php-lsp/rpc-codec-jsonrpc"><img src="https://poser.pugx.org/php-lsp/rpc-codec-jsonrpc/require/php?style=for-the-badge" alt="PHP 8.4+"></a>
     <a href="https://packagist.org/packages/php-lsp/rpc-codec-jsonrpc"><img src="https://poser.pugx.org/php-lsp/rpc-codec-jsonrpc/version?style=for-the-badge" alt="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/php-lsp/rpc-codec-jsonrpc"><img src="https://poser.pugx.org/php-lsp/rpc-codec-jsonrpc/v/unstable?style=for-the-badge" alt="Latest Unstable Version"></a>
     <a href="https://raw.githubusercontent.com/php-lsp/rpc-codec-jsonrpc/blob/master/LICENSE"><img src="https://poser.pugx.org/php-lsp/rpc-codec-jsonrpc/license?style=for-the-badge" alt="License MIT"></a>

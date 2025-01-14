@@ -7,7 +7,7 @@
 ---
 
 <p align="center">
-    <a href="https://packagist.org/packages/php-lsp/server"><img src="https://poser.pugx.org/php-lsp/server/require/php?style=for-the-badge" alt="PHP 8.1+"></a>
+    <a href="https://packagist.org/packages/php-lsp/server"><img src="https://poser.pugx.org/php-lsp/server/require/php?style=for-the-badge" alt="PHP 8.4+"></a>
     <a href="https://packagist.org/packages/php-lsp/server"><img src="https://poser.pugx.org/php-lsp/server/version?style=for-the-badge" alt="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/php-lsp/server"><img src="https://poser.pugx.org/php-lsp/server/v/unstable?style=for-the-badge" alt="Latest Unstable Version"></a>
     <a href="https://raw.githubusercontent.com/php-lsp/server/blob/master/LICENSE"><img src="https://poser.pugx.org/php-lsp/server/license?style=for-the-badge" alt="License MIT"></a>
