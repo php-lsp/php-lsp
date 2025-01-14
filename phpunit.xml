@@ -35,7 +35,7 @@
             <directory>libs/components/rpc-message-factory/tests</directory>
             <directory>libs/components/server/tests</directory>
             <!-- extensions -->
-            <directory>libs/extensions/document-manager/tests</directory>
+            <directory>libs/extensions/ext-document-manager/tests</directory>
         </testsuite>
         <testsuite name="functional">
             <!-- ... -->
@@ -67,7 +67,7 @@
             <directory>libs/components/rpc-message-factory/src</directory>
             <directory>libs/components/server/src</directory>
             <!-- extensions -->
-            <directory>libs/extensions/document-manager/src</directory>
+            <directory>libs/extensions/ext-document-manager/src</directory>
         </include>
     </source>
 

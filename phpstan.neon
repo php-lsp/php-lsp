@@ -28,6 +28,6 @@ parameters:
     - libs/components/rpc-message-factory/src
     - libs/components/server/src
     # extensions
-    - libs/extensions/document-manager/src
+    - libs/extensions/ext-document-manager/src
   tmpDir: vendor/.cache.phpstan
   reportUnmatchedIgnoredErrors: true

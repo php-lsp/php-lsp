@@ -56,6 +56,9 @@ jobs:
             split_repository: 'rpc-message-factory'
           - local_path: 'components/server'
             split_repository: 'server'
+          # Extensions
+          - local_path: 'extensions/ext-document-manager'
+            split_repository: 'ext-document-manager'
     steps:
       - uses: actions/checkout@v4
 
