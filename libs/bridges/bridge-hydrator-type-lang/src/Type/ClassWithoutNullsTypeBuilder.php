@@ -17,6 +17,9 @@ use TypeLang\Parser\Node\Stmt\TypeStatement;
 final class ClassWithoutNullsTypeBuilder implements TypeBuilderInterface
 {
     public function __construct(
+        /**
+         * @var ClassTypeBuilder<object>
+         */
         private readonly ClassTypeBuilder $builder,
     ) {}
 

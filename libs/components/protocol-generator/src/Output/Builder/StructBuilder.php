@@ -42,7 +42,7 @@ final class StructBuilder extends Builder
         foreach ($stmt->getAllProperties() as $property) {
             $param = new PhpParam(new PhpVariable($property->name));
             $param->type = $this->types->build($property->type);
-            $param->default = $this->types->resolveDefaultValue($param->type);
+            $param->default = $this->types->resolveDefaultValue($param->type, $property->type);
             $param->flags |= Modifiers::PUBLIC | Modifiers::READONLY;
 
             $propertyDescription = $this->docblock->buildDocBlockFromStatement($property);

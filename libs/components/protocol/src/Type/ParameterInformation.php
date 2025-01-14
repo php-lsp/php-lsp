@@ -33,7 +33,7 @@ final class ParameterInformation
          *          int<0, 2147483647>
          *      }
          */
-        public readonly string|array $label = [],
+        public readonly string|array $label,
         /**
          * The human-readable doc-comment of this parameter. Will be shown in
          * the UI but can be omitted.

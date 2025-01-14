@@ -25,13 +25,13 @@ use TypeLang\Parser\Node\Stmt\UnionTypeNode;
 
 final class PhpTypeBuilder
 {
-    public function resolveDefaultValue(PhpNodeAbstract $type): ?PhpExpr
+    public function resolveDefaultValue(PhpNodeAbstract $type, TypeStatement $stmt): ?PhpExpr
     {
         if ($this->supportsNull($type)) {
             return new PhpConstFetch(new PhpName('null'));
         }
 
-        if ($this->supportsArray($type)) {
+        if ($this->supportsArray($type, $stmt)) {
             return new PhpArray();
         }
 
@@ -69,14 +69,21 @@ final class PhpTypeBuilder
             && $type->toLowerString() === 'mixed';
     }
 
-    private function supportsArray(PhpNodeAbstract $type): bool
+    private function supportsArray(PhpNodeAbstract $type, TypeStatement $stmt): bool
     {
         if ($this->isArray($type)) {
-            return true;
+            return $stmt instanceof NamedTypeNode
+                && $stmt->fields === null;
         }
 
-        if (!$type instanceof PhpUnionType) {
+        if (!$type instanceof PhpUnionType || !$stmt instanceof UnionTypeNode) {
             return false;
+        }
+
+        foreach ($stmt->statements as $child) {
+            if ($child instanceof NamedTypeNode && $child->fields !== null) {
+                return false;
+            }
         }
 
         foreach ($type->types as $child) {
