@@ -12,6 +12,6 @@ final class DocumentSaveController
 {
     public function __invoke(DidSaveTextDocumentParams $request): void
     {
-        var_dump($request);
+        // TODO
     }
 }

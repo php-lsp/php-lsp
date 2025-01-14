@@ -37,7 +37,7 @@ abstract class ArgumentResolver implements ArgumentResolverInterface
             return;
         }
 
-        if (!\is_a($actual, $type, true)) {
+        if (!\is_a($type, $actual, true)) {
             return;
         }
 
