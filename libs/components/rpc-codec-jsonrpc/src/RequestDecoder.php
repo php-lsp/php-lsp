@@ -67,6 +67,7 @@ final class RequestDecoder extends Decoder
             );
         }
 
+        /** @var non-empty-string */
         return $method;
     }
 

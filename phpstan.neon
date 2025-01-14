@@ -1,7 +1,15 @@
 includes:
-    - phar://phpstan.phar/conf/bleedingEdge.neon
+  - phar://phpstan.phar/conf/bleedingEdge.neon
+  - vendor/phpstan/phpstan-strict-rules/rules.neon
 parameters:
   level: max
+  phpVersion:
+    min: 80100
+    max: 80400
+  parallel:
+    jobSize: 20
+    maximumNumberOfProcesses: 32
+    minimumNumberOfJobsPerProcess: 2
   strictRules:
     allRules: true
   fileExtensions:
@@ -31,3 +39,4 @@ parameters:
     - libs/extensions/ext-document-manager/src
   tmpDir: vendor/.cache.phpstan
   reportUnmatchedIgnoredErrors: true
+  rememberPossiblyImpureFunctionValues: false

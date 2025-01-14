@@ -15,6 +15,9 @@ final class GenericResultResolver extends ResultResolver
         private readonly ExtractorInterface $extractor,
     ) {}
 
+    /**
+     * @phpstan-ignore-next-line
+     */
     public function supports(mixed $value): bool
     {
         return true;

@@ -76,17 +76,18 @@ final class MetaRequest extends MetaNotification
             method: $data['method'],
             params: match (true) {
                 $params === null => null,
+                // @phpstan-ignore-next-line : PHPStan false positive
                 \array_is_list($params) => \array_map(MetaType::fromArray(...), $params),
                 default => MetaType::fromArray($params),
             },
             // @phpstan-ignore-next-line
             result: MetaType::fromArray($data['result']),
             // @phpstan-ignore-next-line
-            partialResult: isset($data['partialResult'])
+            partialResult: isset($data['partialResult']) && \is_array($data['partialResult'])
                 ? MetaType::fromArray($data['partialResult'])
                 : null,
             // @phpstan-ignore-next-line
-            errorData: isset($data['errorData'])
+            errorData: isset($data['errorData']) && \is_array($data['errorData'])
                 ? MetaType::fromArray($data['errorData'])
                 : null,
             registrationMethod: $data['registrationMethod'] ?? null,

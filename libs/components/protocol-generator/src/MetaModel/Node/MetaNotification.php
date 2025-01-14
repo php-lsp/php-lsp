@@ -78,6 +78,7 @@ class MetaNotification extends Definition
             method: $data['method'],
             params: match (true) {
                 $params === null => null,
+                // @phpstan-ignore-next-line : PHPStan false positive
                 \array_is_list($params) => \array_map(MetaType::fromArray(...), $params),
                 default => MetaType::fromArray($params),
             },

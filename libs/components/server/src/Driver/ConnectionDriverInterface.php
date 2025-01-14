@@ -22,6 +22,9 @@ interface ConnectionDriverInterface
      */
     public function onError(\Closure $then): void;
 
+    /**
+     * @param \Closure():void $then
+     */
     public function onClose(\Closure $then): void;
 
     public function close(): void;

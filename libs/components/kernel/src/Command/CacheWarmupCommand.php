@@ -22,9 +22,9 @@ final class CacheWarmupCommand extends KernelAwareCommand
 
         $app = $this->getKernel($input);
 
+        $buildDirectory = $app->container->getParameter('kernel.build_dir');
         $output->writeln(\vsprintf('Cache Directory: <comment>%s</comment>', [
-            // @phpstan-ignore-next-line
-            (string) $app->container->getParameter('kernel.build_dir'),
+            \is_scalar($buildDirectory) ? (string) $buildDirectory : 'unknown',
         ]));
 
         $output->writeln('<info>Finished</info>');

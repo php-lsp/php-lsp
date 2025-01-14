@@ -64,7 +64,10 @@ final class ResponseDecoder extends Decoder
     }
 
     /**
-     * @param array<array-key, mixed> $data
+     * @param array{
+     *     error: mixed,
+     *     ...<array-key, mixed>
+     * } $data
      *
      * @return FailureResponseInterface<mixed, mixed>
      * @throws DecodingException
@@ -86,6 +89,17 @@ final class ResponseDecoder extends Decoder
             throw InvalidFieldTypeException::fromTypeOfField('error.message', 'string', $data['error']['message']);
         }
 
+        /**
+         * @var array{
+         *     error: array{
+         *         code?: int,
+         *         message?: string,
+         *         data?: mixed,
+         *         ...
+         *     },
+         *     ...<array-key, mixed>
+         * } $data
+         */
         return $this->responses->createFailure(
             id: $this->tryDecodeId($data),
             code: $data['error']['code'] ?? 0,
