@@ -15,8 +15,8 @@
     <testsuites>
         <testsuite name="unit">
             <!-- bridges -->
-            <directory>libs/bridges/hydrator-bridge-type-lang/tests</directory>
-            <directory>libs/bridges/server-bridge-react/tests</directory>
+            <directory>libs/bridges/bridge-hydrator-type-lang/tests</directory>
+            <directory>libs/bridges/bridge-server-react/tests</directory>
             <!-- contracts -->
             <directory>libs/contracts/hydrator-contracts/tests</directory>
             <directory>libs/contracts/router-contracts/tests</directory>
@@ -47,8 +47,8 @@
     <source>
         <include>
             <!-- bridges -->
-            <directory>libs/bridges/hydrator-bridge-type-lang/src</directory>
-            <directory>libs/bridges/server-bridge-react/src</directory>
+            <directory>libs/bridges/bridge-hydrator-type-lang/src</directory>
+            <directory>libs/bridges/bridge-server-react/src</directory>
             <!-- contracts -->
             <directory>libs/contracts/hydrator-contracts/src</directory>
             <directory>libs/contracts/router-contracts/src</directory>

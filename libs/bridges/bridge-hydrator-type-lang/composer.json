@@ -1,11 +1,11 @@
 {
-    "name": "php-lsp/server-bridge-react",
-    "description": "RPC Language Server Driver/Bridge based on ReactPHP",
+    "name": "php-lsp/bridge-hydrator-type-lang",
+    "description": "JMS Hydrator",
     "type": "library",
     "license": "MIT",
-    "keywords": ["runtime", "reactphp", "async", "bridge", "driver", "server", "php", "lsp"],
+    "keywords": ["type-lang", "mapper", "hydrator", "bridge", "php", "lsp"],
     "support": {
-        "source": "https://github.com/php-lsp/server-bridge-react",
+        "source": "https://github.com/php-lsp/bridge-hydrator-type-lang",
         "issues": "https://github.com/php-lsp/php-lsp/issues"
     },
     "authors": [
@@ -17,14 +17,13 @@
     ],
     "require": {
         "php": "^8.1",
-        "php-lsp/server": "^1.0",
-        "psr/log": "^1.0|^2.0|^3.0",
-        "psr/event-dispatcher": "^1.0",
-        "react/socket": "^1.16"
+        "type-lang/mapper": "^0.1",
+        "type-lang/phpdoc-standard-tags": "^1.0",
+        "php-lsp/hydrator-contracts": "^1.0"
     },
     "autoload": {
         "psr-4": {
-            "Lsp\\Server\\Bridge\\React\\": "src"
+            "Lsp\\Hydrator\\Bridge\\TypeLang\\": "src"
         }
     },
     "require-dev": {
@@ -32,8 +31,11 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lsp\\Server\\Bridge\\React\\Tests\\": "tests"
+            "Lsp\\Hydrator\\Bridge\\TypeLang\\Tests\\": "tests"
         }
+    },
+    "provide": {
+        "php-lsp/hydrator-contracts-implementation": "^1.0"
     },
     "scripts": {
         "test": "@test:unit",

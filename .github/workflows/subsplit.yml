@@ -20,10 +20,10 @@ jobs:
       matrix:
         package:
           # Bridge
-          - local_path: 'bridges/hydrator-bridge-type-lang'
-            split_repository: 'hydrator-bridge-type-lang'
-          - local_path: 'bridges/server-bridge-react'
-            split_repository: 'server-bridge-react'
+          - local_path: 'bridges/bridge-hydrator-type-lang'
+            split_repository: 'bridge-hydrator-type-lang'
+          - local_path: 'bridges/bridge-server-react'
+            split_repository: 'bridge-server-react'
           # Contracts
           - local_path: 'contracts/hydrator-contracts'
             split_repository: 'hydrator-contracts'

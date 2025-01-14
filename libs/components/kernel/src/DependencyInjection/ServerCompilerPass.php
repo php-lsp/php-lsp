@@ -77,7 +77,7 @@ final class ServerCompilerPass implements CompilerPassInterface
     private function supportsReactBridge(): bool
     {
         return \class_exists(InstalledVersions::class)
-            && InstalledVersions::isInstalled('php-lsp/server-bridge-react');
+            && InstalledVersions::isInstalled('php-lsp/bridge-server-react');
     }
 
     private function registerReactBridge(ContainerBuilder $container): void

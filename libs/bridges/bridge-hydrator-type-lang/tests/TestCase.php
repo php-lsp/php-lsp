@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Lsp\Server\Bridge\React\Tests;
+namespace Lsp\Hydrator\Bridge\TypeLang\Tests;
 
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
-#[Group('php-lsp/server-bridge-react')]
+#[Group('php-lsp/bridge-hydrator-type-lang')]
 abstract class TestCase extends BaseTestCase {}
