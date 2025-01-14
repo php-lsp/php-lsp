@@ -12,6 +12,6 @@ final class DocumentOpenController
 {
     public function __invoke(DidOpenTextDocumentParams $request): void
     {
-        dump($request);
+        var_dump($request);
     }
 }

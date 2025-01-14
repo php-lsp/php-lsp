@@ -7,6 +7,7 @@ namespace Lsp\Hydrator\Bridge\TypeLang;
 use Lsp\Contracts\Hydrator\ExtractorInterface;
 use Lsp\Contracts\Hydrator\HydratorInterface;
 use Lsp\Hydrator\Bridge\TypeLang\Exception\MappingException;
+use Psr\Log\LoggerInterface;
 use Psr\SimpleCache\CacheInterface;
 use TypeLang\Mapper\Mapper;
 use TypeLang\Mapper\Mapping\Driver\AttributeDriver;

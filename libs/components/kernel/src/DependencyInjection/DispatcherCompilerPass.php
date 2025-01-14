@@ -20,6 +20,7 @@ use Lsp\Dispatcher\Handler\Resolver\ClassStaticMethodHandlerResolver;
 use Lsp\Dispatcher\Handler\Resolver\ContainerAwareClassMethodHandlerResolver;
 use Lsp\Dispatcher\Handler\Resolver\FunctionHandlerResolver;
 use Lsp\Dispatcher\Handler\Resolver\HandlerResolverInterface;
+use Lsp\Dispatcher\Result\Resolver\GenericResultResolver;
 use Lsp\Dispatcher\Result\Resolver\ProtocolTypeResultResolver;
 use Lsp\Dispatcher\Result\Resolver\ResultResolverInterface;
 use Lsp\Server\ConnectionProviderInterface;
@@ -121,5 +122,12 @@ final class DispatcherCompilerPass implements CompilerPassInterface
         $container->register(ProtocolTypeResultResolver::class, ProtocolTypeResultResolver::class)
             ->setArgument('$extractor', new Reference(ExtractorInterface::class))
             ->addTag('lsp.dispatcher.result_resolver');
+
+        $container->register(GenericResultResolver::class, GenericResultResolver::class)
+            ->setArgument('$extractor', new Reference(ExtractorInterface::class))
+            ->addTag('lsp.dispatcher.result_resolver', [
+                // Using min priority
+                'priority' => \PHP_INT_MIN,
+            ]);
     }
 }

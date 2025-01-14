@@ -12,6 +12,6 @@ final class DocumentCloseController
 {
     public function __invoke(DidCloseTextDocumentParams $request): void
     {
-        dump($request);
+        var_dump($request);
     }
 }

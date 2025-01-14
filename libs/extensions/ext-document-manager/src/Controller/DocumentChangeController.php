@@ -12,6 +12,6 @@ final class DocumentChangeController
 {
     public function __invoke(DidChangeTextDocumentParams $request): void
     {
-        dump($request);
+        var_dump($request);
     }
 }
