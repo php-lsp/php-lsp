@@ -27,5 +27,7 @@ parameters:
     - libs/components/rpc-message/src
     - libs/components/rpc-message-factory/src
     - libs/components/server/src
+    # extensions
+    - libs/extensions/document-manager/src
   tmpDir: vendor/.cache.phpstan
   reportUnmatchedIgnoredErrors: true

@@ -26,14 +26,19 @@
         {
             "type": "path",
             "url": "libs/contracts/*"
+        },
+        {
+            "type": "path",
+            "url": "libs/extensions/*"
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.4",
         "php-lsp/kernel": "^1.0",
         "php-lsp/protocol": "^1.0",
         "php-lsp/hydrator-type-lang": "^1.0",
-        "php-lsp/server-driver-react": "^1.0"
+        "php-lsp/server-driver-react": "^1.0",
+        "php-lsp/ext-document-manager": "^1.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.64",
@@ -46,8 +51,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lsp\\Hydrator\\TypeLang\\Tests\\": "libs/bridges/hydrator-type-lang/tests",
-            "Lsp\\Server\\Driver\\React\\Tests\\": "libs/bridges/server-driver-react/tests",
+            "Lsp\\Hydrator\\Bridge\\TypeLang\\Tests\\": "libs/bridges/hydrator-bridge-type-lang/tests",
+            "Lsp\\Server\\Bridge\\React\\Tests\\": "libs/bridges/server-bridge-react/tests",
 
             "Lsp\\Contracts\\Hydrator\\Tests\\": "libs/contracts/hydrator-contracts/tests",
             "Lsp\\Contracts\\Router\\Tests\\": "libs/contracts/router-contracts/tests",
@@ -103,6 +108,7 @@
         }
     },
     "config": {
+        "discard-changes": false,
         "sort-packages": true,
         "allow-plugins": {
             "phpstan/extension-installer": true

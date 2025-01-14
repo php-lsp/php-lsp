@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Lsp\Dispatcher\Tests;
 
+use Lsp\Contracts\Rpc\Message\FailureResponseInterface;
 use Lsp\Contracts\Rpc\Message\NotificationInterface;
 use Lsp\Contracts\Rpc\Message\RequestInterface;
 use Lsp\Contracts\Rpc\Message\ResponseInterface;
@@ -22,7 +23,7 @@ final class InterfaceCompatibilityTest extends TestCase
         self::expectNotToPerformAssertions();
 
         new class implements DispatcherInterface {
-            public function notify(NotificationInterface $notification): ?\Throwable {}
+            public function notify(NotificationInterface $notification): ?FailureResponseInterface {}
 
             public function call(RequestInterface $request): ResponseInterface {}
         };
