@@ -4,25 +4,21 @@ declare(strict_types=1);
 
 namespace Lsp\Hydrator\Bridge\TypeLang\Type;
 
-use TypeLang\Mapper\Runtime\Context\LocalContext;
-use TypeLang\Mapper\Type\ObjectType;
+use TypeLang\Mapper\Runtime\Context;
 use TypeLang\Mapper\Type\TypeInterface;
 
-final class MinifiedObjectType implements TypeInterface
+final class NonNullCompositeType implements TypeInterface
 {
     public function __construct(
-        /**
-         * @var ObjectType<object>
-         */
-        private readonly ObjectType $type,
+        private readonly TypeInterface $type,
     ) {}
 
-    public function match(mixed $value, LocalContext $context): bool
+    public function match(mixed $value, Context $context): bool
     {
         return $this->type->match($value, $context);
     }
 
-    public function cast(mixed $value, LocalContext $context): mixed
+    public function cast(mixed $value, Context $context): mixed
     {
         if ($context->isDenormalization()) {
             return $this->type->cast($value, $context);

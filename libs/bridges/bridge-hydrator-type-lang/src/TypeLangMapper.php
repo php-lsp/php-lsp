@@ -12,10 +12,11 @@ use TypeLang\Mapper\Mapper;
 use TypeLang\Mapper\Mapping\Driver\AttributeDriver;
 use TypeLang\Mapper\Mapping\Driver\DocBlockDriver;
 use TypeLang\Mapper\Mapping\Driver\DriverInterface;
+use TypeLang\Mapper\Mapping\Driver\PHPConfigFileDriver;
 use TypeLang\Mapper\Mapping\Driver\Psr16CachedDriver;
 use TypeLang\Mapper\Mapping\Driver\ReflectionDriver;
 use TypeLang\Mapper\Platform\PlatformInterface;
-use TypeLang\Mapper\Runtime\Context\Context;
+use TypeLang\Mapper\Runtime\Configuration;
 
 final class TypeLangMapper implements HydratorInterface, ExtractorInterface
 {
@@ -25,7 +26,7 @@ final class TypeLangMapper implements HydratorInterface, ExtractorInterface
     {
         $this->mapper = new Mapper(
             platform: $this->getPlatform($cache),
-            context: $this->getContext(),
+            config: $this->getConfig(),
         );
     }
 
@@ -36,24 +37,31 @@ final class TypeLangMapper implements HydratorInterface, ExtractorInterface
         );
     }
 
-    private function getContext(): Context
+    private function getConfig(): Configuration
     {
-        return new Context(
+        return new Configuration(
             objectsAsArrays: true,
             detailedTypes: true,
+            strictTypes: false,
         );
     }
 
     private function getMetadataDriver(?CacheInterface $cache): DriverInterface
     {
-        $driver = new AttributeDriver(
-            delegate: new DocBlockDriver(
-                delegate: new ReflectionDriver(),
-            ),
+        $driver = new PHPConfigFileDriver(
+            directory: __DIR__ . '/../config',
+            delegate: new AttributeDriver(
+                delegate: new DocBlockDriver(
+                    delegate: new ReflectionDriver(),
+                ),
+            )
         );
 
         if ($cache !== null) {
-            $driver = new Psr16CachedDriver($cache, delegate: $driver);
+            $driver = new Psr16CachedDriver(
+                cache: $cache,
+                delegate: $driver,
+            );
         }
 
         return $driver;
