@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Lsp\Hydrator\Bridge\TypeLang;
 
 use Lsp\Hydrator\Bridge\TypeLang\Type\ClassWithoutNullsTypeBuilder;
-use TypeLang\Mapper\Type;
-use TypeLang\Mapper\Type\Builder;
 use Lsp\Hydrator\Bridge\TypeLang\Type\ObjectWithoutNullsTypeBuilder;
 use TypeLang\Mapper\Platform\StandardPlatform;
+use TypeLang\Mapper\Type;
+use TypeLang\Mapper\Type\Builder;
 use TypeLang\Mapper\Type\Builder\ClassTypeBuilder;
 use TypeLang\Mapper\Type\Builder\ObjectTypeBuilder;
 

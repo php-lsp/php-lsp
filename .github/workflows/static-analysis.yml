@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  psalm:
+  linter:
     name: PHPStan
     runs-on: ${{ matrix.os }}
     strategy:

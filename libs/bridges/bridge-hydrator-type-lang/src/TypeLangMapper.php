@@ -12,7 +12,6 @@ use TypeLang\Mapper\Mapper;
 use TypeLang\Mapper\Mapping\Driver\AttributeDriver;
 use TypeLang\Mapper\Mapping\Driver\DocBlockDriver;
 use TypeLang\Mapper\Mapping\Driver\DriverInterface;
-use TypeLang\Mapper\Mapping\Driver\PHPConfigFileDriver;
 use TypeLang\Mapper\Mapping\Driver\Psr16CachedDriver;
 use TypeLang\Mapper\Mapping\Driver\ReflectionDriver;
 use TypeLang\Mapper\Platform\PlatformInterface;
@@ -48,13 +47,10 @@ final class TypeLangMapper implements HydratorInterface, ExtractorInterface
 
     private function getMetadataDriver(?CacheInterface $cache): DriverInterface
     {
-        $driver = new PHPConfigFileDriver(
-            directory: __DIR__ . '/../config',
-            delegate: new AttributeDriver(
-                delegate: new DocBlockDriver(
-                    delegate: new ReflectionDriver(),
-                ),
-            )
+        $driver = new AttributeDriver(
+            delegate: new DocBlockDriver(
+                delegate: new ReflectionDriver(),
+            ),
         );
 
         if ($cache !== null) {
