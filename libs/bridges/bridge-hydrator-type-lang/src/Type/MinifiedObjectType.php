@@ -11,6 +11,9 @@ use TypeLang\Mapper\Type\TypeInterface;
 final class MinifiedObjectType implements TypeInterface
 {
     public function __construct(
+        /**
+         * @var ObjectType<object>
+         */
         private readonly ObjectType $type,
     ) {}
 
