@@ -12,16 +12,40 @@ use Phplrt\Position\PositionFactory;
 
 final class Document implements ReadableInterface
 {
+    /**
+     * @var non-empty-string|null
+     */
+    public ?string $pathname {
+        get {
+            if (!\str_starts_with($this->uri->value, 'file://')) {
+                return null;
+            }
+
+            $pathname = $this->uri->pathname;
+
+            if ($pathname === null) {
+                return null;
+            }
+
+            // Windows OS bugfix
+            if (\str_starts_with($pathname, '/')
+                && (\str_contains($pathname, '%3A/')
+                || \str_contains($pathname, '%3A\\'))
+            ) {
+                $pathname = \substr($pathname, 1);
+            }
+
+            $pathname = \urldecode($pathname);
+
+            // Direct access
+            return \is_file($pathname) ? $pathname : null;
+        }
+    }
+
     public function __construct(
         public readonly Uri $uri,
-        /**
-         * @readonly
-         */
-        public string $text,
-        /**
-         * @readonly
-         */
-        public int $version = 0,
+        public private(set) string $text,
+        public private(set) int $version = 0,
         private readonly PositionFactoryInterface $positions = new PositionFactory(),
     ) {}
 
@@ -60,9 +84,7 @@ final class Document implements ReadableInterface
             return;
         }
 
-        // @phpstan-ignore-next-line
         $this->text = $change->text;
-        // @phpstan-ignore-next-line
         $this->version = $version;
     }
 
@@ -84,7 +106,6 @@ final class Document implements ReadableInterface
             \max(1, $change->range->end->character + 1),
         );
 
-        // @phpstan-ignore-next-line
         $this->text = \substr($this->text, 0, $from->getOffset())
             . $change->text
             . \substr($this->text, $to->getOffset());
