@@ -43,7 +43,7 @@ final class InMemoryFileFactory implements FileFactoryInterface
         $file = $reference->get();
 
         if ($file === null) {
-            $this->memory[$uri]  = \WeakReference::create(
+            $this->memory[$uri] = \WeakReference::create(
                 object: $file = $this->delegate->create($uri, $filesystems),
             );
         }

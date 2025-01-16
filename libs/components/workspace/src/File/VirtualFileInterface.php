@@ -19,6 +19,7 @@ interface VirtualFileInterface extends
      * Gets the name of this file.
      *
      * @api
+     *
      * @var non-empty-string
      */
     public string $name { get; }
@@ -35,6 +36,7 @@ interface VirtualFileInterface extends
      * separator characters replaced to the forward slash ({@code '/'}).
      *
      * @api
+     *
      * @var non-empty-string
      */
     public string $path { get; }
@@ -45,6 +47,7 @@ interface VirtualFileInterface extends
      * (not including the '.'), otherwise extension is {@see null}.
      *
      * @api
+     *
      * @var non-empty-string|null
      */
     public ?string $extension { get; }
@@ -56,6 +59,7 @@ interface VirtualFileInterface extends
      * Otherwise, the value of {@see $name} is returned.
      *
      * @api
+     *
      * @var non-empty-string|null
      */
     public ?string $nameWithoutExtension { get; }

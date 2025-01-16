@@ -26,6 +26,7 @@ final class UriFactory implements UriFactoryInterface
     /**
      * @param array<array-key, mixed> $parts
      * @param non-empty-string $default
+     *
      * @return non-empty-string
      */
     private function fetchPath(array $parts, string $default): string
@@ -43,6 +44,7 @@ final class UriFactory implements UriFactoryInterface
 
     /**
      * @param array<array-key, mixed> $parts
+     *
      * @return non-empty-lowercase-string|null
      */
     private function fetchScheme(array $parts): ?string
@@ -59,6 +61,7 @@ final class UriFactory implements UriFactoryInterface
     /**
      * @param array<array-key, mixed> $parts
      * @param non-empty-string $key
+     *
      * @return non-empty-string|null
      */
     private function fetchUriPart(array $parts, string $key): ?string

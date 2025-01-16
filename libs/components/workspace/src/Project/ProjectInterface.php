@@ -16,6 +16,7 @@ interface ProjectInterface extends \Traversable, \Countable
      * Gets the name of the project.
      *
      * @api
+     *
      * @var non-empty-string
      */
     public string $name { get; }
@@ -27,6 +28,7 @@ interface ProjectInterface extends \Traversable, \Countable
      * to the forward slash ({@code '/'}).
      *
      * @api
+     *
      * @var non-empty-string
      */
     public string $path { get; }
