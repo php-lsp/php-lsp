@@ -56,6 +56,8 @@ jobs:
             split_repository: 'rpc-message-factory'
           - local_path: 'components/server'
             split_repository: 'server'
+          - local_path: 'components/workspace'
+            split_repository: 'workspace'
           # Extensions
           - local_path: 'extensions/ext-document-manager'
             split_repository: 'ext-document-manager'

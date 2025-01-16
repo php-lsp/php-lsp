@@ -35,6 +35,7 @@ parameters:
     - libs/components/rpc-message/src
     - libs/components/rpc-message-factory/src
     - libs/components/server/src
+    - libs/components/workspace/src
     # extensions
     - libs/extensions/ext-document-manager/src
   tmpDir: vendor/.cache.phpstan
